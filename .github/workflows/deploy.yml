@@ -1,0 +1,30 @@
+name: Deploy to Pages
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup DotNET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      
+      - name: Build Docs
+        run: |
+          dotnet tool update -g docfx
+          dotnet tool restore
+          python3 extract.py
+          docfx
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
