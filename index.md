@@ -22,3 +22,10 @@ class. This is not how it is in-game or in the assemblies. Just be wary of that.
 > [!NOTE]
 > If you haven't already, go buy the game! It's incredible! Grab some
 > friends and have some fun! [Steam Page](https://store.steampowered.com/app/2881650/Content_Warning/)
+
+> [!NOTE]
+> For Landfall devs, if you want me to take this site down, I will,
+> upon request. Just shoot me a DM, I'm in the Content Warning and
+> Content Warning Modding discords, as `@RedstoneWizard08`. I'll
+> usually reply within a day or two. This project is NOT intended
+> to cause any harm or anything like that.
