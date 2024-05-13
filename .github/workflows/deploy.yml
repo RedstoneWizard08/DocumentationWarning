@@ -17,12 +17,16 @@ jobs:
         with:
           dotnet-version: "8.0.x"
       
-      - name: Build Docs
+      - name: Install Tools
         run: |
           dotnet tool update -g docfx
           dotnet tool install --global ilspycmd --version 9.0.0.7618-preview1
-          python3 extract.py
-          docfx
+      
+      - name: Extract Assemblies
+        run: python3 extract.py
+      
+      - name: Build Docs
+        run: docfx
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
