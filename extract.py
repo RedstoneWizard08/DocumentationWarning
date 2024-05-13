@@ -178,11 +178,6 @@ def clean():
         with open(proj_file, "w") as f:
             f.write(xml)
 
-def build():
-    print("Building...")
-
-    subprocess.check_output(["dotnet", "build", "--property", "NoWarn=\"CS0169;CS0649\""], cwd=out_dir)
-
 def main():
     print("Extracting...")
 
@@ -193,7 +188,6 @@ def main():
     add_deps()
     patch()
     clean()
-    build()
 
     print("Done!")
 
