@@ -10,6 +10,8 @@ public static class Config
     public const string Framework = "netstandard2.1";
     public const string UnityFramework = "netstandard2.0";
     public const string FinalPatchFile = "SP-2024-05-12-FixNamespace.patch";
+    public const string Namespace = "DefaultNamespace";
+    public const string DocFxConfigFile = "docfx.json";
 
     public const string TempDir = "Temp";
     public const string OutDir = "Out";
