@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace Extractor;
 
 [JsonObject]
-public class NugetManifest
+public class NuGetManifest
 {
     [JsonProperty]
     public List<string> versions = [];

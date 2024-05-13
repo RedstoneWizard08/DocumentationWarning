@@ -6,14 +6,14 @@
                     "files": [
                         "**/*/*.csproj"
                     ],
-                    "src": "Extractor/Out"
+                    "src": "@{{OutDir}}"
                 }
             ],
             "dest": "api",
             "filter": "filterConfig.yml",
             "disableGitFeatures": true,
             "properties": {
-                "TargetFramework": "netstandard2.1"
+                "TargetFramework": "@{{Framework}}"
             },
             "namespaceLayout": "nested"
         }
@@ -52,16 +52,16 @@
             "ExtractSearchIndex"
         ],
         "globalMetadata": {
-            "_appTitle": "DocumentationWarning",
-            "_appLogoPath": "banner.png",
-            "_appFaviconPath": "logo.png",
+            "_appTitle": "@{{Game}}",
+            "_appLogoPath": "@{{BannerPath}}",
+            "_appFaviconPath": "@{{IconPath}}",
             "_enableSearch": true
         },
         "xrefService": [
             "https://xref.docs.microsoft.com/query?uid={uid}"
         ],
         "xref": [
-            "https://github.com/NormandErwan/UnityXrefMaps/raw/gh-pages/2022.3/xrefmap.yml"
+            "https://github.com/NormandErwan/UnityXrefMaps/raw/gh-pages/@{{UnityVersion}}/xrefmap.yml"
         ]
     }
 }

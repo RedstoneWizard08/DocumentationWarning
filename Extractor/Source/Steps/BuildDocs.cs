@@ -6,6 +6,7 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Extractor.Config;
 
 namespace Extractor.Steps;
 
@@ -26,15 +27,24 @@ public sealed class BuildDocs : Step
         return null;
     }
 
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
+        new ResExtractor().Extract(config.DocDir, config);
+
+        if (!Directory.Exists(config.DocDir)) {
+            Directory.CreateDirectory(config.DocDir);
+        }
+
+        File.Copy(config.Game.BannerPath(config), Path.Join(config.DocDir, config.Game.Banner));
+        File.Copy(config.Game.IconPath(config), Path.Join(config.DocDir, config.Game.Icon));
+
         var start = new ProcessStartInfo()
         {
             FileName = FindInPath("docfx"),
-            WorkingDirectory = Path.Join(Environment.CurrentDirectory, ".."),
+            WorkingDirectory = config.DocDir,
         };
 
-        "Starting process \"{}{}\"...".LogInfo(this, start.FileName, start.Arguments != "" ? " " + start.Arguments : "");
+        "Starting process \"{}{}\" in {}...".LogInfo(this, start.FileName, start.Arguments != "" ? " " + start.Arguments : "", config.DocDir);
 
         var proc = new Process()
         {

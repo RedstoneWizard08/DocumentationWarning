@@ -6,33 +6,31 @@ using Docfx.Build.Engine;
 using Docfx.Common;
 using Docfx.MarkdigEngine.Extensions;
 using Docfx.Plugins;
-using Docfx.YamlSerialization;
-using Newtonsoft.Json;
+using Extractor.Config;
 
 namespace Extractor.Steps;
 
 public sealed class FixYaml : Step
 {
-    public static Regex StartRegex = new Regex(@"^DefaultNamespace\.");
-    public static Regex CommentRegex = new Regex(@"^([^:]+):DefaultNamespace\.");
-
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
-        var path = Path.Join("..", "_site", "xrefmap.yml");
+        var startRegex = new Regex($@"^{config.Game.Namespace}\.");
+        var commentRegex = new Regex($@"^([^:]+):{config.Game.Namespace}\.");
+        var path = Path.Join(config.DocDir, "_site", "xrefmap.yml");
         var map = YamlUtility.Deserialize<XRefMap>(path);
         var refs = new List<XRefSpec>();
 
         foreach (var item in map.References) {
-            if (item.Uid.StartsWith(Config.Namespace) && item.Uid != Config.Namespace) {
+            if (item.Uid.StartsWith(config.Game.Namespace) && item.Uid != config.Game.Namespace) {
                 var alt = item;
 
-                alt.Uid = item.Uid.ReplaceRegex(StartRegex, "");
+                alt.Uid = item.Uid.ReplaceRegex(startRegex, "");
 
                 if (map.References.Find(v => v.Uid == alt.Uid) != null)
                     continue;
                 
                 if (alt.ContainsKey("fullName")) {
-                    alt["fullName"] = item["fullName"].ToString().ReplaceRegex(StartRegex, "");
+                    alt["fullName"] = item["fullName"].ToString().ReplaceRegex(startRegex, "");
                 }
 
                 refs.Add(alt);

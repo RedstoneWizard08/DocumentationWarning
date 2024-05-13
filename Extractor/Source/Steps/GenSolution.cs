@@ -1,21 +1,22 @@
 using System.IO;
 using System.Threading.Tasks;
+using Extractor.Config;
 using SlnEditor.Models;
 
 namespace Extractor.Steps;
 
 public sealed class GenSolution : Step
 {
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
-        var slnPath = Path.Join(Config.OutDir, "DocumentationWarning.sln");
+        var slnPath = Path.Join(config.OutDir, "Project.sln");
         var sln = new Solution();
 
         sln.ConfigurationPlatforms.Add(new ConfigurationPlatform("Debug|AnyCPU", "Debug", "AnyCPU"));
         sln.ConfigurationPlatforms.Add(new ConfigurationPlatform("Release|AnyCPU", "Release", "AnyCPU"));
         sln.SolutionProperties.HideSolutionNode = false;
 
-        foreach (var assembly in Config.Assemblies)
+        foreach (var assembly in config.Assemblies)
         {
             var name = Path.GetFileNameWithoutExtension(assembly);
             var proj = new Project(name, Path.Join(name, name + ".csproj"), ProjectType.CSharp);

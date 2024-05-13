@@ -1,13 +1,14 @@
 using System.IO;
 using System.Threading.Tasks;
+using Extractor.Config;
 
 namespace Extractor.Steps;
 
 public sealed class DocsPatch : Step
 {
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
-        var path = Path.Join(Config.OutDir, "Assembly-CSharp");
+        var path = Path.Join(config.OutDir, "Assembly-CSharp");
         var files = Directory.EnumerateFiles(path, "*.cs", SearchOption.AllDirectories);
 
         foreach (var file in files)
@@ -16,13 +17,15 @@ public sealed class DocsPatch : Step
 
             if (data.Contains("namespace ")) continue;
 
-            data = $"namespace {Config.Namespace};\n\n" + data;
+            data = $"namespace {config.Game.Namespace};\n\n" + data;
 
             await File.WriteAllTextAsync(file, data);
         }
 
-        foreach (var patch in await PatchScanner.ScanPost()) {
-            await new Patcher().Run(patch);
+        foreach (var patch in PatchScanner.ScanPost(config)) {
+            "Applying patch: {}".LogInfo(this, patch);
+
+            await new Patcher().Run(config, patch);
         }
     }
 }
