@@ -3,20 +3,24 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using DiffPatch;
+using Extractor.Config;
 
 namespace Extractor;
 
 public sealed class Patcher: WithLogger
 {
-    public async Task Run(string data)
+    public async Task Run(ProjectConfig config, string path)
     {
+        var data = await File.ReadAllTextAsync(path);
         var files = DiffParserHelper.Parse(data, Environment.NewLine).ToArray();
 
         foreach (var item in files)
         {
-            if (!File.Exists(item.To))
+            var to = Path.Join(config.ProjectDir, item.To);
+
+            if (!File.Exists(to))
             {
-                "Cannot find file to patch: {}; Treating as an addition...".LogWarn(this, item.To);
+                "Cannot find file to patch: {}; Treating as an addition...".LogWarn(this, to);
 
                 var content = "";
 
@@ -31,20 +35,20 @@ public sealed class Patcher: WithLogger
                     }
                 }
 
-                if (!Directory.Exists(Path.GetDirectoryName(item.To)))
+                if (!Directory.Exists(Path.GetDirectoryName(to)))
                 {
-                    Directory.CreateDirectory(Path.GetDirectoryName(item.To)!);
+                    Directory.CreateDirectory(Path.GetDirectoryName(to)!);
                 }
 
-                await File.WriteAllTextAsync(item.To, content);
+                await File.WriteAllTextAsync(to, content);
 
                 continue;
             }
 
-            var pre = await File.ReadAllTextAsync(item.To);
+            var pre = await File.ReadAllTextAsync(to);
             var post = PatchHelper.Patch(pre, item.Chunks, Environment.NewLine).Trim();
 
-            await File.WriteAllTextAsync(item.To, post);
+            await File.WriteAllTextAsync(to, post);
         }
     }
 }

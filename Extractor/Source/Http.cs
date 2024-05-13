@@ -13,10 +13,10 @@ public class Http
         return (await client.GetAsync(url)).Content;
     }
 
-    public static async Task<NugetManifest> GetManifest(string package)
+    public static async Task<NuGetManifest> GetManifest(string package, DepSource source)
     {
-        var resp = await Get($"https://api.nuget.org/v3-flatcontainer/{package.ToLower()}/index.json");
+        var resp = await Get(source.GetManifestUrl(package));
 
-        return JsonConvert.DeserializeObject<NugetManifest>(await resp.ReadAsStringAsync())!;
+        return JsonConvert.DeserializeObject<NuGetManifest>(await resp.ReadAsStringAsync())!;
     }
 }

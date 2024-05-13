@@ -1,5 +1,6 @@
 using System.IO;
 using System.Threading.Tasks;
+using Extractor.Config;
 using ICSharpCode.Decompiler;
 using ICSharpCode.Decompiler.CSharp;
 using ICSharpCode.Decompiler.CSharp.ProjectDecompiler;
@@ -10,15 +11,15 @@ namespace Extractor.Steps;
 
 public sealed class Decompile : Step
 {
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
-        foreach (var file in Config.Assemblies)
+        foreach (var file in config.Assemblies)
         {
-            var path = Path.Join(Config.AsmDir, file);
+            var path = Path.Join(config.AsmDir, file);
 
             "Decompiling {}...".LogInfo(this, file);
 
-            await DecompileProject(path);
+            await DecompileProject(path, config);
         }
     }
 
@@ -34,10 +35,10 @@ public sealed class Decompile : Step
         };
     }
 
-    private async Task<ProjectId> DecompileProject(string assembly)
+    private async Task<ProjectId> DecompileProject(string assembly, ProjectConfig config)
     {
         var baseName = Path.GetFileNameWithoutExtension(assembly);
-        var projectDir = Path.Join(Config.OutDir, baseName);
+        var projectDir = Path.Join(config.OutDir, baseName);
 
         if (Directory.Exists(projectDir))
         {

@@ -1,17 +1,18 @@
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
+using Extractor.Config;
 
 namespace Extractor.Steps;
 
 public sealed class ExtractAsm : Step
 {
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
-        foreach (var dep in Config.Deps)
+        foreach (var dep in config.Dependencies)
         {
-            var fileName = $"{dep.Item1}-{dep.Item2}.nupkg";
-            var file = Path.Join(Config.PkgDir, fileName);
+            var fileName = $"{dep.Name}-{dep.Version}.nupkg";
+            var file = Path.Join(config.PkgDir, fileName);
 
             "Extracting assemblies from {}...".LogInfo(this, fileName);
 
@@ -22,7 +23,7 @@ public sealed class ExtractAsm : Step
                 if (entry.Name.ToLower().EndsWith(".dll"))
                 {
                     var name = Path.GetFileName(entry.Name);
-                    var path = Path.Join(Config.AsmDir, name);
+                    var path = Path.Join(config.AsmDir, name);
                     var stream = entry.Open();
                     var mem = new MemoryStream();
 

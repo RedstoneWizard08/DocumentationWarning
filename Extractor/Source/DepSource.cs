@@ -19,4 +19,14 @@ public static class DepSourceExt
             _ => throw new UnreachableException(),
         };
     }
+
+    public static string GetManifestUrl(this DepSource source, string package)
+    {
+        return source switch
+        {
+            DepSource.NuGet => $"https://api.nuget.org/v3-flatcontainer/{package.ToLower()}/index.json",
+            DepSource.BaGet => $"https://nuget.bepinex.dev/v3/package/{package.ToLower()}/index.json",
+            _ => throw new UnreachableException(),
+        };
+    }
 }

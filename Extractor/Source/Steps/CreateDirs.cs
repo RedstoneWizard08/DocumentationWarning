@@ -1,25 +1,26 @@
 using System.IO;
 using System.Threading.Tasks;
+using Extractor.Config;
 
 namespace Extractor.Steps;
 
 public class CreateDirs : Step
 {
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
-        if (!Directory.Exists(Config.TempDir))
+        if (!Directory.Exists(config.TempDir))
         {
-            Directory.CreateDirectory(Config.TempDir);
+            Directory.CreateDirectory(config.TempDir);
         }
 
-        if (!Directory.Exists(Config.AsmDir))
+        if (!Directory.Exists(config.AsmDir))
         {
-            Directory.CreateDirectory(Config.AsmDir);
+            Directory.CreateDirectory(config.AsmDir);
         }
 
-        if (!Directory.Exists(Config.PkgDir))
+        if (!Directory.Exists(config.PkgDir))
         {
-            Directory.CreateDirectory(Config.PkgDir);
+            Directory.CreateDirectory(config.PkgDir);
         }
     }
 }

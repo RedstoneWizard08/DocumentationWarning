@@ -1,14 +1,16 @@
 export default {
     defaultTheme: "dark",
     iconLinks: [
+        <if [GameHasWebsite]>
         {
             icon: "globe",
-            href: "https://landfall.se/content-warning",
+            href: "@{{GameWebsite}}",
             title: "Website",
         },
+        </if>
         {
             icon: "steam",
-            href: "https://store.steampowered.com/app/2881650/Content_Warning/",
+            href: "@{{SteamPage}}",
             title: "Steam Page",
         },
         {
@@ -16,10 +18,12 @@ export default {
             href: "https://github.com/RedstoneWizard08/DocumentationWarning",
             title: "GitHub",
         },
+        <if [GameHasThunderstore]>
         {
             icon: "download",
-            href: "https://thunderstore.io/c/content-warning/",
+            href: "@{{ThunderstoreUrl}}",
             title: "Thunderstore",
         },
+        </if>
     ],
 };

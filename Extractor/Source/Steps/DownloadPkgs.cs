@@ -1,20 +1,21 @@
 using System.IO;
 using System.Threading.Tasks;
+using Extractor.Config;
 
 namespace Extractor.Steps;
 
 public sealed class DownloadPkgs : Step
 {
-    public override async Task Run()
+    public override async Task Run(ProjectConfig config)
     {
-        foreach (var dep in Config.Deps)
+        foreach (var dep in config.Dependencies)
         {
-            var url = dep.Item3.GetPackageUrl(dep.Item1, dep.Item2);
-            var fileName = $"{dep.Item1}-{dep.Item2}.nupkg";
+            var url = dep.Source.GetPackageUrl(dep.Name, dep.Version);
+            var fileName = $"{dep.Name}-{dep.Version}.nupkg";
 
             "Downloading {}...".LogInfo(this, fileName);
 
-            var file = Path.Join(Config.PkgDir, fileName);
+            var file = Path.Join(config.PkgDir, fileName);
             var resp = await Http.Get(url);
             var bytes = await resp.ReadAsByteArrayAsync();
             var handle = File.Create(file);
