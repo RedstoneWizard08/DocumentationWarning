@@ -39,140 +39,163 @@ version = versions[-1]
 url = f"https://www.nuget.org/api/v2/package/ContentWarning.GameLibs.Steam/{version}"
 tmp_dir = "_tmp"
 out_dir = "out"
+asm_dir = path.join(tmp_dir, "assemblies")
 
 if not path.exists(tmp_dir):
     os.makedirs(tmp_dir)
 
-print("Downloading packages...")
+def download_pkgs():
+    print("Downloading packages...")
 
-for i, u in enumerate([url] + DEPS):
-    out = f"{i}.nupkg"
-    out = path.join(tmp_dir, out)
+    for i, u in enumerate([url] + DEPS):
+        out = f"{i}.nupkg"
+        out = path.join(tmp_dir, out)
 
-    print(f"Download: {u}")
+        print(f"Download: {u}")
 
-    with open(out, "wb") as f:
-        f.write(requests.get(u).content)
+        with open(out, "wb") as f:
+            f.write(requests.get(u).content)
 
-print("Extracting assemblies...")
+def extract_assemblies():
+    print("Extracting assemblies...")
 
-for i, _ in enumerate(DEPS + [url]):
-    out = f"{i}.nupkg"
-    out = path.join(tmp_dir, out)
+    for i, _ in enumerate(DEPS + [url]):
+        out = f"{i}.nupkg"
+        out = path.join(tmp_dir, out)
 
-    print(f"Extract: {out}")
+        print(f"Extract: {out}")
 
-    with ZipFile(out, "r") as zip:
-        zip.extractall(tmp_dir)
+        with ZipFile(out, "r") as zip:
+            zip.extractall(tmp_dir)
 
-print("Copying assemblies...")
+def copy():
+    print("Copying assemblies...")
 
-asm_dir = path.join(tmp_dir, "assemblies")
-dir1 = path.join(tmp_dir, "lib", UNITY_FRAMEWORK)
-dir2 = path.join(tmp_dir, "ref", FRAMEWORK)
-dir1 = [path.join(dir1, it) for it in os.listdir(dir1)]
-dir2 = [path.join(dir2, it) for it in os.listdir(dir2)]
-files = dir1 + dir2
+    dir1 = path.join(tmp_dir, "lib", UNITY_FRAMEWORK)
+    dir2 = path.join(tmp_dir, "ref", FRAMEWORK)
+    dir1 = [path.join(dir1, it) for it in os.listdir(dir1)]
+    dir2 = [path.join(dir2, it) for it in os.listdir(dir2)]
+    files = dir1 + dir2
 
-for file in files:
-    if not path.exists(asm_dir):
-        os.makedirs(asm_dir)
-    
-    new = path.join(asm_dir, path.basename(file))
+    for file in files:
+        if not path.exists(asm_dir):
+            os.makedirs(asm_dir)
 
-    print(f"--- {file} -> {new}")
+        new = path.join(asm_dir, path.basename(file))
 
-    shutil.copyfile(file, new)
+        print(f"--- {file} -> {new}")
 
-print("Decompiling (stripped) assemblies...")
+        shutil.copyfile(file, new)
 
-if path.exists(out_dir):
-    shutil.rmtree(out_dir)
+def decompile():
+    print("Decompiling (stripped) assemblies...")
 
-paths = [path.join(asm_dir, it) for it in ASSEMBLIES]
+    if path.exists(out_dir):
+        shutil.rmtree(out_dir)
 
-subprocess.check_output(["ilspycmd", "--nested-directories", "-p", "-o", out_dir] + paths)
+    paths = [path.join(asm_dir, it) for it in ASSEMBLIES]
 
-print("Adding dependencies...")
+    subprocess.check_output(["ilspycmd", "--nested-directories", "-p", "-o", out_dir] + paths)
 
-with open(path.join(out_dir, "nuget.config"), "w") as f:
-    f.write("""<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-    <packageSources>
-        <add key="BepInEx" value="https://nuget.bepinex.dev/v3/index.json"/>
-    </packageSources>
-</configuration>""")
+def add_deps():
+    print("Adding dependencies...")
 
-dirs = os.listdir(out_dir)
-dirs = [path.join(out_dir, it) for it in dirs]
-dirs = filter(lambda x: path.isdir(x), dirs)
+    with open(path.join(out_dir, "nuget.config"), "w") as f:
+        f.write("""<?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+        <packageSources>
+            <add key="BepInEx" value="https://nuget.bepinex.dev/v3/index.json"/>
+        </packageSources>
+    </configuration>""")
 
-for dir in dirs:
-    subprocess.check_output(["dotnet", "add", "package", "UnityEngine.Modules", "--version", "2022.3.10"], cwd=dir)
-    # subprocess.check_output(["dotnet", "add", "package", "WebSocketSharp", "--version", "1.0.3-rc11"], cwd=dir)
-    
-    proj_path = path.join(dir, path.basename(dir) + ".csproj")
-    
-    with open(proj_path, "r") as f:
-        raw = f.read()
-    
-    raw = raw.replace("_tmp/assemblies/", path.abspath(asm_dir) + "/")
+    dirs = os.listdir(out_dir)
+    dirs = [path.join(out_dir, it) for it in dirs]
+    dirs = filter(lambda x: path.isdir(x), dirs)
 
-    with open(proj_path, "w") as f:
-        f.write(raw)
+    for dir in dirs:
+        subprocess.check_output(["dotnet", "add", "package", "UnityEngine.Modules", "--version", "2022.3.10"], cwd=dir)
+        # subprocess.check_output(["dotnet", "add", "package", "WebSocketSharp", "--version", "1.0.3-rc11"], cwd=dir)
 
-print("Patching...")
+        proj_path = path.join(dir, path.basename(dir) + ".csproj")
 
-for patch in PATCHES:
-    with open(patch, "rb") as f:
+        with open(proj_path, "r") as f:
+            raw = f.read()
+
+        raw = raw.replace("_tmp/assemblies/", path.abspath(asm_dir) + "/")
+
+        with open(proj_path, "w") as f:
+            f.write(raw)
+
+def patch():
+    print("Patching...")
+
+    for patch in PATCHES:
+        with open(patch, "rb") as f:
+            patch_data = f.read()
+
+        proc = subprocess.Popen(["patch", "-s", "-p0"], stdin=subprocess.PIPE)
+        proc.communicate(input = patch_data)
+        proc.wait()
+
+    items = list(Path(out_dir.join("Assembly-CSharp")).rglob("*.cs"))
+    items = filter(lambda x: path.isfile(x), items)
+
+    for item in items:
+        with open(item, "r") as f:
+            raw = f.read()
+
+        if "namespace " in raw:
+            continue
+
+        raw = "namespace DefaultNamespace;\n\n" + raw
+
+        with open(item, "w") as f:
+            f.write(raw)
+
+    with open(FINAL_PATCH, "rb") as f:
         patch_data = f.read()
 
     proc = subprocess.Popen(["patch", "-s", "-p0"], stdin=subprocess.PIPE)
     proc.communicate(input = patch_data)
     proc.wait()
 
-items = list(Path(out_dir.join("Assembly-CSharp")).rglob("*.cs"))
-items = filter(lambda x: path.isfile(x), items)
+    shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "Photon"))
+    shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "UnityEngine"))
+    shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "UnityEditor"))
+    shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "Properties"))
 
-for item in items:
-    with open(item, "r") as f:
-        raw = f.read()
-    
-    if "namespace " in raw:
-        continue
+def clean():
+    print("Cleaning project files...")
 
-    raw = "namespace DefaultNamespace;\n\n" + raw
+    dirs = os.listdir(out_dir)
+    dirs = [path.join(out_dir, it) for it in dirs]
+    dirs = filter(lambda x: path.isdir(x), dirs)
 
-    with open(item, "w") as f:
-        f.write(raw)
+    for dir in dirs:
+        proj_file = path.join(dir, path.basename(dir) + ".csproj")
+        xml = parse_csproj(proj_file).to_xml()
 
-with open(FINAL_PATCH, "rb") as f:
-    patch_data = f.read()
+        with open(proj_file, "w") as f:
+            f.write(xml)
 
-proc = subprocess.Popen(["patch", "-s", "-p0"], stdin=subprocess.PIPE)
-proc.communicate(input = patch_data)
-proc.wait()
+def build():
+    print("Building...")
 
-shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "Photon"))
-shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "UnityEngine"))
-shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "UnityEditor"))
-shutil.rmtree(path.join(out_dir, "Assembly-CSharp", "Properties"))
+    subprocess.check_output(["dotnet", "build", "--property", "NoWarn=\"CS0169;CS0649\""], cwd=out_dir)
 
-print("Cleaning project files...")
+def main():
+    print("Extracting...")
 
-dirs = os.listdir(out_dir)
-dirs = [path.join(out_dir, it) for it in dirs]
-dirs = filter(lambda x: path.isdir(x), dirs)
+    download_pkgs()
+    extract_assemblies()
+    copy()
+    decompile()
+    add_deps()
+    patch()
+    clean()
+    build()
 
-for dir in dirs:
-    proj_file = path.join(dir, path.basename(dir) + ".csproj")
-    xml = parse_csproj(proj_file).to_xml()
+    print("Done!")
 
-    with open(proj_file, "w") as f:
-        f.write(xml)
-
-print("Building...")
-
-subprocess.run(["dotnet", "build", "--property", "NoWarn=\"CS0169;CS0649\""], cwd=out_dir)
-
-print("Done!")
+if __name__ == "__main__":
+    main()
