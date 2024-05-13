@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Extractor;
 
-public class Program: Step
+public class Program: WithLogger
 {
     internal static readonly ILoggerFactory Factory = LoggerFactory.Create(b => b.AddConsole());
 
@@ -29,7 +29,7 @@ public class Program: Step
         Run().GetAwaiter().GetResult();
     }
 
-    public override async Task Run()
+    public async Task Run()
     {
         foreach (var step in Steps)
         {
