@@ -21,7 +21,8 @@ PATCHES = [
 
 DEPS = [
     "https://nuget.bepinex.dev/v3/package/unityengine.modules/2022.3.10/unityengine.modules.2022.3.10.nupkg",
-    "https://www.nuget.org/api/v2/package/WebSocketSharp/1.0.3-rc11"
+    "https://www.nuget.org/api/v2/package/WebSocketSharp/1.0.3-rc11",
+    "https://www.nuget.org/api/v2/package/Newtonsoft.JSON/13.0.3",
 ]
 
 ASSEMBLIES = [
