@@ -9,7 +9,7 @@ public static class Config
     public const string Package = "ContentWarning.GameLibs.Steam";
     public const string Framework = "netstandard2.1";
     public const string UnityFramework = "netstandard2.0";
-    public const string FinalPatchFile = "0002-2024-05-12-FixNamespace.patch";
+    public const string FinalPatchFile = "SP-2024-05-12-FixNamespace.patch";
 
     public const string TempDir = "Temp";
     public const string OutDir = "Out";
@@ -22,7 +22,8 @@ public static class Config
     // TODO: Scanning?
     public static readonly string[] Patches = [
         "0000-2024-05-10-FixBase.patch",
-        "0001-2024-05-11-FixMissing.patch"
+        "0001-2024-05-11-FixMissing.patch",
+        "0002-2024-05-12-FixRefs.patch",
     ];
 
     public static List<(string, string, DepSource)> Deps = [
