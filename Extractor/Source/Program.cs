@@ -16,6 +16,8 @@ public class Program: Step
         new PatchStep(),
         new DocsPatch(),
         new GenSolution(),
+        new BuildDocs(),
+        new FixYaml(),
     ];
 
     public static void Main() => new Program().Start();

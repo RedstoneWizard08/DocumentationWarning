@@ -16,7 +16,7 @@ public sealed class DocsPatch : Step
 
             if (data.Contains("namespace ")) continue;
 
-            data = "namespace DefaultNamespace;\n\n" + data;
+            data = $"namespace {Config.Namespace};\n\n" + data;
 
             await File.WriteAllTextAsync(file, data);
         }
