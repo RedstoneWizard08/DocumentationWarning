@@ -7,9 +7,9 @@ public sealed class PatchStep : Step
 {
     public override async Task Run()
     {
-        foreach (var file in Config.Patches)
+        foreach (var patch in await PatchScanner.ScanPre())
         {
-            await new Patcher().Run(file);
+            await new Patcher().Run(patch);
         }
 
         foreach (var dir in Config.RemovedDirs) {

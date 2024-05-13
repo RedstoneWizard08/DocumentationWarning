@@ -9,7 +9,6 @@ public static class Config
     public const string Package = "ContentWarning.GameLibs.Steam";
     public const string Framework = "netstandard2.1";
     public const string UnityFramework = "netstandard2.0";
-    public const string FinalPatchFile = "SP-2024-05-12-FixNamespace.patch";
     public const string Namespace = "DefaultNamespace";
     public const string DocFxConfigFile = "docfx.json";
 
@@ -20,13 +19,6 @@ public static class Config
 
     public static readonly string AsmDir = Path.Join(TempDir, "Assemblies");
     public static readonly string PkgDir = Path.Join(TempDir, "Packages");
-    
-    // TODO: Scanning?
-    public static readonly string[] Patches = [
-        "0000-2024-05-10-FixBase.patch",
-        "0001-2024-05-11-FixMissing.patch",
-        "0002-2024-05-12-FixRefs.patch",
-    ];
 
     public static List<(string, string, DepSource)> Deps = [
         ("UnityEngine.Modules", "2022.3.10", DepSource.BaGet),

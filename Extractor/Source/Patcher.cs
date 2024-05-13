@@ -8,11 +8,8 @@ namespace Extractor;
 
 public sealed class Patcher: WithLogger
 {
-    public async Task Run(string file)
+    public async Task Run(string data)
     {
-        file = Path.Join("Patches", file);
-        
-        var data = await File.ReadAllTextAsync(file);
         var files = DiffParserHelper.Parse(data, Environment.NewLine).ToArray();
 
         foreach (var item in files)

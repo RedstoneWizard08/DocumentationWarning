@@ -21,6 +21,8 @@ public sealed class DocsPatch : Step
             await File.WriteAllTextAsync(file, data);
         }
 
-        await new Patcher().Run(Config.FinalPatchFile);
+        foreach (var patch in await PatchScanner.ScanPost()) {
+            await new Patcher().Run(patch);
+        }
     }
 }
