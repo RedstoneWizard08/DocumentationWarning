@@ -45,7 +45,7 @@ if not path.exists(tmp_dir):
 
 print("Downloading packages...")
 
-for (i, u) in enumerate([url] + DEPS):
+for i, u in enumerate([url] + DEPS):
     out = f"{i}.nupkg"
     out = path.join(tmp_dir, out)
 
@@ -56,7 +56,7 @@ for (i, u) in enumerate([url] + DEPS):
 
 print("Extracting assemblies...")
 
-for (i, _) in enumerate(DEPS + [url]):
+for i, _ in enumerate(DEPS + [url]):
     out = f"{i}.nupkg"
     out = path.join(tmp_dir, out)
 
