@@ -23,8 +23,13 @@ public sealed class CopyDocs : Step
 
         CopyDirectory(Path.Join(config.DocDir, "_site"), output, true);
 
-        var file = await File.ReadAllTextAsync(Manifest);
-        var data = JsonConvert.DeserializeObject<List<DocItem>>(file)!;
+        var data = new List<DocItem>();
+
+        if (File.Exists(Manifest)) {
+            var file = await File.ReadAllTextAsync(Manifest);
+        
+            data = JsonConvert.DeserializeObject<List<DocItem>>(file)!;
+        }
 
         data.Add(new DocItem()
         {
