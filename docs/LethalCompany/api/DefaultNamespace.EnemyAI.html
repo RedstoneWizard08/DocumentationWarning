@@ -1,0 +1,5075 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EnemyAI | Lethal Company </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EnemyAI | Lethal Company ">
+      
+      
+      <link rel="icon" href="../logo.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.jpg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.EnemyAI">
+
+
+
+  <h1 id="DefaultNamespace_EnemyAI" data-uid="DefaultNamespace.EnemyAI" class="text-break">
+Class EnemyAI  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class EnemyAI : NetworkBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><span class="xref">NetworkBehaviour</span></div>
+      <div><span class="xref">EnemyAI</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.BaboonBirdAI.html">BaboonBirdAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.BlobAI.html">BlobAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.ButlerBeesEnemyAI.html">ButlerBeesEnemyAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.ButlerEnemyAI.html">ButlerEnemyAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.CentipedeAI.html">CentipedeAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.CrawlerAI.html">CrawlerAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.DocileLocustBeesAI.html">DocileLocustBeesAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.DoublewingAI.html">DoublewingAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.DressGirlAI.html">DressGirlAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.FlowerSnakeEnemy.html">FlowerSnakeEnemy</a></div>
+      <div><a class="xref" href="DefaultNamespace.FlowermanAI.html">FlowermanAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.ForestGiantAI.html">ForestGiantAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.HoarderBugAI.html">HoarderBugAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.JesterAI.html">JesterAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.LassoManAI.html">LassoManAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.MaskedPlayerEnemy.html">MaskedPlayerEnemy</a></div>
+      <div><a class="xref" href="DefaultNamespace.MouthDogAI.html">MouthDogAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.NutcrackerEnemyAI.html">NutcrackerEnemyAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.PufferAI.html">PufferAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.RadMechAI.html">RadMechAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.RedLocustBees.html">RedLocustBees</a></div>
+      <div><a class="xref" href="DefaultNamespace.SandSpiderAI.html">SandSpiderAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.SandWormAI.html">SandWormAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.SpringManAI.html">SpringManAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.TestEnemy.html">TestEnemy</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.NetworkVariableFields</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendServerRpc(uint, ServerRpcParams, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendServerRpc(ref FastBufferWriter, uint, ServerRpcParams, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendClientRpc(uint, ClientRpcParams, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.GetNetworkObject(ulong)</a>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsOwner</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsClient</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsHost</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsOwnedByServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.IsSpawned</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.NetworkObject</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.HasNetworkObject</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.NetworkObjectId</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.NetworkBehaviourId</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OwnerClientId</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.m_TargetIdBeingSynchronized</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_EnemyAI__ctor_" data-uid="DefaultNamespace.EnemyAI.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI__ctor" data-uid="DefaultNamespace.EnemyAI.#ctor">
+  EnemyAI()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnemyAI()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_AIIntervalTime" data-uid="DefaultNamespace.EnemyAI.AIIntervalTime">
+  AIIntervalTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;AI Calculation / Netcode&quot;)]
+public float AIIntervalTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_DebugEnemy" data-uid="DefaultNamespace.EnemyAI.DebugEnemy">
+  DebugEnemy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DebugEnemy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_LOSRay" data-uid="DefaultNamespace.EnemyAI.LOSRay">
+  LOSRay
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Ray LOSRay</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Ray.html">Ray</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_addPlayerVelocityToDestination" data-uid="DefaultNamespace.EnemyAI.addPlayerVelocityToDestination">
+  addPlayerVelocityToDestination
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float addPlayerVelocityToDestination</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_agent" data-uid="DefaultNamespace.EnemyAI.agent">
+  agent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NavMeshAgent agent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AI.NavMeshAgent.html">NavMeshAgent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_allAINodes" data-uid="DefaultNamespace.EnemyAI.allAINodes">
+  allAINodes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject[] allAINodes</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_chooseTargetNodeCoroutine" data-uid="DefaultNamespace.EnemyAI.chooseTargetNodeCoroutine">
+  chooseTargetNodeCoroutine
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Coroutine chooseTargetNodeCoroutine</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Coroutine.html">Coroutine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_creatureAnimator" data-uid="DefaultNamespace.EnemyAI.creatureAnimator">
+  creatureAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Animator creatureAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_creatureSFX" data-uid="DefaultNamespace.EnemyAI.creatureSFX">
+  creatureSFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioSource creatureSFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AudioSource.html">AudioSource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_creatureVoice" data-uid="DefaultNamespace.EnemyAI.creatureVoice">
+  creatureVoice
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioSource creatureVoice</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AudioSource.html">AudioSource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_currentBehaviourState" data-uid="DefaultNamespace.EnemyAI.currentBehaviourState">
+  currentBehaviourState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnemyBehaviourState currentBehaviourState</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.EnemyBehaviourState.html">EnemyBehaviourState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_currentBehaviourStateIndex" data-uid="DefaultNamespace.EnemyAI.currentBehaviourStateIndex">
+  currentBehaviourStateIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int currentBehaviourStateIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_currentOwnershipOnThisClient" data-uid="DefaultNamespace.EnemyAI.currentOwnershipOnThisClient">
+  currentOwnershipOnThisClient
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int currentOwnershipOnThisClient</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_currentSearch" data-uid="DefaultNamespace.EnemyAI.currentSearch">
+  currentSearch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AISearchRoutine currentSearch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.AISearchRoutine.html">AISearchRoutine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_daytimeEnemyLeaving" data-uid="DefaultNamespace.EnemyAI.daytimeEnemyLeaving">
+  daytimeEnemyLeaving
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool daytimeEnemyLeaving</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_debugEnemyAI" data-uid="DefaultNamespace.EnemyAI.debugEnemyAI">
+  debugEnemyAI
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool debugEnemyAI</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_destination" data-uid="DefaultNamespace.EnemyAI.destination">
+  destination
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 destination</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_dieSFX" data-uid="DefaultNamespace.EnemyAI.dieSFX">
+  dieSFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioClip dieSFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AudioClip.html">AudioClip</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_enemyBehaviourStates" data-uid="DefaultNamespace.EnemyAI.enemyBehaviourStates">
+  enemyBehaviourStates
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Space(3)]
+public EnemyBehaviourState[] enemyBehaviourStates</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.EnemyBehaviourState.html">EnemyBehaviourState</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_enemyHP" data-uid="DefaultNamespace.EnemyAI.enemyHP">
+  enemyHP
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int enemyHP</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_enemyType" data-uid="DefaultNamespace.EnemyAI.enemyType">
+  enemyType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnemyType enemyType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.EnemyType.html">EnemyType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_exitVentAnimationTime" data-uid="DefaultNamespace.EnemyAI.exitVentAnimationTime">
+  exitVentAnimationTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float exitVentAnimationTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_eye" data-uid="DefaultNamespace.EnemyAI.eye">
+  eye
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform eye</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_favoriteSpot" data-uid="DefaultNamespace.EnemyAI.favoriteSpot">
+  favoriteSpot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform favoriteSpot</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_inSpecialAnimation" data-uid="DefaultNamespace.EnemyAI.inSpecialAnimation">
+  inSpecialAnimation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool inSpecialAnimation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_inSpecialAnimationWithPlayer" data-uid="DefaultNamespace.EnemyAI.inSpecialAnimationWithPlayer">
+  inSpecialAnimationWithPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB inSpecialAnimationWithPlayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_isClientCalculatingAI" data-uid="DefaultNamespace.EnemyAI.isClientCalculatingAI">
+  isClientCalculatingAI
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isClientCalculatingAI</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_isEnemyDead" data-uid="DefaultNamespace.EnemyAI.isEnemyDead">
+  isEnemyDead
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Space(5)]
+public bool isEnemyDead</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_isInsidePlayerShip" data-uid="DefaultNamespace.EnemyAI.isInsidePlayerShip">
+  isInsidePlayerShip
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isInsidePlayerShip</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_isOutside" data-uid="DefaultNamespace.EnemyAI.isOutside">
+  isOutside
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isOutside</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_meshRenderers" data-uid="DefaultNamespace.EnemyAI.meshRenderers">
+  meshRenderers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeshRenderer[] meshRenderers</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MeshRenderer.html">MeshRenderer</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_mostOptimalDistance" data-uid="DefaultNamespace.EnemyAI.mostOptimalDistance">
+  mostOptimalDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public float mostOptimalDistance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_moveTowardsDestination" data-uid="DefaultNamespace.EnemyAI.moveTowardsDestination">
+  moveTowardsDestination
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool moveTowardsDestination</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_movingTowardsTargetPlayer" data-uid="DefaultNamespace.EnemyAI.movingTowardsTargetPlayer">
+  movingTowardsTargetPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool movingTowardsTargetPlayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_nodesTempArray" data-uid="DefaultNamespace.EnemyAI.nodesTempArray">
+  nodesTempArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject[] nodesTempArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_openDoorSpeedMultiplier" data-uid="DefaultNamespace.EnemyAI.openDoorSpeedMultiplier">
+  openDoorSpeedMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float openDoorSpeedMultiplier</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_path1" data-uid="DefaultNamespace.EnemyAI.path1">
+  path1
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public NavMeshPath path1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AI.NavMeshPath.html">NavMeshPath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_pathDistance" data-uid="DefaultNamespace.EnemyAI.pathDistance">
+  pathDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public float pathDistance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_postStunInvincibilityTimer" data-uid="DefaultNamespace.EnemyAI.postStunInvincibilityTimer">
+  postStunInvincibilityTimer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float postStunInvincibilityTimer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_previousBehaviourStateIndex" data-uid="DefaultNamespace.EnemyAI.previousBehaviourStateIndex">
+  previousBehaviourStateIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int previousBehaviourStateIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_previousYRotation" data-uid="DefaultNamespace.EnemyAI.previousYRotation">
+  previousYRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float previousYRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_raycastHit" data-uid="DefaultNamespace.EnemyAI.raycastHit">
+  raycastHit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RaycastHit raycastHit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/RaycastHit.html">RaycastHit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_removedPowerLevel" data-uid="DefaultNamespace.EnemyAI.removedPowerLevel">
+  removedPowerLevel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool removedPowerLevel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_searchCoroutine" data-uid="DefaultNamespace.EnemyAI.searchCoroutine">
+  searchCoroutine
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Coroutine searchCoroutine</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Coroutine.html">Coroutine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_searchRoutineRandom" data-uid="DefaultNamespace.EnemyAI.searchRoutineRandom">
+  searchRoutineRandom
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Random searchRoutineRandom</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.random">Random</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_serverPosition" data-uid="DefaultNamespace.EnemyAI.serverPosition">
+  serverPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 serverPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_serverRotation" data-uid="DefaultNamespace.EnemyAI.serverRotation">
+  serverRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 serverRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_setDestinationToPlayerInterval" data-uid="DefaultNamespace.EnemyAI.setDestinationToPlayerInterval">
+  setDestinationToPlayerInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float setDestinationToPlayerInterval</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_skinnedMeshRenderers" data-uid="DefaultNamespace.EnemyAI.skinnedMeshRenderers">
+  skinnedMeshRenderers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Space(5)]
+public SkinnedMeshRenderer[] skinnedMeshRenderers</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SkinnedMeshRenderer</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_stunNormalizedTimer" data-uid="DefaultNamespace.EnemyAI.stunNormalizedTimer">
+  stunNormalizedTimer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float stunNormalizedTimer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_stunnedByPlayer" data-uid="DefaultNamespace.EnemyAI.stunnedByPlayer">
+  stunnedByPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB stunnedByPlayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_stunnedIndefinitely" data-uid="DefaultNamespace.EnemyAI.stunnedIndefinitely">
+  stunnedIndefinitely
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int stunnedIndefinitely</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_syncMovementSpeed" data-uid="DefaultNamespace.EnemyAI.syncMovementSpeed">
+  syncMovementSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float syncMovementSpeed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_targetNode" data-uid="DefaultNamespace.EnemyAI.targetNode">
+  targetNode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform targetNode</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_targetPlayer" data-uid="DefaultNamespace.EnemyAI.targetPlayer">
+  targetPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB targetPlayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_targetYRotation" data-uid="DefaultNamespace.EnemyAI.targetYRotation">
+  targetYRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float targetYRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_tempDist" data-uid="DefaultNamespace.EnemyAI.tempDist">
+  tempDist
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public float tempDist</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_tempVelocity" data-uid="DefaultNamespace.EnemyAI.tempVelocity">
+  tempVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 tempVelocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_thisEnemyIndex" data-uid="DefaultNamespace.EnemyAI.thisEnemyIndex">
+  thisEnemyIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int thisEnemyIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_thisNetworkObject" data-uid="DefaultNamespace.EnemyAI.thisNetworkObject">
+  thisNetworkObject
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public NetworkObject thisNetworkObject</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NetworkObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_timeSinceSpawn" data-uid="DefaultNamespace.EnemyAI.timeSinceSpawn">
+  timeSinceSpawn
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timeSinceSpawn</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_updateDestinationInterval" data-uid="DefaultNamespace.EnemyAI.updateDestinationInterval">
+  updateDestinationInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float updateDestinationInterval</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_updatePositionThreshold" data-uid="DefaultNamespace.EnemyAI.updatePositionThreshold">
+  updatePositionThreshold
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float updatePositionThreshold</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_useSecondaryAudiosOnAnimatedObjects" data-uid="DefaultNamespace.EnemyAI.useSecondaryAudiosOnAnimatedObjects">
+  useSecondaryAudiosOnAnimatedObjects
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool useSecondaryAudiosOnAnimatedObjects</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_EnemyAI_ventAnimationFinished" data-uid="DefaultNamespace.EnemyAI.ventAnimationFinished">
+  ventAnimationFinished
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ventAnimationFinished</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_EnemyAI_AnimationEventA_" data-uid="DefaultNamespace.EnemyAI.AnimationEventA*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_AnimationEventA" data-uid="DefaultNamespace.EnemyAI.AnimationEventA">
+  AnimationEventA()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AnimationEventA()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_AnimationEventB_" data-uid="DefaultNamespace.EnemyAI.AnimationEventB*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_AnimationEventB" data-uid="DefaultNamespace.EnemyAI.AnimationEventB">
+  AnimationEventB()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AnimationEventB()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_CancelSpecialAnimationWithPlayer_" data-uid="DefaultNamespace.EnemyAI.CancelSpecialAnimationWithPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_CancelSpecialAnimationWithPlayer" data-uid="DefaultNamespace.EnemyAI.CancelSpecialAnimationWithPlayer">
+  CancelSpecialAnimationWithPlayer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CancelSpecialAnimationWithPlayer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ChangeEnemyOwnerClientRpc_" data-uid="DefaultNamespace.EnemyAI.ChangeEnemyOwnerClientRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ChangeEnemyOwnerClientRpc_System_Int32_" data-uid="DefaultNamespace.EnemyAI.ChangeEnemyOwnerClientRpc(System.Int32)">
+  ChangeEnemyOwnerClientRpc(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void ChangeEnemyOwnerClientRpc(int playerVal)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerVal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ChangeEnemyOwnerServerRpc_" data-uid="DefaultNamespace.EnemyAI.ChangeEnemyOwnerServerRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ChangeEnemyOwnerServerRpc_System_UInt64_" data-uid="DefaultNamespace.EnemyAI.ChangeEnemyOwnerServerRpc(System.UInt64)">
+  ChangeEnemyOwnerServerRpc(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc(RequireOwnership = false)]
+public void ChangeEnemyOwnerServerRpc(ulong clientId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>clientId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ChangeOwnershipOfEnemy_" data-uid="DefaultNamespace.EnemyAI.ChangeOwnershipOfEnemy*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ChangeOwnershipOfEnemy_System_UInt64_" data-uid="DefaultNamespace.EnemyAI.ChangeOwnershipOfEnemy(System.UInt64)">
+  ChangeOwnershipOfEnemy(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChangeOwnershipOfEnemy(ulong newOwnerClientId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newOwnerClientId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_CheckLineOfSight_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSight*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_CheckLineOfSight_System_Collections_Generic_List_UnityEngine_GameObject__System_Single_System_Int32_System_Single_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSight(System.Collections.Generic.List{UnityEngine.GameObject},System.Single,System.Int32,System.Single)">
+  CheckLineOfSight(List&lt;GameObject&gt;, float, int, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject CheckLineOfSight(List&lt;GameObject&gt; objectsToLookFor, float width = 45, int range = 60, float proximityAwareness = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectsToLookFor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">GameObject</span>&gt;</dt>
+    <dd></dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>proximityAwareness</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_CheckLineOfSightForClosestPlayer_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSightForClosestPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_CheckLineOfSightForClosestPlayer_System_Single_System_Int32_System_Int32_System_Single_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSightForClosestPlayer(System.Single,System.Int32,System.Int32,System.Single)">
+  CheckLineOfSightForClosestPlayer(float, int, int, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB CheckLineOfSightForClosestPlayer(float width = 45, int range = 60, int proximityAwareness = -1, float bufferDistance = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>proximityAwareness</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>bufferDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_CheckLineOfSightForPlayer_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSightForPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_CheckLineOfSightForPlayer_System_Single_System_Int32_System_Int32_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSightForPlayer(System.Single,System.Int32,System.Int32)">
+  CheckLineOfSightForPlayer(float, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB CheckLineOfSightForPlayer(float width = 45, int range = 60, int proximityAwareness = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>proximityAwareness</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_CheckLineOfSightForPosition_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSightForPosition*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_CheckLineOfSightForPosition_UnityEngine_Vector3_System_Single_System_Int32_System_Single_UnityEngine_Transform_" data-uid="DefaultNamespace.EnemyAI.CheckLineOfSightForPosition(UnityEngine.Vector3,System.Single,System.Int32,System.Single,UnityEngine.Transform)">
+  CheckLineOfSightForPosition(Vector3, float, int, float, Transform)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckLineOfSightForPosition(Vector3 objectPosition, float width = 45, int range = 60, float proximityAwareness = -1, Transform overrideEye = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>proximityAwareness</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>overrideEye</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_CheckTimeOfDayToLeave_" data-uid="DefaultNamespace.EnemyAI.CheckTimeOfDayToLeave*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_CheckTimeOfDayToLeave" data-uid="DefaultNamespace.EnemyAI.CheckTimeOfDayToLeave">
+  CheckTimeOfDayToLeave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckTimeOfDayToLeave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ChooseClosestNodeToPosition_" data-uid="DefaultNamespace.EnemyAI.ChooseClosestNodeToPosition*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ChooseClosestNodeToPosition_UnityEngine_Vector3_System_Boolean_System_Int32_" data-uid="DefaultNamespace.EnemyAI.ChooseClosestNodeToPosition(UnityEngine.Vector3,System.Boolean,System.Int32)">
+  ChooseClosestNodeToPosition(Vector3, bool, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform ChooseClosestNodeToPosition(Vector3 pos, bool avoidLineOfSight = false, int offset = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>avoidLineOfSight</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ChooseFarthestNodeFromPosition_" data-uid="DefaultNamespace.EnemyAI.ChooseFarthestNodeFromPosition*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ChooseFarthestNodeFromPosition_UnityEngine_Vector3_System_Boolean_System_Int32_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.ChooseFarthestNodeFromPosition(UnityEngine.Vector3,System.Boolean,System.Int32,System.Boolean)">
+  ChooseFarthestNodeFromPosition(Vector3, bool, int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform ChooseFarthestNodeFromPosition(Vector3 pos, bool avoidLineOfSight = false, int offset = 0, bool log = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>avoidLineOfSight</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>log</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ChooseNextNodeInSearchRoutine_" data-uid="DefaultNamespace.EnemyAI.ChooseNextNodeInSearchRoutine*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ChooseNextNodeInSearchRoutine" data-uid="DefaultNamespace.EnemyAI.ChooseNextNodeInSearchRoutine">
+  ChooseNextNodeInSearchRoutine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator ChooseNextNodeInSearchRoutine()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_CurrentSearchCoroutine_" data-uid="DefaultNamespace.EnemyAI.CurrentSearchCoroutine*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_CurrentSearchCoroutine" data-uid="DefaultNamespace.EnemyAI.CurrentSearchCoroutine">
+  CurrentSearchCoroutine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator CurrentSearchCoroutine()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_DaytimeEnemyLeave_" data-uid="DefaultNamespace.EnemyAI.DaytimeEnemyLeave*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_DaytimeEnemyLeave" data-uid="DefaultNamespace.EnemyAI.DaytimeEnemyLeave">
+  DaytimeEnemyLeave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DaytimeEnemyLeave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_DetectNoise_" data-uid="DefaultNamespace.EnemyAI.DetectNoise*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_DetectNoise_UnityEngine_Vector3_System_Single_System_Int32_System_Int32_" data-uid="DefaultNamespace.EnemyAI.DetectNoise(UnityEngine.Vector3,System.Single,System.Int32,System.Int32)">
+  DetectNoise(Vector3, float, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DetectNoise(Vector3 noisePosition, float noiseLoudness, int timesPlayedInOneSpot = 0, int noiseID = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>noisePosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>noiseLoudness</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>timesPlayedInOneSpot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>noiseID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_DoAIInterval_" data-uid="DefaultNamespace.EnemyAI.DoAIInterval*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_DoAIInterval" data-uid="DefaultNamespace.EnemyAI.DoAIInterval">
+  DoAIInterval()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DoAIInterval()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_EliminateNodeFromSearch_" data-uid="DefaultNamespace.EnemyAI.EliminateNodeFromSearch*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_EliminateNodeFromSearch_System_Int32_" data-uid="DefaultNamespace.EnemyAI.EliminateNodeFromSearch(System.Int32)">
+  EliminateNodeFromSearch(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EliminateNodeFromSearch(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_EliminateNodeFromSearch_" data-uid="DefaultNamespace.EnemyAI.EliminateNodeFromSearch*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_EliminateNodeFromSearch_UnityEngine_GameObject_" data-uid="DefaultNamespace.EnemyAI.EliminateNodeFromSearch(UnityEngine.GameObject)">
+  EliminateNodeFromSearch(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EliminateNodeFromSearch(GameObject node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_EnableEnemyMesh_" data-uid="DefaultNamespace.EnemyAI.EnableEnemyMesh*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_EnableEnemyMesh_System_Boolean_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.EnableEnemyMesh(System.Boolean,System.Boolean)">
+  EnableEnemyMesh(bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void EnableEnemyMesh(bool enable, bool overrideDoNotSet = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>overrideDoNotSet</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_FinishedCurrentSearchRoutine_" data-uid="DefaultNamespace.EnemyAI.FinishedCurrentSearchRoutine*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_FinishedCurrentSearchRoutine" data-uid="DefaultNamespace.EnemyAI.FinishedCurrentSearchRoutine">
+  FinishedCurrentSearchRoutine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void FinishedCurrentSearchRoutine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_GetAllPlayersInLineOfSight_" data-uid="DefaultNamespace.EnemyAI.GetAllPlayersInLineOfSight*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_GetAllPlayersInLineOfSight_System_Single_System_Int32_UnityEngine_Transform_System_Single_System_Int32_" data-uid="DefaultNamespace.EnemyAI.GetAllPlayersInLineOfSight(System.Single,System.Int32,UnityEngine.Transform,System.Single,System.Int32)">
+  GetAllPlayersInLineOfSight(float, int, Transform, float, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB[] GetAllPlayersInLineOfSight(float width = 45, int range = 60, Transform eyeObject = null, float proximityCheck = -1, int layerMask = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>range</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>eyeObject</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+    <dt><code>proximityCheck</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>layerMask</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_GetClosestPlayer_" data-uid="DefaultNamespace.EnemyAI.GetClosestPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_GetClosestPlayer_System_Boolean_System_Boolean_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.GetClosestPlayer(System.Boolean,System.Boolean,System.Boolean)">
+  GetClosestPlayer(bool, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB GetClosestPlayer(bool requireLineOfSight = false, bool cannotBeInShip = false, bool cannotBeNearShip = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>requireLineOfSight</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>cannotBeInShip</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>cannotBeNearShip</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_HitEnemy_" data-uid="DefaultNamespace.EnemyAI.HitEnemy*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_HitEnemy_System_Int32_GameNetcodeStuff_PlayerControllerB_System_Boolean_System_Int32_" data-uid="DefaultNamespace.EnemyAI.HitEnemy(System.Int32,GameNetcodeStuff.PlayerControllerB,System.Boolean,System.Int32)">
+  HitEnemy(int, PlayerControllerB, bool, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void HitEnemy(int force = 1, PlayerControllerB playerWhoHit = null, bool playHitSFX = false, int hitID = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>playerWhoHit</code> <a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+    <dt><code>playHitSFX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>hitID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_HitEnemyClientRpc_" data-uid="DefaultNamespace.EnemyAI.HitEnemyClientRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_HitEnemyClientRpc_System_Int32_System_Int32_System_Boolean_System_Int32_" data-uid="DefaultNamespace.EnemyAI.HitEnemyClientRpc(System.Int32,System.Int32,System.Boolean,System.Int32)">
+  HitEnemyClientRpc(int, int, bool, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void HitEnemyClientRpc(int force, int playerWhoHit, bool playHitSFX, int hitID = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>playerWhoHit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>playHitSFX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>hitID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_HitEnemyOnLocalClient_" data-uid="DefaultNamespace.EnemyAI.HitEnemyOnLocalClient*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_HitEnemyOnLocalClient_System_Int32_UnityEngine_Vector3_GameNetcodeStuff_PlayerControllerB_System_Boolean_System_Int32_" data-uid="DefaultNamespace.EnemyAI.HitEnemyOnLocalClient(System.Int32,UnityEngine.Vector3,GameNetcodeStuff.PlayerControllerB,System.Boolean,System.Int32)">
+  HitEnemyOnLocalClient(int, Vector3, PlayerControllerB, bool, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HitEnemyOnLocalClient(int force = 1, Vector3 hitDirection = default, PlayerControllerB playerWhoHit = null, bool playHitSFX = false, int hitID = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>hitDirection</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>playerWhoHit</code> <a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+    <dt><code>playHitSFX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>hitID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_HitEnemyServerRpc_" data-uid="DefaultNamespace.EnemyAI.HitEnemyServerRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_HitEnemyServerRpc_System_Int32_System_Int32_System_Boolean_System_Int32_" data-uid="DefaultNamespace.EnemyAI.HitEnemyServerRpc(System.Int32,System.Int32,System.Boolean,System.Int32)">
+  HitEnemyServerRpc(int, int, bool, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc(RequireOwnership = false)]
+public void HitEnemyServerRpc(int force, int playerWhoHit, bool playHitSFX, int hitID = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>playerWhoHit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>playHitSFX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>hitID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_HitFromExplosion_" data-uid="DefaultNamespace.EnemyAI.HitFromExplosion*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_HitFromExplosion_System_Single_" data-uid="DefaultNamespace.EnemyAI.HitFromExplosion(System.Single)">
+  HitFromExplosion(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void HitFromExplosion(float distance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_InitializeRPCS_EnemyAI_" data-uid="DefaultNamespace.EnemyAI.InitializeRPCS_EnemyAI*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_InitializeRPCS_EnemyAI" data-uid="DefaultNamespace.EnemyAI.InitializeRPCS_EnemyAI">
+  InitializeRPCS_EnemyAI()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
+public static void InitializeRPCS_EnemyAI()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_KillEnemy_" data-uid="DefaultNamespace.EnemyAI.KillEnemy*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_KillEnemy_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.KillEnemy(System.Boolean)">
+  KillEnemy(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void KillEnemy(bool destroy = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destroy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_KillEnemyClientRpc_" data-uid="DefaultNamespace.EnemyAI.KillEnemyClientRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_KillEnemyClientRpc_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.KillEnemyClientRpc(System.Boolean)">
+  KillEnemyClientRpc(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void KillEnemyClientRpc(bool destroy)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destroy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_KillEnemyOnOwnerClient_" data-uid="DefaultNamespace.EnemyAI.KillEnemyOnOwnerClient*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_KillEnemyOnOwnerClient_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.KillEnemyOnOwnerClient(System.Boolean)">
+  KillEnemyOnOwnerClient(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void KillEnemyOnOwnerClient(bool overrideDestroy = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>overrideDestroy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_KillEnemyServerRpc_" data-uid="DefaultNamespace.EnemyAI.KillEnemyServerRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_KillEnemyServerRpc_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.KillEnemyServerRpc(System.Boolean)">
+  KillEnemyServerRpc(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc(RequireOwnership = false)]
+public void KillEnemyServerRpc(bool destroy)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destroy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_LogEnemyError_" data-uid="DefaultNamespace.EnemyAI.LogEnemyError*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_LogEnemyError_System_String_" data-uid="DefaultNamespace.EnemyAI.LogEnemyError(System.String)">
+  LogEnemyError(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LogEnemyError(string error)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>error</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_MeetsStandardPlayerCollisionConditions_" data-uid="DefaultNamespace.EnemyAI.MeetsStandardPlayerCollisionConditions*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_MeetsStandardPlayerCollisionConditions_UnityEngine_Collider_System_Boolean_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.MeetsStandardPlayerCollisionConditions(UnityEngine.Collider,System.Boolean,System.Boolean)">
+  MeetsStandardPlayerCollisionConditions(Collider, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControllerB MeetsStandardPlayerCollisionConditions(Collider other, bool inKillAnimation = false, bool overrideIsInsideFactoryCheck = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dd></dd>
+    <dt><code>inKillAnimation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>overrideIsInsideFactoryCheck</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_OnCollideWithEnemy_" data-uid="DefaultNamespace.EnemyAI.OnCollideWithEnemy*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_OnCollideWithEnemy_UnityEngine_Collider_DefaultNamespace_EnemyAI_" data-uid="DefaultNamespace.EnemyAI.OnCollideWithEnemy(UnityEngine.Collider,DefaultNamespace.EnemyAI)">
+  OnCollideWithEnemy(Collider, EnemyAI)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnCollideWithEnemy(Collider other, EnemyAI collidedEnemy = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dd></dd>
+    <dt><code>collidedEnemy</code> <a class="xref" href="DefaultNamespace.EnemyAI.html">EnemyAI</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_OnCollideWithPlayer_" data-uid="DefaultNamespace.EnemyAI.OnCollideWithPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_OnCollideWithPlayer_UnityEngine_Collider_" data-uid="DefaultNamespace.EnemyAI.OnCollideWithPlayer(UnityEngine.Collider)">
+  OnCollideWithPlayer(Collider)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnCollideWithPlayer(Collider other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_OnDestroy_" data-uid="DefaultNamespace.EnemyAI.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_OnDestroy" data-uid="DefaultNamespace.EnemyAI.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_OnDrawGizmos_" data-uid="DefaultNamespace.EnemyAI.OnDrawGizmos*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_OnDrawGizmos" data-uid="DefaultNamespace.EnemyAI.OnDrawGizmos">
+  OnDrawGizmos()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDrawGizmos()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_OnSyncPositionFromServer_" data-uid="DefaultNamespace.EnemyAI.OnSyncPositionFromServer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_OnSyncPositionFromServer_UnityEngine_Vector3_" data-uid="DefaultNamespace.EnemyAI.OnSyncPositionFromServer(UnityEngine.Vector3)">
+  OnSyncPositionFromServer(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnSyncPositionFromServer(Vector3 newPos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newPos</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_PathIsIntersectedByLineOfSight_" data-uid="DefaultNamespace.EnemyAI.PathIsIntersectedByLineOfSight*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_PathIsIntersectedByLineOfSight_UnityEngine_Vector3_System_Boolean_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.PathIsIntersectedByLineOfSight(UnityEngine.Vector3,System.Boolean,System.Boolean)">
+  PathIsIntersectedByLineOfSight(Vector3, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PathIsIntersectedByLineOfSight(Vector3 targetPos, bool calculatePathDistance = false, bool avoidLineOfSight = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>targetPos</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>calculatePathDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>avoidLineOfSight</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_PlayAnimationOfCurrentState_" data-uid="DefaultNamespace.EnemyAI.PlayAnimationOfCurrentState*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_PlayAnimationOfCurrentState" data-uid="DefaultNamespace.EnemyAI.PlayAnimationOfCurrentState">
+  PlayAnimationOfCurrentState()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PlayAnimationOfCurrentState()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_PlayAudioOfCurrentState_" data-uid="DefaultNamespace.EnemyAI.PlayAudioOfCurrentState*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_PlayAudioOfCurrentState" data-uid="DefaultNamespace.EnemyAI.PlayAudioOfCurrentState">
+  PlayAudioOfCurrentState()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PlayAudioOfCurrentState()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_PlayerIsTargetable_" data-uid="DefaultNamespace.EnemyAI.PlayerIsTargetable*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_PlayerIsTargetable_GameNetcodeStuff_PlayerControllerB_System_Boolean_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.PlayerIsTargetable(GameNetcodeStuff.PlayerControllerB,System.Boolean,System.Boolean)">
+  PlayerIsTargetable(PlayerControllerB, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PlayerIsTargetable(PlayerControllerB playerScript, bool cannotBeInShip = false, bool overrideInsideFactoryCheck = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerScript</code> <a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+    <dt><code>cannotBeInShip</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>overrideInsideFactoryCheck</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ReachedNodeInSearch_" data-uid="DefaultNamespace.EnemyAI.ReachedNodeInSearch*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ReachedNodeInSearch" data-uid="DefaultNamespace.EnemyAI.ReachedNodeInSearch">
+  ReachedNodeInSearch()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ReachedNodeInSearch()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ReceiveLoudNoiseBlast_" data-uid="DefaultNamespace.EnemyAI.ReceiveLoudNoiseBlast*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ReceiveLoudNoiseBlast_UnityEngine_Vector3_System_Single_" data-uid="DefaultNamespace.EnemyAI.ReceiveLoudNoiseBlast(UnityEngine.Vector3,System.Single)">
+  ReceiveLoudNoiseBlast(Vector3, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ReceiveLoudNoiseBlast(Vector3 position, float angle)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>angle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_RoundUpToNearestFive_" data-uid="DefaultNamespace.EnemyAI.RoundUpToNearestFive*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_RoundUpToNearestFive_System_Single_" data-uid="DefaultNamespace.EnemyAI.RoundUpToNearestFive(System.Single)">
+  RoundUpToNearestFive(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RoundUpToNearestFive(float x)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SetClientCalculatingAI_" data-uid="DefaultNamespace.EnemyAI.SetClientCalculatingAI*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SetClientCalculatingAI_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.SetClientCalculatingAI(System.Boolean)">
+  SetClientCalculatingAI(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetClientCalculatingAI(bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SetDestinationToPosition_" data-uid="DefaultNamespace.EnemyAI.SetDestinationToPosition*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SetDestinationToPosition_UnityEngine_Vector3_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.SetDestinationToPosition(UnityEngine.Vector3,System.Boolean)">
+  SetDestinationToPosition(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetDestinationToPosition(Vector3 position, bool checkForPath = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>checkForPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SetEnemyOutside_" data-uid="DefaultNamespace.EnemyAI.SetEnemyOutside*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SetEnemyOutside_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.SetEnemyOutside(System.Boolean)">
+  SetEnemyOutside(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetEnemyOutside(bool outside = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>outside</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SetEnemyStunned_" data-uid="DefaultNamespace.EnemyAI.SetEnemyStunned*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SetEnemyStunned_System_Boolean_System_Single_GameNetcodeStuff_PlayerControllerB_" data-uid="DefaultNamespace.EnemyAI.SetEnemyStunned(System.Boolean,System.Single,GameNetcodeStuff.PlayerControllerB)">
+  SetEnemyStunned(bool, float, PlayerControllerB)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetEnemyStunned(bool setToStunned, float setToStunTime = 1, PlayerControllerB setStunnedByPlayer = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>setToStunned</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>setToStunTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>setStunnedByPlayer</code> <a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SetMovingTowardsTargetPlayer_" data-uid="DefaultNamespace.EnemyAI.SetMovingTowardsTargetPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SetMovingTowardsTargetPlayer_GameNetcodeStuff_PlayerControllerB_" data-uid="DefaultNamespace.EnemyAI.SetMovingTowardsTargetPlayer(GameNetcodeStuff.PlayerControllerB)">
+  SetMovingTowardsTargetPlayer(PlayerControllerB)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMovingTowardsTargetPlayer(PlayerControllerB playerScript)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerScript</code> <a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_ShipTeleportEnemy_" data-uid="DefaultNamespace.EnemyAI.ShipTeleportEnemy*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_ShipTeleportEnemy" data-uid="DefaultNamespace.EnemyAI.ShipTeleportEnemy">
+  ShipTeleportEnemy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ShipTeleportEnemy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_Start_" data-uid="DefaultNamespace.EnemyAI.Start*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_Start" data-uid="DefaultNamespace.EnemyAI.Start">
+  Start()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Start()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_StartCalculatingNextTargetNode_" data-uid="DefaultNamespace.EnemyAI.StartCalculatingNextTargetNode*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_StartCalculatingNextTargetNode" data-uid="DefaultNamespace.EnemyAI.StartCalculatingNextTargetNode">
+  StartCalculatingNextTargetNode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartCalculatingNextTargetNode()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_StartSearch_" data-uid="DefaultNamespace.EnemyAI.StartSearch*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_StartSearch_UnityEngine_Vector3_DefaultNamespace_AISearchRoutine_" data-uid="DefaultNamespace.EnemyAI.StartSearch(UnityEngine.Vector3,DefaultNamespace.AISearchRoutine)">
+  StartSearch(Vector3, AISearchRoutine)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartSearch(Vector3 startOfSearch, AISearchRoutine newSearch = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startOfSearch</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>newSearch</code> <a class="xref" href="DefaultNamespace.AISearchRoutine.html">AISearchRoutine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_StopSearch_" data-uid="DefaultNamespace.EnemyAI.StopSearch*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_StopSearch_DefaultNamespace_AISearchRoutine_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.StopSearch(DefaultNamespace.AISearchRoutine,System.Boolean)">
+  StopSearch(AISearchRoutine, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopSearch(AISearchRoutine search, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>search</code> <a class="xref" href="DefaultNamespace.AISearchRoutine.html">AISearchRoutine</a></dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SubtractFromPowerLevel_" data-uid="DefaultNamespace.EnemyAI.SubtractFromPowerLevel*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SubtractFromPowerLevel" data-uid="DefaultNamespace.EnemyAI.SubtractFromPowerLevel">
+  SubtractFromPowerLevel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubtractFromPowerLevel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SwitchToBehaviourClientRpc_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourClientRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SwitchToBehaviourClientRpc_System_Int32_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourClientRpc(System.Int32)">
+  SwitchToBehaviourClientRpc(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void SwitchToBehaviourClientRpc(int stateIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stateIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SwitchToBehaviourServerRpc_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourServerRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SwitchToBehaviourServerRpc_System_Int32_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourServerRpc(System.Int32)">
+  SwitchToBehaviourServerRpc(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc(RequireOwnership = false)]
+public void SwitchToBehaviourServerRpc(int stateIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stateIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SwitchToBehaviourState_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourState*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SwitchToBehaviourState_System_Int32_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourState(System.Int32)">
+  SwitchToBehaviourState(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchToBehaviourState(int stateIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stateIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SwitchToBehaviourStateOnLocalClient_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourStateOnLocalClient*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SwitchToBehaviourStateOnLocalClient_System_Int32_" data-uid="DefaultNamespace.EnemyAI.SwitchToBehaviourStateOnLocalClient(System.Int32)">
+  SwitchToBehaviourStateOnLocalClient(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchToBehaviourStateOnLocalClient(int stateIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stateIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_SyncPositionToClients_" data-uid="DefaultNamespace.EnemyAI.SyncPositionToClients*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_SyncPositionToClients" data-uid="DefaultNamespace.EnemyAI.SyncPositionToClients">
+  SyncPositionToClients()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SyncPositionToClients()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_TargetClosestPlayer_" data-uid="DefaultNamespace.EnemyAI.TargetClosestPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_TargetClosestPlayer_System_Single_System_Boolean_System_Single_" data-uid="DefaultNamespace.EnemyAI.TargetClosestPlayer(System.Single,System.Boolean,System.Single)">
+  TargetClosestPlayer(float, bool, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TargetClosestPlayer(float bufferDistance = 1.5, bool requireLineOfSight = false, float viewWidth = 70)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bufferDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>requireLineOfSight</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>viewWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_Update_" data-uid="DefaultNamespace.EnemyAI.Update*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_Update" data-uid="DefaultNamespace.EnemyAI.Update">
+  Update()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Update()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_UpdateEnemyPositionClientRpc_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyPositionClientRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_UpdateEnemyPositionClientRpc_UnityEngine_Vector3_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyPositionClientRpc(UnityEngine.Vector3)">
+  UpdateEnemyPositionClientRpc(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void UpdateEnemyPositionClientRpc(Vector3 newPos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newPos</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_UpdateEnemyPositionServerRpc_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyPositionServerRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_UpdateEnemyPositionServerRpc_UnityEngine_Vector3_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyPositionServerRpc(UnityEngine.Vector3)">
+  UpdateEnemyPositionServerRpc(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc]
+public void UpdateEnemyPositionServerRpc(Vector3 newPos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newPos</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_UpdateEnemyRotationClientRpc_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyRotationClientRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_UpdateEnemyRotationClientRpc_System_Int16_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyRotationClientRpc(System.Int16)">
+  UpdateEnemyRotationClientRpc(short)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void UpdateEnemyRotationClientRpc(short rotationY)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rotationY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_UpdateEnemyRotationServerRpc_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyRotationServerRpc*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_UpdateEnemyRotationServerRpc_System_Int16_" data-uid="DefaultNamespace.EnemyAI.UpdateEnemyRotationServerRpc(System.Int16)">
+  UpdateEnemyRotationServerRpc(short)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc]
+public void UpdateEnemyRotationServerRpc(short rotationY)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rotationY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_UseNestSpawnObject_" data-uid="DefaultNamespace.EnemyAI.UseNestSpawnObject*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_UseNestSpawnObject_DefaultNamespace_EnemyAINestSpawnObject_" data-uid="DefaultNamespace.EnemyAI.UseNestSpawnObject(DefaultNamespace.EnemyAINestSpawnObject)">
+  UseNestSpawnObject(EnemyAINestSpawnObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void UseNestSpawnObject(EnemyAINestSpawnObject nestSpawnObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nestSpawnObject</code> <a class="xref" href="DefaultNamespace.EnemyAINestSpawnObject.html">EnemyAINestSpawnObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___getTypeName_" data-uid="DefaultNamespace.EnemyAI.__getTypeName*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___getTypeName" data-uid="DefaultNamespace.EnemyAI.__getTypeName">
+  __getTypeName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string __getTypeName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___initializeVariables_" data-uid="DefaultNamespace.EnemyAI.__initializeVariables*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___initializeVariables" data-uid="DefaultNamespace.EnemyAI.__initializeVariables">
+  __initializeVariables()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void __initializeVariables()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_1258118513_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_1258118513*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_1258118513_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_1258118513(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_1258118513(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_1258118513(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_1614111717_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_1614111717*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_1614111717_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_1614111717(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_1614111717(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_1614111717(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_1810146992_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_1810146992*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_1810146992_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_1810146992(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_1810146992(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_1810146992(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_2081148948_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_2081148948*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_2081148948_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_2081148948(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_2081148948(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_2081148948(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_245785831_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_245785831*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_245785831_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_245785831(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_245785831(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_245785831(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_255411420_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_255411420*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_255411420_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_255411420(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_255411420(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_255411420(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_2962895088_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_2962895088*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_2962895088_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_2962895088(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_2962895088(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_2962895088(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_3079913705_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_3079913705*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_3079913705_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_3079913705(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_3079913705(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_3079913705(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_3538577804_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_3538577804*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_3538577804_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_3538577804(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_3538577804(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_3538577804(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_3587030867_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_3587030867*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_3587030867_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_3587030867(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_3587030867(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_3587030867(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_4287979896_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_4287979896*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_4287979896_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_4287979896(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_4287979896(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_4287979896(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___rpc_handler_601871377_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_601871377*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___rpc_handler_601871377_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.EnemyAI.__rpc_handler_601871377(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_601871377(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_601871377(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

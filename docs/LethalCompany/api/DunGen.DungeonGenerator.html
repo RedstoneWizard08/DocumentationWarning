@@ -1,0 +1,2938 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DungeonGenerator | Lethal Company </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DungeonGenerator | Lethal Company ">
+      
+      
+      <link rel="icon" href="../logo.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.jpg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DunGen.DungeonGenerator">
+
+
+
+  <h1 id="DunGen_DungeonGenerator" data-uid="DunGen.DungeonGenerator" class="text-break">
+Class DungeonGenerator  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DunGen.html">DunGen</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class DungeonGenerator : ISerializationCallbackReceiver</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DungeonGenerator</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">ISerializationCallbackReceiver</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DunGen_DungeonGenerator__ctor_" data-uid="DunGen.DungeonGenerator.#ctor*"></a>
+
+  <h3 id="DunGen_DungeonGenerator__ctor" data-uid="DunGen.DungeonGenerator.#ctor">
+  DungeonGenerator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DungeonGenerator()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator__ctor_" data-uid="DunGen.DungeonGenerator.#ctor*"></a>
+
+  <h3 id="DunGen_DungeonGenerator__ctor_UnityEngine_GameObject_" data-uid="DunGen.DungeonGenerator.#ctor(UnityEngine.GameObject)">
+  DungeonGenerator(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DungeonGenerator(GameObject root)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>root</code> <span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DunGen_DungeonGenerator_AllowTileRotation" data-uid="DunGen.DungeonGenerator.AllowTileRotation">
+  AllowTileRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowTileRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_CurrentFileVersion" data-uid="DunGen.DungeonGenerator.CurrentFileVersion">
+  CurrentFileVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int CurrentFileVersion = 1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_DebugRender" data-uid="DunGen.DungeonGenerator.DebugRender">
+  DebugRender
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DebugRender</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_DisallowOverhangs" data-uid="DunGen.DungeonGenerator.DisallowOverhangs">
+  DisallowOverhangs
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisallowOverhangs</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_DungeonFlow" data-uid="DunGen.DungeonGenerator.DungeonFlow">
+  DungeonFlow
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DungeonFlow DungeonFlow</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.Graph.DungeonFlow.html">DungeonFlow</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_GenerateAsynchronously" data-uid="DunGen.DungeonGenerator.GenerateAsynchronously">
+  GenerateAsynchronously
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GenerateAsynchronously</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_IgnoreSpriteBounds" data-uid="DunGen.DungeonGenerator.IgnoreSpriteBounds">
+  IgnoreSpriteBounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IgnoreSpriteBounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_LengthMultiplier" data-uid="DunGen.DungeonGenerator.LengthMultiplier">
+  LengthMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LengthMultiplier</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_MaxAsyncFrameMilliseconds" data-uid="DunGen.DungeonGenerator.MaxAsyncFrameMilliseconds">
+  MaxAsyncFrameMilliseconds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxAsyncFrameMilliseconds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_MaxAttemptCount" data-uid="DunGen.DungeonGenerator.MaxAttemptCount">
+  MaxAttemptCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxAttemptCount</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_MaxPairingAttempts" data-uid="DunGen.DungeonGenerator.MaxPairingAttempts">
+  MaxPairingAttempts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxPairingAttempts</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_OverlapThreshold" data-uid="DunGen.DungeonGenerator.OverlapThreshold">
+  OverlapThreshold
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OverlapThreshold</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_OverrideAllowTileRotation" data-uid="DunGen.DungeonGenerator.OverrideAllowTileRotation">
+  OverrideAllowTileRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool OverrideAllowTileRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_OverrideRepeatMode" data-uid="DunGen.DungeonGenerator.OverrideRepeatMode">
+  OverrideRepeatMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[FormerlySerializedAs(&quot;OverrideAllowImmediateRepeats&quot;)]
+public bool OverrideRepeatMode</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_Padding" data-uid="DunGen.DungeonGenerator.Padding">
+  Padding
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Padding</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_PauseBetweenRooms" data-uid="DunGen.DungeonGenerator.PauseBetweenRooms">
+  PauseBetweenRooms
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PauseBetweenRooms</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_PlaceTileTriggers" data-uid="DunGen.DungeonGenerator.PlaceTileTriggers">
+  PlaceTileTriggers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PlaceTileTriggers</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_RepeatMode" data-uid="DunGen.DungeonGenerator.RepeatMode">
+  RepeatMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileRepeatMode RepeatMode</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.TileRepeatMode.html">TileRepeatMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_RestrictDungeonToBounds" data-uid="DunGen.DungeonGenerator.RestrictDungeonToBounds">
+  RestrictDungeonToBounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RestrictDungeonToBounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_Root" data-uid="DunGen.DungeonGenerator.Root">
+  Root
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject Root</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_Seed" data-uid="DunGen.DungeonGenerator.Seed">
+  Seed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Seed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_ShouldRandomizeSeed" data-uid="DunGen.DungeonGenerator.ShouldRandomizeSeed">
+  ShouldRandomizeSeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldRandomizeSeed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_TilePlacementBounds" data-uid="DunGen.DungeonGenerator.TilePlacementBounds">
+  TilePlacementBounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Bounds TilePlacementBounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_TileTriggerLayer" data-uid="DunGen.DungeonGenerator.TileTriggerLayer">
+  TileTriggerLayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TileTriggerLayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_UpDirection" data-uid="DunGen.DungeonGenerator.UpDirection">
+  UpDirection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AxisDirection UpDirection</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.AxisDirection.html">AxisDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_UseMaximumPairingAttempts" data-uid="DunGen.DungeonGenerator.UseMaximumPairingAttempts">
+  UseMaximumPairingAttempts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseMaximumPairingAttempts</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_allowImmediateRepeats" data-uid="DunGen.DungeonGenerator.allowImmediateRepeats">
+  allowImmediateRepeats
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[FormerlySerializedAs(&quot;AllowImmediateRepeats&quot;)]
+public bool allowImmediateRepeats</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_currentArchetype" data-uid="DunGen.DungeonGenerator.currentArchetype">
+  currentArchetype
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DungeonArchetype currentArchetype</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.DungeonArchetype.html">DungeonArchetype</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_fileVersion" data-uid="DunGen.DungeonGenerator.fileVersion">
+  fileVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public int fileVersion</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_injectedTiles" data-uid="DunGen.DungeonGenerator.injectedTiles">
+  injectedTiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;TileProxy, InjectedTile&gt; injectedTiles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DunGen.TileProxy.html">TileProxy</a>, <a class="xref" href="DunGen.InjectedTile.html">InjectedTile</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_nextNodeIndex" data-uid="DunGen.DungeonGenerator.nextNodeIndex">
+  nextNodeIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int nextNodeIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_postProcessSteps" data-uid="DunGen.DungeonGenerator.postProcessSteps">
+  postProcessSteps
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;DungeonGeneratorPostProcessStep&gt; postProcessSteps</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.DungeonGeneratorPostProcessStep.html">DungeonGeneratorPostProcessStep</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_preProcessData" data-uid="DunGen.DungeonGenerator.preProcessData">
+  preProcessData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;TileProxy&gt; preProcessData</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.TileProxy.html">TileProxy</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_previousLineSegment" data-uid="DunGen.DungeonGenerator.previousLineSegment">
+  previousLineSegment
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GraphLine previousLineSegment</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.Graph.GraphLine.html">GraphLine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_proxyDungeon" data-uid="DunGen.DungeonGenerator.proxyDungeon">
+  proxyDungeon
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DungeonProxy proxyDungeon</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.DungeonProxy.html">DungeonProxy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_retryCount" data-uid="DunGen.DungeonGenerator.retryCount">
+  retryCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int retryCount</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_targetLength" data-uid="DunGen.DungeonGenerator.targetLength">
+  targetLength
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int targetLength</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_tilePlacementResultCounters" data-uid="DunGen.DungeonGenerator.tilePlacementResultCounters">
+  tilePlacementResultCounters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Dictionary&lt;TilePlacementResult, int&gt; tilePlacementResultCounters</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DunGen.TilePlacementResult.html">TilePlacementResult</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_tilesPendingInjection" data-uid="DunGen.DungeonGenerator.tilesPendingInjection">
+  tilesPendingInjection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;InjectedTile&gt; tilesPendingInjection</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.InjectedTile.html">InjectedTile</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_useableTiles" data-uid="DunGen.DungeonGenerator.useableTiles">
+  useableTiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly List&lt;GameObject&gt; useableTiles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">GameObject</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_yieldTimer" data-uid="DunGen.DungeonGenerator.yieldTimer">
+  yieldTimer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stopwatch yieldTimer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.diagnostics.stopwatch">Stopwatch</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DunGen_DungeonGenerator_ChosenSeed_" data-uid="DunGen.DungeonGenerator.ChosenSeed*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_ChosenSeed" data-uid="DunGen.DungeonGenerator.ChosenSeed">
+  ChosenSeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ChosenSeed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_CurrentDungeon_" data-uid="DunGen.DungeonGenerator.CurrentDungeon*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_CurrentDungeon" data-uid="DunGen.DungeonGenerator.CurrentDungeon">
+  CurrentDungeon
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dungeon CurrentDungeon { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.Dungeon.html">Dungeon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_GenerationStats_" data-uid="DunGen.DungeonGenerator.GenerationStats*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_GenerationStats" data-uid="DunGen.DungeonGenerator.GenerationStats">
+  GenerationStats
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GenerationStats GenerationStats { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.GenerationStats.html">GenerationStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_IsAnalysis_" data-uid="DunGen.DungeonGenerator.IsAnalysis*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_IsAnalysis" data-uid="DunGen.DungeonGenerator.IsAnalysis">
+  IsAnalysis
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnalysis { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_IsGenerating_" data-uid="DunGen.DungeonGenerator.IsGenerating*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_IsGenerating" data-uid="DunGen.DungeonGenerator.IsGenerating">
+  IsGenerating
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsGenerating { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_RandomStream_" data-uid="DunGen.DungeonGenerator.RandomStream*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_RandomStream" data-uid="DunGen.DungeonGenerator.RandomStream">
+  RandomStream
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RandomStream RandomStream { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.RandomStream.html">RandomStream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_Status_" data-uid="DunGen.DungeonGenerator.Status*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_Status" data-uid="DunGen.DungeonGenerator.Status">
+  Status
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GenerationStatus Status { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.GenerationStatus.html">GenerationStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_UpVector_" data-uid="DunGen.DungeonGenerator.UpVector*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_UpVector" data-uid="DunGen.DungeonGenerator.UpVector">
+  UpVector
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 UpVector { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DunGen_DungeonGenerator_AddTile_" data-uid="DunGen.DungeonGenerator.AddTile*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_AddTile_DunGen_TileProxy_System_Collections_Generic_IEnumerable_DunGen_TileSet__System_Single_DunGen_DungeonArchetype_DunGen_TilePlacementResult_" data-uid="DunGen.DungeonGenerator.AddTile(DunGen.TileProxy,System.Collections.Generic.IEnumerable{DunGen.TileSet},System.Single,DunGen.DungeonArchetype,DunGen.TilePlacementResult)">
+  AddTile(TileProxy, IEnumerable&lt;TileSet&gt;, float, DungeonArchetype, TilePlacementResult)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TileProxy AddTile(TileProxy attachTo, IEnumerable&lt;TileSet&gt; useableTileSets, float normalizedDepth, DungeonArchetype archetype, TilePlacementResult result = TilePlacementResult.None)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>attachTo</code> <a class="xref" href="DunGen.TileProxy.html">TileProxy</a></dt>
+    <dd></dd>
+    <dt><code>useableTileSets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DunGen.TileSet.html">TileSet</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>normalizedDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>archetype</code> <a class="xref" href="DunGen.DungeonArchetype.html">DungeonArchetype</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="DunGen.TilePlacementResult.html">TilePlacementResult</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.TileProxy.html">TileProxy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_AddTilePlacementResult_" data-uid="DunGen.DungeonGenerator.AddTilePlacementResult*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_AddTilePlacementResult_DunGen_TilePlacementResult_" data-uid="DunGen.DungeonGenerator.AddTilePlacementResult(DunGen.TilePlacementResult)">
+  AddTilePlacementResult(TilePlacementResult)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddTilePlacementResult(TilePlacementResult result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="DunGen.TilePlacementResult.html">TilePlacementResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_Cancel_" data-uid="DunGen.DungeonGenerator.Cancel*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_Cancel" data-uid="DunGen.DungeonGenerator.Cancel">
+  Cancel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Cancel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_ChangeStatus_" data-uid="DunGen.DungeonGenerator.ChangeStatus*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_ChangeStatus_DunGen_GenerationStatus_" data-uid="DunGen.DungeonGenerator.ChangeStatus(DunGen.GenerationStatus)">
+  ChangeStatus(GenerationStatus)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChangeStatus(GenerationStatus status)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>status</code> <a class="xref" href="DunGen.GenerationStatus.html">GenerationStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_Clear_" data-uid="DunGen.DungeonGenerator.Clear*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_Clear_System_Boolean_" data-uid="DunGen.DungeonGenerator.Clear(System.Boolean)">
+  Clear(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Clear(bool stopCoroutines)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stopCoroutines</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_DetachDungeon_" data-uid="DunGen.DungeonGenerator.DetachDungeon*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_DetachDungeon" data-uid="DunGen.DungeonGenerator.DetachDungeon">
+  DetachDungeon()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dungeon DetachDungeon()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.Dungeon.html">Dungeon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_GatherTilesToInject_" data-uid="DunGen.DungeonGenerator.GatherTilesToInject*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_GatherTilesToInject" data-uid="DunGen.DungeonGenerator.GatherTilesToInject">
+  GatherTilesToInject()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void GatherTilesToInject()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_Generate_" data-uid="DunGen.DungeonGenerator.Generate*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_Generate" data-uid="DunGen.DungeonGenerator.Generate">
+  Generate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Generate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_GenerateBranchPaths_" data-uid="DunGen.DungeonGenerator.GenerateBranchPaths*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_GenerateBranchPaths" data-uid="DunGen.DungeonGenerator.GenerateBranchPaths">
+  GenerateBranchPaths()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerator GenerateBranchPaths()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_GenerateMainPath_" data-uid="DunGen.DungeonGenerator.GenerateMainPath*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_GenerateMainPath" data-uid="DunGen.DungeonGenerator.GenerateMainPath">
+  GenerateMainPath()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerator GenerateMainPath()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_GetRoomPause_" data-uid="DunGen.DungeonGenerator.GetRoomPause*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_GetRoomPause" data-uid="DunGen.DungeonGenerator.GetRoomPause">
+  GetRoomPause()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public YieldInstruction GetRoomPause()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/YieldInstruction.html">YieldInstruction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_GetTileTemplate_" data-uid="DunGen.DungeonGenerator.GetTileTemplate*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_GetTileTemplate_UnityEngine_GameObject_" data-uid="DunGen.DungeonGenerator.GetTileTemplate(UnityEngine.GameObject)">
+  GetTileTemplate(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileProxy GetTileTemplate(GameObject prefab)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>prefab</code> <span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.TileProxy.html">TileProxy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_IndexToNormalizedDepth_" data-uid="DunGen.DungeonGenerator.IndexToNormalizedDepth*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_IndexToNormalizedDepth_System_Int32_" data-uid="DunGen.DungeonGenerator.IndexToNormalizedDepth(System.Int32)">
+  IndexToNormalizedDepth(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float IndexToNormalizedDepth(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_InnerGenerate_" data-uid="DunGen.DungeonGenerator.InnerGenerate*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_InnerGenerate_System_Boolean_" data-uid="DunGen.DungeonGenerator.InnerGenerate(System.Boolean)">
+  InnerGenerate(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerator InnerGenerate(bool isRetry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isRetry</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_IsCollidingWithAnyTile_" data-uid="DunGen.DungeonGenerator.IsCollidingWithAnyTile*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_IsCollidingWithAnyTile_DunGen_TileProxy_DunGen_TileProxy_" data-uid="DunGen.DungeonGenerator.IsCollidingWithAnyTile(DunGen.TileProxy,DunGen.TileProxy)">
+  IsCollidingWithAnyTile(TileProxy, TileProxy)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCollidingWithAnyTile(TileProxy newTile, TileProxy previousTile)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newTile</code> <a class="xref" href="DunGen.TileProxy.html">TileProxy</a></dt>
+    <dd></dd>
+    <dt><code>previousTile</code> <a class="xref" href="DunGen.TileProxy.html">TileProxy</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_LockDoorway_" data-uid="DunGen.DungeonGenerator.LockDoorway*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_LockDoorway_DunGen_Doorway_DunGen_Key_DunGen_KeyManager_" data-uid="DunGen.DungeonGenerator.LockDoorway(DunGen.Doorway,DunGen.Key,DunGen.KeyManager)">
+  LockDoorway(Doorway, Key, KeyManager)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LockDoorway(Doorway doorway, Key key, KeyManager keyManager)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>doorway</code> <a class="xref" href="DunGen.Doorway.html">Doorway</a></dt>
+    <dd></dd>
+    <dt><code>key</code> <a class="xref" href="DunGen.Key.html">Key</a></dt>
+    <dd></dd>
+    <dt><code>keyManager</code> <a class="xref" href="DunGen.KeyManager.html">KeyManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_NormalizedDepthToIndex_" data-uid="DunGen.DungeonGenerator.NormalizedDepthToIndex*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_NormalizedDepthToIndex_System_Single_" data-uid="DunGen.DungeonGenerator.NormalizedDepthToIndex(System.Single)">
+  NormalizedDepthToIndex(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NormalizedDepthToIndex(float normalizedDepth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>normalizedDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_OnAfterDeserialize_" data-uid="DunGen.DungeonGenerator.OnAfterDeserialize*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_OnAfterDeserialize" data-uid="DunGen.DungeonGenerator.OnAfterDeserialize">
+  OnAfterDeserialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnAfterDeserialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_OnBeforeSerialize_" data-uid="DunGen.DungeonGenerator.OnBeforeSerialize*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_OnBeforeSerialize" data-uid="DunGen.DungeonGenerator.OnBeforeSerialize">
+  OnBeforeSerialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnBeforeSerialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_OuterGenerate_" data-uid="DunGen.DungeonGenerator.OuterGenerate*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_OuterGenerate" data-uid="DunGen.DungeonGenerator.OuterGenerate">
+  OuterGenerate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerator OuterGenerate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_PickRandomTemplate_" data-uid="DunGen.DungeonGenerator.PickRandomTemplate*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_PickRandomTemplate_DunGen_DoorwaySocket_" data-uid="DunGen.DungeonGenerator.PickRandomTemplate(DunGen.DoorwaySocket)">
+  PickRandomTemplate(DoorwaySocket)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileProxy PickRandomTemplate(DoorwaySocket socketGroupFilter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>socketGroupFilter</code> <a class="xref" href="DunGen.DoorwaySocket.html">DoorwaySocket</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.TileProxy.html">TileProxy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_PlaceLocksAndKeys_" data-uid="DunGen.DungeonGenerator.PlaceLocksAndKeys*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_PlaceLocksAndKeys" data-uid="DunGen.DungeonGenerator.PlaceLocksAndKeys">
+  PlaceLocksAndKeys()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void PlaceLocksAndKeys()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_PostProcess_" data-uid="DunGen.DungeonGenerator.PostProcess*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_PostProcess" data-uid="DunGen.DungeonGenerator.PostProcess">
+  PostProcess()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerator PostProcess()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_PreProcess_" data-uid="DunGen.DungeonGenerator.PreProcess*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_PreProcess" data-uid="DunGen.DungeonGenerator.PreProcess">
+  PreProcess()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void PreProcess()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_ProcessGlobalProps_" data-uid="DunGen.DungeonGenerator.ProcessGlobalProps*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_ProcessGlobalProps" data-uid="DunGen.DungeonGenerator.ProcessGlobalProps">
+  ProcessGlobalProps()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ProcessGlobalProps()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_ProcessProps_" data-uid="DunGen.DungeonGenerator.ProcessProps*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_ProcessProps_DunGen_Tile_UnityEngine_GameObject_" data-uid="DunGen.DungeonGenerator.ProcessProps(DunGen.Tile,UnityEngine.GameObject)">
+  ProcessProps(Tile, GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ProcessProps(Tile tile, GameObject root)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tile</code> <a class="xref" href="DunGen.Tile.html">Tile</a></dt>
+    <dd></dd>
+    <dt><code>root</code> <span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_PruneBranches_" data-uid="DunGen.DungeonGenerator.PruneBranches*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_PruneBranches" data-uid="DunGen.DungeonGenerator.PruneBranches">
+  PruneBranches()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PruneBranches()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_RandomizeSeed_" data-uid="DunGen.DungeonGenerator.RandomizeSeed*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_RandomizeSeed" data-uid="DunGen.DungeonGenerator.RandomizeSeed">
+  RandomizeSeed()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RandomizeSeed()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_RegisterPostProcessStep_" data-uid="DunGen.DungeonGenerator.RegisterPostProcessStep*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_RegisterPostProcessStep_System_Action_DunGen_DungeonGenerator__System_Int32_DunGen_PostProcessPhase_" data-uid="DunGen.DungeonGenerator.RegisterPostProcessStep(System.Action{DunGen.DungeonGenerator},System.Int32,DunGen.PostProcessPhase)">
+  RegisterPostProcessStep(Action&lt;DungeonGenerator&gt;, int, PostProcessPhase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterPostProcessStep(Action&lt;DungeonGenerator&gt; postProcessCallback, int priority = 0, PostProcessPhase phase = PostProcessPhase.AfterBuiltIn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>postProcessCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="DunGen.DungeonGenerator.html">DungeonGenerator</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>phase</code> <a class="xref" href="DunGen.PostProcessPhase.html">PostProcessPhase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_ShouldSkipFrame_" data-uid="DunGen.DungeonGenerator.ShouldSkipFrame*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_ShouldSkipFrame_System_Boolean_" data-uid="DunGen.DungeonGenerator.ShouldSkipFrame(System.Boolean)">
+  ShouldSkipFrame(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSkipFrame(bool isRoomPlacement)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isRoomPlacement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_TryPlaceTile_" data-uid="DunGen.DungeonGenerator.TryPlaceTile*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_TryPlaceTile_DunGen_DoorwayPair_DunGen_DungeonArchetype_DunGen_TileProxy__" data-uid="DunGen.DungeonGenerator.TryPlaceTile(DunGen.DoorwayPair,DunGen.DungeonArchetype,DunGen.TileProxy@)">
+  TryPlaceTile(DoorwayPair, DungeonArchetype, out TileProxy)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TilePlacementResult TryPlaceTile(DoorwayPair pair, DungeonArchetype archetype, out TileProxy tile)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pair</code> <a class="xref" href="DunGen.DoorwayPair.html">DoorwayPair</a></dt>
+    <dd></dd>
+    <dt><code>archetype</code> <a class="xref" href="DunGen.DungeonArchetype.html">DungeonArchetype</a></dt>
+    <dd></dd>
+    <dt><code>tile</code> <a class="xref" href="DunGen.TileProxy.html">TileProxy</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.TilePlacementResult.html">TilePlacementResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_UnregisterPostProcessStep_" data-uid="DunGen.DungeonGenerator.UnregisterPostProcessStep*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_UnregisterPostProcessStep_System_Action_DunGen_DungeonGenerator__" data-uid="DunGen.DungeonGenerator.UnregisterPostProcessStep(System.Action{DunGen.DungeonGenerator})">
+  UnregisterPostProcessStep(Action&lt;DungeonGenerator&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnregisterPostProcessStep(Action&lt;DungeonGenerator&gt; postProcessCallback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>postProcessCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="DunGen.DungeonGenerator.html">DungeonGenerator</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_DungeonGenerator_Wait_" data-uid="DunGen.DungeonGenerator.Wait*"></a>
+
+  <h3 id="DunGen_DungeonGenerator_Wait_System_Collections_IEnumerator_" data-uid="DunGen.DungeonGenerator.Wait(System.Collections.IEnumerator)">
+  Wait(IEnumerator)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Coroutine Wait(IEnumerator routine)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>routine</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Coroutine.html">Coroutine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="DunGen_DungeonGenerator_Cleared" data-uid="DunGen.DungeonGenerator.Cleared">
+  Cleared
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action Cleared</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_OnAnyDungeonGenerationStatusChanged" data-uid="DunGen.DungeonGenerator.OnAnyDungeonGenerationStatusChanged">
+  OnAnyDungeonGenerationStatusChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event GenerationStatusDelegate OnAnyDungeonGenerationStatusChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.GenerationStatusDelegate.html">GenerationStatusDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_OnGenerationStatusChanged" data-uid="DunGen.DungeonGenerator.OnGenerationStatusChanged">
+  OnGenerationStatusChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event GenerationStatusDelegate OnGenerationStatusChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.GenerationStatusDelegate.html">GenerationStatusDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_Retrying" data-uid="DunGen.DungeonGenerator.Retrying">
+  Retrying
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action Retrying</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_DungeonGenerator_TileInjectionMethods" data-uid="DunGen.DungeonGenerator.TileInjectionMethods">
+  TileInjectionMethods
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TileInjectionDelegate TileInjectionMethods</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.TileInjectionDelegate.html">TileInjectionDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

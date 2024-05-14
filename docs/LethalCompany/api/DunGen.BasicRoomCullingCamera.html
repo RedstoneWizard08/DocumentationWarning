@@ -1,0 +1,1271 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class BasicRoomCullingCamera | Lethal Company </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class BasicRoomCullingCamera | Lethal Company ">
+      
+      
+      <link rel="icon" href="../logo.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.jpg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DunGen.BasicRoomCullingCamera">
+
+
+
+  <h1 id="DunGen_BasicRoomCullingCamera" data-uid="DunGen.BasicRoomCullingCamera" class="text-break">
+Class BasicRoomCullingCamera  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DunGen.html">DunGen</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;DunGen/Culling/Adjacent Room Culling (Multi-Camera)&quot;)]
+public class BasicRoomCullingCamera : MonoBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><span class="xref">BasicRoomCullingCamera</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DunGen_BasicRoomCullingCamera__ctor_" data-uid="DunGen.BasicRoomCullingCamera.#ctor*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera__ctor" data-uid="DunGen.BasicRoomCullingCamera.#ctor">
+  BasicRoomCullingCamera()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BasicRoomCullingCamera()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_AdjacentTileDepth" data-uid="DunGen.BasicRoomCullingCamera.AdjacentTileDepth">
+  AdjacentTileDepth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AdjacentTileDepth</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_CullBehindClosedDoors" data-uid="DunGen.BasicRoomCullingCamera.CullBehindClosedDoors">
+  CullBehindClosedDoors
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CullBehindClosedDoors</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_CullInEditor" data-uid="DunGen.BasicRoomCullingCamera.CullInEditor">
+  CullInEditor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CullInEditor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_CullLights" data-uid="DunGen.BasicRoomCullingCamera.CullLights">
+  CullLights
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CullLights</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_TargetOverride" data-uid="DunGen.BasicRoomCullingCamera.TargetOverride">
+  TargetOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform TargetOverride</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_allDoors" data-uid="DunGen.BasicRoomCullingCamera.allDoors">
+  allDoors
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Door&gt; allDoors</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.Door.html">Door</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_allTiles" data-uid="DunGen.BasicRoomCullingCamera.allTiles">
+  allTiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Tile&gt; allTiles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.Tile.html">Tile</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_currentTile" data-uid="DunGen.BasicRoomCullingCamera.currentTile">
+  currentTile
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tile currentTile</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.Tile.html">Tile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_doorRendererVisibilities" data-uid="DunGen.BasicRoomCullingCamera.doorRendererVisibilities">
+  doorRendererVisibilities
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Door, List&lt;BasicRoomCullingCamera.RendererData&gt;&gt; doorRendererVisibilities</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DunGen.Door.html">Door</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.BasicRoomCullingCamera.html">BasicRoomCullingCamera</a>.<a class="xref" href="DunGen.BasicRoomCullingCamera.RendererData.html">RendererData</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_generator" data-uid="DunGen.BasicRoomCullingCamera.generator">
+  generator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DungeonGenerator generator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DunGen.DungeonGenerator.html">DungeonGenerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_isCulling" data-uid="DunGen.BasicRoomCullingCamera.isCulling">
+  isCulling
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isCulling</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_isDirty" data-uid="DunGen.BasicRoomCullingCamera.isDirty">
+  isDirty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isDirty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_lightVisibilities" data-uid="DunGen.BasicRoomCullingCamera.lightVisibilities">
+  lightVisibilities
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Tile, List&lt;BasicRoomCullingCamera.LightData&gt;&gt; lightVisibilities</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DunGen.Tile.html">Tile</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.BasicRoomCullingCamera.html">BasicRoomCullingCamera</a>.<a class="xref" href="DunGen.BasicRoomCullingCamera.LightData.html">LightData</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_reflectionProbeVisibilities" data-uid="DunGen.BasicRoomCullingCamera.reflectionProbeVisibilities">
+  reflectionProbeVisibilities
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Tile, List&lt;BasicRoomCullingCamera.ReflectionProbeData&gt;&gt; reflectionProbeVisibilities</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DunGen.Tile.html">Tile</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.BasicRoomCullingCamera.html">BasicRoomCullingCamera</a>.<a class="xref" href="DunGen.BasicRoomCullingCamera.ReflectionProbeData.html">ReflectionProbeData</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_rendererVisibilities" data-uid="DunGen.BasicRoomCullingCamera.rendererVisibilities">
+  rendererVisibilities
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Tile, List&lt;BasicRoomCullingCamera.RendererData&gt;&gt; rendererVisibilities</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DunGen.Tile.html">Tile</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.BasicRoomCullingCamera.html">BasicRoomCullingCamera</a>.<a class="xref" href="DunGen.BasicRoomCullingCamera.RendererData.html">RendererData</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DunGen_BasicRoomCullingCamera_visibleTiles" data-uid="DunGen.BasicRoomCullingCamera.visibleTiles">
+  visibleTiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Tile&gt; visibleTiles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DunGen.Tile.html">Tile</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DunGen_BasicRoomCullingCamera_IsReady_" data-uid="DunGen.BasicRoomCullingCamera.IsReady*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_IsReady" data-uid="DunGen.BasicRoomCullingCamera.IsReady">
+  IsReady
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReady { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DunGen_BasicRoomCullingCamera_Awake_" data-uid="DunGen.BasicRoomCullingCamera.Awake*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_Awake" data-uid="DunGen.BasicRoomCullingCamera.Awake">
+  Awake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Awake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_ClearDungeon_" data-uid="DunGen.BasicRoomCullingCamera.ClearDungeon*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_ClearDungeon" data-uid="DunGen.BasicRoomCullingCamera.ClearDungeon">
+  ClearDungeon()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ClearDungeon()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_DisableCulling_" data-uid="DunGen.BasicRoomCullingCamera.DisableCulling*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_DisableCulling_UnityEngine_Camera_" data-uid="DunGen.BasicRoomCullingCamera.DisableCulling(UnityEngine.Camera)">
+  DisableCulling(Camera)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DisableCulling(Camera camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>camera</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_EnableCulling_" data-uid="DunGen.BasicRoomCullingCamera.EnableCulling*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_EnableCulling_UnityEngine_Camera_" data-uid="DunGen.BasicRoomCullingCamera.EnableCulling(UnityEngine.Camera)">
+  EnableCulling(Camera)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void EnableCulling(Camera camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>camera</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_GetAllDoorsInDungeon_" data-uid="DunGen.BasicRoomCullingCamera.GetAllDoorsInDungeon*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_GetAllDoorsInDungeon_DunGen_Dungeon_" data-uid="DunGen.BasicRoomCullingCamera.GetAllDoorsInDungeon(DunGen.Dungeon)">
+  GetAllDoorsInDungeon(Dungeon)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Door&gt; GetAllDoorsInDungeon(Dungeon dungeon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dungeon</code> <a class="xref" href="DunGen.Dungeon.html">Dungeon</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DunGen.Door.html">Door</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_LateUpdate_" data-uid="DunGen.BasicRoomCullingCamera.LateUpdate*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_LateUpdate" data-uid="DunGen.BasicRoomCullingCamera.LateUpdate">
+  LateUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LateUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_OnBeginCameraRendering_" data-uid="DunGen.BasicRoomCullingCamera.OnBeginCameraRendering*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_OnBeginCameraRendering_UnityEngine_Rendering_ScriptableRenderContext_UnityEngine_Camera_" data-uid="DunGen.BasicRoomCullingCamera.OnBeginCameraRendering(UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera)">
+  OnBeginCameraRendering(ScriptableRenderContext, Camera)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnBeginCameraRendering(ScriptableRenderContext context, Camera camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Rendering.ScriptableRenderContext.html">ScriptableRenderContext</a></dt>
+    <dd></dd>
+    <dt><code>camera</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_OnDestroy_" data-uid="DunGen.BasicRoomCullingCamera.OnDestroy*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_OnDestroy" data-uid="DunGen.BasicRoomCullingCamera.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_OnDisable_" data-uid="DunGen.BasicRoomCullingCamera.OnDisable*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_OnDisable" data-uid="DunGen.BasicRoomCullingCamera.OnDisable">
+  OnDisable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDisable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_OnDoorStateChanged_" data-uid="DunGen.BasicRoomCullingCamera.OnDoorStateChanged*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_OnDoorStateChanged_DunGen_Door_System_Boolean_" data-uid="DunGen.BasicRoomCullingCamera.OnDoorStateChanged(DunGen.Door,System.Boolean)">
+  OnDoorStateChanged(Door, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDoorStateChanged(Door door, bool isOpen)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>door</code> <a class="xref" href="DunGen.Door.html">Door</a></dt>
+    <dd></dd>
+    <dt><code>isOpen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_OnDungeonGenerationStatusChanged_" data-uid="DunGen.BasicRoomCullingCamera.OnDungeonGenerationStatusChanged*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_OnDungeonGenerationStatusChanged_DunGen_DungeonGenerator_DunGen_GenerationStatus_" data-uid="DunGen.BasicRoomCullingCamera.OnDungeonGenerationStatusChanged(DunGen.DungeonGenerator,DunGen.GenerationStatus)">
+  OnDungeonGenerationStatusChanged(DungeonGenerator, GenerationStatus)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDungeonGenerationStatusChanged(DungeonGenerator generator, GenerationStatus status)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>generator</code> <a class="xref" href="DunGen.DungeonGenerator.html">DungeonGenerator</a></dt>
+    <dd></dd>
+    <dt><code>status</code> <a class="xref" href="DunGen.GenerationStatus.html">GenerationStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_OnEnable_" data-uid="DunGen.BasicRoomCullingCamera.OnEnable*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_OnEnable" data-uid="DunGen.BasicRoomCullingCamera.OnEnable">
+  OnEnable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnEnable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_OnEndCameraRendering_" data-uid="DunGen.BasicRoomCullingCamera.OnEndCameraRendering*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_OnEndCameraRendering_UnityEngine_Rendering_ScriptableRenderContext_UnityEngine_Camera_" data-uid="DunGen.BasicRoomCullingCamera.OnEndCameraRendering(UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera)">
+  OnEndCameraRendering(ScriptableRenderContext, Camera)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnEndCameraRendering(ScriptableRenderContext context, Camera camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Rendering.ScriptableRenderContext.html">ScriptableRenderContext</a></dt>
+    <dd></dd>
+    <dt><code>camera</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_SetCullingEnabled_" data-uid="DunGen.BasicRoomCullingCamera.SetCullingEnabled*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_SetCullingEnabled_UnityEngine_Camera_System_Boolean_" data-uid="DunGen.BasicRoomCullingCamera.SetCullingEnabled(UnityEngine.Camera,System.Boolean)">
+  SetCullingEnabled(Camera, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCullingEnabled(Camera camera, bool enabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>camera</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_SetDungeon_" data-uid="DunGen.BasicRoomCullingCamera.SetDungeon*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_SetDungeon_DunGen_Dungeon_" data-uid="DunGen.BasicRoomCullingCamera.SetDungeon(DunGen.Dungeon)">
+  SetDungeon(Dungeon)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDungeon(Dungeon dungeon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dungeon</code> <a class="xref" href="DunGen.Dungeon.html">Dungeon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_SetIsCulling_" data-uid="DunGen.BasicRoomCullingCamera.SetIsCulling*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_SetIsCulling_System_Boolean_" data-uid="DunGen.BasicRoomCullingCamera.SetIsCulling(System.Boolean)">
+  SetIsCulling(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetIsCulling(bool isCulling)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isCulling</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_UpdateCulling_" data-uid="DunGen.BasicRoomCullingCamera.UpdateCulling*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_UpdateCulling" data-uid="DunGen.BasicRoomCullingCamera.UpdateCulling">
+  UpdateCulling()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateCulling()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DunGen_BasicRoomCullingCamera_UpdateRendererList_" data-uid="DunGen.BasicRoomCullingCamera.UpdateRendererList*"></a>
+
+  <h3 id="DunGen_BasicRoomCullingCamera_UpdateRendererList_DunGen_Tile_" data-uid="DunGen.BasicRoomCullingCamera.UpdateRendererList(DunGen.Tile)">
+  UpdateRendererList(Tile)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateRendererList(Tile tile)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tile</code> <a class="xref" href="DunGen.Tile.html">Tile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
