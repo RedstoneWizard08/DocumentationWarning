@@ -1,0 +1,4033 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ZipFile | Subnautica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ZipFile | Subnautica ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile">
+
+
+
+  <h1 id="ICSharpCode_SharpZipLib_Zip_ZipFile" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile" class="text-break">
+Class ZipFile  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ICSharpCode.html">ICSharpCode</a>.<a class="xref" href="ICSharpCode.SharpZipLib.html">SharpZipLib</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.html">Zip</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ZipFile : IEnumerable, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ZipFile</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor">
+  ZipFile()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_System_IO_FileStream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor(System.IO.FileStream)">
+  ZipFile(FileStream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile(FileStream file)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_System_IO_FileStream_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor(System.IO.FileStream,System.Boolean)">
+  ZipFile(FileStream, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile(FileStream file, bool leaveOpen)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>file</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></dt>
+    <dd></dd>
+    <dt><code>leaveOpen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_System_IO_Stream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor(System.IO.Stream)">
+  ZipFile(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile(Stream stream)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_System_IO_Stream_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor(System.IO.Stream,System.Boolean)">
+  ZipFile(Stream, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile(Stream stream, bool leaveOpen)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>leaveOpen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile__ctor_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.#ctor(System.String)">
+  ZipFile(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_DefaultBufferSize" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.DefaultBufferSize">
+  DefaultBufferSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int DefaultBufferSize = 4096</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_KeysRequired" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.KeysRequired">
+  KeysRequired
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile.KeysRequiredEventHandler KeysRequired</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.KeysRequiredEventHandler.html">KeysRequiredEventHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_archiveStorage_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.archiveStorage_">
+  archiveStorage_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IArchiveStorage archiveStorage_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.IArchiveStorage.html">IArchiveStorage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_baseStream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.baseStream_">
+  baseStream_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream baseStream_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_bufferSize_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.bufferSize_">
+  bufferSize_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int bufferSize_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_commentEdited_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.commentEdited_">
+  commentEdited_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool commentEdited_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_comment_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.comment_">
+  comment_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string comment_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_contentsEdited_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.contentsEdited_">
+  contentsEdited_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool contentsEdited_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_copyBuffer_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.copyBuffer_">
+  copyBuffer_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] copyBuffer_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_entries_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.entries_">
+  entries_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipEntry[] entries_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_isDisposed_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.isDisposed_">
+  isDisposed_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isDisposed_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_isNewArchive_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.isNewArchive_">
+  isNewArchive_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isNewArchive_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_isStreamOwner" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.isStreamOwner">
+  isStreamOwner
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isStreamOwner</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_key" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.key">
+  key
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] key</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_name_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.name_">
+  name_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string name_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_newComment_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.newComment_">
+  newComment_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipFile.ZipString newComment_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipString.html">ZipString</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_offsetOfFirstEntry" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.offsetOfFirstEntry">
+  offsetOfFirstEntry
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long offsetOfFirstEntry</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_rawPassword_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.rawPassword_">
+  rawPassword_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string rawPassword_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_updateCount_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.updateCount_">
+  updateCount_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long updateCount_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_updateDataSource_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.updateDataSource_">
+  updateDataSource_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDynamicDataSource updateDataSource_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.IDynamicDataSource.html">IDynamicDataSource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_updateEntryFactory_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.updateEntryFactory_">
+  updateEntryFactory_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEntryFactory updateEntryFactory_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.IEntryFactory.html">IEntryFactory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_updateIndex_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.updateIndex_">
+  updateIndex_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, int&gt; updateIndex_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_updates_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.updates_">
+  updates_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ZipFile.ZipUpdate&gt; updates_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_useZip64_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.useZip64_">
+  useZip64_
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UseZip64 useZip64_</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.UseZip64.html">UseZip64</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_BufferSize_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BufferSize*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_BufferSize" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BufferSize">
+  BufferSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BufferSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Count_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Count*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Count" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Count">
+  Count
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Count { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_EntryByIndex_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.EntryByIndex*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_EntryByIndex_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.EntryByIndex(System.Int32)">
+  this[int]
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipEntry this[int index] { get; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_EntryFactory_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.EntryFactory*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_EntryFactory" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.EntryFactory">
+  EntryFactory
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEntryFactory EntryFactory { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.IEntryFactory.html">IEntryFactory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_HaveKeys_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.HaveKeys*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_HaveKeys" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.HaveKeys">
+  HaveKeys
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HaveKeys { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsEmbeddedArchive_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsEmbeddedArchive*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsEmbeddedArchive" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsEmbeddedArchive">
+  IsEmbeddedArchive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmbeddedArchive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsNewArchive_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsNewArchive*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsNewArchive" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsNewArchive">
+  IsNewArchive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsNewArchive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsStreamOwner_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsStreamOwner*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsStreamOwner" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsStreamOwner">
+  IsStreamOwner
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsStreamOwner { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsUpdating_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsUpdating*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_IsUpdating" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.IsUpdating">
+  IsUpdating
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUpdating { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Key_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Key*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Key" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Key">
+  Key
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] Key { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Name_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Name*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Name" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Name">
+  Name
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_NameTransform_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.NameTransform*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_NameTransform" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.NameTransform">
+  NameTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public INameTransform NameTransform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Core.INameTransform.html">INameTransform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Password_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Password*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Password" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Password">
+  Password
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Size_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Size*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Size" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Size">
+  Size
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use the Count property instead&quot;)]
+public int Size { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_UseZip64_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.UseZip64*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_UseZip64" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.UseZip64">
+  UseZip64
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UseZip64 UseZip64 { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.UseZip64.html">UseZip64</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_ZipFileComment_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipFileComment*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_ZipFileComment" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipFileComment">
+  ZipFileComment
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ZipFileComment { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_AbortUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AbortUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_AbortUpdate" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AbortUpdate">
+  AbortUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AbortUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_ICSharpCode_SharpZipLib_Zip_IStaticDataSource_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(ICSharpCode.SharpZipLib.Zip.IStaticDataSource,ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  Add(IStaticDataSource, ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(IStaticDataSource dataSource, ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataSource</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.IStaticDataSource.html">IStaticDataSource</a></dt>
+    <dd></dd>
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_ICSharpCode_SharpZipLib_Zip_IStaticDataSource_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(ICSharpCode.SharpZipLib.Zip.IStaticDataSource,System.String)">
+  Add(IStaticDataSource, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(IStaticDataSource dataSource, string entryName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataSource</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.IStaticDataSource.html">IStaticDataSource</a></dt>
+    <dd></dd>
+    <dt><code>entryName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_ICSharpCode_SharpZipLib_Zip_IStaticDataSource_System_String_ICSharpCode_SharpZipLib_Zip_CompressionMethod_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(ICSharpCode.SharpZipLib.Zip.IStaticDataSource,System.String,ICSharpCode.SharpZipLib.Zip.CompressionMethod)">
+  Add(IStaticDataSource, string, CompressionMethod)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(IStaticDataSource dataSource, string entryName, CompressionMethod compressionMethod)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataSource</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.IStaticDataSource.html">IStaticDataSource</a></dt>
+    <dd></dd>
+    <dt><code>entryName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>compressionMethod</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.CompressionMethod.html">CompressionMethod</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_ICSharpCode_SharpZipLib_Zip_IStaticDataSource_System_String_ICSharpCode_SharpZipLib_Zip_CompressionMethod_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(ICSharpCode.SharpZipLib.Zip.IStaticDataSource,System.String,ICSharpCode.SharpZipLib.Zip.CompressionMethod,System.Boolean)">
+  Add(IStaticDataSource, string, CompressionMethod, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(IStaticDataSource dataSource, string entryName, CompressionMethod compressionMethod, bool useUnicodeText)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataSource</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.IStaticDataSource.html">IStaticDataSource</a></dt>
+    <dd></dd>
+    <dt><code>entryName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>compressionMethod</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.CompressionMethod.html">CompressionMethod</a></dt>
+    <dd></dd>
+    <dt><code>useUnicodeText</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  Add(ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(System.String)">
+  Add(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_System_String_ICSharpCode_SharpZipLib_Zip_CompressionMethod_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(System.String,ICSharpCode.SharpZipLib.Zip.CompressionMethod)">
+  Add(string, CompressionMethod)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string fileName, CompressionMethod compressionMethod)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>compressionMethod</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.CompressionMethod.html">CompressionMethod</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_System_String_ICSharpCode_SharpZipLib_Zip_CompressionMethod_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(System.String,ICSharpCode.SharpZipLib.Zip.CompressionMethod,System.Boolean)">
+  Add(string, CompressionMethod, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string fileName, CompressionMethod compressionMethod, bool useUnicodeText)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>compressionMethod</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.CompressionMethod.html">CompressionMethod</a></dt>
+    <dd></dd>
+    <dt><code>useUnicodeText</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Add_System_String_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Add(System.String,System.String)">
+  Add(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string fileName, string entryName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>entryName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_AddDirectory_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AddDirectory*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_AddDirectory_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AddDirectory(System.String)">
+  AddDirectory(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddDirectory(string directoryName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directoryName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_AddEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AddEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_AddEntry_ICSharpCode_SharpZipLib_Zip_ZipFile_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AddEntry(ICSharpCode.SharpZipLib.Zip.ZipFile,ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate)">
+  AddEntry(ZipFile, ZipUpdate)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddEntry(ZipFile workFile, ZipFile.ZipUpdate update)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>workFile</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a></dt>
+    <dd></dd>
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_AddUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AddUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_AddUpdate_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.AddUpdate(ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate)">
+  AddUpdate(ZipUpdate)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddUpdate(ZipFile.ZipUpdate update)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_BeginUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BeginUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_BeginUpdate" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BeginUpdate">
+  BeginUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BeginUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_BeginUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BeginUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_BeginUpdate_ICSharpCode_SharpZipLib_Zip_IArchiveStorage_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BeginUpdate(ICSharpCode.SharpZipLib.Zip.IArchiveStorage)">
+  BeginUpdate(IArchiveStorage)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BeginUpdate(IArchiveStorage archiveStorage)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>archiveStorage</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.IArchiveStorage.html">IArchiveStorage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_BeginUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BeginUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_BeginUpdate_ICSharpCode_SharpZipLib_Zip_IArchiveStorage_ICSharpCode_SharpZipLib_Zip_IDynamicDataSource_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.BeginUpdate(ICSharpCode.SharpZipLib.Zip.IArchiveStorage,ICSharpCode.SharpZipLib.Zip.IDynamicDataSource)">
+  BeginUpdate(IArchiveStorage, IDynamicDataSource)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BeginUpdate(IArchiveStorage archiveStorage, IDynamicDataSource dataSource)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>archiveStorage</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.IArchiveStorage.html">IArchiveStorage</a></dt>
+    <dd></dd>
+    <dt><code>dataSource</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.IDynamicDataSource.html">IDynamicDataSource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CheckClassicPassword_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CheckClassicPassword*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CheckClassicPassword_System_Security_Cryptography_CryptoStream_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CheckClassicPassword(System.Security.Cryptography.CryptoStream,ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  CheckClassicPassword(CryptoStream, ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CheckClassicPassword(CryptoStream classicCryptoStream, ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>classicCryptoStream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream">CryptoStream</a></dt>
+    <dd></dd>
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CheckSupportedCompressionMethod_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CheckSupportedCompressionMethod*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CheckSupportedCompressionMethod_ICSharpCode_SharpZipLib_Zip_CompressionMethod_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CheckSupportedCompressionMethod(ICSharpCode.SharpZipLib.Zip.CompressionMethod)">
+  CheckSupportedCompressionMethod(CompressionMethod)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckSupportedCompressionMethod(CompressionMethod compressionMethod)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>compressionMethod</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.CompressionMethod.html">CompressionMethod</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CheckUpdating_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CheckUpdating*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CheckUpdating" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CheckUpdating">
+  CheckUpdating()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckUpdating()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Close_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Close*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Close" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Close">
+  Close()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Close()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CommitUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CommitUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CommitUpdate" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CommitUpdate">
+  CommitUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CommitUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyBytes_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyBytes*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyBytes_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_System_IO_Stream_System_IO_Stream_System_Int64_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyBytes(ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate,System.IO.Stream,System.IO.Stream,System.Int64,System.Boolean)">
+  CopyBytes(ZipUpdate, Stream, Stream, long, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyBytes(ZipFile.ZipUpdate update, Stream destination, Stream source, long bytesToCopy, bool updateCrc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+    <dt><code>destination</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>bytesToCopy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>updateCrc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyDescriptorBytes_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyDescriptorBytes*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyDescriptorBytes_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_System_IO_Stream_System_IO_Stream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyDescriptorBytes(ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate,System.IO.Stream,System.IO.Stream)">
+  CopyDescriptorBytes(ZipUpdate, Stream, Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyDescriptorBytes(ZipFile.ZipUpdate update, Stream dest, Stream source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+    <dt><code>dest</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyDescriptorBytesDirect_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyDescriptorBytesDirect*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyDescriptorBytesDirect_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_System_IO_Stream_System_Int64__System_Int64_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyDescriptorBytesDirect(ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate,System.IO.Stream,System.Int64@,System.Int64)">
+  CopyDescriptorBytesDirect(ZipUpdate, Stream, ref long, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyDescriptorBytesDirect(ZipFile.ZipUpdate update, Stream stream, ref long destinationPosition, long sourcePosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>destinationPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>sourcePosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyEntry_ICSharpCode_SharpZipLib_Zip_ZipFile_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyEntry(ICSharpCode.SharpZipLib.Zip.ZipFile,ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate)">
+  CopyEntry(ZipFile, ZipUpdate)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyEntry(ZipFile workFile, ZipFile.ZipUpdate update)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>workFile</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a></dt>
+    <dd></dd>
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyEntryDataDirect_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyEntryDataDirect*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyEntryDataDirect_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_System_IO_Stream_System_Boolean_System_Int64__System_Int64__" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyEntryDataDirect(ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate,System.IO.Stream,System.Boolean,System.Int64@,System.Int64@)">
+  CopyEntryDataDirect(ZipUpdate, Stream, bool, ref long, ref long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyEntryDataDirect(ZipFile.ZipUpdate update, Stream stream, bool updateCrc, ref long destinationPosition, ref long sourcePosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>updateCrc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>destinationPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>sourcePosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyEntryDirect_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyEntryDirect*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CopyEntryDirect_ICSharpCode_SharpZipLib_Zip_ZipFile_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_System_Int64__" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CopyEntryDirect(ICSharpCode.SharpZipLib.Zip.ZipFile,ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate,System.Int64@)">
+  CopyEntryDirect(ZipFile, ZipUpdate, ref long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyEntryDirect(ZipFile workFile, ZipFile.ZipUpdate update, ref long destinationPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>workFile</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a></dt>
+    <dd></dd>
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+    <dt><code>destinationPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Create_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Create*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Create_System_IO_Stream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Create(System.IO.Stream)">
+  Create(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ZipFile Create(Stream outStream)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>outStream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Create_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Create*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Create_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Create(System.String)">
+  Create(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ZipFile Create(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CreateAndInitDecryptionStream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CreateAndInitDecryptionStream*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CreateAndInitDecryptionStream_System_IO_Stream_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CreateAndInitDecryptionStream(System.IO.Stream,ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  CreateAndInitDecryptionStream(Stream, ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream CreateAndInitDecryptionStream(Stream baseStream, ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>baseStream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_CreateAndInitEncryptionStream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CreateAndInitEncryptionStream*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_CreateAndInitEncryptionStream_System_IO_Stream_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.CreateAndInitEncryptionStream(System.IO.Stream,ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  CreateAndInitEncryptionStream(Stream, ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream CreateAndInitEncryptionStream(Stream baseStream, ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>baseStream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Delete_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Delete*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Delete_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Delete(ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  Delete(ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Delete(ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Delete_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Delete*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Delete_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Delete(System.String)">
+  Delete(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Delete(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Dispose_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Dispose*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Dispose_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Dispose(System.Boolean)">
+  Dispose(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose(bool disposing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_DisposeInternal_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.DisposeInternal*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_DisposeInternal_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.DisposeInternal(System.Boolean)">
+  DisposeInternal(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisposeInternal(bool disposing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Finalize_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Finalize*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Finalize" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Finalize">
+  ~ZipFile()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ~ZipFile()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_FindEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.FindEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_FindEntry_System_String_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.FindEntry(System.String,System.Boolean)">
+  FindEntry(string, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FindEntry(string name, bool ignoreCase)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ignoreCase</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_FindExistingUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.FindExistingUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_FindExistingUpdate_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.FindExistingUpdate(ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  FindExistingUpdate(ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FindExistingUpdate(ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_FindExistingUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.FindExistingUpdate*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_FindExistingUpdate_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.FindExistingUpdate(System.String)">
+  FindExistingUpdate(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FindExistingUpdate(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetBuffer_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetBuffer*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetBuffer" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetBuffer">
+  GetBuffer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] GetBuffer()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetDescriptorSize_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetDescriptorSize*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetDescriptorSize_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetDescriptorSize(ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate)">
+  GetDescriptorSize(ZipUpdate)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetDescriptorSize(ZipFile.ZipUpdate update)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetEntry_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetEntry(System.String)">
+  GetEntry(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipEntry GetEntry(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetEnumerator_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetEnumerator*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetEnumerator" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetEnumerator">
+  GetEnumerator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through a collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a> object that can be used to iterate through the collection.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetInputStream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetInputStream*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetInputStream_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetInputStream(ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  GetInputStream(ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream GetInputStream(ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetInputStream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetInputStream*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetInputStream_System_Int64_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetInputStream(System.Int64)">
+  GetInputStream(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream GetInputStream(long entryIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entryIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetOutputStream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetOutputStream*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetOutputStream_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetOutputStream(ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  GetOutputStream(ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream GetOutputStream(ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetTransformedDirectoryName_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetTransformedDirectoryName*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetTransformedDirectoryName_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetTransformedDirectoryName(System.String)">
+  GetTransformedDirectoryName(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetTransformedDirectoryName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetTransformedFileName_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetTransformedFileName*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_GetTransformedFileName_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.GetTransformedFileName(System.String)">
+  GetTransformedFileName(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetTransformedFileName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_LocateBlockWithSignature_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.LocateBlockWithSignature*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_LocateBlockWithSignature_System_Int32_System_Int64_System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.LocateBlockWithSignature(System.Int32,System.Int64,System.Int32,System.Int32)">
+  LocateBlockWithSignature(int, long, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long LocateBlockWithSignature(int signature, long endLocation, int minimumBlockSize, int maximumVariableData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>signature</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>endLocation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>minimumBlockSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maximumVariableData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_LocateEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.LocateEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_LocateEntry_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.LocateEntry(ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  LocateEntry(ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long LocateEntry(ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_ModifyEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ModifyEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_ModifyEntry_ICSharpCode_SharpZipLib_Zip_ZipFile_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ModifyEntry(ICSharpCode.SharpZipLib.Zip.ZipFile,ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate)">
+  ModifyEntry(ZipFile, ZipUpdate)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ModifyEntry(ZipFile workFile, ZipFile.ZipUpdate update)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>workFile</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a></dt>
+    <dd></dd>
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_OnKeysRequired_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.OnKeysRequired*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_OnKeysRequired_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.OnKeysRequired(System.String)">
+  OnKeysRequired(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnKeysRequired(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_PostUpdateCleanup_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.PostUpdateCleanup*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_PostUpdateCleanup" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.PostUpdateCleanup">
+  PostUpdateCleanup()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PostUpdateCleanup()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadEntries_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadEntries*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadEntries" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadEntries">
+  ReadEntries()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReadEntries()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadLEUint_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadLEUint*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadLEUint" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadLEUint">
+  ReadLEUint()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ReadLEUint()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadLEUlong_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadLEUlong*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadLEUlong" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadLEUlong">
+  ReadLEUlong()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ulong ReadLEUlong()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadLEUshort_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadLEUshort*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_ReadLEUshort" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.ReadLEUshort">
+  ReadLEUshort()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ushort ReadLEUshort()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Reopen_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Reopen*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Reopen" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Reopen">
+  Reopen()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reopen()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_Reopen_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Reopen*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_Reopen_System_IO_Stream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.Reopen(System.IO.Stream)">
+  Reopen(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reopen(Stream source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_RunUpdates_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.RunUpdates*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_RunUpdates" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.RunUpdates">
+  RunUpdates()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RunUpdates()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_SetComment_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.SetComment*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_SetComment_System_String_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.SetComment(System.String)">
+  SetComment(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetComment(string comment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>comment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_TestArchive_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.TestArchive*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_TestArchive_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.TestArchive(System.Boolean)">
+  TestArchive(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TestArchive(bool testData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>testData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_TestArchive_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.TestArchive*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_TestArchive_System_Boolean_ICSharpCode_SharpZipLib_Zip_TestStrategy_ICSharpCode_SharpZipLib_Zip_ZipTestResultHandler_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.TestArchive(System.Boolean,ICSharpCode.SharpZipLib.Zip.TestStrategy,ICSharpCode.SharpZipLib.Zip.ZipTestResultHandler)">
+  TestArchive(bool, TestStrategy, ZipTestResultHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TestArchive(bool testData, TestStrategy strategy, ZipTestResultHandler resultHandler)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>testData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>strategy</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.TestStrategy.html">TestStrategy</a></dt>
+    <dd></dd>
+    <dt><code>resultHandler</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipTestResultHandler.html">ZipTestResultHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_TestLocalHeader_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.TestLocalHeader*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_TestLocalHeader_ICSharpCode_SharpZipLib_Zip_ZipEntry_ICSharpCode_SharpZipLib_Zip_ZipFile_HeaderTest_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.TestLocalHeader(ICSharpCode.SharpZipLib.Zip.ZipEntry,ICSharpCode.SharpZipLib.Zip.ZipFile.HeaderTest)">
+  TestLocalHeader(ZipEntry, HeaderTest)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TestLocalHeader(ZipEntry entry, ZipFile.HeaderTest tests)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+    <dt><code>tests</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.HeaderTest.html">HeaderTest</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_UpdateCommentOnly_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.UpdateCommentOnly*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_UpdateCommentOnly" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.UpdateCommentOnly">
+  UpdateCommentOnly()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateCommentOnly()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteCentralDirectoryHeader_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteCentralDirectoryHeader*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteCentralDirectoryHeader_ICSharpCode_SharpZipLib_Zip_ZipEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteCentralDirectoryHeader(ICSharpCode.SharpZipLib.Zip.ZipEntry)">
+  WriteCentralDirectoryHeader(ZipEntry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int WriteCentralDirectoryHeader(ZipEntry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteEncryptionHeader_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteEncryptionHeader*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteEncryptionHeader_System_IO_Stream_System_Int64_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteEncryptionHeader(System.IO.Stream,System.Int64)">
+  WriteEncryptionHeader(Stream, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteEncryptionHeader(Stream stream, long crcValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>crcValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEInt_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEInt*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEInt_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEInt(System.Int32)">
+  WriteLEInt(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteLEInt(int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEShort_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEShort*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEShort_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEShort(System.Int32)">
+  WriteLEShort(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteLEShort(int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEUint_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEUint*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEUint_System_UInt32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEUint(System.UInt32)">
+  WriteLEUint(uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteLEUint(uint value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEUlong_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEUlong*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEUlong_System_UInt64_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEUlong(System.UInt64)">
+  WriteLEUlong(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteLEUlong(ulong value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEUshort_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEUshort*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLEUshort_System_UInt16_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLEUshort(System.UInt16)">
+  WriteLEUshort(ushort)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteLEUshort(ushort value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLeLong_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLeLong*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLeLong_System_Int64_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLeLong(System.Int64)">
+  WriteLeLong(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteLeLong(long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLocalEntryHeader_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLocalEntryHeader*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipFile_WriteLocalEntryHeader_ICSharpCode_SharpZipLib_Zip_ZipFile_ZipUpdate_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipFile.WriteLocalEntryHeader(ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate)">
+  WriteLocalEntryHeader(ZipUpdate)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteLocalEntryHeader(ZipFile.ZipUpdate update)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>update</code> <a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.html">ZipFile</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipFile.ZipUpdate.html">ZipUpdate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

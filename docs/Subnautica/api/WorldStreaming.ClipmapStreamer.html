@@ -1,0 +1,1524 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ClipmapStreamer | Subnautica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ClipmapStreamer | Subnautica ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="WorldStreaming.ClipmapStreamer">
+
+
+
+  <h1 id="WorldStreaming_ClipmapStreamer" data-uid="WorldStreaming.ClipmapStreamer" class="text-break">
+Class ClipmapStreamer  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="WorldStreaming.html">WorldStreaming</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ClipmapStreamer : BatchOctreesStreamer.IListener, IStreamer, IPipeline</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ClipmapStreamer</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a>.<a class="xref" href="WorldStreaming.BatchOctreesStreamer.IListener.html">IListener</a></div>
+      <div><a class="xref" href="WorldStreaming.IStreamer.html">IStreamer</a></div>
+      <div><a class="xref" href="WorldStreaming.IPipeline.html">IPipeline</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="WorldStreaming_ClipmapStreamer__ctor_" data-uid="WorldStreaming.ClipmapStreamer.#ctor*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer__ctor_WorldStreaming_WorldStreamer_WorldStreaming_ClipmapVisibilityUpdater_UWE_IThread_UWE_IThread_UWE_IThread_UWE_IThread_DefaultNamespace_ClipMapManager_Settings_" data-uid="WorldStreaming.ClipmapStreamer.#ctor(WorldStreaming.WorldStreamer,WorldStreaming.ClipmapVisibilityUpdater,UWE.IThread,UWE.IThread,UWE.IThread,UWE.IThread,DefaultNamespace.ClipMapManager.Settings)">
+  ClipmapStreamer(WorldStreamer, ClipmapVisibilityUpdater, IThread, IThread, IThread, IThread, Settings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClipmapStreamer(WorldStreamer host, ClipmapVisibilityUpdater visibilityUpdater, IThread streamingThread, IThread buildLayersThread, IThread toggleChunksThread, IThread destroyChunksThread, ClipMapManager.Settings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>host</code> <a class="xref" href="WorldStreaming.WorldStreamer.html">WorldStreamer</a></dt>
+    <dd></dd>
+    <dt><code>visibilityUpdater</code> <a class="xref" href="WorldStreaming.ClipmapVisibilityUpdater.html">ClipmapVisibilityUpdater</a></dt>
+    <dd></dd>
+    <dt><code>streamingThread</code> <a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+    <dt><code>buildLayersThread</code> <a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+    <dt><code>toggleChunksThread</code> <a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+    <dt><code>destroyChunksThread</code> <a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+    <dt><code>settings</code> <a class="xref" href="DefaultNamespace.ClipMapManager.html">ClipMapManager</a>.<a class="xref" href="DefaultNamespace.ClipMapManager.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_BeginNotifyListenersDelegate" data-uid="WorldStreaming.ClipmapStreamer.BeginNotifyListenersDelegate">
+  BeginNotifyListenersDelegate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Task.Function BeginNotifyListenersDelegate</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.Task.html">Task</a>.<a class="xref" href="UWE.Task.Function.html">Function</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_cellSize" data-uid="WorldStreaming.ClipmapStreamer.cellSize">
+  cellSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int cellSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_collisionLevel" data-uid="WorldStreaming.ClipmapStreamer.collisionLevel">
+  collisionLevel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int collisionLevel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_levels" data-uid="WorldStreaming.ClipmapStreamer.levels">
+  levels
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly ClipmapLevel[] levels</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WorldStreaming.ClipmapLevel.html">ClipmapLevel</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_listeners" data-uid="WorldStreaming.ClipmapStreamer.listeners">
+  listeners
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly List&lt;ClipMapManager.IClipMapEventHandler&gt; listeners</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DefaultNamespace.ClipMapManager.html">ClipMapManager</a>.<a class="xref" href="DefaultNamespace.ClipMapManager.IClipMapEventHandler.html">IClipMapEventHandler</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_loadingQueue" data-uid="WorldStreaming.ClipmapStreamer.loadingQueue">
+  loadingQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly PriorityQueue&lt;ClipmapCell&gt; loadingQueue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PriorityQueue</span>&lt;<a class="xref" href="WorldStreaming.ClipmapCell.html">ClipmapCell</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_meshBuilderPool" data-uid="WorldStreaming.ClipmapStreamer.meshBuilderPool">
+  meshBuilderPool
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly BoundedObjectPool&lt;MeshBuilder&gt; meshBuilderPool</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.BoundedObjectPool-1.html">BoundedObjectPool</a>&lt;<a class="xref" href="WorldStreaming.MeshBuilder.html">MeshBuilder</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_meshingThreads" data-uid="WorldStreaming.ClipmapStreamer.meshingThreads">
+  meshingThreads
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly ThreadPool meshingThreads</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.ThreadPool.html">ThreadPool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_ClipmapStreamer_unloadingQueue" data-uid="WorldStreaming.ClipmapStreamer.unloadingQueue">
+  unloadingQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly PriorityQueue&lt;ClipmapCell&gt; unloadingQueue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PriorityQueue</span>&lt;<a class="xref" href="WorldStreaming.ClipmapCell.html">ClipmapCell</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="WorldStreaming_ClipmapStreamer_buildLayersThread_" data-uid="WorldStreaming.ClipmapStreamer.buildLayersThread*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_buildLayersThread" data-uid="WorldStreaming.ClipmapStreamer.buildLayersThread">
+  buildLayersThread
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IThread buildLayersThread { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_destroyChunksThread_" data-uid="WorldStreaming.ClipmapStreamer.destroyChunksThread*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_destroyChunksThread" data-uid="WorldStreaming.ClipmapStreamer.destroyChunksThread">
+  destroyChunksThread
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IThread destroyChunksThread { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_host_" data-uid="WorldStreaming.ClipmapStreamer.host*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_host" data-uid="WorldStreaming.ClipmapStreamer.host">
+  host
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorldStreamer host { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WorldStreaming.WorldStreamer.html">WorldStreamer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_settings_" data-uid="WorldStreaming.ClipmapStreamer.settings*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_settings" data-uid="WorldStreaming.ClipmapStreamer.settings">
+  settings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClipMapManager.Settings settings { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ClipMapManager.html">ClipMapManager</a>.<a class="xref" href="DefaultNamespace.ClipMapManager.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_streamingThread_" data-uid="WorldStreaming.ClipmapStreamer.streamingThread*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_streamingThread" data-uid="WorldStreaming.ClipmapStreamer.streamingThread">
+  streamingThread
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IThread streamingThread { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_toggleChunksThread_" data-uid="WorldStreaming.ClipmapStreamer.toggleChunksThread*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_toggleChunksThread" data-uid="WorldStreaming.ClipmapStreamer.toggleChunksThread">
+  toggleChunksThread
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IThread toggleChunksThread { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="WorldStreaming_ClipmapStreamer_BeginNotifyListeners_" data-uid="WorldStreaming.ClipmapStreamer.BeginNotifyListeners*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_BeginNotifyListeners_Int3_Bounds_" data-uid="WorldStreaming.ClipmapStreamer.BeginNotifyListeners(Int3.Bounds)">
+  BeginNotifyListeners(Bounds)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BeginNotifyListeners(Int3.Bounds blockRange)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockRange</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_BeginNotifyListeners_" data-uid="WorldStreaming.ClipmapStreamer.BeginNotifyListeners*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_BeginNotifyListeners_System_Object_System_Object_" data-uid="WorldStreaming.ClipmapStreamer.BeginNotifyListeners(System.Object,System.Object)">
+  BeginNotifyListeners(object, object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void BeginNotifyListeners(object owner, object state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>owner</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_DeregisterListener_" data-uid="WorldStreaming.ClipmapStreamer.DeregisterListener*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_DeregisterListener_DefaultNamespace_ClipMapManager_IClipMapEventHandler_" data-uid="WorldStreaming.ClipmapStreamer.DeregisterListener(DefaultNamespace.ClipMapManager.IClipMapEventHandler)">
+  DeregisterListener(IClipMapEventHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeregisterListener(ClipMapManager.IClipMapEventHandler listener)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>listener</code> <a class="xref" href="DefaultNamespace.ClipMapManager.html">ClipMapManager</a>.<a class="xref" href="DefaultNamespace.ClipMapManager.IClipMapEventHandler.html">IClipMapEventHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_DrawGizmos_" data-uid="WorldStreaming.ClipmapStreamer.DrawGizmos*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_DrawGizmos" data-uid="WorldStreaming.ClipmapStreamer.DrawGizmos">
+  DrawGizmos()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawGizmos()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_EnqueueForLoading_" data-uid="WorldStreaming.ClipmapStreamer.EnqueueForLoading*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_EnqueueForLoading_WorldStreaming_ClipmapCell_System_Int32_" data-uid="WorldStreaming.ClipmapStreamer.EnqueueForLoading(WorldStreaming.ClipmapCell,System.Int32)">
+  EnqueueForLoading(ClipmapCell, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnqueueForLoading(ClipmapCell cell, int priority)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <a class="xref" href="WorldStreaming.ClipmapCell.html">ClipmapCell</a></dt>
+    <dd></dd>
+    <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_EnqueueForUnloading_" data-uid="WorldStreaming.ClipmapStreamer.EnqueueForUnloading*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_EnqueueForUnloading_WorldStreaming_ClipmapCell_System_Int32_" data-uid="WorldStreaming.ClipmapStreamer.EnqueueForUnloading(WorldStreaming.ClipmapCell,System.Int32)">
+  EnqueueForUnloading(ClipmapCell, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnqueueForUnloading(ClipmapCell cell, int priority)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <a class="xref" href="WorldStreaming.ClipmapCell.html">ClipmapCell</a></dt>
+    <dd></dd>
+    <dt><code>priority</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_GetLevel_" data-uid="WorldStreaming.ClipmapStreamer.GetLevel*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_GetLevel_System_Int32_" data-uid="WorldStreaming.ClipmapStreamer.GetLevel(System.Int32)">
+  GetLevel(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClipmapLevel GetLevel(int levelId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>levelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WorldStreaming.ClipmapLevel.html">ClipmapLevel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_GetQueueLength_" data-uid="WorldStreaming.ClipmapStreamer.GetQueueLength*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_GetQueueLength" data-uid="WorldStreaming.ClipmapStreamer.GetQueueLength">
+  GetQueueLength()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetQueueLength()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_IsIdle_" data-uid="WorldStreaming.ClipmapStreamer.IsIdle*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_IsIdle" data-uid="WorldStreaming.ClipmapStreamer.IsIdle">
+  IsIdle()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsIdle()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_IsProcessing_" data-uid="WorldStreaming.ClipmapStreamer.IsProcessing*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_IsProcessing_WorldStreaming_BatchOctreesStreamer_Int3_Bounds_System_Int32_System_Int32_" data-uid="WorldStreaming.ClipmapStreamer.IsProcessing(WorldStreaming.BatchOctreesStreamer,Int3.Bounds,System.Int32,System.Int32)">
+  IsProcessing(BatchOctreesStreamer, Bounds, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsProcessing(BatchOctreesStreamer streamer, Int3.Bounds blockRange, int minLod, int maxLod)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>streamer</code> <a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a></dt>
+    <dd></dd>
+    <dt><code>blockRange</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+    <dt><code>minLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maxLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_IsRangeActiveAndBuilt_" data-uid="WorldStreaming.ClipmapStreamer.IsRangeActiveAndBuilt*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_IsRangeActiveAndBuilt_Int3_Bounds_" data-uid="WorldStreaming.ClipmapStreamer.IsRangeActiveAndBuilt(Int3.Bounds)">
+  IsRangeActiveAndBuilt(Bounds)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRangeActiveAndBuilt(Int3.Bounds blockRange)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockRange</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_IsRunning_" data-uid="WorldStreaming.ClipmapStreamer.IsRunning*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_IsRunning" data-uid="WorldStreaming.ClipmapStreamer.IsRunning">
+  IsRunning()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRunning()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_NotifyListeners_" data-uid="WorldStreaming.ClipmapStreamer.NotifyListeners*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_NotifyListeners_Int3_Bounds_" data-uid="WorldStreaming.ClipmapStreamer.NotifyListeners(Int3.Bounds)">
+  NotifyListeners(Bounds)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifyListeners(Int3.Bounds blockRange)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockRange</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_OnCellLoaded_" data-uid="WorldStreaming.ClipmapStreamer.OnCellLoaded*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_OnCellLoaded_WorldStreaming_ClipmapLevel_Int3_" data-uid="WorldStreaming.ClipmapStreamer.OnCellLoaded(WorldStreaming.ClipmapLevel,Int3)">
+  OnCellLoaded(ClipmapLevel, Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCellLoaded(ClipmapLevel level, Int3 cell)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="WorldStreaming.ClipmapLevel.html">ClipmapLevel</a></dt>
+    <dd></dd>
+    <dt><code>cell</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_OnCellUnloaded_" data-uid="WorldStreaming.ClipmapStreamer.OnCellUnloaded*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_OnCellUnloaded_WorldStreaming_ClipmapLevel_Int3_" data-uid="WorldStreaming.ClipmapStreamer.OnCellUnloaded(WorldStreaming.ClipmapLevel,Int3)">
+  OnCellUnloaded(ClipmapLevel, Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCellUnloaded(ClipmapLevel level, Int3 cellId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="WorldStreaming.ClipmapLevel.html">ClipmapLevel</a></dt>
+    <dd></dd>
+    <dt><code>cellId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_OnGUI_" data-uid="WorldStreaming.ClipmapStreamer.OnGUI*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_OnGUI" data-uid="WorldStreaming.ClipmapStreamer.OnGUI">
+  OnGUI()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnGUI()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_OnRangeLoaded_" data-uid="WorldStreaming.ClipmapStreamer.OnRangeLoaded*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_OnRangeLoaded_WorldStreaming_BatchOctreesStreamer_Int3_Bounds_System_Int32_System_Int32_" data-uid="WorldStreaming.ClipmapStreamer.OnRangeLoaded(WorldStreaming.BatchOctreesStreamer,Int3.Bounds,System.Int32,System.Int32)">
+  OnRangeLoaded(BatchOctreesStreamer, Bounds, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRangeLoaded(BatchOctreesStreamer streamer, Int3.Bounds blockRange, int minLod, int maxLod)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>streamer</code> <a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a></dt>
+    <dd></dd>
+    <dt><code>blockRange</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+    <dt><code>minLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maxLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_OnRangeUnloaded_" data-uid="WorldStreaming.ClipmapStreamer.OnRangeUnloaded*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_OnRangeUnloaded_WorldStreaming_BatchOctreesStreamer_Int3_Bounds_System_Int32_System_Int32_" data-uid="WorldStreaming.ClipmapStreamer.OnRangeUnloaded(WorldStreaming.BatchOctreesStreamer,Int3.Bounds,System.Int32,System.Int32)">
+  OnRangeUnloaded(BatchOctreesStreamer, Bounds, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRangeUnloaded(BatchOctreesStreamer streamer, Int3.Bounds blockRange, int minLod, int maxLod)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>streamer</code> <a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a></dt>
+    <dd></dd>
+    <dt><code>blockRange</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+    <dt><code>minLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maxLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_ProcessLoadingQueue_" data-uid="WorldStreaming.ClipmapStreamer.ProcessLoadingQueue*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_ProcessLoadingQueue" data-uid="WorldStreaming.ClipmapStreamer.ProcessLoadingQueue">
+  ProcessLoadingQueue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ProcessLoadingQueue()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_ProcessQueues_" data-uid="WorldStreaming.ClipmapStreamer.ProcessQueues*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_ProcessQueues" data-uid="WorldStreaming.ClipmapStreamer.ProcessQueues">
+  ProcessQueues()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ProcessQueues()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_ProcessUnloadingQueue_" data-uid="WorldStreaming.ClipmapStreamer.ProcessUnloadingQueue*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_ProcessUnloadingQueue" data-uid="WorldStreaming.ClipmapStreamer.ProcessUnloadingQueue">
+  ProcessUnloadingQueue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ProcessUnloadingQueue()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_RegisterListener_" data-uid="WorldStreaming.ClipmapStreamer.RegisterListener*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_RegisterListener_DefaultNamespace_ClipMapManager_IClipMapEventHandler_" data-uid="WorldStreaming.ClipmapStreamer.RegisterListener(DefaultNamespace.ClipMapManager.IClipMapEventHandler)">
+  RegisterListener(IClipMapEventHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterListener(ClipMapManager.IClipMapEventHandler listener)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>listener</code> <a class="xref" href="DefaultNamespace.ClipMapManager.html">ClipMapManager</a>.<a class="xref" href="DefaultNamespace.ClipMapManager.IClipMapEventHandler.html">IClipMapEventHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_Reset_" data-uid="WorldStreaming.ClipmapStreamer.Reset*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_Reset" data-uid="WorldStreaming.ClipmapStreamer.Reset">
+  Reset()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_Stop_" data-uid="WorldStreaming.ClipmapStreamer.Stop*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_Stop" data-uid="WorldStreaming.ClipmapStreamer.Stop">
+  Stop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_Unload_" data-uid="WorldStreaming.ClipmapStreamer.Unload*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_Unload" data-uid="WorldStreaming.ClipmapStreamer.Unload">
+  Unload()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Unload()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_ClipmapStreamer_UpdateCenter_" data-uid="WorldStreaming.ClipmapStreamer.UpdateCenter*"></a>
+
+  <h3 id="WorldStreaming_ClipmapStreamer_UpdateCenter_Int3_" data-uid="WorldStreaming.ClipmapStreamer.UpdateCenter(Int3)">
+  UpdateCenter(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateCenter(Int3 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

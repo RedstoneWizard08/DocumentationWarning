@@ -1,0 +1,952 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ZipAESStream | Subnautica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ZipAESStream | Subnautica ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream">
+
+
+
+  <h1 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream" class="text-break">
+Class ZipAESStream  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ICSharpCode.html">ICSharpCode</a>.<a class="xref" href="ICSharpCode.SharpZipLib.html">SharpZipLib</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Encryption.html">Encryption</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ZipAESStream : CryptoStream, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject">MarshalByRefObject</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream">CryptoStream</a></div>
+      <div><span class="xref">ZipAESStream</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.flushfinalblock">CryptoStream.FlushFinalBlock()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.flush">CryptoStream.Flush()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.flushasync">CryptoStream.FlushAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.seek">CryptoStream.Seek(long, SeekOrigin)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.setlength">CryptoStream.SetLength(long)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.readasync">CryptoStream.ReadAsync(byte[], int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.writeasync">CryptoStream.WriteAsync(byte[], int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.clear">CryptoStream.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.dispose">CryptoStream.Dispose(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.canread">CryptoStream.CanRead</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.canseek">CryptoStream.CanSeek</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.canwrite">CryptoStream.CanWrite</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.length">CryptoStream.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.position">CryptoStream.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream.hasflushedfinalblock">CryptoStream.HasFlushedFinalBlock</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.null">Stream.Null</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream)">Stream.CopyToAsync(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream-system-int32)">Stream.CopyToAsync(Stream, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream-system-int32-system-threading-cancellationtoken)">Stream.CopyToAsync(Stream, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copyto#system-io-stream-copyto(system-io-stream)">Stream.CopyTo(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copyto#system-io-stream-copyto(system-io-stream-system-int32)">Stream.CopyTo(Stream, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.close">Stream.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.dispose#system-io-stream-dispose">Stream.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.flushasync#system-io-stream-flushasync">Stream.FlushAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.createwaithandle">Stream.CreateWaitHandle()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.beginread">Stream.BeginRead(byte[], int, int, AsyncCallback, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.endread">Stream.EndRead(IAsyncResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readasync#system-io-stream-readasync(system-byte()-system-int32-system-int32)">Stream.ReadAsync(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.beginwrite">Stream.BeginWrite(byte[], int, int, AsyncCallback, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.endwrite">Stream.EndWrite(IAsyncResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writeasync#system-io-stream-writeasync(system-byte()-system-int32-system-int32)">Stream.WriteAsync(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readbyte">Stream.ReadByte()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writebyte">Stream.WriteByte(byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.synchronized">Stream.Synchronized(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.objectinvariant">Stream.ObjectInvariant()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.cantimeout">Stream.CanTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readtimeout">Stream.ReadTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writetimeout">Stream.WriteTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.memberwiseclone">MarshalByRefObject.MemberwiseClone(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getlifetimeservice">MarshalByRefObject.GetLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice">MarshalByRefObject.InitializeLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.createobjref">MarshalByRefObject.CreateObjRef(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__ctor_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__ctor_System_IO_Stream_ICSharpCode_SharpZipLib_Encryption_ZipAESTransform_System_Security_Cryptography_CryptoStreamMode_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.#ctor(System.IO.Stream,ICSharpCode.SharpZipLib.Encryption.ZipAESTransform,System.Security.Cryptography.CryptoStreamMode)">
+  ZipAESStream(Stream, ZipAESTransform, CryptoStreamMode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipAESStream(Stream stream, ZipAESTransform transform, CryptoStreamMode mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="ICSharpCode.SharpZipLib.Encryption.ZipAESTransform.html">ZipAESTransform</a></dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostreammode">CryptoStreamMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_AUTH_CODE_LENGTH" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.AUTH_CODE_LENGTH">
+  AUTH_CODE_LENGTH
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int AUTH_CODE_LENGTH = 10</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_BLOCK_AND_AUTH" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.BLOCK_AND_AUTH">
+  BLOCK_AND_AUTH
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int BLOCK_AND_AUTH = 26</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_CRYPTO_BLOCK_SIZE" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.CRYPTO_BLOCK_SIZE">
+  CRYPTO_BLOCK_SIZE
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int CRYPTO_BLOCK_SIZE = 16</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__slideBufFreePos" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._slideBufFreePos">
+  _slideBufFreePos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int _slideBufFreePos</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__slideBufStartPos" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._slideBufStartPos">
+  _slideBufStartPos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int _slideBufStartPos</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__slideBuffer" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._slideBuffer">
+  _slideBuffer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] _slideBuffer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__stream" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._stream">
+  _stream
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream _stream</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__transform" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._transform">
+  _transform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipAESTransform _transform</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Encryption.ZipAESTransform.html">ZipAESTransform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__transformBuffer" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._transformBuffer">
+  _transformBuffer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] _transformBuffer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__transformBufferFreePos" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._transformBufferFreePos">
+  _transformBufferFreePos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int _transformBufferFreePos</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream__transformBufferStartPos" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream._transformBufferStartPos">
+  _transformBufferStartPos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int _transformBufferStartPos</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_HasBufferedData_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.HasBufferedData*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_HasBufferedData" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.HasBufferedData">
+  HasBufferedData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasBufferedData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_Read_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.Read*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_Read_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.Read(System.Byte[],System.Int32,System.Int32)">
+  Read(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Read(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>An array of bytes. A maximum of <code class="paramref">count</code> bytes are read from the current stream and stored in <code class="paramref">buffer</code>.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The byte offset in <code class="paramref">buffer</code> at which to begin storing the data read from the current stream.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to be read from the current stream.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero if the end of the stream has been reached.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostreammode">CryptoStreamMode</a> associated with current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream">CryptoStream</a> object does not match the underlying stream.  For example, this exception is thrown when using <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostreammode#system-security-cryptography-cryptostreammode-read">Read</a> with an underlying stream that is write only.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>The <code class="paramref">offset</code> parameter is less than zero.-or- The <code class="paramref">count</code> parameter is less than zero.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thesum of the <code class="paramref">count</code> and <code class="paramref">offset</code> parameters is longer than the length of the buffer.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_ReadAndTransform_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.ReadAndTransform*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_ReadAndTransform_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.ReadAndTransform(System.Byte[],System.Int32,System.Int32)">
+  ReadAndTransform(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ReadAndTransform(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_ReadBufferedData_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.ReadBufferedData*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_ReadBufferedData_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.ReadBufferedData(System.Byte[],System.Int32,System.Int32)">
+  ReadBufferedData(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ReadBufferedData(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_TransformAndBufferBlock_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.TransformAndBufferBlock*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_TransformAndBufferBlock_System_Byte___System_Int32_System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.TransformAndBufferBlock(System.Byte[],System.Int32,System.Int32,System.Int32)">
+  TransformAndBufferBlock(byte[], int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TransformAndBufferBlock(byte[] buffer, int offset, int count, int blockSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>blockSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_Write_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.Write*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Encryption_ZipAESStream_Write_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Encryption.ZipAESStream.Write(System.Byte[],System.Int32,System.Int32)">
+  Write(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Writes a sequence of bytes to the current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream">CryptoStream</a> and advances the current position within the stream by the number of bytes written.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Write(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>An array of bytes. This method copies <code class="paramref">count</code> bytes from <code class="paramref">buffer</code> to the current stream.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The byte offset in <code class="paramref">buffer</code> at which to begin copying bytes to the current stream.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of bytes to be written to the current stream.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostreammode">CryptoStreamMode</a> associated with current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostream">CryptoStream</a> object does not match the underlying stream.  For example, this exception is thrown when using <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.cryptography.cryptostreammode#system-security-cryptography-cryptostreammode-write">Write</a>  with an underlying stream that is read only.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>The <code class="paramref">offset</code> parameter is less than zero.-or- The <code class="paramref">count</code> parameter is less than zero.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>The sum of the <code class="paramref">count</code> and <code class="paramref">offset</code> parameters is longer than the length of the buffer.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

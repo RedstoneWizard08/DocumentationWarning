@@ -1,0 +1,1623 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class BatchOctreesStreamer | Subnautica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class BatchOctreesStreamer | Subnautica ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="WorldStreaming.BatchOctreesStreamer">
+
+
+
+  <h1 id="WorldStreaming_BatchOctreesStreamer" data-uid="WorldStreaming.BatchOctreesStreamer" class="text-break">
+Class BatchOctreesStreamer  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="WorldStreaming.html">WorldStreaming</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BatchOctreesStreamer : IStreamer, IPipeline</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">BatchOctreesStreamer</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="WorldStreaming.IStreamer.html">IStreamer</a></div>
+      <div><a class="xref" href="WorldStreaming.IPipeline.html">IPipeline</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer__ctor_" data-uid="WorldStreaming.BatchOctreesStreamer.#ctor*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer__ctor_UWE_IThread_Int3_Bounds_System_Int32_System_Int32_System_Int32_System_Int32_System_String_WorldStreaming_BatchOctreesStreamer_Settings_" data-uid="WorldStreaming.BatchOctreesStreamer.#ctor(UWE.IThread,Int3.Bounds,System.Int32,System.Int32,System.Int32,System.Int32,System.String,WorldStreaming.BatchOctreesStreamer.Settings)">
+  BatchOctreesStreamer(IThread, Bounds, int, int, int, int, string, Settings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BatchOctreesStreamer(IThread streamingThread, Int3.Bounds octreeBounds, int minLod, int maxLod, int batchSize, int numOctreesPerBatch, string path, BatchOctreesStreamer.Settings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>streamingThread</code> <a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+    <dt><code>octreeBounds</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+    <dt><code>minLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maxLod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>batchSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>numOctreesPerBatch</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>settings</code> <a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a>.<a class="xref" href="WorldStreaming.BatchOctreesStreamer.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_arraySize" data-uid="WorldStreaming.BatchOctreesStreamer.arraySize">
+  arraySize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Int3 arraySize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_batchSize" data-uid="WorldStreaming.BatchOctreesStreamer.batchSize">
+  batchSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int batchSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_batches" data-uid="WorldStreaming.BatchOctreesStreamer.batches">
+  batches
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Array3&lt;BatchOctrees&gt; batches</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Array3-1.html">Array3</a>&lt;<a class="xref" href="WorldStreaming.BatchOctrees.html">BatchOctrees</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_centerBatch" data-uid="WorldStreaming.BatchOctreesStreamer.centerBatch">
+  centerBatch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Int3 centerBatch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_centerBounds" data-uid="WorldStreaming.BatchOctreesStreamer.centerBounds">
+  centerBounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Int3.Bounds centerBounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_listeners" data-uid="WorldStreaming.BatchOctreesStreamer.listeners">
+  listeners
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly List&lt;BatchOctreesStreamer.IListener&gt; listeners</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a>.<a class="xref" href="WorldStreaming.BatchOctreesStreamer.IListener.html">IListener</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_loadingQueue" data-uid="WorldStreaming.BatchOctreesStreamer.loadingQueue">
+  loadingQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly PriorityQueue&lt;BatchOctrees&gt; loadingQueue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PriorityQueue</span>&lt;<a class="xref" href="WorldStreaming.BatchOctrees.html">BatchOctrees</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_maxLod" data-uid="WorldStreaming.BatchOctreesStreamer.maxLod">
+  maxLod
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int maxLod</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_minLod" data-uid="WorldStreaming.BatchOctreesStreamer.minLod">
+  minLod
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int minLod</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_numOctreesPerBatch" data-uid="WorldStreaming.BatchOctreesStreamer.numOctreesPerBatch">
+  numOctreesPerBatch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int numOctreesPerBatch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_octreeBounds" data-uid="WorldStreaming.BatchOctreesStreamer.octreeBounds">
+  octreeBounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Int3.Bounds octreeBounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_octreeSize" data-uid="WorldStreaming.BatchOctreesStreamer.octreeSize">
+  octreeSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int octreeSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_path" data-uid="WorldStreaming.BatchOctreesStreamer.path">
+  path
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string path</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_unloadingQueue" data-uid="WorldStreaming.BatchOctreesStreamer.unloadingQueue">
+  unloadingQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly PriorityQueue&lt;BatchOctrees&gt; unloadingQueue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PriorityQueue</span>&lt;<a class="xref" href="WorldStreaming.BatchOctrees.html">BatchOctrees</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_ioThread_" data-uid="WorldStreaming.BatchOctreesStreamer.ioThread*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_ioThread" data-uid="WorldStreaming.BatchOctreesStreamer.ioThread">
+  ioThread
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorkerThread ioThread { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.WorkerThread.html">WorkerThread</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_streamingThread_" data-uid="WorldStreaming.BatchOctreesStreamer.streamingThread*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_streamingThread" data-uid="WorldStreaming.BatchOctreesStreamer.streamingThread">
+  streamingThread
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IThread streamingThread { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.IThread.html">IThread</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_CalculateLoadingPriority_" data-uid="WorldStreaming.BatchOctreesStreamer.CalculateLoadingPriority*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_CalculateLoadingPriority_Int3_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.CalculateLoadingPriority(Int3,Int3)">
+  CalculateLoadingPriority(Int3, Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CalculateLoadingPriority(Int3 center, Int3 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>center</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_CalculateUnloadingPriority_" data-uid="WorldStreaming.BatchOctreesStreamer.CalculateUnloadingPriority*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_CalculateUnloadingPriority_Int3_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.CalculateUnloadingPriority(Int3,Int3)">
+  CalculateUnloadingPriority(Int3, Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CalculateUnloadingPriority(Int3 center, Int3 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>center</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_DeregisterListener_" data-uid="WorldStreaming.BatchOctreesStreamer.DeregisterListener*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_DeregisterListener_WorldStreaming_BatchOctreesStreamer_IListener_" data-uid="WorldStreaming.BatchOctreesStreamer.DeregisterListener(WorldStreaming.BatchOctreesStreamer.IListener)">
+  DeregisterListener(IListener)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeregisterListener(BatchOctreesStreamer.IListener listener)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>listener</code> <a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a>.<a class="xref" href="WorldStreaming.BatchOctreesStreamer.IListener.html">IListener</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_DrawGizmos_" data-uid="WorldStreaming.BatchOctreesStreamer.DrawGizmos*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_DrawGizmos_System_Single_" data-uid="WorldStreaming.BatchOctreesStreamer.DrawGizmos(System.Single)">
+  DrawGizmos(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawGizmos(float alpha)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>alpha</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_EnqueueForLoading_" data-uid="WorldStreaming.BatchOctreesStreamer.EnqueueForLoading*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_EnqueueForLoading_WorldStreaming_BatchOctrees_" data-uid="WorldStreaming.BatchOctreesStreamer.EnqueueForLoading(WorldStreaming.BatchOctrees)">
+  EnqueueForLoading(BatchOctrees)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnqueueForLoading(BatchOctrees batch)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>batch</code> <a class="xref" href="WorldStreaming.BatchOctrees.html">BatchOctrees</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_EnqueueForUnloading_" data-uid="WorldStreaming.BatchOctreesStreamer.EnqueueForUnloading*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_EnqueueForUnloading_WorldStreaming_BatchOctrees_" data-uid="WorldStreaming.BatchOctreesStreamer.EnqueueForUnloading(WorldStreaming.BatchOctrees)">
+  EnqueueForUnloading(BatchOctrees)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnqueueForUnloading(BatchOctrees batch)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>batch</code> <a class="xref" href="WorldStreaming.BatchOctrees.html">BatchOctrees</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_GetBatch_" data-uid="WorldStreaming.BatchOctreesStreamer.GetBatch*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_GetBatch_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.GetBatch(Int3)">
+  GetBatch(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BatchOctrees GetBatch(Int3 id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WorldStreaming.BatchOctrees.html">BatchOctrees</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_GetBlockType_" data-uid="WorldStreaming.BatchOctreesStreamer.GetBlockType*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_GetBlockType_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.GetBlockType(Int3)">
+  GetBlockType(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte GetBlockType(Int3 block)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>block</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_GetOctree_" data-uid="WorldStreaming.BatchOctreesStreamer.GetOctree*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_GetOctree_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.GetOctree(Int3)">
+  GetOctree(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Octree GetOctree(Int3 id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="WorldStreaming.Octree.html">Octree</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_GetPath_" data-uid="WorldStreaming.BatchOctreesStreamer.GetPath*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_GetPath_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.GetPath(Int3)">
+  GetPath(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetPath(Int3 batchId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>batchId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_GetQueueLength_" data-uid="WorldStreaming.BatchOctreesStreamer.GetQueueLength*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_GetQueueLength" data-uid="WorldStreaming.BatchOctreesStreamer.GetQueueLength">
+  GetQueueLength()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetQueueLength()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_IsIdle_" data-uid="WorldStreaming.BatchOctreesStreamer.IsIdle*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_IsIdle" data-uid="WorldStreaming.BatchOctreesStreamer.IsIdle">
+  IsIdle()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsIdle()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_IsProcessing_" data-uid="WorldStreaming.BatchOctreesStreamer.IsProcessing*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_IsProcessing_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.IsProcessing(Int3)">
+  IsProcessing(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsProcessing(Int3 batchId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>batchId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_IsProcessingImpl_" data-uid="WorldStreaming.BatchOctreesStreamer.IsProcessingImpl*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_IsProcessingImpl_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.IsProcessingImpl(Int3)">
+  IsProcessingImpl(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsProcessingImpl(Int3 batchId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>batchId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_IsRangeLoaded_" data-uid="WorldStreaming.BatchOctreesStreamer.IsRangeLoaded*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_IsRangeLoaded_Int3_Bounds_" data-uid="WorldStreaming.BatchOctreesStreamer.IsRangeLoaded(Int3.Bounds)">
+  IsRangeLoaded(Bounds)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRangeLoaded(Int3.Bounds range)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>range</code> <a class="xref" href="Int3.html">Int3</a>.<a class="xref" href="Int3.Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_IsRunning_" data-uid="WorldStreaming.BatchOctreesStreamer.IsRunning*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_IsRunning" data-uid="WorldStreaming.BatchOctreesStreamer.IsRunning">
+  IsRunning()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRunning()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_OnBatchLoaded_" data-uid="WorldStreaming.BatchOctreesStreamer.OnBatchLoaded*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_OnBatchLoaded_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.OnBatchLoaded(Int3)">
+  OnBatchLoaded(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnBatchLoaded(Int3 batchId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>batchId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_OnBatchUnloaded_" data-uid="WorldStreaming.BatchOctreesStreamer.OnBatchUnloaded*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_OnBatchUnloaded_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.OnBatchUnloaded(Int3)">
+  OnBatchUnloaded(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnBatchUnloaded(Int3 batchId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>batchId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_OnGUI_" data-uid="WorldStreaming.BatchOctreesStreamer.OnGUI*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_OnGUI" data-uid="WorldStreaming.BatchOctreesStreamer.OnGUI">
+  OnGUI()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnGUI()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_ProcessLoadingQueue_" data-uid="WorldStreaming.BatchOctreesStreamer.ProcessLoadingQueue*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_ProcessLoadingQueue" data-uid="WorldStreaming.BatchOctreesStreamer.ProcessLoadingQueue">
+  ProcessLoadingQueue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ProcessLoadingQueue()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_ProcessQueues_" data-uid="WorldStreaming.BatchOctreesStreamer.ProcessQueues*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_ProcessQueues" data-uid="WorldStreaming.BatchOctreesStreamer.ProcessQueues">
+  ProcessQueues()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ProcessQueues()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_ProcessUnloadingQueue_" data-uid="WorldStreaming.BatchOctreesStreamer.ProcessUnloadingQueue*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_ProcessUnloadingQueue" data-uid="WorldStreaming.BatchOctreesStreamer.ProcessUnloadingQueue">
+  ProcessUnloadingQueue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ProcessUnloadingQueue()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_RegisterListener_" data-uid="WorldStreaming.BatchOctreesStreamer.RegisterListener*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_RegisterListener_WorldStreaming_BatchOctreesStreamer_IListener_" data-uid="WorldStreaming.BatchOctreesStreamer.RegisterListener(WorldStreaming.BatchOctreesStreamer.IListener)">
+  RegisterListener(IListener)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterListener(BatchOctreesStreamer.IListener listener)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>listener</code> <a class="xref" href="WorldStreaming.BatchOctreesStreamer.html">BatchOctreesStreamer</a>.<a class="xref" href="WorldStreaming.BatchOctreesStreamer.IListener.html">IListener</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_Reset_" data-uid="WorldStreaming.BatchOctreesStreamer.Reset*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_Reset" data-uid="WorldStreaming.BatchOctreesStreamer.Reset">
+  Reset()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_Stop_" data-uid="WorldStreaming.BatchOctreesStreamer.Stop*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_Stop" data-uid="WorldStreaming.BatchOctreesStreamer.Stop">
+  Stop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_ToString_" data-uid="WorldStreaming.BatchOctreesStreamer.ToString*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_ToString" data-uid="WorldStreaming.BatchOctreesStreamer.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that represents the current object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_Unload_" data-uid="WorldStreaming.BatchOctreesStreamer.Unload*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_Unload" data-uid="WorldStreaming.BatchOctreesStreamer.Unload">
+  Unload()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Unload()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="WorldStreaming_BatchOctreesStreamer_UpdateCenter_" data-uid="WorldStreaming.BatchOctreesStreamer.UpdateCenter*"></a>
+
+  <h3 id="WorldStreaming_BatchOctreesStreamer_UpdateCenter_Int3_" data-uid="WorldStreaming.BatchOctreesStreamer.UpdateCenter(Int3)">
+  UpdateCenter(Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateCenter(Int3 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

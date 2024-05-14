@@ -1,0 +1,1834 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ItemDragManager | Subnautica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ItemDragManager | Subnautica ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.ItemDragManager">
+
+
+
+  <h1 id="DefaultNamespace_ItemDragManager" data-uid="DefaultNamespace.ItemDragManager" class="text-break">
+Class ItemDragManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Gendarme.Rules.Performance&quot;, &quot;AvoidUnneededFieldInitializationRule&quot;)]
+[SuppressMessage(&quot;Gendarme.Rules.Concurrency&quot;, &quot;WriteStaticFieldFromInstanceMethodRule&quot;)]
+[SuppressMessage(&quot;Gendarme.Rules.Maintainability&quot;, &quot;AvoidLackOfCohesionOfMethodsRule&quot;)]
+[SuppressMessage(&quot;Gendarme.Rules.Concurrency&quot;, &quot;NonConstantStaticFieldsShouldNotBeVisibleRule&quot;)]
+public class ItemDragManager : MonoBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">Component</span></div>
+      <div><span class="xref">Behaviour</span></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><span class="xref">ItemDragManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="GetComponentExtensions.html#GetComponentExtensions_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GetComponentExtensions.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_BroadcastMessageWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.BroadcastMessageWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_BroadcastMessageWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.BroadcastMessageWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageUpwardsWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageUpwardsWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageUpwardsWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageUpwardsWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SystemExtensions.html#SystemExtensions_GetComponentProfiled__1_UnityEngine_Component_">SystemExtensions.GetComponentProfiled&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="TransformExtensions.html#TransformExtensions_GetAllComponentsInChildren__1_UnityEngine_Component_">TransformExtensions.GetAllComponentsInChildren&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="UWE.CoroutineUtils.html#UWE_CoroutineUtils_StartCoroutineSmart_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">CoroutineUtils.StartCoroutineSmart(MonoBehaviour, IEnumerator)</a>
+  </div>
+  <div>
+      <a class="xref" href="SystemExtensions.html#SystemExtensions_NullOrID_UnityEngine_Object_">SystemExtensions.NullOrID(Object)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_ItemDragManager__ctor_" data-uid="DefaultNamespace.ItemDragManager.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager__ctor" data-uid="DefaultNamespace.ItemDragManager.#ctor">
+  ItemDragManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ItemDragManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager__draggedItem" data-uid="DefaultNamespace.ItemDragManager._draggedItem">
+  _draggedItem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InventoryItem _draggedItem</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager__draggedItemSize" data-uid="DefaultNamespace.ItemDragManager._draggedItemSize">
+  _draggedItemSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 _draggedItemSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager__instance" data-uid="DefaultNamespace.ItemDragManager._instance">
+  _instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ItemDragManager _instance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemDragManager.html">ItemDragManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_actionHint" data-uid="DefaultNamespace.ItemDragManager.actionHint">
+  actionHint
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_Icon actionHint</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_Icon.html">uGUI_Icon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_aimingForward" data-uid="DefaultNamespace.ItemDragManager.aimingForward">
+  aimingForward
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 aimingForward</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_aimingPosition" data-uid="DefaultNamespace.ItemDragManager.aimingPosition">
+  aimingPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 aimingPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_cachedHint" data-uid="DefaultNamespace.ItemDragManager.cachedHint">
+  cachedHint
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ItemActionHint cachedHint</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemActionHint.html">ItemActionHint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_currentHint" data-uid="DefaultNamespace.ItemDragManager.currentHint">
+  currentHint
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ItemActionHint currentHint</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemActionHint.html">ItemActionHint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_cursorPosition" data-uid="DefaultNamespace.ItemDragManager.cursorPosition">
+  cursorPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 cursorPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_cursorRotation" data-uid="DefaultNamespace.ItemDragManager.cursorRotation">
+  cursorRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion cursorRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Quaternion</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_cursorScale" data-uid="DefaultNamespace.ItemDragManager.cursorScale">
+  cursorScale
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 cursorScale</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnap" data-uid="DefaultNamespace.ItemDragManager.dragSnap">
+  dragSnap
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool dragSnap</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapBackgroundSize" data-uid="DefaultNamespace.ItemDragManager.dragSnapBackgroundSize">
+  dragSnapBackgroundSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 dragSnapBackgroundSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapForegroundSize" data-uid="DefaultNamespace.ItemDragManager.dragSnapForegroundSize">
+  dragSnapForegroundSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 dragSnapForegroundSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapInstanceId" data-uid="DefaultNamespace.ItemDragManager.dragSnapInstanceId">
+  dragSnapInstanceId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int dragSnapInstanceId</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapPosition" data-uid="DefaultNamespace.ItemDragManager.dragSnapPosition">
+  dragSnapPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 dragSnapPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapRadius" data-uid="DefaultNamespace.ItemDragManager.dragSnapRadius">
+  dragSnapRadius
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float dragSnapRadius</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapRotation" data-uid="DefaultNamespace.ItemDragManager.dragSnapRotation">
+  dragSnapRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion dragSnapRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Quaternion</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapScale" data-uid="DefaultNamespace.ItemDragManager.dragSnapScale">
+  dragSnapScale
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 dragSnapScale</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapSpeed" data-uid="DefaultNamespace.ItemDragManager.dragSnapSpeed">
+  dragSnapSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float dragSnapSpeed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_dragSnapT" data-uid="DefaultNamespace.ItemDragManager.dragSnapT">
+  dragSnapT
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float dragSnapT</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_draggedIcon" data-uid="DefaultNamespace.ItemDragManager.draggedIcon">
+  draggedIcon
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_ItemIcon draggedIcon</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_ItemIcon.html">uGUI_ItemIcon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_hoveredItem" data-uid="DefaultNamespace.ItemDragManager.hoveredItem">
+  hoveredItem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static InventoryItem hoveredItem</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_initialized" data-uid="DefaultNamespace.ItemDragManager.initialized">
+  initialized
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool initialized</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_lockedIcon" data-uid="DefaultNamespace.ItemDragManager.lockedIcon">
+  lockedIcon
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_ILockable lockedIcon</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_ILockable.html">uGUI_ILockable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_onItemDragStart" data-uid="DefaultNamespace.ItemDragManager.onItemDragStart">
+  onItemDragStart
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ItemDragManager.OnItemDragStart onItemDragStart</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemDragManager.html">ItemDragManager</a>.<a class="xref" href="DefaultNamespace.ItemDragManager.OnItemDragStart.html">OnItemDragStart</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_onItemDragStop" data-uid="DefaultNamespace.ItemDragManager.onItemDragStop">
+  onItemDragStop
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ItemDragManager.OnItemDragStop onItemDragStop</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemDragManager.html">ItemDragManager</a>.<a class="xref" href="DefaultNamespace.ItemDragManager.OnItemDragStop.html">OnItemDragStop</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_rt" data-uid="DefaultNamespace.ItemDragManager.rt">
+  rt
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RectTransform rt</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RectTransform</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_swapAlpha" data-uid="DefaultNamespace.ItemDragManager.swapAlpha">
+  swapAlpha
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float swapAlpha = 0.3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_ItemDragManager_updateQueue" data-uid="DefaultNamespace.ItemDragManager.updateQueue">
+  updateQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const ManagedUpdate.Queue updateQueue = PreCanvasDrag</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ManagedUpdate</span>.<span class="xref">Queue</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_ItemDragManager_draggedItem_" data-uid="DefaultNamespace.ItemDragManager.draggedItem*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_draggedItem" data-uid="DefaultNamespace.ItemDragManager.draggedItem">
+  draggedItem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static InventoryItem draggedItem { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_draggedItemSize_" data-uid="DefaultNamespace.ItemDragManager.draggedItemSize*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_draggedItemSize" data-uid="DefaultNamespace.ItemDragManager.draggedItemSize">
+  draggedItemSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 draggedItemSize { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_instance_" data-uid="DefaultNamespace.ItemDragManager.instance*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_instance" data-uid="DefaultNamespace.ItemDragManager.instance">
+  instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ItemDragManager instance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemDragManager.html">ItemDragManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_isDragging_" data-uid="DefaultNamespace.ItemDragManager.isDragging*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_isDragging" data-uid="DefaultNamespace.ItemDragManager.isDragging">
+  isDragging
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool isDragging { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_ItemDragManager_Awake_" data-uid="DefaultNamespace.ItemDragManager.Awake*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_Awake" data-uid="DefaultNamespace.ItemDragManager.Awake">
+  Awake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Awake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_Deinitialize_" data-uid="DefaultNamespace.ItemDragManager.Deinitialize*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_Deinitialize" data-uid="DefaultNamespace.ItemDragManager.Deinitialize">
+  Deinitialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Deinitialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_DragSnap_" data-uid="DefaultNamespace.ItemDragManager.DragSnap*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_DragSnap_System_Int32_UnityEngine_Vector3_UnityEngine_Quaternion_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_System_Single_" data-uid="DefaultNamespace.ItemDragManager.DragSnap(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Single)">
+  DragSnap(int, Vector3, Quaternion, Vector2, Vector2, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DragSnap(int instanceId, Vector3 worldPosition, Quaternion worldRotation, Vector2 worldScale, Vector2 foregroundSize, Vector2 backgroundSize, float backgroundRadius)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>worldRotation</code> <span class="xref">Quaternion</span></dt>
+    <dd></dd>
+    <dt><code>worldScale</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>foregroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>backgroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>backgroundRadius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_DragStart_" data-uid="DefaultNamespace.ItemDragManager.DragStart*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_DragStart_DefaultNamespace_InventoryItem_DefaultNamespace_uGUI_ILockable_System_Int32_UnityEngine_Vector3_UnityEngine_Quaternion_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_System_Single_" data-uid="DefaultNamespace.ItemDragManager.DragStart(DefaultNamespace.InventoryItem,DefaultNamespace.uGUI_ILockable,System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Single)">
+  DragStart(InventoryItem, uGUI_ILockable, int, Vector3, Quaternion, Vector2, Vector2, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool DragStart(InventoryItem item, uGUI_ILockable icon, int instanceId, Vector3 worldPosition, Quaternion worldRotation, Vector2 worldScale, Vector2 foregroundSize, Vector2 backgroundSize, float backgroundRadius)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>icon</code> <a class="xref" href="DefaultNamespace.uGUI_ILockable.html">uGUI_ILockable</a></dt>
+    <dd></dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>worldRotation</code> <span class="xref">Quaternion</span></dt>
+    <dd></dd>
+    <dt><code>worldScale</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>foregroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>backgroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>backgroundRadius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_DragStop_" data-uid="DefaultNamespace.ItemDragManager.DragStop*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_DragStop" data-uid="DefaultNamespace.ItemDragManager.DragStop">
+  DragStop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DragStop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_ExtractParams_" data-uid="DefaultNamespace.ItemDragManager.ExtractParams*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_ExtractParams" data-uid="DefaultNamespace.ItemDragManager.ExtractParams">
+  ExtractParams()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ExtractParams()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_InternalDragSnap_" data-uid="DefaultNamespace.ItemDragManager.InternalDragSnap*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_InternalDragSnap_System_Int32_UnityEngine_Vector3_UnityEngine_Quaternion_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_System_Single_" data-uid="DefaultNamespace.ItemDragManager.InternalDragSnap(System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Single)">
+  InternalDragSnap(int, Vector3, Quaternion, Vector2, Vector2, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InternalDragSnap(int instanceId, Vector3 worldPosition, Quaternion worldRotation, Vector2 worldScale, Vector2 foregroundSize, Vector2 backgroundSize, float worldRadius)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>worldRotation</code> <span class="xref">Quaternion</span></dt>
+    <dd></dd>
+    <dt><code>worldScale</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>foregroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>backgroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>worldRadius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_InternalDragStart_" data-uid="DefaultNamespace.ItemDragManager.InternalDragStart*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_InternalDragStart_DefaultNamespace_InventoryItem_DefaultNamespace_uGUI_ILockable_System_Int32_UnityEngine_Vector3_UnityEngine_Quaternion_UnityEngine_Vector2_UnityEngine_Vector2_UnityEngine_Vector2_System_Single_" data-uid="DefaultNamespace.ItemDragManager.InternalDragStart(DefaultNamespace.InventoryItem,DefaultNamespace.uGUI_ILockable,System.Int32,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,System.Single)">
+  InternalDragStart(InventoryItem, uGUI_ILockable, int, Vector3, Quaternion, Vector2, Vector2, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool InternalDragStart(InventoryItem item, uGUI_ILockable icon, int instanceId, Vector3 worldPosition, Quaternion worldRotation, Vector2 worldScale, Vector2 foregroundSize, Vector2 backgroundSize, float backgroundRadius)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>icon</code> <a class="xref" href="DefaultNamespace.uGUI_ILockable.html">uGUI_ILockable</a></dt>
+    <dd></dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>worldRotation</code> <span class="xref">Quaternion</span></dt>
+    <dd></dd>
+    <dt><code>worldScale</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>foregroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>backgroundSize</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+    <dt><code>backgroundRadius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_InternalDragStop_" data-uid="DefaultNamespace.ItemDragManager.InternalDragStop*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_InternalDragStop" data-uid="DefaultNamespace.ItemDragManager.InternalDragStop">
+  InternalDragStop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InternalDragStop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_LockIcon_" data-uid="DefaultNamespace.ItemDragManager.LockIcon*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_LockIcon_System_Boolean_" data-uid="DefaultNamespace.ItemDragManager.LockIcon(System.Boolean)">
+  LockIcon(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LockIcon(bool state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_NotifyItemDragStart_" data-uid="DefaultNamespace.ItemDragManager.NotifyItemDragStart*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_NotifyItemDragStart_DefaultNamespace_Pickupable_" data-uid="DefaultNamespace.ItemDragManager.NotifyItemDragStart(DefaultNamespace.Pickupable)">
+  NotifyItemDragStart(Pickupable)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifyItemDragStart(Pickupable p)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>p</code> <a class="xref" href="DefaultNamespace.Pickupable.html">Pickupable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_NotifyItemDragStop_" data-uid="DefaultNamespace.ItemDragManager.NotifyItemDragStop*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_NotifyItemDragStop" data-uid="DefaultNamespace.ItemDragManager.NotifyItemDragStop">
+  NotifyItemDragStop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifyItemDragStop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_OnDisable_" data-uid="DefaultNamespace.ItemDragManager.OnDisable*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_OnDisable" data-uid="DefaultNamespace.ItemDragManager.OnDisable">
+  OnDisable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDisable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_OnEnable_" data-uid="DefaultNamespace.ItemDragManager.OnEnable*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_OnEnable" data-uid="DefaultNamespace.ItemDragManager.OnEnable">
+  OnEnable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnEnable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_OnLateUpdate_" data-uid="DefaultNamespace.ItemDragManager.OnLateUpdate*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_OnLateUpdate" data-uid="DefaultNamespace.ItemDragManager.OnLateUpdate">
+  OnLateUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnLateUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_SetActionHint_" data-uid="DefaultNamespace.ItemDragManager.SetActionHint*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_SetActionHint_DefaultNamespace_ItemActionHint_" data-uid="DefaultNamespace.ItemDragManager.SetActionHint(DefaultNamespace.ItemActionHint)">
+  SetActionHint(ItemActionHint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetActionHint(ItemActionHint hint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hint</code> <a class="xref" href="DefaultNamespace.ItemActionHint.html">ItemActionHint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ItemDragManager_UpdateIconTransform_" data-uid="DefaultNamespace.ItemDragManager.UpdateIconTransform*"></a>
+
+  <h3 id="DefaultNamespace_ItemDragManager_UpdateIconTransform" data-uid="DefaultNamespace.ItemDragManager.UpdateIconTransform">
+  UpdateIconTransform()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateIconTransform()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
