@@ -31,6 +31,8 @@ public sealed class CopyDocs : Step
             data = JsonConvert.DeserializeObject<List<DocItem>>(file)!;
         }
 
+        if (data.Find(v => v.Id == config.Game.Id) == null) return;
+
         data.Add(new DocItem()
         {
             Id = config.Game.Id,
