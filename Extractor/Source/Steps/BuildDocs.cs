@@ -31,7 +31,8 @@ public sealed class BuildDocs : Step
     {
         new ResExtractor().Extract(config.DocDir, config);
 
-        if (!Directory.Exists(config.DocDir)) {
+        if (!Directory.Exists(config.DocDir))
+        {
             Directory.CreateDirectory(config.DocDir);
         }
 

@@ -7,7 +7,7 @@ using Extractor.Config;
 
 namespace Extractor;
 
-public sealed class Patcher: WithLogger
+public sealed class Patcher : WithLogger
 {
     public async Task Run(ProjectConfig config, string path)
     {

@@ -15,8 +15,10 @@ public sealed class PatchStep : Step
             await new Patcher().Run(config, patch);
         }
 
-        foreach (var (key, dirs) in config.Remove) {
-            foreach (var dir in dirs) {
+        foreach (var (key, dirs) in config.Remove)
+        {
+            foreach (var dir in dirs)
+            {
                 var real = Path.Join(config.OutDir, key, dir);
 
                 Directory.Delete(real, true);
