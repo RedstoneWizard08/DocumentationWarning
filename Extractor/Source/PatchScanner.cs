@@ -15,7 +15,7 @@ public static class PatchScanner
     public static List<string> Scan(ProjectConfig config, string stage)
     {
         var dir = Path.Join(config.ProjectDir, "Patches", stage);
-        var list = Directory.GetFiles(dir).ToList();
+        var list = Directory.GetFiles(dir).Where(v => v.EndsWith(".patch")).ToList();
 
         list.Sort();
 
