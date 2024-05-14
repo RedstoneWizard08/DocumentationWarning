@@ -1,0 +1,3790 @@
+diff -Naur a/Assembly-CSharp/AirBladder.cs Out/Assembly-CSharp/AirBladder.cs
+--- a/Assembly-CSharp/AirBladder.cs	2024-05-14 19:55:55.094249907 +0000
++++ Out/Assembly-CSharp/AirBladder.cs	2024-05-14 21:00:53.458370099 +0000
+@@ -313,12 +313,4 @@
+ 	{
+ 		throw null;
+ 	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[SpecialName]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	GameObject IOxygenSource.get_gameObject()
+-	{
+-		throw null;
+-	}
+ }
+diff -Naur a/Assembly-CSharp/Assembly-CSharp.csproj Out/Assembly-CSharp/Assembly-CSharp.csproj
+--- a/Assembly-CSharp/Assembly-CSharp.csproj	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/Assembly-CSharp.csproj	2024-05-14 21:03:55.066375698 +0000
+@@ -2,7 +2,7 @@
+   <PropertyGroup>
+     <AssemblyName>Assembly-CSharp</AssemblyName>
+     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+-    <TargetFramework>net40</TargetFramework>
++    <TargetFramework>net472</TargetFramework>
+   </PropertyGroup>
+   <PropertyGroup>
+     <LangVersion>11.0</LangVersion>
+@@ -12,9 +12,10 @@
+     <Reference Include="UnityEngine.CoreModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.CoreModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="Assembly-CSharp-firstpass">
++    <!-- <Reference Include="Assembly-CSharp-firstpass">
+       <HintPath>../../Temp/Assemblies/Assembly-CSharp-firstpass.dll</HintPath>
+-    </Reference>
++    </Reference> -->
++    <ProjectReference Include="../Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj" />
+     <Reference Include="UnityEngine.AnimationModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.AnimationModule.dll</HintPath>
+     </Reference>
+@@ -54,7 +55,8 @@
+     <Reference Include="FMODUnity">
+       <HintPath>../../Temp/Assemblies/FMODUnity.dll</HintPath>
+     </Reference>
+-    <Reference Include="com.rlabrecque.steamworks.net" />
++    <!-- <Reference Include="com.rlabrecque.steamworks.net" /> -->
++    <PackageReference Include="YellowDogMan.Steamworks.NET" Version="15.0.1-ydm-0.1.0" />
+     <Reference Include="XGamingRuntime" />
+     <Reference Include="PlatformIODefault" />
+     <Reference Include="Sentry">
+@@ -72,11 +74,11 @@
+     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="LitJSON" />
++    <PackageReference Include="LitJSON" Version="0.19.0" />
+     <Reference Include="UnityEngine.UnityWebRequestModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.UnityWebRequestModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="Newtonsoft.Json" />
++    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+     <Reference Include="Unity.Burst">
+       <HintPath>../../Temp/Assemblies/Unity.Burst.dll</HintPath>
+     </Reference>
+diff -Naur a/Assembly-CSharp/CinematicModeEventData.cs Out/Assembly-CSharp/CinematicModeEventData.cs
+--- a/Assembly-CSharp/CinematicModeEventData.cs	2024-05-14 19:55:54.986249903 +0000
++++ Out/Assembly-CSharp/CinematicModeEventData.cs	2024-05-14 21:11:23.958389538 +0000
+@@ -10,7 +10,7 @@
+ 	public PlayerCinematicController cinematicController;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public CinematicModeEventData(EventSystem eventSystem)
++	public CinematicModeEventData(EventSystem eventSystem): base(eventSystem)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/ColorChangeEventData.cs Out/Assembly-CSharp/ColorChangeEventData.cs
+--- a/Assembly-CSharp/ColorChangeEventData.cs	2024-05-14 19:55:55.134249908 +0000
++++ Out/Assembly-CSharp/ColorChangeEventData.cs	2024-05-14 21:11:27.046389633 +0000
+@@ -11,7 +11,7 @@
+ 	public Vector3 hsb;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ColorChangeEventData(EventSystem eventSystem)
++	public ColorChangeEventData(EventSystem eventSystem): base(eventSystem)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/ConsoleInput.cs Out/Assembly-CSharp/ConsoleInput.cs
+--- a/Assembly-CSharp/ConsoleInput.cs	2024-05-14 19:55:55.110249907 +0000
++++ Out/Assembly-CSharp/ConsoleInput.cs	2024-05-14 20:19:42.574293918 +0000
+@@ -197,14 +197,14 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Awake()
++	protected override void Awake()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Start()
++	protected override void Start()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/CraftNode.cs Out/Assembly-CSharp/CraftNode.cs
+--- a/Assembly-CSharp/CraftNode.cs	2024-05-14 19:55:54.986249903 +0000
++++ Out/Assembly-CSharp/CraftNode.cs	2024-05-14 21:11:35.750389901 +0000
+@@ -177,7 +177,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public CraftNode(string id, TreeAction action = TreeAction.None, TechType techType = TechType.None)
++	public CraftNode(string id, TreeAction action = TreeAction.None, TechType techType = TechType.None): base(id)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/DeferredSpawner.cs Out/Assembly-CSharp/DeferredSpawner.cs
+--- a/Assembly-CSharp/DeferredSpawner.cs	2024-05-14 19:55:55.086249906 +0000
++++ Out/Assembly-CSharp/DeferredSpawner.cs	2024-05-14 21:12:02.834390736 +0000
+@@ -92,7 +92,7 @@
+ 		public GameObject result;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public ManualTask(MonoBehaviour owner, Transform parent, Vector3 position, Quaternion rotation, bool instantiateActivated, GameObject prefab)
++		public ManualTask(MonoBehaviour owner, Transform parent, Vector3 position, Quaternion rotation, bool instantiateActivated, GameObject prefab): base(owner, parent, position, rotation, instantiateActivated)
+ 		{
+ 			throw null;
+ 		}
+@@ -190,7 +190,7 @@
+ 		public GameObject spawnedObject;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public AddressablesTask(MonoBehaviour owner, Transform parent, Vector3 position, Quaternion rotation, bool instantiateActivated, string key)
++		public AddressablesTask(MonoBehaviour owner, Transform parent, Vector3 position, Quaternion rotation, bool instantiateActivated, string key): base(owner, parent, position, rotation, instantiateActivated)
+ 		{
+ 			throw null;
+ 		}
+diff -Naur a/Assembly-CSharp/FPSInputModule.cs Out/Assembly-CSharp/FPSInputModule.cs
+--- a/Assembly-CSharp/FPSInputModule.cs	2024-05-14 19:55:55.114249907 +0000
++++ Out/Assembly-CSharp/FPSInputModule.cs	2024-05-14 21:00:13.586368869 +0000
+@@ -74,7 +74,7 @@
+ 	public const ManagedUpdate.Queue updateQueue = ManagedUpdate.Queue.LateUpdateInput;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public readonly MouseState m_MouseState;
++	private readonly MouseState m_MouseState;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+ 	public static readonly Comparison<RaycastResult> s_RaycastComparer;
+@@ -155,7 +155,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Awake()
++	protected override void Awake()
+ 	{
+ 		throw null;
+ 	}
+@@ -192,14 +192,14 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnEnable()
++	protected override void OnEnable()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnDisable()
++	protected override void OnDisable()
+ 	{
+ 		throw null;
+ 	}
+@@ -232,7 +232,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override MouseState GetMousePointerEventData()
++	protected override MouseState GetMousePointerEventData()
+ 	{
+ 		throw null;
+ 	}
+@@ -286,7 +286,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void ProcessDrag(PointerEventData pointerEvent)
++	protected override void ProcessDrag(PointerEventData pointerEvent)
+ 	{
+ 		throw null;
+ 	}
+@@ -328,7 +328,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void ProcessMove(PointerEventData pointerEvent)
++	protected override void ProcessMove(PointerEventData pointerEvent)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/GUITextFile.cs Out/Assembly-CSharp/GUITextFile.cs
+--- a/Assembly-CSharp/GUITextFile.cs	2024-05-14 19:55:54.970249903 +0000
++++ Out/Assembly-CSharp/GUITextFile.cs	1970-01-01 00:00:00.000000000 +0000
+@@ -1,32 +0,0 @@
+-namespace DefaultNamespace;
+-
+-using System.Reflection;
+-using System.Runtime.CompilerServices;
+-using BepInEx.AssemblyPublicizer;
+-using UnityEngine;
+-
+-[RequireComponent(typeof(GUIText))]
+-public class GUITextFile : MonoBehaviour
+-{
+-	public TextAsset src;
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void Start()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void Update()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public GUITextFile()
+-	{
+-		throw null;
+-	}
+-}
+diff -Naur a/Assembly-CSharp/GameSaveSampleLogic.cs Out/Assembly-CSharp/GameSaveSampleLogic.cs
+--- a/Assembly-CSharp/GameSaveSampleLogic.cs	2024-05-14 19:55:54.970249903 +0000
++++ Out/Assembly-CSharp/GameSaveSampleLogic.cs	2024-05-14 21:08:51.882384849 +0000
+@@ -4,7 +4,6 @@
+ using System.Reflection;
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+-using Microsoft.Xbox;
+ using UnityEngine;
+ using UnityEngine.UI;
+ 
+@@ -51,7 +50,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void OnGameSaveLoaded(object sender, GameSaveLoadedArgs saveData)
++	public void OnGameSaveLoaded(object sender, object /* GameSaveLoadedArgs */ saveData)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/GoalStatusUI.cs Out/Assembly-CSharp/GoalStatusUI.cs
+--- a/Assembly-CSharp/GoalStatusUI.cs	2024-05-14 19:55:55.042249905 +0000
++++ Out/Assembly-CSharp/GoalStatusUI.cs	2024-05-14 20:59:49.458368125 +0000
+@@ -23,7 +23,7 @@
+ 	public float punchTime;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public List<GUIText> goalTextList;
++	public List<UnityEngine.UI.Text> goalTextList;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+@@ -53,7 +53,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void DeleteGoalText(GUIText gt)
++	public void DeleteGoalText(UnityEngine.UI.Text gt)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/HandTargetEventData.cs Out/Assembly-CSharp/HandTargetEventData.cs
+--- a/Assembly-CSharp/HandTargetEventData.cs	2024-05-14 19:55:55.050249905 +0000
++++ Out/Assembly-CSharp/HandTargetEventData.cs	2024-05-14 21:12:07.986390895 +0000
+@@ -11,7 +11,7 @@
+ 	public Transform transform;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public HandTargetEventData(EventSystem eventSystem)
++	public HandTargetEventData(EventSystem eventSystem): base(eventSystem)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/LanguageUpdater.cs Out/Assembly-CSharp/LanguageUpdater.cs
+--- a/Assembly-CSharp/LanguageUpdater.cs	2024-05-14 19:55:55.050249905 +0000
++++ Out/Assembly-CSharp/LanguageUpdater.cs	2024-05-14 20:52:56.082355380 +0000
+@@ -15,7 +15,7 @@
+ 	public TextMesh[] textMeshes;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public GUIText[] guiTextStrings;
++	public UnityEngine.UI.Text[] guiTextStrings;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+ 	public TextMeshProUGUI[] uguiTextStrings;
+diff -Naur a/Assembly-CSharp/LightCircle.cs Out/Assembly-CSharp/LightCircle.cs
+--- a/Assembly-CSharp/LightCircle.cs	2024-05-14 19:55:55.026249904 +0000
++++ Out/Assembly-CSharp/LightCircle.cs	2024-05-14 20:21:42.258297608 +0000
+@@ -7,7 +7,7 @@
+ 
+ public class LightCircle : MonoBehaviour
+ {
+-	public GUITexture guiTexture;
++	public UnityEngine.UI.Image guiTexture;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+ 	public float growTime;
+diff -Naur a/Assembly-CSharp/LootSensorGUI.cs Out/Assembly-CSharp/LootSensorGUI.cs
+--- a/Assembly-CSharp/LootSensorGUI.cs	2024-05-14 19:55:55.042249905 +0000
++++ Out/Assembly-CSharp/LootSensorGUI.cs	2024-05-14 20:52:53.222355292 +0000
+@@ -9,7 +9,7 @@
+ {
+ 	public EmptySpaceClick emptySpaceClick;
+ 
+-	public GUIText statusText;
++	public UnityEngine.UI.Text statusText;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+ 	public LootSensor lootSensor;
+diff -Naur a/Assembly-CSharp/MainMenuSaveMigrationPanel.cs Out/Assembly-CSharp/MainMenuSaveMigrationPanel.cs
+--- a/Assembly-CSharp/MainMenuSaveMigrationPanel.cs	2024-05-14 19:55:55.042249905 +0000
++++ Out/Assembly-CSharp/MainMenuSaveMigrationPanel.cs	2024-05-14 21:12:20.614391285 +0000
+@@ -17,7 +17,7 @@
+ 		public readonly string errorMessage;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public MigrateResult(bool success, SaveLoadManager.Error error, string slotName, string errorMessage)
++		public MigrateResult(bool success, SaveLoadManager.Error error, string slotName, string errorMessage): base(success, error, slotName)
+ 		{
+ 			throw null;
+ 		}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/Message.cs Out/Assembly-CSharp/Oculus/Platform/Message.cs
+--- a/Assembly-CSharp/Oculus/Platform/Message.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/Message.cs	2024-05-14 21:12:58.198392443 +0000
+@@ -23,7 +23,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public Message(IntPtr c_message)
++	public Message(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithAchievementDefinitionList.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithAchievementDefinitionList.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithAchievementDefinitionList.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithAchievementDefinitionList.cs	2024-05-14 21:13:05.258392661 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithAchievementDefinitionList : Message<AchievementDefinitionList>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithAchievementDefinitionList(IntPtr c_message)
++	public MessageWithAchievementDefinitionList(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithAchievementProgressList.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithAchievementProgressList.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithAchievementProgressList.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithAchievementProgressList.cs	2024-05-14 21:13:11.334392848 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithAchievementProgressList : Message<AchievementProgressList>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithAchievementProgressList(IntPtr c_message)
++	public MessageWithAchievementProgressList(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithCurrentRoom.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithCurrentRoom.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithCurrentRoom.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithCurrentRoom.cs	2024-05-14 21:13:16.070392994 +0000
+@@ -23,7 +23,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithCurrentRoom(IntPtr c_message)
++	public MessageWithCurrentRoom(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardDidUpdate.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardDidUpdate.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardDidUpdate.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardDidUpdate.cs	2024-05-14 21:13:19.194393091 +0000
+@@ -22,7 +22,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithLeaderboardDidUpdate(IntPtr c_message)
++	public MessageWithLeaderboardDidUpdate(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardEntries.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardEntries.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardEntries.cs	2024-05-14 19:55:54.962249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithLeaderboardEntries.cs	2024-05-14 21:13:23.378393220 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithLeaderboardEntries : Message<LeaderboardEntryList>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithLeaderboardEntries(IntPtr c_message)
++	public MessageWithLeaderboardEntries(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithMatchMadeRoom.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithMatchMadeRoom.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithMatchMadeRoom.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithMatchMadeRoom.cs	2024-05-14 21:13:27.334393342 +0000
+@@ -23,7 +23,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithMatchMadeRoom(IntPtr c_message)
++	public MessageWithMatchMadeRoom(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResult.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResult.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResult.cs	2024-05-14 19:55:54.962249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResult.cs	2024-05-14 21:13:31.762393478 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithMatchmakingEnqueueResult : Message<MatchmakingEnqueueResult>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithMatchmakingEnqueueResult(IntPtr c_message)
++	public MessageWithMatchmakingEnqueueResult(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResultAndRoom.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResultAndRoom.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResultAndRoom.cs	2024-05-14 19:55:54.962249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithMatchmakingEnqueueResultAndRoom.cs	2024-05-14 21:13:34.970393577 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithMatchmakingEnqueueResultAndRoom : Message<MatchmakingEnqueueResultAndRoom>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithMatchmakingEnqueueResultAndRoom(IntPtr c_message)
++	public MessageWithMatchmakingEnqueueResultAndRoom(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithNetworkingPeer.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithNetworkingPeer.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithNetworkingPeer.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithNetworkingPeer.cs	2024-05-14 21:13:38.294393680 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithNetworkingPeer : Message<NetworkingPeer>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithNetworkingPeer(IntPtr c_message)
++	public MessageWithNetworkingPeer(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithProduct.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithProduct.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithProduct.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithProduct.cs	2024-05-14 21:13:41.822393788 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithProduct : Message<Product>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithProduct(IntPtr c_message)
++	public MessageWithProduct(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithProductList.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithProductList.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithProductList.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithProductList.cs	2024-05-14 21:13:45.010393887 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithProductList : Message<ProductList>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithProductList(IntPtr c_message)
++	public MessageWithProductList(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithPurchase.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithPurchase.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithPurchase.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithPurchase.cs	2024-05-14 21:13:50.210394047 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithPurchase : Message<Purchase>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithPurchase(IntPtr c_message)
++	public MessageWithPurchase(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithPurchaseList.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithPurchaseList.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithPurchaseList.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithPurchaseList.cs	2024-05-14 21:13:57.274394265 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithPurchaseList : Message<PurchaseList>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithPurchaseList(IntPtr c_message)
++	public MessageWithPurchaseList(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithRoom.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithRoom.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithRoom.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithRoom.cs	2024-05-14 21:13:59.474394333 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithRoom : Message<Room>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithRoom(IntPtr c_message)
++	public MessageWithRoom(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithRoomList.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithRoomList.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithRoomList.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithRoomList.cs	2024-05-14 21:14:02.138394415 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithRoomList : Message<RoomList>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithRoomList(IntPtr c_message)
++	public MessageWithRoomList(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithString.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithString.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithString.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithString.cs	2024-05-14 21:14:05.210394509 +0000
+@@ -8,7 +8,7 @@
+ public class MessageWithString : Message<string>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithString(IntPtr c_message)
++	public MessageWithString(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithUser.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithUser.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithUser.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithUser.cs	2024-05-14 21:14:26.506395166 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithUser : Message<User>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithUser(IntPtr c_message)
++	public MessageWithUser(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithUserList.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithUserList.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithUserList.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithUserList.cs	2024-05-14 21:14:23.522395074 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithUserList : Message<UserList>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithUserList(IntPtr c_message)
++	public MessageWithUserList(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithUserProof.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithUserProof.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithUserProof.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithUserProof.cs	2024-05-14 21:14:20.730394988 +0000
+@@ -9,7 +9,7 @@
+ public class MessageWithUserProof : Message<UserProof>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithUserProof(IntPtr c_message)
++	public MessageWithUserProof(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/MessageWithViewerRoom.cs Out/Assembly-CSharp/Oculus/Platform/MessageWithViewerRoom.cs
+--- a/Assembly-CSharp/Oculus/Platform/MessageWithViewerRoom.cs	2024-05-14 19:55:54.958249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/MessageWithViewerRoom.cs	2024-05-14 21:14:16.922394870 +0000
+@@ -23,7 +23,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MessageWithViewerRoom(IntPtr c_message)
++	public MessageWithViewerRoom(IntPtr c_message): base(c_message)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oculus/Platform/Request.cs Out/Assembly-CSharp/Oculus/Platform/Request.cs
+--- a/Assembly-CSharp/Oculus/Platform/Request.cs	2024-05-14 19:55:54.962249902 +0000
++++ Out/Assembly-CSharp/Oculus/Platform/Request.cs	2024-05-14 21:14:31.774395328 +0000
+@@ -5,7 +5,7 @@
+ public sealed class Request<T> : Request
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public Request(ulong requestID)
++	public Request(ulong requestID): base(requestID)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/Oxygen.cs Out/Assembly-CSharp/Oxygen.cs
+--- a/Assembly-CSharp/Oxygen.cs	2024-05-14 19:55:55.050249905 +0000
++++ Out/Assembly-CSharp/Oxygen.cs	2024-05-14 21:00:39.098369656 +0000
+@@ -131,12 +131,4 @@
+ 	{
+ 		throw null;
+ 	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[SpecialName]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	GameObject IOxygenSource.get_gameObject()
+-	{
+-		throw null;
+-	}
+ }
+diff -Naur a/Assembly-CSharp/PAXIntro.cs Out/Assembly-CSharp/PAXIntro.cs
+--- a/Assembly-CSharp/PAXIntro.cs	2024-05-14 19:55:55.042249905 +0000
++++ Out/Assembly-CSharp/PAXIntro.cs	2024-05-14 21:00:27.134369287 +0000
+@@ -80,11 +80,11 @@
+ 		}
+ 	}
+ 
+-	public GUITexture curtains;
++	public UnityEngine.UI.Image curtains;
+ 
+-	public GUIText text;
++	public UnityEngine.UI.Text text;
+ 
+-	public GUIText skipText;
++	public UnityEngine.UI.Text skipText;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+ 	public bool showing;
+diff -Naur a/Assembly-CSharp/PlatformServicesArc.cs Out/Assembly-CSharp/PlatformServicesArc.cs
+--- a/Assembly-CSharp/PlatformServicesArc.cs	2024-05-14 19:55:55.074249906 +0000
++++ Out/Assembly-CSharp/PlatformServicesArc.cs	2024-05-14 21:12:35.002391728 +0000
+@@ -5,7 +5,7 @@
+ public class PlatformServicesArc : PlatformServicesNull
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public PlatformServicesArc()
++	public PlatformServicesArc(): base("")
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/PlatformServicesOculus.cs Out/Assembly-CSharp/PlatformServicesOculus.cs
+--- a/Assembly-CSharp/PlatformServicesOculus.cs	2024-05-14 19:55:55.058249905 +0000
++++ Out/Assembly-CSharp/PlatformServicesOculus.cs	2024-05-14 21:10:57.922388735 +0000
+@@ -14,7 +14,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public PlatformServicesOculus()
++	public PlatformServicesOculus(): base(null)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/PlatformServicesWindows.cs Out/Assembly-CSharp/PlatformServicesWindows.cs
+--- a/Assembly-CSharp/PlatformServicesWindows.cs	2024-05-14 19:55:55.062249906 +0000
++++ Out/Assembly-CSharp/PlatformServicesWindows.cs	1970-01-01 00:00:00.000000000 +0000
+@@ -1,560 +0,0 @@
+-namespace DefaultNamespace;
+-
+-using System;
+-using System.Collections;
+-using System.Collections.Generic;
+-using System.Diagnostics;
+-using System.Reflection;
+-using System.Runtime.CompilerServices;
+-using BepInEx.AssemblyPublicizer;
+-using XGamingRuntime;
+-
+-public class PlatformServicesWindows : PlatformServices
+-{
+-	[CompilerGenerated]
+-	private sealed class _003CInitializeAsync_003Ed__28 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public PlatformServicesWindows _003C_003E4__this;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CInitializeAsync_003Ed__28(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CTryEnsureServerAccessAsync_003Ed__64 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CTryEnsureServerAccessAsync_003Ed__64(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public UserStorageXSave userStorageCloud;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public ulong userId;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public XStoreContext storeContext;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public XUserHandle user;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public XblContextHandle context;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int titleId = 945909358;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int E_SIGN_IN_DISMISSED = -2147467260;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int E_ABORT = -2147024809;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int E_GAMEUSER_RESOLVE_USER_ISSUE_REQUIRED = -1994108670;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int HTTP_E_STATUS_NOT_MODIFIED = -2145844944;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const string serviceConfigurationId = "43c90100-1704-438e-b21f-e68a38616e6e";
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int maxAchievements = 100;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const XUserGamertagComponent gamertagType = 0u;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const XUserAddOptions guestOptions = 2u;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const XUserAddOptions silentOptions = 1u;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public string gamerTag;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public bool offlineMode;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public HashSet<string> unlockedAchievements;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public float richPresenceSendTime;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public float richPresenceThrottle;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public string richPresenceKeyUpdate;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public string RichPresenceStr;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const string defaultNewsUrl = "https://subnautica.unknownworlds.com/api/news/pc-new";
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public UserStoragePC userStorageLocal;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public readonly Dictionary<string, string> XDPAchievementIDToGameAchievementID;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public bool devToolsEnabled;
+-
+-	public event PlatformServicesUtils.AchievementsChanged OnAchievementsChanged
+-	{
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[CompilerGenerated]
+-		add
+-		{
+-			throw null;
+-		}
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[CompilerGenerated]
+-		remove
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public static bool IsPresent()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public IEnumerator InitializeAsync()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void AddUser()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void AddUserComplete(int result, XUserHandle userHandle)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void SignInSilentlyComplete(int result, XUserHandle userHandle)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void ResolveIssueCompleted(int hresult)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void InitXBL()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void HideStartScreenDisclaimer()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void OnSignInPromptConfirmed(bool confirmation)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void Shutdown()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void RegisterOnQuitBehaviour(IOnQuitBehaviour behaviour)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void DeregisterOnQuitBehaviour(IOnQuitBehaviour behaviour)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public string GetName()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorage GetUserStorage()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorage GetLocalStorage()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public IEconomyItems GetEconomyItems()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public string GetUserMusicPath()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void GetAchievements()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void ExtractAchievements(int hresult, XblAchievementsResultHandle result)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void UnlockAchievement(GameAchievements.Id id)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void SendAchievementUnlocked(ulong user, string achievementId)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool GetAchievementUnlocked(GameAchievements.Id id)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void ResetAchievements()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool GetSupportsSharingScreenshots()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool ShareScreenshot(string fileName)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool IsUserLoggedIn()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public string GetUserId()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public string GetUserName()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool GetSupportsDynamicLogOn()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public PlatformServicesUtils.AsyncOperation LogOnUserAsync(int gamepadIndex)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void LogOffUser()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void ShowHelp()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool GetSupportsVirtualKeyboard()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool ShowVirtualKeyboard(string title, string defaultText, PlatformServicesUtils.VirtualKeyboardFinished callback, int characterLimit = -1)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void SetRichPresence(string presenceKey)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void ShowUGCRestrictionMessageIfNecessary()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public IEnumerator TryEnsureServerAccessAsync(bool onUserInput = false)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool CanAccessServers()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool CanAccessUGC()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public string GetRichPresence()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void OpenURL(string url, bool overlay = false)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void DispatchCallbacks()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void Update()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public int GetActiveController()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool ReconnectController(int gamepadIndex)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void SetUseFastLoadMode(bool useFastMode)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public DisplayOperationMode GetCurrentDisplayOperationMode()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public float GetDefaultUiScale(DisplayOperationMode displayOperationMode)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool GetDisplayOutOfSpaceMessage()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public bool GetDevToolsEnabled()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void SetDevToolsEnabled(bool enabled)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public string GetDefaultNewsUrl()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public PlatformServicesWindows()
+-	{
+-		throw null;
+-	}
+-}
+\ No newline at end of file
+diff -Naur a/Assembly-CSharp/PlatformUtils.cs Out/Assembly-CSharp/PlatformUtils.cs
+--- a/Assembly-CSharp/PlatformUtils.cs	2024-05-14 19:55:55.062249906 +0000
++++ Out/Assembly-CSharp/PlatformUtils.cs	2024-05-14 20:19:53.970294269 +0000
+@@ -28,8 +28,6 @@
+ 
+ 		private PlatformServicesDiscord _003CdiscordServices_003E5__3;
+ 
+-		private PlatformServicesWindows _003CwindowsServices_003E5__4;
+-
+ 		private PlatformServicesNull _003CnullServices_003E5__5;
+ 
+ 		object IEnumerator<object>.Current
+diff -Naur a/Assembly-CSharp/SaveLoadManager.cs Out/Assembly-CSharp/SaveLoadManager.cs
+--- a/Assembly-CSharp/SaveLoadManager.cs	2024-05-14 19:55:55.082249906 +0000
++++ Out/Assembly-CSharp/SaveLoadManager.cs	2024-05-14 21:11:07.474389030 +0000
+@@ -7,7 +7,7 @@
+ using System.Reflection;
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+-using Platform.IO;
++using System.IO;
+ using ProtoBuf;
+ using UnityEngine;
+ using UWE;
+@@ -124,7 +124,7 @@
+ 		public readonly string errorMessage;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public LoadResult(bool success, Error error, string errorMessage)
++		public LoadResult(bool success, Error error, string errorMessage): base(success)
+ 		{
+ 			throw null;
+ 		}
+@@ -139,7 +139,7 @@
+ 		public readonly int size;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public SaveResult(bool success, Error error, string errorMessage, int size)
++		public SaveResult(bool success, Error error, string errorMessage, int size): base(success)
+ 		{
+ 			throw null;
+ 		}
+@@ -152,7 +152,7 @@
+ 		public readonly string slotName;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public CreateResult(bool success, Error error, string slotName)
++		public CreateResult(bool success, Error error, string slotName): base(success)
+ 		{
+ 			throw null;
+ 		}
+diff -Naur a/Assembly-CSharp/ScreenshotManager.cs Out/Assembly-CSharp/ScreenshotManager.cs
+--- a/Assembly-CSharp/ScreenshotManager.cs	2024-05-14 19:55:55.078249906 +0000
++++ Out/Assembly-CSharp/ScreenshotManager.cs	2024-05-14 20:04:49.474266382 +0000
+@@ -8,7 +8,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using Gendarme;
+-using Platform.IO;
++using System.IO;
+ using UnityEngine;
+ 
+ public class ScreenshotManager : MonoBehaviour, IScreenshotClient
+diff -Naur a/Assembly-CSharp/ScreenshotNameUpgradePS4.cs Out/Assembly-CSharp/ScreenshotNameUpgradePS4.cs
+--- a/Assembly-CSharp/ScreenshotNameUpgradePS4.cs	2024-05-14 19:55:55.082249906 +0000
++++ Out/Assembly-CSharp/ScreenshotNameUpgradePS4.cs	2024-05-14 20:04:43.154266187 +0000
+@@ -3,7 +3,7 @@
+ using System.Reflection;
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+-using Platform.IO;
++using System.IO;
+ 
+ public static class ScreenshotNameUpgradePS4
+ {
+diff -Naur a/Assembly-CSharp/Story/ItemGoal.cs Out/Assembly-CSharp/Story/ItemGoal.cs
+--- a/Assembly-CSharp/Story/ItemGoal.cs	2024-05-14 19:55:54.922249901 +0000
++++ Out/Assembly-CSharp/Story/ItemGoal.cs	2024-05-14 21:03:18.262374563 +0000
+@@ -1,5 +1,6 @@
+ using System;
+ using System.Runtime.CompilerServices;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/ItemGoalTracker.cs Out/Assembly-CSharp/Story/ItemGoalTracker.cs
+--- a/Assembly-CSharp/Story/ItemGoalTracker.cs	2024-05-14 19:55:54.926249901 +0000
++++ Out/Assembly-CSharp/Story/ItemGoalTracker.cs	2024-05-14 21:03:13.422374414 +0000
+@@ -3,6 +3,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/OnGoalUnlock.cs Out/Assembly-CSharp/Story/OnGoalUnlock.cs
+--- a/Assembly-CSharp/Story/OnGoalUnlock.cs	2024-05-14 19:55:54.926249901 +0000
++++ Out/Assembly-CSharp/Story/OnGoalUnlock.cs	2024-05-14 21:03:07.450374230 +0000
+@@ -1,5 +1,6 @@
+ using System;
+ using System.Runtime.CompilerServices;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/OnGoalUnlockTracker.cs Out/Assembly-CSharp/Story/OnGoalUnlockTracker.cs
+--- a/Assembly-CSharp/Story/OnGoalUnlockTracker.cs	2024-05-14 19:55:54.930249901 +0000
++++ Out/Assembly-CSharp/Story/OnGoalUnlockTracker.cs	2024-05-14 21:02:59.562373987 +0000
+@@ -3,6 +3,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/StoryGoalManager.cs Out/Assembly-CSharp/Story/StoryGoalManager.cs
+--- a/Assembly-CSharp/Story/StoryGoalManager.cs	2024-05-14 19:55:54.930249901 +0000
++++ Out/Assembly-CSharp/Story/StoryGoalManager.cs	2024-05-14 21:01:47.678371770 +0000
+@@ -5,6 +5,7 @@
+ using BepInEx.AssemblyPublicizer;
+ using ProtoBuf;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/StoryGoalScheduler.cs Out/Assembly-CSharp/Story/StoryGoalScheduler.cs
+--- a/Assembly-CSharp/Story/StoryGoalScheduler.cs	2024-05-14 19:55:54.930249901 +0000
++++ Out/Assembly-CSharp/Story/StoryGoalScheduler.cs	2024-05-14 21:01:41.678371585 +0000
+@@ -5,6 +5,7 @@
+ using BepInEx.AssemblyPublicizer;
+ using ProtoBuf;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/StoryGoalUtils.cs Out/Assembly-CSharp/Story/StoryGoalUtils.cs
+--- a/Assembly-CSharp/Story/StoryGoalUtils.cs	2024-05-14 19:55:54.930249901 +0000
++++ Out/Assembly-CSharp/Story/StoryGoalUtils.cs	2024-05-14 21:01:35.730371402 +0000
+@@ -2,6 +2,7 @@
+ using System.Reflection;
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/UnlockBlueprintData.cs Out/Assembly-CSharp/Story/UnlockBlueprintData.cs
+--- a/Assembly-CSharp/Story/UnlockBlueprintData.cs	2024-05-14 19:55:54.926249901 +0000
++++ Out/Assembly-CSharp/Story/UnlockBlueprintData.cs	2024-05-14 21:01:32.078371289 +0000
+@@ -1,5 +1,6 @@
+ using System;
+ using System.Runtime.CompilerServices;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/Story/UnlockItemData.cs Out/Assembly-CSharp/Story/UnlockItemData.cs
+--- a/Assembly-CSharp/Story/UnlockItemData.cs	2024-05-14 19:55:54.926249901 +0000
++++ Out/Assembly-CSharp/Story/UnlockItemData.cs	2024-05-14 21:01:18.150370860 +0000
+@@ -1,5 +1,6 @@
+ using System;
+ using System.Runtime.CompilerServices;
++using DefaultNamespace;
+ 
+ namespace Story;
+ 
+diff -Naur a/Assembly-CSharp/SubHUD.cs Out/Assembly-CSharp/SubHUD.cs
+--- a/Assembly-CSharp/SubHUD.cs	2024-05-14 19:55:55.042249905 +0000
++++ Out/Assembly-CSharp/SubHUD.cs	2024-05-14 21:00:49.370369973 +0000
+@@ -5,7 +5,7 @@
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
+ 
+-[RequireComponent(typeof(GUIText))]
++[RequireComponent(typeof(UnityEngine.UI.Text))]
+ public class SubHUD : MonoBehaviour
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+diff -Naur a/Assembly-CSharp/TimerUI.cs Out/Assembly-CSharp/TimerUI.cs
+--- a/Assembly-CSharp/TimerUI.cs	2024-05-14 19:55:55.042249905 +0000
++++ Out/Assembly-CSharp/TimerUI.cs	2024-05-14 20:53:00.410355514 +0000
+@@ -11,7 +11,7 @@
+ 
+ 	public float timeLeft;
+ 
+-	public GUIText timerGUI;
++	public UnityEngine.UI.Text timerGUI;
+ 
+ 	public GameObject enableOnExpire;
+ 
+diff -Naur a/Assembly-CSharp/ToggleButton.cs Out/Assembly-CSharp/ToggleButton.cs
+--- a/Assembly-CSharp/ToggleButton.cs	2024-05-14 19:55:55.118249907 +0000
++++ Out/Assembly-CSharp/ToggleButton.cs	2024-05-14 20:20:03.650294568 +0000
+@@ -21,7 +21,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Start()
++	protected override void Start()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/UWE/LargeWorldStreamerGUI.cs Out/Assembly-CSharp/UWE/LargeWorldStreamerGUI.cs
+--- a/Assembly-CSharp/UWE/LargeWorldStreamerGUI.cs	2024-05-14 19:55:54.934249902 +0000
++++ Out/Assembly-CSharp/UWE/LargeWorldStreamerGUI.cs	2024-05-14 21:09:20.846385742 +0000
+@@ -2,6 +2,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace UWE;
+ 
+diff -Naur a/Assembly-CSharp/UWE/WorldEntityInfo.cs Out/Assembly-CSharp/UWE/WorldEntityInfo.cs
+--- a/Assembly-CSharp/UWE/WorldEntityInfo.cs	2024-05-14 19:55:54.938249902 +0000
++++ Out/Assembly-CSharp/UWE/WorldEntityInfo.cs	2024-05-14 21:04:51.826377448 +0000
+@@ -1,6 +1,7 @@
+ using System;
+ using System.Runtime.CompilerServices;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace UWE;
+ 
+diff -Naur a/Assembly-CSharp/UnTyper.cs Out/Assembly-CSharp/UnTyper.cs
+--- a/Assembly-CSharp/UnTyper.cs	2024-05-14 19:55:55.042249905 +0000
++++ Out/Assembly-CSharp/UnTyper.cs	1970-01-01 00:00:00.000000000 +0000
+@@ -1,43 +0,0 @@
+-namespace DefaultNamespace;
+-
+-using System.Reflection;
+-using System.Runtime.CompilerServices;
+-using BepInEx.AssemblyPublicizer;
+-using UnityEngine;
+-
+-[RequireComponent(typeof(GUIText))]
+-public class UnTyper : MonoBehaviour
+-{
+-	public int typeSpeed;
+-
+-	public string destString;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public float timeStarted;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public GUIText guiText;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public string origString;
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void Start()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void Update()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UnTyper()
+-	{
+-		throw null;
+-	}
+-}
+diff -Naur a/Assembly-CSharp/UserStoragePC.cs Out/Assembly-CSharp/UserStoragePC.cs
+--- a/Assembly-CSharp/UserStoragePC.cs	2024-05-14 19:55:55.066249906 +0000
++++ Out/Assembly-CSharp/UserStoragePC.cs	2024-05-14 21:10:04.050387074 +0000
+@@ -33,6 +33,7 @@
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+ 		public GenericWrapper(UserStorageUtils.AsyncOperation operation, string savePath, string containerName, List<string> files = null, object state = null)
++		: base(operation, savePath, containerName)
+ 		{
+ 			throw null;
+ 		}
+@@ -51,6 +52,7 @@
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+ 		public CopyFilesToContainerWrapper(UserStorageUtils.AsyncOperation operation, string savePath, string containerName, string sourcePath, List<string> updatedFiles, List<string> deletedFiles, List<string> unchangedFiles)
++		: base(operation, savePath, containerName)
+ 		{
+ 			throw null;
+ 		}
+@@ -64,7 +66,7 @@
+ 		public List<string> containersToUpgrade;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public UpgradeWrapper(UserStorageUtils.AsyncOperation operation, string savePath, string backupPath, List<string> containersToUpgrade)
++		public UpgradeWrapper(UserStorageUtils.AsyncOperation operation, string savePath, string backupPath, List<string> containersToUpgrade): base(operation, savePath, backupPath)
+ 		{
+ 			throw null;
+ 		}
+diff -Naur a/Assembly-CSharp/UserStorageXSave.cs Out/Assembly-CSharp/UserStorageXSave.cs
+--- a/Assembly-CSharp/UserStorageXSave.cs	2024-05-14 19:55:55.070249906 +0000
++++ Out/Assembly-CSharp/UserStorageXSave.cs	1970-01-01 00:00:00.000000000 +0000
+@@ -1,1237 +0,0 @@
+-namespace DefaultNamespace;
+-
+-using System;
+-using System.Collections;
+-using System.Collections.Generic;
+-using System.Diagnostics;
+-using System.Reflection;
+-using System.Runtime.CompilerServices;
+-using BepInEx.AssemblyPublicizer;
+-using Gendarme;
+-using UWE;
+-using XGamingRuntime;
+-
+-public sealed class UserStorageXSave : UserStorage
+-{
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(TypeAttributes.NestedPrivate)]
+-	public delegate void OperationResultCallback(UserStorageUtils.Result result, string errorMessage);
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(TypeAttributes.NestedPrivate)]
+-	public class SaveUpdate
+-	{
+-		[CompilerGenerated]
+-		private sealed class _003CAddFile_003Ed__6 : IEnumerator<object>, IEnumerator, IDisposable
+-		{
+-			private int _003C_003E1__state;
+-
+-			private object _003C_003E2__current;
+-
+-			public byte[] fileData;
+-
+-			public string fileName;
+-
+-			public OperationResultCallback onComplete;
+-
+-			public SaveUpdate _003C_003E4__this;
+-
+-			private int _003Clen_003E5__2;
+-
+-			private CallbackAwaiter<UserStorageUtils.Result, string> _003Cawaiter_003E5__3;
+-
+-			object IEnumerator<object>.Current
+-			{
+-				[MethodImpl(MethodImplOptions.NoInlining)]
+-				[DebuggerHidden]
+-				get
+-				{
+-					throw null;
+-				}
+-			}
+-
+-			object IEnumerator.Current
+-			{
+-				[MethodImpl(MethodImplOptions.NoInlining)]
+-				[DebuggerHidden]
+-				get
+-				{
+-					throw null;
+-				}
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			public _003CAddFile_003Ed__6(int _003C_003E1__state)
+-			{
+-				throw null;
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			void IDisposable.Dispose()
+-			{
+-				throw null;
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			private bool MoveNext()
+-			{
+-				throw null;
+-			}
+-
+-			bool IEnumerator.MoveNext()
+-			{
+-				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-				return this.MoveNext();
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			void IEnumerator.Reset()
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[CompilerGenerated]
+-		private sealed class _003CSubmit_003Ed__7 : IEnumerator<object>, IEnumerator, IDisposable
+-		{
+-			private int _003C_003E1__state;
+-
+-			private object _003C_003E2__current;
+-
+-			public SaveUpdate _003C_003E4__this;
+-
+-			public OperationResultCallback onComplete;
+-
+-			private CallbackAwaiter<int> _003Cawaiter_003E5__2;
+-
+-			object IEnumerator<object>.Current
+-			{
+-				[MethodImpl(MethodImplOptions.NoInlining)]
+-				[DebuggerHidden]
+-				get
+-				{
+-					throw null;
+-				}
+-			}
+-
+-			object IEnumerator.Current
+-			{
+-				[MethodImpl(MethodImplOptions.NoInlining)]
+-				[DebuggerHidden]
+-				get
+-				{
+-					throw null;
+-				}
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			public _003CSubmit_003Ed__7(int _003C_003E1__state)
+-			{
+-				throw null;
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			void IDisposable.Dispose()
+-			{
+-				throw null;
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			private bool MoveNext()
+-			{
+-				throw null;
+-			}
+-
+-			bool IEnumerator.MoveNext()
+-			{
+-				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-				return this.MoveNext();
+-			}
+-
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			void IEnumerator.Reset()
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-		public readonly XGameSaveContainerHandle containerHandle;
+-
+-		[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-		public readonly string containerDisplayName;
+-
+-		[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-		public XGameSaveUpdateHandle updateHandle;
+-
+-		[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-		public int blockLength;
+-
+-		public int saveDataSize;
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public SaveUpdate(XGameSaveContainerHandle containerHandle, string containerDisplayName, out UserStorageUtils.Result result, out string errorMessage)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public IEnumerator AddFile(string fileName, byte[] fileData, OperationResultCallback onComplete)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public IEnumerator Submit(OperationResultCallback onComplete)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-		public void CreateNewHandle(out int hresult)
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CInitializeAsync_003Ed__20 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public UserStorageXSave storage;
+-
+-		public XUserHandle user;
+-
+-		public string serviceConfigurationId;
+-
+-		public UserStorageUtils.AsyncOperation op;
+-
+-		private CallbackAwaiter<int, XGameSaveProviderHandle> _003Cawaiter_003E5__2;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CInitializeAsync_003Ed__20(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CGetContainerNamesAsync_003Ed__24 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public XGameSaveProviderHandle storage;
+-
+-		public UserStorageUtils.QueryOperation op;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CGetContainerNamesAsync_003Ed__24(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CLoadFilesAsync_003Ed__26 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public UserStorageXSave storage;
+-
+-		public string containerName;
+-
+-		public UserStorageUtils.LoadOperation op;
+-
+-		public Action onComplete;
+-
+-		public List<string> fileNames;
+-
+-		private XGameSaveContainerHandle _003Ccontainer_003E5__2;
+-
+-		private CallbackAwaiter<int, XGameSaveBlob[]> _003Cawaiter_003E5__3;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CLoadFilesAsync_003Ed__26(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CSaveFilesAsync_003Ed__29 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public UserStorageXSave storage;
+-
+-		public string containerName;
+-
+-		public UserStorageUtils.SaveOperation op;
+-
+-		public Dictionary<string, byte[]> files;
+-
+-		private XGameSaveContainerHandle _003Ccontainer_003E5__2;
+-
+-		private XGameSaveUpdateHandle _003CupdateHandle_003E5__3;
+-
+-		private CallbackAwaiter<int> _003Cawaiter_003E5__4;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CSaveFilesAsync_003Ed__29(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CCopyFilesToContainerAsync_003Ed__31 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public UserStorageXSave storage;
+-
+-		public string containerName;
+-
+-		public UserStorageUtils.SaveOperation op;
+-
+-		public List<string> updatedFiles;
+-
+-		public List<string> deletedFiles;
+-
+-		public List<string> unchangedFiles;
+-
+-		public string sourcePath;
+-
+-		private UserStorageUtils.Result _003Cresult_003E5__2;
+-
+-		private string _003CerrorMessage_003E5__3;
+-
+-		private XGameSaveContainerHandle _003Ccontainer_003E5__4;
+-
+-		private XGameSaveBlobInfo[] _003CblobInfos_003E5__5;
+-
+-		private Dictionary<string, byte[]> _003CslotFilesToCache_003E5__6;
+-
+-		private List<string> _003CupdatedMiscFiles_003E5__7;
+-
+-		private List<string> _003CdeletedMiscFiles_003E5__8;
+-
+-		private SaveUpdate _003CsaveUpdate_003E5__9;
+-
+-		private byte[] _003Cbuffer_003E5__10;
+-
+-		private List<string> _003CfilesToCompress_003E5__11;
+-
+-		private List<string> _003CencodedZipFileNames_003E5__12;
+-
+-		private List<string>.Enumerator _003C_003E7__wrap12;
+-
+-		private string _003CupdatedRow_003E5__14;
+-
+-		private CallbackAwaiter<UserStorageUtils.Result, string> _003Cawaiter_003E5__15;
+-
+-		private byte[] _003Cuncompressed_003E5__16;
+-
+-		private UserStorageUtils.AsyncOperation _003CdeleteOp_003E5__17;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CCopyFilesToContainerAsync_003Ed__31(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private void _003C_003Em__Finally1()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private void _003C_003Em__Finally2()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CCompressFilesToZip_003Ed__32 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public IList<string> filesToCompress;
+-
+-		public OperationResultCallback onComplete;
+-
+-		public string sourcePath;
+-
+-		public string updatedRow;
+-
+-		public List<string> encodedZipFileNames;
+-
+-		public SaveUpdate saveUpdate;
+-
+-		private string _003CencodedZipFileName_003E5__2;
+-
+-		private CallbackAwaiter<UserStorageUtils.Result, string> _003Cawaiter_003E5__3;
+-
+-		private int _003CgroupNumber_003E5__4;
+-
+-		private byte[] _003CcompressBuffer_003E5__5;
+-
+-		private byte[] _003Ccompressed_003E5__6;
+-
+-		private IEnumerator<string> _003C_003E7__wrap6;
+-
+-		private string _003CfileName_003E5__8;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CCompressFilesToZip_003Ed__32(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private void _003C_003Em__Finally1()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CCreateContainerAsync_003Ed__35 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public UserStorageXSave storage;
+-
+-		public string containerName;
+-
+-		public UserStorageUtils.AsyncOperation op;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CCreateContainerAsync_003Ed__35(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CDeleteContainerAsync_003Ed__37 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public XGameSaveProviderHandle provider;
+-
+-		public string containerName;
+-
+-		public UserStorageUtils.AsyncOperation op;
+-
+-		private CallbackAwaiter<int> _003Cawaiter_003E5__2;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CDeleteContainerAsync_003Ed__37(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CDeleteFilesAsync_003Ed__39 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public UserStorageXSave storage;
+-
+-		public string containerName;
+-
+-		public UserStorageUtils.AsyncOperation op;
+-
+-		public Action onComplete;
+-
+-		public List<string> fileNames;
+-
+-		private XGameSaveContainerHandle _003Ccontainer_003E5__2;
+-
+-		private XGameSaveUpdateHandle _003CupdateHandle_003E5__3;
+-
+-		private List<string> _003CencodedFileNames_003E5__4;
+-
+-		private List<string>.Enumerator _003C_003E7__wrap4;
+-
+-		private string _003CfileName_003E5__6;
+-
+-		private CallbackAwaiter<int> _003Cawaiter_003E5__7;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CDeleteFilesAsync_003Ed__39(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private void _003C_003Em__Finally1()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[CompilerGenerated]
+-	private sealed class _003CCopyFilesFromContainerAsync_003Ed__41 : IEnumerator<object>, IEnumerator, IDisposable
+-	{
+-		private int _003C_003E1__state;
+-
+-		private object _003C_003E2__current;
+-
+-		public string containerName;
+-
+-		public UserStorageXSave storage;
+-
+-		public UserStorageUtils.CopyOperation op;
+-
+-		public string destinationPath;
+-
+-		private XGameSaveContainerHandle _003Ccontainer_003E5__2;
+-
+-		private CallbackAwaiter<int, XGameSaveBlob[]> _003Cawaiter_003E5__3;
+-
+-		object IEnumerator<object>.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		object IEnumerator.Current
+-		{
+-			[MethodImpl(MethodImplOptions.NoInlining)]
+-			[DebuggerHidden]
+-			get
+-			{
+-				throw null;
+-			}
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		public _003CCopyFilesFromContainerAsync_003Ed__41(int _003C_003E1__state)
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IDisposable.Dispose()
+-		{
+-			throw null;
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		private bool MoveNext()
+-		{
+-			throw null;
+-		}
+-
+-		bool IEnumerator.MoveNext()
+-		{
+-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+-			return this.MoveNext();
+-		}
+-
+-		[MethodImpl(MethodImplOptions.NoInlining)]
+-		[DebuggerHidden]
+-		void IEnumerator.Reset()
+-		{
+-			throw null;
+-		}
+-	}
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int compressionBufferSize = 4096;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public readonly string serviceConfigurationId;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public XUserHandle currentUser;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public XGameSaveProviderHandle provider;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public readonly List<string> slotFileNames;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int maximumSyncSize = 16777216;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const int maxFileNamesPerDelete = 1000;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public const long _maxSafeZipDataSize = 16515072L;
+-
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public static readonly WorkerThread ioThread;
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static UserStorageUtils.Result GetResultForErrorCode(int errorCode, string source = "XSave")
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[SuppressMessage("Subnautica.Rules", "AvoidBoxingRule")]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static string GetErrorMessageForErrorCode(int errorCode)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static bool Ensure(UserStorageUtils.AsyncOperation op, object handler, string functionName, int hresult)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static void SetComplete(UserStorageUtils.AsyncOperation op, int errorCode)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static void SetComplete(UserStorageUtils.AsyncOperation op, Exception exception)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static string GetSlotCacheFileName(string container, string fileName)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void DisposeConnectedStorage()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageXSave(string serviceConfigurationId)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public void SetCurrentUser(XUserHandle _currentUser)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.AsyncOperation InitializeAsync()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator InitializeAsync(UserStorageUtils.AsyncOperation op, UserStorageXSave storage, XUserHandle user, string serviceConfigurationId)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public int OpenOrCreateContainer(string containerName, out XGameSaveContainerHandle container)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public void CloseContainer(XGameSaveContainerHandle container)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.QueryOperation GetContainerNamesAsync()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator GetContainerNamesAsync(UserStorageUtils.QueryOperation op, XGameSaveProviderHandle storage)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.LoadOperation LoadFilesAsync(string containerName, List<string> fileNames)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator LoadFilesAsync(UserStorageUtils.LoadOperation op, UserStorageXSave storage, string containerName, List<string> fileNames, Action onComplete = null)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.SlotsOperation LoadSlotsAsync(List<string> containerNames, List<string> fileNames)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.SaveOperation SaveFilesAsync(string containerName, Dictionary<string, byte[]> files)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator SaveFilesAsync(UserStorageUtils.SaveOperation op, UserStorageXSave storage, string containerName, Dictionary<string, byte[]> files)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.SaveOperation CopyFilesToContainerAsync(string containerName, string sourcePath, List<string> updatedFiles, List<string> deletedFiles, List<string> unchangedFiles)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator CopyFilesToContainerAsync(UserStorageUtils.SaveOperation op, UserStorageXSave storage, string containerName, string sourcePath, List<string> updatedFiles, List<string> deletedFiles, List<string> unchangedFiles)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator CompressFilesToZip(string sourcePath, string updatedRow, IList<string> filesToCompress, SaveUpdate saveUpdate, OperationResultCallback onComplete, List<string> encodedZipFileNames)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.AsyncOperation CreateContainerAsync(string containerName)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator CreateContainerAsync(UserStorageUtils.AsyncOperation op, UserStorageXSave storage, string containerName)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.AsyncOperation DeleteContainerAsync(string containerName)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator DeleteContainerAsync(UserStorageUtils.AsyncOperation op, XGameSaveProviderHandle provider, string containerName)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.AsyncOperation DeleteFilesAsync(string containerName, List<string> fileNames)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator DeleteFilesAsync(UserStorageUtils.AsyncOperation op, UserStorageXSave storage, string containerName, List<string> fileNames, Action onComplete = null)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UserStorageUtils.CopyOperation CopyFilesFromContainerAsync(string containerName, string destinationPath)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	public static IEnumerator CopyFilesFromContainerAsync(UserStorageUtils.CopyOperation op, UserStorageXSave storage, string containerName, string destinationPath)
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	static UserStorageXSave()
+-	{
+-		throw null;
+-	}
+-}
+\ No newline at end of file
+diff -Naur a/Assembly-CSharp/WaitScreen.cs Out/Assembly-CSharp/WaitScreen.cs
+--- a/Assembly-CSharp/WaitScreen.cs	2024-05-14 19:55:55.126249908 +0000
++++ Out/Assembly-CSharp/WaitScreen.cs	2024-05-14 21:12:47.122392102 +0000
+@@ -77,7 +77,7 @@
+ 		}
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public AsyncOperationItem(string stage, AsyncOperationHandle operation)
++		public AsyncOperationItem(string stage, AsyncOperationHandle operation): base(stage)
+ 		{
+ 			throw null;
+ 		}
+@@ -98,7 +98,7 @@
+ 		}
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public ManualWaitItem(string stage)
++		public ManualWaitItem(string stage): base(stage)
+ 		{
+ 			throw null;
+ 		}
+diff -Naur a/Assembly-CSharp/WorldStreaming/ClipmapChunk.cs Out/Assembly-CSharp/WorldStreaming/ClipmapChunk.cs
+--- a/Assembly-CSharp/WorldStreaming/ClipmapChunk.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/WorldStreaming/ClipmapChunk.cs	2024-05-14 21:09:03.362385203 +0000
+@@ -4,6 +4,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace WorldStreaming;
+ 
+@@ -363,20 +364,4 @@
+ 	{
+ 		throw null;
+ 	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[SpecialName]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	Transform IVoxelandChunk2.get_transform()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[SpecialName]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	GameObject IVoxelandChunk2.get_gameObject()
+-	{
+-		throw null;
+-	}
+ }
+diff -Naur a/Assembly-CSharp/WorldStreaming/ClipmapLevel.cs Out/Assembly-CSharp/WorldStreaming/ClipmapLevel.cs
+--- a/Assembly-CSharp/WorldStreaming/ClipmapLevel.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/WorldStreaming/ClipmapLevel.cs	2024-05-14 21:04:40.058377085 +0000
+@@ -3,6 +3,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UWE;
++using DefaultNamespace;
+ 
+ namespace WorldStreaming;
+ 
+diff -Naur a/Assembly-CSharp/WorldStreaming/ClipmapStreamer.cs Out/Assembly-CSharp/WorldStreaming/ClipmapStreamer.cs
+--- a/Assembly-CSharp/WorldStreaming/ClipmapStreamer.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/WorldStreaming/ClipmapStreamer.cs	2024-05-14 21:04:30.882376802 +0000
+@@ -3,6 +3,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UWE;
++using DefaultNamespace;
+ 
+ namespace WorldStreaming;
+ 
+diff -Naur a/Assembly-CSharp/WorldStreaming/MeshBuilder.cs Out/Assembly-CSharp/WorldStreaming/MeshBuilder.cs
+--- a/Assembly-CSharp/WorldStreaming/MeshBuilder.cs	2024-05-14 19:55:54.922249901 +0000
++++ Out/Assembly-CSharp/WorldStreaming/MeshBuilder.cs	2024-05-14 21:04:21.418376510 +0000
+@@ -4,6 +4,7 @@
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
+ using UWE;
++using DefaultNamespace;
+ 
+ namespace WorldStreaming;
+ 
+diff -Naur a/Assembly-CSharp/WorldStreaming/WorldStreamer.cs Out/Assembly-CSharp/WorldStreaming/WorldStreamer.cs
+--- a/Assembly-CSharp/WorldStreaming/WorldStreamer.cs	2024-05-14 19:55:54.922249901 +0000
++++ Out/Assembly-CSharp/WorldStreaming/WorldStreamer.cs	2024-05-14 21:04:11.206376195 +0000
+@@ -7,6 +7,7 @@
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
+ using UWE;
++using DefaultNamespace;
+ 
+ namespace WorldStreaming;
+ 
+diff -Naur a/Assembly-CSharp/mset/Sky.cs Out/Assembly-CSharp/mset/Sky.cs
+--- a/Assembly-CSharp/mset/Sky.cs	2024-05-14 19:55:54.966249903 +0000
++++ Out/Assembly-CSharp/mset/Sky.cs	2024-05-14 21:09:07.162385320 +0000
+@@ -4,6 +4,7 @@
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
+ using UnityEngine.SceneManagement;
++using DefaultNamespace;
+ 
+ namespace mset;
+ 
+diff -Naur a/Assembly-CSharp/uGUI_Binding.cs Out/Assembly-CSharp/uGUI_Binding.cs
+--- a/Assembly-CSharp/uGUI_Binding.cs	2024-05-14 19:55:55.122249907 +0000
++++ Out/Assembly-CSharp/uGUI_Binding.cs	2024-05-14 20:09:57.178275869 +0000
+@@ -47,14 +47,14 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnEnable()
++	protected override void OnEnable()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnDisable()
++	protected override void OnDisable()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_Block.cs Out/Assembly-CSharp/uGUI_Block.cs
+--- a/Assembly-CSharp/uGUI_Block.cs	2024-05-14 19:55:55.122249907 +0000
++++ Out/Assembly-CSharp/uGUI_Block.cs	2024-05-14 20:09:49.398275629 +0000
+@@ -9,7 +9,7 @@
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnPopulateMesh(VertexHelper vh)
++	protected override void OnPopulateMesh(VertexHelper vh)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_Choice.cs Out/Assembly-CSharp/uGUI_Choice.cs
+--- a/Assembly-CSharp/uGUI_Choice.cs	2024-05-14 19:55:55.130249908 +0000
++++ Out/Assembly-CSharp/uGUI_Choice.cs	2024-05-14 20:09:46.826275550 +0000
+@@ -70,7 +70,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Start()
++	protected override void Start()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_CircularBar.cs Out/Assembly-CSharp/uGUI_CircularBar.cs
+--- a/Assembly-CSharp/uGUI_CircularBar.cs	2024-05-14 19:55:55.130249908 +0000
++++ Out/Assembly-CSharp/uGUI_CircularBar.cs	2024-05-14 20:09:44.182275468 +0000
+@@ -355,35 +355,35 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnEnable()
++	protected override void OnEnable()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnDisable()
++	protected override void OnDisable()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnRectTransformDimensionsChange()
++	protected override void OnRectTransformDimensionsChange()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void UpdateMaterial()
++	protected override void UpdateMaterial()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnDestroy()
++	protected override void OnDestroy()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_ColorChoice.cs Out/Assembly-CSharp/uGUI_ColorChoice.cs
+--- a/Assembly-CSharp/uGUI_ColorChoice.cs	2024-05-14 19:55:55.134249908 +0000
++++ Out/Assembly-CSharp/uGUI_ColorChoice.cs	2024-05-14 20:08:50.674273819 +0000
+@@ -50,7 +50,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Start()
++	protected override void Start()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_ColorPicker.cs Out/Assembly-CSharp/uGUI_ColorPicker.cs
+--- a/Assembly-CSharp/uGUI_ColorPicker.cs	2024-05-14 19:55:55.134249908 +0000
++++ Out/Assembly-CSharp/uGUI_ColorPicker.cs	2024-05-14 20:08:48.290273745 +0000
+@@ -77,7 +77,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Awake()
++	protected override void Awake()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_Compass.cs Out/Assembly-CSharp/uGUI_Compass.cs
+--- a/Assembly-CSharp/uGUI_Compass.cs	2024-05-14 19:55:55.134249908 +0000
++++ Out/Assembly-CSharp/uGUI_Compass.cs	2024-05-14 20:08:45.374273655 +0000
+@@ -121,7 +121,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnPopulateMesh(VertexHelper vh)
++	protected override void OnPopulateMesh(VertexHelper vh)
+ 	{
+ 		throw null;
+ 	}
+@@ -134,7 +134,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnDestroy()
++	protected override void OnDestroy()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_CraftingMenu.cs Out/Assembly-CSharp/uGUI_CraftingMenu.cs
+--- a/Assembly-CSharp/uGUI_CraftingMenu.cs	2024-05-14 19:55:55.114249907 +0000
++++ Out/Assembly-CSharp/uGUI_CraftingMenu.cs	2024-05-14 21:11:06.134388988 +0000
+@@ -95,7 +95,7 @@
+ 		public bool expanded;
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+-		public Node(string id, TreeAction action, TechType techType)
++		public Node(string id, TreeAction action, TechType techType): base(id)
+ 		{
+ 			throw null;
+ 		}
+diff -Naur a/Assembly-CSharp/uGUI_EquipmentSlot.cs Out/Assembly-CSharp/uGUI_EquipmentSlot.cs
+--- a/Assembly-CSharp/uGUI_EquipmentSlot.cs	2024-05-14 19:55:55.138249908 +0000
++++ Out/Assembly-CSharp/uGUI_EquipmentSlot.cs	2024-05-14 20:06:16.422269063 +0000
+@@ -86,7 +86,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Awake()
++	protected override void Awake()
+ 	{
+ 		throw null;
+ 	}
+@@ -150,7 +150,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnPopulateMesh(VertexHelper vh)
++	protected override void OnPopulateMesh(VertexHelper vh)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_Icon.cs Out/Assembly-CSharp/uGUI_Icon.cs
+--- a/Assembly-CSharp/uGUI_Icon.cs	2024-05-14 19:55:55.118249907 +0000
++++ Out/Assembly-CSharp/uGUI_Icon.cs	2024-05-14 20:08:39.738273482 +0000
+@@ -81,7 +81,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnPopulateMesh(VertexHelper vh)
++	protected override void OnPopulateMesh(VertexHelper vh)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_InputField.cs Out/Assembly-CSharp/uGUI_InputField.cs
+--- a/Assembly-CSharp/uGUI_InputField.cs	2024-05-14 19:55:55.122249907 +0000
++++ Out/Assembly-CSharp/uGUI_InputField.cs	2024-05-14 20:08:32.066273245 +0000
+@@ -18,14 +18,14 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Awake()
++	protected override void Awake()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Start()
++	protected override void Start()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_ItemIcon.cs Out/Assembly-CSharp/uGUI_ItemIcon.cs
+--- a/Assembly-CSharp/uGUI_ItemIcon.cs	2024-05-14 19:55:55.126249908 +0000
++++ Out/Assembly-CSharp/uGUI_ItemIcon.cs	2024-05-14 20:06:36.242269674 +0000
+@@ -156,28 +156,28 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Awake()
++	protected override void Awake()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnEnable()
++	protected override void OnEnable()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnDisable()
++	protected override void OnDisable()
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnPopulateMesh(VertexHelper vh)
++	protected override void OnPopulateMesh(VertexHelper vh)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_Logo.cs Out/Assembly-CSharp/uGUI_Logo.cs
+--- a/Assembly-CSharp/uGUI_Logo.cs	2024-05-14 19:55:55.130249908 +0000
++++ Out/Assembly-CSharp/uGUI_Logo.cs	2024-05-14 19:56:12.078250430 +0000
+@@ -80,7 +80,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnPopulateMesh(VertexHelper vh)
++	protected override void OnPopulateMesh(VertexHelper vh)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_RectTransformCallback.cs Out/Assembly-CSharp/uGUI_RectTransformCallback.cs
+--- a/Assembly-CSharp/uGUI_RectTransformCallback.cs	2024-05-14 19:55:55.126249908 +0000
++++ Out/Assembly-CSharp/uGUI_RectTransformCallback.cs	2024-05-14 20:05:55.242268410 +0000
+@@ -71,7 +71,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnRectTransformDimensionsChange()
++	protected override void OnRectTransformDimensionsChange()
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uGUI_SnappingSlider.cs Out/Assembly-CSharp/uGUI_SnappingSlider.cs
+--- a/Assembly-CSharp/uGUI_SnappingSlider.cs	2024-05-14 19:55:55.130249908 +0000
++++ Out/Assembly-CSharp/uGUI_SnappingSlider.cs	2024-05-14 20:05:49.014268218 +0000
+@@ -73,7 +73,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Start()
++	protected override void Start()
+ 	{
+ 		throw null;
+ 	}
+@@ -94,7 +94,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void OnRectTransformDimensionsChange()
++	protected override void OnRectTransformDimensionsChange()
+ 	{
+ 		throw null;
+ 	}
+@@ -115,7 +115,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Set(float input, bool sendCallback = true)
++	protected override void Set(float input, bool sendCallback = true)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp/uSky/DistanceCloud.cs Out/Assembly-CSharp/uSky/DistanceCloud.cs
+--- a/Assembly-CSharp/uSky/DistanceCloud.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/DistanceCloud.cs	2024-05-14 21:02:49.322373671 +0000
+@@ -2,6 +2,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/PlayTOD.cs Out/Assembly-CSharp/uSky/PlayTOD.cs
+--- a/Assembly-CSharp/uSky/PlayTOD.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/PlayTOD.cs	2024-05-14 21:02:47.278373608 +0000
+@@ -2,6 +2,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/StarField.cs Out/Assembly-CSharp/uSky/StarField.cs
+--- a/Assembly-CSharp/uSky/StarField.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/StarField.cs	2024-05-14 21:02:44.578373525 +0000
+@@ -3,6 +3,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/uSkyAmbient.cs Out/Assembly-CSharp/uSky/uSkyAmbient.cs
+--- a/Assembly-CSharp/uSky/uSkyAmbient.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/uSkyAmbient.cs	2024-05-14 21:02:42.466373459 +0000
+@@ -1,6 +1,7 @@
+ using System;
+ using System.Runtime.CompilerServices;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/uSkyFog.cs Out/Assembly-CSharp/uSky/uSkyFog.cs
+--- a/Assembly-CSharp/uSky/uSkyFog.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/uSkyFog.cs	2024-05-14 21:02:40.122373387 +0000
+@@ -2,6 +2,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/uSkyFogCamera.cs Out/Assembly-CSharp/uSky/uSkyFogCamera.cs
+--- a/Assembly-CSharp/uSky/uSkyFogCamera.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/uSkyFogCamera.cs	2024-05-14 21:02:35.370373241 +0000
+@@ -2,6 +2,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/uSkyGUI_Helper.cs Out/Assembly-CSharp/uSky/uSkyGUI_Helper.cs
+--- a/Assembly-CSharp/uSky/uSkyGUI_Helper.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/uSkyGUI_Helper.cs	2024-05-14 21:02:32.902373165 +0000
+@@ -4,6 +4,7 @@
+ using TMPro;
+ using UnityEngine;
+ using UnityEngine.UI;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/uSkyLight.cs Out/Assembly-CSharp/uSky/uSkyLight.cs
+--- a/Assembly-CSharp/uSky/uSkyLight.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/uSkyLight.cs	2024-05-14 21:02:28.342373024 +0000
+@@ -2,6 +2,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp/uSky/uSkymapRenderer.cs Out/Assembly-CSharp/uSky/uSkymapRenderer.cs
+--- a/Assembly-CSharp/uSky/uSkymapRenderer.cs	2024-05-14 19:55:54.918249901 +0000
++++ Out/Assembly-CSharp/uSky/uSkymapRenderer.cs	2024-05-14 21:02:21.262372806 +0000
+@@ -2,6 +2,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using UnityEngine;
++using DefaultNamespace;
+ 
+ namespace uSky;
+ 
+diff -Naur a/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj Out/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj
+--- a/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj	2024-05-14 19:55:55.138249908 +0000
++++ Out/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj	2024-05-14 20:38:29.482328662 +0000
+@@ -52,6 +52,7 @@
+     <Reference Include="UnityEngine.TerrainModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.TerrainModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="LumenWorks" />
++    <!-- <Reference Include="LumenWorks" /> -->
++    <PackageReference Include="LumenWorks.Framework.IO" Version="3.8.0" />
+   </ItemGroup>
+ </Project>
+\ No newline at end of file
+diff -Naur a/Assembly-CSharp-firstpass/AssetReferenceDistanceField.cs Out/Assembly-CSharp-firstpass/AssetReferenceDistanceField.cs
+--- a/Assembly-CSharp-firstpass/AssetReferenceDistanceField.cs	2024-05-14 19:55:55.346249914 +0000
++++ Out/Assembly-CSharp-firstpass/AssetReferenceDistanceField.cs	2024-05-14 20:51:25.278352581 +0000
+@@ -6,7 +6,7 @@
+ public class AssetReferenceDistanceField : AssetReferenceT<DistanceField>
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public AssetReferenceDistanceField(string guid)
++	public AssetReferenceDistanceField(string guid): base(guid)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/DemotingLogHandler.cs Out/Assembly-CSharp-firstpass/DemotingLogHandler.cs
+--- a/Assembly-CSharp-firstpass/DemotingLogHandler.cs	2024-05-14 19:55:55.382249915 +0000
++++ Out/Assembly-CSharp-firstpass/DemotingLogHandler.cs	2024-05-14 20:51:18.410352369 +0000
+@@ -5,7 +5,7 @@
+ public class DemotingLogHandler : InterceptingLogHandler
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public DemotingLogHandler(ILogger logger)
++	public DemotingLogHandler(ILogger logger): base(logger)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/GUIText.cs Out/Assembly-CSharp-firstpass/GUIText.cs
+--- a/Assembly-CSharp-firstpass/GUIText.cs	2024-05-14 19:55:55.382249915 +0000
++++ Out/Assembly-CSharp-firstpass/GUIText.cs	2024-05-14 20:27:06.678307610 +0000
+@@ -3,7 +3,7 @@
+ using UnityEngine;
+ using UnityEngine.UI;
+ 
+-[Obsolete("Use UnityEngine.UI.Text instead.")]
++// [Obsolete("Use UnityEngine.UI.Text instead.")]
+ public sealed class GUIText : Text
+ {
+ 	[NonSerialized]
+diff -Naur a/Assembly-CSharp-firstpass/GUITexture.cs Out/Assembly-CSharp-firstpass/GUITexture.cs
+--- a/Assembly-CSharp-firstpass/GUITexture.cs	2024-05-14 19:55:55.354249915 +0000
++++ Out/Assembly-CSharp-firstpass/GUITexture.cs	2024-05-14 20:52:30.202354582 +0000
+@@ -3,7 +3,7 @@
+ using UnityEngine;
+ using UnityEngine.UI;
+ 
+-[Obsolete("Use UnityEngine.UI.RawImage instead.")]
++// [Obsolete("Use UnityEngine.UI.RawImage instead.")]
+ public sealed class GUITexture : RawImage
+ {
+ 	[NonSerialized]
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/DirectoryEventArgs.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/DirectoryEventArgs.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/DirectoryEventArgs.cs	2024-05-14 19:55:55.146249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/DirectoryEventArgs.cs	2024-05-14 20:41:00.030333303 +0000
+@@ -19,7 +19,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public DirectoryEventArgs(string name, bool hasMatchingFiles)
++	public DirectoryEventArgs(string name, bool hasMatchingFiles): base(name)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/ExtendedPathFilter.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/ExtendedPathFilter.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/ExtendedPathFilter.cs	2024-05-14 19:55:55.146249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/ExtendedPathFilter.cs	2024-05-14 20:41:50.078334847 +0000
+@@ -76,19 +76,19 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ExtendedPathFilter(string filter, long minSize, long maxSize)
++	public ExtendedPathFilter(string filter, long minSize, long maxSize): base(filter)
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ExtendedPathFilter(string filter, DateTime minDate, DateTime maxDate)
++	public ExtendedPathFilter(string filter, DateTime minDate, DateTime maxDate): base(filter)
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ExtendedPathFilter(string filter, long minSize, long maxSize, DateTime minDate, DateTime maxDate)
++	public ExtendedPathFilter(string filter, long minSize, long maxSize, DateTime minDate, DateTime maxDate): base(filter)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/NameAndSizeFilter.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/NameAndSizeFilter.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/NameAndSizeFilter.cs	2024-05-14 19:55:55.146249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Core/NameAndSizeFilter.cs	2024-05-14 20:43:19.366337599 +0000
+@@ -43,7 +43,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public NameAndSizeFilter(string filter, long minSize, long maxSize)
++	public NameAndSizeFilter(string filter, long minSize, long maxSize): base(filter)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESStream.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESStream.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESStream.cs	2024-05-14 19:55:55.146249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESStream.cs	2024-05-14 20:48:06.834346462 +0000
+@@ -53,7 +53,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ZipAESStream(Stream stream, ZipAESTransform transform, CryptoStreamMode mode)
++	public ZipAESStream(Stream stream, ZipAESTransform transform, CryptoStreamMode mode): base(stream, transform, mode)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESTransform.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESTransform.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESTransform.cs	2024-05-14 19:55:55.146249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Encryption/ZipAESTransform.cs	2024-05-14 20:39:55.802331323 +0000
+@@ -37,7 +37,7 @@
+ 	public byte[] _pwdVerifier;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+-	public IncrementalHash _hmacsha1;
++	public object /* IncrementalHash */ _hmacsha1;
+ 
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(FieldAttributes.Private)]
+ 	public byte[] _authCode;
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/DeflaterOutputStream.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/DeflaterOutputStream.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/DeflaterOutputStream.cs	2024-05-14 19:55:55.150249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/DeflaterOutputStream.cs	2024-05-14 20:38:56.794329504 +0000
+@@ -212,7 +212,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Dispose(bool disposing)
++	protected override void Dispose(bool disposing)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/InflaterInputStream.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/InflaterInputStream.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/InflaterInputStream.cs	2024-05-14 19:55:55.150249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/Compression/Streams/InflaterInputStream.cs	2024-05-14 20:38:53.702329409 +0000
+@@ -167,7 +167,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Dispose(bool disposing)
++	protected override void Dispose(bool disposing)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/DiskArchiveStorage.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/DiskArchiveStorage.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/DiskArchiveStorage.cs	2024-05-14 19:55:55.154249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/DiskArchiveStorage.cs	2024-05-14 20:50:34.490351015 +0000
+@@ -17,13 +17,13 @@
+ 	public string temporaryName_;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public DiskArchiveStorage(ZipFile file, FileUpdateMode updateMode)
++	public DiskArchiveStorage(ZipFile file, FileUpdateMode updateMode): base(updateMode)
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public DiskArchiveStorage(ZipFile file)
++	public DiskArchiveStorage(ZipFile file): base((FileUpdateMode) (object) null)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/MemoryArchiveStorage.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/MemoryArchiveStorage.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/MemoryArchiveStorage.cs	2024-05-14 19:55:55.154249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/MemoryArchiveStorage.cs	2024-05-14 20:50:38.386351135 +0000
+@@ -23,13 +23,13 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MemoryArchiveStorage()
++	public MemoryArchiveStorage(): base((FileUpdateMode) (object) null)
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MemoryArchiveStorage(FileUpdateMode updateMode)
++	public MemoryArchiveStorage(FileUpdateMode updateMode): base(updateMode)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipHelperStream.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipHelperStream.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipHelperStream.cs	2024-05-14 19:55:55.154249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipHelperStream.cs	2024-05-14 20:38:45.650329160 +0000
+@@ -131,7 +131,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Dispose(bool disposing)
++	protected override void Dispose(bool disposing)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipInputStream.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipInputStream.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipInputStream.cs	2024-05-14 19:55:55.154249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipInputStream.cs	2024-05-14 20:51:05.442351969 +0000
+@@ -75,13 +75,13 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ZipInputStream(Stream baseInputStream)
++	public ZipInputStream(Stream baseInputStream): base(baseInputStream)
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ZipInputStream(Stream baseInputStream, int bufferSize)
++	public ZipInputStream(Stream baseInputStream, int bufferSize): base(baseInputStream)
+ 	{
+ 		throw null;
+ 	}
+@@ -154,7 +154,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Dispose(bool disposing)
++	protected override void Dispose(bool disposing)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipOutputStream.cs Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipOutputStream.cs
+--- a/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipOutputStream.cs	2024-05-14 19:55:55.154249908 +0000
++++ Out/Assembly-CSharp-firstpass/ICSharpCode/SharpZipLib/Zip/ZipOutputStream.cs	2024-05-14 20:51:12.154352176 +0000
+@@ -70,13 +70,13 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ZipOutputStream(Stream baseOutputStream)
++	public ZipOutputStream(Stream baseOutputStream): base(baseOutputStream)
+ 	{
+ 		throw null;
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ZipOutputStream(Stream baseOutputStream, int bufferSize)
++	public ZipOutputStream(Stream baseOutputStream, int bufferSize): base(baseOutputStream)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/MathExtensions.cs Out/Assembly-CSharp-firstpass/MathExtensions.cs
+--- a/Assembly-CSharp-firstpass/MathExtensions.cs	2024-05-14 19:55:55.350249914 +0000
++++ Out/Assembly-CSharp-firstpass/MathExtensions.cs	2024-05-14 20:04:43.158266187 +0000
+@@ -4,7 +4,7 @@
+ using System.Runtime.CompilerServices;
+ using BepInEx.AssemblyPublicizer;
+ using FMOD;
+-using Platform.IO;
++using System.IO;
+ using UnityEngine;
+ 
+ public static class MathExtensions
+diff -Naur a/Assembly-CSharp-firstpass/NullLogHandler.cs Out/Assembly-CSharp-firstpass/NullLogHandler.cs
+--- a/Assembly-CSharp-firstpass/NullLogHandler.cs	2024-05-14 19:55:55.410249916 +0000
++++ Out/Assembly-CSharp-firstpass/NullLogHandler.cs	2024-05-14 20:50:47.966351430 +0000
+@@ -5,7 +5,7 @@
+ public class NullLogHandler : InterceptingLogHandler
+ {
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public NullLogHandler(ILogger logger)
++	public NullLogHandler(ILogger logger): base(logger)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Meta/TypeModel.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Meta/TypeModel.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Meta/TypeModel.cs	2024-05-14 19:55:55.162249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Meta/TypeModel.cs	2024-05-14 20:47:25.626345192 +0000
+@@ -39,6 +39,7 @@
+ 
+ 		[MethodImpl(MethodImplOptions.NoInlining)]
+ 		public DeserializeItemsIterator(TypeModel model, Stream source, PrefixStyle style, int expectedField, SerializationContext context)
++		: base(model, source, null, style, expectedField, null, context)
+ 		{
+ 			throw null;
+ 		}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/ProtoPartialMemberAttribute.cs Out/Assembly-CSharp-firstpass/ProtoBuf/ProtoPartialMemberAttribute.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/ProtoPartialMemberAttribute.cs	2024-05-14 19:55:55.162249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/ProtoPartialMemberAttribute.cs	2024-05-14 20:50:17.606350494 +0000
+@@ -21,7 +21,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ProtoPartialMemberAttribute(int tag, string memberName)
++	public ProtoPartialMemberAttribute(int tag, string memberName): base(tag)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ArrayDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ArrayDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ArrayDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ArrayDecorator.cs	2024-05-14 20:45:37.642341863 +0000
+@@ -82,7 +82,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ArrayDecorator(TypeModel model, IProtoSerializer tail, int fieldNumber, bool writePacked, WireType packedWireType, Type arrayType, bool overwriteList, bool supportNull)
++	public ArrayDecorator(TypeModel model, IProtoSerializer tail, int fieldNumber, bool writePacked, WireType packedWireType, Type arrayType, bool overwriteList, bool supportNull) : base (tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/CharSerializer.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/CharSerializer.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/CharSerializer.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/CharSerializer.cs	2024-05-14 20:45:16.790341220 +0000
+@@ -22,7 +22,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public CharSerializer(TypeModel model)
++	public CharSerializer(TypeModel model): base(model)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/DefaultValueDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/DefaultValueDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/DefaultValueDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/DefaultValueDecorator.cs	2024-05-14 20:45:09.094340982 +0000
+@@ -41,7 +41,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public DefaultValueDecorator(TypeModel model, object defaultValue, IProtoSerializer tail)
++	public DefaultValueDecorator(TypeModel model, object defaultValue, IProtoSerializer tail): base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/FieldDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/FieldDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/FieldDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/FieldDecorator.cs	2024-05-14 20:45:41.742341989 +0000
+@@ -43,7 +43,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public FieldDecorator(Type forType, FieldInfo field, IProtoSerializer tail)
++	public FieldDecorator(Type forType, FieldInfo field, IProtoSerializer tail): base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ImmutableCollectionDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ImmutableCollectionDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ImmutableCollectionDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ImmutableCollectionDecorator.cs	2024-05-14 20:46:33.638343589 +0000
+@@ -48,7 +48,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Assembly)]
+-	public ImmutableCollectionDecorator(TypeModel model, Type declaredType, Type concreteType, IProtoSerializer tail, int fieldNumber, bool writePacked, WireType packedWireType, bool returnList, bool overwriteList, bool supportNull, MethodInfo builderFactory, MethodInfo add, MethodInfo addRange, MethodInfo finish)
++	public ImmutableCollectionDecorator(TypeModel model, Type declaredType, Type concreteType, IProtoSerializer tail, int fieldNumber, bool writePacked, WireType packedWireType, bool returnList, bool overwriteList, bool supportNull, MethodInfo builderFactory, MethodInfo add, MethodInfo addRange, MethodInfo finish) : base(model, declaredType, concreteType, tail, fieldNumber, writePacked, packedWireType, returnList, overwriteList, supportNull)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ListDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ListDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ListDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/ListDecorator.cs	2024-05-14 20:48:29.990347176 +0000
+@@ -166,6 +166,7 @@
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+ 	public ListDecorator(TypeModel model, Type declaredType, Type concreteType, IProtoSerializer tail, int fieldNumber, bool writePacked, WireType packedWireType, bool returnList, bool overwriteList, bool supportNull)
++	: base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/MemberSpecifiedDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/MemberSpecifiedDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/MemberSpecifiedDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/MemberSpecifiedDecorator.cs	2024-05-14 20:48:37.998347423 +0000
+@@ -43,7 +43,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public MemberSpecifiedDecorator(MethodInfo getSpecified, MethodInfo setSpecified, IProtoSerializer tail)
++	public MemberSpecifiedDecorator(MethodInfo getSpecified, MethodInfo setSpecified, IProtoSerializer tail): base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/NullDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/NullDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/NullDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/NullDecorator.cs	2024-05-14 20:48:51.246347832 +0000
+@@ -43,7 +43,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public NullDecorator(TypeModel model, IProtoSerializer tail)
++	public NullDecorator(TypeModel model, IProtoSerializer tail): base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/PropertyDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/PropertyDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/PropertyDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/PropertyDecorator.cs	2024-05-14 20:48:57.854348035 +0000
+@@ -50,7 +50,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public PropertyDecorator(TypeModel model, Type forType, PropertyInfo property, IProtoSerializer tail)
++	public PropertyDecorator(TypeModel model, Type forType, PropertyInfo property, IProtoSerializer tail): base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/TagDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/TagDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/TagDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/TagDecorator.cs	2024-05-14 20:49:08.174348354 +0000
+@@ -93,7 +93,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public TagDecorator(int fieldNumber, WireType wireType, bool strict, IProtoSerializer tail)
++	public TagDecorator(int fieldNumber, WireType wireType, bool strict, IProtoSerializer tail): base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/UriDecorator.cs Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/UriDecorator.cs
+--- a/Assembly-CSharp-firstpass/ProtoBuf/Serializers/UriDecorator.cs	2024-05-14 19:55:55.158249909 +0000
++++ Out/Assembly-CSharp-firstpass/ProtoBuf/Serializers/UriDecorator.cs	2024-05-14 20:49:14.402348546 +0000
+@@ -41,7 +41,7 @@
+ 	}
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public UriDecorator(TypeModel model, IProtoSerializer tail)
++	public UriDecorator(TypeModel model, IProtoSerializer tail): base(tail)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ScratchMemoryStream.cs Out/Assembly-CSharp-firstpass/ScratchMemoryStream.cs
+--- a/Assembly-CSharp-firstpass/ScratchMemoryStream.cs	2024-05-14 19:55:55.378249915 +0000
++++ Out/Assembly-CSharp-firstpass/ScratchMemoryStream.cs	2024-05-14 20:38:41.938329046 +0000
+@@ -115,7 +115,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Dispose(bool disposing)
++	protected override void Dispose(bool disposing)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/ThrottledStream.cs Out/Assembly-CSharp-firstpass/ThrottledStream.cs
+--- a/Assembly-CSharp-firstpass/ThrottledStream.cs	2024-05-14 19:55:55.414249916 +0000
++++ Out/Assembly-CSharp-firstpass/ThrottledStream.cs	2024-05-14 20:38:50.638329314 +0000
+@@ -64,7 +64,7 @@
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+ 	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Family)]
+-	public override void Dispose(bool disposing)
++	protected override void Dispose(bool disposing)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/UWE/ArrayPool.cs Out/Assembly-CSharp-firstpass/UWE/ArrayPool.cs
+--- a/Assembly-CSharp-firstpass/UWE/ArrayPool.cs	2024-05-14 19:55:55.318249913 +0000
++++ Out/Assembly-CSharp-firstpass/UWE/ArrayPool.cs	2024-05-14 20:48:15.854346741 +0000
+@@ -16,7 +16,7 @@
+ 	public readonly ILRUQueue<T[]> mockLRUQueue;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ArrayPool(int elementSize, int bucketStride, int numBucketsToCheck = 0, int desiredMemoryCap = 0)
++	public ArrayPool(int elementSize, int bucketStride, int numBucketsToCheck = 0, int desiredMemoryCap = 0): base(elementSize, bucketStride, numBucketsToCheck, desiredMemoryCap)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/UWE/NativeArrayPool.cs Out/Assembly-CSharp-firstpass/UWE/NativeArrayPool.cs
+--- a/Assembly-CSharp-firstpass/UWE/NativeArrayPool.cs	2024-05-14 19:55:55.314249913 +0000
++++ Out/Assembly-CSharp-firstpass/UWE/NativeArrayPool.cs	2024-05-14 20:45:00.734340725 +0000
+@@ -16,7 +16,7 @@
+ 	public readonly ILRUQueue<NativeArray<T>> mockLRUQueue;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public NativeArrayPool(int elementSize, int bucketStride, int numBucketsToCheck = 0, int desiredMemoryCap = 0)
++	public NativeArrayPool(int elementSize, int bucketStride, int numBucketsToCheck = 0, int desiredMemoryCap = 0): base(elementSize, bucketStride, numBucketsToCheck, desiredMemoryCap)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/UWE/ThreadSafeLinearArrayHeap.cs Out/Assembly-CSharp-firstpass/UWE/ThreadSafeLinearArrayHeap.cs
+--- a/Assembly-CSharp-firstpass/UWE/ThreadSafeLinearArrayHeap.cs	2024-05-14 19:55:55.314249913 +0000
++++ Out/Assembly-CSharp-firstpass/UWE/ThreadSafeLinearArrayHeap.cs	2024-05-14 20:46:54.766344240 +0000
+@@ -10,7 +10,7 @@
+ 	public object lockObject;
+ 
+ 	[MethodImpl(MethodImplOptions.NoInlining)]
+-	public ThreadSafeLinearArrayHeap(int elementSize, int maxSize)
++	public ThreadSafeLinearArrayHeap(int elementSize, int maxSize): base(elementSize, maxSize)
+ 	{
+ 		throw null;
+ 	}
+diff -Naur a/Assembly-CSharp-firstpass/VoxelandChunk.cs Out/Assembly-CSharp-firstpass/VoxelandChunk.cs
+--- a/Assembly-CSharp-firstpass/VoxelandChunk.cs	2024-05-14 19:55:55.398249916 +0000
++++ Out/Assembly-CSharp-firstpass/VoxelandChunk.cs	2024-05-14 20:37:09.826326206 +0000
+@@ -1359,20 +1359,4 @@
+ 	{
+ 		throw null;
+ 	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[SpecialName]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	Transform IVoxelandChunk2.get_transform()
+-	{
+-		throw null;
+-	}
+-
+-	[MethodImpl(MethodImplOptions.NoInlining)]
+-	[SpecialName]
+-	[BepInEx.AssemblyPublicizer.OriginalAttributes(MethodAttributes.Private)]
+-	GameObject IVoxelandChunk2.get_gameObject()
+-	{
+-		throw null;
+-	}
+ }
+\ No newline at end of file
