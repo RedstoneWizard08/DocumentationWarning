@@ -21,15 +21,13 @@ jobs:
         run: |
           dotnet tool update -g docfx
       
-      - name: Extract Assemblies
+      - name: Build
         run: |
-          cd Extractor
-          dotnet run
-      
-      - name: Build Docs
-        run: docfx
+          dotnet run --project Extractor/Extractor.csproj
+          mkdir Output
+          cp -r docs games.json index.html Output/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: Games/ContentWarning/Docs/_site
+          folder: Output

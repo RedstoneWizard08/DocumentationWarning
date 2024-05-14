@@ -2,7 +2,9 @@ using System.IO;
 
 namespace Extractor.Config;
 
-public class GameConfig {
+public class GameConfig
+{
+    public required string Id;
     public required string Name;
     public required string Publisher;
     public required string Package;

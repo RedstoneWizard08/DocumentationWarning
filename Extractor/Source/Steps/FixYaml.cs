@@ -20,16 +20,19 @@ public sealed class FixYaml : Step
         var map = YamlUtility.Deserialize<XRefMap>(path);
         var refs = new List<XRefSpec>();
 
-        foreach (var item in map.References) {
-            if (item.Uid.StartsWith(config.Game.Namespace) && item.Uid != config.Game.Namespace) {
+        foreach (var item in map.References)
+        {
+            if (item.Uid.StartsWith(config.Game.Namespace) && item.Uid != config.Game.Namespace)
+            {
                 var alt = item;
 
                 alt.Uid = item.Uid.ReplaceRegex(startRegex, "");
 
                 if (map.References.Find(v => v.Uid == alt.Uid) != null)
                     continue;
-                
-                if (alt.ContainsKey("fullName")) {
+
+                if (alt.ContainsKey("fullName"))
+                {
                     alt["fullName"] = item["fullName"].ToString().ReplaceRegex(startRegex, "");
                 }
 
@@ -43,7 +46,7 @@ public sealed class FixYaml : Step
         var writer = new StreamWriter(stream);
 
         await writer.WriteLineAsync("### " + YamlMime.XRefMap);
-        
+
         YamlUtility.Serialize(writer, map);
 
         await writer.FlushAsync();

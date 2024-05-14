@@ -23,6 +23,7 @@ public class Program : WithLogger
         new GenSolution(),
         new BuildDocs(),
         new FixYaml(),
+        new CopyDocs(),
     ];
 
     public static void Main() => new Program().Start();
