@@ -38,7 +38,7 @@ public sealed class Init: Command<Init.Options> {
 
         var it = new ProjectConfig() {
             Game = new GameConfig() {
-                Id = options.Id!,
+                Id = id,
                 Name = name,
                 Package = pkg,
                 Publisher = pub,
