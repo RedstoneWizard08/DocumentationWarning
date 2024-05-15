@@ -1,12 +1,13 @@
 using System;
+using DocumentationWarning.Util;
 using Pastel;
 
 namespace DocumentationWarning.Logging;
 
 public sealed class Logger {
-    public string Format(string format, params object?[] args) {
+    public static string Format(string format, params object?[] args) {
         foreach (var arg in args) {
-            format = format.Replace("{}", arg?.ToString());
+            format = format.ReplaceFirst("{}", arg?.ToString()!);
         }
 
         return format;
