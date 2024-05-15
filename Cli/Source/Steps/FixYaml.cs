@@ -8,6 +8,7 @@ using Docfx.MarkdigEngine.Extensions;
 using Docfx.Plugins;
 using DocumentationWarning.Config;
 using DocumentationWarning.Util;
+using ShellProgressBar;
 
 namespace DocumentationWarning.Steps;
 
@@ -22,30 +23,38 @@ public sealed class FixYaml : Step
         var path = Path.Join(config.DocDir, "_site", "xrefmap.yml");
         var map = YamlUtility.Deserialize<XRefMap>(path);
         var refs = new List<XRefSpec>();
+        var total = map.References.Count;
 
-        for (var i = 0; i < map.References.Count; i++)
+        using (var bar = new ProgressBar(total, "Fixing xrefmap..."))
         {
-            var item = map.References[i];
+            var prog = bar.AsProgress<float>();
 
-            item.Href = urlPrefix + item.Href;
-
-            map.References[i] = item;
-
-            if (item.Uid.StartsWith(config.Game.Namespace) && item.Uid != config.Game.Namespace)
+            for (var i = 0; i < total; i++)
             {
-                var alt = item;
+                prog.Report(i / total);
 
-                alt.Uid = item.Uid.ReplaceRegex(startRegex, "");
+                var item = map.References[i];
 
-                if (map.References.Find(v => v.Uid == alt.Uid) != null)
-                    continue;
+                item.Href = urlPrefix + item.Href;
 
-                if (alt.ContainsKey("fullName"))
+                map.References[i] = item;
+
+                if (item.Uid.StartsWith(config.Game.Namespace) && item.Uid != config.Game.Namespace)
                 {
-                    alt["fullName"] = item["fullName"].ToString().ReplaceRegex(startRegex, "");
-                }
+                    var alt = item;
 
-                refs.Add(alt);
+                    alt.Uid = item.Uid.ReplaceRegex(startRegex, "");
+
+                    if (map.References.Find(v => v.Uid == alt.Uid) != null)
+                        continue;
+
+                    if (alt.ContainsKey("fullName"))
+                    {
+                        alt["fullName"] = item["fullName"].ToString().ReplaceRegex(startRegex, "");
+                    }
+
+                    refs.Add(alt);
+                }
             }
         }
 
