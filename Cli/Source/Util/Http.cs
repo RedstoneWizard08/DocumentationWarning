@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace DocumentationWarning.Util;
 
-public class Http
+public static class Http
 {
     private static readonly HttpClient client = new();
 

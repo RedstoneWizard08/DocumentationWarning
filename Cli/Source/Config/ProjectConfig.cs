@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using DocumentationWarning.Util;
 using Newtonsoft.Json;
@@ -30,13 +29,13 @@ public class ProjectConfig
 
     [JsonIgnore]
     public string OutDir => Path.Join(ProjectDir, OutDirStr);
-    
+
     [JsonIgnore]
     public string AsmDir => Path.Join(TempDir, "Assemblies");
-    
+
     [JsonIgnore]
     public string PkgDir => Path.Join(TempDir, "Packages");
-    
+
     [JsonIgnore]
     public string DocDir => Path.Join(ProjectDir, "Docs");
 
@@ -45,7 +44,7 @@ public class ProjectConfig
         var data = await File.ReadAllTextAsync(path);
         var me = JsonConvert.DeserializeObject<ProjectConfig>(data)!;
         var versions = await Http.GetManifest(me.Game.Package, me.Game.Source);
-        var latest = versions.versions.Last();
+        var latest = versions.versions[^1];
 
         me.Dependencies.Add(new Dependency()
         {
@@ -54,7 +53,7 @@ public class ProjectConfig
             Source = me.Game.Source,
         });
 
-        if (me.ProjectDir == "")
+        if (me.ProjectDir?.Length == 0)
         {
             me.ProjectDir = dir;
         }
