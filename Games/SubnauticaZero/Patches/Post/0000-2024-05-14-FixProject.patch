@@ -1,0 +1,88 @@
+diff -Naur a/Assembly-CSharp/Assembly-CSharp.csproj Out/Assembly-CSharp/Assembly-CSharp.csproj
+--- a/Assembly-CSharp/Assembly-CSharp.csproj	2024-05-15 00:42:13.626572019 +0000
++++ Out/Assembly-CSharp/Assembly-CSharp.csproj	2024-05-15 00:43:56.722552972 +0000
+@@ -2,7 +2,7 @@
+   <PropertyGroup>
+     <AssemblyName>Assembly-CSharp</AssemblyName>
+     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+-    <TargetFramework>net40</TargetFramework>
++    <TargetFramework>net472</TargetFramework>
+   </PropertyGroup>
+   <PropertyGroup>
+     <LangVersion>11.0</LangVersion>
+@@ -14,9 +14,7 @@
+     <Reference Include="UnityEngine.CoreModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.CoreModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="Assembly-CSharp-firstpass">
+-      <HintPath>../../Temp/Assemblies/Assembly-CSharp-firstpass.dll</HintPath>
+-    </Reference>
++    <ProjectReference Include="../Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj" />
+     <Reference Include="UnityEngine.AnimationModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.AnimationModule.dll</HintPath>
+     </Reference>
+@@ -26,9 +24,6 @@
+     <Reference Include="UnityEngine.UI">
+       <HintPath>../../Temp/Assemblies/UnityEngine.UI.dll</HintPath>
+     </Reference>
+-    <Reference Include="System.Core">
+-      <HintPath>/usr/local/share/dotnet/shared/Microsoft.NETCore.App/8.0.4/System.Core.dll</HintPath>
+-    </Reference>
+     <Reference Include="Unity.Addressables">
+       <HintPath>../../Temp/Assemblies/Unity.Addressables.dll</HintPath>
+     </Reference>
+@@ -59,7 +54,7 @@
+     <Reference Include="FMODUnity">
+       <HintPath>../../Temp/Assemblies/FMODUnity.dll</HintPath>
+     </Reference>
+-    <Reference Include="com.rlabrecque.steamworks.net" />
++    <PackageReference Include="YellowDogMan.Steamworks.NET" Version="15.0.1-ydm-0.1.0" />
+     <Reference Include="XGamingRuntime" />
+     <Reference Include="PlatformIODefault" />
+     <Reference Include="Sentry">
+@@ -77,11 +72,11 @@
+     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="LitJSON" />
++    <PackageReference Include="LitJSON" Version="0.19.0" />
+     <Reference Include="UnityEngine.UnityWebRequestModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.UnityWebRequestModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="Newtonsoft.Json" />
++    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+     <Reference Include="Unity.Burst">
+       <HintPath>../../Temp/Assemblies/Unity.Burst.dll</HintPath>
+     </Reference>
+diff -Naur a/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj Out/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj
+--- a/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj	2024-05-15 00:42:14.034571944 +0000
++++ Out/Assembly-CSharp-firstpass/Assembly-CSharp-firstpass.csproj	2024-05-15 00:44:04.770551448 +0000
+@@ -2,7 +2,7 @@
+   <PropertyGroup>
+     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+-    <TargetFramework>net40</TargetFramework>
++    <TargetFramework>net472</TargetFramework>
+   </PropertyGroup>
+   <PropertyGroup>
+     <LangVersion>11.0</LangVersion>
+@@ -29,9 +29,6 @@
+     <Reference Include="UnityEngine.AnimationModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.AnimationModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="System.Core">
+-      <HintPath>/usr/local/share/dotnet/shared/Microsoft.NETCore.App/8.0.4/System.Core.dll</HintPath>
+-    </Reference>
+     <Reference Include="UnityEngine.AssetBundleModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.AssetBundleModule.dll</HintPath>
+     </Reference>
+@@ -57,6 +54,7 @@
+     <Reference Include="UnityEngine.TerrainModule">
+       <HintPath>../../Temp/Assemblies/UnityEngine.TerrainModule.dll</HintPath>
+     </Reference>
+-    <Reference Include="LumenWorks" />
++    <!-- <Reference Include="LumenWorks" /> -->
++    <PackageReference Include="LumenWorks.Framework.IO" Version="3.8.0" />
+   </ItemGroup>
+ </Project>
+\ No newline at end of file
