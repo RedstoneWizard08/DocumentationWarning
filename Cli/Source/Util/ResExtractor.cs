@@ -37,8 +37,9 @@ public sealed class ResExtractor : WithLogger
             Directory.Delete(outDir, true);
         }
 
+        var root = await ConfigHelper.GetRootConfig();
         var asm = Assembly.GetExecutingAssembly();
-        var proc = TemplateProcessor.FromConfig(config);
+        var proc = TemplateProcessor.FromConfig(root, config);
 
         foreach (var (key, file) in GetItems())
         {

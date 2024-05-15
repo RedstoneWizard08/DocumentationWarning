@@ -7,8 +7,9 @@ using SixLabors.ImageSharp;
 
 namespace DocumentationWarning.Processors;
 
-public sealed class TemplateProcessor : WithLogger
+public sealed partial class TemplateProcessor : WithLogger
 {
+    public required string Site;
     public required string Game;
     public required string Publisher;
     public required string SteamPage;
@@ -22,7 +23,7 @@ public sealed class TemplateProcessor : WithLogger
     public string? GameWebsite;
     public string? ThunderstoreUrl;
 
-    public static TemplateProcessor FromConfig(ProjectConfig config)
+    public static TemplateProcessor FromConfig(RootConfig root, ProjectConfig config)
     {
         var bannerSize = (1, 1);
 
@@ -33,6 +34,7 @@ public sealed class TemplateProcessor : WithLogger
 
         return new TemplateProcessor()
         {
+            Site = root.Site,
             Game = config.Game.Name,
             Publisher = config.Game.Publisher,
             SteamPage = config.Urls.Steam,
@@ -77,6 +79,7 @@ public sealed class TemplateProcessor : WithLogger
         {
             var dict = new Dictionary<string, string>
             {
+                { "Site", Site },
                 { "Game", Game },
                 { "Publisher", Publisher },
                 { "SteamPage", SteamPage },
@@ -98,8 +101,6 @@ public sealed class TemplateProcessor : WithLogger
         }
     }
 
-    public static Regex IfRegex = new(@"<if \[([^\]]+)\]>([^<]+)<\/if>", RegexOptions.Multiline);
-
     public static int GetScaledWidth((int, int) size)
     {
         var (width, height) = size;
@@ -116,7 +117,7 @@ public sealed class TemplateProcessor : WithLogger
 
     public string ProcessConditions(string content)
     {
-        var match = IfRegex.Match(content);
+        var match = IfRegex().Match(content);
 
         while (match.Success)
         {
@@ -137,7 +138,7 @@ public sealed class TemplateProcessor : WithLogger
                 content = content.Replace(data, "");
             }
 
-            match = IfRegex.Match(content);
+            match = IfRegex().Match(content);
         }
 
         return content;
@@ -154,4 +155,7 @@ public sealed class TemplateProcessor : WithLogger
 
         return template;
     }
+
+    [GeneratedRegex(@"<if \[([^\]]+)\]>([^<]+)<\/if>", RegexOptions.Multiline)]
+    private static partial Regex IfRegex();
 }
