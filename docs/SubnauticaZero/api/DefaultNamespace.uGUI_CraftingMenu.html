@@ -1,0 +1,2719 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class uGUI_CraftingMenu | Subnautica: Below Zero </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class uGUI_CraftingMenu | Subnautica: Below Zero ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.uGUI_CraftingMenu">
+
+
+
+  <h1 id="DefaultNamespace_uGUI_CraftingMenu" data-uid="DefaultNamespace.uGUI_CraftingMenu" class="text-break">
+Class uGUI_CraftingMenu  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[RequireComponent(typeof(RectTransform))]
+[SuppressMessage(&quot;Gendarme.Rules.Concurrency&quot;, &quot;WriteStaticFieldFromInstanceMethodRule&quot;)]
+public class uGUI_CraftingMenu : uGUI_InputGroup, uGUI_IIconManager, uGUI_INavigableIconGrid</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">Component</span></div>
+      <div><span class="xref">Behaviour</span></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><a class="xref" href="DefaultNamespace.uGUI_InputGroup.html">uGUI_InputGroup</a></div>
+      <div><span class="xref">uGUI_CraftingMenu</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.uGUI_IIconManager.html">uGUI_IIconManager</a></div>
+      <div><a class="xref" href="DefaultNamespace.uGUI_INavigableIconGrid.html">uGUI_INavigableIconGrid</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup__inputDummy">uGUI_InputGroup._inputDummy</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_cursorLockCached">uGUI_InputGroup.cursorLockCached</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_acceptedMouseButtonsForActivation">uGUI_InputGroup.acceptedMouseButtonsForActivation</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_inputDummy">uGUI_InputGroup.inputDummy</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_selected">uGUI_InputGroup.selected</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_focused">uGUI_InputGroup.focused</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_Update">uGUI_InputGroup.Update()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_OnDisable">uGUI_InputGroup.OnDisable()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_Select_System_Boolean_">uGUI_InputGroup.Select(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_Deselect">uGUI_InputGroup.Deselect()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_Deselect_DefaultNamespace_uGUI_InputGroup_">uGUI_InputGroup.Deselect(uGUI_InputGroup)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_OnReselect_System_Boolean_">uGUI_InputGroup.OnReselect(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_InterceptInput_System_Boolean_">uGUI_InputGroup.InterceptInput(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_LockMovement_System_Boolean_">uGUI_InputGroup.LockMovement(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.uGUI_InputGroup.html#DefaultNamespace_uGUI_InputGroup_IsAcceptedToOpenWithButton_UnityEngine_EventSystems_PointerEventData_InputButton_">uGUI_InputGroup.IsAcceptedToOpenWithButton(PointerEventData.InputButton)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="GetComponentExtensions.html#GetComponentExtensions_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GetComponentExtensions.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_BroadcastMessageWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.BroadcastMessageWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_BroadcastMessageWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.BroadcastMessageWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageUpwardsWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageUpwardsWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageUpwardsWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageUpwardsWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SystemExtensions.html#SystemExtensions_GetComponentProfiled__1_UnityEngine_Component_">SystemExtensions.GetComponentProfiled&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="TransformExtensions.html#TransformExtensions_GetAllComponentsInChildren__1_UnityEngine_Component_">TransformExtensions.GetAllComponentsInChildren&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="UWE.CoroutineUtils.html#UWE_CoroutineUtils_StartCoroutineSmart_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">CoroutineUtils.StartCoroutineSmart(MonoBehaviour, IEnumerator)</a>
+  </div>
+  <div>
+      <a class="xref" href="SystemExtensions.html#SystemExtensions_NullOrID_UnityEngine_Object_">SystemExtensions.NullOrID(Object)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu__ctor_" data-uid="DefaultNamespace.uGUI_CraftingMenu.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu__ctor" data-uid="DefaultNamespace.uGUI_CraftingMenu.#ctor">
+  uGUI_CraftingMenu()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_CraftingMenu()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu__client" data-uid="DefaultNamespace.uGUI_CraftingMenu._client">
+  _client
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITreeActionReceiver _client</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ITreeActionReceiver.html">ITreeActionReceiver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu__craftHovered" data-uid="DefaultNamespace.uGUI_CraftingMenu._craftHovered">
+  _craftHovered
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite _craftHovered</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu__craftNormal" data-uid="DefaultNamespace.uGUI_CraftingMenu._craftNormal">
+  _craftNormal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite _craftNormal</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu__expandHovered" data-uid="DefaultNamespace.uGUI_CraftingMenu._expandHovered">
+  _expandHovered
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite _expandHovered</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu__expandNormal" data-uid="DefaultNamespace.uGUI_CraftingMenu._expandNormal">
+  _expandNormal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite _expandNormal</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_canvasGroup" data-uid="DefaultNamespace.uGUI_CraftingMenu.canvasGroup">
+  canvasGroup
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CanvasGroup canvasGroup</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">CanvasGroup</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_canvasScaler" data-uid="DefaultNamespace.uGUI_CraftingMenu.canvasScaler">
+  canvasScaler
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public uGUI_CanvasScaler canvasScaler</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_CanvasScaler.html">uGUI_CanvasScaler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_clickPunchAmplitude" data-uid="DefaultNamespace.uGUI_CraftingMenu.clickPunchAmplitude">
+  clickPunchAmplitude
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float clickPunchAmplitude = 0.5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_clickPunchFrequency" data-uid="DefaultNamespace.uGUI_CraftingMenu.clickPunchFrequency">
+  clickPunchFrequency
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float clickPunchFrequency = 5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_craftedNode" data-uid="DefaultNamespace.uGUI_CraftingMenu.craftedNode">
+  craftedNode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_CraftingMenu.Node craftedNode</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_expandPunchAmplitude" data-uid="DefaultNamespace.uGUI_CraftingMenu.expandPunchAmplitude">
+  expandPunchAmplitude
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float expandPunchAmplitude = 1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_icons" data-uid="DefaultNamespace.uGUI_CraftingMenu.icons">
+  icons
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;uGUI_ItemIcon, uGUI_CraftingMenu.Node&gt; icons</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="DefaultNamespace.uGUI_ItemIcon.html">uGUI_ItemIcon</a>, <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_iconsCanvas" data-uid="DefaultNamespace.uGUI_CraftingMenu.iconsCanvas">
+  iconsCanvas
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public RectTransform iconsCanvas</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RectTransform</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_id" data-uid="DefaultNamespace.uGUI_CraftingMenu.id">
+  id
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string id</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_interactable" data-uid="DefaultNamespace.uGUI_CraftingMenu.interactable">
+  interactable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool interactable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_interactionRaycaster" data-uid="DefaultNamespace.uGUI_CraftingMenu.interactionRaycaster">
+  interactionRaycaster
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public uGUI_GraphicRaycaster interactionRaycaster</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_GraphicRaycaster.html">uGUI_GraphicRaycaster</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_isDirty" data-uid="DefaultNamespace.uGUI_CraftingMenu.isDirty">
+  isDirty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isDirty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_locked" data-uid="DefaultNamespace.uGUI_CraftingMenu.locked">
+  locked
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool locked</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_punchDuration" data-uid="DefaultNamespace.uGUI_CraftingMenu.punchDuration">
+  punchDuration
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float punchDuration = 1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_punchDurationScatter" data-uid="DefaultNamespace.uGUI_CraftingMenu.punchDurationScatter">
+  punchDurationScatter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float punchDurationScatter = 0.2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_resync" data-uid="DefaultNamespace.uGUI_CraftingMenu.resync">
+  resync
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool resync</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_soundAccept" data-uid="DefaultNamespace.uGUI_CraftingMenu.soundAccept">
+  soundAccept
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public FMODAsset soundAccept</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">FMODAsset</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_soundDeny" data-uid="DefaultNamespace.uGUI_CraftingMenu.soundDeny">
+  soundDeny
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public FMODAsset soundDeny</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">FMODAsset</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_soundExpand" data-uid="DefaultNamespace.uGUI_CraftingMenu.soundExpand">
+  soundExpand
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public FMODAsset soundExpand</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">FMODAsset</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_soundOpen" data-uid="DefaultNamespace.uGUI_CraftingMenu.soundOpen">
+  soundOpen
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public FMODAsset soundOpen</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">FMODAsset</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_tree" data-uid="DefaultNamespace.uGUI_CraftingMenu.tree">
+  tree
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_CraftingMenu.Node tree</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_treeType" data-uid="DefaultNamespace.uGUI_CraftingMenu.treeType">
+  treeType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CraftTree.Type treeType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CraftTree.html">CraftTree</a>.<a class="xref" href="DefaultNamespace.CraftTree.Type.html">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_updateQueue" data-uid="DefaultNamespace.uGUI_CraftingMenu.updateQueue">
+  updateQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const ManagedUpdate.Queue updateQueue = LateUpdateAfterInput</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ManagedUpdate</span>.<span class="xref">Queue</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_client_" data-uid="DefaultNamespace.uGUI_CraftingMenu.client*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_client" data-uid="DefaultNamespace.uGUI_CraftingMenu.client">
+  client
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITreeActionReceiver client { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ITreeActionReceiver.html">ITreeActionReceiver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_craftHovered_" data-uid="DefaultNamespace.uGUI_CraftingMenu.craftHovered*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_craftHovered" data-uid="DefaultNamespace.uGUI_CraftingMenu.craftHovered">
+  craftHovered
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite craftHovered { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_craftNormal_" data-uid="DefaultNamespace.uGUI_CraftingMenu.craftNormal*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_craftNormal" data-uid="DefaultNamespace.uGUI_CraftingMenu.craftNormal">
+  craftNormal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite craftNormal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_expandHovered_" data-uid="DefaultNamespace.uGUI_CraftingMenu.expandHovered*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_expandHovered" data-uid="DefaultNamespace.uGUI_CraftingMenu.expandHovered">
+  expandHovered
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite expandHovered { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_expandNormal_" data-uid="DefaultNamespace.uGUI_CraftingMenu.expandNormal*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_expandNormal" data-uid="DefaultNamespace.uGUI_CraftingMenu.expandNormal">
+  expandNormal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Atlas.Sprite expandNormal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Atlas.html">Atlas</a>.<a class="xref" href="DefaultNamespace.Atlas.Sprite.html">Sprite</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_selectedIcon_" data-uid="DefaultNamespace.uGUI_CraftingMenu.selectedIcon*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_selectedIcon" data-uid="DefaultNamespace.uGUI_CraftingMenu.selectedIcon">
+  selectedIcon
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_ItemIcon selectedIcon { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_ItemIcon.html">uGUI_ItemIcon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Action_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Action*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Action_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Action(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  Action(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Action(uGUI_CraftingMenu.Node sender)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sender</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_ActionAvailable_" data-uid="DefaultNamespace.uGUI_CraftingMenu.ActionAvailable*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_ActionAvailable_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.ActionAvailable(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  ActionAvailable(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ActionAvailable(uGUI_CraftingMenu.Node sender)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sender</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Awake_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Awake*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Awake" data-uid="DefaultNamespace.uGUI_CraftingMenu.Awake">
+  Awake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Close_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Close*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Close_DefaultNamespace_ITreeActionReceiver_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Close(DefaultNamespace.ITreeActionReceiver)">
+  Close(ITreeActionReceiver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Close(ITreeActionReceiver receiver)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>receiver</code> <a class="xref" href="DefaultNamespace.ITreeActionReceiver.html">ITreeActionReceiver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Collapse_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Collapse*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Collapse_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Collapse(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  Collapse(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Collapse(uGUI_CraftingMenu.Node parent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_CreateIcon_" data-uid="DefaultNamespace.uGUI_CraftingMenu.CreateIcon*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_CreateIcon_DefaultNamespace_uGUI_CraftingMenu_Node_UnityEngine_RectTransform_System_Single_System_Single_System_Single_" data-uid="DefaultNamespace.uGUI_CraftingMenu.CreateIcon(DefaultNamespace.uGUI_CraftingMenu.Node,UnityEngine.RectTransform,System.Single,System.Single,System.Single)">
+  CreateIcon(Node, RectTransform, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateIcon(uGUI_CraftingMenu.Node node, RectTransform canvas, float size, float x, float y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>canvas</code> <span class="xref">RectTransform</span></dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Expand_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Expand*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Expand_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Expand(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  Expand(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Expand(uGUI_CraftingMenu.Node node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Filter_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Filter*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Filter_DefaultNamespace_TechType_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Filter(DefaultNamespace.TechType)">
+  Filter(TechType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Filter(TechType techType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>techType</code> <a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Filter_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Filter*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Filter_System_String_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Filter(System.String)">
+  Filter(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Filter(string id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_GetIconMetrics_" data-uid="DefaultNamespace.uGUI_CraftingMenu.GetIconMetrics*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_GetIconMetrics_UnityEngine_RectTransform_DefaultNamespace_uGUI_CraftingMenu_Node_System_Int32_System_Int32_System_Boolean_System_Single__System_Single__System_Single__" data-uid="DefaultNamespace.uGUI_CraftingMenu.GetIconMetrics(UnityEngine.RectTransform,DefaultNamespace.uGUI_CraftingMenu.Node,System.Int32,System.Int32,System.Boolean,System.Single@,System.Single@,System.Single@)">
+  GetIconMetrics(RectTransform, Node, int, int, bool, out float, out float, out float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetIconMetrics(RectTransform canvas, uGUI_CraftingMenu.Node node, int index, int siblings, bool grid, out float size, out float x, out float y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>canvas</code> <span class="xref">RectTransform</span></dt>
+    <dd></dd>
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>siblings</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>grid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_GetNode_" data-uid="DefaultNamespace.uGUI_CraftingMenu.GetNode*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_GetNode_DefaultNamespace_uGUI_ItemIcon_" data-uid="DefaultNamespace.uGUI_CraftingMenu.GetNode(DefaultNamespace.uGUI_ItemIcon)">
+  GetNode(uGUI_ItemIcon)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uGUI_CraftingMenu.Node GetNode(uGUI_ItemIcon icon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>icon</code> <a class="xref" href="DefaultNamespace.uGUI_ItemIcon.html">uGUI_ItemIcon</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_GetRectTransform_" data-uid="DefaultNamespace.uGUI_CraftingMenu.GetRectTransform*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_GetRectTransform_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.GetRectTransform(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  GetRectTransform(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RectTransform GetRectTransform(uGUI_CraftingMenu.Node node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RectTransform</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_InventoryChanged_" data-uid="DefaultNamespace.uGUI_CraftingMenu.InventoryChanged*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_InventoryChanged_DefaultNamespace_InventoryItem_" data-uid="DefaultNamespace.uGUI_CraftingMenu.InventoryChanged(DefaultNamespace.InventoryItem)">
+  InventoryChanged(InventoryItem)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InventoryChanged(InventoryItem item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_IsGrid_" data-uid="DefaultNamespace.uGUI_CraftingMenu.IsGrid*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_IsGrid_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.IsGrid(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  IsGrid(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsGrid(uGUI_CraftingMenu.Node node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Lock_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Lock*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Lock_DefaultNamespace_ITreeActionReceiver_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Lock(DefaultNamespace.ITreeActionReceiver)">
+  Lock(ITreeActionReceiver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Lock(ITreeActionReceiver receiver)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>receiver</code> <a class="xref" href="DefaultNamespace.ITreeActionReceiver.html">ITreeActionReceiver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_NavigationSelect_" data-uid="DefaultNamespace.uGUI_CraftingMenu.NavigationSelect*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_NavigationSelect_DefaultNamespace_uGUI_ItemIcon_" data-uid="DefaultNamespace.uGUI_CraftingMenu.NavigationSelect(DefaultNamespace.uGUI_ItemIcon)">
+  NavigationSelect(uGUI_ItemIcon)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NavigationSelect(uGUI_ItemIcon icon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>icon</code> <a class="xref" href="DefaultNamespace.uGUI_ItemIcon.html">uGUI_ItemIcon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnCompletedChanged_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompletedChanged*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnCompletedChanged_System_Collections_Generic_HashSet_DefaultNamespace_TechType__" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompletedChanged(System.Collections.Generic.HashSet{DefaultNamespace.TechType})">
+  OnCompletedChanged(HashSet&lt;TechType&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCompletedChanged(HashSet&lt;TechType&gt; tech)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tech</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="DefaultNamespace.TechType.html">TechType</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnCompoundAdd_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompoundAdd*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnCompoundAdd_DefaultNamespace_TechType_System_Int32_System_Int32_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompoundAdd(DefaultNamespace.TechType,System.Int32,System.Int32)">
+  OnCompoundAdd(TechType, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCompoundAdd(TechType techType, int unlocked, int total)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>techType</code> <a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+    <dt><code>unlocked</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>total</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnCompoundProgress_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompoundProgress*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnCompoundProgress_DefaultNamespace_TechType_System_Int32_System_Int32_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompoundProgress(DefaultNamespace.TechType,System.Int32,System.Int32)">
+  OnCompoundProgress(TechType, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCompoundProgress(TechType techType, int unlocked, int total)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>techType</code> <a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+    <dt><code>unlocked</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>total</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnCompoundRemove_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompoundRemove*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnCompoundRemove_DefaultNamespace_TechType_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnCompoundRemove(DefaultNamespace.TechType)">
+  OnCompoundRemove(TechType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCompoundRemove(TechType techType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>techType</code> <a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnDeselect_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnDeselect*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnDeselect" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnDeselect">
+  OnDeselect()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnDeselect()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnLockedAdd_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnLockedAdd*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnLockedAdd_DefaultNamespace_PDAScanner_Entry_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnLockedAdd(DefaultNamespace.PDAScanner.Entry)">
+  OnLockedAdd(Entry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnLockedAdd(PDAScanner.Entry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="DefaultNamespace.PDAScanner.html">PDAScanner</a>.<a class="xref" href="DefaultNamespace.PDAScanner.Entry.html">Entry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnLockedProgress_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnLockedProgress*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnLockedProgress_DefaultNamespace_PDAScanner_Entry_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnLockedProgress(DefaultNamespace.PDAScanner.Entry)">
+  OnLockedProgress(Entry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnLockedProgress(PDAScanner.Entry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="DefaultNamespace.PDAScanner.html">PDAScanner</a>.<a class="xref" href="DefaultNamespace.PDAScanner.Entry.html">Entry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnLockedRemove_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnLockedRemove*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnLockedRemove_DefaultNamespace_PDAScanner_Entry_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnLockedRemove(DefaultNamespace.PDAScanner.Entry)">
+  OnLockedRemove(Entry)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnLockedRemove(PDAScanner.Entry entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="DefaultNamespace.PDAScanner.html">PDAScanner</a>.<a class="xref" href="DefaultNamespace.PDAScanner.Entry.html">Entry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_OnSelect_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnSelect*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_OnSelect_System_Boolean_" data-uid="DefaultNamespace.uGUI_CraftingMenu.OnSelect(System.Boolean)">
+  OnSelect(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnSelect(bool lockMovement)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lockMovement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Open_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Open*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Open_DefaultNamespace_CraftTree_Type_DefaultNamespace_ITreeActionReceiver_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Open(DefaultNamespace.CraftTree.Type,DefaultNamespace.ITreeActionReceiver)">
+  Open(Type, ITreeActionReceiver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Open(CraftTree.Type treeType, ITreeActionReceiver receiver)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>treeType</code> <a class="xref" href="DefaultNamespace.CraftTree.html">CraftTree</a>.<a class="xref" href="DefaultNamespace.CraftTree.Type.html">Type</a></dt>
+    <dd></dd>
+    <dt><code>receiver</code> <a class="xref" href="DefaultNamespace.ITreeActionReceiver.html">ITreeActionReceiver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Out_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Out*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Out_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Out(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  Out(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Out(uGUI_CraftingMenu.Node parent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Punch_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Punch*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Punch_DefaultNamespace_uGUI_ItemIcon_System_Single_System_Single_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Punch(DefaultNamespace.uGUI_ItemIcon,System.Single,System.Single)">
+  Punch(uGUI_ItemIcon, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Punch(uGUI_ItemIcon icon, float delay = 0, float amplitude = 0.5)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>icon</code> <a class="xref" href="DefaultNamespace.uGUI_ItemIcon.html">uGUI_ItemIcon</a></dt>
+    <dd></dd>
+    <dt><code>delay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>amplitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Raycast_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Raycast*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Raycast_UnityEngine_EventSystems_PointerEventData_System_Collections_Generic_List_UnityEngine_EventSystems_RaycastResult__" data-uid="DefaultNamespace.uGUI_CraftingMenu.Raycast(UnityEngine.EventSystems.PointerEventData,System.Collections.Generic.List{UnityEngine.EventSystems.RaycastResult})">
+  Raycast(PointerEventData, List&lt;RaycastResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Raycast(PointerEventData eventData, List&lt;RaycastResult&gt; raycastResults)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+    <dt><code>raycastResults</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">RaycastResult</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_Resync_" data-uid="DefaultNamespace.uGUI_CraftingMenu.Resync*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_Resync" data-uid="DefaultNamespace.uGUI_CraftingMenu.Resync">
+  Resync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Resync()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_SetAlpha_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetAlpha*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_SetAlpha_System_Single_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetAlpha(System.Single)">
+  SetAlpha(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAlpha(float alpha)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>alpha</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_SetDirty_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetDirty*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_SetDirty" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetDirty">
+  SetDirty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDirty()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_SetExpanded_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetExpanded*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_SetExpanded_DefaultNamespace_uGUI_CraftingMenu_Node_System_Boolean_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetExpanded(DefaultNamespace.uGUI_CraftingMenu.Node,System.Boolean)">
+  SetExpanded(Node, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetExpanded(uGUI_CraftingMenu.Node node, bool expanded)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>expanded</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_SetInteractable_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetInteractable*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_SetInteractable_System_Boolean_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetInteractable(System.Boolean)">
+  SetInteractable(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetInteractable(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_SetLocked_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetLocked*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_SetLocked_System_Boolean_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetLocked(System.Boolean)">
+  SetLocked(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetLocked(bool locked)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>locked</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_SetProgress_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetProgress*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_SetProgress_DefaultNamespace_uGUI_CraftingMenu_Node_System_Single_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetProgress(DefaultNamespace.uGUI_CraftingMenu.Node,System.Single)">
+  SetProgress(Node, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetProgress(uGUI_CraftingMenu.Node node, float progress)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_SetRaycasterStatus_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetRaycasterStatus*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_SetRaycasterStatus_DefaultNamespace_uGUI_GraphicRaycaster_" data-uid="DefaultNamespace.uGUI_CraftingMenu.SetRaycasterStatus(DefaultNamespace.uGUI_GraphicRaycaster)">
+  SetRaycasterStatus(uGUI_GraphicRaycaster)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRaycasterStatus(uGUI_GraphicRaycaster raycaster)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>raycaster</code> <a class="xref" href="DefaultNamespace.uGUI_GraphicRaycaster.html">uGUI_GraphicRaycaster</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_UpdateIcons_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateIcons*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_UpdateIcons_DefaultNamespace_uGUI_CraftingMenu_Node_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateIcons(DefaultNamespace.uGUI_CraftingMenu.Node)">
+  UpdateIcons(Node)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateIcons(uGUI_CraftingMenu.Node node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_UpdateNotification_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateNotification*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_UpdateNotification_DefaultNamespace_uGUI_CraftingMenu_Node_System_Boolean_System_Int32_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateNotification(DefaultNamespace.uGUI_CraftingMenu.Node,System.Boolean,System.Int32)">
+  UpdateNotification(Node, bool, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateNotification(uGUI_CraftingMenu.Node node, bool available, int notifications)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>available</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>notifications</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_UpdateNotifications_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateNotifications*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_UpdateNotifications_DefaultNamespace_uGUI_CraftingMenu_Node_System_Int32__System_Int32__" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateNotifications(DefaultNamespace.uGUI_CraftingMenu.Node,System.Int32@,System.Int32@)">
+  UpdateNotifications(Node, ref int, ref int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateNotifications(uGUI_CraftingMenu.Node node, ref int craftables, ref int notifications)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>craftables</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>notifications</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_UpdateTree_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateTree*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_UpdateTree_DefaultNamespace_CraftNode_DefaultNamespace_uGUI_CraftingMenu_Node__System_Boolean_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateTree(DefaultNamespace.CraftNode,DefaultNamespace.uGUI_CraftingMenu.Node@,System.Boolean)">
+  UpdateTree(CraftNode, ref Node, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateTree(CraftNode src, ref uGUI_CraftingMenu.Node current, bool available = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> <a class="xref" href="DefaultNamespace.CraftNode.html">CraftNode</a></dt>
+    <dd></dd>
+    <dt><code>current</code> <a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.html">uGUI_CraftingMenu</a>.<a class="xref" href="DefaultNamespace.uGUI_CraftingMenu.Node.html">Node</a></dt>
+    <dd></dd>
+    <dt><code>available</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_CraftingMenu_UpdateVisuals_" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateVisuals*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_CraftingMenu_UpdateVisuals" data-uid="DefaultNamespace.uGUI_CraftingMenu.UpdateVisuals">
+  UpdateVisuals()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateVisuals()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

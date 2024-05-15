@@ -1,0 +1,1464 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CompactOctree | Subnautica: Below Zero </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CompactOctree | Subnautica: Below Zero ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.CompactOctree">
+
+
+
+  <h1 id="DefaultNamespace_CompactOctree" data-uid="DefaultNamespace.CompactOctree" class="text-break">
+Class CompactOctree  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CompactOctree</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CompactOctree</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_CompactOctree__ctor_" data-uid="DefaultNamespace.CompactOctree.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree__ctor" data-uid="DefaultNamespace.CompactOctree.#ctor">
+  CompactOctree()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompactOctree()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_CompactOctree_BytesPerNode" data-uid="DefaultNamespace.CompactOctree.BytesPerNode">
+  BytesPerNode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int BytesPerNode = 4</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CompactOctree_FileVersion" data-uid="DefaultNamespace.CompactOctree.FileVersion">
+  FileVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int FileVersion = 0</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_CompactOctree_data_" data-uid="DefaultNamespace.CompactOctree.data*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_data" data-uid="DefaultNamespace.CompactOctree.data">
+  data
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IAlloc&lt;byte&gt; data { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.IAlloc-1.html">IAlloc</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_dataCount_" data-uid="DefaultNamespace.CompactOctree.dataCount*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_dataCount" data-uid="DefaultNamespace.CompactOctree.dataCount">
+  dataCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int dataCount { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_isFullyLoaded_" data-uid="DefaultNamespace.CompactOctree.isFullyLoaded*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_isFullyLoaded" data-uid="DefaultNamespace.CompactOctree.isFullyLoaded">
+  isFullyLoaded
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isFullyLoaded { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_numNodes_" data-uid="DefaultNamespace.CompactOctree.numNodes*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_numNodes" data-uid="DefaultNamespace.CompactOctree.numNodes">
+  numNodes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int numNodes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_CompactOctree_CreateFrom_" data-uid="DefaultNamespace.CompactOctree.CreateFrom*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_CreateFrom_VoxelandData_OctNode_" data-uid="DefaultNamespace.CompactOctree.CreateFrom(VoxelandData.OctNode)">
+  CreateFrom(OctNode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CompactOctree CreateFrom(VoxelandData.OctNode root)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>root</code> <span class="xref">VoxelandData</span>.<span class="xref">OctNode</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CompactOctree.html">CompactOctree</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_EqualTo_" data-uid="DefaultNamespace.CompactOctree.EqualTo*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_EqualTo_DefaultNamespace_CompactOctree_" data-uid="DefaultNamespace.CompactOctree.EqualTo(DefaultNamespace.CompactOctree)">
+  EqualTo(CompactOctree)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualTo(CompactOctree other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="DefaultNamespace.CompactOctree.html">CompactOctree</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_EstimateBytes_" data-uid="DefaultNamespace.CompactOctree.EstimateBytes*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_EstimateBytes" data-uid="DefaultNamespace.CompactOctree.EstimateBytes">
+  EstimateBytes()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int EstimateBytes()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_GetByteArray_" data-uid="DefaultNamespace.CompactOctree.GetByteArray*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_GetByteArray_System_Int32_" data-uid="DefaultNamespace.CompactOctree.GetByteArray(System.Int32)">
+  GetByteArray(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IAlloc&lt;byte&gt; GetByteArray(int size)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.IAlloc-1.html">IAlloc</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_GetDensity_" data-uid="DefaultNamespace.CompactOctree.GetDensity*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_GetDensity_System_Int32_" data-uid="DefaultNamespace.CompactOctree.GetDensity(System.Int32)">
+  GetDensity(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte GetDensity(int node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_GetFirstChildId_" data-uid="DefaultNamespace.CompactOctree.GetFirstChildId*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_GetFirstChildId_System_Int32_" data-uid="DefaultNamespace.CompactOctree.GetFirstChildId(System.Int32)">
+  GetFirstChildId(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetFirstChildId(int node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_GetNode_" data-uid="DefaultNamespace.CompactOctree.GetNode*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_GetNode_System_Int32_" data-uid="DefaultNamespace.CompactOctree.GetNode(System.Int32)">
+  GetNode(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompactOctree.Node GetNode(int id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CompactOctree.html">CompactOctree</a>.<a class="xref" href="DefaultNamespace.CompactOctree.Node.html">Node</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_GetNodeId_" data-uid="DefaultNamespace.CompactOctree.GetNodeId*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_GetNodeId_Int3_System_Int32_" data-uid="DefaultNamespace.CompactOctree.GetNodeId(Int3,System.Int32)">
+  GetNodeId(Int3, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetNodeId(Int3 coords, int treeSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coords</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>treeSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_GetNodeId_" data-uid="DefaultNamespace.CompactOctree.GetNodeId*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_GetNodeId_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="DefaultNamespace.CompactOctree.GetNodeId(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  GetNodeId(int, int, int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetNodeId(int nid, int x, int y, int z, int halfsize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>z</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>halfsize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_GetType_" data-uid="DefaultNamespace.CompactOctree.GetType*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_GetType_System_Int32_" data-uid="DefaultNamespace.CompactOctree.GetType(System.Int32)">
+  GetType(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte GetType(int node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_IsEmpty_" data-uid="DefaultNamespace.CompactOctree.IsEmpty*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_IsEmpty" data-uid="DefaultNamespace.CompactOctree.IsEmpty">
+  IsEmpty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmpty()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_IsLeaf_" data-uid="DefaultNamespace.CompactOctree.IsLeaf*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_IsLeaf_System_Int32_" data-uid="DefaultNamespace.CompactOctree.IsLeaf(System.Int32)">
+  IsLeaf(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLeaf(int node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_NotifyUnload_" data-uid="DefaultNamespace.CompactOctree.NotifyUnload*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_NotifyUnload" data-uid="DefaultNamespace.CompactOctree.NotifyUnload">
+  NotifyUnload()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifyUnload()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_Rasterize_" data-uid="DefaultNamespace.CompactOctree.Rasterize*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_Rasterize_Array3_System_Byte__Array3_System_Byte__Int3_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="DefaultNamespace.CompactOctree.Rasterize(Array3{System.Byte},Array3{System.Byte},Int3,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  Rasterize(Array3&lt;byte&gt;, Array3&lt;byte&gt;, Int3, int, int, int, int, int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Rasterize(Array3&lt;byte&gt; typesOut, Array3&lt;byte&gt; densityOut, Int3 size, int wx, int wy, int wz, int ox, int oy, int oz, int h)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>typesOut</code> <a class="xref" href="Array3-1.html">Array3</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>densityOut</code> <a class="xref" href="Array3-1.html">Array3</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>wx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ox</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>h</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_Rasterize_" data-uid="DefaultNamespace.CompactOctree.Rasterize*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_Rasterize_System_Int32_Array3_System_Byte__Array3_System_Byte__Int3_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="DefaultNamespace.CompactOctree.Rasterize(System.Int32,Array3{System.Byte},Array3{System.Byte},Int3,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  Rasterize(int, Array3&lt;byte&gt;, Array3&lt;byte&gt;, Int3, int, int, int, int, int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Rasterize(int nodeId, Array3&lt;byte&gt; typesOut, Array3&lt;byte&gt; densityOut, Int3 size, int wx, int wy, int wz, int ox, int oy, int oz, int h)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>typesOut</code> <a class="xref" href="Array3-1.html">Array3</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>densityOut</code> <a class="xref" href="Array3-1.html">Array3</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>wx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ox</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>h</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_RasterizeNative_" data-uid="DefaultNamespace.CompactOctree.RasterizeNative*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_RasterizeNative_System_Int32_Array3_System_Byte__Array3_System_Byte__Int3_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="DefaultNamespace.CompactOctree.RasterizeNative(System.Int32,Array3{System.Byte},Array3{System.Byte},Int3,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  RasterizeNative(int, Array3&lt;byte&gt;, Array3&lt;byte&gt;, Int3, int, int, int, int, int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RasterizeNative(int nodeId, Array3&lt;byte&gt; typesOut, Array3&lt;byte&gt; densityOut, Int3 size, int wx, int wy, int wz, int ox, int oy, int oz, int h)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>typesOut</code> <a class="xref" href="Array3-1.html">Array3</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>densityOut</code> <a class="xref" href="Array3-1.html">Array3</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>wx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ox</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>h</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_RasterizeNativeEntry_" data-uid="DefaultNamespace.CompactOctree.RasterizeNativeEntry*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_RasterizeNativeEntry_System_Byte__System_UInt16_System_Byte__System_Byte__Int3_Int3_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="DefaultNamespace.CompactOctree.RasterizeNativeEntry(System.Byte@,System.UInt16,System.Byte@,System.Byte@,Int3,Int3,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  RasterizeNativeEntry(ref byte, ushort, ref byte, ref byte, Int3, Int3, int, int, int, int, int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RasterizeNativeEntry(ref byte nodes, ushort nodeId, ref byte typesOut, ref byte densityOut, Int3 usedSize, Int3 gridSize, int wx, int wy, int wz, int ox, int oy, int oz, int h)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nodes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+    <dt><code>typesOut</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+    <dt><code>densityOut</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+    <dt><code>usedSize</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>gridSize</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>wx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>wz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ox</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oz</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>h</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_Read_" data-uid="DefaultNamespace.CompactOctree.Read*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_Read_PoolingBinaryReader_System_Int32_Int3_Int3_" data-uid="DefaultNamespace.CompactOctree.Read(PoolingBinaryReader,System.Int32,Int3,Int3)">
+  Read(PoolingBinaryReader, int, Int3, Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Read(PoolingBinaryReader r, int version, Int3 batchId, Int3 treeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>r</code> <span class="xref">PoolingBinaryReader</span></dt>
+    <dd></dd>
+    <dt><code>version</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>batchId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>treeId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_Read_" data-uid="DefaultNamespace.CompactOctree.Read*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_Read_System_IO_BinaryReader_System_Int32_Int3_Int3_" data-uid="DefaultNamespace.CompactOctree.Read(System.IO.BinaryReader,System.Int32,Int3,Int3)">
+  Read(BinaryReader, int, Int3, Int3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Read(BinaryReader r, int version, Int3 batchId, Int3 treeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>r</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></dt>
+    <dd></dd>
+    <dt><code>version</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>batchId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+    <dt><code>treeId</code> <a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_Set_" data-uid="DefaultNamespace.CompactOctree.Set*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_Set_VoxelandData_OctNode_" data-uid="DefaultNamespace.CompactOctree.Set(VoxelandData.OctNode)">
+  Set(OctNode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(VoxelandData.OctNode root)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>root</code> <span class="xref">VoxelandData</span>.<span class="xref">OctNode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_SetInternal_" data-uid="DefaultNamespace.CompactOctree.SetInternal*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_SetInternal_VoxelandData_OctNode_System_Int32_System_UInt16__" data-uid="DefaultNamespace.CompactOctree.SetInternal(VoxelandData.OctNode,System.Int32,System.UInt16@)">
+  SetInternal(OctNode, int, ref ushort)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetInternal(VoxelandData.OctNode node, int nodeId, ref ushort nextFreeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <span class="xref">VoxelandData</span>.<span class="xref">OctNode</span></dt>
+    <dd></dd>
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>nextFreeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_SetNode_" data-uid="DefaultNamespace.CompactOctree.SetNode*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_SetNode_System_Int32_System_Byte_System_Byte_System_UInt16_" data-uid="DefaultNamespace.CompactOctree.SetNode(System.Int32,System.Byte,System.Byte,System.UInt16)">
+  SetNode(int, byte, byte, ushort)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetNode(int id, byte type, byte density, ushort firstChildId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+    <dt><code>density</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+    <dt><code>firstChildId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_SumTypes_" data-uid="DefaultNamespace.CompactOctree.SumTypes*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_SumTypes" data-uid="DefaultNamespace.CompactOctree.SumTypes">
+  SumTypes()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SumTypes()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_TabulateTypeUsage_" data-uid="DefaultNamespace.CompactOctree.TabulateTypeUsage*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_TabulateTypeUsage_System_Int32___" data-uid="DefaultNamespace.CompactOctree.TabulateTypeUsage(System.Int32[])">
+  TabulateTypeUsage(int[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TabulateTypeUsage(int[] type2count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type2count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_ToVLOctNodeRecursive_" data-uid="DefaultNamespace.CompactOctree.ToVLOctNodeRecursive*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_ToVLOctNodeRecursive_System_Int32_" data-uid="DefaultNamespace.CompactOctree.ToVLOctNodeRecursive(System.Int32)">
+  ToVLOctNodeRecursive(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoxelandData.OctNode ToVLOctNodeRecursive(int nid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">VoxelandData</span>.<span class="xref">OctNode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_ToVLOctree_" data-uid="DefaultNamespace.CompactOctree.ToVLOctree*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_ToVLOctree" data-uid="DefaultNamespace.CompactOctree.ToVLOctree">
+  ToVLOctree()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoxelandData.OctNode ToVLOctree()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">VoxelandData</span>.<span class="xref">OctNode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_UnloadChildren_" data-uid="DefaultNamespace.CompactOctree.UnloadChildren*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_UnloadChildren" data-uid="DefaultNamespace.CompactOctree.UnloadChildren">
+  UnloadChildren()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnloadChildren()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_UsesType_" data-uid="DefaultNamespace.CompactOctree.UsesType*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_UsesType_System_Byte_" data-uid="DefaultNamespace.CompactOctree.UsesType(System.Byte)">
+  UsesType(byte)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UsesType(byte type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CompactOctree_Write_" data-uid="DefaultNamespace.CompactOctree.Write*"></a>
+
+  <h3 id="DefaultNamespace_CompactOctree_Write_System_IO_BinaryWriter_" data-uid="DefaultNamespace.CompactOctree.Write(System.IO.BinaryWriter)">
+  Write(BinaryWriter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Write(BinaryWriter w)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>w</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

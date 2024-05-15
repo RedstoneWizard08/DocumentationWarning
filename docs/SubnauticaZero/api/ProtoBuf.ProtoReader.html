@@ -1,0 +1,3486 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ProtoReader | Subnautica: Below Zero </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ProtoReader | Subnautica: Below Zero ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ProtoBuf.ProtoReader">
+
+
+
+  <h1 id="ProtoBuf_ProtoReader" data-uid="ProtoBuf.ProtoReader" class="text-break">
+Class ProtoReader  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ProtoBuf.html">ProtoBuf</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ProtoReader : IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ProtoReader</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ProtoBuf_ProtoReader__ctor_" data-uid="ProtoBuf.ProtoReader.#ctor*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader__ctor_System_IO_Stream_ProtoBuf_Meta_TypeModel_ProtoBuf_SerializationContext_" data-uid="ProtoBuf.ProtoReader.#ctor(System.IO.Stream,ProtoBuf.Meta.TypeModel,ProtoBuf.SerializationContext)">
+  ProtoReader(Stream, TypeModel, SerializationContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoReader(Stream source, TypeModel model, SerializationContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader__ctor_" data-uid="ProtoBuf.ProtoReader.#ctor*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader__ctor_System_IO_Stream_ProtoBuf_Meta_TypeModel_ProtoBuf_SerializationContext_System_Int32_" data-uid="ProtoBuf.ProtoReader.#ctor(System.IO.Stream,ProtoBuf.Meta.TypeModel,ProtoBuf.SerializationContext,System.Int32)">
+  ProtoReader(Stream, TypeModel, SerializationContext, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoReader(Stream source, TypeModel model, SerializationContext context, int length)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader__ctor_" data-uid="ProtoBuf.ProtoReader.#ctor*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader__ctor_System_IO_Stream_ProtoBuf_Meta_TypeModel_ProtoBuf_SerializationContext_System_Int64_" data-uid="ProtoBuf.ProtoReader.#ctor(System.IO.Stream,ProtoBuf.Meta.TypeModel,ProtoBuf.SerializationContext,System.Int64)">
+  ProtoReader(Stream, TypeModel, SerializationContext, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoReader(Stream source, TypeModel model, SerializationContext context, long length)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_EmptyBlob" data-uid="ProtoBuf.ProtoReader.EmptyBlob">
+  EmptyBlob
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly byte[] EmptyBlob</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_Int32Msb" data-uid="ProtoBuf.ProtoReader.Int32Msb">
+  Int32Msb
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int Int32Msb = -2147483648</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_Int64Msb" data-uid="ProtoBuf.ProtoReader.Int64Msb">
+  Int64Msb
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const long Int64Msb = -9223372036854775808</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_TO_EOF" data-uid="ProtoBuf.ProtoReader.TO_EOF">
+  TO_EOF
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const long TO_EOF = -1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_available" data-uid="ProtoBuf.ProtoReader.available">
+  available
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int available</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_blockEnd64" data-uid="ProtoBuf.ProtoReader.blockEnd64">
+  blockEnd64
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long blockEnd64</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_context" data-uid="ProtoBuf.ProtoReader.context">
+  context
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SerializationContext context</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_dataRemaining64" data-uid="ProtoBuf.ProtoReader.dataRemaining64">
+  dataRemaining64
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long dataRemaining64</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_depth" data-uid="ProtoBuf.ProtoReader.depth">
+  depth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int depth</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_encoding" data-uid="ProtoBuf.ProtoReader.encoding">
+  encoding
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly UTF8Encoding encoding</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.utf8encoding">UTF8Encoding</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_fieldNumber" data-uid="ProtoBuf.ProtoReader.fieldNumber">
+  fieldNumber
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int fieldNumber</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_internStrings" data-uid="ProtoBuf.ProtoReader.internStrings">
+  internStrings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool internStrings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_ioBuffer" data-uid="ProtoBuf.ProtoReader.ioBuffer">
+  ioBuffer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] ioBuffer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_ioIndex" data-uid="ProtoBuf.ProtoReader.ioIndex">
+  ioIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ioIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_isFixedLength" data-uid="ProtoBuf.ProtoReader.isFixedLength">
+  isFixedLength
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isFixedLength</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_lastReader" data-uid="ProtoBuf.ProtoReader.lastReader">
+  lastReader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ThreadStatic]
+public static ProtoReader lastReader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_model" data-uid="ProtoBuf.ProtoReader.model">
+  model
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TypeModel model</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_netCache" data-uid="ProtoBuf.ProtoReader.netCache">
+  netCache
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetObjectCache netCache</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.NetObjectCache.html">NetObjectCache</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_position64" data-uid="ProtoBuf.ProtoReader.position64">
+  position64
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long position64</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_source" data-uid="ProtoBuf.ProtoReader.source">
+  source
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream source</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_stringInterner" data-uid="ProtoBuf.ProtoReader.stringInterner">
+  stringInterner
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string&gt; stringInterner</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_trapCount" data-uid="ProtoBuf.ProtoReader.trapCount">
+  trapCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint trapCount</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ProtoBuf_ProtoReader_wireType" data-uid="ProtoBuf.ProtoReader.wireType">
+  wireType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WireType wireType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.WireType.html">WireType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ProtoBuf_ProtoReader_Context_" data-uid="ProtoBuf.ProtoReader.Context*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Context" data-uid="ProtoBuf.ProtoReader.Context">
+  Context
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SerializationContext Context { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_FieldNumber_" data-uid="ProtoBuf.ProtoReader.FieldNumber*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_FieldNumber" data-uid="ProtoBuf.ProtoReader.FieldNumber">
+  FieldNumber
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FieldNumber { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_InternStrings_" data-uid="ProtoBuf.ProtoReader.InternStrings*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_InternStrings" data-uid="ProtoBuf.ProtoReader.InternStrings">
+  InternStrings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool InternStrings { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_LongPosition_" data-uid="ProtoBuf.ProtoReader.LongPosition*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_LongPosition" data-uid="ProtoBuf.ProtoReader.LongPosition">
+  LongPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long LongPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Model_" data-uid="ProtoBuf.ProtoReader.Model*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Model" data-uid="ProtoBuf.ProtoReader.Model">
+  Model
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TypeModel Model { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_NetCache_" data-uid="ProtoBuf.ProtoReader.NetCache*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_NetCache" data-uid="ProtoBuf.ProtoReader.NetCache">
+  NetCache
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetObjectCache NetCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.NetObjectCache.html">NetObjectCache</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Position_" data-uid="ProtoBuf.ProtoReader.Position*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Position" data-uid="ProtoBuf.ProtoReader.Position">
+  Position
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Position { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_WireType_" data-uid="ProtoBuf.ProtoReader.WireType*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_WireType" data-uid="ProtoBuf.ProtoReader.WireType">
+  WireType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WireType WireType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.WireType.html">WireType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ProtoBuf_ProtoReader_AddErrorData_" data-uid="ProtoBuf.ProtoReader.AddErrorData*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_AddErrorData_System_Exception_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.AddErrorData(System.Exception,ProtoBuf.ProtoReader)">
+  AddErrorData(Exception, ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Exception AddErrorData(Exception exception, ProtoReader source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>exception</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_AppendBytes_" data-uid="ProtoBuf.ProtoReader.AppendBytes*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_AppendBytes_System_Byte___ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.AppendBytes(System.Byte[],ProtoBuf.ProtoReader)">
+  AppendBytes(byte[], ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] AppendBytes(byte[] value, ProtoReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_AppendExtensionData_" data-uid="ProtoBuf.ProtoReader.AppendExtensionData*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_AppendExtensionData_ProtoBuf_IExtensible_" data-uid="ProtoBuf.ProtoReader.AppendExtensionData(ProtoBuf.IExtensible)">
+  AppendExtensionData(IExtensible)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AppendExtensionData(IExtensible instance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>instance</code> <a class="xref" href="ProtoBuf.IExtensible.html">IExtensible</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_AppendExtensionField_" data-uid="ProtoBuf.ProtoReader.AppendExtensionField*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_AppendExtensionField_ProtoBuf_ProtoWriter_" data-uid="ProtoBuf.ProtoReader.AppendExtensionField(ProtoBuf.ProtoWriter)">
+  AppendExtensionField(ProtoWriter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AppendExtensionField(ProtoWriter writer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>writer</code> <a class="xref" href="ProtoBuf.ProtoWriter.html">ProtoWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Assert_" data-uid="ProtoBuf.ProtoReader.Assert*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Assert_ProtoBuf_WireType_" data-uid="ProtoBuf.ProtoReader.Assert(ProtoBuf.WireType)">
+  Assert(WireType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Assert(WireType wireType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wireType</code> <a class="xref" href="ProtoBuf.WireType.html">WireType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_CheckFullyConsumed_" data-uid="ProtoBuf.ProtoReader.CheckFullyConsumed*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_CheckFullyConsumed" data-uid="ProtoBuf.ProtoReader.CheckFullyConsumed">
+  CheckFullyConsumed()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckFullyConsumed()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Create_" data-uid="ProtoBuf.ProtoReader.Create*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Create_System_IO_Stream_ProtoBuf_Meta_TypeModel_ProtoBuf_SerializationContext_System_Int32_" data-uid="ProtoBuf.ProtoReader.Create(System.IO.Stream,ProtoBuf.Meta.TypeModel,ProtoBuf.SerializationContext,System.Int32)">
+  Create(Stream, TypeModel, SerializationContext, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ProtoReader Create(Stream source, TypeModel model, SerializationContext context, int len)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+    <dt><code>len</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Create_" data-uid="ProtoBuf.ProtoReader.Create*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Create_System_IO_Stream_ProtoBuf_Meta_TypeModel_ProtoBuf_SerializationContext_System_Int64_" data-uid="ProtoBuf.ProtoReader.Create(System.IO.Stream,ProtoBuf.Meta.TypeModel,ProtoBuf.SerializationContext,System.Int64)">
+  Create(Stream, TypeModel, SerializationContext, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ProtoReader Create(Stream source, TypeModel model, SerializationContext context, long len)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+    <dt><code>len</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_CreateException_" data-uid="ProtoBuf.ProtoReader.CreateException*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_CreateException_System_String_" data-uid="ProtoBuf.ProtoReader.CreateException(System.String)">
+  CreateException(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Exception CreateException(string message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_CreateWireTypeException_" data-uid="ProtoBuf.ProtoReader.CreateWireTypeException*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_CreateWireTypeException" data-uid="ProtoBuf.ProtoReader.CreateWireTypeException">
+  CreateWireTypeException()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Exception CreateWireTypeException()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_DeserializeType_" data-uid="ProtoBuf.ProtoReader.DeserializeType*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_DeserializeType_System_String_" data-uid="ProtoBuf.ProtoReader.DeserializeType(System.String)">
+  DeserializeType(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type DeserializeType(string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_DirectReadBigEndianInt32_" data-uid="ProtoBuf.ProtoReader.DirectReadBigEndianInt32*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_DirectReadBigEndianInt32_System_IO_Stream_" data-uid="ProtoBuf.ProtoReader.DirectReadBigEndianInt32(System.IO.Stream)">
+  DirectReadBigEndianInt32(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DirectReadBigEndianInt32(Stream source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_DirectReadBytes_" data-uid="ProtoBuf.ProtoReader.DirectReadBytes*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_DirectReadBytes_System_IO_Stream_System_Byte___System_Int32_System_Int32_" data-uid="ProtoBuf.ProtoReader.DirectReadBytes(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
+  DirectReadBytes(Stream, byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DirectReadBytes(Stream source, byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_DirectReadBytes_" data-uid="ProtoBuf.ProtoReader.DirectReadBytes*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_DirectReadBytes_System_IO_Stream_System_Int32_" data-uid="ProtoBuf.ProtoReader.DirectReadBytes(System.IO.Stream,System.Int32)">
+  DirectReadBytes(Stream, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] DirectReadBytes(Stream source, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_DirectReadLittleEndianInt32_" data-uid="ProtoBuf.ProtoReader.DirectReadLittleEndianInt32*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_DirectReadLittleEndianInt32_System_IO_Stream_" data-uid="ProtoBuf.ProtoReader.DirectReadLittleEndianInt32(System.IO.Stream)">
+  DirectReadLittleEndianInt32(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DirectReadLittleEndianInt32(Stream source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_DirectReadString_" data-uid="ProtoBuf.ProtoReader.DirectReadString*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_DirectReadString_System_IO_Stream_System_Int32_" data-uid="ProtoBuf.ProtoReader.DirectReadString(System.IO.Stream,System.Int32)">
+  DirectReadString(Stream, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string DirectReadString(Stream source, int length)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_DirectReadVarintInt32_" data-uid="ProtoBuf.ProtoReader.DirectReadVarintInt32*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_DirectReadVarintInt32_System_IO_Stream_" data-uid="ProtoBuf.ProtoReader.DirectReadVarintInt32(System.IO.Stream)">
+  DirectReadVarintInt32(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DirectReadVarintInt32(Stream source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Dispose_" data-uid="ProtoBuf.ProtoReader.Dispose*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Dispose" data-uid="ProtoBuf.ProtoReader.Dispose">
+  Dispose()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_EndSubItem_" data-uid="ProtoBuf.ProtoReader.EndSubItem*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_EndSubItem_ProtoBuf_SubItemToken_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.EndSubItem(ProtoBuf.SubItemToken,ProtoBuf.ProtoReader)">
+  EndSubItem(SubItemToken, ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EndSubItem(SubItemToken token, ProtoReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <a class="xref" href="ProtoBuf.SubItemToken.html">SubItemToken</a></dt>
+    <dd></dd>
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Ensure_" data-uid="ProtoBuf.ProtoReader.Ensure*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Ensure_System_Int32_System_Boolean_" data-uid="ProtoBuf.ProtoReader.Ensure(System.Int32,System.Boolean)">
+  Ensure(int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Ensure(int count, bool strict)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>strict</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_EoF_" data-uid="ProtoBuf.ProtoReader.EoF*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_EoF_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.EoF(ProtoBuf.ProtoReader)">
+  EoF(ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Exception EoF(ProtoReader source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_GetRecycled_" data-uid="ProtoBuf.ProtoReader.GetRecycled*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_GetRecycled" data-uid="ProtoBuf.ProtoReader.GetRecycled">
+  GetRecycled()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ProtoReader GetRecycled()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_GetTypeKey_" data-uid="ProtoBuf.ProtoReader.GetTypeKey*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_GetTypeKey_System_Type__" data-uid="ProtoBuf.ProtoReader.GetTypeKey(System.Type@)">
+  GetTypeKey(ref Type)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetTypeKey(ref Type type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_HasSubValue_" data-uid="ProtoBuf.ProtoReader.HasSubValue*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_HasSubValue_ProtoBuf_WireType_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.HasSubValue(ProtoBuf.WireType,ProtoBuf.ProtoReader)">
+  HasSubValue(WireType, ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HasSubValue(WireType wireType, ProtoReader source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wireType</code> <a class="xref" href="ProtoBuf.WireType.html">WireType</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Hint_" data-uid="ProtoBuf.ProtoReader.Hint*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Hint_ProtoBuf_WireType_" data-uid="ProtoBuf.ProtoReader.Hint(ProtoBuf.WireType)">
+  Hint(WireType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Hint(WireType wireType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wireType</code> <a class="xref" href="ProtoBuf.WireType.html">WireType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Init_" data-uid="ProtoBuf.ProtoReader.Init*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Init_ProtoBuf_ProtoReader_System_IO_Stream_ProtoBuf_Meta_TypeModel_ProtoBuf_SerializationContext_System_Int64_" data-uid="ProtoBuf.ProtoReader.Init(ProtoBuf.ProtoReader,System.IO.Stream,ProtoBuf.Meta.TypeModel,ProtoBuf.SerializationContext,System.Int64)">
+  Init(ProtoReader, Stream, TypeModel, SerializationContext, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Init(ProtoReader reader, Stream source, TypeModel model, SerializationContext context, long length)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>model</code> <a class="xref" href="ProtoBuf.Meta.TypeModel.html">TypeModel</a></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="ProtoBuf.SerializationContext.html">SerializationContext</a></dt>
+    <dd></dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Intern_" data-uid="ProtoBuf.ProtoReader.Intern*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Intern_System_String_" data-uid="ProtoBuf.ProtoReader.Intern(System.String)">
+  Intern(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Intern(string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Merge_" data-uid="ProtoBuf.ProtoReader.Merge*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Merge_ProtoBuf_ProtoReader_System_Object_System_Object_" data-uid="ProtoBuf.ProtoReader.Merge(ProtoBuf.ProtoReader,System.Object,System.Object)">
+  Merge(ProtoReader, object, object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object Merge(ProtoReader parent, object from, object to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_NoteObject_" data-uid="ProtoBuf.ProtoReader.NoteObject*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_NoteObject_System_Object_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.NoteObject(System.Object,ProtoBuf.ProtoReader)">
+  NoteObject(object, ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void NoteObject(object value, ProtoReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadBoolean_" data-uid="ProtoBuf.ProtoReader.ReadBoolean*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadBoolean" data-uid="ProtoBuf.ProtoReader.ReadBoolean">
+  ReadBoolean()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ReadBoolean()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadByte_" data-uid="ProtoBuf.ProtoReader.ReadByte*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadByte" data-uid="ProtoBuf.ProtoReader.ReadByte">
+  ReadByte()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte ReadByte()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadByteOrThrow_" data-uid="ProtoBuf.ProtoReader.ReadByteOrThrow*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadByteOrThrow_System_IO_Stream_" data-uid="ProtoBuf.ProtoReader.ReadByteOrThrow(System.IO.Stream)">
+  ReadByteOrThrow(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ReadByteOrThrow(Stream source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadDouble_" data-uid="ProtoBuf.ProtoReader.ReadDouble*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadDouble" data-uid="ProtoBuf.ProtoReader.ReadDouble">
+  ReadDouble()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ReadDouble()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadFieldHeader_" data-uid="ProtoBuf.ProtoReader.ReadFieldHeader*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadFieldHeader" data-uid="ProtoBuf.ProtoReader.ReadFieldHeader">
+  ReadFieldHeader()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ReadFieldHeader()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadInt16_" data-uid="ProtoBuf.ProtoReader.ReadInt16*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadInt16" data-uid="ProtoBuf.ProtoReader.ReadInt16">
+  ReadInt16()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short ReadInt16()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadInt32_" data-uid="ProtoBuf.ProtoReader.ReadInt32*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadInt32" data-uid="ProtoBuf.ProtoReader.ReadInt32">
+  ReadInt32()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ReadInt32()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadInt64_" data-uid="ProtoBuf.ProtoReader.ReadInt64*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadInt64" data-uid="ProtoBuf.ProtoReader.ReadInt64">
+  ReadInt64()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long ReadInt64()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadLengthPrefix_" data-uid="ProtoBuf.ProtoReader.ReadLengthPrefix*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadLengthPrefix_System_IO_Stream_System_Boolean_ProtoBuf_PrefixStyle_System_Int32__" data-uid="ProtoBuf.ProtoReader.ReadLengthPrefix(System.IO.Stream,System.Boolean,ProtoBuf.PrefixStyle,System.Int32@)">
+  ReadLengthPrefix(Stream, bool, PrefixStyle, out int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ReadLengthPrefix(Stream source, bool expectHeader, PrefixStyle style, out int fieldNumber)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>expectHeader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>style</code> <a class="xref" href="ProtoBuf.PrefixStyle.html">PrefixStyle</a></dt>
+    <dd></dd>
+    <dt><code>fieldNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadLengthPrefix_" data-uid="ProtoBuf.ProtoReader.ReadLengthPrefix*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadLengthPrefix_System_IO_Stream_System_Boolean_ProtoBuf_PrefixStyle_System_Int32__System_Int32__" data-uid="ProtoBuf.ProtoReader.ReadLengthPrefix(System.IO.Stream,System.Boolean,ProtoBuf.PrefixStyle,System.Int32@,System.Int32@)">
+  ReadLengthPrefix(Stream, bool, PrefixStyle, out int, out int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ReadLengthPrefix(Stream source, bool expectHeader, PrefixStyle style, out int fieldNumber, out int bytesRead)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>expectHeader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>style</code> <a class="xref" href="ProtoBuf.PrefixStyle.html">PrefixStyle</a></dt>
+    <dd></dd>
+    <dt><code>fieldNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>bytesRead</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadLongLengthPrefix_" data-uid="ProtoBuf.ProtoReader.ReadLongLengthPrefix*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadLongLengthPrefix_System_IO_Stream_System_Boolean_ProtoBuf_PrefixStyle_System_Int32__System_Int32__" data-uid="ProtoBuf.ProtoReader.ReadLongLengthPrefix(System.IO.Stream,System.Boolean,ProtoBuf.PrefixStyle,System.Int32@,System.Int32@)">
+  ReadLongLengthPrefix(Stream, bool, PrefixStyle, out int, out int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long ReadLongLengthPrefix(Stream source, bool expectHeader, PrefixStyle style, out int fieldNumber, out int bytesRead)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>expectHeader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>style</code> <a class="xref" href="ProtoBuf.PrefixStyle.html">PrefixStyle</a></dt>
+    <dd></dd>
+    <dt><code>fieldNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>bytesRead</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadObject_" data-uid="ProtoBuf.ProtoReader.ReadObject*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadObject_System_Object_System_Int32_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.ReadObject(System.Object,System.Int32,ProtoBuf.ProtoReader)">
+  ReadObject(object, int, ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object ReadObject(object value, int key, ProtoReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadSByte_" data-uid="ProtoBuf.ProtoReader.ReadSByte*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadSByte" data-uid="ProtoBuf.ProtoReader.ReadSByte">
+  ReadSByte()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sbyte ReadSByte()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadSingle_" data-uid="ProtoBuf.ProtoReader.ReadSingle*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadSingle" data-uid="ProtoBuf.ProtoReader.ReadSingle">
+  ReadSingle()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ReadSingle()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadString_" data-uid="ProtoBuf.ProtoReader.ReadString*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadString" data-uid="ProtoBuf.ProtoReader.ReadString">
+  ReadString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReadString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadType_" data-uid="ProtoBuf.ProtoReader.ReadType*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadType" data-uid="ProtoBuf.ProtoReader.ReadType">
+  ReadType()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type ReadType()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadTypedObject_" data-uid="ProtoBuf.ProtoReader.ReadTypedObject*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadTypedObject_System_Object_System_Int32_ProtoBuf_ProtoReader_System_Type_" data-uid="ProtoBuf.ProtoReader.ReadTypedObject(System.Object,System.Int32,ProtoBuf.ProtoReader,System.Type)">
+  ReadTypedObject(object, int, ProtoReader, Type)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object ReadTypedObject(object value, int key, ProtoReader reader, Type type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadUInt16_" data-uid="ProtoBuf.ProtoReader.ReadUInt16*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadUInt16" data-uid="ProtoBuf.ProtoReader.ReadUInt16">
+  ReadUInt16()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ushort ReadUInt16()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadUInt32_" data-uid="ProtoBuf.ProtoReader.ReadUInt32*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadUInt32" data-uid="ProtoBuf.ProtoReader.ReadUInt32">
+  ReadUInt32()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ReadUInt32()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadUInt32Variant_" data-uid="ProtoBuf.ProtoReader.ReadUInt32Variant*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadUInt32Variant_System_Boolean_" data-uid="ProtoBuf.ProtoReader.ReadUInt32Variant(System.Boolean)">
+  ReadUInt32Variant(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ReadUInt32Variant(bool trimNegative)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>trimNegative</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadUInt64_" data-uid="ProtoBuf.ProtoReader.ReadUInt64*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadUInt64" data-uid="ProtoBuf.ProtoReader.ReadUInt64">
+  ReadUInt64()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ulong ReadUInt64()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ReadUInt64Variant_" data-uid="ProtoBuf.ProtoReader.ReadUInt64Variant*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ReadUInt64Variant" data-uid="ProtoBuf.ProtoReader.ReadUInt64Variant">
+  ReadUInt64Variant()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ulong ReadUInt64Variant()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Recycle_" data-uid="ProtoBuf.ProtoReader.Recycle*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Recycle_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.Recycle(ProtoBuf.ProtoReader)">
+  Recycle(ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Recycle(ProtoReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Seek_" data-uid="ProtoBuf.ProtoReader.Seek*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Seek_System_IO_Stream_System_Int64_System_Byte___" data-uid="ProtoBuf.ProtoReader.Seek(System.IO.Stream,System.Int64,System.Byte[])">
+  Seek(Stream, long, byte[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Seek(Stream source, long count, byte[] buffer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_SetRootObject_" data-uid="ProtoBuf.ProtoReader.SetRootObject*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_SetRootObject_System_Object_" data-uid="ProtoBuf.ProtoReader.SetRootObject(System.Object)">
+  SetRootObject(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRootObject(object value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_SkipField_" data-uid="ProtoBuf.ProtoReader.SkipField*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_SkipField" data-uid="ProtoBuf.ProtoReader.SkipField">
+  SkipField()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SkipField()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_StartSubItem_" data-uid="ProtoBuf.ProtoReader.StartSubItem*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_StartSubItem_ProtoBuf_ProtoReader_" data-uid="ProtoBuf.ProtoReader.StartSubItem(ProtoBuf.ProtoReader)">
+  StartSubItem(ProtoReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SubItemToken StartSubItem(ProtoReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reader</code> <a class="xref" href="ProtoBuf.ProtoReader.html">ProtoReader</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ProtoBuf.SubItemToken.html">SubItemToken</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_ThrowEnumException_" data-uid="ProtoBuf.ProtoReader.ThrowEnumException*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_ThrowEnumException_System_Type_System_Int32_" data-uid="ProtoBuf.ProtoReader.ThrowEnumException(System.Type,System.Int32)">
+  ThrowEnumException(Type, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ThrowEnumException(Type type, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_TrapNextObject_" data-uid="ProtoBuf.ProtoReader.TrapNextObject*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_TrapNextObject_System_Int32_" data-uid="ProtoBuf.ProtoReader.TrapNextObject(System.Int32)">
+  TrapNextObject(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TrapNextObject(int newObjectKey)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newObjectKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_TryReadFieldHeader_" data-uid="ProtoBuf.ProtoReader.TryReadFieldHeader*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_TryReadFieldHeader_System_Int32_" data-uid="ProtoBuf.ProtoReader.TryReadFieldHeader(System.Int32)">
+  TryReadFieldHeader(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryReadFieldHeader(int field)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>field</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_TryReadUInt32Variant_" data-uid="ProtoBuf.ProtoReader.TryReadUInt32Variant*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_TryReadUInt32Variant_System_UInt32__" data-uid="ProtoBuf.ProtoReader.TryReadUInt32Variant(System.UInt32@)">
+  TryReadUInt32Variant(out uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryReadUInt32Variant(out uint value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_TryReadUInt32VariantWithoutMoving_" data-uid="ProtoBuf.ProtoReader.TryReadUInt32VariantWithoutMoving*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_TryReadUInt32VariantWithoutMoving_System_Boolean_System_UInt32__" data-uid="ProtoBuf.ProtoReader.TryReadUInt32VariantWithoutMoving(System.Boolean,System.UInt32@)">
+  TryReadUInt32VariantWithoutMoving(bool, out uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TryReadUInt32VariantWithoutMoving(bool trimNegative, out uint value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>trimNegative</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_TryReadUInt64Variant_" data-uid="ProtoBuf.ProtoReader.TryReadUInt64Variant*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_TryReadUInt64Variant_System_IO_Stream_System_UInt64__" data-uid="ProtoBuf.ProtoReader.TryReadUInt64Variant(System.IO.Stream,System.UInt64@)">
+  TryReadUInt64Variant(Stream, out ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int TryReadUInt64Variant(Stream source, out ulong value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_TryReadUInt64VariantWithoutMoving_" data-uid="ProtoBuf.ProtoReader.TryReadUInt64VariantWithoutMoving*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_TryReadUInt64VariantWithoutMoving_System_UInt64__" data-uid="ProtoBuf.ProtoReader.TryReadUInt64VariantWithoutMoving(System.UInt64@)">
+  TryReadUInt64VariantWithoutMoving(out ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TryReadUInt64VariantWithoutMoving(out ulong value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Zag_" data-uid="ProtoBuf.ProtoReader.Zag*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Zag_System_UInt32_" data-uid="ProtoBuf.ProtoReader.Zag(System.UInt32)">
+  Zag(uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Zag(uint ziggedValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ziggedValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ProtoBuf_ProtoReader_Zag_" data-uid="ProtoBuf.ProtoReader.Zag*"></a>
+
+  <h3 id="ProtoBuf_ProtoReader_Zag_System_UInt64_" data-uid="ProtoBuf.ProtoReader.Zag(System.UInt64)">
+  Zag(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long Zag(ulong ziggedValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ziggedValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2785 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class WaterBiomeManager | Subnautica: Below Zero </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class WaterBiomeManager | Subnautica: Below Zero ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.WaterBiomeManager">
+
+
+
+  <h1 id="DefaultNamespace_WaterBiomeManager" data-uid="DefaultNamespace.WaterBiomeManager" class="text-break">
+Class WaterBiomeManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ExecuteInEditMode]
+public class WaterBiomeManager : MonoBehaviour, ICompileTimeCheckable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">Component</span></div>
+      <div><span class="xref">Behaviour</span></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><span class="xref">WaterBiomeManager</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">ICompileTimeCheckable</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="GetComponentExtensions.html#GetComponentExtensions_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GetComponentExtensions.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_BroadcastMessageWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.BroadcastMessageWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_BroadcastMessageWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.BroadcastMessageWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageUpwardsWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageUpwardsWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageUpwardsWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageUpwardsWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageWithProfiling_UnityEngine_Component_System_String_System_String_System_Object_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageWithProfiling(Component, string, string, object, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SendMessageExtensions.html#SendMessageExtensions_SendMessageWithProfiling_UnityEngine_Component_System_String_System_String_UnityEngine_SendMessageOptions_">SendMessageExtensions.SendMessageWithProfiling(Component, string, string, SendMessageOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="SystemExtensions.html#SystemExtensions_GetComponentProfiled__1_UnityEngine_Component_">SystemExtensions.GetComponentProfiled&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="TransformExtensions.html#TransformExtensions_GetAllComponentsInChildren__1_UnityEngine_Component_">TransformExtensions.GetAllComponentsInChildren&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="UWE.CoroutineUtils.html#UWE_CoroutineUtils_StartCoroutineSmart_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">CoroutineUtils.StartCoroutineSmart(MonoBehaviour, IEnumerator)</a>
+  </div>
+  <div>
+      <a class="xref" href="SystemExtensions.html#SystemExtensions_NullOrID_UnityEngine_Object_">SystemExtensions.NullOrID(Object)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_WaterBiomeManager__ctor_" data-uid="DefaultNamespace.WaterBiomeManager.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager__ctor" data-uid="DefaultNamespace.WaterBiomeManager.#ctor">
+  WaterBiomeManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaterBiomeManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_atmosphereVolumeMaterial" data-uid="DefaultNamespace.WaterBiomeManager.atmosphereVolumeMaterial">
+  atmosphereVolumeMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material atmosphereVolumeMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_atmosphereVolumeShader" data-uid="DefaultNamespace.WaterBiomeManager.atmosphereVolumeShader">
+  atmosphereVolumeShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader atmosphereVolumeShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Shader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_atmosphereVolumesLayerMask" data-uid="DefaultNamespace.WaterBiomeManager.atmosphereVolumesLayerMask">
+  atmosphereVolumesLayerMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int atmosphereVolumesLayerMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeEmissiveTexture" data-uid="DefaultNamespace.WaterBiomeManager.biomeEmissiveTexture">
+  biomeEmissiveTexture
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture2D biomeEmissiveTexture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Texture2D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeExtinctionTexture" data-uid="DefaultNamespace.WaterBiomeManager.biomeExtinctionTexture">
+  biomeExtinctionTexture
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture2D biomeExtinctionTexture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Texture2D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeIndexMap" data-uid="DefaultNamespace.WaterBiomeManager.biomeIndexMap">
+  biomeIndexMap
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color32[] biomeIndexMap</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Color32</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeIndexMapTexture" data-uid="DefaultNamespace.WaterBiomeManager.biomeIndexMapTexture">
+  biomeIndexMapTexture
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture2D biomeIndexMapTexture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Texture2D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeIndexMapUnwrappedTexture" data-uid="DefaultNamespace.WaterBiomeManager.biomeIndexMapUnwrappedTexture">
+  biomeIndexMapUnwrappedTexture
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture biomeIndexMapUnwrappedTexture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeLookup" data-uid="DefaultNamespace.WaterBiomeManager.biomeLookup">
+  biomeLookup
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, int&gt; biomeLookup</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeScatteringTexture" data-uid="DefaultNamespace.WaterBiomeManager.biomeScatteringTexture">
+  biomeScatteringTexture
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture2D biomeScatteringTexture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Texture2D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeSettings" data-uid="DefaultNamespace.WaterBiomeManager.biomeSettings">
+  biomeSettings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;WaterBiomeManager.BiomeSettings&gt; biomeSettings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DefaultNamespace.WaterBiomeManager.html">WaterBiomeManager</a>.<a class="xref" href="DefaultNamespace.WaterBiomeManager.BiomeSettings.html">BiomeSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_biomeSkies" data-uid="DefaultNamespace.WaterBiomeManager.biomeSkies">
+  biomeSkies
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Sky&gt; biomeSkies</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="mset.Sky.html">Sky</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_blurMaterial" data-uid="DefaultNamespace.WaterBiomeManager.blurMaterial">
+  blurMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material blurMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_blurShader" data-uid="DefaultNamespace.WaterBiomeManager.blurShader">
+  blurShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader blurShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Shader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_blurTempTexture" data-uid="DefaultNamespace.WaterBiomeManager.blurTempTexture">
+  blurTempTexture
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture blurTempTexture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_colorTargets" data-uid="DefaultNamespace.WaterBiomeManager.colorTargets">
+  colorTargets
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderBuffer[] colorTargets</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderBuffer</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_continuousRefresh" data-uid="DefaultNamespace.WaterBiomeManager.continuousRefresh">
+  continuousRefresh
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool continuousRefresh</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_cxRegions" data-uid="DefaultNamespace.WaterBiomeManager.cxRegions">
+  cxRegions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaterBiomeManager.Region1D[] cxRegions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterBiomeManager.Region1D.html">Region1D</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_cyRegions" data-uid="DefaultNamespace.WaterBiomeManager.cyRegions">
+  cyRegions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaterBiomeManager.Region1D[] cyRegions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterBiomeManager.Region1D.html">Region1D</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_debugBiomeMap" data-uid="DefaultNamespace.WaterBiomeManager.debugBiomeMap">
+  debugBiomeMap
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool debugBiomeMap</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_debugMaterial" data-uid="DefaultNamespace.WaterBiomeManager.debugMaterial">
+  debugMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material debugMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_debugShader" data-uid="DefaultNamespace.WaterBiomeManager.debugShader">
+  debugShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader debugShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Shader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_defaultSettings" data-uid="DefaultNamespace.WaterBiomeManager.defaultSettings">
+  defaultSettings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaterscapeVolume.Settings defaultSettings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a>.<a class="xref" href="DefaultNamespace.WaterscapeVolume.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_emissiveTextureBlurred" data-uid="DefaultNamespace.WaterBiomeManager.emissiveTextureBlurred">
+  emissiveTextureBlurred
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture emissiveTextureBlurred</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_enableBlur" data-uid="DefaultNamespace.WaterBiomeManager.enableBlur">
+  enableBlur
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool enableBlur</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_extinctionTextureBlurred" data-uid="DefaultNamespace.WaterBiomeManager.extinctionTextureBlurred">
+  extinctionTextureBlurred
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture extinctionTextureBlurred</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_incrementalUpdate" data-uid="DefaultNamespace.WaterBiomeManager.incrementalUpdate">
+  incrementalUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool incrementalUpdate</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_lookupMaterial" data-uid="DefaultNamespace.WaterBiomeManager.lookupMaterial">
+  lookupMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material lookupMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_lookupShader" data-uid="DefaultNamespace.WaterBiomeManager.lookupShader">
+  lookupShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader lookupShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Shader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_main" data-uid="DefaultNamespace.WaterBiomeManager.main">
+  main
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WaterBiomeManager main</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterBiomeManager.html">WaterBiomeManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_regionBounds" data-uid="DefaultNamespace.WaterBiomeManager.regionBounds">
+  regionBounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float regionBounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_resizeMaterial" data-uid="DefaultNamespace.WaterBiomeManager.resizeMaterial">
+  resizeMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material resizeMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_resizeShader" data-uid="DefaultNamespace.WaterBiomeManager.resizeShader">
+  resizeShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader resizeShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Shader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_scatteringTextureBlurred" data-uid="DefaultNamespace.WaterBiomeManager.scatteringTextureBlurred">
+  scatteringTextureBlurred
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture scatteringTextureBlurred</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_scrollTextureMin" data-uid="DefaultNamespace.WaterBiomeManager.scrollTextureMin">
+  scrollTextureMin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Int3 scrollTextureMin</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_scrollTextureMinIndex" data-uid="DefaultNamespace.WaterBiomeManager.scrollTextureMinIndex">
+  scrollTextureMinIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Int3 scrollTextureMinIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Int3.html">Int3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_settingsTexture" data-uid="DefaultNamespace.WaterBiomeManager.settingsTexture">
+  settingsTexture
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture settingsTexture</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_settingsTextureBlurred" data-uid="DefaultNamespace.WaterBiomeManager.settingsTextureBlurred">
+  settingsTextureBlurred
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture settingsTextureBlurred</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_settingsTextureSize" data-uid="DefaultNamespace.WaterBiomeManager.settingsTextureSize">
+  settingsTextureSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int settingsTextureSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_settingsTextureUpsampledSize" data-uid="DefaultNamespace.WaterBiomeManager.settingsTextureUpsampledSize">
+  settingsTextureUpsampledSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int settingsTextureUpsampledSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_unwrapMaterial" data-uid="DefaultNamespace.WaterBiomeManager.unwrapMaterial">
+  unwrapMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material unwrapMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_unwrapShader" data-uid="DefaultNamespace.WaterBiomeManager.unwrapShader">
+  unwrapShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader unwrapShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Shader</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_volume" data-uid="DefaultNamespace.WaterBiomeManager.volume">
+  volume
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaterscapeVolume volume</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_waterTransmission" data-uid="DefaultNamespace.WaterBiomeManager.waterTransmission">
+  waterTransmission
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float waterTransmission</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_world" data-uid="DefaultNamespace.WaterBiomeManager.world">
+  world
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LargeWorld world</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.LargeWorld.html">LargeWorld</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_wsMin" data-uid="DefaultNamespace.WaterBiomeManager.wsMin">
+  wsMin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 wsMin</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_xzRegions" data-uid="DefaultNamespace.WaterBiomeManager.xzRegions">
+  xzRegions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaterBiomeManager.Region2D[] xzRegions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterBiomeManager.Region2D.html">Region2D</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_yRegions" data-uid="DefaultNamespace.WaterBiomeManager.yRegions">
+  yRegions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaterBiomeManager.Region1D[] yRegions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterBiomeManager.Region1D.html">Region1D</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_Awake_" data-uid="DefaultNamespace.WaterBiomeManager.Awake*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_Awake" data-uid="DefaultNamespace.WaterBiomeManager.Awake">
+  Awake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Awake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_Blur_" data-uid="DefaultNamespace.WaterBiomeManager.Blur*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_Blur_UnityEngine_RenderTexture_UnityEngine_RenderTexture_" data-uid="DefaultNamespace.WaterBiomeManager.Blur(UnityEngine.RenderTexture,UnityEngine.RenderTexture)">
+  Blur(RenderTexture, RenderTexture)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Blur(RenderTexture texture, RenderTexture dst)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>texture</code> <span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+    <dt><code>dst</code> <span class="xref">RenderTexture</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_BuildSettingsArrayTextures_" data-uid="DefaultNamespace.WaterBiomeManager.BuildSettingsArrayTextures*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_BuildSettingsArrayTextures" data-uid="DefaultNamespace.WaterBiomeManager.BuildSettingsArrayTextures">
+  BuildSettingsArrayTextures()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BuildSettingsArrayTextures()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_BuildSettingsTextures_" data-uid="DefaultNamespace.WaterBiomeManager.BuildSettingsTextures*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_BuildSettingsTextures" data-uid="DefaultNamespace.WaterBiomeManager.BuildSettingsTextures">
+  BuildSettingsTextures()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BuildSettingsTextures()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_CanonicalizeCapsuleMatrix_" data-uid="DefaultNamespace.WaterBiomeManager.CanonicalizeCapsuleMatrix*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_CanonicalizeCapsuleMatrix_UnityEngine_Matrix4x4__System_Int32_System_Int32_" data-uid="DefaultNamespace.WaterBiomeManager.CanonicalizeCapsuleMatrix(UnityEngine.Matrix4x4@,System.Int32,System.Int32)">
+  CanonicalizeCapsuleMatrix(ref Matrix4x4, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CanonicalizeCapsuleMatrix(ref Matrix4x4 worldToLocalMatrix, int axis, int canonicalAxis = 2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldToLocalMatrix</code> <span class="xref">Matrix4x4</span></dt>
+    <dd></dd>
+    <dt><code>axis</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>canonicalAxis</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_CompileTimeCheck_" data-uid="DefaultNamespace.WaterBiomeManager.CompileTimeCheck*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_CompileTimeCheck" data-uid="DefaultNamespace.WaterBiomeManager.CompileTimeCheck">
+  CompileTimeCheck()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CompileTimeCheck()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_ComputeDirtyRegions_" data-uid="DefaultNamespace.WaterBiomeManager.ComputeDirtyRegions*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_ComputeDirtyRegions_System_Int32_System_Int32_System_Int32_System_Int32__System_Int32__DefaultNamespace_WaterBiomeManager_Region2D___System_Int32__" data-uid="DefaultNamespace.WaterBiomeManager.ComputeDirtyRegions(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,DefaultNamespace.WaterBiomeManager.Region2D[],System.Int32@)">
+  ComputeDirtyRegions(int, int, int, ref int, ref int, Region2D[], out int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ComputeDirtyRegions(int textureSize, int xMinIndex, int yMinIndex, ref int xNewMinIndex, ref int yNewMinIndex, WaterBiomeManager.Region2D[] regions, out int numRegions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>textureSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>xMinIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>yMinIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>xNewMinIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>yNewMinIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>regions</code> <a class="xref" href="DefaultNamespace.WaterBiomeManager.Region2D.html">Region2D</a>[]</dt>
+    <dd></dd>
+    <dt><code>numRegions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_ComputeDirtyRegions_" data-uid="DefaultNamespace.WaterBiomeManager.ComputeDirtyRegions*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_ComputeDirtyRegions_System_Int32_System_Int32_System_Int32__DefaultNamespace_WaterBiomeManager_Region1D___System_Int32__" data-uid="DefaultNamespace.WaterBiomeManager.ComputeDirtyRegions(System.Int32,System.Int32,System.Int32@,DefaultNamespace.WaterBiomeManager.Region1D[],System.Int32@)">
+  ComputeDirtyRegions(int, int, ref int, Region1D[], out int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ComputeDirtyRegions(int textureSize, int minIndex, ref int newMinIndex, WaterBiomeManager.Region1D[] regions, out int numRegions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>textureSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>minIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>newMinIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>regions</code> <a class="xref" href="DefaultNamespace.WaterBiomeManager.Region1D.html">Region1D</a>[]</dt>
+    <dd></dd>
+    <dt><code>numRegions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_CreateTextures_" data-uid="DefaultNamespace.WaterBiomeManager.CreateTextures*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_CreateTextures" data-uid="DefaultNamespace.WaterBiomeManager.CreateTextures">
+  CreateTextures()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateTextures()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetBiome_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiome*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetBiome_UnityEngine_Vector3_System_Boolean_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiome(UnityEngine.Vector3,System.Boolean)">
+  GetBiome(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetBiome(Vector3 wsPosition, bool onlyAffectsVisuals = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wsPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>onlyAffectsVisuals</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetBiomeEnvironment_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiomeEnvironment*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetBiomeEnvironment_UnityEngine_Vector3_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiomeEnvironment(UnityEngine.Vector3)">
+  GetBiomeEnvironment(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sky GetBiomeEnvironment(Vector3 wsPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wsPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="mset.Sky.html">Sky</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetBiomeIndex_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiomeIndex*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetBiomeIndex_System_String_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiomeIndex(System.String)">
+  GetBiomeIndex(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetBiomeIndex(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetBiomeIndexMapSettings_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiomeIndexMapSettings*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetBiomeIndexMapSettings_System_Int32_" data-uid="DefaultNamespace.WaterBiomeManager.GetBiomeIndexMapSettings(System.Int32)">
+  GetBiomeIndexMapSettings(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WaterscapeVolume.Settings GetBiomeIndexMapSettings(int biomeIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>biomeIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a>.<a class="xref" href="DefaultNamespace.WaterscapeVolume.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetEmissiveTextureValue_" data-uid="DefaultNamespace.WaterBiomeManager.GetEmissiveTextureValue*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetEmissiveTextureValue_DefaultNamespace_WaterscapeVolume_Settings_" data-uid="DefaultNamespace.WaterBiomeManager.GetEmissiveTextureValue(DefaultNamespace.WaterscapeVolume.Settings)">
+  GetEmissiveTextureValue(Settings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector4 GetEmissiveTextureValue(WaterscapeVolume.Settings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a>.<a class="xref" href="DefaultNamespace.WaterscapeVolume.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector4</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetEnclosingAtmosphereVolume_" data-uid="DefaultNamespace.WaterBiomeManager.GetEnclosingAtmosphereVolume*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetEnclosingAtmosphereVolume_UnityEngine_Vector3_System_Boolean_" data-uid="DefaultNamespace.WaterBiomeManager.GetEnclosingAtmosphereVolume(UnityEngine.Vector3,System.Boolean)">
+  GetEnclosingAtmosphereVolume(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AtmosphereVolume GetEnclosingAtmosphereVolume(Vector3 wsPosition, bool onlyAffectsVisuals = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wsPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>onlyAffectsVisuals</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.AtmosphereVolume.html">AtmosphereVolume</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetExtinctionTextureValue_" data-uid="DefaultNamespace.WaterBiomeManager.GetExtinctionTextureValue*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetExtinctionTextureValue_DefaultNamespace_WaterscapeVolume_Settings_" data-uid="DefaultNamespace.WaterBiomeManager.GetExtinctionTextureValue(DefaultNamespace.WaterscapeVolume.Settings)">
+  GetExtinctionTextureValue(Settings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector4 GetExtinctionTextureValue(WaterscapeVolume.Settings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a>.<a class="xref" href="DefaultNamespace.WaterscapeVolume.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector4</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetMetersPerPixel_" data-uid="DefaultNamespace.WaterBiomeManager.GetMetersPerPixel*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetMetersPerPixel" data-uid="DefaultNamespace.WaterBiomeManager.GetMetersPerPixel">
+  GetMetersPerPixel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMetersPerPixel()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetScatteringTextureValue_" data-uid="DefaultNamespace.WaterBiomeManager.GetScatteringTextureValue*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetScatteringTextureValue_DefaultNamespace_WaterscapeVolume_Settings_" data-uid="DefaultNamespace.WaterBiomeManager.GetScatteringTextureValue(DefaultNamespace.WaterscapeVolume.Settings)">
+  GetScatteringTextureValue(Settings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector4 GetScatteringTextureValue(WaterscapeVolume.Settings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a>.<a class="xref" href="DefaultNamespace.WaterscapeVolume.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector4</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetSettings_" data-uid="DefaultNamespace.WaterBiomeManager.GetSettings*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetSettings_System_String_DefaultNamespace_WaterscapeVolume_Settings__" data-uid="DefaultNamespace.WaterBiomeManager.GetSettings(System.String,DefaultNamespace.WaterscapeVolume.Settings@)">
+  GetSettings(string, out Settings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetSettings(string biomeName, out WaterscapeVolume.Settings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>biomeName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>settings</code> <a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a>.<a class="xref" href="DefaultNamespace.WaterscapeVolume.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetSettings_" data-uid="DefaultNamespace.WaterBiomeManager.GetSettings*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetSettings_UnityEngine_Vector3_System_Boolean_DefaultNamespace_WaterscapeVolume_Settings__" data-uid="DefaultNamespace.WaterBiomeManager.GetSettings(UnityEngine.Vector3,System.Boolean,DefaultNamespace.WaterscapeVolume.Settings@)">
+  GetSettings(Vector3, bool, out Settings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetSettings(Vector3 wsPosition, bool onlyAffectsVisuals, out WaterscapeVolume.Settings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wsPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>onlyAffectsVisuals</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>settings</code> <a class="xref" href="DefaultNamespace.WaterscapeVolume.html">WaterscapeVolume</a>.<a class="xref" href="DefaultNamespace.WaterscapeVolume.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_GetVolumeBounds_" data-uid="DefaultNamespace.WaterBiomeManager.GetVolumeBounds*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_GetVolumeBounds" data-uid="DefaultNamespace.WaterBiomeManager.GetVolumeBounds">
+  GetVolumeBounds()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Bounds GetVolumeBounds()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Bounds</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_OnDestroy_" data-uid="DefaultNamespace.WaterBiomeManager.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_OnDestroy" data-uid="DefaultNamespace.WaterBiomeManager.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_OnDrawGizmos_" data-uid="DefaultNamespace.WaterBiomeManager.OnDrawGizmos*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_OnDrawGizmos" data-uid="DefaultNamespace.WaterBiomeManager.OnDrawGizmos">
+  OnDrawGizmos()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDrawGizmos()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_OnGUI_" data-uid="DefaultNamespace.WaterBiomeManager.OnGUI*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_OnGUI" data-uid="DefaultNamespace.WaterBiomeManager.OnGUI">
+  OnGUI()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnGUI()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_RasterizeAtmosphereVolumes_" data-uid="DefaultNamespace.WaterBiomeManager.RasterizeAtmosphereVolumes*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_RasterizeAtmosphereVolumes_UnityEngine_Vector3_System_Boolean_" data-uid="DefaultNamespace.WaterBiomeManager.RasterizeAtmosphereVolumes(UnityEngine.Vector3,System.Boolean)">
+  RasterizeAtmosphereVolumes(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RasterizeAtmosphereVolumes(Vector3 wsCenter, bool highDetail)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wsCenter</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>highDetail</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_Rebuild_" data-uid="DefaultNamespace.WaterBiomeManager.Rebuild*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_Rebuild" data-uid="DefaultNamespace.WaterBiomeManager.Rebuild">
+  Rebuild()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Rebuild()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_ReleaseTextures_" data-uid="DefaultNamespace.WaterBiomeManager.ReleaseTextures*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_ReleaseTextures" data-uid="DefaultNamespace.WaterBiomeManager.ReleaseTextures">
+  ReleaseTextures()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReleaseTextures()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_SetupConstantsForCamera_" data-uid="DefaultNamespace.WaterBiomeManager.SetupConstantsForCamera*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_SetupConstantsForCamera_UnityEngine_Camera_" data-uid="DefaultNamespace.WaterBiomeManager.SetupConstantsForCamera(UnityEngine.Camera)">
+  SetupConstantsForCamera(Camera)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetupConstantsForCamera(Camera camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>camera</code> <span class="xref">Camera</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_Start_" data-uid="DefaultNamespace.WaterBiomeManager.Start*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_Start" data-uid="DefaultNamespace.WaterBiomeManager.Start">
+  Start()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_Update_" data-uid="DefaultNamespace.WaterBiomeManager.Update*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_Update" data-uid="DefaultNamespace.WaterBiomeManager.Update">
+  Update()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_UpdateBiomeRegion_" data-uid="DefaultNamespace.WaterBiomeManager.UpdateBiomeRegion*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_UpdateBiomeRegion_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="DefaultNamespace.WaterBiomeManager.UpdateBiomeRegion(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  UpdateBiomeRegion(int, int, int, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UpdateBiomeRegion(int xMin, int y, int zMin, int xMax, int zMax)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>xMin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>zMin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>xMax</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>zMax</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_UpdateBiomeRegions_" data-uid="DefaultNamespace.WaterBiomeManager.UpdateBiomeRegions*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_UpdateBiomeRegions_System_Int32_System_Int32_DefaultNamespace_WaterBiomeManager_Region2D___System_Int32_System_Boolean_" data-uid="DefaultNamespace.WaterBiomeManager.UpdateBiomeRegions(System.Int32,System.Int32,DefaultNamespace.WaterBiomeManager.Region2D[],System.Int32,System.Boolean)">
+  UpdateBiomeRegions(int, int, Region2D[], int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UpdateBiomeRegions(int yMin, int yMax, WaterBiomeManager.Region2D[] xzRegions, int numRegions, bool yRegionFullUpdate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>yMin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>yMax</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>xzRegions</code> <a class="xref" href="DefaultNamespace.WaterBiomeManager.Region2D.html">Region2D</a>[]</dt>
+    <dd></dd>
+    <dt><code>numRegions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>yRegionFullUpdate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_WaterBiomeManager_UpdateForPosition_" data-uid="DefaultNamespace.WaterBiomeManager.UpdateForPosition*"></a>
+
+  <h3 id="DefaultNamespace_WaterBiomeManager_UpdateForPosition_UnityEngine_Vector3_System_Boolean_" data-uid="DefaultNamespace.WaterBiomeManager.UpdateForPosition(UnityEngine.Vector3,System.Boolean)">
+  UpdateForPosition(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateForPosition(Vector3 wsCenter, bool forceRebuild)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wsCenter</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>forceRebuild</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1162 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ZipInputStream | Subnautica: Below Zero </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ZipInputStream | Subnautica: Below Zero ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream">
+
+
+
+  <h1 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream" class="text-break">
+Class ZipInputStream  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ICSharpCode.html">ICSharpCode</a>.<a class="xref" href="ICSharpCode.SharpZipLib.html">SharpZipLib</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.html">Zip</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ZipInputStream : InflaterInputStream, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject">MarshalByRefObject</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></div>
+      <div><a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html">InflaterInputStream</a></div>
+      <div><span class="xref">ZipInputStream</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_inf">InflaterInputStream.inf</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_inputBuffer">InflaterInputStream.inputBuffer</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_baseInputStream">InflaterInputStream.baseInputStream</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_csize">InflaterInputStream.csize</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_isClosed">InflaterInputStream.isClosed</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_IsStreamOwner">InflaterInputStream.IsStreamOwner</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_CanRead">InflaterInputStream.CanRead</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_CanSeek">InflaterInputStream.CanSeek</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_CanWrite">InflaterInputStream.CanWrite</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_Position">InflaterInputStream.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_Skip_System_Int64_">InflaterInputStream.Skip(long)</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_StopDecrypting">InflaterInputStream.StopDecrypting()</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_Fill">InflaterInputStream.Fill()</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_Flush">InflaterInputStream.Flush()</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_Seek_System_Int64_System_IO_SeekOrigin_">InflaterInputStream.Seek(long, SeekOrigin)</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_SetLength_System_Int64_">InflaterInputStream.SetLength(long)</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_Write_System_Byte___System_Int32_System_Int32_">InflaterInputStream.Write(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream.html#ICSharpCode_SharpZipLib_Zip_Compression_Streams_InflaterInputStream_WriteByte_System_Byte_">InflaterInputStream.WriteByte(byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.null">Stream.Null</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream)">Stream.CopyToAsync(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream-system-int32)">Stream.CopyToAsync(Stream, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copytoasync#system-io-stream-copytoasync(system-io-stream-system-int32-system-threading-cancellationtoken)">Stream.CopyToAsync(Stream, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copyto#system-io-stream-copyto(system-io-stream)">Stream.CopyTo(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copyto#system-io-stream-copyto(system-io-stream-system-int32)">Stream.CopyTo(Stream, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.close">Stream.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.dispose#system-io-stream-dispose">Stream.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.flushasync#system-io-stream-flushasync">Stream.FlushAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.flushasync#system-io-stream-flushasync(system-threading-cancellationtoken)">Stream.FlushAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.createwaithandle">Stream.CreateWaitHandle()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.beginread">Stream.BeginRead(byte[], int, int, AsyncCallback, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.endread">Stream.EndRead(IAsyncResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readasync#system-io-stream-readasync(system-byte()-system-int32-system-int32)">Stream.ReadAsync(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readasync#system-io-stream-readasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">Stream.ReadAsync(byte[], int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.beginwrite">Stream.BeginWrite(byte[], int, int, AsyncCallback, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.endwrite">Stream.EndWrite(IAsyncResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writeasync#system-io-stream-writeasync(system-byte()-system-int32-system-int32)">Stream.WriteAsync(byte[], int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writeasync#system-io-stream-writeasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">Stream.WriteAsync(byte[], int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.synchronized">Stream.Synchronized(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.objectinvariant">Stream.ObjectInvariant()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.cantimeout">Stream.CanTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readtimeout">Stream.ReadTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writetimeout">Stream.WriteTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.memberwiseclone">MarshalByRefObject.MemberwiseClone(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getlifetimeservice">MarshalByRefObject.GetLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice">MarshalByRefObject.InitializeLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.createobjref">MarshalByRefObject.CreateObjRef(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream__ctor_System_IO_Stream_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.#ctor(System.IO.Stream)">
+  ZipInputStream(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipInputStream(Stream baseInputStream)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>baseInputStream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream__ctor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.#ctor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream__ctor_System_IO_Stream_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.#ctor(System.IO.Stream,System.Int32)">
+  ZipInputStream(Stream, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipInputStream(Stream baseInputStream, int bufferSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>baseInputStream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>bufferSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_crc" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.crc">
+  crc
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Crc32 crc</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Checksum.Crc32.html">Crc32</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_entry" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.entry">
+  entry
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipEntry entry</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_flags" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.flags">
+  flags
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int flags</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_internalReader" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.internalReader">
+  internalReader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipInputStream.ReadDataHandler internalReader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipInputStream.html">ZipInputStream</a>.<a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadDataHandler.html">ReadDataHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_method" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.method">
+  method
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressionMethod method</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.CompressionMethod.html">CompressionMethod</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_password" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.password">
+  password
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string password</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_size" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.size">
+  size
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long size</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Available_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Available*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Available" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Available">
+  Available
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Available { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_CanDecompressEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.CanDecompressEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_CanDecompressEntry" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.CanDecompressEntry">
+  CanDecompressEntry
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanDecompressEntry { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Length_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Length*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Length" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Length">
+  Length
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the length in bytes of the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Length { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>A long value representing the length of the stream in bytes.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>A class derived from <code>Stream</code> does not support seeking.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>Methods were called after the stream was closed.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Password_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Password*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Password" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Password">
+  Password
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_BodyRead_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.BodyRead*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_BodyRead_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.BodyRead(System.Byte[],System.Int32,System.Int32)">
+  BodyRead(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BodyRead(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_CloseEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.CloseEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_CloseEntry" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.CloseEntry">
+  CloseEntry()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CloseEntry()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_CompleteCloseEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.CompleteCloseEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_CompleteCloseEntry_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.CompleteCloseEntry(System.Boolean)">
+  CompleteCloseEntry(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CompleteCloseEntry(bool testCrc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>testCrc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Dispose_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Dispose*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Dispose_System_Boolean_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Dispose(System.Boolean)">
+  Dispose(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Releases the unmanaged resources used by the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> and optionally releases the managed resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to release both managed and unmanaged resources; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> to release only unmanaged resources.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_GetNextEntry_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.GetNextEntry*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_GetNextEntry" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.GetNextEntry">
+  GetNextEntry()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ZipEntry GetNextEntry()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ICSharpCode.SharpZipLib.Zip.ZipEntry.html">ZipEntry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_InitialRead_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.InitialRead*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_InitialRead_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.InitialRead(System.Byte[],System.Int32,System.Int32)">
+  InitialRead(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InitialRead(byte[] destination, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destination</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Read_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Read*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_Read_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.Read(System.Byte[],System.Int32,System.Int32)">
+  Read(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Read(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>An array of bytes. When this method returns, the buffer contains the specified byte array with the values between <code class="paramref">offset</code> and (<code class="paramref">offset</code> + <code class="paramref">count</code> - 1) replaced by the bytes read from the current source.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based byte offset in <code class="paramref">buffer</code> at which to begin storing the data read from the current stream.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to be read from the current stream.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>The sum of <code class="paramref">offset</code> and <code class="paramref">count</code> is larger than the buffer length.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">buffer</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">offset</code> or <code class="paramref">count</code> is negative.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.ioexception">IOException</a></dt>
+    <dd><p>An I/O error occurs.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The stream does not support reading.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>Methods were called after the stream was closed.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadByte_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadByte*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadByte" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadByte">
+  ReadByte()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int ReadByte()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The unsigned byte cast to an <code>Int32</code>, or -1 if at the end of the stream.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The stream does not support reading.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>Methods were called after the stream was closed.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadDataDescriptor_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadDataDescriptor*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadDataDescriptor" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadDataDescriptor">
+  ReadDataDescriptor()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReadDataDescriptor()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadingNotAvailable_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadingNotAvailable*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadingNotAvailable_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadingNotAvailable(System.Byte[],System.Int32,System.Int32)">
+  ReadingNotAvailable(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ReadingNotAvailable(byte[] destination, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destination</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadingNotSupported_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadingNotSupported*"></a>
+
+  <h3 id="ICSharpCode_SharpZipLib_Zip_ZipInputStream_ReadingNotSupported_System_Byte___System_Int32_System_Int32_" data-uid="ICSharpCode.SharpZipLib.Zip.ZipInputStream.ReadingNotSupported(System.Byte[],System.Int32,System.Int32)">
+  ReadingNotSupported(byte[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ReadingNotSupported(byte[] destination, int offset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destination</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
