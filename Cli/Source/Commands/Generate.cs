@@ -11,7 +11,7 @@ public sealed class Generate : Command<Generate.Options>
     public class Options
     {
         [Option('a', "all", Default = true, HelpText = "Run for all projects.")]
-        public bool All { get; set; } = true;
+        public bool? All { get; set; } = true;
 
         [Value(0, MetaName = "Project", Required = false, HelpText = "The project to generate for.")]
         public string? Project { get; set; } = null;
@@ -35,7 +35,7 @@ public sealed class Generate : Command<Generate.Options>
             return;
         }
 
-        if (options.All)
+        if (options.All == true)
         {
             foreach (var config in Configs)
             {

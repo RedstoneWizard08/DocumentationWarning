@@ -10,7 +10,7 @@ public sealed class Decompile: Command<Decompile.Options> {
     public class Options
     {
         [Option('a', "all", Default = true, HelpText = "Decompile all projects.")]
-        public bool All { get; set; } = true;
+        public bool? All { get; set; } = true;
 
         [Value(0, MetaName = "Project", Required = false, HelpText = "The project to decompile.")]
         public string? Project { get; set; } = null;
@@ -44,7 +44,7 @@ public sealed class Decompile: Command<Decompile.Options> {
             return;
         }
 
-        if (options.All)
+        if (options.All == true)
         {
             foreach (var config in Configs)
             {
