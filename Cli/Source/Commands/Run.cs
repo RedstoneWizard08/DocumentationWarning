@@ -15,21 +15,21 @@ public sealed class Run: Command<Run.Options> {
         public int Port { get; set; } = 4000;
 
         [Option('g', "generate", Default = true, HelpText = "Run generate when building.")]
-        public bool Generate { get; set; } = true;
+        public bool? Generate { get; set; } = true;
 
         [Option('d', "decompile", Default = true, HelpText = "Run decompile when building.")]
-        public bool Decompile { get; set; } = true;
+        public bool? Decompile { get; set; } = true;
     }
 
     public override async Task Execute(Options options)
     {
-        if (options.Decompile) {
+        if (options.Decompile == true) {
             await new Decompile().Run(new Decompile.Options {
                 All = true,
             });
         }
 
-        if (options.Generate) {
+        if (options.Generate == true) {
             await new Generate().Run(new Generate.Options {
                 All = true,
             });

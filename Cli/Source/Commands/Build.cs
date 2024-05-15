@@ -10,13 +10,13 @@ public sealed class Build: Command<Build.Options> {
     public class Options
     {
         [Option('a', "all", Default = true, HelpText = "Build all projects.")]
-        public bool All { get; set; } = true;
+        public bool? All { get; set; } = true;
 
         [Option('d', "decompile", Default = true, HelpText = "Run decompile when building.")]
-        public bool Decompile { get; set; } = true;
+        public bool? Decompile { get; set; } = true;
 
         [Option('g', "generate", Default = true, HelpText = "Run generate when building.")]
-        public bool Generate { get; set; } = true;
+        public bool? Generate { get; set; } = true;
 
         [Value(0, MetaName = "Project", Required = false, HelpText = "The project to build.")]
         public string? Project { get; set; } = null;
@@ -30,14 +30,14 @@ public sealed class Build: Command<Build.Options> {
 
     public override async Task Execute(Options options)
     {
-        if (options.Decompile) {
+        if (options.Decompile == true) {
             await new Decompile().Run(new Decompile.Options {
                 All = options.All,
                 Project = options.Project,
             });
         }
 
-        if (options.Generate) {
+        if (options.Generate == true) {
             await new Generate().Run(new Generate.Options {
                 All = options.All,
                 Project = options.Project,
@@ -60,7 +60,7 @@ public sealed class Build: Command<Build.Options> {
             return;
         }
 
-        if (options.All)
+        if (options.All == true)
         {
             foreach (var config in Configs)
             {
