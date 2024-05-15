@@ -7,6 +7,7 @@ using Docfx.Common;
 using Docfx.MarkdigEngine.Extensions;
 using Docfx.Plugins;
 using DocumentationWarning.Config;
+using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Steps;
 
@@ -14,14 +15,22 @@ public sealed class FixYaml : Step
 {
     public override async Task Run(ProjectConfig config)
     {
+        var root = await ConfigHelper.GetRootConfig();
+        var urlPrefix = $"{root.Site}/docs/{config.Game.Id}/";
         var startRegex = new Regex($@"^{config.Game.Namespace}\.");
         var commentRegex = new Regex($@"^([^:]+):{config.Game.Namespace}\.");
         var path = Path.Join(config.DocDir, "_site", "xrefmap.yml");
         var map = YamlUtility.Deserialize<XRefMap>(path);
         var refs = new List<XRefSpec>();
 
-        foreach (var item in map.References)
+        for (var i = 0; i < map.References.Count; i++)
         {
+            var item = map.References[i];
+
+            item.Href = urlPrefix + item.Href;
+
+            map.References[i] = item;
+
             if (item.Uid.StartsWith(config.Game.Namespace) && item.Uid != config.Game.Namespace)
             {
                 var alt = item;
