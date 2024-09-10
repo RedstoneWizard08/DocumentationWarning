@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using DocumentationWarning.Config;
@@ -6,11 +7,13 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class DocsPatch : Step
+public sealed class DocsPatch(Func<ProjectConfig, string>? root) : Step
 {
+    private readonly Func<ProjectConfig, string> root = root ?? ((cfg) => cfg.OutDir);
+
     public override async Task Run(ProjectConfig config)
     {
-        var path = Path.Join(config.OutDir, "Assembly-CSharp");
+        var path = Path.Join(root(config), "Assembly-CSharp");
         var files = Directory.EnumerateFiles(path, "*.cs", SearchOption.AllDirectories);
 
         foreach (var file in files)

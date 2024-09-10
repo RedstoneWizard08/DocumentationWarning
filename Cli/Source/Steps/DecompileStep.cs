@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using DocumentationWarning.Config;
@@ -10,8 +11,10 @@ using ICSharpCode.Decompiler.Solution;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class DecompileStep : Step
+public sealed class DecompileStep(Func<ProjectConfig, string>? path) : Step
 {
+    private readonly Func<ProjectConfig, string> path = path ?? ((cfg) => cfg.OutDir);
+
     public override async Task Run(ProjectConfig config)
     {
         foreach (var file in config.Assemblies)
@@ -39,7 +42,7 @@ public sealed class DecompileStep : Step
     private async Task<ProjectId> DecompileProject(string assembly, ProjectConfig config)
     {
         var baseName = Path.GetFileNameWithoutExtension(assembly);
-        var projectDir = Path.Join(config.OutDir, baseName);
+        var projectDir = Path.Join(path(config), baseName);
 
         if (Directory.Exists(projectDir))
         {

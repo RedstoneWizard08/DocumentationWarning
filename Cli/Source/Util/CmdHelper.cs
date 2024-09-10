@@ -22,7 +22,7 @@ public sealed class CmdHelper: WithLogger {
         return null;
     }
 
-    public static async Task Run(string dir, string cmd, params string[] args) {
+    public static async Task<string> Run(string dir, string cmd, params string[] args) {
         var command = cmd;
 
         if (!command.StartsWith('/')) {
@@ -39,6 +39,7 @@ public sealed class CmdHelper: WithLogger {
         {
             FileName = command,
             WorkingDirectory = dir,
+            RedirectStandardOutput = true,
         };
 
         foreach (var arg in args) {
@@ -55,6 +56,9 @@ public sealed class CmdHelper: WithLogger {
         };
 
         proc.Start();
+        var data = await proc.StandardOutput.ReadToEndAsync();
         await proc.WaitForExitAsync();
+        
+        return data;
     }
 }

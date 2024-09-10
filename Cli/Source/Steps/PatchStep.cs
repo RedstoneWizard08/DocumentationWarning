@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using DocumentationWarning.Config;
@@ -6,8 +7,10 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class PatchStep : Step
+public sealed class PatchStep(Func<ProjectConfig, string>? path) : Step
 {
+    private readonly Func<ProjectConfig, string> path = path ?? ((cfg) => cfg.OutDir);
+    
     public override async Task Run(ProjectConfig config)
     {
         foreach (var patch in PatchScanner.ScanPre(config))
@@ -21,7 +24,7 @@ public sealed class PatchStep : Step
         {
             foreach (var dir in dirs)
             {
-                var real = Path.Join(config.OutDir, key, dir);
+                var real = Path.Join(path(config), key, dir);
 
                 Directory.Delete(real, true);
             }

@@ -10,6 +10,8 @@ namespace DocumentationWarning.Processors;
 
 public sealed class Patcher : WithLogger
 {
+    private readonly PatchHelper Helper = new();
+
     public async Task Run(ProjectConfig config, string path)
     {
         var data = await File.ReadAllTextAsync(path);
@@ -47,7 +49,7 @@ public sealed class Patcher : WithLogger
             }
 
             var pre = await File.ReadAllTextAsync(to);
-            var post = PatchHelper.Patch(pre, item.Chunks, Environment.NewLine).Trim();
+            var post = Helper.Patch(pre, item.Chunks, Environment.NewLine).Trim();
 
             await File.WriteAllTextAsync(to, post);
         }
