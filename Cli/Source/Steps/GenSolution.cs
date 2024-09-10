@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using DocumentationWarning.Config;
@@ -5,11 +6,13 @@ using SlnEditor.Models;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class GenSolution : Step
+public sealed class GenSolution(Func<ProjectConfig, string>? path) : Step
 {
+    private readonly Func<ProjectConfig, string> path = path ?? ((cfg) => cfg.OutDir);
+
     public override async Task Run(ProjectConfig config)
     {
-        var slnPath = Path.Join(config.OutDir, "Project.sln");
+        var slnPath = Path.Join(path(config), "Project.sln");
         var sln = new Solution();
 
         sln.ConfigurationPlatforms.Add(new ConfigurationPlatform("Debug|AnyCPU", "Debug", "AnyCPU"));

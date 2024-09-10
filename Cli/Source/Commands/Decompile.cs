@@ -20,10 +20,10 @@ public sealed class Decompile: Command<Decompile.Options> {
         new CreateDirs(),
         new DownloadPkgs(),
         new ExtractAsm(),
-        new DecompileStep(),
-        new PatchStep(),
-        new DocsPatch(),
-        new GenSolution(),
+        new DecompileStep(null),
+        new PatchStep(null),
+        new DocsPatch(null),
+        new GenSolution(null),
     ];
 
     public override async Task Execute(Options options)

@@ -18,7 +18,7 @@ public sealed class Cli : Command<object>
             }
         }
 
-        await Parser.Default.ParseArguments<Run.Options, Init.Options, Build.Options, Generate.Options, Decompile.Options>(args)
+        await Parser.Default.ParseArguments<Run.Options, Init.Options, Build.Options, Generate.Options, Decompile.Options, CreatePatch.Options>(args)
             .WithParsedAsync(Run);
     }
 
@@ -44,6 +44,10 @@ public sealed class Cli : Command<object>
 
             case Decompile.Options d:
                 await new Decompile().Run(d);
+                break;
+            
+            case CreatePatch.Options c:
+                await new CreatePatch().Run(c);
                 break;
         }
     }
