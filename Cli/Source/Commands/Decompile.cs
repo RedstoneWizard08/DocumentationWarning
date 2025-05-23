@@ -5,10 +5,9 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Commands;
 
-public sealed class Decompile: Command<Decompile.Options> {
+public sealed class Decompile : Command<Decompile.Options> {
     [Verb("decompile", HelpText = "Decompile assemblies.")]
-    public class Options
-    {
+    public class Options {
         [Option('a', "all", Default = true, HelpText = "Decompile all projects.")]
         public bool? All { get; set; } = true;
 
@@ -16,7 +15,7 @@ public sealed class Decompile: Command<Decompile.Options> {
         public string? Project { get; set; } = null;
     }
 
-    internal static Step[] Steps = [
+    private static Step[] Steps = [
         new CreateDirs(),
         new DownloadPkgs(),
         new ExtractAsm(),
@@ -26,14 +25,11 @@ public sealed class Decompile: Command<Decompile.Options> {
         new GenSolution(null),
     ];
 
-    public override async Task Execute(Options options)
-    {
-        if (options.Project != null)
-        {
+    public override async Task Execute(Options options) {
+        if (options.Project != null) {
             var cfg = GetConfig(options.Project);
 
-            if (cfg == null)
-            {
+            if (cfg == null) {
                 "Cannot find project: {}".LogCritical(this, options.Project);
 
                 return;
@@ -44,10 +40,8 @@ public sealed class Decompile: Command<Decompile.Options> {
             return;
         }
 
-        if (options.All == true)
-        {
-            foreach (var config in Configs)
-            {
+        if (options.All == true) {
+            foreach (var config in Configs) {
                 await Step.Run(config, Steps);
             }
         }

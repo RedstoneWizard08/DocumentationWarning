@@ -11,26 +11,21 @@ using ICSharpCode.Decompiler.Solution;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class DecompileStep(Func<ProjectConfig, string>? path) : Step
-{
-    private readonly Func<ProjectConfig, string> path = path ?? ((cfg) => cfg.OutDir);
+public sealed class DecompileStep(Func<ProjectConfig, string>? path) : Step {
+    private readonly Func<ProjectConfig, string> path = path ?? (cfg => cfg.OutDir);
 
-    public override async Task Run(ProjectConfig config)
-    {
-        foreach (var file in config.Assemblies)
-        {
-            var path = Path.Join(config.AsmDir, file);
+    public override async Task Run(ProjectConfig config) {
+        foreach (var file in config.Assemblies) {
+            var filePath = Path.Join(config.AsmDir, file);
 
             "Decompiling {}...".LogInfo(this, file);
 
-            await DecompileProject(path, config);
+            await DecompileProject(filePath, config);
         }
     }
 
-    private DecompilerSettings GetSettings(PEFile module)
-    {
-        return new DecompilerSettings(LanguageVersion.Latest)
-        {
+    private static DecompilerSettings GetSettings(PEFile module) {
+        return new DecompilerSettings(LanguageVersion.Latest) {
             ThrowOnAssemblyResolveErrors = false,
             RemoveDeadCode = false,
             RemoveDeadStores = false,
@@ -39,18 +34,15 @@ public sealed class DecompileStep(Func<ProjectConfig, string>? path) : Step
         };
     }
 
-    private async Task<ProjectId> DecompileProject(string assembly, ProjectConfig config)
-    {
+    private async Task<ProjectId> DecompileProject(string assembly, ProjectConfig config) {
         var baseName = Path.GetFileNameWithoutExtension(assembly);
         var projectDir = Path.Join(path(config), baseName);
 
-        if (Directory.Exists(projectDir))
-        {
+        if (Directory.Exists(projectDir)) {
             Directory.Delete(projectDir, true);
         }
 
-        if (!Directory.Exists(projectDir))
-        {
+        if (!Directory.Exists(projectDir)) {
             Directory.CreateDirectory(projectDir);
         }
 
@@ -59,7 +51,8 @@ public sealed class DecompileStep(Func<ProjectConfig, string>? path) : Step
         var resolver = new UniversalAssemblyResolver(assembly, false, module.Metadata.DetectTargetFrameworkId());
         var decompiler = new WholeProjectDecompiler(GetSettings(module), resolver, resolver, null);
 
-        using (var projectFileWriter = new StreamWriter(File.OpenWrite(projectFile)))
-            return decompiler.DecompileProject(module, Path.GetDirectoryName(projectFile), projectFileWriter);
+        await using var projectFileWriter = new StreamWriter(File.OpenWrite(projectFile));
+
+        return decompiler.DecompileProject(module, Path.GetDirectoryName(projectFile), projectFileWriter);
     }
 }

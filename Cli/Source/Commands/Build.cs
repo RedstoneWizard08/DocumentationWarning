@@ -5,10 +5,9 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Commands;
 
-public sealed class Build: Command<Build.Options> {
+public sealed class Build : Command<Build.Options> {
     [Verb("build", isDefault: true, HelpText = "Build the documentation site.")]
-    public class Options
-    {
+    public class Options {
         [Option('a', "all", Default = true, HelpText = "Build all projects.")]
         public bool? All { get; set; } = true;
 
@@ -22,34 +21,35 @@ public sealed class Build: Command<Build.Options> {
         public string? Project { get; set; } = null;
     }
 
-    internal static Step[] Steps = [
+    private static Step[] Steps = [
         new BuildDocs(),
         new FixYaml(),
         new CopyDocs(),
     ];
 
-    public override async Task Execute(Options options)
-    {
+    public override async Task Execute(Options options) {
         if (options.Decompile == true) {
-            await new Decompile().Run(new Decompile.Options {
-                All = options.All,
-                Project = options.Project,
-            });
+            await new Decompile().Run(
+                new Decompile.Options {
+                    All = options.All,
+                    Project = options.Project,
+                }
+            );
         }
 
         if (options.Generate == true) {
-            await new Generate().Run(new Generate.Options {
-                All = options.All,
-                Project = options.Project,
-            });
+            await new Generate().Run(
+                new Generate.Options {
+                    All = options.All,
+                    Project = options.Project,
+                }
+            );
         }
 
-        if (options.Project != null)
-        {
+        if (options.Project != null) {
             var cfg = GetConfig(options.Project);
 
-            if (cfg == null)
-            {
+            if (cfg == null) {
                 "Cannot find project: {}".LogCritical(this, options.Project);
 
                 return;
@@ -60,10 +60,8 @@ public sealed class Build: Command<Build.Options> {
             return;
         }
 
-        if (options.All == true)
-        {
-            foreach (var config in Configs)
-            {
+        if (options.All == true) {
+            foreach (var config in Configs) {
                 await Step.Run(config, Steps);
             }
         }

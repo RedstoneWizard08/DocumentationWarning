@@ -1,13 +1,12 @@
 using DocumentationWarning.Logging;
+using Newtonsoft.Json;
 
 namespace DocumentationWarning.Util;
 
-public class WithLogger
-{
-    internal readonly Logger Logger = null!;
+public class WithLogger {
+    [JsonIgnore] internal readonly Logger Logger;
 
-    protected WithLogger()
-    {
-        Logger = new();
+    protected WithLogger() {
+        Logger = new Logger(this.GetType());
     }
 }

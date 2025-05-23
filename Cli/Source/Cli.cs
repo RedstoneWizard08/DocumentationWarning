@@ -4,28 +4,24 @@ using DocumentationWarning.Commands;
 
 namespace DocumentationWarning;
 
-public sealed class Cli : Command<object>
-{
-    public async Task Execute(string[] args)
-    {
-        for (var i = 0; i < args.Length; i++)
-        {
+public sealed class Cli : Command<object> {
+    public async Task Execute(string[] args) {
+        for (var i = 0; i < args.Length; i++) {
             var arg = args[i];
 
-            if (arg == "-h")
-            {
+            if (arg == "-h") {
                 args[i] = "--help";
             }
         }
 
-        await Parser.Default.ParseArguments<Run.Options, Init.Options, Build.Options, Generate.Options, Decompile.Options, CreatePatch.Options>(args)
+        await Parser.Default
+            .ParseArguments<Run.Options, Init.Options, Build.Options, Generate.Options, Decompile.Options,
+                CreatePatch.Options, Test.Options>(args)
             .WithParsedAsync(Run);
     }
 
-    public override async Task Execute(object obj)
-    {
-        switch (obj)
-        {
+    public override async Task Execute(object obj) {
+        switch (obj) {
             case Run.Options r:
                 await new Run().Run(r);
                 break;
@@ -45,9 +41,13 @@ public sealed class Cli : Command<object>
             case Decompile.Options d:
                 await new Decompile().Run(d);
                 break;
-            
+
             case CreatePatch.Options c:
                 await new CreatePatch().Run(c);
+                break;
+
+            case Test.Options t:
+                await new Test().Run(t);
                 break;
         }
     }

@@ -5,14 +5,11 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class GenDocs : Step
-{
-    public override async Task Run(ProjectConfig config)
-    {
-        new ResExtractor().Extract(config.DocDir, config);
+public sealed class GenDocs : Step {
+    public override async Task Run(ProjectConfig config) {
+        await ResExtractor.Extract(config.DocDir, config);
 
-        if (!Directory.Exists(config.DocDir))
-        {
+        if (!Directory.Exists(config.DocDir)) {
             Directory.CreateDirectory(config.DocDir);
         }
 

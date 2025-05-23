@@ -7,11 +7,9 @@ using Newtonsoft.Json;
 
 namespace DocumentationWarning.Util;
 
-public class ConfigHelper : WithLogger
-{
+public class ConfigHelper : WithLogger {
     public static async Task<RootConfig> GetRootConfig() {
-        if (!File.Exists("root.json"))
-        {
+        if (!File.Exists("root.json")) {
             "Cannot find a root.json! Maybe you need to create it?".LogCritical(new ConfigHelper());
 
             Environment.Exit(1);
@@ -23,13 +21,27 @@ public class ConfigHelper : WithLogger
         return config;
     }
 
-    public static async Task<List<ProjectConfig>> GetConfigs()
-    {
+    public static async Task<SteamConfig> GetSteamConfig() {
+        if (!File.Exists("steam.local.json") && !File.Exists("steam.json")) {
+            "Cannot find a steam.json or steam.local.json! Maybe you need to create it?"
+                .LogCritical(new ConfigHelper());
+
+            Environment.Exit(1);
+        }
+
+        var text =
+            await File.ReadAllTextAsync(File.Exists("steam.local.json") ? "steam.local.json" : "steam.json");
+
+        var config = JsonConvert.DeserializeObject<SteamConfig>(text)!;
+
+        return config;
+    }
+
+    public static async Task<List<ProjectConfig>> GetConfigs() {
         var configs = new List<ProjectConfig>();
         var config = await GetRootConfig();
 
-        foreach (var proj in config.Projects)
-        {
+        foreach (var proj in config.Projects) {
             configs.Add(await ProjectConfig.Load(proj, Path.Join(proj, "config.json")));
         }
 

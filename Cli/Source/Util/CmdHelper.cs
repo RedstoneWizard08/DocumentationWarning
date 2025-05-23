@@ -1,45 +1,41 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace DocumentationWarning.Util;
 
-public sealed class CmdHelper: WithLogger {
-    public static string? FindInPath(string filename)
-    {
+public sealed class CmdHelper : WithLogger {
+    public static string? FindInPath(string filename) {
         var path = Environment.GetEnvironmentVariable("PATH");
-        if (path == null) return null;
 
-        foreach (var item in path.Split(RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? ":" : ";"))
-        {
-            var fullpath = Path.Combine(item, filename);
-
-            if (File.Exists(fullpath)) return fullpath;
-        }
-
-        return null;
+        return path?.Split(
+            RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+                ? ";"
+                : ":"
+        ).Select(
+            item => Path.Combine(
+                item,
+                filename + (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+                    ? ".exe"
+                    : "")
+            )
+        ).FirstOrDefault(File.Exists);
     }
 
-    public static async Task<string> Run(string dir, string cmd, params string[] args) {
+    public static async Task<string> Run(string dir, string cmd, bool output = false, params string[] args) {
         var command = cmd;
 
         if (!command.StartsWith('/')) {
             command = FindInPath(command)!;
         }
 
-        if (command == null) {
-            "Cannot find a path for {}!".LogCritical(new CmdHelper(), cmd);
-
-            Environment.Exit(1);
-        }
-
-        var start = new ProcessStartInfo()
-        {
+        var start = new ProcessStartInfo {
             FileName = command,
             WorkingDirectory = dir,
-            RedirectStandardOutput = true,
+            RedirectStandardOutput = !output
         };
 
         foreach (var arg in args) {
@@ -50,15 +46,18 @@ public sealed class CmdHelper: WithLogger {
 
         "Starting process \"{}{}\" in {}...".LogInfo(new CmdHelper(), start.FileName, argsStr, dir);
 
-        var proc = new Process()
-        {
+        var proc = new Process {
             StartInfo = start,
         };
 
         proc.Start();
-        var data = await proc.StandardOutput.ReadToEndAsync();
+
+        var data = "";
+
+        if (!output) data = await proc.StandardOutput.ReadToEndAsync();
+
         await proc.WaitForExitAsync();
-        
+
         return data;
     }
 }

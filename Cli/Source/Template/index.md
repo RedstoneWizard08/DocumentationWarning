@@ -5,8 +5,10 @@ _layout: landing
 # @{{Game}} API Documentation
 
 This is a project to automatically generate documentation for @{{Game}}.
-The documentation is based on ***stripped*** assemblies, meaning that
-none of the game's actual code was used to generate this.
+<if [IsStripped]>The documentation is based on ***stripped*** assemblies, meaning that
+none of the game's actual code was used to generate this.</if>
+<if [IsNotStripped]>The documentation is based on the game's assemblies, however
+they are not shared as part of the process in any way.</if>
 
 ## Notes
 

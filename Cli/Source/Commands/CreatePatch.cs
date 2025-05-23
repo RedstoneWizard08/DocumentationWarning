@@ -6,37 +6,33 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Commands;
 
-public sealed class CreatePatch : Command<CreatePatch.Options>
-{
+public sealed class CreatePatch : Command<CreatePatch.Options> {
     [Verb("createPatch", HelpText = "Create a patch file.")]
-    public class Options
-    {
+    public class Options {
         [Value(0, MetaName = "Project", Required = true, HelpText = "The project to create a patch for.")]
         public required string Project { get; set; }
     }
 
-    internal static Step[] DecompileSteps = [
+    private static readonly Step[] DecompileSteps = [
         new CreateDirs(),
         new DownloadPkgs(),
         new ExtractAsm(),
-        new DecompileStep((cfg) => Path.Join(cfg.TempDir, "PatchSource")),
-        new PatchStep((cfg) => Path.Join(cfg.TempDir, "PatchSource")),
-        new DocsPatch((cfg) => Path.Join(cfg.TempDir, "PatchSource")),
-        new GenSolution((cfg) => Path.Join(cfg.TempDir, "PatchSource")),
+        new DecompileStep(cfg => Path.Join(cfg.TempDir, "PatchSource")),
+        new PatchStep(cfg => Path.Join(cfg.TempDir, "PatchSource")),
+        new DocsPatch(cfg => Path.Join(cfg.TempDir, "PatchSource")),
+        new GenSolution(cfg => Path.Join(cfg.TempDir, "PatchSource")),
         new GenPatchStep(),
     ];
 
-    public override async Task Execute(Options options)
-    {
+    public override async Task Execute(Options options) {
         var cfg = GetConfig(options.Project);
 
-        if (cfg == null)
-        {
+        if (cfg == null) {
             "Cannot find project: {}".LogCritical(this, options.Project);
 
             return;
         }
-        
+
         await Step.Run(cfg, DecompileSteps);
     }
 }

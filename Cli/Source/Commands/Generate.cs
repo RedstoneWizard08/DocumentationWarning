@@ -14,7 +14,7 @@ public sealed class Generate : Command<Generate.Options>
         public bool? All { get; set; } = true;
 
         [Value(0, MetaName = "Project", Required = false, HelpText = "The project to generate for.")]
-        public string? Project { get; set; } = null;
+        public string? Project { get; set; }
     }
 
     public override async Task Execute(Options options)

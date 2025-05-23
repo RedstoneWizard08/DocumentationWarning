@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using DocumentationWarning.Config;
+using DocumentationWarning.Models;
 using DocumentationWarning.Util;
 using SixLabors.ImageSharp;
 
 namespace DocumentationWarning.Processors;
 
-public sealed partial class TemplateProcessor : WithLogger
-{
+public sealed partial class TemplateProcessor : WithLogger {
     public required string Site;
     public required string Game;
     public required string Publisher;
@@ -22,18 +22,16 @@ public sealed partial class TemplateProcessor : WithLogger
     public required (int, int) BannerSize;
     public string? GameWebsite;
     public string? ThunderstoreUrl;
+    public required bool IsStripped;
 
-    public static TemplateProcessor FromConfig(RootConfig root, ProjectConfig config)
-    {
+    public static TemplateProcessor FromConfig(RootConfig root, ProjectConfig config) {
         var bannerSize = (1, 1);
 
-        using (var img = Image.Load(config.Game.BannerPath(config)))
-        {
+        using (var img = Image.Load(config.Game.BannerPath(config))) {
             bannerSize = (img.Width, img.Height);
         }
 
-        return new TemplateProcessor()
-        {
+        return new TemplateProcessor {
             Site = root.Site,
             Game = config.Game.Name,
             Publisher = config.Game.Publisher,
@@ -47,38 +45,32 @@ public sealed partial class TemplateProcessor : WithLogger
             GameWebsite = config.Urls.Website,
             ThunderstoreUrl = config.Urls.Thunderstore,
             BannerSize = bannerSize,
+            IsStripped = config.Game.Source != DepSource.Steam,
         };
     }
 
-    public bool GameHasWebsite
-    {
+    public bool GameHasWebsite {
         get => GameWebsite != null;
     }
 
-    public bool GameHasThunderstore
-    {
+    public bool GameHasThunderstore {
         get => ThunderstoreUrl != null;
     }
 
-    public int ImageWidth
-    {
+    public int ImageWidth {
         get => GetScaledWidth(BannerSize);
     }
 
-    public int ImageWidthSmall
-    {
+    public int ImageWidthSmall {
         get => GetScaledWidthSmall(BannerSize);
     }
 
     public const int ScaledImageHeight = 64;
     public const int ScaledImageHeightSmall = 48;
 
-    public Dictionary<string, string> Replacements
-    {
-        get
-        {
-            var dict = new Dictionary<string, string>
-            {
+    public Dictionary<string, string> Replacements {
+        get {
+            var dict = new Dictionary<string, string> {
                 { "Site", Site },
                 { "Game", Game },
                 { "Publisher", Publisher },
@@ -101,41 +93,36 @@ public sealed partial class TemplateProcessor : WithLogger
         }
     }
 
-    public static int GetScaledWidth((int, int) size)
-    {
+    private static int GetScaledWidth((int, int) size) {
         var (width, height) = size;
 
         return width / (height / ScaledImageHeight);
     }
 
-    public static int GetScaledWidthSmall((int, int) size)
-    {
+    private static int GetScaledWidthSmall((int, int) size) {
         var (width, height) = size;
 
         return width / (height / ScaledImageHeightSmall);
     }
 
-    public string ProcessConditions(string content)
-    {
+    private string ProcessConditions(string content) {
         var match = IfRegex().Match(content);
 
-        while (match.Success)
-        {
+        while (match.Success) {
             var data = match.Groups[0].Value;
             var cond = match.Groups[1].Value;
             var value = match.Groups[2].Value;
 
-            if (cond == "GameHasWebsite" && GameHasWebsite)
-            {
-                content = content.Replace(data, value);
-            }
-            else if (cond == "GameHasThunderstore" && GameHasThunderstore)
-            {
-                content = content.Replace(data, value);
-            }
-            else
-            {
-                content = content.Replace(data, "");
+            switch (cond) {
+                case "GameHasWebsite" when GameHasWebsite:
+                case "GameHasThunderstore" when GameHasThunderstore:
+                case "IsStripped" when IsStripped:
+                case "IsNotStripped" when !IsStripped:
+                    content = content.Replace(data, value);
+                    break;
+                default:
+                    content = content.Replace(data, "");
+                    break;
             }
 
             match = IfRegex().Match(content);
@@ -144,13 +131,11 @@ public sealed partial class TemplateProcessor : WithLogger
         return content;
     }
 
-    public string Process(string template)
-    {
+    public string Process(string template) {
         template = ProcessConditions(template);
 
-        foreach (var (key, val) in Replacements)
-        {
-            template = template.Replace($"@{{{{{key}}}}}", val);
+        foreach (var (key, val) in Replacements) {
+            template = template.Replace($"@{{{{{key}}}}}", val.Replace("\\", @"\\"));
         }
 
         return template;

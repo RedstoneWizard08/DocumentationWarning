@@ -34,7 +34,7 @@ public sealed class CopyDocs : Step
 
         if (data.Find(v => v.Id == config.Game.Id) != null) return;
 
-        data.Add(new DocItem()
+        data.Add(new DocItem
         {
             Id = config.Game.Id,
             Name = config.Game.Name,

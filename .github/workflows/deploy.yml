@@ -26,6 +26,9 @@ jobs:
           dotnet run --project Cli/Cli.csproj
           mkdir Output
           cp -r docs games.json index.html Output/
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_LOGIN_TOKEN: ${{ secrets.STEAM_LOGIN_TOKEN }}
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

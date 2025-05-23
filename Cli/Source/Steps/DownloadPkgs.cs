@@ -6,12 +6,9 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class DownloadPkgs : Step
-{
-    public override async Task Run(ProjectConfig config)
-    {
-        foreach (var dep in config.Dependencies)
-        {
+public sealed class DownloadPkgs : Step {
+    public override async Task Run(ProjectConfig config) {
+        foreach (var dep in config.Dependencies) {
             var url = dep.Source.GetPackageUrl(dep.Name, dep.Version);
             var fileName = $"{dep.Name}-{dep.Version}.nupkg";
 
@@ -27,6 +24,10 @@ public sealed class DownloadPkgs : Step
 
             handle.Close();
             await handle.DisposeAsync();
+        }
+
+        if (config.Game is { Source: DepSource.Steam, Steam: not null }) {
+            config.DownloadOutputDir = await SteamDownloader.DownloadAssemblies(config.Game.Steam);
         }
     }
 }
