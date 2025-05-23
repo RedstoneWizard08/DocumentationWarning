@@ -1,0 +1,2518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CursorManager | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CursorManager | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Assets.Scripts.CursorManager">
+
+
+
+  <h1 id="Assets_Scripts_CursorManager" data-uid="Assets.Scripts.CursorManager" class="text-break">
+Class CursorManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Assets.html">Assets</a>.<a class="xref" href="Assets.Scripts.html">Scripts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CursorManager : ManagerBase, IManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.ManagerBase.html">ManagerBase</a></div>
+      <div><span class="xref">CursorManager</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Assets.Scripts.Util.IManager.html">IManager</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ProfilerTag">ManagerBase.ProfilerTag</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ManagerStart">ManagerBase.ManagerStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_SlowUpdate">ManagerBase.SlowUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_SetEnable_UnityEngine_Behaviour_System_Boolean_UnityEngine_Object_">MonoBehaviourEx.SetEnable(Behaviour, bool, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ComponentExtensions.html#DefaultNamespace_ComponentExtensions_GetOrAddComponent__1_UnityEngine_Component_">ComponentExtensions.GetOrAddComponent&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_DestroyComponent_UnityEngine_Component_UnityEngine_Object_">MonoBehaviourEx.DestroyComponent(Component, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_StartCoroutineOnMainThread_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">ExtensionMethods.StartCoroutineOnMainThread(MonoBehaviour, IEnumerator)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_AtmosphericScattering" data-uid="Assets.Scripts.CursorManager.AtmosphericScattering">
+  AtmosphericScattering
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AtmosphericScattering AtmosphericScattering</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.AtmosphericScattering.html">AtmosphericScattering</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_AtmosphericScatteringCamera" data-uid="Assets.Scripts.CursorManager.AtmosphericScatteringCamera">
+  AtmosphericScatteringCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AtmosphericScatteringDeferred AtmosphericScatteringCamera</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.AtmosphericScatteringDeferred.html">AtmosphericScatteringDeferred</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_CursorHighlighter" data-uid="Assets.Scripts.CursorManager.CursorHighlighter">
+  CursorHighlighter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;A prefab that is used as the cursor&quot;)]
+public GameObject CursorHighlighter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_CursorHitMask" data-uid="Assets.Scripts.CursorManager.CursorHitMask">
+  CursorHitMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Cursor/Selection State&quot;)]
+public LayerMask CursorHitMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_CursorMaterial" data-uid="Assets.Scripts.CursorManager.CursorMaterial">
+  CursorMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material CursorMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Material.html">Material</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_CursorSelectionHighlighter" data-uid="Assets.Scripts.CursorManager.CursorSelectionHighlighter">
+  CursorSelectionHighlighter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Visualizers&quot;)]
+[Tooltip(&quot;A prefab that is stretched to size of bounds of target to indicate what is being selected&quot;)]
+public GameBase CursorSelectionHighlighter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.GameBase.html">GameBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_CursorShader" data-uid="Assets.Scripts.CursorManager.CursorShader">
+  CursorShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader CursorShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Shader.html">Shader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_CursorTargetCollider" data-uid="Assets.Scripts.CursorManager.CursorTargetCollider">
+  CursorTargetCollider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collider CursorTargetCollider</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_CursorVoxel" data-uid="Assets.Scripts.CursorManager.CursorVoxel">
+  CursorVoxel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CursorVoxel CursorVoxel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.CursorVoxel.html">CursorVoxel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_DefaultEasyFlareEnabled" data-uid="Assets.Scripts.CursorManager.DefaultEasyFlareEnabled">
+  DefaultEasyFlareEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool DefaultEasyFlareEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_FlareBrightnessDistanceCurve" data-uid="Assets.Scripts.CursorManager.FlareBrightnessDistanceCurve">
+  FlareBrightnessDistanceCurve
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationCurve FlareBrightnessDistanceCurve</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_FoundAsteroid" data-uid="Assets.Scripts.CursorManager.FoundAsteroid">
+  FoundAsteroid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Asteroid FoundAsteroid</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Voxel.Asteroid.html">Asteroid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_FoundThing" data-uid="Assets.Scripts.CursorManager.FoundThing">
+  FoundThing
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Thing FoundThing</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_HasSelection" data-uid="Assets.Scripts.CursorManager.HasSelection">
+  HasSelection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HasSelection</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_InputModule" data-uid="Assets.Scripts.CursorManager.InputModule">
+  InputModule
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StandaloneInputModuleOverride InputModule</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.UI.StandaloneInputModuleOverride.html">StandaloneInputModuleOverride</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_Instance" data-uid="Assets.Scripts.CursorManager.Instance">
+  Instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CursorManager Instance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.CursorManager.html">CursorManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LabelTextField" data-uid="Assets.Scripts.CursorManager.LabelTextField">
+  LabelTextField
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextMeshProUGUI LabelTextField</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TextMeshProUGUI</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudio" data-uid="Assets.Scripts.CursorManager.LavaAudio">
+  LavaAudio
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioSource LavaAudio</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AudioSource.html">AudioSource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudioHighPassFilter" data-uid="Assets.Scripts.CursorManager.LavaAudioHighPassFilter">
+  LavaAudioHighPassFilter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioHighPassFilter LavaAudioHighPassFilter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AudioHighPassFilter.html">AudioHighPassFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudioHighPassFilterCurve" data-uid="Assets.Scripts.CursorManager.LavaAudioHighPassFilterCurve">
+  LavaAudioHighPassFilterCurve
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationCurve LavaAudioHighPassFilterCurve</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudioHighPassFilterTarget" data-uid="Assets.Scripts.CursorManager.LavaAudioHighPassFilterTarget">
+  LavaAudioHighPassFilterTarget
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LavaAudioHighPassFilterTarget</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudioLowPassFilter" data-uid="Assets.Scripts.CursorManager.LavaAudioLowPassFilter">
+  LavaAudioLowPassFilter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioLowPassFilter LavaAudioLowPassFilter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AudioLowPassFilter.html">AudioLowPassFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudioLowPassFilterCurve" data-uid="Assets.Scripts.CursorManager.LavaAudioLowPassFilterCurve">
+  LavaAudioLowPassFilterCurve
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationCurve LavaAudioLowPassFilterCurve</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudioLowPassFilterTarget" data-uid="Assets.Scripts.CursorManager.LavaAudioLowPassFilterTarget">
+  LavaAudioLowPassFilterTarget
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LavaAudioLowPassFilterTarget</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaAudioVolumeTarget" data-uid="Assets.Scripts.CursorManager.LavaAudioVolumeTarget">
+  LavaAudioVolumeTarget
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LavaAudioVolumeTarget</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaComponentObject" data-uid="Assets.Scripts.CursorManager.LavaComponentObject">
+  LavaComponentObject
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject LavaComponentObject</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaLight" data-uid="Assets.Scripts.CursorManager.LavaLight">
+  LavaLight
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Light LavaLight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Light.html">Light</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaParticles" data-uid="Assets.Scripts.CursorManager.LavaParticles">
+  LavaParticles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ParticleSystem LavaParticles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/ParticleSystem.html">ParticleSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_LavaPlane" data-uid="Assets.Scripts.CursorManager.LavaPlane">
+  LavaPlane
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject LavaPlane</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_MaxInteractDistance" data-uid="Assets.Scripts.CursorManager.MaxInteractDistance">
+  MaxInteractDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float MaxInteractDistance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_OnInitialize" data-uid="Assets.Scripts.CursorManager.OnInitialize">
+  OnInitialize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseEvent.Event OnInitialize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.BaseEvent.html">BaseEvent</a>.<a class="xref" href="Assets.Scripts.BaseEvent.Event.html">Event</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_PlaneMats" data-uid="Assets.Scripts.CursorManager.PlaneMats">
+  PlaneMats
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material[] PlaneMats</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Material.html">Material</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_PlanetarySunMask" data-uid="Assets.Scripts.CursorManager.PlanetarySunMask">
+  PlanetarySunMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask PlanetarySunMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_PreviousVector3" data-uid="Assets.Scripts.CursorManager.PreviousVector3">
+  PreviousVector3
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 PreviousVector3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_ScrollbarData" data-uid="Assets.Scripts.CursorManager.ScrollbarData">
+  ScrollbarData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 ScrollbarData</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Vector2.html">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_SunMask" data-uid="Assets.Scripts.CursorManager.SunMask">
+  SunMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask SunMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_SunMovement" data-uid="Assets.Scripts.CursorManager.SunMovement">
+  SunMovement
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Environment&quot;)]
+public bool SunMovement</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_SunRotationAxis" data-uid="Assets.Scripts.CursorManager.SunRotationAxis">
+  SunRotationAxis
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 SunRotationAxis</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_TerrainHitMask" data-uid="Assets.Scripts.CursorManager.TerrainHitMask">
+  TerrainHitMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask TerrainHitMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_TextCamera" data-uid="Assets.Scripts.CursorManager.TextCamera">
+  TextCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Camera TextCamera</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CursorManager_WeaponHitMask" data-uid="Assets.Scripts.CursorManager.WeaponHitMask">
+  WeaponHitMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask WeaponHitMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Assets_Scripts_CursorManager_BlockCursorRaycast_" data-uid="Assets.Scripts.CursorManager.BlockCursorRaycast*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_BlockCursorRaycast" data-uid="Assets.Scripts.CursorManager.BlockCursorRaycast">
+  BlockCursorRaycast
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BlockCursorRaycast { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorAsteroid_" data-uid="Assets.Scripts.CursorManager.CursorAsteroid*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorAsteroid" data-uid="Assets.Scripts.CursorManager.CursorAsteroid">
+  CursorAsteroid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Asteroid CursorAsteroid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Voxel.Asteroid.html">Asteroid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorCenter_" data-uid="Assets.Scripts.CursorManager.CursorCenter*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorCenter" data-uid="Assets.Scripts.CursorManager.CursorCenter">
+  CursorCenter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 CursorCenter { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Vector2.html">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorHit_" data-uid="Assets.Scripts.CursorManager.CursorHit*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorHit" data-uid="Assets.Scripts.CursorManager.CursorHit">
+  CursorHit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static RaycastHit CursorHit { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/RaycastHit.html">RaycastHit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorPlanePosition_" data-uid="Assets.Scripts.CursorManager.CursorPlanePosition*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorPlanePosition" data-uid="Assets.Scripts.CursorManager.CursorPlanePosition">
+  CursorPlanePosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 CursorPlanePosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorPositionForward_" data-uid="Assets.Scripts.CursorManager.CursorPositionForward*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorPositionForward" data-uid="Assets.Scripts.CursorManager.CursorPositionForward">
+  CursorPositionForward
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 CursorPositionForward { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorRenderer_" data-uid="Assets.Scripts.CursorManager.CursorRenderer*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorRenderer" data-uid="Assets.Scripts.CursorManager.CursorRenderer">
+  CursorRenderer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Renderer CursorRenderer { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Renderer.html">Renderer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorSelectionRenderer_" data-uid="Assets.Scripts.CursorManager.CursorSelectionRenderer*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorSelectionRenderer" data-uid="Assets.Scripts.CursorManager.CursorSelectionRenderer">
+  CursorSelectionRenderer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Renderer CursorSelectionRenderer { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Renderer.html">Renderer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorSelectionTransform_" data-uid="Assets.Scripts.CursorManager.CursorSelectionTransform*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorSelectionTransform" data-uid="Assets.Scripts.CursorManager.CursorSelectionTransform">
+  CursorSelectionTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transform CursorSelectionTransform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorTerrain_" data-uid="Assets.Scripts.CursorManager.CursorTerrain*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorTerrain" data-uid="Assets.Scripts.CursorManager.CursorTerrain">
+  CursorTerrain
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CursorTerrain CursorTerrain { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="TerrainSystem.CursorTerrain.html">CursorTerrain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorThing_" data-uid="Assets.Scripts.CursorManager.CursorThing*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorThing" data-uid="Assets.Scripts.CursorManager.CursorThing">
+  CursorThing
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Thing CursorThing { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_CursorTransform_" data-uid="Assets.Scripts.CursorManager.CursorTransform*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_CursorTransform" data-uid="Assets.Scripts.CursorManager.CursorTransform">
+  CursorTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transform CursorTransform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_FoundTerrain_" data-uid="Assets.Scripts.CursorManager.FoundTerrain*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_FoundTerrain" data-uid="Assets.Scripts.CursorManager.FoundTerrain">
+  FoundTerrain
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CursorTerrain FoundTerrain { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="TerrainSystem.CursorTerrain.html">CursorTerrain</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_IsLocked_" data-uid="Assets.Scripts.CursorManager.IsLocked*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_IsLocked" data-uid="Assets.Scripts.CursorManager.IsLocked">
+  IsLocked
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLocked { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_LastSelectionInstance_" data-uid="Assets.Scripts.CursorManager.LastSelectionInstance*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_LastSelectionInstance" data-uid="Assets.Scripts.CursorManager.LastSelectionInstance">
+  LastSelectionInstance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SelectionInstance LastSelectionInstance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.SelectionInstance.html">SelectionInstance</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Assets_Scripts_CursorManager_ClearAll_" data-uid="Assets.Scripts.CursorManager.ClearAll*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_ClearAll" data-uid="Assets.Scripts.CursorManager.ClearAll">
+  ClearAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_ClearLastSelectionId_" data-uid="Assets.Scripts.CursorManager.ClearLastSelectionId*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_ClearLastSelectionId" data-uid="Assets.Scripts.CursorManager.ClearLastSelectionId">
+  ClearLastSelectionId()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearLastSelectionId()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_DebugCaptureGridDataForBugReports_" data-uid="Assets.Scripts.CursorManager.DebugCaptureGridDataForBugReports*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_DebugCaptureGridDataForBugReports" data-uid="Assets.Scripts.CursorManager.DebugCaptureGridDataForBugReports">
+  DebugCaptureGridDataForBugReports()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DebugCaptureGridDataForBugReports()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_GetCurrentVoxelLocal_" data-uid="Assets.Scripts.CursorManager.GetCurrentVoxelLocal*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_GetCurrentVoxelLocal" data-uid="Assets.Scripts.CursorManager.GetCurrentVoxelLocal">
+  GetCurrentVoxelLocal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 GetCurrentVoxelLocal()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_GetCurrentVoxelWorld_" data-uid="Assets.Scripts.CursorManager.GetCurrentVoxelWorld*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_GetCurrentVoxelWorld" data-uid="Assets.Scripts.CursorManager.GetCurrentVoxelWorld">
+  GetCurrentVoxelWorld()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 GetCurrentVoxelWorld()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_GetPlanetarySunMask_" data-uid="Assets.Scripts.CursorManager.GetPlanetarySunMask*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_GetPlanetarySunMask" data-uid="Assets.Scripts.CursorManager.GetPlanetarySunMask">
+  GetPlanetarySunMask()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LayerMask GetPlanetarySunMask()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_HandleLavaBehaviour_" data-uid="Assets.Scripts.CursorManager.HandleLavaBehaviour*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_HandleLavaBehaviour_UnityEngine_Vector3_" data-uid="Assets.Scripts.CursorManager.HandleLavaBehaviour(UnityEngine.Vector3)">
+  HandleLavaBehaviour(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandleLavaBehaviour(Vector3 pos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_LockCursorDelayed_" data-uid="Assets.Scripts.CursorManager.LockCursorDelayed*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_LockCursorDelayed" data-uid="Assets.Scripts.CursorManager.LockCursorDelayed">
+  LockCursorDelayed()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UniTaskVoid LockCursorDelayed()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTaskVoid</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_ManagerAwake_" data-uid="Assets.Scripts.CursorManager.ManagerAwake*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_ManagerAwake" data-uid="Assets.Scripts.CursorManager.ManagerAwake">
+  ManagerAwake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerAwake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_ManagerUpdate_" data-uid="Assets.Scripts.CursorManager.ManagerUpdate*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_ManagerUpdate" data-uid="Assets.Scripts.CursorManager.ManagerUpdate">
+  ManagerUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_OnApplicationFocus_" data-uid="Assets.Scripts.CursorManager.OnApplicationFocus*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_OnApplicationFocus_System_Boolean_" data-uid="Assets.Scripts.CursorManager.OnApplicationFocus(System.Boolean)">
+  OnApplicationFocus(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnApplicationFocus(bool focus)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>focus</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetAtmosphericScattering_" data-uid="Assets.Scripts.CursorManager.SetAtmosphericScattering*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetAtmosphericScattering_System_Boolean_" data-uid="Assets.Scripts.CursorManager.SetAtmosphericScattering(System.Boolean)">
+  SetAtmosphericScattering(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetAtmosphericScattering(bool isOn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isOn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetCursor_" data-uid="Assets.Scripts.CursorManager.SetCursor*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetCursor_System_Boolean_" data-uid="Assets.Scripts.CursorManager.SetCursor(System.Boolean)">
+  SetCursor(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetCursor(bool isLocked)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isLocked</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetCursorTarget_" data-uid="Assets.Scripts.CursorManager.SetCursorTarget*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetCursorTarget" data-uid="Assets.Scripts.CursorManager.SetCursorTarget">
+  SetCursorTarget()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCursorTarget()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetEclipticAngle_" data-uid="Assets.Scripts.CursorManager.SetEclipticAngle*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetEclipticAngle_System_Single_" data-uid="Assets.Scripts.CursorManager.SetEclipticAngle(System.Single)">
+  SetEclipticAngle(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetEclipticAngle(float degrees)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>degrees</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetSelection_" data-uid="Assets.Scripts.CursorManager.SetSelection*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetSelection_Assets_Scripts_Objects_SelectionInstance_System_Int32_" data-uid="Assets.Scripts.CursorManager.SetSelection(Assets.Scripts.Objects.SelectionInstance,System.Int32)">
+  SetSelection(SelectionInstance, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSelection(SelectionInstance selection, int selectionSoundHash)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>selection</code> <a class="xref" href="Assets.Scripts.Objects.SelectionInstance.html">SelectionInstance</a></dt>
+    <dd></dd>
+    <dt><code>selectionSoundHash</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetSelection_" data-uid="Assets.Scripts.CursorManager.SetSelection*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetSelection_Assets_Scripts_Objects_SelectionInstance_UnityEngine_Color_" data-uid="Assets.Scripts.CursorManager.SetSelection(Assets.Scripts.Objects.SelectionInstance,UnityEngine.Color)">
+  SetSelection(SelectionInstance, Color)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSelection(SelectionInstance selection, Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>selection</code> <a class="xref" href="Assets.Scripts.Objects.SelectionInstance.html">SelectionInstance</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetSelectionColor_" data-uid="Assets.Scripts.CursorManager.SetSelectionColor*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetSelectionColor_UnityEngine_Color_" data-uid="Assets.Scripts.CursorManager.SetSelectionColor(UnityEngine.Color)">
+  SetSelectionColor(Color)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSelectionColor(Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>color</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_SetSelectionVisibility_" data-uid="Assets.Scripts.CursorManager.SetSelectionVisibility*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_SetSelectionVisibility_System_Boolean_" data-uid="Assets.Scripts.CursorManager.SetSelectionVisibility(System.Boolean)">
+  SetSelectionVisibility(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSelectionVisibility(bool isVisible)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CursorManager_UpdateAtmosphericScattering_" data-uid="Assets.Scripts.CursorManager.UpdateAtmosphericScattering*"></a>
+
+  <h3 id="Assets_Scripts_CursorManager_UpdateAtmosphericScattering" data-uid="Assets.Scripts.CursorManager.UpdateAtmosphericScattering">
+  UpdateAtmosphericScattering()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void UpdateAtmosphericScattering()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

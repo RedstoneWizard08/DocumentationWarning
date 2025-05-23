@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MapView | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MapView | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Objects.Rockets.UI.MapView">
+
+
+
+  <h1 id="Objects_Rockets_UI_MapView" data-uid="Objects.Rockets.UI.MapView" class="text-break">
+Class MapView  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Objects.html">Objects</a>.<a class="xref" href="Objects.Rockets.html">Rockets</a>.<a class="xref" href="Objects.Rockets.UI.html">UI</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ExecuteInEditMode]
+public class MapView : UserInterfaceBase, IPointerEnterHandler, IPointerExitHandler, IScrollHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler, IEventSystemHandler</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.GameBase.html">GameBase</a></div>
+      <div><a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html">UserInterfaceBase</a></div>
+      <div><span class="xref">MapView</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">IPointerEnterHandler</span></div>
+      <div><span class="xref">IPointerExitHandler</span></div>
+      <div><span class="xref">IScrollHandler</span></div>
+      <div><span class="xref">IDragHandler</span></div>
+      <div><span class="xref">IBeginDragHandler</span></div>
+      <div><span class="xref">IEndDragHandler</span></div>
+      <div><span class="xref">IPointerDownHandler</span></div>
+      <div><span class="xref">IPointerUpHandler</span></div>
+      <div><span class="xref">IEventSystemHandler</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_RectTransform">UserInterfaceBase.RectTransform</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_UiComponentRenderer">UserInterfaceBase.UiComponentRenderer</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_IsVisible">UserInterfaceBase.IsVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_OnEnabled">UserInterfaceBase.OnEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_OnDisabled">UserInterfaceBase.OnDisabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_SetVisible_System_Boolean_">UserInterfaceBase.SetVisible(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_SetActive_System_Boolean_">UserInterfaceBase.SetActive(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_OnEnable">UserInterfaceBase.OnEnable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_OnDisable">UserInterfaceBase.OnDisable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_ClampToScreen">UserInterfaceBase.ClampToScreen()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_OnPointerEnter_UnityEngine_EventSystems_PointerEventData_">UserInterfaceBase.OnPointerEnter(PointerEventData)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_OnPointerExit_UnityEngine_EventSystems_PointerEventData_">UserInterfaceBase.OnPointerExit(PointerEventData)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.GameBase.html#DefaultNamespace_GameBase_GameObject">GameBase.GameObject</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.GameBase.html#DefaultNamespace_GameBase_Transform">GameBase.Transform</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_SetEnable_UnityEngine_Behaviour_System_Boolean_UnityEngine_Object_">MonoBehaviourEx.SetEnable(Behaviour, bool, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ComponentExtensions.html#DefaultNamespace_ComponentExtensions_GetOrAddComponent__1_UnityEngine_Component_">ComponentExtensions.GetOrAddComponent&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_DestroyComponent_UnityEngine_Component_UnityEngine_Object_">MonoBehaviourEx.DestroyComponent(Component, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_StartCoroutineOnMainThread_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">ExtensionMethods.StartCoroutineOnMainThread(MonoBehaviour, IEnumerator)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Objects_Rockets_UI_MapView_AddDynamicNodeToSpaceMap_" data-uid="Objects.Rockets.UI.MapView.AddDynamicNodeToSpaceMap*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_AddDynamicNodeToSpaceMap_Objects_Rockets_SpaceMapNode_Objects_Rockets_SpaceMapNode_" data-uid="Objects.Rockets.UI.MapView.AddDynamicNodeToSpaceMap(Objects.Rockets.SpaceMapNode,Objects.Rockets.SpaceMapNode)">
+  AddDynamicNodeToSpaceMap(SpaceMapNode, SpaceMapNode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddDynamicNodeToSpaceMap(SpaceMapNode parent, SpaceMapNode child)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="Objects.Rockets.SpaceMapNode.html">SpaceMapNode</a></dt>
+    <dd></dd>
+    <dt><code>child</code> <a class="xref" href="Objects.Rockets.SpaceMapNode.html">SpaceMapNode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_Clear_" data-uid="Objects.Rockets.UI.MapView.Clear*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_Clear" data-uid="Objects.Rockets.UI.MapView.Clear">
+  Clear()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_ClearAll_" data-uid="Objects.Rockets.UI.MapView.ClearAll*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_ClearAll" data-uid="Objects.Rockets.UI.MapView.ClearAll">
+  ClearAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_ClearSelected_" data-uid="Objects.Rockets.UI.MapView.ClearSelected*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_ClearSelected" data-uid="Objects.Rockets.UI.MapView.ClearSelected">
+  ClearSelected()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearSelected()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_FocusOnSelectedRocket_" data-uid="Objects.Rockets.UI.MapView.FocusOnSelectedRocket*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_FocusOnSelectedRocket" data-uid="Objects.Rockets.UI.MapView.FocusOnSelectedRocket">
+  FocusOnSelectedRocket()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FocusOnSelectedRocket()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_GetLocalMapPosition_" data-uid="Objects.Rockets.UI.MapView.GetLocalMapPosition*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_GetLocalMapPosition_UnityEngine_Vector3_" data-uid="Objects.Rockets.UI.MapView.GetLocalMapPosition(UnityEngine.Vector3)">
+  GetLocalMapPosition(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GetLocalMapPosition(Vector3 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_Initialize_" data-uid="Objects.Rockets.UI.MapView.Initialize*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_Initialize_Objects_Rockets_UI_MapPanel_System_Collections_Generic_List_Assets_Scripts_Objects_Motherboards_ConnectedRocketInfo__Assets_Scripts_Objects_Motherboards_ConnectedRocketInfo_" data-uid="Objects.Rockets.UI.MapView.Initialize(Objects.Rockets.UI.MapPanel,System.Collections.Generic.List{Assets.Scripts.Objects.Motherboards.ConnectedRocketInfo},Assets.Scripts.Objects.Motherboards.ConnectedRocketInfo)">
+  Initialize(MapPanel, List&lt;ConnectedRocketInfo&gt;, ConnectedRocketInfo)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(MapPanel mapPanel, List&lt;ConnectedRocketInfo&gt; connectedRockets, ConnectedRocketInfo selectedRocket)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>mapPanel</code> <a class="xref" href="Objects.Rockets.UI.MapPanel.html">MapPanel</a></dt>
+    <dd></dd>
+    <dt><code>connectedRockets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Motherboards.ConnectedRocketInfo.html">ConnectedRocketInfo</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>selectedRocket</code> <a class="xref" href="Assets.Scripts.Objects.Motherboards.ConnectedRocketInfo.html">ConnectedRocketInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_LocationSelected_" data-uid="Objects.Rockets.UI.MapView.LocationSelected*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_LocationSelected_Objects_Rockets_UI_MapLocation_" data-uid="Objects.Rockets.UI.MapView.LocationSelected(Objects.Rockets.UI.MapLocation)">
+  LocationSelected(MapLocation)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LocationSelected(MapLocation location)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>location</code> <a class="xref" href="Objects.Rockets.UI.MapLocation.html">MapLocation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_OnBeginDrag_" data-uid="Objects.Rockets.UI.MapView.OnBeginDrag*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_OnBeginDrag_UnityEngine_EventSystems_PointerEventData_" data-uid="Objects.Rockets.UI.MapView.OnBeginDrag(UnityEngine.EventSystems.PointerEventData)">
+  OnBeginDrag(PointerEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnBeginDrag(PointerEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_OnDrag_" data-uid="Objects.Rockets.UI.MapView.OnDrag*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_OnDrag_UnityEngine_EventSystems_PointerEventData_" data-uid="Objects.Rockets.UI.MapView.OnDrag(UnityEngine.EventSystems.PointerEventData)">
+  OnDrag(PointerEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDrag(PointerEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_OnEndDrag_" data-uid="Objects.Rockets.UI.MapView.OnEndDrag*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_OnEndDrag_UnityEngine_EventSystems_PointerEventData_" data-uid="Objects.Rockets.UI.MapView.OnEndDrag(UnityEngine.EventSystems.PointerEventData)">
+  OnEndDrag(PointerEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnEndDrag(PointerEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_OnPointerDown_" data-uid="Objects.Rockets.UI.MapView.OnPointerDown*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_OnPointerDown_UnityEngine_EventSystems_PointerEventData_" data-uid="Objects.Rockets.UI.MapView.OnPointerDown(UnityEngine.EventSystems.PointerEventData)">
+  OnPointerDown(PointerEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPointerDown(PointerEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_OnPointerUp_" data-uid="Objects.Rockets.UI.MapView.OnPointerUp*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_OnPointerUp_UnityEngine_EventSystems_PointerEventData_" data-uid="Objects.Rockets.UI.MapView.OnPointerUp(UnityEngine.EventSystems.PointerEventData)">
+  OnPointerUp(PointerEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPointerUp(PointerEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_OnScroll_" data-uid="Objects.Rockets.UI.MapView.OnScroll*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_OnScroll_UnityEngine_EventSystems_PointerEventData_" data-uid="Objects.Rockets.UI.MapView.OnScroll(UnityEngine.EventSystems.PointerEventData)">
+  OnScroll(PointerEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnScroll(PointerEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_RecenterMap_" data-uid="Objects.Rockets.UI.MapView.RecenterMap*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_RecenterMap" data-uid="Objects.Rockets.UI.MapView.RecenterMap">
+  RecenterMap()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RecenterMap()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_Refresh_" data-uid="Objects.Rockets.UI.MapView.Refresh*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_Refresh" data-uid="Objects.Rockets.UI.MapView.Refresh">
+  Refresh()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Refresh()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_RocketSelected_" data-uid="Objects.Rockets.UI.MapView.RocketSelected*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_RocketSelected_Assets_Scripts_Objects_Motherboards_ConnectedRocketInfo_" data-uid="Objects.Rockets.UI.MapView.RocketSelected(Assets.Scripts.Objects.Motherboards.ConnectedRocketInfo)">
+  RocketSelected(ConnectedRocketInfo)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RocketSelected(ConnectedRocketInfo connectedRocket)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>connectedRocket</code> <a class="xref" href="Assets.Scripts.Objects.Motherboards.ConnectedRocketInfo.html">ConnectedRocketInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_UI_MapView_SetTargetDestination_" data-uid="Objects.Rockets.UI.MapView.SetTargetDestination*"></a>
+
+  <h3 id="Objects_Rockets_UI_MapView_SetTargetDestination_Objects_Rockets_SpaceMapNode_" data-uid="Objects.Rockets.UI.MapView.SetTargetDestination(Objects.Rockets.SpaceMapNode)">
+  SetTargetDestination(SpaceMapNode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTargetDestination(SpaceMapNode node)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>node</code> <a class="xref" href="Objects.Rockets.SpaceMapNode.html">SpaceMapNode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class WeatherManager | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class WeatherManager | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Weather.WeatherManager">
+
+
+
+  <h1 id="Weather_WeatherManager" data-uid="Weather.WeatherManager" class="text-break">
+Class WeatherManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Weather.html">Weather</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class WeatherManager : ManagerBase, IManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.ManagerBase.html">ManagerBase</a></div>
+      <div><span class="xref">WeatherManager</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Assets.Scripts.Util.IManager.html">IManager</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ProfilerTag">ManagerBase.ProfilerTag</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ManagerStart">ManagerBase.ManagerStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_SlowUpdate">ManagerBase.SlowUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_SetEnable_UnityEngine_Behaviour_System_Boolean_UnityEngine_Object_">MonoBehaviourEx.SetEnable(Behaviour, bool, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ComponentExtensions.html#DefaultNamespace_ComponentExtensions_GetOrAddComponent__1_UnityEngine_Component_">ComponentExtensions.GetOrAddComponent&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_DestroyComponent_UnityEngine_Component_UnityEngine_Object_">MonoBehaviourEx.DestroyComponent(Component, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_StartCoroutineOnMainThread_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">ExtensionMethods.StartCoroutineOnMainThread(MonoBehaviour, IEnumerator)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Weather_WeatherManager_DamagingRandom" data-uid="Weather.WeatherManager.DamagingRandom">
+  DamagingRandom
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static RocketRandom DamagingRandom</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.RocketRandom.html">RocketRandom</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_DaysSinceLastWeatherEvent" data-uid="Weather.WeatherManager.DaysSinceLastWeatherEvent">
+  DaysSinceLastWeatherEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DaysSinceLastWeatherEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_DrawStormDebug" data-uid="Weather.WeatherManager.DrawStormDebug">
+  DrawStormDebug
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool DrawStormDebug</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_EnableEffectsCancellation" data-uid="Weather.WeatherManager.EnableEffectsCancellation">
+  EnableEffectsCancellation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CancellationTokenWrapper EnableEffectsCancellation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Util.CancellationTokenWrapper.html">CancellationTokenWrapper</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_FIRST_STORM_DELAY" data-uid="Weather.WeatherManager.FIRST_STORM_DELAY">
+  FIRST_STORM_DELAY
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int FIRST_STORM_DELAY = 7</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_Instance" data-uid="Weather.WeatherManager.Instance">
+  Instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WeatherManager Instance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Weather.WeatherManager.html">WeatherManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_LastEventCoolDown" data-uid="Weather.WeatherManager.LastEventCoolDown">
+  LastEventCoolDown
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int LastEventCoolDown</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_MainRandom" data-uid="Weather.WeatherManager.MainRandom">
+  MainRandom
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static RocketRandom MainRandom</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.RocketRandom.html">RocketRandom</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_RainWeatherEvent" data-uid="Weather.WeatherManager.RainWeatherEvent">
+  RainWeatherEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int RainWeatherEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_SOLAR_PANEL_HEALTH_DAMAGE" data-uid="Weather.WeatherManager.SOLAR_PANEL_HEALTH_DAMAGE">
+  SOLAR_PANEL_HEALTH_DAMAGE
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float SOLAR_PANEL_HEALTH_DAMAGE = 0.005</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_SnowWeatherEvent" data-uid="Weather.WeatherManager.SnowWeatherEvent">
+  SnowWeatherEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int SnowWeatherEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_StormDirection" data-uid="Weather.WeatherManager.StormDirection">
+  StormDirection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StormDirection StormDirection</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Weather.StormDirection.html">StormDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_StormForwardVec" data-uid="Weather.WeatherManager.StormForwardVec">
+  StormForwardVec
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 StormForwardVec</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_WeatherEventLength" data-uid="Weather.WeatherManager.WeatherEventLength">
+  WeatherEventLength
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float WeatherEventLength</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_WeatherParticleEffects" data-uid="Weather.WeatherManager.WeatherParticleEffects">
+  WeatherParticleEffects
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[FormerlySerializedAs(&quot;WeatherEvents&quot;)]
+public List&lt;WeatherEventParticlePreset&gt; WeatherParticleEffects</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Weather.WeatherEventParticlePreset.html">WeatherEventParticlePreset</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_WeatherStartTime" data-uid="Weather.WeatherManager.WeatherStartTime">
+  WeatherStartTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float WeatherStartTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_flareFlickerFrequency" data-uid="Weather.WeatherManager.flareFlickerFrequency">
+  flareFlickerFrequency
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;How rapidly the flare flickers when a storm is running&quot;)]
+public float flareFlickerFrequency</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_flareFlickerIntensity" data-uid="Weather.WeatherManager.flareFlickerIntensity">
+  flareFlickerIntensity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;How much the flare flickers by when a storm is running&quot;)]
+public float flareFlickerIntensity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_flareFlickerNoiseOffset" data-uid="Weather.WeatherManager.flareFlickerNoiseOffset">
+  flareFlickerNoiseOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Base value from which the flare will flicker. Higher values makes the flare darker.&quot;)]
+public float flareFlickerNoiseOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Weather_WeatherManager_weatherFlareIntensityOffset" data-uid="Weather.WeatherManager.weatherFlareIntensityOffset">
+  weatherFlareIntensityOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float weatherFlareIntensityOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Weather_WeatherManager_CurrentWeatherEvent_" data-uid="Weather.WeatherManager.CurrentWeatherEvent*"></a>
+
+  <h3 id="Weather_WeatherManager_CurrentWeatherEvent" data-uid="Weather.WeatherManager.CurrentWeatherEvent">
+  CurrentWeatherEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WeatherEvent CurrentWeatherEvent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WeatherEvent.html">WeatherEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_IsWeatherEventRunning_" data-uid="Weather.WeatherManager.IsWeatherEventRunning*"></a>
+
+  <h3 id="Weather_WeatherManager_IsWeatherEventRunning" data-uid="Weather.WeatherManager.IsWeatherEventRunning">
+  IsWeatherEventRunning
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsWeatherEventRunning { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_IsWeatherEventScheduled_" data-uid="Weather.WeatherManager.IsWeatherEventScheduled*"></a>
+
+  <h3 id="Weather_WeatherManager_IsWeatherEventScheduled" data-uid="Weather.WeatherManager.IsWeatherEventScheduled">
+  IsWeatherEventScheduled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsWeatherEventScheduled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_WeatherState_" data-uid="Weather.WeatherManager.WeatherState*"></a>
+
+  <h3 id="Weather_WeatherManager_WeatherState" data-uid="Weather.WeatherManager.WeatherState">
+  WeatherState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WeatherState WeatherState { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Weather.WeatherState.html">WeatherState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_WorldHasWeather_" data-uid="Weather.WeatherManager.WorldHasWeather*"></a>
+
+  <h3 id="Weather_WeatherManager_WorldHasWeather" data-uid="Weather.WeatherManager.WorldHasWeather">
+  WorldHasWeather
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool WorldHasWeather { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Weather_WeatherManager_ApplyWeatherEventSetting_" data-uid="Weather.WeatherManager.ApplyWeatherEventSetting*"></a>
+
+  <h3 id="Weather_WeatherManager_ApplyWeatherEventSetting" data-uid="Weather.WeatherManager.ApplyWeatherEventSetting">
+  ApplyWeatherEventSetting()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyWeatherEventSetting()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_CanScheduleWeatherEvent_" data-uid="Weather.WeatherManager.CanScheduleWeatherEvent*"></a>
+
+  <h3 id="Weather_WeatherManager_CanScheduleWeatherEvent" data-uid="Weather.WeatherManager.CanScheduleWeatherEvent">
+  CanScheduleWeatherEvent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CanScheduleWeatherEvent()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_CanWeatherEventBecomeActive_" data-uid="Weather.WeatherManager.CanWeatherEventBecomeActive*"></a>
+
+  <h3 id="Weather_WeatherManager_CanWeatherEventBecomeActive" data-uid="Weather.WeatherManager.CanWeatherEventBecomeActive">
+  CanWeatherEventBecomeActive()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CanWeatherEventBecomeActive()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_ClearAll_" data-uid="Weather.WeatherManager.ClearAll*"></a>
+
+  <h3 id="Weather_WeatherManager_ClearAll" data-uid="Weather.WeatherManager.ClearAll">
+  ClearAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_CreateSaveData_" data-uid="Weather.WeatherManager.CreateSaveData*"></a>
+
+  <h3 id="Weather_WeatherManager_CreateSaveData" data-uid="Weather.WeatherManager.CreateSaveData">
+  CreateSaveData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WeatherManagerSavedData CreateSaveData()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Weather.WeatherManagerSavedData.html">WeatherManagerSavedData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_DamageDynamicItems_" data-uid="Weather.WeatherManager.DamageDynamicItems*"></a>
+
+  <h3 id="Weather_WeatherManager_DamageDynamicItems" data-uid="Weather.WeatherManager.DamageDynamicItems">
+  DamageDynamicItems()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DamageDynamicItems()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_DamageSolarPanels_" data-uid="Weather.WeatherManager.DamageSolarPanels*"></a>
+
+  <h3 id="Weather_WeatherManager_DamageSolarPanels" data-uid="Weather.WeatherManager.DamageSolarPanels">
+  DamageSolarPanels()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DamageSolarPanels()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_DeserialiseDeltaState_" data-uid="Weather.WeatherManager.DeserialiseDeltaState*"></a>
+
+  <h3 id="Weather_WeatherManager_DeserialiseDeltaState_Assets_Scripts_Networking_RocketBinaryReader_" data-uid="Weather.WeatherManager.DeserialiseDeltaState(Assets.Scripts.Networking.RocketBinaryReader)">
+  DeserialiseDeltaState(RocketBinaryReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DeserialiseDeltaState(RocketBinaryReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reader</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryReader.html">RocketBinaryReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_DrawDebug_" data-uid="Weather.WeatherManager.DrawDebug*"></a>
+
+  <h3 id="Weather_WeatherManager_DrawDebug" data-uid="Weather.WeatherManager.DrawDebug">
+  DrawDebug()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawDebug()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_EffectsToggle_" data-uid="Weather.WeatherManager.EffectsToggle*"></a>
+
+  <h3 id="Weather_WeatherManager_EffectsToggle_System_Boolean_" data-uid="Weather.WeatherManager.EffectsToggle(System.Boolean)">
+  EffectsToggle(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniTaskVoid EffectsToggle(bool toggle)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>toggle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTaskVoid</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_Find_" data-uid="Weather.WeatherManager.Find*"></a>
+
+  <h3 id="Weather_WeatherManager_Find_System_Int32_" data-uid="Weather.WeatherManager.Find(System.Int32)">
+  Find(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WeatherEventParticlePreset Find(int hash)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hash</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Weather.WeatherEventParticlePreset.html">WeatherEventParticlePreset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_Find_" data-uid="Weather.WeatherManager.Find*"></a>
+
+  <h3 id="Weather_WeatherManager_Find_System_String_" data-uid="Weather.WeatherManager.Find(System.String)">
+  Find(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WeatherEventParticlePreset Find(string id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Weather.WeatherEventParticlePreset.html">WeatherEventParticlePreset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_GetNextWeatherEvent_" data-uid="Weather.WeatherManager.GetNextWeatherEvent*"></a>
+
+  <h3 id="Weather_WeatherManager_GetNextWeatherEvent" data-uid="Weather.WeatherManager.GetNextWeatherEvent">
+  GetNextWeatherEvent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WeatherEvent GetNextWeatherEvent()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WeatherEvent.html">WeatherEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_GetSecondsWhenNextWeatherEventIsActive_" data-uid="Weather.WeatherManager.GetSecondsWhenNextWeatherEventIsActive*"></a>
+
+  <h3 id="Weather_WeatherManager_GetSecondsWhenNextWeatherEventIsActive" data-uid="Weather.WeatherManager.GetSecondsWhenNextWeatherEventIsActive">
+  GetSecondsWhenNextWeatherEventIsActive()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetSecondsWhenNextWeatherEventIsActive()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_HasStormTimeElapsed_" data-uid="Weather.WeatherManager.HasStormTimeElapsed*"></a>
+
+  <h3 id="Weather_WeatherManager_HasStormTimeElapsed" data-uid="Weather.WeatherManager.HasStormTimeElapsed">
+  HasStormTimeElapsed()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HasStormTimeElapsed()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_ImmediatelyActivateWeatherEvent_" data-uid="Weather.WeatherManager.ImmediatelyActivateWeatherEvent*"></a>
+
+  <h3 id="Weather_WeatherManager_ImmediatelyActivateWeatherEvent_DefaultNamespace_WeatherEvent_" data-uid="Weather.WeatherManager.ImmediatelyActivateWeatherEvent(DefaultNamespace.WeatherEvent)">
+  ImmediatelyActivateWeatherEvent(WeatherEvent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ImmediatelyActivateWeatherEvent(WeatherEvent weatherEvent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weatherEvent</code> <a class="xref" href="DefaultNamespace.WeatherEvent.html">WeatherEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_ImmediatelyActivateWeatherEvent_" data-uid="Weather.WeatherManager.ImmediatelyActivateWeatherEvent*"></a>
+
+  <h3 id="Weather_WeatherManager_ImmediatelyActivateWeatherEvent_System_String_" data-uid="Weather.WeatherManager.ImmediatelyActivateWeatherEvent(System.String)">
+  ImmediatelyActivateWeatherEvent(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ImmediatelyActivateWeatherEvent(string stormId = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stormId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_LoadSaveData_" data-uid="Weather.WeatherManager.LoadSaveData*"></a>
+
+  <h3 id="Weather_WeatherManager_LoadSaveData_Weather_WeatherManagerSavedData_" data-uid="Weather.WeatherManager.LoadSaveData(Weather.WeatherManagerSavedData)">
+  LoadSaveData(WeatherManagerSavedData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadSaveData(WeatherManagerSavedData savedData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>savedData</code> <a class="xref" href="Weather.WeatherManagerSavedData.html">WeatherManagerSavedData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_ManagerAwake_" data-uid="Weather.WeatherManager.ManagerAwake*"></a>
+
+  <h3 id="Weather_WeatherManager_ManagerAwake" data-uid="Weather.WeatherManager.ManagerAwake">
+  ManagerAwake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerAwake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_ManagerUpdate_" data-uid="Weather.WeatherManager.ManagerUpdate*"></a>
+
+  <h3 id="Weather_WeatherManager_ManagerUpdate" data-uid="Weather.WeatherManager.ManagerUpdate">
+  ManagerUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_OnNextDay_" data-uid="Weather.WeatherManager.OnNextDay*"></a>
+
+  <h3 id="Weather_WeatherManager_OnNextDay" data-uid="Weather.WeatherManager.OnNextDay">
+  OnNextDay()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void OnNextDay()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_ScheduleWeatherEvent_" data-uid="Weather.WeatherManager.ScheduleWeatherEvent*"></a>
+
+  <h3 id="Weather_WeatherManager_ScheduleWeatherEvent_DefaultNamespace_WeatherEvent_" data-uid="Weather.WeatherManager.ScheduleWeatherEvent(DefaultNamespace.WeatherEvent)">
+  ScheduleWeatherEvent(WeatherEvent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ScheduleWeatherEvent(WeatherEvent weatherEvent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weatherEvent</code> <a class="xref" href="DefaultNamespace.WeatherEvent.html">WeatherEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_SerialiseDeltaState_" data-uid="Weather.WeatherManager.SerialiseDeltaState*"></a>
+
+  <h3 id="Weather_WeatherManager_SerialiseDeltaState_Assets_Scripts_Networking_RocketBinaryWriter_" data-uid="Weather.WeatherManager.SerialiseDeltaState(Assets.Scripts.Networking.RocketBinaryWriter)">
+  SerialiseDeltaState(RocketBinaryWriter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SerialiseDeltaState(RocketBinaryWriter writer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>writer</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryWriter.html">RocketBinaryWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_SetDirection_" data-uid="Weather.WeatherManager.SetDirection*"></a>
+
+  <h3 id="Weather_WeatherManager_SetDirection_Assets_Scripts_Weather_StormDirection_" data-uid="Weather.WeatherManager.SetDirection(Assets.Scripts.Weather.StormDirection)">
+  SetDirection(StormDirection)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetDirection(StormDirection directionEnum)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directionEnum</code> <a class="xref" href="Assets.Scripts.Weather.StormDirection.html">StormDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_StartWeatherEventServer_" data-uid="Weather.WeatherManager.StartWeatherEventServer*"></a>
+
+  <h3 id="Weather_WeatherManager_StartWeatherEventServer" data-uid="Weather.WeatherManager.StartWeatherEventServer">
+  StartWeatherEventServer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartWeatherEventServer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_StopCurrentWeatherEvent_" data-uid="Weather.WeatherManager.StopCurrentWeatherEvent*"></a>
+
+  <h3 id="Weather_WeatherManager_StopCurrentWeatherEvent" data-uid="Weather.WeatherManager.StopCurrentWeatherEvent">
+  StopCurrentWeatherEvent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void StopCurrentWeatherEvent()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Weather_WeatherManager_StopWeatherEventServer_" data-uid="Weather.WeatherManager.StopWeatherEventServer*"></a>
+
+  <h3 id="Weather_WeatherManager_StopWeatherEventServer" data-uid="Weather.WeatherManager.StopWeatherEventServer">
+  StopWeatherEventServer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopWeatherEventServer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

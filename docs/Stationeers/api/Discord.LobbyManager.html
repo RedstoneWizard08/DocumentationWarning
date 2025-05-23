@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class LobbyManager | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class LobbyManager | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Discord.LobbyManager">
+
+
+
+  <h1 id="Discord_LobbyManager" data-uid="Discord.LobbyManager" class="text-break">
+Class LobbyManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Discord.html">Discord</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp-firstpass.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LobbyManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">LobbyManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Discord_LobbyManager_ConnectLobby_" data-uid="Discord.LobbyManager.ConnectLobby*"></a>
+
+  <h3 id="Discord_LobbyManager_ConnectLobby_System_Int64_System_String_Discord_LobbyManager_ConnectLobbyHandler_" data-uid="Discord.LobbyManager.ConnectLobby(System.Int64,System.String,Discord.LobbyManager.ConnectLobbyHandler)">
+  ConnectLobby(long, string, ConnectLobbyHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConnectLobby(long lobbyId, string secret, LobbyManager.ConnectLobbyHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>secret</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.ConnectLobbyHandler.html">ConnectLobbyHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_ConnectLobbyWithActivitySecret_" data-uid="Discord.LobbyManager.ConnectLobbyWithActivitySecret*"></a>
+
+  <h3 id="Discord_LobbyManager_ConnectLobbyWithActivitySecret_System_String_Discord_LobbyManager_ConnectLobbyWithActivitySecretHandler_" data-uid="Discord.LobbyManager.ConnectLobbyWithActivitySecret(System.String,Discord.LobbyManager.ConnectLobbyWithActivitySecretHandler)">
+  ConnectLobbyWithActivitySecret(string, ConnectLobbyWithActivitySecretHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConnectLobbyWithActivitySecret(string activitySecret, LobbyManager.ConnectLobbyWithActivitySecretHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>activitySecret</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.ConnectLobbyWithActivitySecretHandler.html">ConnectLobbyWithActivitySecretHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_ConnectNetwork_" data-uid="Discord.LobbyManager.ConnectNetwork*"></a>
+
+  <h3 id="Discord_LobbyManager_ConnectNetwork_System_Int64_" data-uid="Discord.LobbyManager.ConnectNetwork(System.Int64)">
+  ConnectNetwork(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConnectNetwork(long lobbyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_ConnectVoice_" data-uid="Discord.LobbyManager.ConnectVoice*"></a>
+
+  <h3 id="Discord_LobbyManager_ConnectVoice_System_Int64_Discord_LobbyManager_ConnectVoiceHandler_" data-uid="Discord.LobbyManager.ConnectVoice(System.Int64,Discord.LobbyManager.ConnectVoiceHandler)">
+  ConnectVoice(long, ConnectVoiceHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConnectVoice(long lobbyId, LobbyManager.ConnectVoiceHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.ConnectVoiceHandler.html">ConnectVoiceHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_CreateLobby_" data-uid="Discord.LobbyManager.CreateLobby*"></a>
+
+  <h3 id="Discord_LobbyManager_CreateLobby_Discord_LobbyTransaction_Discord_LobbyManager_CreateLobbyHandler_" data-uid="Discord.LobbyManager.CreateLobby(Discord.LobbyTransaction,Discord.LobbyManager.CreateLobbyHandler)">
+  CreateLobby(LobbyTransaction, CreateLobbyHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateLobby(LobbyTransaction transaction, LobbyManager.CreateLobbyHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="Discord.LobbyTransaction.html">LobbyTransaction</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.CreateLobbyHandler.html">CreateLobbyHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_DeleteLobby_" data-uid="Discord.LobbyManager.DeleteLobby*"></a>
+
+  <h3 id="Discord_LobbyManager_DeleteLobby_System_Int64_Discord_LobbyManager_DeleteLobbyHandler_" data-uid="Discord.LobbyManager.DeleteLobby(System.Int64,Discord.LobbyManager.DeleteLobbyHandler)">
+  DeleteLobby(long, DeleteLobbyHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteLobby(long lobbyId, LobbyManager.DeleteLobbyHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.DeleteLobbyHandler.html">DeleteLobbyHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_DisconnectLobby_" data-uid="Discord.LobbyManager.DisconnectLobby*"></a>
+
+  <h3 id="Discord_LobbyManager_DisconnectLobby_System_Int64_Discord_LobbyManager_DisconnectLobbyHandler_" data-uid="Discord.LobbyManager.DisconnectLobby(System.Int64,Discord.LobbyManager.DisconnectLobbyHandler)">
+  DisconnectLobby(long, DisconnectLobbyHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisconnectLobby(long lobbyId, LobbyManager.DisconnectLobbyHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.DisconnectLobbyHandler.html">DisconnectLobbyHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_DisconnectNetwork_" data-uid="Discord.LobbyManager.DisconnectNetwork*"></a>
+
+  <h3 id="Discord_LobbyManager_DisconnectNetwork_System_Int64_" data-uid="Discord.LobbyManager.DisconnectNetwork(System.Int64)">
+  DisconnectNetwork(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisconnectNetwork(long lobbyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_DisconnectVoice_" data-uid="Discord.LobbyManager.DisconnectVoice*"></a>
+
+  <h3 id="Discord_LobbyManager_DisconnectVoice_System_Int64_Discord_LobbyManager_DisconnectVoiceHandler_" data-uid="Discord.LobbyManager.DisconnectVoice(System.Int64,Discord.LobbyManager.DisconnectVoiceHandler)">
+  DisconnectVoice(long, DisconnectVoiceHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisconnectVoice(long lobbyId, LobbyManager.DisconnectVoiceHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.DisconnectVoiceHandler.html">DisconnectVoiceHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_FlushNetwork_" data-uid="Discord.LobbyManager.FlushNetwork*"></a>
+
+  <h3 id="Discord_LobbyManager_FlushNetwork" data-uid="Discord.LobbyManager.FlushNetwork">
+  FlushNetwork()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FlushNetwork()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetLobby_" data-uid="Discord.LobbyManager.GetLobby*"></a>
+
+  <h3 id="Discord_LobbyManager_GetLobby_System_Int64_" data-uid="Discord.LobbyManager.GetLobby(System.Int64)">
+  GetLobby(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Lobby GetLobby(long lobbyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.Lobby.html">Lobby</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetLobbyActivitySecret_" data-uid="Discord.LobbyManager.GetLobbyActivitySecret*"></a>
+
+  <h3 id="Discord_LobbyManager_GetLobbyActivitySecret_System_Int64_" data-uid="Discord.LobbyManager.GetLobbyActivitySecret(System.Int64)">
+  GetLobbyActivitySecret(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetLobbyActivitySecret(long lobbyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetLobbyCreateTransaction_" data-uid="Discord.LobbyManager.GetLobbyCreateTransaction*"></a>
+
+  <h3 id="Discord_LobbyManager_GetLobbyCreateTransaction" data-uid="Discord.LobbyManager.GetLobbyCreateTransaction">
+  GetLobbyCreateTransaction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LobbyTransaction GetLobbyCreateTransaction()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyTransaction.html">LobbyTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetLobbyId_" data-uid="Discord.LobbyManager.GetLobbyId*"></a>
+
+  <h3 id="Discord_LobbyManager_GetLobbyId_System_Int32_" data-uid="Discord.LobbyManager.GetLobbyId(System.Int32)">
+  GetLobbyId(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetLobbyId(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetLobbyMetadataKey_" data-uid="Discord.LobbyManager.GetLobbyMetadataKey*"></a>
+
+  <h3 id="Discord_LobbyManager_GetLobbyMetadataKey_System_Int64_System_Int32_" data-uid="Discord.LobbyManager.GetLobbyMetadataKey(System.Int64,System.Int32)">
+  GetLobbyMetadataKey(long, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetLobbyMetadataKey(long lobbyId, int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetLobbyMetadataValue_" data-uid="Discord.LobbyManager.GetLobbyMetadataValue*"></a>
+
+  <h3 id="Discord_LobbyManager_GetLobbyMetadataValue_System_Int64_System_String_" data-uid="Discord.LobbyManager.GetLobbyMetadataValue(System.Int64,System.String)">
+  GetLobbyMetadataValue(long, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetLobbyMetadataValue(long lobbyId, string key)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetLobbyUpdateTransaction_" data-uid="Discord.LobbyManager.GetLobbyUpdateTransaction*"></a>
+
+  <h3 id="Discord_LobbyManager_GetLobbyUpdateTransaction_System_Int64_" data-uid="Discord.LobbyManager.GetLobbyUpdateTransaction(System.Int64)">
+  GetLobbyUpdateTransaction(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LobbyTransaction GetLobbyUpdateTransaction(long lobbyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyTransaction.html">LobbyTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetMemberMetadataKey_" data-uid="Discord.LobbyManager.GetMemberMetadataKey*"></a>
+
+  <h3 id="Discord_LobbyManager_GetMemberMetadataKey_System_Int64_System_Int64_System_Int32_" data-uid="Discord.LobbyManager.GetMemberMetadataKey(System.Int64,System.Int64,System.Int32)">
+  GetMemberMetadataKey(long, long, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetMemberMetadataKey(long lobbyId, long userId, int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetMemberMetadataValue_" data-uid="Discord.LobbyManager.GetMemberMetadataValue*"></a>
+
+  <h3 id="Discord_LobbyManager_GetMemberMetadataValue_System_Int64_System_Int64_System_String_" data-uid="Discord.LobbyManager.GetMemberMetadataValue(System.Int64,System.Int64,System.String)">
+  GetMemberMetadataValue(long, long, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetMemberMetadataValue(long lobbyId, long userId, string key)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetMemberUpdateTransaction_" data-uid="Discord.LobbyManager.GetMemberUpdateTransaction*"></a>
+
+  <h3 id="Discord_LobbyManager_GetMemberUpdateTransaction_System_Int64_System_Int64_" data-uid="Discord.LobbyManager.GetMemberUpdateTransaction(System.Int64,System.Int64)">
+  GetMemberUpdateTransaction(long, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LobbyMemberTransaction GetMemberUpdateTransaction(long lobbyId, long userId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyMemberTransaction.html">LobbyMemberTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetMemberUser_" data-uid="Discord.LobbyManager.GetMemberUser*"></a>
+
+  <h3 id="Discord_LobbyManager_GetMemberUser_System_Int64_System_Int64_" data-uid="Discord.LobbyManager.GetMemberUser(System.Int64,System.Int64)">
+  GetMemberUser(long, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public User GetMemberUser(long lobbyId, long userId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.User.html">User</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetMemberUserId_" data-uid="Discord.LobbyManager.GetMemberUserId*"></a>
+
+  <h3 id="Discord_LobbyManager_GetMemberUserId_System_Int64_System_Int32_" data-uid="Discord.LobbyManager.GetMemberUserId(System.Int64,System.Int32)">
+  GetMemberUserId(long, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetMemberUserId(long lobbyId, int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetMemberUsers_" data-uid="Discord.LobbyManager.GetMemberUsers*"></a>
+
+  <h3 id="Discord_LobbyManager_GetMemberUsers_System_Int64_" data-uid="Discord.LobbyManager.GetMemberUsers(System.Int64)">
+  GetMemberUsers(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;User&gt; GetMemberUsers(long lobbyID)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Discord.User.html">User</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_GetSearchQuery_" data-uid="Discord.LobbyManager.GetSearchQuery*"></a>
+
+  <h3 id="Discord_LobbyManager_GetSearchQuery" data-uid="Discord.LobbyManager.GetSearchQuery">
+  GetSearchQuery()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LobbySearchQuery GetSearchQuery()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbySearchQuery.html">LobbySearchQuery</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_LobbyCount_" data-uid="Discord.LobbyManager.LobbyCount*"></a>
+
+  <h3 id="Discord_LobbyManager_LobbyCount" data-uid="Discord.LobbyManager.LobbyCount">
+  LobbyCount()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LobbyCount()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_LobbyMetadataCount_" data-uid="Discord.LobbyManager.LobbyMetadataCount*"></a>
+
+  <h3 id="Discord_LobbyManager_LobbyMetadataCount_System_Int64_" data-uid="Discord.LobbyManager.LobbyMetadataCount(System.Int64)">
+  LobbyMetadataCount(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LobbyMetadataCount(long lobbyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_MemberCount_" data-uid="Discord.LobbyManager.MemberCount*"></a>
+
+  <h3 id="Discord_LobbyManager_MemberCount_System_Int64_" data-uid="Discord.LobbyManager.MemberCount(System.Int64)">
+  MemberCount(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MemberCount(long lobbyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_MemberMetadataCount_" data-uid="Discord.LobbyManager.MemberMetadataCount*"></a>
+
+  <h3 id="Discord_LobbyManager_MemberMetadataCount_System_Int64_System_Int64_" data-uid="Discord.LobbyManager.MemberMetadataCount(System.Int64,System.Int64)">
+  MemberMetadataCount(long, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MemberMetadataCount(long lobbyId, long userId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_OpenNetworkChannel_" data-uid="Discord.LobbyManager.OpenNetworkChannel*"></a>
+
+  <h3 id="Discord_LobbyManager_OpenNetworkChannel_System_Int64_System_Byte_System_Boolean_" data-uid="Discord.LobbyManager.OpenNetworkChannel(System.Int64,System.Byte,System.Boolean)">
+  OpenNetworkChannel(long, byte, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OpenNetworkChannel(long lobbyId, byte channelId, bool reliable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>channelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+    <dt><code>reliable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_Search_" data-uid="Discord.LobbyManager.Search*"></a>
+
+  <h3 id="Discord_LobbyManager_Search_Discord_LobbySearchQuery_Discord_LobbyManager_SearchHandler_" data-uid="Discord.LobbyManager.Search(Discord.LobbySearchQuery,Discord.LobbyManager.SearchHandler)">
+  Search(LobbySearchQuery, SearchHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Search(LobbySearchQuery query, LobbyManager.SearchHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>query</code> <a class="xref" href="Discord.LobbySearchQuery.html">LobbySearchQuery</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.SearchHandler.html">SearchHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_SendLobbyMessage_" data-uid="Discord.LobbyManager.SendLobbyMessage*"></a>
+
+  <h3 id="Discord_LobbyManager_SendLobbyMessage_System_Int64_System_Byte___Discord_LobbyManager_SendLobbyMessageHandler_" data-uid="Discord.LobbyManager.SendLobbyMessage(System.Int64,System.Byte[],Discord.LobbyManager.SendLobbyMessageHandler)">
+  SendLobbyMessage(long, byte[], SendLobbyMessageHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendLobbyMessage(long lobbyId, byte[] data, LobbyManager.SendLobbyMessageHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.SendLobbyMessageHandler.html">SendLobbyMessageHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_SendLobbyMessage_" data-uid="Discord.LobbyManager.SendLobbyMessage*"></a>
+
+  <h3 id="Discord_LobbyManager_SendLobbyMessage_System_Int64_System_String_Discord_LobbyManager_SendLobbyMessageHandler_" data-uid="Discord.LobbyManager.SendLobbyMessage(System.Int64,System.String,Discord.LobbyManager.SendLobbyMessageHandler)">
+  SendLobbyMessage(long, string, SendLobbyMessageHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendLobbyMessage(long lobbyID, string data, LobbyManager.SendLobbyMessageHandler handler)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>handler</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.SendLobbyMessageHandler.html">SendLobbyMessageHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_SendNetworkMessage_" data-uid="Discord.LobbyManager.SendNetworkMessage*"></a>
+
+  <h3 id="Discord_LobbyManager_SendNetworkMessage_System_Int64_System_Int64_System_Byte_System_Byte___" data-uid="Discord.LobbyManager.SendNetworkMessage(System.Int64,System.Int64,System.Byte,System.Byte[])">
+  SendNetworkMessage(long, long, byte, byte[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendNetworkMessage(long lobbyId, long userId, byte channelId, byte[] data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>channelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_UpdateLobby_" data-uid="Discord.LobbyManager.UpdateLobby*"></a>
+
+  <h3 id="Discord_LobbyManager_UpdateLobby_System_Int64_Discord_LobbyTransaction_Discord_LobbyManager_UpdateLobbyHandler_" data-uid="Discord.LobbyManager.UpdateLobby(System.Int64,Discord.LobbyTransaction,Discord.LobbyManager.UpdateLobbyHandler)">
+  UpdateLobby(long, LobbyTransaction, UpdateLobbyHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateLobby(long lobbyId, LobbyTransaction transaction, LobbyManager.UpdateLobbyHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>transaction</code> <a class="xref" href="Discord.LobbyTransaction.html">LobbyTransaction</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.UpdateLobbyHandler.html">UpdateLobbyHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Discord_LobbyManager_UpdateMember_" data-uid="Discord.LobbyManager.UpdateMember*"></a>
+
+  <h3 id="Discord_LobbyManager_UpdateMember_System_Int64_System_Int64_Discord_LobbyMemberTransaction_Discord_LobbyManager_UpdateMemberHandler_" data-uid="Discord.LobbyManager.UpdateMember(System.Int64,System.Int64,Discord.LobbyMemberTransaction,Discord.LobbyManager.UpdateMemberHandler)">
+  UpdateMember(long, long, LobbyMemberTransaction, UpdateMemberHandler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateMember(long lobbyId, long userId, LobbyMemberTransaction transaction, LobbyManager.UpdateMemberHandler callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobbyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>transaction</code> <a class="xref" href="Discord.LobbyMemberTransaction.html">LobbyMemberTransaction</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.UpdateMemberHandler.html">UpdateMemberHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Discord_LobbyManager_OnLobbyDelete" data-uid="Discord.LobbyManager.OnLobbyDelete">
+  OnLobbyDelete
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.LobbyDeleteHandler OnLobbyDelete</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.LobbyDeleteHandler.html">LobbyDeleteHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Discord_LobbyManager_OnLobbyMessage" data-uid="Discord.LobbyManager.OnLobbyMessage">
+  OnLobbyMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.LobbyMessageHandler OnLobbyMessage</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.LobbyMessageHandler.html">LobbyMessageHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Discord_LobbyManager_OnLobbyUpdate" data-uid="Discord.LobbyManager.OnLobbyUpdate">
+  OnLobbyUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.LobbyUpdateHandler OnLobbyUpdate</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.LobbyUpdateHandler.html">LobbyUpdateHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Discord_LobbyManager_OnMemberConnect" data-uid="Discord.LobbyManager.OnMemberConnect">
+  OnMemberConnect
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.MemberConnectHandler OnMemberConnect</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.MemberConnectHandler.html">MemberConnectHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Discord_LobbyManager_OnMemberDisconnect" data-uid="Discord.LobbyManager.OnMemberDisconnect">
+  OnMemberDisconnect
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.MemberDisconnectHandler OnMemberDisconnect</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.MemberDisconnectHandler.html">MemberDisconnectHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Discord_LobbyManager_OnMemberUpdate" data-uid="Discord.LobbyManager.OnMemberUpdate">
+  OnMemberUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.MemberUpdateHandler OnMemberUpdate</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.MemberUpdateHandler.html">MemberUpdateHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Discord_LobbyManager_OnNetworkMessage" data-uid="Discord.LobbyManager.OnNetworkMessage">
+  OnNetworkMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.NetworkMessageHandler OnNetworkMessage</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.NetworkMessageHandler.html">NetworkMessageHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Discord_LobbyManager_OnSpeaking" data-uid="Discord.LobbyManager.OnSpeaking">
+  OnSpeaking
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event LobbyManager.SpeakingHandler OnSpeaking</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Discord.LobbyManager.html">LobbyManager</a>.<a class="xref" href="Discord.LobbyManager.SpeakingHandler.html">SpeakingHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

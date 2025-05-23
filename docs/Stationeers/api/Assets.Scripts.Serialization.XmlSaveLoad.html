@@ -1,0 +1,3050 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class XmlSaveLoad | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class XmlSaveLoad | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Assets.Scripts.Serialization.XmlSaveLoad">
+
+
+
+  <h1 id="Assets_Scripts_Serialization_XmlSaveLoad" data-uid="Assets.Scripts.Serialization.XmlSaveLoad" class="text-break">
+Class XmlSaveLoad  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Assets.html">Assets</a>.<a class="xref" href="Assets.Scripts.html">Scripts</a>.<a class="xref" href="Assets.Scripts.Serialization.html">Serialization</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class XmlSaveLoad : ManagerBase, IManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.ManagerBase.html">ManagerBase</a></div>
+      <div><span class="xref">XmlSaveLoad</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Assets.Scripts.Util.IManager.html">IManager</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ProfilerTag">ManagerBase.ProfilerTag</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ManagerUpdate">ManagerBase.ManagerUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_SlowUpdate">ManagerBase.SlowUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_SetEnable_UnityEngine_Behaviour_System_Boolean_UnityEngine_Object_">MonoBehaviourEx.SetEnable(Behaviour, bool, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ComponentExtensions.html#DefaultNamespace_ComponentExtensions_GetOrAddComponent__1_UnityEngine_Component_">ComponentExtensions.GetOrAddComponent&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_DestroyComponent_UnityEngine_Component_UnityEngine_Object_">MonoBehaviourEx.DestroyComponent(Component, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_StartCoroutineOnMainThread_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">ExtensionMethods.StartCoroutineOnMainThread(MonoBehaviour, IEnumerator)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ActiveButtonAnimator" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ActiveButtonAnimator">
+  ActiveButtonAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Animator of an active button&quot;)]
+public RuntimeAnimatorController ActiveButtonAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/RuntimeAnimatorController.html">RuntimeAnimatorController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_AutoSave" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.AutoSave">
+  AutoSave
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string AutoSave</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CableNetworkIdToIReferencable" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CableNetworkIdToIReferencable">
+  CableNetworkIdToIReferencable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dictionary&lt;long, long&gt; CableNetworkIdToIReferencable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ChuteNetworkIdToIReferencable" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ChuteNetworkIdToIReferencable">
+  ChuteNetworkIdToIReferencable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dictionary&lt;long, long&gt; ChuteNetworkIdToIReferencable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ConfirmSaveButton" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ConfirmSaveButton">
+  ConfirmSaveButton
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Load File Info&quot;)]
+[Tooltip(&quot;Button that is pressed when a user is ready to save their world (so, after selecting a world or name&quot;)]
+public Button ConfirmSaveButton</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Button</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ContinueAnimator" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ContinueAnimator">
+  ContinueAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Animator on Continue button&quot;)]
+public Animator ContinueAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CreditsPanel" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CreditsPanel">
+  CreditsPanel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject CreditsPanel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_DefaultFont" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.DefaultFont">
+  DefaultFont
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TMP_FontAsset DefaultFont</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TMP_FontAsset</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_DisabledButtonAnimator" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.DisabledButtonAnimator">
+  DisabledButtonAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Animator of a disabled button&quot;)]
+public RuntimeAnimatorController DisabledButtonAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/RuntimeAnimatorController.html">RuntimeAnimatorController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ExtraTypes" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ExtraTypes">
+  ExtraTypes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Type[] ExtraTypes</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_Instance" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.Instance">
+  Instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static XmlSaveLoad Instance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Serialization.XmlSaveLoad.html">XmlSaveLoad</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_IsReadyToPlayWorldAudio" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.IsReadyToPlayWorldAudio">
+  IsReadyToPlayWorldAudio
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsReadyToPlayWorldAudio</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadFileInfo" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadFileInfo">
+  LoadFileInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject LoadFileInfo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadFileInfoMask" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadFileInfoMask">
+  LoadFileInfoMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Load File Info&quot;)]
+public Mask LoadFileInfoMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Mask</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadFilesContents" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadFilesContents">
+  LoadFilesContents
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayoutGroup LoadFilesContents</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LayoutGroup</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadTitle" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadTitle">
+  LoadTitle
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextMeshProUGUI LoadTitle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TextMeshProUGUI</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadWordScreenShot" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadWordScreenShot">
+  LoadWordScreenShot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string LoadWordScreenShot</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadWorldAnimator" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadWorldAnimator">
+  LoadWorldAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Animator on Load World button&quot;)]
+public Animator LoadWorldAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_MainMenu" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.MainMenu">
+  MainMenu
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MainMenu MainMenu</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Serialization.MainMenu.html">MainMenu</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_NewPanelNewWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.NewPanelNewWorld">
+  NewPanelNewWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject NewPanelNewWorld</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_OverwriteSaveButton" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.OverwriteSaveButton">
+  OverwriteSaveButton
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Button OverwriteSaveButton</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Button</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PIPE_VOLUME_REDUCTION_VERSION" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PIPE_VOLUME_REDUCTION_VERSION">
+  PIPE_VOLUME_REDUCTION_VERSION
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int PIPE_VOLUME_REDUCTION_VERSION = 19458</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelCongratulationsScreen" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelCongratulationsScreen">
+  PanelCongratulationsScreen
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelCongratulationsScreen</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelDebugLoading" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelDebugLoading">
+  PanelDebugLoading
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelDebugLoading</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelJoinWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelJoinWorld">
+  PanelJoinWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelJoinWorld</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelLoad" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelLoad">
+  PanelLoad
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelLoad</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelMainMenu" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelMainMenu">
+  PanelMainMenu
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Panels&quot;)]
+public GameObject PanelMainMenu</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelNewWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelNewWorld">
+  PanelNewWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelNewWorld</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelSave" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelSave">
+  PanelSave
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelSave</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelScenario" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelScenario">
+  PanelScenario
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelScenario</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelSettings" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelSettings">
+  PanelSettings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelSettings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelTravel" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelTravel">
+  PanelTravel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelTravel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelTravelFilename" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelTravelFilename">
+  PanelTravelFilename
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextMeshProUGUI PanelTravelFilename</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TextMeshProUGUI</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelTutorial" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelTutorial">
+  PanelTutorial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelTutorial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PanelWelcomeScreen" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PanelWelcomeScreen">
+  PanelWelcomeScreen
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PanelWelcomeScreen</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PipeNetworkIdToIReferencable" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PipeNetworkIdToIReferencable">
+  PipeNetworkIdToIReferencable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dictionary&lt;long, long&gt; PipeNetworkIdToIReferencable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_RegisteredTransformChangeVersion" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.RegisteredTransformChangeVersion">
+  RegisteredTransformChangeVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int RegisteredTransformChangeVersion</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_RoomChangeRevision" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.RoomChangeRevision">
+  RoomChangeRevision
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int RoomChangeRevision</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_RunPipeVolumeFix" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.RunPipeVolumeFix">
+  RunPipeVolumeFix
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RunPipeVolumeFix</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_RunStateChangeFix" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.RunStateChangeFix">
+  RunStateChangeFix
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RunStateChangeFix</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_STATE_CHANGE_VERSION" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.STATE_CHANGE_VERSION">
+  STATE_CHANGE_VERSION
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int STATE_CHANGE_VERSION = 19494</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_SaveFileContents" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveFileContents">
+  SaveFileContents
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayoutGroup SaveFileContents</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LayoutGroup</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_SaveFileInfo" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveFileInfo">
+  SaveFileInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject SaveFileInfo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_SavingWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SavingWorld">
+  SavingWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SavingWorld</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ScenariosAnimator" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ScenariosAnimator">
+  ScenariosAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Animator on Scenarios button&quot;)]
+public Animator ScenariosAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_SearchFilter" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SearchFilter">
+  SearchFilter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TMP_InputField SearchFilter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TMP_InputField</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_TravelButton" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.TravelButton">
+  TravelButton
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject TravelButton</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_TravelFileInfo" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.TravelFileInfo">
+  TravelFileInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject TravelFileInfo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_WorkShopPreviewFileName" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.WorkShopPreviewFileName">
+  WorkShopPreviewFileName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string WorkShopPreviewFileName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_WorkShopPublishButton" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.WorkShopPublishButton">
+  WorkShopPublishButton
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject WorkShopPublishButton</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_WorldIsReadOnly" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.WorldIsReadOnly">
+  WorldIsReadOnly
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool WorldIsReadOnly</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_XmlReaderSettings" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.XmlReaderSettings">
+  XmlReaderSettings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly XmlReaderSettings XmlReaderSettings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlreadersettings">XmlReaderSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_fullFileList" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.fullFileList">
+  fullFileList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;FileInfo&gt; fullFileList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.fileinfo">FileInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CopiedWorldData_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CopiedWorldData*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CopiedWorldData" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CopiedWorldData">
+  CopiedWorldData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public XmlSaveLoad.WorldData CopiedWorldData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Serialization.XmlSaveLoad.html">XmlSaveLoad</a>.<a class="xref" href="Assets.Scripts.Serialization.XmlSaveLoad.WorldData.html">WorldData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CopyingWorld_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CopyingWorld*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CopyingWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CopyingWorld">
+  CopyingWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CopyingWorld { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CurrentSaveRevision_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CurrentSaveRevision*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CurrentSaveRevision" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CurrentSaveRevision">
+  CurrentSaveRevision
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CurrentSaveRevision { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CurrentWorldFile_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CurrentWorldFile*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CurrentWorldFile" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CurrentWorldFile">
+  CurrentWorldFile
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SteamTransport.ItemWrapper? CurrentWorldFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Networking.Transports.SteamTransport.html">SteamTransport</a>.<a class="xref" href="Assets.Scripts.Networking.Transports.SteamTransport.ItemWrapper.html">ItemWrapper</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CurrentWorldSave_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CurrentWorldSave*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CurrentWorldSave" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CurrentWorldSave">
+  CurrentWorldSave
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StationSaveContainer CurrentWorldSave { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.StationSaveContainer.html">StationSaveContainer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_UpdateNetworksReferences_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.UpdateNetworksReferences*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_UpdateNetworksReferences" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.UpdateNetworksReferences">
+  UpdateNetworksReferences
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool UpdateNetworksReferences { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_WorldSaveBackupPanel_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.WorldSaveBackupPanel*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_WorldSaveBackupPanel" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.WorldSaveBackupPanel">
+  WorldSaveBackupPanel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PanelDebugLoad WorldSaveBackupPanel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PanelDebugLoad.html">PanelDebugLoad</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_AddExtraTypes_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.AddExtraTypes*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_AddExtraTypes_System_Collections_Generic_List_System_Type___" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.AddExtraTypes(System.Collections.Generic.List{System.Type}@)">
+  AddExtraTypes(ref List&lt;Type&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddExtraTypes(ref List&lt;Type&gt; extraTypes)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>extraTypes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonCancel_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonCancel*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonCancel" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonCancel">
+  ButtonCancel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ButtonCancel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonLoad_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonLoad*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonLoad" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonLoad">
+  ButtonLoad()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ButtonLoad()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonSave_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonSave*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonSave" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonSave">
+  ButtonSave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ButtonSave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonSaveAndDisconnect_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonSaveAndDisconnect*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonSaveAndDisconnect" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonSaveAndDisconnect">
+  ButtonSaveAndDisconnect()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ButtonSaveAndDisconnect()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonSaveAndQuit_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonSaveAndQuit*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonSaveAndQuit" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonSaveAndQuit">
+  ButtonSaveAndQuit()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ButtonSaveAndQuit()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonTravel_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonTravel*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ButtonTravel" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ButtonTravel">
+  ButtonTravel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ButtonTravel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CanExitWorld_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CanExitWorld*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CanExitWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CanExitWorld">
+  CanExitWorld()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanExitWorld()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CheckForChangedName_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CheckForChangedName*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CheckForChangedName" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CheckForChangedName">
+  CheckForChangedName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckForChangedName()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ClearAll_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ClearAll*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ClearAll" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ClearAll">
+  ClearAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ContinueGame_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ContinueGame*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ContinueGame_UnityEngine_Transform_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ContinueGame(UnityEngine.Transform)">
+  ContinueGame(Transform)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ContinueGame(Transform fileWindowLoad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileWindowLoad</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CopyWorldData_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CopyWorldData*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CopyWorldData_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_System_Boolean_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CopyWorldData(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+  CopyWorldData(string, bool, bool, CancellationToken, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniTask CopyWorldData(string worldDirectory, bool writeWorldData = true, bool autoSave = false, CancellationToken cancellationToken = default, bool saveAs = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>writeWorldData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>autoSave</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+    <dt><code>saveAs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTask</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_CreateWorldItem_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CreateWorldItem*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_CreateWorldItem_UnityEngine_Transform_Assets_Scripts_Networking_Transports_SteamTransport_ItemWrapper_System_Boolean_System_String_System_String_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.CreateWorldItem(UnityEngine.Transform,Assets.Scripts.Networking.Transports.SteamTransport.ItemWrapper,System.Boolean,System.String,System.String)">
+  CreateWorldItem(Transform, ItemWrapper, bool, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorldSave CreateWorldItem(Transform listTransform, SteamTransport.ItemWrapper item, bool localSave, string worldName = &quot;&quot;, string displayWorldName = &quot;&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>listTransform</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+    <dt><code>item</code> <a class="xref" href="Assets.Scripts.Networking.Transports.SteamTransport.html">SteamTransport</a>.<a class="xref" href="Assets.Scripts.Networking.Transports.SteamTransport.ItemWrapper.html">ItemWrapper</a></dt>
+    <dd></dd>
+    <dt><code>localSave</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>worldName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>displayWorldName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.UI.WorldSave.html">WorldSave</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_DisableMainMenu_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.DisableMainMenu*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_DisableMainMenu" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.DisableMainMenu">
+  DisableMainMenu()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisableMainMenu()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_EnableTravelMenu_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.EnableTravelMenu*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_EnableTravelMenu_System_Boolean_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.EnableTravelMenu(System.Boolean)">
+  EnableTravelMenu(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnableTravelMenu(bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_GetMetaDataFullPath_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.GetMetaDataFullPath*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_GetMetaDataFullPath_System_String_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.GetMetaDataFullPath(System.String)">
+  GetMetaDataFullPath(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static XmlSaveLoad.WorldMetaData GetMetaDataFullPath(string fullPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fullPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Serialization.XmlSaveLoad.html">XmlSaveLoad</a>.<a class="xref" href="Assets.Scripts.Serialization.XmlSaveLoad.WorldMetaData.html">WorldMetaData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_GetRevisionNumber_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.GetRevisionNumber*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_GetRevisionNumber_System_String_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.GetRevisionNumber(System.String)">
+  GetRevisionNumber(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetRevisionNumber(string gameVersion)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_LoadSelectedWorld_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadSelectedWorld*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadSelectedWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadSelectedWorld">
+  LoadSelectedWorld()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniTask LoadSelectedWorld()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTask</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_LoadThing_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadThing*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_LoadThing_Assets_Scripts_Objects_ThingSaveData_System_Boolean_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.LoadThing(Assets.Scripts.Objects.ThingSaveData,System.Boolean)">
+  LoadThing(ThingSaveData, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Thing LoadThing(ThingSaveData thingData, bool generatesTerrain = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>thingData</code> <a class="xref" href="Assets.Scripts.Objects.ThingSaveData.html">ThingSaveData</a></dt>
+    <dd></dd>
+    <dt><code>generatesTerrain</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ManagerAwake_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ManagerAwake*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ManagerAwake" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ManagerAwake">
+  ManagerAwake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerAwake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ManagerStart_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ManagerStart*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ManagerStart" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ManagerStart">
+  ManagerStart()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerStart()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_PrepareCharacterCreation_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PrepareCharacterCreation*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PrepareCharacterCreation" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PrepareCharacterCreation">
+  PrepareCharacterCreation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PrepareCharacterCreation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_PromptDeleteBackupSave_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PromptDeleteBackupSave*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PromptDeleteBackupSave" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PromptDeleteBackupSave">
+  PromptDeleteBackupSave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PromptDeleteBackupSave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_PromptDeleteSave_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PromptDeleteSave*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PromptDeleteSave" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PromptDeleteSave">
+  PromptDeleteSave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PromptDeleteSave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_PromptLoadWithoutCharacters_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PromptLoadWithoutCharacters*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_PromptLoadWithoutCharacters_UnityEngine_Transform_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.PromptLoadWithoutCharacters(UnityEngine.Transform)">
+  PromptLoadWithoutCharacters(Transform)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PromptLoadWithoutCharacters(Transform fileWindowLoad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileWindowLoad</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_SaveCurrentWorld_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveCurrentWorld*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_SaveCurrentWorld" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveCurrentWorld">
+  SaveCurrentWorld()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SaveCurrentWorld()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_SaveGame_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveGame*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_SaveGame_System_String_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveGame(System.String)">
+  SaveGame(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SaveGame(string saveName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>saveName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_SaveGameAs_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveGameAs*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_SaveGameAs_System_IO_DirectoryInfo_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.SaveGameAs(System.IO.DirectoryInfo)">
+  SaveGameAs(DirectoryInfo)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SaveGameAs(DirectoryInfo saveDir)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>saveDir</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.directoryinfo">DirectoryInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_ShowSavePanel_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ShowSavePanel*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_ShowSavePanel" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.ShowSavePanel">
+  ShowSavePanel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShowSavePanel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_StartScenario_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.StartScenario*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_StartScenario_System_String_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.StartScenario(System.String)">
+  StartScenario(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool StartScenario(string worldPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_UpdateLoadingScreen_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.UpdateLoadingScreen*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_UpdateLoadingScreen_System_Boolean_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.UpdateLoadingScreen(System.Boolean)">
+  UpdateLoadingScreen(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void UpdateLoadingScreen(bool display)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_UpdateLoadingScreen_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.UpdateLoadingScreen*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_UpdateLoadingScreen_System_String_System_Single_System_String_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.UpdateLoadingScreen(System.String,System.Single,System.String)">
+  UpdateLoadingScreen(string, float, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UniTask UpdateLoadingScreen(string message, float value, string type = &quot;Loading&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UniTask</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Serialization_XmlSaveLoad_WriteWorldDataInThread_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.WriteWorldDataInThread*"></a>
+
+  <h3 id="Assets_Scripts_Serialization_XmlSaveLoad_WriteWorldDataInThread_System_Object_" data-uid="Assets.Scripts.Serialization.XmlSaveLoad.WriteWorldDataInThread(System.Object)">
+  WriteWorldDataInThread(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteWorldDataInThread(object directory)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>directory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

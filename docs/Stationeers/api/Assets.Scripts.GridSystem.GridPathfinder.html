@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GridPathfinder | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GridPathfinder | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Assets.Scripts.GridSystem.GridPathfinder">
+
+
+
+  <h1 id="Assets_Scripts_GridSystem_GridPathfinder" data-uid="Assets.Scripts.GridSystem.GridPathfinder" class="text-break">
+Class GridPathfinder  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Assets.html">Assets</a>.<a class="xref" href="Assets.Scripts.html">Scripts</a>.<a class="xref" href="Assets.Scripts.GridSystem.html">GridSystem</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GridPathfinder</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GridPathfinder</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_CanGoDiagonal" data-uid="Assets.Scripts.GridSystem.GridPathfinder.CanGoDiagonal">
+  CanGoDiagonal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanGoDiagonal</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_CheckedSquares" data-uid="Assets.Scripts.GridSystem.GridPathfinder.CheckedSquares">
+  CheckedSquares
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Grid3&gt; CheckedSquares</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_ClosedList" data-uid="Assets.Scripts.GridSystem.GridPathfinder.ClosedList">
+  ClosedList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;GridPathfinder.PathSegment&gt; ClosedList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.PathSegment.html">PathSegment</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_DebugDisplayPath" data-uid="Assets.Scripts.GridSystem.GridPathfinder.DebugDisplayPath">
+  DebugDisplayPath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DebugDisplayPath</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_DeviceBlockedList" data-uid="Assets.Scripts.GridSystem.GridPathfinder.DeviceBlockedList">
+  DeviceBlockedList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;Grid3, GridController&gt; DeviceBlockedList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a>, <a class="xref" href="Assets.Scripts.GridController.html">GridController</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_EndSquare" data-uid="Assets.Scripts.GridSystem.GridPathfinder.EndSquare">
+  EndSquare
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Grid3 EndSquare</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_FinalPath" data-uid="Assets.Scripts.GridSystem.GridPathfinder.FinalPath">
+  FinalPath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Grid3&gt; FinalPath</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_MaxDistance" data-uid="Assets.Scripts.GridSystem.GridPathfinder.MaxDistance">
+  MaxDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxDistance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_NavigationDebugInfo" data-uid="Assets.Scripts.GridSystem.GridPathfinder.NavigationDebugInfo">
+  NavigationDebugInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;GridPathfinder.NavDebugInfo&gt; NavigationDebugInfo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.NavDebugInfo.html">NavDebugInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_OpenList" data-uid="Assets.Scripts.GridSystem.GridPathfinder.OpenList">
+  OpenList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;GridPathfinder.PathSegment&gt; OpenList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.PathSegment.html">PathSegment</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_RandomPosition" data-uid="Assets.Scripts.GridSystem.GridPathfinder.RandomPosition">
+  RandomPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 RandomPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_StartCell" data-uid="Assets.Scripts.GridSystem.GridPathfinder.StartCell">
+  StartCell
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 StartCell</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_AddToOpenList_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.AddToOpenList*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_AddToOpenList_Assets_Scripts_GridSystem_GridPathfinder_PathSegment_Assets_Scripts_GridSystem_GridPathfinder_NpcPathGrid_Assets_Scripts_GridController_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.AddToOpenList(Assets.Scripts.GridSystem.GridPathfinder.PathSegment,Assets.Scripts.GridSystem.GridPathfinder.NpcPathGrid,Assets.Scripts.GridController)">
+  AddToOpenList(PathSegment, NpcPathGrid, GridController)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddToOpenList(GridPathfinder.PathSegment currentSegment, GridPathfinder.NpcPathGrid newGridPath, GridController gridController)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>currentSegment</code> <a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.PathSegment.html">PathSegment</a></dt>
+    <dd></dd>
+    <dt><code>newGridPath</code> <a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.NpcPathGrid.html">NpcPathGrid</a></dt>
+    <dd></dd>
+    <dt><code>gridController</code> <a class="xref" href="Assets.Scripts.GridController.html">GridController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_GetScale_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetScale*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_GetScale_Assets_Scripts_Objects_Monster_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetScale(Assets.Scripts.Objects.Monster)">
+  GetScale(Monster)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetScale(Monster monster = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>monster</code> <a class="xref" href="Assets.Scripts.Objects.Monster.html">Monster</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_GetStairEntryPoint_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetStairEntryPoint*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_GetStairEntryPoint_Assets_Scripts_GridSystem_Grid3_Assets_Scripts_GridController_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetStairEntryPoint(Assets.Scripts.GridSystem.Grid3,Assets.Scripts.GridController)">
+  GetStairEntryPoint(Grid3, GridController)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Grid3 GetStairEntryPoint(Grid3 entryPosition, GridController gridController)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entryPosition</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+    <dt><code>gridController</code> <a class="xref" href="Assets.Scripts.GridController.html">GridController</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_GetStairExitPoint_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetStairExitPoint*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_GetStairExitPoint_Assets_Scripts_GridSystem_Grid3_System_Collections_Generic_List_Assets_Scripts_GridSystem_Grid3__Assets_Scripts_GridController_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetStairExitPoint(Assets.Scripts.GridSystem.Grid3,System.Collections.Generic.List{Assets.Scripts.GridSystem.Grid3},Assets.Scripts.GridController)">
+  GetStairExitPoint(Grid3, List&lt;Grid3&gt;, GridController)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Grid3 GetStairExitPoint(Grid3 exitPosition, List&lt;Grid3&gt; pathList, GridController gridController)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>exitPosition</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+    <dt><code>pathList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>gridController</code> <a class="xref" href="Assets.Scripts.GridController.html">GridController</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_GetWalkableGrids_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetWalkableGrids*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_GetWalkableGrids_Assets_Scripts_GridSystem_Grid3_Assets_Scripts_GridController_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetWalkableGrids(Assets.Scripts.GridSystem.Grid3,Assets.Scripts.GridController)">
+  GetWalkableGrids(Grid3, GridController)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;GridPathfinder.NpcPathGrid&gt; GetWalkableGrids(Grid3 startGrid, GridController gridController)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startGrid</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+    <dt><code>gridController</code> <a class="xref" href="Assets.Scripts.GridController.html">GridController</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.NpcPathGrid.html">NpcPathGrid</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_GetWalkableSpaceGrids_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetWalkableSpaceGrids*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_GetWalkableSpaceGrids_Assets_Scripts_GridSystem_Grid3_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetWalkableSpaceGrids(Assets.Scripts.GridSystem.Grid3)">
+  GetWalkableSpaceGrids(Grid3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;Grid3&gt; GetWalkableSpaceGrids(Grid3 localGrid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>localGrid</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_GetWalkableTerrainGrids_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetWalkableTerrainGrids*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_GetWalkableTerrainGrids_Assets_Scripts_GridSystem_Grid3_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.GetWalkableTerrainGrids(Assets.Scripts.GridSystem.Grid3)">
+  GetWalkableTerrainGrids(Grid3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;GridPathfinder.NpcPathGrid&gt; GetWalkableTerrainGrids(Grid3 startGrid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startGrid</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.NpcPathGrid.html">NpcPathGrid</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_GridSystem_GridPathfinder_Pathfind_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.Pathfind*"></a>
+
+  <h3 id="Assets_Scripts_GridSystem_GridPathfinder_Pathfind_Assets_Scripts_GridSystem_Grid3_Assets_Scripts_GridSystem_Grid3_System_Single_Assets_Scripts_GridController_System_Int32_" data-uid="Assets.Scripts.GridSystem.GridPathfinder.Pathfind(Assets.Scripts.GridSystem.Grid3,Assets.Scripts.GridSystem.Grid3,System.Single,Assets.Scripts.GridController,System.Int32)">
+  Pathfind(Grid3, Grid3, float, GridController, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;GridPathfinder.NpcPathGrid&gt; Pathfind(Grid3 start, Grid3 end, float maxDistance, GridController gridController, int maxChecks = 200)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+    <dt><code>end</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
+    <dd></dd>
+    <dt><code>maxDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>gridController</code> <a class="xref" href="Assets.Scripts.GridController.html">GridController</a></dt>
+    <dd></dd>
+    <dt><code>maxChecks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.html">GridPathfinder</a>.<a class="xref" href="Assets.Scripts.GridSystem.GridPathfinder.NpcPathGrid.html">NpcPathGrid</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

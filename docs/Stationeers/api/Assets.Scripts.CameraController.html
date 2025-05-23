@@ -1,0 +1,2879 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CameraController | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CameraController | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Assets.Scripts.CameraController">
+
+
+
+  <h1 id="Assets_Scripts_CameraController" data-uid="Assets.Scripts.CameraController" class="text-break">
+Class CameraController  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Assets.html">Assets</a>.<a class="xref" href="Assets.Scripts.html">Scripts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DefaultExecutionOrder(-1000)]
+public class CameraController : ManagerBase, IManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.ManagerBase.html">ManagerBase</a></div>
+      <div><span class="xref">CameraController</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Assets.Scripts.Util.IManager.html">IManager</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ManagerStart">ManagerBase.ManagerStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ManagerUpdate">ManagerBase.ManagerUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_SlowUpdate">ManagerBase.SlowUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_SetEnable_UnityEngine_Behaviour_System_Boolean_UnityEngine_Object_">MonoBehaviourEx.SetEnable(Behaviour, bool, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ComponentExtensions.html#DefaultNamespace_ComponentExtensions_GetOrAddComponent__1_UnityEngine_Component_">ComponentExtensions.GetOrAddComponent&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_DestroyComponent_UnityEngine_Component_UnityEngine_Object_">MonoBehaviourEx.DestroyComponent(Component, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_StartCoroutineOnMainThread_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">ExtensionMethods.StartCoroutineOnMainThread(MonoBehaviour, IEnumerator)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Assets_Scripts_CameraController_AlreadyLavaCam" data-uid="Assets.Scripts.CameraController.AlreadyLavaCam">
+  AlreadyLavaCam
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AlreadyLavaCam</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_AmbientOcclusionEffect" data-uid="Assets.Scripts.CameraController.AmbientOcclusionEffect">
+  AmbientOcclusionEffect
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SSAOPro AmbientOcclusionEffect</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.SSAOPro.html">SSAOPro</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_AntialiasingEffect" data-uid="Assets.Scripts.CameraController.AntialiasingEffect">
+  AntialiasingEffect
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Antialiasing AntialiasingEffect</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UnityStandardAssets.ImageEffects.Antialiasing.html">Antialiasing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CamRig" data-uid="Assets.Scripts.CameraController.CamRig">
+  CamRig
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform CamRig</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraAnimator" data-uid="Assets.Scripts.CameraController.CameraAnimator">
+  CameraAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Animator CameraAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraColorControl" data-uid="Assets.Scripts.CameraController.CameraColorControl">
+  CameraColorControl
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraFilterPack_Color_BrightContrastSaturation CameraColorControl</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CameraFilterPack_Color_BrightContrastSaturation.html">CameraFilterPack_Color_BrightContrastSaturation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraEffects" data-uid="Assets.Scripts.CameraController.CameraEffects">
+  CameraEffects
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CameraEffectCollection&gt; CameraEffects</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.CameraEffectCollection.html">CameraEffectCollection</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraPivotOffset" data-uid="Assets.Scripts.CameraController.CameraPivotOffset">
+  CameraPivotOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Space(30)]
+public Vector3 CameraPivotOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraPosition" data-uid="Assets.Scripts.CameraController.CameraPosition">
+  CameraPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 CameraPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraRotation" data-uid="Assets.Scripts.CameraController.CameraRotation">
+  CameraRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Quaternion CameraRotation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraRotationSpeed" data-uid="Assets.Scripts.CameraController.CameraRotationSpeed">
+  CameraRotationSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Rotation &amp; Movement Variables&quot;)]
+public float CameraRotationSpeed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraSensitivity" data-uid="Assets.Scripts.CameraController.CameraSensitivity">
+  CameraSensitivity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float CameraSensitivity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraTiltMaximum" data-uid="Assets.Scripts.CameraController.CameraTiltMaximum">
+  CameraTiltMaximum
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;How far up the camera can tilt, in degrees&quot;)]
+public float CameraTiltMaximum</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraTiltMinimum" data-uid="Assets.Scripts.CameraController.CameraTiltMinimum">
+  CameraTiltMinimum
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;How far down the camera can tilt, in degrees&quot;)]
+public float CameraTiltMinimum</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CameraVignette" data-uid="Assets.Scripts.CameraController.CameraVignette">
+  CameraVignette
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Camera Effects&quot;)]
+public VignetteAndChromaticAberration CameraVignette</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UnityStandardAssets.ImageEffects.VignetteAndChromaticAberration.html">VignetteAndChromaticAberration</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_CollisionOffset" data-uid="Assets.Scripts.CameraController.CollisionOffset">
+  CollisionOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 CollisionOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_ControlMode" data-uid="Assets.Scripts.CameraController.ControlMode">
+  ControlMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraControlMode ControlMode</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.CameraControlMode.html">CameraControlMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_ControlledCameras" data-uid="Assets.Scripts.CameraController.ControlledCameras">
+  ControlledCameras
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Camera&gt; ControlledCameras</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_DeltaRotationX" data-uid="Assets.Scripts.CameraController.DeltaRotationX">
+  DeltaRotationX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float DeltaRotationX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_DeltaRotationY" data-uid="Assets.Scripts.CameraController.DeltaRotationY">
+  DeltaRotationY
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float DeltaRotationY</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_EffectiveCameraPosition" data-uid="Assets.Scripts.CameraController.EffectiveCameraPosition">
+  EffectiveCameraPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 EffectiveCameraPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_EntityMovementController" data-uid="Assets.Scripts.CameraController.EntityMovementController">
+  EntityMovementController
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MovementController EntityMovementController</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.MovementController.html">MovementController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_Instance" data-uid="Assets.Scripts.CameraController.Instance">
+  Instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CameraController Instance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.CameraController.html">CameraController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_JetPackAnimationOffset" data-uid="Assets.Scripts.CameraController.JetPackAnimationOffset">
+  JetPackAnimationOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 JetPackAnimationOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_LavaOnFireShader" data-uid="Assets.Scripts.CameraController.LavaOnFireShader">
+  LavaOnFireShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject LavaOnFireShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_LavaVisionFX" data-uid="Assets.Scripts.CameraController.LavaVisionFX">
+  LavaVisionFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Lava Vision&quot;)]
+public CameraFilterPack_NightVisionFX LavaVisionFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CameraFilterPack_NightVisionFX.html">CameraFilterPack_NightVisionFX</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_MainCamera" data-uid="Assets.Scripts.CameraController.MainCamera">
+  MainCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Camera MainCamera</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_MainCameraForward" data-uid="Assets.Scripts.CameraController.MainCameraForward">
+  MainCameraForward
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 MainCameraForward</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_MainCameraTransform" data-uid="Assets.Scripts.CameraController.MainCameraTransform">
+  MainCameraTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform MainCameraTransform</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_MaxFoV" data-uid="Assets.Scripts.CameraController.MaxFoV">
+  MaxFoV
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;FOV&quot;)]
+[Tooltip(&quot;The maximum value for Field of View when adjusting with the keyboard ingame&quot;)]
+public float MaxFoV</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_MinFoV" data-uid="Assets.Scripts.CameraController.MinFoV">
+  MinFoV
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;The minimum value for Field of View when adjusting with the keyboard ingame&quot;)]
+public float MinFoV</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_NightVisionFX" data-uid="Assets.Scripts.CameraController.NightVisionFX">
+  NightVisionFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Night Vision&quot;)]
+public CameraFilterPack_NightVisionFX NightVisionFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CameraFilterPack_NightVisionFX.html">CameraFilterPack_NightVisionFX</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_NightVisionLight" data-uid="Assets.Scripts.CameraController.NightVisionLight">
+  NightVisionLight
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Light NightVisionLight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Light.html">Light</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_OnInitialize" data-uid="Assets.Scripts.CameraController.OnInitialize">
+  OnInitialize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseEvent.Event OnInitialize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.BaseEvent.html">BaseEvent</a>.<a class="xref" href="Assets.Scripts.BaseEvent.Event.html">Event</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_PlayerRotationSpeed" data-uid="Assets.Scripts.CameraController.PlayerRotationSpeed">
+  PlayerRotationSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PlayerRotationSpeed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_PortraitCamera" data-uid="Assets.Scripts.CameraController.PortraitCamera">
+  PortraitCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Portrait Camera&quot;)]
+public Camera PortraitCamera</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_PortraitCameraDisplay" data-uid="Assets.Scripts.CameraController.PortraitCameraDisplay">
+  PortraitCameraDisplay
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PortraitCameraDisplay</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_PortraitCameraPrefab" data-uid="Assets.Scripts.CameraController.PortraitCameraPrefab">
+  PortraitCameraPrefab
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PortraitCameraPrefab</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_PortraitShader" data-uid="Assets.Scripts.CameraController.PortraitShader">
+  PortraitShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Shader PortraitShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Shader.html">Shader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_RigToCameraOffset" data-uid="Assets.Scripts.CameraController.RigToCameraOffset">
+  RigToCameraOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 RigToCameraOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_RotationX" data-uid="Assets.Scripts.CameraController.RotationX">
+  RotationX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_RotationY" data-uid="Assets.Scripts.CameraController.RotationY">
+  RotationY
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationY</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_RotationalVelocitySmoothed" data-uid="Assets.Scripts.CameraController.RotationalVelocitySmoothed">
+  RotationalVelocitySmoothed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationalVelocitySmoothed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_SensorLensesVisionFX" data-uid="Assets.Scripts.CameraController.SensorLensesVisionFX">
+  SensorLensesVisionFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Sensor Lenses&quot;)]
+public CameraFilterPack_TV_80 SensorLensesVisionFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CameraFilterPack_TV_80.html">CameraFilterPack_TV_80</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_ThirdController" data-uid="Assets.Scripts.CameraController.ThirdController">
+  ThirdController
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThirdPersonOrbitCam ThirdController</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ThirdPersonOrbitCam.html">ThirdPersonOrbitCam</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_TrackedThing" data-uid="Assets.Scripts.CameraController.TrackedThing">
+  TrackedThing
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynamicThing TrackedThing</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_CameraController_WaterVisionFX" data-uid="Assets.Scripts.CameraController.WaterVisionFX">
+  WaterVisionFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Water Vision&quot;)]
+public CameraFilterPack_Light_Water WaterVisionFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CameraFilterPack_Light_Water.html">CameraFilterPack_Light_Water</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Assets_Scripts_CameraController_CameraOrigin_" data-uid="Assets.Scripts.CameraController.CameraOrigin*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_CameraOrigin" data-uid="Assets.Scripts.CameraController.CameraOrigin">
+  CameraOrigin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 CameraOrigin { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_CameraShake_" data-uid="Assets.Scripts.CameraController.CameraShake*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_CameraShake" data-uid="Assets.Scripts.CameraController.CameraShake">
+  CameraShake
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float CameraShake { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_CurrentCamera_" data-uid="Assets.Scripts.CameraController.CurrentCamera*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_CurrentCamera" data-uid="Assets.Scripts.CameraController.CurrentCamera">
+  CurrentCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Camera CurrentCamera { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_IsHoldedCamera_" data-uid="Assets.Scripts.CameraController.IsHoldedCamera*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_IsHoldedCamera" data-uid="Assets.Scripts.CameraController.IsHoldedCamera">
+  IsHoldedCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsHoldedCamera { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_IsPlayerOnLadder_" data-uid="Assets.Scripts.CameraController.IsPlayerOnLadder*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_IsPlayerOnLadder" data-uid="Assets.Scripts.CameraController.IsPlayerOnLadder">
+  IsPlayerOnLadder
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPlayerOnLadder { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_IsSensorLensesFxActive_" data-uid="Assets.Scripts.CameraController.IsSensorLensesFxActive*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_IsSensorLensesFxActive" data-uid="Assets.Scripts.CameraController.IsSensorLensesFxActive">
+  IsSensorLensesFxActive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSensorLensesFxActive { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_IsThirdPerson_" data-uid="Assets.Scripts.CameraController.IsThirdPerson*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_IsThirdPerson" data-uid="Assets.Scripts.CameraController.IsThirdPerson">
+  IsThirdPerson
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsThirdPerson { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_IsUnderWater_" data-uid="Assets.Scripts.CameraController.IsUnderWater*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_IsUnderWater" data-uid="Assets.Scripts.CameraController.IsUnderWater">
+  IsUnderWater
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsUnderWater { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_MainCameraPosition_" data-uid="Assets.Scripts.CameraController.MainCameraPosition*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_MainCameraPosition" data-uid="Assets.Scripts.CameraController.MainCameraPosition">
+  MainCameraPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 MainCameraPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_ProfilerTag_" data-uid="Assets.Scripts.CameraController.ProfilerTag*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_ProfilerTag" data-uid="Assets.Scripts.CameraController.ProfilerTag">
+  ProfilerTag
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProfilerTag { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_RunPhysicsUpdate_" data-uid="Assets.Scripts.CameraController.RunPhysicsUpdate*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_RunPhysicsUpdate" data-uid="Assets.Scripts.CameraController.RunPhysicsUpdate">
+  RunPhysicsUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RunPhysicsUpdate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Assets_Scripts_CameraController_ClearCameraShake_" data-uid="Assets.Scripts.CameraController.ClearCameraShake*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_ClearCameraShake" data-uid="Assets.Scripts.CameraController.ClearCameraShake">
+  ClearCameraShake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearCameraShake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_FixedUpdate_" data-uid="Assets.Scripts.CameraController.FixedUpdate*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_FixedUpdate" data-uid="Assets.Scripts.CameraController.FixedUpdate">
+  FixedUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FixedUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_FovDecrease_" data-uid="Assets.Scripts.CameraController.FovDecrease*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_FovDecrease" data-uid="Assets.Scripts.CameraController.FovDecrease">
+  FovDecrease()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FovDecrease()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_FovIncrease_" data-uid="Assets.Scripts.CameraController.FovIncrease*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_FovIncrease" data-uid="Assets.Scripts.CameraController.FovIncrease">
+  FovIncrease()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FovIncrease()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_FovReset_" data-uid="Assets.Scripts.CameraController.FovReset*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_FovReset" data-uid="Assets.Scripts.CameraController.FovReset">
+  FovReset()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FovReset()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_InitilizeCamera_" data-uid="Assets.Scripts.CameraController.InitilizeCamera*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_InitilizeCamera_Assets_Scripts_Objects_Entity_" data-uid="Assets.Scripts.CameraController.InitilizeCamera(Assets.Scripts.Objects.Entity)">
+  InitilizeCamera(Entity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitilizeCamera(Entity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="Assets.Scripts.Objects.Entity.html">Entity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_LateUpdate_" data-uid="Assets.Scripts.CameraController.LateUpdate*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_LateUpdate" data-uid="Assets.Scripts.CameraController.LateUpdate">
+  LateUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LateUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_ManagerAwake_" data-uid="Assets.Scripts.CameraController.ManagerAwake*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_ManagerAwake" data-uid="Assets.Scripts.CameraController.ManagerAwake">
+  ManagerAwake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerAwake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_RefreshPortrait_" data-uid="Assets.Scripts.CameraController.RefreshPortrait*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_RefreshPortrait" data-uid="Assets.Scripts.CameraController.RefreshPortrait">
+  RefreshPortrait()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefreshPortrait()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_RotateCameraToSlot_" data-uid="Assets.Scripts.CameraController.RotateCameraToSlot*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_RotateCameraToSlot_Assets_Scripts_Objects_Entities_Human_" data-uid="Assets.Scripts.CameraController.RotateCameraToSlot(Assets.Scripts.Objects.Entities.Human)">
+  RotateCameraToSlot(Human)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RotateCameraToSlot(Human human)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>human</code> <a class="xref" href="Assets.Scripts.Objects.Entities.Human.html">Human</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetActive_" data-uid="Assets.Scripts.CameraController.SetActive*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetActive_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetActive(System.Boolean)">
+  SetActive(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetActive(bool b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>b</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetAmbientOcclusion_" data-uid="Assets.Scripts.CameraController.SetAmbientOcclusion*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetAmbientOcclusion" data-uid="Assets.Scripts.CameraController.SetAmbientOcclusion">
+  SetAmbientOcclusion()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetAmbientOcclusion()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetAntialiasing_" data-uid="Assets.Scripts.CameraController.SetAntialiasing*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetAntialiasing" data-uid="Assets.Scripts.CameraController.SetAntialiasing">
+  SetAntialiasing()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetAntialiasing()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetBloom_" data-uid="Assets.Scripts.CameraController.SetBloom*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetBloom_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetBloom(System.Boolean)">
+  SetBloom(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetBloom(bool enabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetCameraPosition_" data-uid="Assets.Scripts.CameraController.SetCameraPosition*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetCameraPosition" data-uid="Assets.Scripts.CameraController.SetCameraPosition">
+  SetCameraPosition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetCameraPosition()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetCameraShake_" data-uid="Assets.Scripts.CameraController.SetCameraShake*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetCameraShake_System_Single_" data-uid="Assets.Scripts.CameraController.SetCameraShake(System.Single)">
+  SetCameraShake(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetCameraShake(float intensity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>intensity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetCullingMask_" data-uid="Assets.Scripts.CameraController.SetCullingMask*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetCullingMask" data-uid="Assets.Scripts.CameraController.SetCullingMask">
+  SetCullingMask()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCullingMask()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetCullingMask_" data-uid="Assets.Scripts.CameraController.SetCullingMask*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetCullingMask_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetCullingMask(System.Boolean)">
+  SetCullingMask(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCullingMask(bool isThirdPerson)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isThirdPerson</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetFieldOfView_" data-uid="Assets.Scripts.CameraController.SetFieldOfView*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetFieldOfView_System_Single_" data-uid="Assets.Scripts.CameraController.SetFieldOfView(System.Single)">
+  SetFieldOfView(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetFieldOfView(float fov)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fov</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetHudScale_" data-uid="Assets.Scripts.CameraController.SetHudScale*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetHudScale_UnityEngine_UI_CanvasScaler_" data-uid="Assets.Scripts.CameraController.SetHudScale(UnityEngine.UI.CanvasScaler)">
+  SetHudScale(CanvasScaler)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetHudScale(CanvasScaler canvasScaler)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>canvasScaler</code> <span class="xref">CanvasScaler</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetNightVision_" data-uid="Assets.Scripts.CameraController.SetNightVision*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetNightVision_System_Boolean_System_Single_System_Single_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetNightVision(System.Boolean,System.Single,System.Single,System.Boolean)">
+  SetNightVision(bool, float, float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetNightVision(bool show, float binocularSize = 0.5, float duringTime = 0.3, bool robotMode = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>show</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>binocularSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>duringTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>robotMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetPortrait_" data-uid="Assets.Scripts.CameraController.SetPortrait*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetPortrait_Assets_Scripts_Objects_Entity_" data-uid="Assets.Scripts.CameraController.SetPortrait(Assets.Scripts.Objects.Entity)">
+  SetPortrait(Entity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetPortrait(Entity parent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="Assets.Scripts.Objects.Entity.html">Entity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetThirdPersonCamera_" data-uid="Assets.Scripts.CameraController.SetThirdPersonCamera*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetThirdPersonCamera_System_Boolean_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetThirdPersonCamera(System.Boolean,System.Boolean)">
+  SetThirdPersonCamera(bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetThirdPersonCamera(bool show, bool setCullingMask = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>show</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>setCullingMask</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetUnderLava_" data-uid="Assets.Scripts.CameraController.SetUnderLava*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetUnderLava_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetUnderLava(System.Boolean)">
+  SetUnderLava(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetUnderLava(bool show)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>show</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetUnderwater_" data-uid="Assets.Scripts.CameraController.SetUnderwater*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetUnderwater_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetUnderwater(System.Boolean)">
+  SetUnderwater(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetUnderwater(bool show)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>show</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetVolumetricLightResolution_" data-uid="Assets.Scripts.CameraController.SetVolumetricLightResolution*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetVolumetricLightResolution_DefaultNamespace_VolumetricLightRenderer_VolumtericResolution_" data-uid="Assets.Scripts.CameraController.SetVolumetricLightResolution(DefaultNamespace.VolumetricLightRenderer.VolumtericResolution)">
+  SetVolumetricLightResolution(VolumtericResolution)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetVolumetricLightResolution(VolumetricLightRenderer.VolumtericResolution setting)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>setting</code> <a class="xref" href="DefaultNamespace.VolumetricLightRenderer.html">VolumetricLightRenderer</a>.<a class="xref" href="DefaultNamespace.VolumetricLightRenderer.VolumtericResolution.html">VolumtericResolution</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_SetVolumetricLights_" data-uid="Assets.Scripts.CameraController.SetVolumetricLights*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_SetVolumetricLights_System_Boolean_" data-uid="Assets.Scripts.CameraController.SetVolumetricLights(System.Boolean)">
+  SetVolumetricLights(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetVolumetricLights(bool enabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_UnitTest_Rotation_" data-uid="Assets.Scripts.CameraController.UnitTest_Rotation*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_UnitTest_Rotation_System_Single_System_Single_" data-uid="Assets.Scripts.CameraController.UnitTest_Rotation(System.Single,System.Single)">
+  UnitTest_Rotation(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnitTest_Rotation(float InputX, float InputY)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>InputX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>InputY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_CameraController_UnitTest_SetRotation_" data-uid="Assets.Scripts.CameraController.UnitTest_SetRotation*"></a>
+
+  <h3 id="Assets_Scripts_CameraController_UnitTest_SetRotation_System_Single_System_Single_" data-uid="Assets.Scripts.CameraController.UnitTest_SetRotation(System.Single,System.Single)">
+  UnitTest_SetRotation(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnitTest_SetRotation(float InRotationX, float InRotationY)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>InRotationX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>InRotationY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Assets_Scripts_CameraController_ThirdPersonCameraChanged" data-uid="Assets.Scripts.CameraController.ThirdPersonCameraChanged">
+  ThirdPersonCameraChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event CameraController.ThirdPersonDelegate ThirdPersonCameraChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.CameraController.html">CameraController</a>.<a class="xref" href="Assets.Scripts.CameraController.ThirdPersonDelegate.html">ThirdPersonDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OcclusionManager | Stationeers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OcclusionManager | Stationeers ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner_2.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Assets.Scripts.OcclusionManager">
+
+
+
+  <h1 id="Assets_Scripts_OcclusionManager" data-uid="Assets.Scripts.OcclusionManager" class="text-break">
+Class OcclusionManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Assets.html">Assets</a>.<a class="xref" href="Assets.Scripts.html">Scripts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OcclusionManager : ThreadedManager, IManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.ManagerBase.html">ManagerBase</a></div>
+      <div><a class="xref" href="Assets.Scripts.ThreadedManager.html">ThreadedManager</a></div>
+      <div><span class="xref">OcclusionManager</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Assets.Scripts.Util.IManager.html">IManager</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_IsRunning">ThreadedManager.IsRunning</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_TickSpeed">ThreadedManager.TickSpeed</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_WorkingThread">ThreadedManager.WorkingThread</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager__manualReset">ThreadedManager._manualReset</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_TotalTickCount">ThreadedManager.TotalTickCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_ThreadPriority">ThreadedManager.ThreadPriority</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_TickSpeedSeconds">ThreadedManager.TickSpeedSeconds</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_IsThread">ThreadedManager.IsThread</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_IsPaused">ThreadedManager.IsPaused</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_Active">ThreadedManager.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_PaddedName">ThreadedManager.PaddedName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_OnApplicationPause_System_Boolean_">ThreadedManager.OnApplicationPause(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_ResetThread">ThreadedManager.ResetThread()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_GetStatus">ThreadedManager.GetStatus()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.ThreadedManager.html#Assets_Scripts_ThreadedManager_ThreadedLoop">ThreadedManager.ThreadedLoop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ProfilerTag">ManagerBase.ProfilerTag</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ManagerStart">ManagerBase.ManagerStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_ManagerUpdate">ManagerBase.ManagerUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Util.ManagerBase.html#Assets_Scripts_Util_ManagerBase_SlowUpdate">ManagerBase.SlowUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_SetEnable_UnityEngine_Behaviour_System_Boolean_UnityEngine_Object_">MonoBehaviourEx.SetEnable(Behaviour, bool, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ComponentExtensions.html#DefaultNamespace_ComponentExtensions_GetOrAddComponent__1_UnityEngine_Component_">ComponentExtensions.GetOrAddComponent&lt;T&gt;(Component)</a>
+  </div>
+  <div>
+      <a class="xref" href="Util.MonoBehaviourEx.html#Util_MonoBehaviourEx_DestroyComponent_UnityEngine_Component_UnityEngine_Object_">MonoBehaviourEx.DestroyComponent(Component, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_StartCoroutineOnMainThread_UnityEngine_MonoBehaviour_System_Collections_IEnumerator_">ExtensionMethods.StartCoroutineOnMainThread(MonoBehaviour, IEnumerator)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_AllDynamicThings" data-uid="Assets.Scripts.OcclusionManager.AllDynamicThings">
+  AllDynamicThings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly ConcurrentDictionary&lt;DynamicThing, byte&gt; AllDynamicThings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_AllLodFlareThings" data-uid="Assets.Scripts.OcclusionManager.AllLodFlareThings">
+  AllLodFlareThings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly List&lt;Thing&gt; AllLodFlareThings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_AllThings" data-uid="Assets.Scripts.OcclusionManager.AllThings">
+  AllThings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly ConcurrentDictionary&lt;Thing, byte&gt; AllThings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_AllThingsHashSet" data-uid="Assets.Scripts.OcclusionManager.AllThingsHashSet">
+  AllThingsHashSet
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;Thing&gt; AllThingsHashSet</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_Instance" data-uid="Assets.Scripts.OcclusionManager.Instance">
+  Instance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static OcclusionManager Instance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.OcclusionManager.html">OcclusionManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_LastOnServerTick" data-uid="Assets.Scripts.OcclusionManager.LastOnServerTick">
+  LastOnServerTick
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int LastOnServerTick</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_MAX_THING_COUNT" data-uid="Assets.Scripts.OcclusionManager.MAX_THING_COUNT">
+  MAX_THING_COUNT
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MAX_THING_COUNT = 65535</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_OnNewDayThings" data-uid="Assets.Scripts.OcclusionManager.OnNewDayThings">
+  OnNewDayThings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;IOnEachDay&gt; OnNewDayThings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.IOnEachDay.html">IOnEachDay</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_RenderRatioSend" data-uid="Assets.Scripts.OcclusionManager.RenderRatioSend">
+  RenderRatioSend
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float RenderRatioSend = 2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_ShadowQualitySetting" data-uid="Assets.Scripts.OcclusionManager.ShadowQualitySetting">
+  ShadowQualitySetting
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ShadowQuality ShadowQualitySetting</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/ShadowQuality.html">ShadowQuality</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_TotalDynamicThings" data-uid="Assets.Scripts.OcclusionManager.TotalDynamicThings">
+  TotalDynamicThings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Occlusion Manager&quot;)]
+[Tooltip(&quot;The total number of dynamic things managed by the Occlusion Manager&quot;)]
+public int TotalDynamicThings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_TotalStructures" data-uid="Assets.Scripts.OcclusionManager.TotalStructures">
+  TotalStructures
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;The total number of structures managed by the Occlusion Manager&quot;)]
+public int TotalStructures</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_UpdatingAudioThings" data-uid="Assets.Scripts.OcclusionManager.UpdatingAudioThings">
+  UpdatingAudioThings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;Thing&gt; UpdatingAudioThings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_UpdatingThings" data-uid="Assets.Scripts.OcclusionManager.UpdatingThings">
+  UpdatingThings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;Thing&gt; UpdatingThings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_UpdatingThings1000MS" data-uid="Assets.Scripts.OcclusionManager.UpdatingThings1000MS">
+  UpdatingThings1000MS
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;Thing&gt; UpdatingThings1000MS</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_UpdatingThings100MS" data-uid="Assets.Scripts.OcclusionManager.UpdatingThings100MS">
+  UpdatingThings100MS
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;Thing&gt; UpdatingThings100MS</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Assets_Scripts_OcclusionManager_DeltaTime_" data-uid="Assets.Scripts.OcclusionManager.DeltaTime*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_DeltaTime" data-uid="Assets.Scripts.OcclusionManager.DeltaTime">
+  DeltaTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float DeltaTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_LightShadowDistanceSq_" data-uid="Assets.Scripts.OcclusionManager.LightShadowDistanceSq*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_LightShadowDistanceSq" data-uid="Assets.Scripts.OcclusionManager.LightShadowDistanceSq">
+  LightShadowDistanceSq
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int LightShadowDistanceSq { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_RenderDistanceMultiplier_" data-uid="Assets.Scripts.OcclusionManager.RenderDistanceMultiplier*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_RenderDistanceMultiplier" data-uid="Assets.Scripts.OcclusionManager.RenderDistanceMultiplier">
+  RenderDistanceMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float RenderDistanceMultiplier { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_ThingShadowMode_" data-uid="Assets.Scripts.OcclusionManager.ThingShadowMode*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_ThingShadowMode" data-uid="Assets.Scripts.OcclusionManager.ThingShadowMode">
+  ThingShadowMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ThingShadowMode ThingShadowMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.ThingShadowMode.html">ThingShadowMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Assets_Scripts_OcclusionManager_CheckAllOcclusion_" data-uid="Assets.Scripts.OcclusionManager.CheckAllOcclusion*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_CheckAllOcclusion" data-uid="Assets.Scripts.OcclusionManager.CheckAllOcclusion">
+  CheckAllOcclusion()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CheckAllOcclusion()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_ClearAll_" data-uid="Assets.Scripts.OcclusionManager.ClearAll*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_ClearAll" data-uid="Assets.Scripts.OcclusionManager.ClearAll">
+  ClearAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_Deregister_" data-uid="Assets.Scripts.OcclusionManager.Deregister*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_Deregister_Assets_Scripts_Objects_DynamicThing_" data-uid="Assets.Scripts.OcclusionManager.Deregister(Assets.Scripts.Objects.DynamicThing)">
+  Deregister(DynamicThing)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Deregister(DynamicThing dynamicThing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dynamicThing</code> <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_Deregister_" data-uid="Assets.Scripts.OcclusionManager.Deregister*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_Deregister_Assets_Scripts_Objects_Thing_" data-uid="Assets.Scripts.OcclusionManager.Deregister(Assets.Scripts.Objects.Thing)">
+  Deregister(Thing)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Deregister(Thing thing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>thing</code> <a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_ManagerAwake_" data-uid="Assets.Scripts.OcclusionManager.ManagerAwake*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_ManagerAwake" data-uid="Assets.Scripts.OcclusionManager.ManagerAwake">
+  ManagerAwake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ManagerAwake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_Mineables_" data-uid="Assets.Scripts.OcclusionManager.Mineables*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_Mineables" data-uid="Assets.Scripts.OcclusionManager.Mineables">
+  Mineables()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Mineables()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_Register_" data-uid="Assets.Scripts.OcclusionManager.Register*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_Register_Assets_Scripts_Objects_DynamicThing_" data-uid="Assets.Scripts.OcclusionManager.Register(Assets.Scripts.Objects.DynamicThing)">
+  Register(DynamicThing)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Register(DynamicThing dynamicThing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dynamicThing</code> <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_Register_" data-uid="Assets.Scripts.OcclusionManager.Register*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_Register_Assets_Scripts_Objects_Thing_" data-uid="Assets.Scripts.OcclusionManager.Register(Assets.Scripts.Objects.Thing)">
+  Register(Thing)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Register(Thing thing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>thing</code> <a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_StartManager_" data-uid="Assets.Scripts.OcclusionManager.StartManager*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_StartManager" data-uid="Assets.Scripts.OcclusionManager.StartManager">
+  StartManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void StartManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_StopManager_" data-uid="Assets.Scripts.OcclusionManager.StopManager*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_StopManager" data-uid="Assets.Scripts.OcclusionManager.StopManager">
+  StopManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void StopManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_ThreadedWork_" data-uid="Assets.Scripts.OcclusionManager.ThreadedWork*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_ThreadedWork" data-uid="Assets.Scripts.OcclusionManager.ThreadedWork">
+  ThreadedWork()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ThreadedWork()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_UpdateRenderDistanceMultiplier_" data-uid="Assets.Scripts.OcclusionManager.UpdateRenderDistanceMultiplier*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_UpdateRenderDistanceMultiplier" data-uid="Assets.Scripts.OcclusionManager.UpdateRenderDistanceMultiplier">
+  UpdateRenderDistanceMultiplier()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateRenderDistanceMultiplier()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
