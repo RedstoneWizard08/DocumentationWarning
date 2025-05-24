@@ -7,7 +7,7 @@ using DocumentationWarning.Util;
 namespace DocumentationWarning.Steps;
 
 public sealed class DownloadPkgs : Step {
-    public override async Task Run(ProjectConfig config) {
+    protected override async Task Run(ProjectConfig config) {
         foreach (var dep in config.Dependencies) {
             var url = dep.Source.GetPackageUrl(dep.Name, dep.Version);
             var fileName = $"{dep.Name}-{dep.Version}.nupkg";

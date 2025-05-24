@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using DocumentationWarning.Config;
 using DocumentationWarning.Models;
@@ -16,16 +17,18 @@ public sealed partial class TemplateProcessor : WithLogger {
     public required string Namespace;
     public required string Framework;
     public required string OutDir;
+    public required string AsmDir;
     public required string BannerPath;
     public required string IconPath;
     public required string UnityVersion;
     public required (int, int) BannerSize;
+    public required List<string> Assemblies;
     public string? GameWebsite;
     public string? ThunderstoreUrl;
     public required bool IsStripped;
 
     public static TemplateProcessor FromConfig(RootConfig root, ProjectConfig config) {
-        var bannerSize = (1, 1);
+        (int, int) bannerSize;
 
         using (var img = Image.Load(config.Game.BannerPath(config))) {
             bannerSize = (img.Width, img.Height);
@@ -37,8 +40,10 @@ public sealed partial class TemplateProcessor : WithLogger {
             Publisher = config.Game.Publisher,
             SteamPage = config.Urls.Steam,
             Namespace = config.Game.Namespace,
-            Framework = config.Framework.Package,
+            Framework = config.Framework,
             OutDir = Path.GetFullPath(config.OutDir),
+            AsmDir = Path.GetFullPath(config.AsmDir),
+            Assemblies = config.Assemblies,
             BannerPath = config.Game.Banner,
             IconPath = config.Game.Icon,
             UnityVersion = config.Game.Unity,
@@ -78,6 +83,7 @@ public sealed partial class TemplateProcessor : WithLogger {
                 { "Namespace", Namespace },
                 { "Framework", Framework },
                 { "OutDir", OutDir },
+                { "AsmDir", AsmDir },
                 { "BannerPath", BannerPath },
                 { "IconPath", IconPath },
                 { "UnityVersion", UnityVersion },
@@ -86,7 +92,8 @@ public sealed partial class TemplateProcessor : WithLogger {
                 { "ImageWidth", ImageWidth.ToString() },
                 { "ImageWidthSmall", ImageWidthSmall.ToString() },
                 { "ScaledImageHeight", ScaledImageHeight.ToString() },
-                { "ScaledImageHeightSmall", ScaledImageHeightSmall.ToString() }
+                { "ScaledImageHeightSmall", ScaledImageHeightSmall.ToString() },
+                { "Assemblies", string.Join(',', Assemblies.Select(it => $"\"{it}\"")) }
             };
 
             return dict;

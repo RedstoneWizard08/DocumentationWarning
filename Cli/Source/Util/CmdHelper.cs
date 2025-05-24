@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 namespace DocumentationWarning.Util;
 
 public sealed class CmdHelper : WithLogger {
-    public static string? FindInPath(string filename) {
+    private static string? FindInPath(string filename) {
         var path = Environment.GetEnvironmentVariable("PATH");
 
         return path?.Split(
             RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
                 ? ";"
                 : ":"
-        ).Select(
-            item => Path.Combine(
+        ).Select(item => Path.Combine(
                 item,
                 filename + (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
                     ? ".exe"
@@ -25,7 +24,7 @@ public sealed class CmdHelper : WithLogger {
         ).FirstOrDefault(File.Exists);
     }
 
-    public static async Task<string> Run(string dir, string cmd, bool output = false, params string[] args) {
+    public static async Task Run(string dir, string cmd, params string[] args) {
         var command = cmd;
 
         if (!command.StartsWith('/')) {
@@ -35,7 +34,7 @@ public sealed class CmdHelper : WithLogger {
         var start = new ProcessStartInfo {
             FileName = command,
             WorkingDirectory = dir,
-            RedirectStandardOutput = !output
+            RedirectStandardOutput = false
         };
 
         foreach (var arg in args) {
@@ -52,12 +51,6 @@ public sealed class CmdHelper : WithLogger {
 
         proc.Start();
 
-        var data = "";
-
-        if (!output) data = await proc.StandardOutput.ReadToEndAsync();
-
         await proc.WaitForExitAsync();
-
-        return data;
     }
 }

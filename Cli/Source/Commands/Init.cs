@@ -17,7 +17,7 @@ public sealed class Init : Command<Init.Options> {
         public string? Id { get; set; } = null;
     }
 
-    public override async Task Execute(Options options) {
+    protected override async Task Execute(Options options) {
         string? pkg = null;
         SteamGameConfig? config = null;
 
@@ -81,25 +81,23 @@ public sealed class Init : Command<Init.Options> {
                 Steam = config,
             },
 
-            Framework = new FrameworkConfig {
-                Package = framework,
-                Unity = unityFramework,
-            },
+            Framework = framework,
 
             Urls = new UrlConfig {
                 Steam = steam,
                 Thunderstore = thunderstore,
                 Website = website,
             },
-        };
 
-        it.Dependencies.Add(
-            new Dependency {
-                Name = "UnityEngine.Modules",
-                Version = unity,
-                Source = DepSource.BaGet,
-            }
-        );
+            Assemblies = [],
+            Dependencies = [
+                new Dependency {
+                    Name = "UnityEngine.Modules",
+                    Version = unity,
+                    Source = DepSource.BaGet,
+                }
+            ],
+        };
 
         var dir = Path.Join("Games", id);
 

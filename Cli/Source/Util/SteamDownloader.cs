@@ -57,6 +57,7 @@ public class SteamDownloader : WithLogger {
                     var prog = bar.AsProgress<float>();
 
                     void callback(object sender, DownloadConfig.ProgressEventInfo info) {
+                        // ReSharper disable once AccessToDisposedClosure
                         bar.MaxTicks = (int) (info.bytesToDownload / 1024 / 1024);
                         prog.Report(info.percentage);
                     }

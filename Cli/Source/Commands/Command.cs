@@ -9,7 +9,7 @@ public abstract class Command<T> : WithLogger {
     protected List<ProjectConfig> Configs { get; private set; } = [];
 
     protected ProjectConfig? GetConfig(string? Project) {
-        return Configs.Find((v) => v.Game.Id == Project);
+        return Configs.Find(v => v.Game.Id == Project);
     }
 
     public async Task Run(T options) {
@@ -18,5 +18,5 @@ public abstract class Command<T> : WithLogger {
         await Execute(options);
     }
 
-    public abstract Task Execute(T options);
+    protected abstract Task Execute(T options);
 }

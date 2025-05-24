@@ -7,6 +7,6 @@ public class WithLogger {
     [JsonIgnore] internal readonly Logger Logger;
 
     protected WithLogger() {
-        Logger = new Logger(this.GetType());
+        Logger = new Logger(GetType());
     }
 }

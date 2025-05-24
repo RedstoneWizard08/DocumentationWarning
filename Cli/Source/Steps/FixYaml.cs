@@ -12,26 +12,21 @@ using ShellProgressBar;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class FixYaml : Step
-{
-    public override async Task Run(ProjectConfig config)
-    {
+public sealed class FixYaml : Step {
+    protected override async Task Run(ProjectConfig config) {
         var root = await ConfigHelper.GetRootConfig();
         var urlPrefix = $"{root.Site}/docs/{config.Game.Id}/";
         var startRegex = new Regex($@"^{config.Game.Namespace}\.");
-        var commentRegex = new Regex($@"^([^:]+):{config.Game.Namespace}\.");
         var path = Path.Join(config.DocDir, "_site", "xrefmap.yml");
         var map = YamlUtility.Deserialize<XRefMap>(path);
         var refs = new List<XRefSpec>();
         var total = map.References.Count;
 
-        using (var bar = new ProgressBar(total, "Fixing xrefmap..."))
-        {
+        using (var bar = new ProgressBar(total, "Fixing xrefmap...")) {
             var prog = bar.AsProgress<float>();
 
-            for (var i = 0; i < total; i++)
-            {
-                prog.Report(i / total);
+            for (var i = 0; i < total; i++) {
+                prog.Report(i / (float) total);
 
                 var item = map.References[i];
 
@@ -39,22 +34,18 @@ public sealed class FixYaml : Step
 
                 map.References[i] = item;
 
-                if (item.Uid.StartsWith(config.Game.Namespace) && item.Uid != config.Game.Namespace)
-                {
-                    var alt = item;
+                if (!item.Uid.StartsWith(config.Game.Namespace) || item.Uid == config.Game.Namespace) continue;
 
-                    alt.Uid = item.Uid.ReplaceRegex(startRegex, "");
+                item.Uid = item.Uid.ReplaceRegex(startRegex, "");
 
-                    if (map.References.Find(v => v.Uid == alt.Uid) != null)
-                        continue;
+                if (map.References.Find(v => v.Uid == item.Uid) != null)
+                    continue;
 
-                    if (alt.ContainsKey("fullName"))
-                    {
-                        alt["fullName"] = item["fullName"].ToString().ReplaceRegex(startRegex, "");
-                    }
-
-                    refs.Add(alt);
+                if (item.ContainsKey("fullName")) {
+                    item["fullName"] = item["fullName"].ToString().ReplaceRegex(startRegex, "");
                 }
+
+                refs.Add(item);
             }
         }
 

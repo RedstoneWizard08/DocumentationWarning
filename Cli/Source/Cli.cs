@@ -15,12 +15,11 @@ public sealed class Cli : Command<object> {
         }
 
         await Parser.Default
-            .ParseArguments<Run.Options, Init.Options, Build.Options, Generate.Options, Decompile.Options,
-                CreatePatch.Options, Test.Options>(args)
+            .ParseArguments<Run.Options, Init.Options, Build.Options, Generate.Options>(args)
             .WithParsedAsync(Run);
     }
 
-    public override async Task Execute(object obj) {
+    protected override async Task Execute(object obj) {
         switch (obj) {
             case Run.Options r:
                 await new Run().Run(r);
@@ -36,18 +35,6 @@ public sealed class Cli : Command<object> {
 
             case Generate.Options g:
                 await new Generate().Run(g);
-                break;
-
-            case Decompile.Options d:
-                await new Decompile().Run(d);
-                break;
-
-            case CreatePatch.Options c:
-                await new CreatePatch().Run(c);
-                break;
-
-            case Test.Options t:
-                await new Test().Run(t);
                 break;
         }
     }

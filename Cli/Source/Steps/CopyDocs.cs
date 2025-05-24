@@ -8,15 +8,12 @@ using Newtonsoft.Json;
 
 namespace DocumentationWarning.Steps;
 
-public sealed class CopyDocs : Step
-{
-    public const string OutputDir = "docs";
-    public const string Manifest = "games.json";
+public sealed class CopyDocs : Step {
+    private const string OutputDir = "docs";
+    private const string Manifest = "games.json";
 
-    public override async Task Run(ProjectConfig config)
-    {
-        if (!Directory.Exists(OutputDir))
-        {
+    protected override async Task Run(ProjectConfig config) {
+        if (!Directory.Exists(OutputDir)) {
             Directory.CreateDirectory(OutputDir);
         }
 
@@ -28,24 +25,24 @@ public sealed class CopyDocs : Step
 
         if (File.Exists(Manifest)) {
             var file = await File.ReadAllTextAsync(Manifest);
-        
+
             data = JsonConvert.DeserializeObject<List<DocItem>>(file)!;
         }
 
         if (data.Find(v => v.Id == config.Game.Id) != null) return;
 
-        data.Add(new DocItem
-        {
-            Id = config.Game.Id,
-            Name = config.Game.Name,
-        });
+        data.Add(
+            new DocItem {
+                Id = config.Game.Id,
+                Name = config.Game.Name,
+            }
+        );
 
         await File.WriteAllTextAsync(Manifest, data.ToJsonString());
     }
 
 
-    private void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
-    {
+    private static void CopyDirectory(string sourceDir, string destinationDir, bool recursive) {
         var dir = new DirectoryInfo(sourceDir);
 
         if (!dir.Exists)
@@ -55,16 +52,13 @@ public sealed class CopyDocs : Step
 
         Directory.CreateDirectory(destinationDir);
 
-        foreach (FileInfo file in dir.GetFiles())
-        {
+        foreach (FileInfo file in dir.GetFiles()) {
             string targetFilePath = Path.Combine(destinationDir, file.Name);
             file.CopyTo(targetFilePath, true);
         }
 
-        if (recursive)
-        {
-            foreach (DirectoryInfo subDir in dirs)
-            {
+        if (recursive) {
+            foreach (DirectoryInfo subDir in dirs) {
                 string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
                 CopyDirectory(subDir.FullName, newDestinationDir, true);
             }

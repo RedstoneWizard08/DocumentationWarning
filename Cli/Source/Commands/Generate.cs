@@ -5,11 +5,9 @@ using DocumentationWarning.Util;
 
 namespace DocumentationWarning.Commands;
 
-public sealed class Generate : Command<Generate.Options>
-{
+public sealed class Generate : Command<Generate.Options> {
     [Verb("generate", HelpText = "Generate DocFx files.")]
-    public class Options
-    {
+    public class Options {
         [Option('a', "all", Default = true, HelpText = "Run for all projects.")]
         public bool? All { get; set; } = true;
 
@@ -17,14 +15,11 @@ public sealed class Generate : Command<Generate.Options>
         public string? Project { get; set; }
     }
 
-    public override async Task Execute(Options options)
-    {
-        if (options.Project != null)
-        {
+    protected override async Task Execute(Options options) {
+        if (options.Project != null) {
             var cfg = GetConfig(options.Project);
 
-            if (cfg == null)
-            {
+            if (cfg == null) {
                 "Cannot find project: {}".LogCritical(this, options.Project);
 
                 return;
@@ -35,10 +30,8 @@ public sealed class Generate : Command<Generate.Options>
             return;
         }
 
-        if (options.All == true)
-        {
-            foreach (var config in Configs)
-            {
+        if (options.All == true) {
+            foreach (var config in Configs) {
                 await Step.Run(config, new GenDocs());
             }
         }

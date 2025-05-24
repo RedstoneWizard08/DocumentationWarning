@@ -8,7 +8,7 @@ using DocumentationWarning.Util;
 namespace DocumentationWarning.Steps;
 
 public sealed class ExtractAsm : Step {
-    public override async Task Run(ProjectConfig config) {
+    protected override async Task Run(ProjectConfig config) {
         foreach (var dep in config.Dependencies) {
             var fileName = $"{dep.Name}-{dep.Version}.nupkg";
             var file = Path.Join(config.PkgDir, fileName);

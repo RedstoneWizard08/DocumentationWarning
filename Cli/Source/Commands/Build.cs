@@ -11,9 +11,6 @@ public sealed class Build : Command<Build.Options> {
         [Option('a', "all", Default = true, HelpText = "Build all projects.")]
         public bool? All { get; set; } = true;
 
-        [Option('d', "decompile", Default = true, HelpText = "Run decompile when building.")]
-        public bool? Decompile { get; set; } = true;
-
         [Option('g', "generate", Default = true, HelpText = "Run generate when building.")]
         public bool? Generate { get; set; } = true;
 
@@ -22,30 +19,16 @@ public sealed class Build : Command<Build.Options> {
     }
 
     private static Step[] Steps = [
+        new CreateDirs(),
+        new DownloadPkgs(),
+        new ExtractAsm(),
+        new GenDocs(),
         new BuildDocs(),
         new FixYaml(),
         new CopyDocs(),
     ];
 
-    public override async Task Execute(Options options) {
-        if (options.Decompile == true) {
-            await new Decompile().Run(
-                new Decompile.Options {
-                    All = options.All,
-                    Project = options.Project,
-                }
-            );
-        }
-
-        if (options.Generate == true) {
-            await new Generate().Run(
-                new Generate.Options {
-                    All = options.All,
-                    Project = options.Project,
-                }
-            );
-        }
-
+    protected override async Task Execute(Options options) {
         if (options.Project != null) {
             var cfg = GetConfig(options.Project);
 

@@ -6,13 +6,11 @@ using Pastel;
 namespace DocumentationWarning.Logging;
 
 public sealed class Logger(Type type) {
-    private readonly Type type = type;
-
     private static string Format(string format, params object?[] args) {
         return args.Aggregate(format, (current, arg) => current.ReplaceFirst("{}", arg?.ToString()!));
     }
 
-    public void Log(string prefix, ConsoleColor color, string format, params object?[] args) {
+    private void Log(string prefix, ConsoleColor color, string format, params object?[] args) {
         var str = Format(format, args);
         var ty = $"[{type.Name}] ".Pastel(ConsoleColor.Magenta);
         var pfx = prefix.Pastel(color).PastelBg("#3f3f3f") + ": ";

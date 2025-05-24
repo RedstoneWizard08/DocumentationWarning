@@ -9,10 +9,9 @@ namespace DocumentationWarning.Config;
 public class ProjectConfig {
     public required GameConfig Game;
     public required UrlConfig Urls;
-    public required FrameworkConfig Framework;
-    public List<string> Assemblies = [];
-    public List<Dependency> Dependencies = [];
-    public Dictionary<string, List<string>> Remove = [];
+    public required string Framework;
+    public required List<string> Assemblies = [];
+    public required List<Dependency> Dependencies = [];
 
     [JsonIgnore] public string ProjectDir = "";
     [JsonProperty("tempDir")] public string TempDirStr = "Temp";
@@ -42,7 +41,7 @@ public class ProjectConfig {
             );
         }
 
-        if (me.ProjectDir?.Length == 0) {
+        if (me.ProjectDir.Length == 0) {
             me.ProjectDir = dir;
         }
 
