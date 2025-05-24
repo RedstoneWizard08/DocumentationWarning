@@ -54,26 +54,15 @@ public sealed partial class TemplateProcessor : WithLogger {
         };
     }
 
-    public bool GameHasWebsite {
-        get => GameWebsite != null;
-    }
+    private bool GameHasWebsite => GameWebsite != null;
+    private bool GameHasThunderstore => ThunderstoreUrl != null;
+    private int ImageWidth => GetScaledWidth(BannerSize);
+    private int ImageWidthSmall => GetScaledWidthSmall(BannerSize);
 
-    public bool GameHasThunderstore {
-        get => ThunderstoreUrl != null;
-    }
+    private const int ScaledImageHeight = 64;
+    private const int ScaledImageHeightSmall = 48;
 
-    public int ImageWidth {
-        get => GetScaledWidth(BannerSize);
-    }
-
-    public int ImageWidthSmall {
-        get => GetScaledWidthSmall(BannerSize);
-    }
-
-    public const int ScaledImageHeight = 64;
-    public const int ScaledImageHeightSmall = 48;
-
-    public Dictionary<string, string> Replacements {
+    private Dictionary<string, string> Replacements {
         get {
             var dict = new Dictionary<string, string> {
                 { "Site", Site },
