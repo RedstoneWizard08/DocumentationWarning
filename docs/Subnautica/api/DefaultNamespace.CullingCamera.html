@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CullingCamera | Subnautica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CullingCamera | Subnautica ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.CullingCamera">
+
+
+
+  <h1 id="DefaultNamespace_CullingCamera" data-uid="DefaultNamespace.CullingCamera" class="text-break">
+Class CullingCamera  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[RequireComponent(typeof(Camera))]
+public class CullingCamera : MonoBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><span class="xref">CullingCamera</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_CullingCamera__ctor_" data-uid="DefaultNamespace.CullingCamera.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera__ctor" data-uid="DefaultNamespace.CullingCamera.#ctor">
+  CullingCamera()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CullingCamera()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_blitMaterial" data-uid="DefaultNamespace.CullingCamera.blitMaterial">
+  blitMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public Material blitMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_boundingBoxesBuffer" data-uid="DefaultNamespace.CullingCamera.boundingBoxesBuffer">
+  boundingBoxesBuffer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComputeBuffer boundingBoxesBuffer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/ComputeBuffer.html">ComputeBuffer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_camera" data-uid="DefaultNamespace.CullingCamera.camera">
+  camera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public Camera camera</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_computeShader" data-uid="DefaultNamespace.CullingCamera.computeShader">
+  computeShader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public ComputeShader computeShader</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/ComputeShader.html">ComputeShader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_computeShaderKernelId" data-uid="DefaultNamespace.CullingCamera.computeShaderKernelId">
+  computeShaderKernelId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int computeShaderKernelId</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_depthOnlyMaterial" data-uid="DefaultNamespace.CullingCamera.depthOnlyMaterial">
+  depthOnlyMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public Material depthOnlyMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_depthTextureHeight" data-uid="DefaultNamespace.CullingCamera.depthTextureHeight">
+  depthTextureHeight
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int depthTextureHeight = 256</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_depthTextureWidth" data-uid="DefaultNamespace.CullingCamera.depthTextureWidth">
+  depthTextureWidth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int depthTextureWidth = 512</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_downsampledDepthTextures" data-uid="DefaultNamespace.CullingCamera.downsampledDepthTextures">
+  downsampledDepthTextures
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderTexture[] downsampledDepthTextures</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RenderTexture</span>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_main" data-uid="DefaultNamespace.CullingCamera.main">
+  main
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CullingCamera main</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CullingCamera.html">CullingCamera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_maxOccludees" data-uid="DefaultNamespace.CullingCamera.maxOccludees">
+  maxOccludees
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int maxOccludees = 3000</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_mipDownsampleMaterial" data-uid="DefaultNamespace.CullingCamera.mipDownsampleMaterial">
+  mipDownsampleMaterial
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public Material mipDownsampleMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_mipDownsampleMaterialInstance" data-uid="DefaultNamespace.CullingCamera.mipDownsampleMaterialInstance">
+  mipDownsampleMaterialInstance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material mipDownsampleMaterialInstance</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Material</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_numRenderersCulled" data-uid="DefaultNamespace.CullingCamera.numRenderersCulled">
+  numRenderersCulled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int numRenderersCulled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_occludeeList" data-uid="DefaultNamespace.CullingCamera.occludeeList">
+  occludeeList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CullingOccludeeList occludeeList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CullingOccludeeList.html">CullingOccludeeList</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_occluderList" data-uid="DefaultNamespace.CullingCamera.occluderList">
+  occluderList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CullingOccluderList occluderList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CullingOccluderList.html">CullingOccluderList</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_requireExtraOcclusionPass" data-uid="DefaultNamespace.CullingCamera.requireExtraOcclusionPass">
+  requireExtraOcclusionPass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool requireExtraOcclusionPass</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_visibilityResultsBuffer" data-uid="DefaultNamespace.CullingCamera.visibilityResultsBuffer">
+  visibilityResultsBuffer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComputeBuffer visibilityResultsBuffer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/ComputeBuffer.html">ComputeBuffer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_waitingOnResults" data-uid="DefaultNamespace.CullingCamera.waitingOnResults">
+  waitingOnResults
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool waitingOnResults</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_CullingCamera_wboit" data-uid="DefaultNamespace.CullingCamera.wboit">
+  wboit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public WBOIT wboit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WBOIT.html">WBOIT</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_CullingCamera_supported_" data-uid="DefaultNamespace.CullingCamera.supported*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_supported" data-uid="DefaultNamespace.CullingCamera.supported">
+  supported
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool supported { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_CullingCamera_ApplyComputeShaderResults_" data-uid="DefaultNamespace.CullingCamera.ApplyComputeShaderResults*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_ApplyComputeShaderResults_Unity_Collections_NativeArray_CullingGPUDataStructures_OcclusionResult__" data-uid="DefaultNamespace.CullingCamera.ApplyComputeShaderResults(Unity.Collections.NativeArray{CullingGPUDataStructures.OcclusionResult})">
+  ApplyComputeShaderResults(NativeArray&lt;OcclusionResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyComputeShaderResults(NativeArray&lt;CullingGPUDataStructures.OcclusionResult&gt; results)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>results</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="CullingGPUDataStructures.html">CullingGPUDataStructures</a>.<a class="xref" href="CullingGPUDataStructures.OcclusionResult.html">OcclusionResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_Awake_" data-uid="DefaultNamespace.CullingCamera.Awake*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_Awake" data-uid="DefaultNamespace.CullingCamera.Awake">
+  Awake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Awake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_CanSkipOcclusion_" data-uid="DefaultNamespace.CullingCamera.CanSkipOcclusion*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_CanSkipOcclusion_System_Boolean_" data-uid="DefaultNamespace.CullingCamera.CanSkipOcclusion(System.Boolean)">
+  CanSkipOcclusion(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanSkipOcclusion(bool anyOccludersRendered)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>anyOccludersRendered</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_DebugRender_" data-uid="DefaultNamespace.CullingCamera.DebugRender*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_DebugRender_UnityEngine_Rendering_CommandBuffer_" data-uid="DefaultNamespace.CullingCamera.DebugRender(UnityEngine.Rendering.CommandBuffer)">
+  DebugRender(CommandBuffer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DebugRender(CommandBuffer cb)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cb</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Rendering.CommandBuffer.html">CommandBuffer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_DeregisterOccludee_" data-uid="DefaultNamespace.CullingCamera.DeregisterOccludee*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_DeregisterOccludee_CullingOccludee_" data-uid="DefaultNamespace.CullingCamera.DeregisterOccludee(CullingOccludee)">
+  DeregisterOccludee(CullingOccludee)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeregisterOccludee(CullingOccludee occludee)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>occludee</code> <a class="xref" href="DefaultNamespace.CullingOccludee.html">CullingOccludee</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_DeregisterOccluder_" data-uid="DefaultNamespace.CullingCamera.DeregisterOccluder*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_DeregisterOccluder_CullingOccluder_" data-uid="DefaultNamespace.CullingCamera.DeregisterOccluder(CullingOccluder)">
+  DeregisterOccluder(CullingOccluder)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeregisterOccluder(CullingOccluder occluder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>occluder</code> <a class="xref" href="DefaultNamespace.CullingOccluder.html">CullingOccluder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_DownsampleDepthTexture_" data-uid="DefaultNamespace.CullingCamera.DownsampleDepthTexture*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_DownsampleDepthTexture" data-uid="DefaultNamespace.CullingCamera.DownsampleDepthTexture">
+  DownsampleDepthTexture()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DownsampleDepthTexture()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_ExecuteComputeShader_" data-uid="DefaultNamespace.CullingCamera.ExecuteComputeShader*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_ExecuteComputeShader" data-uid="DefaultNamespace.CullingCamera.ExecuteComputeShader">
+  ExecuteComputeShader()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ExecuteComputeShader()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_GatherBoundingBoxes_" data-uid="DefaultNamespace.CullingCamera.GatherBoundingBoxes*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_GatherBoundingBoxes" data-uid="DefaultNamespace.CullingCamera.GatherBoundingBoxes">
+  GatherBoundingBoxes()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GatherBoundingBoxes()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_GenerateDepthTextureMipChain_" data-uid="DefaultNamespace.CullingCamera.GenerateDepthTextureMipChain*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_GenerateDepthTextureMipChain" data-uid="DefaultNamespace.CullingCamera.GenerateDepthTextureMipChain">
+  GenerateDepthTextureMipChain()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GenerateDepthTextureMipChain()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_OnComputeShaderResultsReady_" data-uid="DefaultNamespace.CullingCamera.OnComputeShaderResultsReady*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_OnComputeShaderResultsReady_UnityEngine_Rendering_AsyncGPUReadbackRequest_" data-uid="DefaultNamespace.CullingCamera.OnComputeShaderResultsReady(UnityEngine.Rendering.AsyncGPUReadbackRequest)">
+  OnComputeShaderResultsReady(AsyncGPUReadbackRequest)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnComputeShaderResultsReady(AsyncGPUReadbackRequest request)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Rendering.AsyncGPUReadbackRequest.html">AsyncGPUReadbackRequest</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_OnDestroy_" data-uid="DefaultNamespace.CullingCamera.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_OnDestroy" data-uid="DefaultNamespace.CullingCamera.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_OnDisable_" data-uid="DefaultNamespace.CullingCamera.OnDisable*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_OnDisable" data-uid="DefaultNamespace.CullingCamera.OnDisable">
+  OnDisable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDisable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_OnPreRender_" data-uid="DefaultNamespace.CullingCamera.OnPreRender*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_OnPreRender" data-uid="DefaultNamespace.CullingCamera.OnPreRender">
+  OnPreRender()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPreRender()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_RegisterOccludee_" data-uid="DefaultNamespace.CullingCamera.RegisterOccludee*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_RegisterOccludee_CullingOccludee_" data-uid="DefaultNamespace.CullingCamera.RegisterOccludee(CullingOccludee)">
+  RegisterOccludee(CullingOccludee)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterOccludee(CullingOccludee occludee)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>occludee</code> <a class="xref" href="DefaultNamespace.CullingOccludee.html">CullingOccludee</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_RegisterOccluder_" data-uid="DefaultNamespace.CullingCamera.RegisterOccluder*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_RegisterOccluder_CullingOccluder_" data-uid="DefaultNamespace.CullingCamera.RegisterOccluder(CullingOccluder)">
+  RegisterOccluder(CullingOccluder)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterOccluder(CullingOccluder occluder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>occluder</code> <a class="xref" href="DefaultNamespace.CullingOccluder.html">CullingOccluder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_RenderOccluders_" data-uid="DefaultNamespace.CullingCamera.RenderOccluders*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_RenderOccluders" data-uid="DefaultNamespace.CullingCamera.RenderOccluders">
+  RenderOccluders()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RenderOccluders()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_SetWaitingOnResults_" data-uid="DefaultNamespace.CullingCamera.SetWaitingOnResults*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_SetWaitingOnResults_System_Boolean_" data-uid="DefaultNamespace.CullingCamera.SetWaitingOnResults(System.Boolean)">
+  SetWaitingOnResults(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetWaitingOnResults(bool waiting)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waiting</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CullingCamera_Start_" data-uid="DefaultNamespace.CullingCamera.Start*"></a>
+
+  <h3 id="DefaultNamespace_CullingCamera_Start" data-uid="DefaultNamespace.CullingCamera.Start">
+  Start()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

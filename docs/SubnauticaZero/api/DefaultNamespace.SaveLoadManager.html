@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SaveLoadManager | Subnautica: Below Zero </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SaveLoadManager | Subnautica: Below Zero ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.SaveLoadManager">
+
+
+
+  <h1 id="DefaultNamespace_SaveLoadManager" data-uid="DefaultNamespace.SaveLoadManager" class="text-break">
+Class SaveLoadManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SaveLoadManager : MonoBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><span class="xref">SaveLoadManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_SaveLoadManager__ctor_" data-uid="DefaultNamespace.SaveLoadManager.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager__ctor" data-uid="DefaultNamespace.SaveLoadManager.#ctor">
+  SaveLoadManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SaveLoadManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager__main" data-uid="DefaultNamespace.SaveLoadManager._main">
+  _main
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SaveLoadManager _main</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.SaveLoadManager.html">SaveLoadManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_accumulateTimePlayed" data-uid="DefaultNamespace.SaveLoadManager.accumulateTimePlayed">
+  accumulateTimePlayed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool accumulateTimePlayed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_allowWritingFiles" data-uid="DefaultNamespace.SaveLoadManager.allowWritingFiles">
+  allowWritingFiles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool allowWritingFiles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_currentSlot" data-uid="DefaultNamespace.SaveLoadManager.currentSlot">
+  currentSlot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string currentSlot</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_currentVersion" data-uid="DefaultNamespace.SaveLoadManager.currentVersion">
+  currentVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int currentVersion = 2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_firstStart" data-uid="DefaultNamespace.SaveLoadManager.firstStart">
+  firstStart
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long firstStart</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_freezerId" data-uid="DefaultNamespace.SaveLoadManager.freezerId">
+  freezerId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const FreezeTime.Id freezerId = Save</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.FreezeTime.html">FreezeTime</a>.<a class="xref" href="UWE.FreezeTime.Id.html">Id</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_gameInfoCache" data-uid="DefaultNamespace.SaveLoadManager.gameInfoCache">
+  gameInfoCache
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Dictionary&lt;string, SaveLoadManager.GameInfo&gt; gameInfoCache</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.GameInfo.html">GameInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_gameInfoFileName" data-uid="DefaultNamespace.SaveLoadManager.gameInfoFileName">
+  gameInfoFileName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string gameInfoFileName = &quot;gameinfo.json&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_inputHandler" data-uid="DefaultNamespace.SaveLoadManager.inputHandler">
+  inputHandler
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FreezeTimeInputHandler inputHandler</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FreezeTimeInputHandler.html">FreezeTimeInputHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_lastSaveTime" data-uid="DefaultNamespace.SaveLoadManager.lastSaveTime">
+  lastSaveTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime lastSaveTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_loadedGameTime" data-uid="DefaultNamespace.SaveLoadManager.loadedGameTime">
+  loadedGameTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float loadedGameTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_screenshotFileName" data-uid="DefaultNamespace.SaveLoadManager.screenshotFileName">
+  screenshotFileName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string screenshotFileName = &quot;screenshot.jpg&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_sessionId" data-uid="DefaultNamespace.SaveLoadManager.sessionId">
+  sessionId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string sessionId</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_temporarySavePath" data-uid="DefaultNamespace.SaveLoadManager.temporarySavePath">
+  temporarySavePath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string temporarySavePath</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_timePlayedThisSession" data-uid="DefaultNamespace.SaveLoadManager.timePlayedThisSession">
+  timePlayedThisSession
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timePlayedThisSession</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_SaveLoadManager_MaxSlotsAllowed_" data-uid="DefaultNamespace.SaveLoadManager.MaxSlotsAllowed*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_MaxSlotsAllowed" data-uid="DefaultNamespace.SaveLoadManager.MaxSlotsAllowed">
+  MaxSlotsAllowed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxSlotsAllowed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_isLoading_" data-uid="DefaultNamespace.SaveLoadManager.isLoading*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_isLoading" data-uid="DefaultNamespace.SaveLoadManager.isLoading">
+  isLoading
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isLoading { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_isSaving_" data-uid="DefaultNamespace.SaveLoadManager.isSaving*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_isSaving" data-uid="DefaultNamespace.SaveLoadManager.isSaving">
+  isSaving
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isSaving { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_main_" data-uid="DefaultNamespace.SaveLoadManager.main*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_main" data-uid="DefaultNamespace.SaveLoadManager.main">
+  main
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SaveLoadManager main { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.SaveLoadManager.html">SaveLoadManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_timePlayedTotal_" data-uid="DefaultNamespace.SaveLoadManager.timePlayedTotal*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_timePlayedTotal" data-uid="DefaultNamespace.SaveLoadManager.timePlayedTotal">
+  timePlayedTotal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timePlayedTotal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_SaveLoadManager_Awake_" data-uid="DefaultNamespace.SaveLoadManager.Awake*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_Awake" data-uid="DefaultNamespace.SaveLoadManager.Awake">
+  Awake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Awake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_CancelSave_" data-uid="DefaultNamespace.SaveLoadManager.CancelSave*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_CancelSave" data-uid="DefaultNamespace.SaveLoadManager.CancelSave">
+  CancelSave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CancelSave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_ClearSlotAsync_" data-uid="DefaultNamespace.SaveLoadManager.ClearSlotAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_ClearSlotAsync_System_String_" data-uid="DefaultNamespace.SaveLoadManager.ClearSlotAsync(System.String)">
+  ClearSlotAsync(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserStorageUtils.AsyncOperation ClearSlotAsync(string slotName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>slotName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UserStorageUtils.html">UserStorageUtils</a>.<a class="xref" href="UserStorageUtils.AsyncOperation.html">AsyncOperation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_ClearTemporarySave_" data-uid="DefaultNamespace.SaveLoadManager.ClearTemporarySave*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_ClearTemporarySave" data-uid="DefaultNamespace.SaveLoadManager.ClearTemporarySave">
+  ClearTemporarySave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearTemporarySave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_ConvertResult_" data-uid="DefaultNamespace.SaveLoadManager.ConvertResult*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_ConvertResult_UserStorageUtils_Result_" data-uid="DefaultNamespace.SaveLoadManager.ConvertResult(UserStorageUtils.Result)">
+  ConvertResult(Result)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SaveLoadManager.Error ConvertResult(UserStorageUtils.Result result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="UserStorageUtils.html">UserStorageUtils</a>.<a class="xref" href="UserStorageUtils.Result.html">Result</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.Error.html">Error</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_CreateSlotAsync_" data-uid="DefaultNamespace.SaveLoadManager.CreateSlotAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_CreateSlotAsync" data-uid="DefaultNamespace.SaveLoadManager.CreateSlotAsync">
+  CreateSlotAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoroutineTask&lt;SaveLoadManager.CreateResult&gt; CreateSlotAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CoroutineTask-1.html">CoroutineTask</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.CreateResult.html">CreateResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_CreateSlotAsync_" data-uid="DefaultNamespace.SaveLoadManager.CreateSlotAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_CreateSlotAsync_IOut_SaveLoadManager_CreateResult__" data-uid="DefaultNamespace.SaveLoadManager.CreateSlotAsync(IOut{SaveLoadManager.CreateResult})">
+  CreateSlotAsync(IOut&lt;CreateResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator CreateSlotAsync(IOut&lt;SaveLoadManager.CreateResult&gt; result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="DefaultNamespace.IOut-1.html">IOut</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.CreateResult.html">CreateResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_CreateTemporarySave_" data-uid="DefaultNamespace.SaveLoadManager.CreateTemporarySave*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_CreateTemporarySave" data-uid="DefaultNamespace.SaveLoadManager.CreateTemporarySave">
+  CreateTemporarySave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CreateTemporarySave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_Deinitialize_" data-uid="DefaultNamespace.SaveLoadManager.Deinitialize*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_Deinitialize" data-uid="DefaultNamespace.SaveLoadManager.Deinitialize">
+  Deinitialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Deinitialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_DeleteFileInTemporaryStorage_" data-uid="DefaultNamespace.SaveLoadManager.DeleteFileInTemporaryStorage*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_DeleteFileInTemporaryStorage_System_String_" data-uid="DefaultNamespace.SaveLoadManager.DeleteFileInTemporaryStorage(System.String)">
+  DeleteFileInTemporaryStorage(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteFileInTemporaryStorage(string fullFilePath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fullFilePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_DeleteFilesInSlot_" data-uid="DefaultNamespace.SaveLoadManager.DeleteFilesInSlot*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_DeleteFilesInSlot_System_String_System_Collections_Generic_List_System_String__" data-uid="DefaultNamespace.SaveLoadManager.DeleteFilesInSlot(System.String,System.Collections.Generic.List{System.String})">
+  DeleteFilesInSlot(string, List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserStorageUtils.AsyncOperation DeleteFilesInSlot(string slotName, List&lt;string&gt; filePaths)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>slotName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>filePaths</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UserStorageUtils.html">UserStorageUtils</a>.<a class="xref" href="UserStorageUtils.AsyncOperation.html">AsyncOperation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_DeleteFilesInTemporaryStorage_" data-uid="DefaultNamespace.SaveLoadManager.DeleteFilesInTemporaryStorage*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_DeleteFilesInTemporaryStorage_System_Collections_Generic_List_System_String__" data-uid="DefaultNamespace.SaveLoadManager.DeleteFilesInTemporaryStorage(System.Collections.Generic.List{System.String})">
+  DeleteFilesInTemporaryStorage(List&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteFilesInTemporaryStorage(List&lt;string&gt; filePaths)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filePaths</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_DeleteFilesInTemporaryStorage_" data-uid="DefaultNamespace.SaveLoadManager.DeleteFilesInTemporaryStorage*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_DeleteFilesInTemporaryStorage_System_String_" data-uid="DefaultNamespace.SaveLoadManager.DeleteFilesInTemporaryStorage(System.String)">
+  DeleteFilesInTemporaryStorage(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteFilesInTemporaryStorage(string searchPattern)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>searchPattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetActiveSlotNames_" data-uid="DefaultNamespace.SaveLoadManager.GetActiveSlotNames*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetActiveSlotNames" data-uid="DefaultNamespace.SaveLoadManager.GetActiveSlotNames">
+  GetActiveSlotNames()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] GetActiveSlotNames()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetAllowWritingFiles_" data-uid="DefaultNamespace.SaveLoadManager.GetAllowWritingFiles*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetAllowWritingFiles" data-uid="DefaultNamespace.SaveLoadManager.GetAllowWritingFiles">
+  GetAllowWritingFiles()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetAllowWritingFiles()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetCurrentSlot_" data-uid="DefaultNamespace.SaveLoadManager.GetCurrentSlot*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetCurrentSlot" data-uid="DefaultNamespace.SaveLoadManager.GetCurrentSlot">
+  GetCurrentSlot()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetCurrentSlot()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetDeleteMetaFileName_" data-uid="DefaultNamespace.SaveLoadManager.GetDeleteMetaFileName*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetDeleteMetaFileName_System_String_" data-uid="DefaultNamespace.SaveLoadManager.GetDeleteMetaFileName(System.String)">
+  GetDeleteMetaFileName(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetDeleteMetaFileName(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetFileNameForDeleteMetaFileName_" data-uid="DefaultNamespace.SaveLoadManager.GetFileNameForDeleteMetaFileName*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetFileNameForDeleteMetaFileName_System_String_" data-uid="DefaultNamespace.SaveLoadManager.GetFileNameForDeleteMetaFileName(System.String)">
+  GetFileNameForDeleteMetaFileName(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetFileNameForDeleteMetaFileName(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetGameInfo_" data-uid="DefaultNamespace.SaveLoadManager.GetGameInfo*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetGameInfo_System_String_" data-uid="DefaultNamespace.SaveLoadManager.GetGameInfo(System.String)">
+  GetGameInfo(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SaveLoadManager.GameInfo GetGameInfo(string slotName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>slotName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.GameInfo.html">GameInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetPossibleSlotGameModes_" data-uid="DefaultNamespace.SaveLoadManager.GetPossibleSlotGameModes*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetPossibleSlotGameModes" data-uid="DefaultNamespace.SaveLoadManager.GetPossibleSlotGameModes">
+  GetPossibleSlotGameModes()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameMode[] GetPossibleSlotGameModes()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GameMode.html">GameMode</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetPossibleSlotNames_" data-uid="DefaultNamespace.SaveLoadManager.GetPossibleSlotNames*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetPossibleSlotNames" data-uid="DefaultNamespace.SaveLoadManager.GetPossibleSlotNames">
+  GetPossibleSlotNames()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] GetPossibleSlotNames()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetResultForException_" data-uid="DefaultNamespace.SaveLoadManager.GetResultForException*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetResultForException_System_Exception_" data-uid="DefaultNamespace.SaveLoadManager.GetResultForException(System.Exception)">
+  GetResultForException(Exception)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SaveLoadManager.Error GetResultForException(Exception exception)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>exception</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.Error.html">Error</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetTemporarySavePath_" data-uid="DefaultNamespace.SaveLoadManager.GetTemporarySavePath*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetTemporarySavePath" data-uid="DefaultNamespace.SaveLoadManager.GetTemporarySavePath">
+  GetTemporarySavePath()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetTemporarySavePath()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_GetTemporarySavePathRoot_" data-uid="DefaultNamespace.SaveLoadManager.GetTemporarySavePathRoot*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_GetTemporarySavePathRoot" data-uid="DefaultNamespace.SaveLoadManager.GetTemporarySavePathRoot">
+  GetTemporarySavePathRoot()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetTemporarySavePathRoot()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_InitializeNewGame_" data-uid="DefaultNamespace.SaveLoadManager.InitializeNewGame*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_InitializeNewGame" data-uid="DefaultNamespace.SaveLoadManager.InitializeNewGame">
+  InitializeNewGame()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitializeNewGame()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_IsDeleteMetaFileName_" data-uid="DefaultNamespace.SaveLoadManager.IsDeleteMetaFileName*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_IsDeleteMetaFileName_System_String_" data-uid="DefaultNamespace.SaveLoadManager.IsDeleteMetaFileName(System.String)">
+  IsDeleteMetaFileName(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsDeleteMetaFileName(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_LoadAsync_" data-uid="DefaultNamespace.SaveLoadManager.LoadAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_LoadAsync" data-uid="DefaultNamespace.SaveLoadManager.LoadAsync">
+  LoadAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoroutineTask&lt;SaveLoadManager.LoadResult&gt; LoadAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CoroutineTask-1.html">CoroutineTask</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.LoadResult.html">LoadResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_LoadAsync_" data-uid="DefaultNamespace.SaveLoadManager.LoadAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_LoadAsync_IOut_SaveLoadManager_LoadResult__" data-uid="DefaultNamespace.SaveLoadManager.LoadAsync(IOut{SaveLoadManager.LoadResult})">
+  LoadAsync(IOut&lt;LoadResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator LoadAsync(IOut&lt;SaveLoadManager.LoadResult&gt; result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="DefaultNamespace.IOut-1.html">IOut</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.LoadResult.html">LoadResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_LoadSlotsAsync_" data-uid="DefaultNamespace.SaveLoadManager.LoadSlotsAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_LoadSlotsAsync" data-uid="DefaultNamespace.SaveLoadManager.LoadSlotsAsync">
+  LoadSlotsAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoroutineTask&lt;SaveLoadManager.LoadResult&gt; LoadSlotsAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CoroutineTask-1.html">CoroutineTask</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.LoadResult.html">LoadResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_LoadSlotsAsync_" data-uid="DefaultNamespace.SaveLoadManager.LoadSlotsAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_LoadSlotsAsync_UserStorage_System_Collections_Generic_Dictionary_System_String_SaveLoadManager_GameInfo__" data-uid="DefaultNamespace.SaveLoadManager.LoadSlotsAsync(UserStorage,System.Collections.Generic.Dictionary{System.String,SaveLoadManager.GameInfo})">
+  LoadSlotsAsync(UserStorage, Dictionary&lt;string, GameInfo&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoroutineTask&lt;SaveLoadManager.LoadResult&gt; LoadSlotsAsync(UserStorage userStorage, Dictionary&lt;string, SaveLoadManager.GameInfo&gt; infoCache)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userStorage</code> <a class="xref" href="DefaultNamespace.UserStorage.html">UserStorage</a></dt>
+    <dd></dd>
+    <dt><code>infoCache</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.GameInfo.html">GameInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CoroutineTask-1.html">CoroutineTask</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.LoadResult.html">LoadResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_LoadSlotsAsync_" data-uid="DefaultNamespace.SaveLoadManager.LoadSlotsAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_LoadSlotsAsync_UserStorage_System_Collections_Generic_Dictionary_System_String_SaveLoadManager_GameInfo__IOut_SaveLoadManager_LoadResult__" data-uid="DefaultNamespace.SaveLoadManager.LoadSlotsAsync(UserStorage,System.Collections.Generic.Dictionary{System.String,SaveLoadManager.GameInfo},IOut{SaveLoadManager.LoadResult})">
+  LoadSlotsAsync(UserStorage, Dictionary&lt;string, GameInfo&gt;, IOut&lt;LoadResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator LoadSlotsAsync(UserStorage userStorage, Dictionary&lt;string, SaveLoadManager.GameInfo&gt; infoCache, IOut&lt;SaveLoadManager.LoadResult&gt; result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userStorage</code> <a class="xref" href="DefaultNamespace.UserStorage.html">UserStorage</a></dt>
+    <dd></dd>
+    <dt><code>infoCache</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.GameInfo.html">GameInfo</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="DefaultNamespace.IOut-1.html">IOut</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.LoadResult.html">LoadResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_NotifySaveInProgress_" data-uid="DefaultNamespace.SaveLoadManager.NotifySaveInProgress*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_NotifySaveInProgress_System_Boolean_" data-uid="DefaultNamespace.SaveLoadManager.NotifySaveInProgress(System.Boolean)">
+  NotifySaveInProgress(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifySaveInProgress(bool isInProgress)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isInProgress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_OnDestroy_" data-uid="DefaultNamespace.SaveLoadManager.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_OnDestroy" data-uid="DefaultNamespace.SaveLoadManager.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_RegisterSaveGame_" data-uid="DefaultNamespace.SaveLoadManager.RegisterSaveGame*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_RegisterSaveGame_System_String_UserStorageUtils_LoadOperation_System_Collections_Generic_Dictionary_System_String_SaveLoadManager_GameInfo__" data-uid="DefaultNamespace.SaveLoadManager.RegisterSaveGame(System.String,UserStorageUtils.LoadOperation,System.Collections.Generic.Dictionary{System.String,SaveLoadManager.GameInfo})">
+  RegisterSaveGame(string, LoadOperation, Dictionary&lt;string, GameInfo&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterSaveGame(string slotName, UserStorageUtils.LoadOperation loadOperation, Dictionary&lt;string, SaveLoadManager.GameInfo&gt; infoCache)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>slotName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>loadOperation</code> <a class="xref" href="UserStorageUtils.html">UserStorageUtils</a>.<a class="xref" href="UserStorageUtils.LoadOperation.html">LoadOperation</a></dt>
+    <dd></dd>
+    <dt><code>infoCache</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.GameInfo.html">GameInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_RenameFilesInTemporaryStorage_" data-uid="DefaultNamespace.SaveLoadManager.RenameFilesInTemporaryStorage*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_RenameFilesInTemporaryStorage_System_String_System_String_System_Func_Platform_IO_DirectoryInfo_System_String__" data-uid="DefaultNamespace.SaveLoadManager.RenameFilesInTemporaryStorage(System.String,System.String,System.Func{Platform.IO.DirectoryInfo,System.String})">
+  RenameFilesInTemporaryStorage(string, string, Func&lt;DirectoryInfo, string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RenameFilesInTemporaryStorage(string subDir, string searchPattern, Func&lt;DirectoryInfo, string&gt; getNewName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>subDir</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>searchPattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>getNewName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<span class="xref">DirectoryInfo</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_SanityCheck_" data-uid="DefaultNamespace.SaveLoadManager.SanityCheck*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_SanityCheck_System_String__" data-uid="DefaultNamespace.SaveLoadManager.SanityCheck(System.String@)">
+  SanityCheck(out string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SanityCheck(out string error)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>error</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_SaveToDeepStorageAsync_" data-uid="DefaultNamespace.SaveLoadManager.SaveToDeepStorageAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_SaveToDeepStorageAsync" data-uid="DefaultNamespace.SaveLoadManager.SaveToDeepStorageAsync">
+  SaveToDeepStorageAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoroutineTask&lt;SaveLoadManager.SaveResult&gt; SaveToDeepStorageAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CoroutineTask-1.html">CoroutineTask</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.SaveResult.html">SaveResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_SaveToDeepStorageAsync_" data-uid="DefaultNamespace.SaveLoadManager.SaveToDeepStorageAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_SaveToDeepStorageAsync_IOut_SaveLoadManager_SaveResult__" data-uid="DefaultNamespace.SaveLoadManager.SaveToDeepStorageAsync(IOut{SaveLoadManager.SaveResult})">
+  SaveToDeepStorageAsync(IOut&lt;SaveResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator SaveToDeepStorageAsync(IOut&lt;SaveLoadManager.SaveResult&gt; result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="DefaultNamespace.IOut-1.html">IOut</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.SaveResult.html">SaveResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_SaveToTemporaryStorageAsync_" data-uid="DefaultNamespace.SaveLoadManager.SaveToTemporaryStorageAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_SaveToTemporaryStorageAsync_IOut_SaveLoadManager_SaveResult__UnityEngine_Texture2D_" data-uid="DefaultNamespace.SaveLoadManager.SaveToTemporaryStorageAsync(IOut{SaveLoadManager.SaveResult},UnityEngine.Texture2D)">
+  SaveToTemporaryStorageAsync(IOut&lt;SaveResult&gt;, Texture2D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator SaveToTemporaryStorageAsync(IOut&lt;SaveLoadManager.SaveResult&gt; result, Texture2D screenshot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="DefaultNamespace.IOut-1.html">IOut</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.SaveResult.html">SaveResult</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>screenshot</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Texture2D.html">Texture2D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_SaveToTemporaryStorageAsync_" data-uid="DefaultNamespace.SaveLoadManager.SaveToTemporaryStorageAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_SaveToTemporaryStorageAsync_UnityEngine_Texture2D_" data-uid="DefaultNamespace.SaveLoadManager.SaveToTemporaryStorageAsync(UnityEngine.Texture2D)">
+  SaveToTemporaryStorageAsync(Texture2D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoroutineTask&lt;SaveLoadManager.SaveResult&gt; SaveToTemporaryStorageAsync(Texture2D screenshot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>screenshot</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Texture2D.html">Texture2D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CoroutineTask-1.html">CoroutineTask</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.SaveResult.html">SaveResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_SaveWorldStateToTemporaryStorageAsync_" data-uid="DefaultNamespace.SaveLoadManager.SaveWorldStateToTemporaryStorageAsync*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_SaveWorldStateToTemporaryStorageAsync_IOut_SaveLoadManager_SaveResult__" data-uid="DefaultNamespace.SaveLoadManager.SaveWorldStateToTemporaryStorageAsync(IOut{SaveLoadManager.SaveResult})">
+  SaveWorldStateToTemporaryStorageAsync(IOut&lt;SaveResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerator SaveWorldStateToTemporaryStorageAsync(IOut&lt;SaveLoadManager.SaveResult&gt; result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="DefaultNamespace.IOut-1.html">IOut</a>&lt;<a class="xref" href="SaveLoadManager.html">SaveLoadManager</a>.<a class="xref" href="SaveLoadManager.SaveResult.html">SaveResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_SetCurrentSlot_" data-uid="DefaultNamespace.SaveLoadManager.SetCurrentSlot*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_SetCurrentSlot_System_String_" data-uid="DefaultNamespace.SaveLoadManager.SetCurrentSlot(System.String)">
+  SetCurrentSlot(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCurrentSlot(string _currentSlot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>_currentSlot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_StartNewSession_" data-uid="DefaultNamespace.SaveLoadManager.StartNewSession*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_StartNewSession" data-uid="DefaultNamespace.SaveLoadManager.StartNewSession">
+  StartNewSession()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StartNewSession()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SaveLoadManager_Update_" data-uid="DefaultNamespace.SaveLoadManager.Update*"></a>
+
+  <h3 id="DefaultNamespace_SaveLoadManager_Update" data-uid="DefaultNamespace.SaveLoadManager.Update">
+  Update()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_SaveLoadManager_notificationSaveInProgress" data-uid="DefaultNamespace.SaveLoadManager.notificationSaveInProgress">
+  notificationSaveInProgress
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event Action&lt;bool&gt; notificationSaveInProgress</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Pickupable | Subnautica: Below Zero </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Pickupable | Subnautica: Below Zero ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.Pickupable">
+
+
+
+  <h1 id="DefaultNamespace_Pickupable" data-uid="DefaultNamespace.Pickupable" class="text-break">
+Class Pickupable  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoContract]
+[ProtoInclude(1010, typeof(CreepvineSeed))]
+[DisallowMultipleComponent]
+public class Pickupable : HandTarget, IProtoEventListenerAsync, IProtoTreeEventListener, IHandTarget, ILocalizationCheckable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><a class="xref" href="DefaultNamespace.HandTarget.html">HandTarget</a></div>
+      <div><span class="xref">Pickupable</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.IProtoEventListenerAsync.html">IProtoEventListenerAsync</a></div>
+      <div><a class="xref" href="DefaultNamespace.IProtoTreeEventListener.html">IProtoTreeEventListener</a></div>
+      <div><a class="xref" href="DefaultNamespace.IHandTarget.html">IHandTarget</a></div>
+      <div><a class="xref" href="DefaultNamespace.ILocalizationCheckable.html">ILocalizationCheckable</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.CreepvineSeed.html">CreepvineSeed</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="DefaultNamespace.HandTarget.html#DefaultNamespace_HandTarget_creationTime">HandTarget.creationTime</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.HandTarget.html#DefaultNamespace_HandTarget__isvalid">HandTarget._isvalid</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.HandTarget.html#DefaultNamespace_HandTarget_isValidHandTarget">HandTarget.isValidHandTarget</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_Pickupable__ctor_" data-uid="DefaultNamespace.Pickupable.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable__ctor" data-uid="DefaultNamespace.Pickupable.#ctor">
+  Pickupable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pickupable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_Pickupable__attached" data-uid="DefaultNamespace.Pickupable._attached">
+  _attached
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(6)]
+public bool _attached</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable__isInSub" data-uid="DefaultNamespace.Pickupable._isInSub">
+  _isInSub
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(7)]
+public bool _isInSub</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_activateRigidbodyWhenDropped" data-uid="DefaultNamespace.Pickupable.activateRigidbodyWhenDropped">
+  activateRigidbodyWhenDropped
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If this is true, isKinematic will be set to false when this is dropped, otherwise isKinematic will be set to true.&quot;)]
+public bool activateRigidbodyWhenDropped</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_currentVersion" data-uid="DefaultNamespace.Pickupable.currentVersion">
+  currentVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int currentVersion = 4</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_destroyOnDeath" data-uid="DefaultNamespace.Pickupable.destroyOnDeath">
+  destroyOnDeath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(5)]
+public bool destroyOnDeath</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_disabledBehaviours" data-uid="DefaultNamespace.Pickupable.disabledBehaviours">
+  disabledBehaviours
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Behaviour&gt; disabledBehaviours</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Behaviour.html">Behaviour</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_disabledColliders" data-uid="DefaultNamespace.Pickupable.disabledColliders">
+  disabledColliders
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Collider&gt; disabledColliders</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Collider.html">Collider</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_disabledRigidbodies" data-uid="DefaultNamespace.Pickupable.disabledRigidbodies">
+  disabledRigidbodies
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Rigidbody&gt; disabledRigidbodies</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Rigidbody.html">Rigidbody</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_dontDisableOnAttach" data-uid="DefaultNamespace.Pickupable.dontDisableOnAttach">
+  dontDisableOnAttach
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Type[] dontDisableOnAttach</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_droppedEvent" data-uid="DefaultNamespace.Pickupable.droppedEvent">
+  droppedEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Event&lt;Pickupable&gt; droppedEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.Event-1.html">Event</a>&lt;<a class="xref" href="Pickupable.html">Pickupable</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_inventoryItem" data-uid="DefaultNamespace.Pickupable.inventoryItem">
+  inventoryItem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InventoryItem inventoryItem</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_isKinematic" data-uid="DefaultNamespace.Pickupable.isKinematic">
+  isKinematic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(9)]
+public PickupableKinematicState isKinematic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PickupableKinematicState.html">PickupableKinematicState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_isLootCube" data-uid="DefaultNamespace.Pickupable.isLootCube">
+  isLootCube
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(3)]
+public bool isLootCube</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_isPickupable" data-uid="DefaultNamespace.Pickupable.isPickupable">
+  isPickupable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(4)]
+public bool isPickupable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_overrideTechType" data-uid="DefaultNamespace.Pickupable.overrideTechType">
+  overrideTechType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(1)]
+public TechType overrideTechType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_overrideTechUsed" data-uid="DefaultNamespace.Pickupable.overrideTechUsed">
+  overrideTechUsed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(2)]
+public bool overrideTechUsed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_pickedUpEvent" data-uid="DefaultNamespace.Pickupable.pickedUpEvent">
+  pickedUpEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Event&lt;Pickupable&gt; pickedUpEvent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="UWE.Event-1.html">Event</a>&lt;<a class="xref" href="Pickupable.html">Pickupable</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_prefabData" data-uid="DefaultNamespace.Pickupable.prefabData">
+  prefabData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ItemPrefabData prefabData</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemPrefabData.html">ItemPrefabData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_randomizeRotationWhenDropped" data-uid="DefaultNamespace.Pickupable.randomizeRotationWhenDropped">
+  randomizeRotationWhenDropped
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool randomizeRotationWhenDropped</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_timeDropped" data-uid="DefaultNamespace.Pickupable.timeDropped">
+  timeDropped
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timeDropped</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_usePackUpIcon" data-uid="DefaultNamespace.Pickupable.usePackUpIcon">
+  usePackUpIcon
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool usePackUpIcon</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_version" data-uid="DefaultNamespace.Pickupable.version">
+  version
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(8)]
+public int version</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_Pickupable_attached_" data-uid="DefaultNamespace.Pickupable.attached*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_attached" data-uid="DefaultNamespace.Pickupable.attached">
+  attached
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool attached { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_isDestroyed_" data-uid="DefaultNamespace.Pickupable.isDestroyed*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_isDestroyed" data-uid="DefaultNamespace.Pickupable.isDestroyed">
+  isDestroyed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isDestroyed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_isInSub_" data-uid="DefaultNamespace.Pickupable.isInSub*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_isInSub" data-uid="DefaultNamespace.Pickupable.isInSub">
+  isInSub
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isInSub { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_Pickupable_Activate_" data-uid="DefaultNamespace.Pickupable.Activate*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Activate_System_Boolean_" data-uid="DefaultNamespace.Pickupable.Activate(System.Boolean)">
+  Activate(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Activate(bool registerEntity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>registerEntity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_AllowedToPickUp_" data-uid="DefaultNamespace.Pickupable.AllowedToPickUp*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_AllowedToPickUp" data-uid="DefaultNamespace.Pickupable.AllowedToPickUp">
+  AllowedToPickUp()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowedToPickUp()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Awake_" data-uid="DefaultNamespace.Pickupable.Awake*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Awake" data-uid="DefaultNamespace.Pickupable.Awake">
+  Awake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_ChangeTechTypeOverride_" data-uid="DefaultNamespace.Pickupable.ChangeTechTypeOverride*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_ChangeTechTypeOverride_TechType_System_Boolean_" data-uid="DefaultNamespace.Pickupable.ChangeTechTypeOverride(TechType,System.Boolean)">
+  ChangeTechTypeOverride(TechType, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChangeTechTypeOverride(TechType techType, bool useTechTypeOverride)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>techType</code> <a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+    <dt><code>useTechTypeOverride</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_CompileTimeCheck_" data-uid="DefaultNamespace.Pickupable.CompileTimeCheck*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_CompileTimeCheck_ILanguage_" data-uid="DefaultNamespace.Pickupable.CompileTimeCheck(ILanguage)">
+  CompileTimeCheck(ILanguage)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CompileTimeCheck(ILanguage language)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>language</code> <a class="xref" href="DefaultNamespace.ILanguage.html">ILanguage</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Deactivate_" data-uid="DefaultNamespace.Pickupable.Deactivate*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Deactivate" data-uid="DefaultNamespace.Pickupable.Deactivate">
+  Deactivate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Deactivate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_DisableBehaviours_" data-uid="DefaultNamespace.Pickupable.DisableBehaviours*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_DisableBehaviours" data-uid="DefaultNamespace.Pickupable.DisableBehaviours">
+  DisableBehaviours()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisableBehaviours()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_DisableColliders_" data-uid="DefaultNamespace.Pickupable.DisableColliders*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_DisableColliders" data-uid="DefaultNamespace.Pickupable.DisableColliders">
+  DisableColliders()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisableColliders()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_DisableRigidbodies_" data-uid="DefaultNamespace.Pickupable.DisableRigidbodies*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_DisableRigidbodies" data-uid="DefaultNamespace.Pickupable.DisableRigidbodies">
+  DisableRigidbodies()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisableRigidbodies()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Drop_" data-uid="DefaultNamespace.Pickupable.Drop*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Drop" data-uid="DefaultNamespace.Pickupable.Drop">
+  Drop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Drop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Drop_" data-uid="DefaultNamespace.Pickupable.Drop*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Drop_UnityEngine_Vector3_UnityEngine_Vector3_System_Boolean_" data-uid="DefaultNamespace.Pickupable.Drop(UnityEngine.Vector3,UnityEngine.Vector3,System.Boolean)">
+  Drop(Vector3, Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Drop(Vector3 dropPosition, Vector3 pushVelocity = default, bool checkPosition = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dropPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>pushVelocity</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>checkPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_EnableBehaviours_" data-uid="DefaultNamespace.Pickupable.EnableBehaviours*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_EnableBehaviours" data-uid="DefaultNamespace.Pickupable.EnableBehaviours">
+  EnableBehaviours()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnableBehaviours()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_EnableColliders_" data-uid="DefaultNamespace.Pickupable.EnableColliders*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_EnableColliders" data-uid="DefaultNamespace.Pickupable.EnableColliders">
+  EnableColliders()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnableColliders()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_EnableRigidbodies_" data-uid="DefaultNamespace.Pickupable.EnableRigidbodies*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_EnableRigidbodies" data-uid="DefaultNamespace.Pickupable.EnableRigidbodies">
+  EnableRigidbodies()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnableRigidbodies()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_FindDropPosition_" data-uid="DefaultNamespace.Pickupable.FindDropPosition*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_FindDropPosition_UnityEngine_Vector3_UnityEngine_Vector3_" data-uid="DefaultNamespace.Pickupable.FindDropPosition(UnityEngine.Vector3,UnityEngine.Vector3)">
+  FindDropPosition(Vector3, Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 FindDropPosition(Vector3 fromPosition, Vector3 desiredPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fromPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>desiredPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_GetTechName_" data-uid="DefaultNamespace.Pickupable.GetTechName*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_GetTechName" data-uid="DefaultNamespace.Pickupable.GetTechName">
+  GetTechName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetTechName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_GetTechType_" data-uid="DefaultNamespace.Pickupable.GetTechType*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_GetTechType" data-uid="DefaultNamespace.Pickupable.GetTechType">
+  GetTechType()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TechType GetTechType()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Initialize_" data-uid="DefaultNamespace.Pickupable.Initialize*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Initialize" data-uid="DefaultNamespace.Pickupable.Initialize">
+  Initialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnDestroy_" data-uid="DefaultNamespace.Pickupable.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnDestroy" data-uid="DefaultNamespace.Pickupable.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnHandClick_" data-uid="DefaultNamespace.Pickupable.OnHandClick*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnHandClick_GUIHand_" data-uid="DefaultNamespace.Pickupable.OnHandClick(GUIHand)">
+  OnHandClick(GUIHand)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnHandClick(GUIHand hand)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hand</code> <a class="xref" href="DefaultNamespace.GUIHand.html">GUIHand</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnHandHover_" data-uid="DefaultNamespace.Pickupable.OnHandHover*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnHandHover_GUIHand_" data-uid="DefaultNamespace.Pickupable.OnHandHover(GUIHand)">
+  OnHandHover(GUIHand)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnHandHover(GUIHand hand)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hand</code> <a class="xref" href="DefaultNamespace.GUIHand.html">GUIHand</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnProtoDeserializeAsync_" data-uid="DefaultNamespace.Pickupable.OnProtoDeserializeAsync*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnProtoDeserializeAsync_ProtobufSerializer_" data-uid="DefaultNamespace.Pickupable.OnProtoDeserializeAsync(ProtobufSerializer)">
+  OnProtoDeserializeAsync(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator OnProtoDeserializeAsync(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnProtoDeserializeObjectTree_" data-uid="DefaultNamespace.Pickupable.OnProtoDeserializeObjectTree*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnProtoDeserializeObjectTree_ProtobufSerializer_" data-uid="DefaultNamespace.Pickupable.OnProtoDeserializeObjectTree(ProtobufSerializer)">
+  OnProtoDeserializeObjectTree(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnProtoDeserializeObjectTree(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnProtoSerializeObjectTree_" data-uid="DefaultNamespace.Pickupable.OnProtoSerializeObjectTree*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnProtoSerializeObjectTree_ProtobufSerializer_" data-uid="DefaultNamespace.Pickupable.OnProtoSerializeObjectTree(ProtobufSerializer)">
+  OnProtoSerializeObjectTree(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnProtoSerializeObjectTree(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Pickup_" data-uid="DefaultNamespace.Pickupable.Pickup*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Pickup_System_Boolean_" data-uid="DefaultNamespace.Pickupable.Pickup(System.Boolean)">
+  Pickup(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Pickup(bool events = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>events</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Place_" data-uid="DefaultNamespace.Pickupable.Place*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Place" data-uid="DefaultNamespace.Pickupable.Place">
+  Place()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Place()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_PlayDropSound_" data-uid="DefaultNamespace.Pickupable.PlayDropSound*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_PlayDropSound" data-uid="DefaultNamespace.Pickupable.PlayDropSound">
+  PlayDropSound()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PlayDropSound()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_PlayPickupSound_" data-uid="DefaultNamespace.Pickupable.PlayPickupSound*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_PlayPickupSound" data-uid="DefaultNamespace.Pickupable.PlayPickupSound">
+  PlayPickupSound()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PlayPickupSound()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Reparent_" data-uid="DefaultNamespace.Pickupable.Reparent*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Reparent_UnityEngine_Transform_" data-uid="DefaultNamespace.Pickupable.Reparent(UnityEngine.Transform)">
+  Reparent(Transform)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reparent(Transform parent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_ResetTechTypeOverride_" data-uid="DefaultNamespace.Pickupable.ResetTechTypeOverride*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_ResetTechTypeOverride" data-uid="DefaultNamespace.Pickupable.ResetTechTypeOverride">
+  ResetTechTypeOverride()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetTechTypeOverride()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_SetInventoryItem_" data-uid="DefaultNamespace.Pickupable.SetInventoryItem*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_SetInventoryItem_InventoryItem_" data-uid="DefaultNamespace.Pickupable.SetInventoryItem(InventoryItem)">
+  SetInventoryItem(InventoryItem)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetInventoryItem(InventoryItem newInventoryItem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newInventoryItem</code> <a class="xref" href="DefaultNamespace.InventoryItem.html">InventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_SetTechTypeOverride_" data-uid="DefaultNamespace.Pickupable.SetTechTypeOverride*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_SetTechTypeOverride_TechType_System_Boolean_" data-uid="DefaultNamespace.Pickupable.SetTechTypeOverride(TechType,System.Boolean)">
+  SetTechTypeOverride(TechType, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTechTypeOverride(TechType techType, bool lootCube = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>techType</code> <a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+    <dt><code>lootCube</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_SetVisible_" data-uid="DefaultNamespace.Pickupable.SetVisible*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_SetVisible_System_Boolean_" data-uid="DefaultNamespace.Pickupable.SetVisible(System.Boolean)">
+  SetVisible(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetVisible(bool visible)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>visible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_Unplace_" data-uid="DefaultNamespace.Pickupable.Unplace*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_Unplace" data-uid="DefaultNamespace.Pickupable.Unplace">
+  Unplace()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Unplace()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_onTechTypeChanged" data-uid="DefaultNamespace.Pickupable.onTechTypeChanged">
+  onTechTypeChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event OnTechTypeChanged onTechTypeChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.OnTechTypeChanged.html">OnTechTypeChanged</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

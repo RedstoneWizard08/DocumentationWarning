@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Creature | Subnautica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Creature | Subnautica ">
+      
+      
+      <link rel="icon" href="../icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DefaultNamespace.Creature">
+
+
+
+  <h1 id="DefaultNamespace_Creature" data-uid="DefaultNamespace.Creature" class="text-break">
+Class Creature  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DefaultNamespace.html">DefaultNamespace</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[RequireComponent(typeof(Rigidbody))]
+[ProtoContract]
+[ProtoInclude(1000, typeof(BloomCreature))]
+[ProtoInclude(1200, typeof(Boomerang))]
+[ProtoInclude(1300, typeof(LavaLarva))]
+[ProtoInclude(1400, typeof(OculusFish))]
+[ProtoInclude(1500, typeof(Eyeye))]
+[ProtoInclude(1600, typeof(Garryfish))]
+[ProtoInclude(1700, typeof(GasoPod))]
+[ProtoInclude(1800, typeof(Grabcrab))]
+[ProtoInclude(1900, typeof(Grower))]
+[ProtoInclude(2000, typeof(Holefish))]
+[ProtoInclude(2100, typeof(Hoverfish))]
+[ProtoInclude(2200, typeof(Jellyray))]
+[ProtoInclude(2300, typeof(Jumper))]
+[ProtoInclude(2400, typeof(Peeper))]
+[ProtoInclude(2500, typeof(RabbitRay))]
+[ProtoInclude(2600, typeof(Reefback))]
+[ProtoInclude(2700, typeof(Reginald))]
+[ProtoInclude(2800, typeof(SandShark))]
+[ProtoInclude(2900, typeof(Spadefish))]
+[ProtoInclude(3000, typeof(Stalker))]
+[ProtoInclude(3100, typeof(Bladderfish))]
+[ProtoInclude(3200, typeof(Hoopfish))]
+[ProtoInclude(3300, typeof(Mesmer))]
+[ProtoInclude(3400, typeof(Bleeder))]
+[ProtoInclude(3500, typeof(Slime))]
+[ProtoInclude(3600, typeof(Crash))]
+[ProtoInclude(3700, typeof(BoneShark))]
+[ProtoInclude(3800, typeof(CuteFish))]
+[ProtoInclude(3900, typeof(Leviathan))]
+[ProtoInclude(4000, typeof(ReaperLeviathan))]
+[ProtoInclude(4100, typeof(CaveCrawler))]
+[ProtoInclude(4200, typeof(BirdBehaviour))]
+[ProtoInclude(4400, typeof(Biter))]
+[ProtoInclude(4500, typeof(Shocker))]
+[ProtoInclude(4600, typeof(CrabSnake))]
+[ProtoInclude(4700, typeof(SpineEel))]
+[ProtoInclude(4800, typeof(SeaTreader))]
+[ProtoInclude(4900, typeof(CrabSquid))]
+[ProtoInclude(4910, typeof(Warper))]
+[ProtoInclude(4920, typeof(LavaLizard))]
+[ProtoInclude(5000, typeof(SeaDragon))]
+[ProtoInclude(5100, typeof(GhostRay))]
+[ProtoInclude(5200, typeof(SeaEmperorBaby))]
+[ProtoInclude(5300, typeof(GhostLeviathan))]
+[ProtoInclude(5400, typeof(SeaEmperorJuvenile))]
+[ProtoInclude(5500, typeof(GhostLeviatanVoid))]
+[RequireComponent(typeof(CreatureUtils))]
+[DisallowMultipleComponent]
+public class Creature : Living, IProtoEventListener, IScheduledUpdateBehaviour, IManagedBehaviour, ICompileTimeCheckable, IMovementPlatform</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><a class="xref" href="DefaultNamespace.Living.html">Living</a></div>
+      <div><span class="xref">Creature</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.IProtoEventListener.html">IProtoEventListener</a></div>
+      <div><a class="xref" href="DefaultNamespace.IScheduledUpdateBehaviour.html">IScheduledUpdateBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.IManagedBehaviour.html">IManagedBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeCheckable.html">ICompileTimeCheckable</a></div>
+      <div><a class="xref" href="DefaultNamespace.IMovementPlatform.html">IMovementPlatform</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.BirdBehaviour.html">BirdBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.Biter.html">Biter</a></div>
+      <div><a class="xref" href="DefaultNamespace.Bladderfish.html">Bladderfish</a></div>
+      <div><a class="xref" href="DefaultNamespace.Bleeder.html">Bleeder</a></div>
+      <div><a class="xref" href="DefaultNamespace.BloomCreature.html">BloomCreature</a></div>
+      <div><a class="xref" href="DefaultNamespace.BoneShark.html">BoneShark</a></div>
+      <div><a class="xref" href="DefaultNamespace.Boomerang.html">Boomerang</a></div>
+      <div><a class="xref" href="DefaultNamespace.CaveCrawler.html">CaveCrawler</a></div>
+      <div><a class="xref" href="DefaultNamespace.CrabSnake.html">CrabSnake</a></div>
+      <div><a class="xref" href="DefaultNamespace.CrabSquid.html">CrabSquid</a></div>
+      <div><a class="xref" href="DefaultNamespace.Crash.html">Crash</a></div>
+      <div><a class="xref" href="DefaultNamespace.CuteFish.html">CuteFish</a></div>
+      <div><a class="xref" href="DefaultNamespace.Eyeye.html">Eyeye</a></div>
+      <div><a class="xref" href="DefaultNamespace.Garryfish.html">Garryfish</a></div>
+      <div><a class="xref" href="DefaultNamespace.GasoPod.html">GasoPod</a></div>
+      <div><a class="xref" href="DefaultNamespace.GhostLeviatanVoid.html">GhostLeviatanVoid</a></div>
+      <div><a class="xref" href="DefaultNamespace.GhostLeviathan.html">GhostLeviathan</a></div>
+      <div><a class="xref" href="DefaultNamespace.GhostRay.html">GhostRay</a></div>
+      <div><a class="xref" href="DefaultNamespace.Grabcrab.html">Grabcrab</a></div>
+      <div><a class="xref" href="DefaultNamespace.Grower.html">Grower</a></div>
+      <div><a class="xref" href="DefaultNamespace.Holefish.html">Holefish</a></div>
+      <div><a class="xref" href="DefaultNamespace.Hoopfish.html">Hoopfish</a></div>
+      <div><a class="xref" href="DefaultNamespace.Hoverfish.html">Hoverfish</a></div>
+      <div><a class="xref" href="DefaultNamespace.Jellyray.html">Jellyray</a></div>
+      <div><a class="xref" href="DefaultNamespace.Jumper.html">Jumper</a></div>
+      <div><a class="xref" href="DefaultNamespace.LavaLarva.html">LavaLarva</a></div>
+      <div><a class="xref" href="DefaultNamespace.LavaLizard.html">LavaLizard</a></div>
+      <div><a class="xref" href="DefaultNamespace.Leviathan.html">Leviathan</a></div>
+      <div><a class="xref" href="DefaultNamespace.Mesmer.html">Mesmer</a></div>
+      <div><a class="xref" href="DefaultNamespace.OculusFish.html">OculusFish</a></div>
+      <div><a class="xref" href="DefaultNamespace.Peeper.html">Peeper</a></div>
+      <div><a class="xref" href="DefaultNamespace.RabbitRay.html">RabbitRay</a></div>
+      <div><a class="xref" href="DefaultNamespace.ReaperLeviathan.html">ReaperLeviathan</a></div>
+      <div><a class="xref" href="DefaultNamespace.Reefback.html">Reefback</a></div>
+      <div><a class="xref" href="DefaultNamespace.Reginald.html">Reginald</a></div>
+      <div><a class="xref" href="DefaultNamespace.SandShark.html">SandShark</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaDragon.html">SeaDragon</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaEmperorBaby.html">SeaEmperorBaby</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaEmperorJuvenile.html">SeaEmperorJuvenile</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaTreader.html">SeaTreader</a></div>
+      <div><a class="xref" href="DefaultNamespace.Shocker.html">Shocker</a></div>
+      <div><a class="xref" href="DefaultNamespace.Slime.html">Slime</a></div>
+      <div><a class="xref" href="DefaultNamespace.Spadefish.html">Spadefish</a></div>
+      <div><a class="xref" href="DefaultNamespace.SpineEel.html">SpineEel</a></div>
+      <div><a class="xref" href="DefaultNamespace.Stalker.html">Stalker</a></div>
+      <div><a class="xref" href="DefaultNamespace.Warper.html">Warper</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DefaultNamespace_Creature__ctor_" data-uid="DefaultNamespace.Creature.#ctor*"></a>
+
+  <h3 id="DefaultNamespace_Creature__ctor" data-uid="DefaultNamespace.Creature.#ctor">
+  Creature()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Creature()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DefaultNamespace_Creature_Aggression" data-uid="DefaultNamespace.Creature.Aggression">
+  Aggression
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CreatureTrait Aggression</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureTrait.html">CreatureTrait</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_Curiosity" data-uid="DefaultNamespace.Creature.Curiosity">
+  Curiosity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CreatureTrait Curiosity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureTrait.html">CreatureTrait</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_Friendliness" data-uid="DefaultNamespace.Creature.Friendliness">
+  Friendliness
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CreatureTrait Friendliness</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureTrait.html">CreatureTrait</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_Happy" data-uid="DefaultNamespace.Creature.Happy">
+  Happy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CreatureTrait Happy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureTrait.html">CreatureTrait</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_Hunger" data-uid="DefaultNamespace.Creature.Hunger">
+  Hunger
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CreatureTrait Hunger</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureTrait.html">CreatureTrait</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_Scared" data-uid="DefaultNamespace.Creature.Scared">
+  Scared
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CreatureTrait Scared</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureTrait.html">CreatureTrait</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_Size" data-uid="DefaultNamespace.Creature.Size">
+  Size
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Size</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_Tired" data-uid="DefaultNamespace.Creature.Tired">
+  Tired
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public CreatureTrait Tired</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureTrait.html">CreatureTrait</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature__friendlyToPlayer" data-uid="DefaultNamespace.Creature._friendlyToPlayer">
+  _friendlyToPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool _friendlyToPlayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_actions" data-uid="DefaultNamespace.Creature.actions">
+  actions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly List&lt;CreatureAction&gt; actions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CreatureAction.html">CreatureAction</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_activity" data-uid="DefaultNamespace.Creature.activity">
+  activity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public AnimationCurve activity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_animAggressive" data-uid="DefaultNamespace.Creature.animAggressive">
+  animAggressive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int animAggressive</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_animHappy" data-uid="DefaultNamespace.Creature.animHappy">
+  animHappy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int animHappy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_animScared" data-uid="DefaultNamespace.Creature.animScared">
+  animScared
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int animScared</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_animTired" data-uid="DefaultNamespace.Creature.animTired">
+  animTired
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly int animTired</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_babyScaleSize" data-uid="DefaultNamespace.Creature.babyScaleSize">
+  babyScaleSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float babyScaleSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_creatureFriend" data-uid="DefaultNamespace.Creature.creatureFriend">
+  creatureFriend
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public CreatureFriend creatureFriend</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureFriend.html">CreatureFriend</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_currentVersion" data-uid="DefaultNamespace.Creature.currentVersion">
+  currentVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int currentVersion = 3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_cyclopsSonarDetectable" data-uid="DefaultNamespace.Creature.cyclopsSonarDetectable">
+  cyclopsSonarDetectable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool cyclopsSonarDetectable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_debug" data-uid="DefaultNamespace.Creature.debug">
+  debug
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool debug</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_debugActionsString" data-uid="DefaultNamespace.Creature.debugActionsString">
+  debugActionsString
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string debugActionsString</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_detectsMotion" data-uid="DefaultNamespace.Creature.detectsMotion">
+  detectsMotion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool detectsMotion</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_eyeFOV" data-uid="DefaultNamespace.Creature.eyeFOV">
+  eyeFOV
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float eyeFOV</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_eyesOnTop" data-uid="DefaultNamespace.Creature.eyesOnTop">
+  eyesOnTop
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool eyesOnTop</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_hasEyes" data-uid="DefaultNamespace.Creature.hasEyes">
+  hasEyes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool hasEyes</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_hearingSensitivity" data-uid="DefaultNamespace.Creature.hearingSensitivity">
+  hearingSensitivity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float hearingSensitivity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_indexLastActionChecked" data-uid="DefaultNamespace.Creature.indexLastActionChecked">
+  indexLastActionChecked
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int indexLastActionChecked</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_initialCuriosity" data-uid="DefaultNamespace.Creature.initialCuriosity">
+  initialCuriosity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public AnimationCurve initialCuriosity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_initialFriendliness" data-uid="DefaultNamespace.Creature.initialFriendliness">
+  initialFriendliness
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public AnimationCurve initialFriendliness</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_initialHunger" data-uid="DefaultNamespace.Creature.initialHunger">
+  initialHunger
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public AnimationCurve initialHunger</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_isInitialized" data-uid="DefaultNamespace.Creature.isInitialized">
+  isInitialized
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(3)]
+public bool isInitialized</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_kPrisonAquariumPrefix" data-uid="DefaultNamespace.Creature.kPrisonAquariumPrefix">
+  kPrisonAquariumPrefix
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string kPrisonAquariumPrefix = &quot;Prison_Aquarium&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_kSafeShallows" data-uid="DefaultNamespace.Creature.kSafeShallows">
+  kSafeShallows
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string kSafeShallows = &quot;safeShallows&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_lastAction" data-uid="DefaultNamespace.Creature.lastAction">
+  lastAction
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CreatureAction lastAction</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureAction.html">CreatureAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_lastUpdateTime" data-uid="DefaultNamespace.Creature.lastUpdateTime">
+  lastUpdateTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float lastUpdateTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_leashPosition" data-uid="DefaultNamespace.Creature.leashPosition">
+  leashPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(1)]
+public Vector3 leashPosition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_liveMixin" data-uid="DefaultNamespace.Creature.liveMixin">
+  liveMixin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public LiveMixin liveMixin</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.LiveMixin.html">LiveMixin</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_prevBestAction" data-uid="DefaultNamespace.Creature.prevBestAction">
+  prevBestAction
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CreatureAction prevBestAction</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureAction.html">CreatureAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_prisonAquriumBounds" data-uid="DefaultNamespace.Creature.prisonAquriumBounds">
+  prisonAquriumBounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Bounds prisonAquriumBounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Bounds.html">Bounds</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_seaLevelOffset" data-uid="DefaultNamespace.Creature.seaLevelOffset">
+  seaLevelOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float seaLevelOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_sizeDistribution" data-uid="DefaultNamespace.Creature.sizeDistribution">
+  sizeDistribution
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public AnimationCurve sizeDistribution</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_techTypeHash" data-uid="DefaultNamespace.Creature.techTypeHash">
+  techTypeHash
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long techTypeHash</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_traitsAnimator" data-uid="DefaultNamespace.Creature.traitsAnimator">
+  traitsAnimator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public Animator traitsAnimator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Creature_version" data-uid="DefaultNamespace.Creature.version">
+  version
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(2)]
+public int version</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_Creature_friendlyToPlayer_" data-uid="DefaultNamespace.Creature.friendlyToPlayer*"></a>
+
+  <h3 id="DefaultNamespace_Creature_friendlyToPlayer" data-uid="DefaultNamespace.Creature.friendlyToPlayer">
+  friendlyToPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool friendlyToPlayer { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_scheduledUpdateIndex_" data-uid="DefaultNamespace.Creature.scheduledUpdateIndex*"></a>
+
+  <h3 id="DefaultNamespace_Creature_scheduledUpdateIndex" data-uid="DefaultNamespace.Creature.scheduledUpdateIndex">
+  scheduledUpdateIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int scheduledUpdateIndex { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_Creature_AllowCreatureUpdates_" data-uid="DefaultNamespace.Creature.AllowCreatureUpdates*"></a>
+
+  <h3 id="DefaultNamespace_Creature_AllowCreatureUpdates_System_Boolean_" data-uid="DefaultNamespace.Creature.AllowCreatureUpdates(System.Boolean)">
+  AllowCreatureUpdates(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AllowCreatureUpdates(bool allowed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>allowed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_ChooseBestAction_" data-uid="DefaultNamespace.Creature.ChooseBestAction*"></a>
+
+  <h3 id="DefaultNamespace_Creature_ChooseBestAction_System_Single_" data-uid="DefaultNamespace.Creature.ChooseBestAction(System.Single)">
+  ChooseBestAction(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CreatureAction ChooseBestAction(float time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureAction.html">CreatureAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_CompileTimeCheck_" data-uid="DefaultNamespace.Creature.CompileTimeCheck*"></a>
+
+  <h3 id="DefaultNamespace_Creature_CompileTimeCheck" data-uid="DefaultNamespace.Creature.CompileTimeCheck">
+  CompileTimeCheck()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CompileTimeCheck()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetActiveBehaviourName_" data-uid="DefaultNamespace.Creature.GetActiveBehaviourName*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetActiveBehaviourName" data-uid="DefaultNamespace.Creature.GetActiveBehaviourName">
+  GetActiveBehaviourName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string GetActiveBehaviourName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetAnimator_" data-uid="DefaultNamespace.Creature.GetAnimator*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetAnimator" data-uid="DefaultNamespace.Creature.GetAnimator">
+  GetAnimator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Animator GetAnimator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetBestAction_" data-uid="DefaultNamespace.Creature.GetBestAction*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetBestAction" data-uid="DefaultNamespace.Creature.GetBestAction">
+  GetBestAction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CreatureAction GetBestAction()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureAction.html">CreatureAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetCanSeeObject_" data-uid="DefaultNamespace.Creature.GetCanSeeObject*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetCanSeeObject_UnityEngine_GameObject_" data-uid="DefaultNamespace.Creature.GetCanSeeObject(UnityEngine.GameObject)">
+  GetCanSeeObject(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetCanSeeObject(GameObject obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetDebugString_" data-uid="DefaultNamespace.Creature.GetDebugString*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetDebugString" data-uid="DefaultNamespace.Creature.GetDebugString">
+  GetDebugString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string GetDebugString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetFriend_" data-uid="DefaultNamespace.Creature.GetFriend*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetFriend" data-uid="DefaultNamespace.Creature.GetFriend">
+  GetFriend()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject GetFriend()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetProfileTag_" data-uid="DefaultNamespace.Creature.GetProfileTag*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetProfileTag" data-uid="DefaultNamespace.Creature.GetProfileTag">
+  GetProfileTag()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetProfileTag()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetSize_" data-uid="DefaultNamespace.Creature.GetSize*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetSize" data-uid="DefaultNamespace.Creature.GetSize">
+  GetSize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetSize()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetSpeedScalar_" data-uid="DefaultNamespace.Creature.GetSpeedScalar*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetSpeedScalar" data-uid="DefaultNamespace.Creature.GetSpeedScalar">
+  GetSpeedScalar()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetSpeedScalar()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_GetTechTypeHash_" data-uid="DefaultNamespace.Creature.GetTechTypeHash*"></a>
+
+  <h3 id="DefaultNamespace_Creature_GetTechTypeHash" data-uid="DefaultNamespace.Creature.GetTechTypeHash">
+  GetTechTypeHash()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetTechTypeHash()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_InitializeAgain_" data-uid="DefaultNamespace.Creature.InitializeAgain*"></a>
+
+  <h3 id="DefaultNamespace_Creature_InitializeAgain" data-uid="DefaultNamespace.Creature.InitializeAgain">
+  InitializeAgain()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitializeAgain()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_InitializeOnce_" data-uid="DefaultNamespace.Creature.InitializeOnce*"></a>
+
+  <h3 id="DefaultNamespace_Creature_InitializeOnce" data-uid="DefaultNamespace.Creature.InitializeOnce">
+  InitializeOnce()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitializeOnce()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_IsFriendlyTo_" data-uid="DefaultNamespace.Creature.IsFriendlyTo*"></a>
+
+  <h3 id="DefaultNamespace_Creature_IsFriendlyTo_UnityEngine_GameObject_" data-uid="DefaultNamespace.Creature.IsFriendlyTo(UnityEngine.GameObject)">
+  IsFriendlyTo(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsFriendlyTo(GameObject gameObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObject</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_IsInFieldOfView_" data-uid="DefaultNamespace.Creature.IsInFieldOfView*"></a>
+
+  <h3 id="DefaultNamespace_Creature_IsInFieldOfView_UnityEngine_GameObject_" data-uid="DefaultNamespace.Creature.IsInFieldOfView(UnityEngine.GameObject)">
+  IsInFieldOfView(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInFieldOfView(GameObject go)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>go</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_IsPlayerOrPlayerProperty_" data-uid="DefaultNamespace.Creature.IsPlayerOrPlayerProperty*"></a>
+
+  <h3 id="DefaultNamespace_Creature_IsPlayerOrPlayerProperty_UnityEngine_GameObject_" data-uid="DefaultNamespace.Creature.IsPlayerOrPlayerProperty(UnityEngine.GameObject)">
+  IsPlayerOrPlayerProperty(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPlayerOrPlayerProperty(GameObject gameObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObject</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnDestroy_" data-uid="DefaultNamespace.Creature.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnDestroy" data-uid="DefaultNamespace.Creature.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnDisable_" data-uid="DefaultNamespace.Creature.OnDisable*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnDisable" data-uid="DefaultNamespace.Creature.OnDisable">
+  OnDisable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDisable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnDrop_" data-uid="DefaultNamespace.Creature.OnDrop*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnDrop" data-uid="DefaultNamespace.Creature.OnDrop">
+  OnDrop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDrop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnEnable_" data-uid="DefaultNamespace.Creature.OnEnable*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnEnable" data-uid="DefaultNamespace.Creature.OnEnable">
+  OnEnable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnEnable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnGrowChanged_" data-uid="DefaultNamespace.Creature.OnGrowChanged*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnGrowChanged_System_Single_" data-uid="DefaultNamespace.Creature.OnGrowChanged(System.Single)">
+  OnGrowChanged(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnGrowChanged(float growScalar)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>growScalar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnKill_" data-uid="DefaultNamespace.Creature.OnKill*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnKill" data-uid="DefaultNamespace.Creature.OnKill">
+  OnKill()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnKill()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnProtoDeserialize_" data-uid="DefaultNamespace.Creature.OnProtoDeserialize*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnProtoDeserialize_ProtobufSerializer_" data-uid="DefaultNamespace.Creature.OnProtoDeserialize(ProtobufSerializer)">
+  OnProtoDeserialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnProtoDeserialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_OnProtoSerialize_" data-uid="DefaultNamespace.Creature.OnProtoSerialize*"></a>
+
+  <h3 id="DefaultNamespace_Creature_OnProtoSerialize_ProtobufSerializer_" data-uid="DefaultNamespace.Creature.OnProtoSerialize(ProtobufSerializer)">
+  OnProtoSerialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnProtoSerialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_ProcessInfection_" data-uid="DefaultNamespace.Creature.ProcessInfection*"></a>
+
+  <h3 id="DefaultNamespace_Creature_ProcessInfection" data-uid="DefaultNamespace.Creature.ProcessInfection">
+  ProcessInfection()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ProcessInfection()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_ScanCreatureActions_" data-uid="DefaultNamespace.Creature.ScanCreatureActions*"></a>
+
+  <h3 id="DefaultNamespace_Creature_ScanCreatureActions" data-uid="DefaultNamespace.Creature.ScanCreatureActions">
+  ScanCreatureActions()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScanCreatureActions()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_ScheduledUpdate_" data-uid="DefaultNamespace.Creature.ScheduledUpdate*"></a>
+
+  <h3 id="DefaultNamespace_Creature_ScheduledUpdate" data-uid="DefaultNamespace.Creature.ScheduledUpdate">
+  ScheduledUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScheduledUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_SetFriend_" data-uid="DefaultNamespace.Creature.SetFriend*"></a>
+
+  <h3 id="DefaultNamespace_Creature_SetFriend_UnityEngine_GameObject_System_Single_" data-uid="DefaultNamespace.Creature.SetFriend(UnityEngine.GameObject,System.Single)">
+  SetFriend(GameObject, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFriend(GameObject friend, float duration = Infinity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>friend</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+    <dt><code>duration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_SetScale_" data-uid="DefaultNamespace.Creature.SetScale*"></a>
+
+  <h3 id="DefaultNamespace_Creature_SetScale_System_Single_" data-uid="DefaultNamespace.Creature.SetScale(System.Single)">
+  SetScale(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScale(float scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_SetSize_" data-uid="DefaultNamespace.Creature.SetSize*"></a>
+
+  <h3 id="DefaultNamespace_Creature_SetSize_System_Single_" data-uid="DefaultNamespace.Creature.SetSize(System.Single)">
+  SetSize(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSize(float size)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_Start_" data-uid="DefaultNamespace.Creature.Start*"></a>
+
+  <h3 id="DefaultNamespace_Creature_Start" data-uid="DefaultNamespace.Creature.Start">
+  Start()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Start()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_TryStartAction_" data-uid="DefaultNamespace.Creature.TryStartAction*"></a>
+
+  <h3 id="DefaultNamespace_Creature_TryStartAction_CreatureAction_" data-uid="DefaultNamespace.Creature.TryStartAction(CreatureAction)">
+  TryStartAction(CreatureAction)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool TryStartAction(CreatureAction action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="DefaultNamespace.CreatureAction.html">CreatureAction</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Creature_UpdateBehaviour_" data-uid="DefaultNamespace.Creature.UpdateBehaviour*"></a>
+
+  <h3 id="DefaultNamespace_Creature_UpdateBehaviour_System_Single_System_Single_" data-uid="DefaultNamespace.Creature.UpdateBehaviour(System.Single,System.Single)">
+  UpdateBehaviour(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateBehaviour(float time, float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="eii">Explicit Interface Implementations
+</h2>
+
+
+  <a id="DefaultNamespace_Creature_IMovementPlatform_IsPlatform_" data-uid="DefaultNamespace.Creature.IMovementPlatform#IsPlatform*"></a>
+
+  <h3 id="DefaultNamespace_Creature_IMovementPlatform_IsPlatform" data-uid="DefaultNamespace.Creature.IMovementPlatform#IsPlatform">
+  IMovementPlatform.IsPlatform()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IMovementPlatform.IsPlatform()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
