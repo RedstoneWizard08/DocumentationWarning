@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyMultiplayerLobby | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyMultiplayerLobby | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby">
+
+
+
+  <h1 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby" class="text-break">
+Class MyMultiplayerLobby  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Engine.html">Engine</a>.<a class="xref" href="Sandbox.Engine.Multiplayer.html">Multiplayer</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class MyMultiplayerLobby : MyMultiplayerServerBase, IDisposable, IReplicationServerCallback</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Replication.MyMultiplayerMinimalBase.html">MyMultiplayerMinimalBase</a></div>
+      <div><a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html">MyMultiplayerBase</a></div>
+      <div><a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html">MyMultiplayerServerBase</a></div>
+      <div><span class="xref">MyMultiplayerLobby</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+      <div><a class="xref" href="VRage.Replication.IReplicationServerCallback.html">IReplicationServerCallback</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_RaiseReplicableCreated_System_Object_">MyMultiplayerServerBase.RaiseReplicableCreated(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_WorldRequest_System_Int32_">MyMultiplayerServerBase.WorldRequest(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_ProfilerRequest">MyMultiplayerServerBase.ProfilerRequest()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_RequestBatchConfirmation">MyMultiplayerServerBase.RequestBatchConfirmation()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_SendPendingReplicablesDone_VRage_Network_Endpoint_">MyMultiplayerServerBase.SendPendingReplicablesDone(Endpoint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_ValidateRpc_VRage_MyPacketDataBitStreamBase_VRage_Network_CallSite_System_Object_VRage_Network_IMyNetObject_System_Nullable_VRageMath_Vector3D__VRage_Network_EndpointId_">MyMultiplayerServerBase.ValidateRpc(MyPacketDataBitStreamBase, CallSite, object, IMyNetObject, Vector3D?, EndpointId)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_GetUpdateTime">MyMultiplayerServerBase.GetUpdateTime()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_GetBitStreamPacketData">MyMultiplayerServerBase.GetBitStreamPacketData()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_KickClient_System_UInt64_System_Boolean_System_Boolean_">MyMultiplayerServerBase.KickClient(ulong, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_ValidationFailed_System_UInt64_System_Boolean_System_String_System_Boolean_">MyMultiplayerServerBase.ValidationFailed(ulong, bool, string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_GetFailedValidations">MyMultiplayerServerBase.GetFailedValidations()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerServerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerServerBase_RemoveCheaterRecordWithId_System_Collections_Generic_List_System_UInt32__">MyMultiplayerServerBase.RemoveCheaterRecordWithId(List&lt;uint&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_SyncLayer">MyMultiplayerBase.SyncLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_KICK_TIMEOUT_MS">MyMultiplayerBase.KICK_TIMEOUT_MS</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ProfilerDone">MyMultiplayerBase.ProfilerDone</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnSetPriorityMultiplier_System_Single_">MyMultiplayerBase.OnSetPriorityMultiplier(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnSetDebugEntity_System_Int64_">MyMultiplayerBase.OnSetDebugEntity(long)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterParentChangeTimeOut_System_Double_">MyMultiplayerBase.OnCharacterParentChangeTimeOut(double)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMaxJetpackGridDistance_System_Single_">MyMultiplayerBase.OnCharacterMaxJetpackGridDistance(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMaxJetpackGridDisconnectDistance_System_Single_">MyMultiplayerBase.OnCharacterMaxJetpackGridDisconnectDistance(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMinJetpackGridSpeed_System_Single_">MyMultiplayerBase.OnCharacterMinJetpackGridSpeed(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMinJetpackDisconnectGridSpeed_System_Single_">MyMultiplayerBase.OnCharacterMinJetpackDisconnectGridSpeed(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMaxJetpackGridAcceleration_System_Single_">MyMultiplayerBase.OnCharacterMaxJetpackGridAcceleration(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMaxJetpackDisconnectGridAcceleration_System_Single_">MyMultiplayerBase.OnCharacterMaxJetpackDisconnectGridAcceleration(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMinJetpackInsideGridSpeed_System_Single_">MyMultiplayerBase.OnCharacterMinJetpackInsideGridSpeed(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnCharacterMinJetpackDisconnectInsideGridSpeed_System_Single_">MyMultiplayerBase.OnCharacterMinJetpackDisconnectInsideGridSpeed(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnChatMessage_VRage_Network_ChatMsg__">MyMultiplayerBase.OnChatMessage(ref ChatMsg)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_DownloadWorld_System_Int32_">MyMultiplayerBase.DownloadWorld(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_DownloadProfiler">MyMultiplayerBase.DownloadProfiler()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_KickUser_System_UInt64_System_Boolean_System_Boolean_">MyMultiplayerBase.KickUser(ulong, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnUserKicked_System_UInt64_System_Boolean_System_Boolean_">MyMultiplayerBase.OnUserKicked(ulong, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_BanUser_System_UInt64_System_Boolean_">MyMultiplayerBase.BanUser(ulong, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_OnUserBanned_System_UInt64_System_Boolean_">MyMultiplayerBase.OnUserBanned(ulong, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_StartProcessingClientMessages">MyMultiplayerBase.StartProcessingClientMessages()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_StartProcessingClientMessagesWithEmptyWorld">MyMultiplayerBase.StartProcessingClientMessagesWithEmptyWorld()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ReportReplicatedObjects">MyMultiplayerBase.ReportReplicatedObjects()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_IsCrossMember_System_UInt64_">MyMultiplayerBase.IsCrossMember(ulong)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_SendScriptedChatMessage_Sandbox_Engine_Multiplayer_ScriptedChatMsg__">MyMultiplayerBase.SendScriptedChatMessage(ref ScriptedChatMsg)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_InvalidateVoxelCache_System_String_">MyMultiplayerBase.InvalidateVoxelCache(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_InvokeLocalRespawnRequested">MyMultiplayerBase.InvokeLocalRespawnRequested()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_RequestMutePlayer_System_UInt64_">MyMultiplayerBase.RequestMutePlayer(ulong)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_RequestRemoveMutedPlayer_System_UInt64_">MyMultiplayerBase.RequestRemoveMutedPlayer(ulong)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_MutedPlayersUpdate_System_Collections_Generic_HashSet_System_UInt64__">MyMultiplayerBase.MutedPlayersUpdate(HashSet&lt;ulong&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_IsServerExperimental">MyMultiplayerBase.IsServerExperimental</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ReplicationLayer">MyMultiplayerBase.ReplicationLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_KickedClients">MyMultiplayerBase.KickedClients</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_BannedClients">MyMultiplayerBase.BannedClients</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ServerId">MyMultiplayerBase.ServerId</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ServerSimulationRatio">MyMultiplayerBase.ServerSimulationRatio</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_VoxelMapData">MyMultiplayerBase.VoxelMapData</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_FrameCounter">MyMultiplayerBase.FrameCounter</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_IsConnectionDirect">MyMultiplayerBase.IsConnectionDirect</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_IsConnectionAlive">MyMultiplayerBase.IsConnectionAlive</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_LastMessageReceived">MyMultiplayerBase.LastMessageReceived</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_IsTextChatAvailable">MyMultiplayerBase.IsTextChatAvailable</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_IsVoiceChatAvailable">MyMultiplayerBase.IsVoiceChatAvailable</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_PlayersMutedInChat">MyMultiplayerBase.PlayersMutedInChat</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ClientJoined">MyMultiplayerBase.ClientJoined</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ClientLeft">MyMultiplayerBase.ClientLeft</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_HostLeft">MyMultiplayerBase.HostLeft</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ChatMessageReceived">MyMultiplayerBase.ChatMessageReceived</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ScriptedChatMessageReceived">MyMultiplayerBase.ScriptedChatMessageReceived</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_ClientKicked">MyMultiplayerBase.ClientKicked</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_PendingReplicablesDone">MyMultiplayerBase.PendingReplicablesDone</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Multiplayer.MyMultiplayerBase.html#Sandbox_Engine_Multiplayer_MyMultiplayerBase_LocalRespawnRequested">MyMultiplayerBase.LocalRespawnRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Replication.MyMultiplayerMinimalBase.html#VRage_Replication_MyMultiplayerMinimalBase_Instance">MyMultiplayerMinimalBase.Instance</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Replication.MyMultiplayerMinimalBase.html#VRage_Replication_MyMultiplayerMinimalBase_IsServer">MyMultiplayerMinimalBase.IsServer</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby__ctor_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.#ctor*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby__ctor_Sandbox_Game_Multiplayer_MySyncLayer_VRage_GameServices_MyLobbyType_System_UInt32_VRage_GameServices_MyLobbyCreated_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.#ctor(Sandbox.Game.Multiplayer.MySyncLayer,VRage.GameServices.MyLobbyType,System.UInt32,VRage.GameServices.MyLobbyCreated)">
+  MyMultiplayerLobby(MySyncLayer, MyLobbyType, uint, MyLobbyCreated)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyMultiplayerLobby(MySyncLayer syncLayer, MyLobbyType lobbyType, uint maxPlayers, MyLobbyCreated action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>syncLayer</code> <a class="xref" href="Sandbox.Game.Multiplayer.MySyncLayer.html">MySyncLayer</a></dt>
+    <dd></dd>
+    <dt><code>lobbyType</code> <a class="xref" href="VRage.GameServices.MyLobbyType.html">MyLobbyType</a></dt>
+    <dd></dd>
+    <dt><code>maxPlayers</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>action</code> <a class="xref" href="VRage.GameServices.MyLobbyCreated.html">MyLobbyCreated</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_AppVersion_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.AppVersion*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_AppVersion" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.AppVersion">
+  AppVersion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int AppVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_AssemblerMultiplier_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.AssemblerMultiplier*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_AssemblerMultiplier" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.AssemblerMultiplier">
+  AssemblerMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float AssemblerMultiplier { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_BlocksInventoryMultiplier_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.BlocksInventoryMultiplier*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_BlocksInventoryMultiplier" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.BlocksInventoryMultiplier">
+  BlocksInventoryMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float BlocksInventoryMultiplier { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_DataHash_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.DataHash*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_DataHash" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.DataHash">
+  DataHash
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string DataHash { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ExperimentalMode_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ExperimentalMode*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ExperimentalMode" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ExperimentalMode">
+  ExperimentalMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ExperimentalMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GameMode_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GameMode*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GameMode" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GameMode">
+  GameMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyGameModeEnum GameMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Library.Utils.MyGameModeEnum.html">MyGameModeEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GrinderMultiplier_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GrinderMultiplier*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GrinderMultiplier" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GrinderMultiplier">
+  GrinderMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float GrinderMultiplier { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_HostName_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.HostName*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_HostName" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.HostName">
+  HostName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string HostName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_HostSteamId_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.HostSteamId*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_HostSteamId" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.HostSteamId">
+  HostSteamId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ulong HostSteamId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_InventoryMultiplier_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.InventoryMultiplier*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_InventoryMultiplier" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.InventoryMultiplier">
+  InventoryMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float InventoryMultiplier { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsLobby*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsLobby" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsLobby">
+  IsLobby
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsLobby { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsServerInternal_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsServerInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsServerInternal" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsServerInternal">
+  IsServerInternal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool IsServerInternal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsSomeoneElseConnected_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsSomeoneElseConnected*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsSomeoneElseConnected" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsSomeoneElseConnected">
+  IsSomeoneElseConnected
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsSomeoneElseConnected { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_LobbyId_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.LobbyId*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_LobbyId" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.LobbyId">
+  LobbyId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ulong LobbyId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MAX_PLAYERS_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MAX_PLAYERS*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MAX_PLAYERS" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MAX_PLAYERS">
+  MAX_PLAYERS
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int MAX_PLAYERS { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MaxPlayers_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MaxPlayers*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MaxPlayers" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MaxPlayers">
+  MaxPlayers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int MaxPlayers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MemberCount_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MemberCount*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MemberCount" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MemberCount">
+  MemberCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int MemberCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MemberLimit_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MemberLimit*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_MemberLimit" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.MemberLimit">
+  MemberLimit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int MemberLimit { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Members_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Members*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Members" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Members">
+  Members
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;ulong&gt; Members { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ModCount_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ModCount*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ModCount" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ModCount">
+  ModCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int ModCount { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Mods_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Mods*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Mods" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Mods">
+  Mods
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override List&lt;MyObjectBuilder_Checkpoint.ModItem&gt; Mods { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.MyObjectBuilder_Checkpoint.html">MyObjectBuilder_Checkpoint</a>.<a class="xref" href="VRage.Game.MyObjectBuilder_Checkpoint.ModItem.html">ModItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ModsTotalSize_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ModsTotalSize*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ModsTotalSize" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ModsTotalSize">
+  ModsTotalSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ulong ModsTotalSize { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Platform_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Platform*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Platform" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Platform">
+  Platform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Platform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_RefineryMultiplier_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.RefineryMultiplier*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_RefineryMultiplier" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.RefineryMultiplier">
+  RefineryMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float RefineryMultiplier { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Scenario_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Scenario*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Scenario" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Scenario">
+  Scenario
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Scenario { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ScenarioBriefing_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ScenarioBriefing*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ScenarioBriefing" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ScenarioBriefing">
+  ScenarioBriefing
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ScenarioBriefing { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ScenarioStartTime_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ScenarioStartTime*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ScenarioStartTime" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ScenarioStartTime">
+  ScenarioStartTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime ScenarioStartTime { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SyncDistance_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SyncDistance*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SyncDistance" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SyncDistance">
+  SyncDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int SyncDistance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ViewDistance_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ViewDistance*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_ViewDistance" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.ViewDistance">
+  ViewDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int ViewDistance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_WelderMultiplier_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.WelderMultiplier*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_WelderMultiplier" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.WelderMultiplier">
+  WelderMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float WelderMultiplier { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_WorldName_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.WorldName*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_WorldName" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.WorldName">
+  WorldName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string WorldName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_WorldSize_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.WorldSize*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_WorldSize" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.WorldSize">
+  WorldSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ulong WorldSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_BanClient_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.BanClient*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_BanClient_System_UInt64_System_Boolean_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.BanClient(System.UInt64,System.Boolean)">
+  BanClient(ulong, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BanClient(ulong userId, bool banned)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+    <dt><code>banned</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_DisconnectClient_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.DisconnectClient*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_DisconnectClient_System_UInt64_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.DisconnectClient(System.UInt64)">
+  DisconnectClient(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DisconnectClient(ulong userId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Dispose_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Dispose*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Dispose" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Dispose">
+  Dispose()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetDataHash_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetDataHash*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetDataHash_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetDataHash(VRage.GameServices.IMyLobby)">
+  GetDataHash(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetDataHash(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyAppVersion_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyAppVersion*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyAppVersion_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyAppVersion(VRage.GameServices.IMyLobby)">
+  GetLobbyAppVersion(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetLobbyAppVersion(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyBool_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyBool*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyBool_System_String_VRage_GameServices_IMyLobby_System_Boolean_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyBool(System.String,VRage.GameServices.IMyLobby,System.Boolean)">
+  GetLobbyBool(string, IMyLobby, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool GetLobbyBool(string key, IMyLobby lobby, bool defValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+    <dt><code>defValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyDateTime_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyDateTime*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyDateTime_System_String_VRage_GameServices_IMyLobby_System_DateTime_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyDateTime(System.String,VRage.GameServices.IMyLobby,System.DateTime)">
+  GetLobbyDateTime(string, IMyLobby, DateTime)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime GetLobbyDateTime(string key, IMyLobby lobby, DateTime defValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+    <dt><code>defValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyFloat_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyFloat*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyFloat_System_String_VRage_GameServices_IMyLobby_System_Single_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyFloat(System.String,VRage.GameServices.IMyLobby,System.Single)">
+  GetLobbyFloat(string, IMyLobby, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetLobbyFloat(string key, IMyLobby lobby, float defValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+    <dt><code>defValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyGameMode_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyGameMode*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyGameMode_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyGameMode(VRage.GameServices.IMyLobby)">
+  GetLobbyGameMode(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyGameModeEnum GetLobbyGameMode(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Library.Utils.MyGameModeEnum.html">MyGameModeEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyHostName_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyHostName*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyHostName_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyHostName(VRage.GameServices.IMyLobby)">
+  GetLobbyHostName(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetLobbyHostName(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyHostSteamId_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyHostSteamId*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyHostSteamId_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyHostSteamId(VRage.GameServices.IMyLobby)">
+  GetLobbyHostSteamId(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ulong GetLobbyHostSteamId(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyInt_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyInt*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyInt_System_String_VRage_GameServices_IMyLobby_System_Int32_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyInt(System.String,VRage.GameServices.IMyLobby,System.Int32)">
+  GetLobbyInt(string, IMyLobby, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetLobbyInt(string key, IMyLobby lobby, int defValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+    <dt><code>defValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyLong_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyLong*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyLong_System_String_VRage_GameServices_IMyLobby_System_Int64_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyLong(System.String,VRage.GameServices.IMyLobby,System.Int64)">
+  GetLobbyLong(string, IMyLobby, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long GetLobbyLong(string key, IMyLobby lobby, long defValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+    <dt><code>defValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyModCount_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyModCount*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyModCount_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyModCount(VRage.GameServices.IMyLobby)">
+  GetLobbyModCount(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetLobbyModCount(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyMods_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyMods*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyMods_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyMods(VRage.GameServices.IMyLobby)">
+  GetLobbyMods(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;MyObjectBuilder_Checkpoint.ModItem&gt; GetLobbyMods(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.MyObjectBuilder_Checkpoint.html">MyObjectBuilder_Checkpoint</a>.<a class="xref" href="VRage.Game.MyObjectBuilder_Checkpoint.ModItem.html">ModItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyModsTotalSize_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyModsTotalSize*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyModsTotalSize_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyModsTotalSize(VRage.GameServices.IMyLobby)">
+  GetLobbyModsTotalSize(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ulong GetLobbyModsTotalSize(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyScenario_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyScenario*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyScenario_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyScenario(VRage.GameServices.IMyLobby)">
+  GetLobbyScenario(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool GetLobbyScenario(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyScenarioBriefing_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyScenarioBriefing*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyScenarioBriefing_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyScenarioBriefing(VRage.GameServices.IMyLobby)">
+  GetLobbyScenarioBriefing(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetLobbyScenarioBriefing(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyType_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyType*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyType" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyType">
+  GetLobbyType()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyLobbyType GetLobbyType()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.GameServices.MyLobbyType.html">MyLobbyType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyULong_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyULong*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyULong_System_String_VRage_GameServices_IMyLobby_System_UInt64_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyULong(System.String,VRage.GameServices.IMyLobby,System.UInt64)">
+  GetLobbyULong(string, IMyLobby, ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ulong GetLobbyULong(string key, IMyLobby lobby, ulong defValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+    <dt><code>defValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyViewDistance_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyViewDistance*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyViewDistance_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyViewDistance(VRage.GameServices.IMyLobby)">
+  GetLobbyViewDistance(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetLobbyViewDistance(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyWorldName_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyWorldName*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyWorldName_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyWorldName(VRage.GameServices.IMyLobby)">
+  GetLobbyWorldName(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetLobbyWorldName(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyWorldSize_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyWorldSize*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetLobbyWorldSize_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetLobbyWorldSize(VRage.GameServices.IMyLobby)">
+  GetLobbyWorldSize(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ulong GetLobbyWorldSize(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetMemberName_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetMemberName*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetMemberName_System_UInt64_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetMemberName(System.UInt64)">
+  GetMemberName(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetMemberName(ulong steamUserID)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>steamUserID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetMemberPlatformName_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetMemberPlatformName*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetMemberPlatformName_System_UInt64_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetMemberPlatformName(System.UInt64)">
+  GetMemberPlatformName(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetMemberPlatformName(ulong steamUserID)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>steamUserID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetMemberServiceName_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetMemberServiceName*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetMemberServiceName_System_UInt64_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetMemberServiceName(System.UInt64)">
+  GetMemberServiceName(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetMemberServiceName(ulong steamUserID)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>steamUserID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetOwner_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetOwner*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_GetOwner" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.GetOwner">
+  GetOwner()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ulong GetOwner()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_HasSameData_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.HasSameData*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_HasSameData_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.HasSameData(VRage.GameServices.IMyLobby)">
+  HasSameData(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HasSameData(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsCorrectVersion_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsCorrectVersion*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsCorrectVersion" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsCorrectVersion">
+  IsCorrectVersion()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCorrectVersion()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsLobbyCorrectVersion_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsLobbyCorrectVersion*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_IsLobbyCorrectVersion_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.IsLobbyCorrectVersion(VRage.GameServices.IMyLobby)">
+  IsLobbyCorrectVersion(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLobbyCorrectVersion(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_OnClientBan_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.OnClientBan*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_OnClientBan_System_UInt64_System_Boolean_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.OnClientBan(System.UInt64,System.Boolean)">
+  OnClientBan(ulong, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnClientBan(ulong userId, bool banned)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+    <dt><code>banned</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_OnSessionReady_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.OnSessionReady*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_OnSessionReady" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.OnSessionReady">
+  OnSessionReady()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnSessionReady()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SendChatMessage_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SendChatMessage*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SendChatMessage_System_String_Sandbox_Game_Gui_ChatChannel_System_Int64_System_Nullable_VRage_GameServices_ChatMessageCustomData__" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SendChatMessage(System.String,Sandbox.Game.Gui.ChatChannel,System.Int64,System.Nullable{VRage.GameServices.ChatMessageCustomData})">
+  SendChatMessage(string, ChatChannel, long, ChatMessageCustomData?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SendChatMessage(string text, ChatChannel channel, long targetId, ChatMessageCustomData? customData = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>channel</code> <a class="xref" href="Sandbox.Game.Gui.ChatChannel.html">ChatChannel</a></dt>
+    <dd></dd>
+    <dt><code>targetId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>customData</code> <a class="xref" href="VRage.GameServices.ChatMessageCustomData.html">ChatMessageCustomData</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SetLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SetLobby*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SetLobby_VRage_GameServices_IMyLobby_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SetLobby(VRage.GameServices.IMyLobby)">
+  SetLobby(IMyLobby)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetLobby(IMyLobby lobby)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lobby</code> <a class="xref" href="VRage.GameServices.IMyLobby.html">IMyLobby</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SetLobbyType_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SetLobbyType*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SetLobbyType_VRage_GameServices_MyLobbyType_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SetLobbyType(VRage.GameServices.MyLobbyType)">
+  SetLobbyType(MyLobbyType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetLobbyType(MyLobbyType type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="VRage.GameServices.MyLobbyType.html">MyLobbyType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SetMemberLimit_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SetMemberLimit*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_SetMemberLimit_System_Int32_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.SetMemberLimit(System.Int32)">
+  SetMemberLimit(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetMemberLimit(int limit)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>limit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Tick_" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Tick*"></a>
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_Tick" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.Tick">
+  Tick()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Tick()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Sandbox_Engine_Multiplayer_MyMultiplayerLobby_OnLobbyDataUpdated" data-uid="Sandbox.Engine.Multiplayer.MyMultiplayerLobby.OnLobbyDataUpdated">
+  OnLobbyDataUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event MyLobbyDataUpdated OnLobbyDataUpdated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.GameServices.MyLobbyDataUpdated.html">MyLobbyDataUpdated</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyHud | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyHud | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Game.Gui.MyHud">
+
+
+
+  <h1 id="Sandbox_Game_Gui_MyHud" data-uid="Sandbox.Game.Gui.MyHud" class="text-break">
+Class MyHud  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Game.html">Game</a>.<a class="xref" href="Sandbox.Game.Gui.html">Gui</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation, Priority = 10)]
+public class MyHud : MySessionComponentBase, IMyUserInputComponent</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MySessionComponentBase.html">MySessionComponentBase</a></div>
+      <div><span class="xref">MyHud</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyUserInputComponent.html">IMyUserInputComponent</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_DebugName">MySessionComponentBase.DebugName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Priority">MySessionComponentBase.Priority</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ComponentType">MySessionComponentBase.ComponentType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatedBeforeInit">MySessionComponentBase.UpdatedBeforeInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SetUpdateOrder_VRage_Game_Components_MyUpdateOrder_">MySessionComponentBase.SetUpdateOrder(MyUpdateOrder)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_InitFromDefinition_VRage_Game_Components_Session_MySessionComponentDefinition_">MySessionComponentBase.InitFromDefinition(MySessionComponentDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Init_VRage_Game_MyObjectBuilder_SessionComponent_">MySessionComponentBase.Init(MyObjectBuilder_SessionComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_GetObjectBuilder">MySessionComponentBase.GetObjectBuilder()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_AfterLoadData">MySessionComponentBase.AfterLoadData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UnloadDataConditional">MySessionComponentBase.UnloadDataConditional()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Simulate">MySessionComponentBase.Simulate()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateAfterSimulation">MySessionComponentBase.UpdateAfterSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatingStopped">MySessionComponentBase.UpdatingStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Draw">MySessionComponentBase.Draw()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_HandleInput">MySessionComponentBase.HandleInput()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ToString">MySessionComponentBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOrder">MySessionComponentBase.UpdateOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ObjectBuilderType">MySessionComponentBase.ObjectBuilderType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ModContext">MySessionComponentBase.ModContext</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Loaded">MySessionComponentBase.Loaded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Initialized">MySessionComponentBase.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOnPause">MySessionComponentBase.UpdateOnPause</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsServerOnly">MySessionComponentBase.IsServerOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Definition">MySessionComponentBase.Definition</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Dependencies">MySessionComponentBase.Dependencies</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsRequiredByGame">MySessionComponentBase.IsRequiredByGame</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Game_Gui_MyHud__ctor_" data-uid="Sandbox.Game.Gui.MyHud.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud__ctor" data-uid="Sandbox.Game.Gui.MyHud.#ctor">
+  MyHud()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyHud()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_BlockInfo" data-uid="Sandbox.Game.Gui.MyHud.BlockInfo">
+  BlockInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudBlockInfo BlockInfo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudBlockInfo.html">MyHudBlockInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_Empty" data-uid="Sandbox.Game.Gui.MyHud.Empty">
+  Empty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly StringBuilder Empty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_GpsMarkers" data-uid="Sandbox.Game.Gui.MyHud.GpsMarkers">
+  GpsMarkers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudGpsMarkers GpsMarkers</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudGpsMarkers.html">MyHudGpsMarkers</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_GravityIndicator" data-uid="Sandbox.Game.Gui.MyHud.GravityIndicator">
+  GravityIndicator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudGravityIndicator GravityIndicator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudGravityIndicator.html">MyHudGravityIndicator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_LargeTurretTargets" data-uid="Sandbox.Game.Gui.MyHud.LargeTurretTargets">
+  LargeTurretTargets
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudLargeTurretTargets LargeTurretTargets</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudLargeTurretTargets.html">MyHudLargeTurretTargets</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_LocationMarkers" data-uid="Sandbox.Game.Gui.MyHud.LocationMarkers">
+  LocationMarkers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudLocationMarkers LocationMarkers</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudLocationMarkers.html">MyHudLocationMarkers</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_Notifications" data-uid="Sandbox.Game.Gui.MyHud.Notifications">
+  Notifications
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudNotifications Notifications</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudNotifications.html">MyHudNotifications</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_OffscreenTargetMarker" data-uid="Sandbox.Game.Gui.MyHud.OffscreenTargetMarker">
+  OffscreenTargetMarker
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudOffscreenTargetMarker OffscreenTargetMarker</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudOffscreenTargetMarker.html">MyHudOffscreenTargetMarker</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_OreMarkers" data-uid="Sandbox.Game.Gui.MyHud.OreMarkers">
+  OreMarkers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudOreMarkers OreMarkers</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudOreMarkers.html">MyHudOreMarkers</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_Questlog" data-uid="Sandbox.Game.Gui.MyHud.Questlog">
+  Questlog
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudQuestlog Questlog</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudQuestlog.html">MyHudQuestlog</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_ScreenEffects" data-uid="Sandbox.Game.Gui.MyHud.ScreenEffects">
+  ScreenEffects
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudScreenEffects ScreenEffects</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudScreenEffects.html">MyHudScreenEffects</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_SelectedObjectHighlight" data-uid="Sandbox.Game.Gui.MyHud.SelectedObjectHighlight">
+  SelectedObjectHighlight
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudSelectedObject SelectedObjectHighlight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudSelectedObject.html">MyHudSelectedObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Gui_MyHud_VoiceChat" data-uid="Sandbox.Game.Gui.MyHud.VoiceChat">
+  VoiceChat
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudVoiceChat VoiceChat</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudVoiceChat.html">MyHudVoiceChat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Game_Gui_MyHud_BlocksLeft_" data-uid="Sandbox.Game.Gui.MyHud.BlocksLeft*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_BlocksLeft" data-uid="Sandbox.Game.Gui.MyHud.BlocksLeft">
+  BlocksLeft
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudText BlocksLeft { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudText.html">MyHudText</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_ButtonPanelMarkers_" data-uid="Sandbox.Game.Gui.MyHud.ButtonPanelMarkers*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_ButtonPanelMarkers" data-uid="Sandbox.Game.Gui.MyHud.ButtonPanelMarkers">
+  ButtonPanelMarkers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudGpsMarkers ButtonPanelMarkers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudGpsMarkers.html">MyHudGpsMarkers</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_CameraInfo_" data-uid="Sandbox.Game.Gui.MyHud.CameraInfo*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_CameraInfo" data-uid="Sandbox.Game.Gui.MyHud.CameraInfo">
+  CameraInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudCameraInfo CameraInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudCameraInfo.html">MyHudCameraInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_ChangedInventoryItems_" data-uid="Sandbox.Game.Gui.MyHud.ChangedInventoryItems*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_ChangedInventoryItems" data-uid="Sandbox.Game.Gui.MyHud.ChangedInventoryItems">
+  ChangedInventoryItems
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudChangedInventoryItems ChangedInventoryItems { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudChangedInventoryItems.html">MyHudChangedInventoryItems</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_Chat_" data-uid="Sandbox.Game.Gui.MyHud.Chat*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_Chat" data-uid="Sandbox.Game.Gui.MyHud.Chat">
+  Chat
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudChat Chat { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudChat.html">MyHudChat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_Crosshair_" data-uid="Sandbox.Game.Gui.MyHud.Crosshair*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_Crosshair" data-uid="Sandbox.Game.Gui.MyHud.Crosshair">
+  Crosshair
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudCrosshair Crosshair { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudCrosshair.html">MyHudCrosshair</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_CutsceneHud_" data-uid="Sandbox.Game.Gui.MyHud.CutsceneHud*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_CutsceneHud" data-uid="Sandbox.Game.Gui.MyHud.CutsceneHud">
+  CutsceneHud
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CutsceneHud { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_HackingMarkers_" data-uid="Sandbox.Game.Gui.MyHud.HackingMarkers*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_HackingMarkers" data-uid="Sandbox.Game.Gui.MyHud.HackingMarkers">
+  HackingMarkers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudHackingMarkers HackingMarkers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudHackingMarkers.html">MyHudHackingMarkers</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_HudDefinition_" data-uid="Sandbox.Game.Gui.MyHud.HudDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_HudDefinition" data-uid="Sandbox.Game.Gui.MyHud.HudDefinition">
+  HudDefinition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudDefinition HudDefinition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.GUI.MyHudDefinition.html">MyHudDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_HudElementsScaleMultiplier_" data-uid="Sandbox.Game.Gui.MyHud.HudElementsScaleMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_HudElementsScaleMultiplier" data-uid="Sandbox.Game.Gui.MyHud.HudElementsScaleMultiplier">
+  HudElementsScaleMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float HudElementsScaleMultiplier { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_HudState_" data-uid="Sandbox.Game.Gui.MyHud.HudState*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_HudState" data-uid="Sandbox.Game.Gui.MyHud.HudState">
+  HudState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int HudState { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_IsBuildMode_" data-uid="Sandbox.Game.Gui.MyHud.IsBuildMode*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_IsBuildMode" data-uid="Sandbox.Game.Gui.MyHud.IsBuildMode">
+  IsBuildMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsBuildMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_IsHudMinimal_" data-uid="Sandbox.Game.Gui.MyHud.IsHudMinimal*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_IsHudMinimal" data-uid="Sandbox.Game.Gui.MyHud.IsHudMinimal">
+  IsHudMinimal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsHudMinimal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_IsVisible_" data-uid="Sandbox.Game.Gui.MyHud.IsVisible*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_IsVisible" data-uid="Sandbox.Game.Gui.MyHud.IsVisible">
+  IsVisible
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsVisible { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_MinimalHud_" data-uid="Sandbox.Game.Gui.MyHud.MinimalHud*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_MinimalHud" data-uid="Sandbox.Game.Gui.MyHud.MinimalHud">
+  MinimalHud
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool MinimalHud { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_ObjectiveLine_" data-uid="Sandbox.Game.Gui.MyHud.ObjectiveLine*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_ObjectiveLine" data-uid="Sandbox.Game.Gui.MyHud.ObjectiveLine">
+  ObjectiveLine
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudObjectiveLine ObjectiveLine { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudObjectiveLine.html">MyHudObjectiveLine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_RotatingWheelText_" data-uid="Sandbox.Game.Gui.MyHud.RotatingWheelText*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_RotatingWheelText" data-uid="Sandbox.Game.Gui.MyHud.RotatingWheelText">
+  RotatingWheelText
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StringBuilder RotatingWheelText { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_RotatingWheelVisible_" data-uid="Sandbox.Game.Gui.MyHud.RotatingWheelVisible*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_RotatingWheelVisible" data-uid="Sandbox.Game.Gui.MyHud.RotatingWheelVisible">
+  RotatingWheelVisible
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RotatingWheelVisible { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_ScenarioInfo_" data-uid="Sandbox.Game.Gui.MyHud.ScenarioInfo*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_ScenarioInfo" data-uid="Sandbox.Game.Gui.MyHud.ScenarioInfo">
+  ScenarioInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudScenarioInfo ScenarioInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudScenarioInfo.html">MyHudScenarioInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_SinkGroupInfo_" data-uid="Sandbox.Game.Gui.MyHud.SinkGroupInfo*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_SinkGroupInfo" data-uid="Sandbox.Game.Gui.MyHud.SinkGroupInfo">
+  SinkGroupInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudSinkGroupInfo SinkGroupInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudSinkGroupInfo.html">MyHudSinkGroupInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_Static_" data-uid="Sandbox.Game.Gui.MyHud.Static*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_Static" data-uid="Sandbox.Game.Gui.MyHud.Static">
+  Static
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHud Static { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHud.html">MyHud</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_Stats_" data-uid="Sandbox.Game.Gui.MyHud.Stats*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_Stats" data-uid="Sandbox.Game.Gui.MyHud.Stats">
+  Stats
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudStatManager Stats { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.GUI.MyHudStatManager.html">MyHudStatManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_TargetingMarkers_" data-uid="Sandbox.Game.Gui.MyHud.TargetingMarkers*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_TargetingMarkers" data-uid="Sandbox.Game.Gui.MyHud.TargetingMarkers">
+  TargetingMarkers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudTargetingMarkers TargetingMarkers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudTargetingMarkers.html">MyHudTargetingMarkers</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_WorldBorderChecker_" data-uid="Sandbox.Game.Gui.MyHud.WorldBorderChecker*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_WorldBorderChecker" data-uid="Sandbox.Game.Gui.MyHud.WorldBorderChecker">
+  WorldBorderChecker
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyHudWorldBorderChecker WorldBorderChecker { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Gui.MyHudWorldBorderChecker.html">MyHudWorldBorderChecker</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Game_Gui_MyHud_BeforeStart_" data-uid="Sandbox.Game.Gui.MyHud.BeforeStart*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_BeforeStart" data-uid="Sandbox.Game.Gui.MyHud.BeforeStart">
+  BeforeStart()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BeforeStart()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_CheckShowPlayerNamesOnHud_" data-uid="Sandbox.Game.Gui.MyHud.CheckShowPlayerNamesOnHud*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_CheckShowPlayerNamesOnHud" data-uid="Sandbox.Game.Gui.MyHud.CheckShowPlayerNamesOnHud">
+  CheckShowPlayerNamesOnHud()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CheckShowPlayerNamesOnHud()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_LoadData_" data-uid="Sandbox.Game.Gui.MyHud.LoadData*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_LoadData" data-uid="Sandbox.Game.Gui.MyHud.LoadData">
+  LoadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_PopRotatingWheelVisible_" data-uid="Sandbox.Game.Gui.MyHud.PopRotatingWheelVisible*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_PopRotatingWheelVisible" data-uid="Sandbox.Game.Gui.MyHud.PopRotatingWheelVisible">
+  PopRotatingWheelVisible()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void PopRotatingWheelVisible()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_PushRotatingWheelVisible_" data-uid="Sandbox.Game.Gui.MyHud.PushRotatingWheelVisible*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_PushRotatingWheelVisible" data-uid="Sandbox.Game.Gui.MyHud.PushRotatingWheelVisible">
+  PushRotatingWheelVisible()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void PushRotatingWheelVisible()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_ReloadTexts_" data-uid="Sandbox.Game.Gui.MyHud.ReloadTexts*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_ReloadTexts" data-uid="Sandbox.Game.Gui.MyHud.ReloadTexts">
+  ReloadTexts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReloadTexts()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_SaveData_" data-uid="Sandbox.Game.Gui.MyHud.SaveData*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_SaveData" data-uid="Sandbox.Game.Gui.MyHud.SaveData">
+  SaveData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SaveData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_SetHudDefinition_" data-uid="Sandbox.Game.Gui.MyHud.SetHudDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_SetHudDefinition_System_String_" data-uid="Sandbox.Game.Gui.MyHud.SetHudDefinition(System.String)">
+  SetHudDefinition(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetHudDefinition(string definition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>definition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_SetHudState_" data-uid="Sandbox.Game.Gui.MyHud.SetHudState*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_SetHudState_System_Int32_" data-uid="Sandbox.Game.Gui.MyHud.SetHudState(System.Int32)">
+  SetHudState(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetHudState(int state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_ToggleGamepadHud_" data-uid="Sandbox.Game.Gui.MyHud.ToggleGamepadHud*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_ToggleGamepadHud" data-uid="Sandbox.Game.Gui.MyHud.ToggleGamepadHud">
+  ToggleGamepadHud()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ToggleGamepadHud()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_UnloadData_" data-uid="Sandbox.Game.Gui.MyHud.UnloadData*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_UnloadData" data-uid="Sandbox.Game.Gui.MyHud.UnloadData">
+  UnloadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UnloadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Gui_MyHud_UpdateBeforeSimulation_" data-uid="Sandbox.Game.Gui.MyHud.UpdateBeforeSimulation*"></a>
+
+  <h3 id="Sandbox_Game_Gui_MyHud_UpdateBeforeSimulation" data-uid="Sandbox.Game.Gui.MyHud.UpdateBeforeSimulation">
+  UpdateBeforeSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateBeforeSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

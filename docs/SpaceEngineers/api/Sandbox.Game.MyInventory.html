@@ -1,0 +1,3807 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyInventory | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyInventory | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Game.MyInventory">
+
+
+
+  <h1 id="Sandbox_Game_MyInventory" data-uid="Sandbox.Game.MyInventory" class="text-break">
+Class MyInventory  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Game.html">Game</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MyComponentBuilder(typeof(MyObjectBuilder_Inventory), true)]
+[StaticEventOwner]
+public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponentBase, IMyEventProxy, IMyEventOwner, IMyInventory, IMyInventory</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MyComponentBase.html">MyComponentBase</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html">MyEntityComponentBase</a></div>
+      <div><a class="xref" href="VRage.Game.Entity.MyInventoryBase.html">MyInventoryBase</a></div>
+      <div><span class="xref">MyInventory</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></div>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyComponentBase.html">IMyComponentBase</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventProxy.html">IMyEventProxy</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventOwner.html">IMyEventOwner</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.IMyInventory.html">IMyInventory</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventory.html">IMyInventory</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RemoveEntityOnEmpty">MyInventoryBase.RemoveEntityOnEmpty</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_CanPutItems">MyInventoryBase.CanPutItems</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_ToString">MyInventoryBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_OnOwnerChanged">MyInventoryBase.OnOwnerChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_IsSerialized">MyInventoryBase.IsSerialized()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseContentsChanged">MyInventoryBase.RaiseContentsChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseInventoryContentChanged_VRage_Game_Entity_MyPhysicalInventoryItem_VRage_MyFixedPoint_">MyInventoryBase.RaiseInventoryContentChanged(MyPhysicalInventoryItem, MyFixedPoint)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseBeforeContentsChanged">MyInventoryBase.RaiseBeforeContentsChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseContentsAdded_VRage_Game_Entity_MyPhysicalInventoryItem_VRage_MyFixedPoint_">MyInventoryBase.RaiseContentsAdded(MyPhysicalInventoryItem, MyFixedPoint)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseContentsRemoved_VRage_Game_Entity_MyPhysicalInventoryItem_VRage_MyFixedPoint_">MyInventoryBase.RaiseContentsRemoved(MyPhysicalInventoryItem, MyFixedPoint)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_InventoryId">MyInventoryBase.InventoryId</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_ComponentTypeDebugString">MyInventoryBase.ComponentTypeDebugString</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_AttachSyncToEntity">MyInventoryBase.AttachSyncToEntity</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_ContentsChanged">MyInventoryBase.ContentsChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_BeforeContentsChanged">MyInventoryBase.BeforeContentsChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_ContentsAdded">MyInventoryBase.ContentsAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_ContentsRemoved">MyInventoryBase.ContentsRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_InventoryContentChanged">MyInventoryBase.InventoryContentChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_OwnerChanged">MyInventoryBase.OwnerChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnBeforeRemovedFromContainer">MyEntityComponentBase.OnBeforeRemovedFromContainer()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Entity">MyEntityComponentBase.Entity</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAfterAddedToContainer">MyEntityComponentBase.OnAfterAddedToContainer</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_BeforeRemovedFromContainer">MyEntityComponentBase.BeforeRemovedFromContainer</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_SetContainer_VRage_Game_Components_Interfaces_IMyComponentContainer_">MyComponentBase.SetContainer(IMyComponentContainer)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_GetAs__1">MyComponentBase.GetAs&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_OnAddedToScene">MyComponentBase.OnAddedToScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_OnRemovedFromScene">MyComponentBase.OnRemovedFromScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_RemoveExistingComponentOnNewInsert">MyComponentBase.RemoveExistingComponentOnNewInsert</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_RaiseEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Utils_MyStringHash_VRage_Game_Components_MyEntityContainerEventExtensions_EntityEventParams_">MyEntityContainerEventExtensions.RaiseEntityEvent(MyEntityComponentBase, MyStringHash, MyEntityContainerEventExtensions.EntityEventParams)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_RegisterForEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Game_Entity_MyEntity_VRage_Utils_MyStringHash_VRage_Game_Components_MyEntityContainerEventExtensions_EntityEventHandler_">MyEntityContainerEventExtensions.RegisterForEntityEvent(MyEntityComponentBase, MyEntity, MyStringHash, MyEntityContainerEventExtensions.EntityEventHandler)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_RegisterForEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Utils_MyStringHash_VRage_Game_Components_MyEntityContainerEventExtensions_EntityEventHandler_">MyEntityContainerEventExtensions.RegisterForEntityEvent(MyEntityComponentBase, MyStringHash, MyEntityContainerEventExtensions.EntityEventHandler)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_UnregisterForEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Game_Entity_MyEntity_VRage_Utils_MyStringHash_">MyEntityContainerEventExtensions.UnregisterForEntityEvent(MyEntityComponentBase, MyEntity, MyStringHash)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Game_MyInventory__ctor_" data-uid="Sandbox.Game.MyInventory.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory__ctor" data-uid="Sandbox.Game.MyInventory.#ctor">
+  MyInventory()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventory()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory__ctor_" data-uid="Sandbox.Game.MyInventory.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory__ctor_System_Single_System_Single_VRageMath_Vector3_VRage_Game_MyInventoryFlags_" data-uid="Sandbox.Game.MyInventory.#ctor(System.Single,System.Single,VRageMath.Vector3,VRage.Game.MyInventoryFlags)">
+  MyInventory(float, float, Vector3, MyInventoryFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventory(float maxVolume, float maxMass, Vector3 size, MyInventoryFlags flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>maxVolume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>maxMass</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyInventoryFlags.html">MyInventoryFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory__ctor_" data-uid="Sandbox.Game.MyInventory.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory__ctor_System_Single_VRageMath_Vector3_VRage_Game_MyInventoryFlags_" data-uid="Sandbox.Game.MyInventory.#ctor(System.Single,VRageMath.Vector3,VRage.Game.MyInventoryFlags)">
+  MyInventory(float, Vector3, MyInventoryFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventory(float maxVolume, Vector3 size, MyInventoryFlags flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>maxVolume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyInventoryFlags.html">MyInventoryFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory__ctor_" data-uid="Sandbox.Game.MyInventory.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory__ctor_VRage_Game_MyObjectBuilder_InventoryDefinition_VRage_Game_MyInventoryFlags_" data-uid="Sandbox.Game.MyInventory.#ctor(VRage.Game.MyObjectBuilder_InventoryDefinition,VRage.Game.MyInventoryFlags)">
+  MyInventory(MyObjectBuilder_InventoryDefinition, MyInventoryFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventory(MyObjectBuilder_InventoryDefinition definition, MyInventoryFlags flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>definition</code> <a class="xref" href="VRage.Game.MyObjectBuilder_InventoryDefinition.html">MyObjectBuilder_InventoryDefinition</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyInventoryFlags.html">MyInventoryFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory__ctor_" data-uid="Sandbox.Game.MyInventory.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory__ctor_VRage_MyFixedPoint_VRage_MyFixedPoint_VRage_Game_MyInventoryFlags_System_Collections_Generic_List_VRage_Game_Entity_MyPhysicalInventoryItem__" data-uid="Sandbox.Game.MyInventory.#ctor(VRage.MyFixedPoint,VRage.MyFixedPoint,VRage.Game.MyInventoryFlags,System.Collections.Generic.List{VRage.Game.Entity.MyPhysicalInventoryItem})">
+  MyInventory(MyFixedPoint, MyFixedPoint, MyInventoryFlags, List&lt;MyPhysicalInventoryItem&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventory(MyFixedPoint maxVolume, MyFixedPoint maxMass, MyInventoryFlags flags, List&lt;MyPhysicalInventoryItem&gt; initialInventory)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>maxVolume</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>maxMass</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyInventoryFlags.html">MyInventoryFlags</a></dt>
+    <dd></dd>
+    <dt><code>initialInventory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory__ctor_" data-uid="Sandbox.Game.MyInventory.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory__ctor_VRage_MyFixedPoint_VRage_MyFixedPoint_VRageMath_Vector3_VRage_Game_MyInventoryFlags_" data-uid="Sandbox.Game.MyInventory.#ctor(VRage.MyFixedPoint,VRage.MyFixedPoint,VRageMath.Vector3,VRage.Game.MyInventoryFlags)">
+  MyInventory(MyFixedPoint, MyFixedPoint, Vector3, MyInventoryFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventory(MyFixedPoint maxVolume, MyFixedPoint maxMass, Vector3 size, MyInventoryFlags flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>maxVolume</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>maxMass</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyInventoryFlags.html">MyInventoryFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_Constraint" data-uid="Sandbox.Game.MyInventory.Constraint">
+  Constraint
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventoryConstraint Constraint</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.MyInventoryConstraint.html">MyInventoryConstraint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_ExternalMass" data-uid="Sandbox.Game.MyInventory.ExternalMass">
+  ExternalMass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyFixedPoint ExternalMass</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_INVENTORY_CHANGED" data-uid="Sandbox.Game.MyInventory.INVENTORY_CHANGED">
+  INVENTORY_CHANGED
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyStringHash INVENTORY_CHANGED</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_SyncType" data-uid="Sandbox.Game.MyInventory.SyncType">
+  SyncType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly SyncType SyncType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Sync.SyncType.html">SyncType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_UserData" data-uid="Sandbox.Game.MyInventory.UserData">
+  UserData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object UserData</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Game_MyInventory_CargoPercentage_" data-uid="Sandbox.Game.MyInventory.CargoPercentage*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_CargoPercentage" data-uid="Sandbox.Game.MyInventory.CargoPercentage">
+  CargoPercentage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CargoPercentage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_CurrentMass_" data-uid="Sandbox.Game.MyInventory.CurrentMass*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_CurrentMass" data-uid="Sandbox.Game.MyInventory.CurrentMass">
+  CurrentMass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyFixedPoint CurrentMass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_CurrentVolume_" data-uid="Sandbox.Game.MyInventory.CurrentVolume*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_CurrentVolume" data-uid="Sandbox.Game.MyInventory.CurrentVolume">
+  CurrentVolume
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyFixedPoint CurrentVolume { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ForcedPriority_" data-uid="Sandbox.Game.MyInventory.ForcedPriority*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ForcedPriority" data-uid="Sandbox.Game.MyInventory.ForcedPriority">
+  ForcedPriority
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float? ForcedPriority { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_InventoryIdx_" data-uid="Sandbox.Game.MyInventory.InventoryIdx*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_InventoryIdx" data-uid="Sandbox.Game.MyInventory.InventoryIdx">
+  InventoryIdx
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte InventoryIdx { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_IsCharacterOwner_" data-uid="Sandbox.Game.MyInventory.IsCharacterOwner*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_IsCharacterOwner" data-uid="Sandbox.Game.MyInventory.IsCharacterOwner">
+  IsCharacterOwner
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCharacterOwner { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_IsConstrained_" data-uid="Sandbox.Game.MyInventory.IsConstrained*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_IsConstrained" data-uid="Sandbox.Game.MyInventory.IsConstrained">
+  IsConstrained
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsConstrained { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_IsFull_" data-uid="Sandbox.Game.MyInventory.IsFull*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_IsFull" data-uid="Sandbox.Game.MyInventory.IsFull">
+  IsFull
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFull { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ItemCount_" data-uid="Sandbox.Game.MyInventory.ItemCount*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ItemCount" data-uid="Sandbox.Game.MyInventory.ItemCount">
+  ItemCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ItemCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_MaxItemCount_" data-uid="Sandbox.Game.MyInventory.MaxItemCount*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_MaxItemCount" data-uid="Sandbox.Game.MyInventory.MaxItemCount">
+  MaxItemCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int MaxItemCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_MaxMass_" data-uid="Sandbox.Game.MyInventory.MaxMass*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_MaxMass" data-uid="Sandbox.Game.MyInventory.MaxMass">
+  MaxMass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyFixedPoint MaxMass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_MaxVolume_" data-uid="Sandbox.Game.MyInventory.MaxVolume*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_MaxVolume" data-uid="Sandbox.Game.MyInventory.MaxVolume">
+  MaxVolume
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyFixedPoint MaxVolume { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Owner_" data-uid="Sandbox.Game.MyInventory.Owner*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Owner" data-uid="Sandbox.Game.MyInventory.Owner">
+  Owner
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyEntity Owner { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_VolumeFillFactor_" data-uid="Sandbox.Game.MyInventory.VolumeFillFactor*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_VolumeFillFactor" data-uid="Sandbox.Game.MyInventory.VolumeFillFactor">
+  VolumeFillFactor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float VolumeFillFactor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Game_MyInventory_Add_" data-uid="Sandbox.Game.MyInventory.Add*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Add_VRage_Game_ModAPI_Ingame_IMyInventoryItem_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.Add(VRage.Game.ModAPI.Ingame.IMyInventoryItem,VRage.MyFixedPoint)">
+  Add(IMyInventoryItem, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Add(IMyInventoryItem item, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventoryItem.html">IMyInventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_AddBlocks_" data-uid="Sandbox.Game.MyInventory.AddBlocks*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_AddBlocks_Sandbox_Definitions_MyCubeBlockDefinition_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.AddBlocks(Sandbox.Definitions.MyCubeBlockDefinition,VRage.MyFixedPoint)">
+  AddBlocks(MyCubeBlockDefinition, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AddBlocks(MyCubeBlockDefinition blockDef, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockDef</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_AddItemClient_" data-uid="Sandbox.Game.MyInventory.AddItemClient*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_AddItemClient_System_Int32_VRage_Game_Entity_MyPhysicalInventoryItem_" data-uid="Sandbox.Game.MyInventory.AddItemClient(System.Int32,VRage.Game.Entity.MyPhysicalInventoryItem)">
+  AddItemClient(int, MyPhysicalInventoryItem)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddItemClient(int position, MyPhysicalInventoryItem item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>item</code> <a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_AddItems_" data-uid="Sandbox.Game.MyInventory.AddItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_AddItems_VRage_MyFixedPoint_VRage_ObjectBuilders_MyObjectBuilder_Base_" data-uid="Sandbox.Game.MyInventory.AddItems(VRage.MyFixedPoint,VRage.ObjectBuilders.MyObjectBuilder_Base)">
+  AddItems(MyFixedPoint, MyObjectBuilder_Base)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool AddItems(MyFixedPoint amount, MyObjectBuilder_Base objectBuilder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>objectBuilder</code> <a class="xref" href="VRage.ObjectBuilders.MyObjectBuilder_Base.html">MyObjectBuilder_Base</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ApplyChanges_" data-uid="Sandbox.Game.MyInventory.ApplyChanges*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ApplyChanges_System_Collections_Generic_List_VRage_Game_Entity_MyComponentChange__" data-uid="Sandbox.Game.MyInventory.ApplyChanges(System.Collections.Generic.List{VRage.Game.Entity.MyComponentChange})">
+  ApplyChanges(List&lt;MyComponentChange&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ApplyChanges(List&lt;MyComponentChange&gt; changes)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>changes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.Entity.MyComponentChange.html">MyComponentChange</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_CanItemsBeAdded_" data-uid="Sandbox.Game.MyInventory.CanItemsBeAdded*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_CanItemsBeAdded_VRage_MyFixedPoint_VRage_Game_MyDefinitionId_" data-uid="Sandbox.Game.MyInventory.CanItemsBeAdded(VRage.MyFixedPoint,VRage.Game.MyDefinitionId)">
+  CanItemsBeAdded(MyFixedPoint, MyDefinitionId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanItemsBeAdded(MyFixedPoint amount, MyDefinitionId contentId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_CanItemsBeAdded_" data-uid="Sandbox.Game.MyInventory.CanItemsBeAdded*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_CanItemsBeAdded_VRage_MyFixedPoint_VRage_Game_MyDefinitionId_VRage_MyFixedPoint_VRage_MyFixedPoint_VRage_MyFixedPoint_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.CanItemsBeAdded(VRage.MyFixedPoint,VRage.Game.MyDefinitionId,VRage.MyFixedPoint,VRage.MyFixedPoint,VRage.MyFixedPoint,VRage.MyFixedPoint)">
+  CanItemsBeAdded(MyFixedPoint, MyDefinitionId, MyFixedPoint, MyFixedPoint, MyFixedPoint, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanItemsBeAdded(MyFixedPoint amount, MyDefinitionId contentId, MyFixedPoint maxVolume, MyFixedPoint maxMass, MyFixedPoint currentVolume, MyFixedPoint currentMass)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>maxVolume</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>maxMass</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>currentVolume</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>currentMass</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ChangeItemClient_" data-uid="Sandbox.Game.MyInventory.ChangeItemClient*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ChangeItemClient_VRage_Game_Entity_MyPhysicalInventoryItem_System_Int32_" data-uid="Sandbox.Game.MyInventory.ChangeItemClient(VRage.Game.Entity.MyPhysicalInventoryItem,System.Int32)">
+  ChangeItemClient(MyPhysicalInventoryItem, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChangeItemClient(MyPhysicalInventoryItem item, int position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_CheckConstraint_" data-uid="Sandbox.Game.MyInventory.CheckConstraint*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_CheckConstraint_VRage_Game_MyDefinitionId_" data-uid="Sandbox.Game.MyInventory.CheckConstraint(VRage.Game.MyDefinitionId)">
+  CheckConstraint(MyDefinitionId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckConstraint(MyDefinitionId contentId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Clear_" data-uid="Sandbox.Game.MyInventory.Clear*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Clear_System_Boolean_" data-uid="Sandbox.Game.MyInventory.Clear(System.Boolean)">
+  Clear(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear(bool sync = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sync</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ClearItems_" data-uid="Sandbox.Game.MyInventory.ClearItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ClearItems" data-uid="Sandbox.Game.MyInventory.ClearItems">
+  ClearItems()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearItems()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ComputeAmountThatFits_" data-uid="Sandbox.Game.MyInventory.ComputeAmountThatFits*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ComputeAmountThatFits_Sandbox_Definitions_MyBlueprintDefinitionBase_" data-uid="Sandbox.Game.MyInventory.ComputeAmountThatFits(Sandbox.Definitions.MyBlueprintDefinitionBase)">
+  ComputeAmountThatFits(MyBlueprintDefinitionBase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyFixedPoint ComputeAmountThatFits(MyBlueprintDefinitionBase blueprint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blueprint</code> <a class="xref" href="Sandbox.Definitions.MyBlueprintDefinitionBase.html">MyBlueprintDefinitionBase</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ComputeAmountThatFits_" data-uid="Sandbox.Game.MyInventory.ComputeAmountThatFits*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ComputeAmountThatFits_VRage_Game_MyDefinitionId_System_Single_System_Single_" data-uid="Sandbox.Game.MyInventory.ComputeAmountThatFits(VRage.Game.MyDefinitionId,System.Single,System.Single)">
+  ComputeAmountThatFits(MyDefinitionId, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyFixedPoint ComputeAmountThatFits(MyDefinitionId contentId, float volumeRemoved = 0, float massRemoved = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>volumeRemoved</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>massRemoved</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ConsumeItem_" data-uid="Sandbox.Game.MyInventory.ConsumeItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ConsumeItem_VRage_Game_MyDefinitionId_VRage_MyFixedPoint_System_Int64_" data-uid="Sandbox.Game.MyInventory.ConsumeItem(VRage.Game.MyDefinitionId,VRage.MyFixedPoint,System.Int64)">
+  ConsumeItem(MyDefinitionId, MyFixedPoint, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ConsumeItem(MyDefinitionId itemId, MyFixedPoint amount, long consumerEntityId = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>consumerEntityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ContainItems_" data-uid="Sandbox.Game.MyInventory.ContainItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ContainItems_System_Nullable_VRage_MyFixedPoint__VRage_Game_MyDefinitionId_VRage_Game_MyItemFlags_" data-uid="Sandbox.Game.MyInventory.ContainItems(System.Nullable{VRage.MyFixedPoint},VRage.Game.MyDefinitionId,VRage.Game.MyItemFlags)">
+  ContainItems(MyFixedPoint?, MyDefinitionId, MyItemFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainItems(MyFixedPoint? amount, MyDefinitionId contentId, MyItemFlags flags = MyItemFlags.None)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyItemFlags.html">MyItemFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ContainItems_" data-uid="Sandbox.Game.MyInventory.ContainItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ContainItems_VRage_MyFixedPoint_VRage_Game_MyObjectBuilder_PhysicalObject_" data-uid="Sandbox.Game.MyInventory.ContainItems(VRage.MyFixedPoint,VRage.Game.MyObjectBuilder_PhysicalObject)">
+  ContainItems(MyFixedPoint, MyObjectBuilder_PhysicalObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainItems(MyFixedPoint amount, MyObjectBuilder_PhysicalObject ob)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>ob</code> <a class="xref" href="VRage.Game.MyObjectBuilder_PhysicalObject.html">MyObjectBuilder_PhysicalObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_CountItems_" data-uid="Sandbox.Game.MyInventory.CountItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_CountItems_System_Collections_Generic_Dictionary_VRage_Game_MyDefinitionId_VRage_MyFixedPoint__" data-uid="Sandbox.Game.MyInventory.CountItems(System.Collections.Generic.Dictionary{VRage.Game.MyDefinitionId,VRage.MyFixedPoint})">
+  CountItems(Dictionary&lt;MyDefinitionId, MyFixedPoint&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void CountItems(Dictionary&lt;MyDefinitionId, MyFixedPoint&gt; itemCounts)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemCounts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a>, <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_DebugAddItems_" data-uid="Sandbox.Game.MyInventory.DebugAddItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_DebugAddItems_VRage_MyFixedPoint_VRage_ObjectBuilders_MyObjectBuilder_Base_" data-uid="Sandbox.Game.MyInventory.DebugAddItems(VRage.MyFixedPoint,VRage.ObjectBuilders.MyObjectBuilder_Base)">
+  DebugAddItems(MyFixedPoint, MyObjectBuilder_Base)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DebugAddItems(MyFixedPoint amount, MyObjectBuilder_Base objectBuilder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>objectBuilder</code> <a class="xref" href="VRage.ObjectBuilders.MyObjectBuilder_Base.html">MyObjectBuilder_Base</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Deserialize_" data-uid="Sandbox.Game.MyInventory.Deserialize*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Deserialize_VRage_Game_ObjectBuilders_ComponentSystem_MyObjectBuilder_ComponentBase_" data-uid="Sandbox.Game.MyInventory.Deserialize(VRage.Game.ObjectBuilders.ComponentSystem.MyObjectBuilder_ComponentBase)">
+  Deserialize(MyObjectBuilder_ComponentBase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Deserialize(MyObjectBuilder_ComponentBase builder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="VRage.Game.ObjectBuilders.ComponentSystem.MyObjectBuilder_ComponentBase.html">MyObjectBuilder_ComponentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_DropItem_" data-uid="Sandbox.Game.MyInventory.DropItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_DropItem_System_Int32_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.DropItem(System.Int32,VRage.MyFixedPoint)">
+  DropItem(int, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DropItem(int itemIndex, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_DropItemById_" data-uid="Sandbox.Game.MyInventory.DropItemById*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_DropItemById_System_UInt32_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.DropItemById(System.UInt32,VRage.MyFixedPoint)">
+  DropItemById(uint, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DropItemById(uint itemId, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Empty_" data-uid="Sandbox.Game.MyInventory.Empty*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Empty" data-uid="Sandbox.Game.MyInventory.Empty">
+  Empty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Empty()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_FilterItemsUsingConstraint_" data-uid="Sandbox.Game.MyInventory.FilterItemsUsingConstraint*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_FilterItemsUsingConstraint" data-uid="Sandbox.Game.MyInventory.FilterItemsUsingConstraint">
+  FilterItemsUsingConstraint()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FilterItemsUsingConstraint()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_FindFreeSlotSpace_" data-uid="Sandbox.Game.MyInventory.FindFreeSlotSpace*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_FindFreeSlotSpace_VRage_Game_MyDefinitionId_Sandbox_Game_Entities_Interfaces_IMyInventoryItemAdapter_" data-uid="Sandbox.Game.MyInventory.FindFreeSlotSpace(VRage.Game.MyDefinitionId,Sandbox.Game.Entities.Interfaces.IMyInventoryItemAdapter)">
+  FindFreeSlotSpace(MyDefinitionId, IMyInventoryItemAdapter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyFixedPoint FindFreeSlotSpace(MyDefinitionId contentId, IMyInventoryItemAdapter adapter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>adapter</code> <a class="xref" href="Sandbox.Game.Entities.Interfaces.IMyInventoryItemAdapter.html">IMyInventoryItemAdapter</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_FindItem_" data-uid="Sandbox.Game.MyInventory.FindItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_FindItem_System_Func_VRage_Game_Entity_MyPhysicalInventoryItem_System_Boolean__" data-uid="Sandbox.Game.MyInventory.FindItem(System.Func{VRage.Game.Entity.MyPhysicalInventoryItem,System.Boolean})">
+  FindItem(Func&lt;MyPhysicalInventoryItem, bool&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPhysicalInventoryItem? FindItem(Func&lt;MyPhysicalInventoryItem, bool&gt; predicate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>predicate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_FindItem_" data-uid="Sandbox.Game.MyInventory.FindItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_FindItem_VRage_Game_MyDefinitionId_" data-uid="Sandbox.Game.MyInventory.FindItem(VRage.Game.MyDefinitionId)">
+  FindItem(MyDefinitionId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPhysicalInventoryItem? FindItem(MyDefinitionId contentId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_FindUsableItem_" data-uid="Sandbox.Game.MyInventory.FindUsableItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_FindUsableItem_VRage_Game_MyDefinitionId_" data-uid="Sandbox.Game.MyInventory.FindUsableItem(VRage.Game.MyDefinitionId)">
+  FindUsableItem(MyDefinitionId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPhysicalInventoryItem? FindUsableItem(MyDefinitionId contentId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_FixInventoryVolume_" data-uid="Sandbox.Game.MyInventory.FixInventoryVolume*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_FixInventoryVolume_System_Single_" data-uid="Sandbox.Game.MyInventory.FixInventoryVolume(System.Single)">
+  FixInventoryVolume(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FixInventoryVolume(float newValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GenerateContent_" data-uid="Sandbox.Game.MyInventory.GenerateContent*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GenerateContent_Sandbox_Definitions_MyContainerTypeDefinition_" data-uid="Sandbox.Game.MyInventory.GenerateContent(Sandbox.Definitions.MyContainerTypeDefinition)">
+  GenerateContent(MyContainerTypeDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GenerateContent(MyContainerTypeDefinition containerDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerDefinition</code> <a class="xref" href="Sandbox.Definitions.MyContainerTypeDefinition.html">MyContainerTypeDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetFlags_" data-uid="Sandbox.Game.MyInventory.GetFlags*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetFlags" data-uid="Sandbox.Game.MyInventory.GetFlags">
+  GetFlags()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventoryFlags GetFlags()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyInventoryFlags.html">MyInventoryFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetInventoryCount_" data-uid="Sandbox.Game.MyInventory.GetInventoryCount*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetInventoryCount" data-uid="Sandbox.Game.MyInventory.GetInventoryCount">
+  GetInventoryCount()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetInventoryCount()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItemAmount_" data-uid="Sandbox.Game.MyInventory.GetItemAmount*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItemAmount_VRage_Game_MyDefinitionId_VRage_Game_MyItemFlags_System_Boolean_" data-uid="Sandbox.Game.MyInventory.GetItemAmount(VRage.Game.MyDefinitionId,VRage.Game.MyItemFlags,System.Boolean)">
+  GetItemAmount(MyDefinitionId, MyItemFlags, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyFixedPoint GetItemAmount(MyDefinitionId contentId, MyItemFlags flags = MyItemFlags.None, bool substitute = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyItemFlags.html">MyItemFlags</a></dt>
+    <dd></dd>
+    <dt><code>substitute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItemAt_" data-uid="Sandbox.Game.MyInventory.GetItemAt*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItemAt_System_Int32_" data-uid="Sandbox.Game.MyInventory.GetItemAt(System.Int32)">
+  GetItemAt(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyInventoryItem? GetItemAt(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.ModAPI.Ingame.MyInventoryItem.html">MyInventoryItem</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItemByID_" data-uid="Sandbox.Game.MyInventory.GetItemByID*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItemByID_System_UInt32_" data-uid="Sandbox.Game.MyInventory.GetItemByID(System.UInt32)">
+  GetItemByID(uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPhysicalInventoryItem? GetItemByID(uint id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItemByIndex_" data-uid="Sandbox.Game.MyInventory.GetItemByIndex*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItemByIndex_System_Int32_" data-uid="Sandbox.Game.MyInventory.GetItemByIndex(System.Int32)">
+  GetItemByIndex(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPhysicalInventoryItem? GetItemByIndex(int id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItemIndexById_" data-uid="Sandbox.Game.MyInventory.GetItemIndexById*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItemIndexById_System_UInt32_" data-uid="Sandbox.Game.MyInventory.GetItemIndexById(System.UInt32)">
+  GetItemIndexById(uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetItemIndexById(uint id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItemVolumeAndMass_" data-uid="Sandbox.Game.MyInventory.GetItemVolumeAndMass*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItemVolumeAndMass_VRage_Game_MyDefinitionId_System_Single__System_Single__" data-uid="Sandbox.Game.MyInventory.GetItemVolumeAndMass(VRage.Game.MyDefinitionId,System.Single@,System.Single@)">
+  GetItemVolumeAndMass(MyDefinitionId, out float, out float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetItemVolumeAndMass(MyDefinitionId contentId, out float itemMass, out float itemVolume)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>itemMass</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>itemVolume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItems_" data-uid="Sandbox.Game.MyInventory.GetItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItems" data-uid="Sandbox.Game.MyInventory.GetItems">
+  GetItems()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override List&lt;MyPhysicalInventoryItem&gt; GetItems()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetItemsCount_" data-uid="Sandbox.Game.MyInventory.GetItemsCount*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetItemsCount" data-uid="Sandbox.Game.MyInventory.GetItemsCount">
+  GetItemsCount()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetItemsCount()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_GetObjectBuilder_" data-uid="Sandbox.Game.MyInventory.GetObjectBuilder*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_GetObjectBuilder" data-uid="Sandbox.Game.MyInventory.GetObjectBuilder">
+  GetObjectBuilder()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyObjectBuilder_Inventory GetObjectBuilder()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyObjectBuilder_Inventory.html">MyObjectBuilder_Inventory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Init_" data-uid="Sandbox.Game.MyInventory.Init*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Init_VRage_Game_MyComponentDefinitionBase_" data-uid="Sandbox.Game.MyInventory.Init(VRage.Game.MyComponentDefinitionBase)">
+  Init(MyComponentDefinitionBase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(MyComponentDefinitionBase definition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>definition</code> <a class="xref" href="VRage.Game.MyComponentDefinitionBase.html">MyComponentDefinitionBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Init_" data-uid="Sandbox.Game.MyInventory.Init*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Init_VRage_Game_MyObjectBuilder_Inventory_" data-uid="Sandbox.Game.MyInventory.Init(VRage.Game.MyObjectBuilder_Inventory)">
+  Init(MyObjectBuilder_Inventory)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Init(MyObjectBuilder_Inventory objectBuilder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectBuilder</code> <a class="xref" href="VRage.Game.MyObjectBuilder_Inventory.html">MyObjectBuilder_Inventory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_IsItemAt_" data-uid="Sandbox.Game.MyInventory.IsItemAt*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_IsItemAt_System_Int32_" data-uid="Sandbox.Game.MyInventory.IsItemAt(System.Int32)">
+  IsItemAt(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsItemAt(int position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_IsUniqueId_" data-uid="Sandbox.Game.MyInventory.IsUniqueId*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_IsUniqueId_System_UInt32_" data-uid="Sandbox.Game.MyInventory.IsUniqueId(System.UInt32)">
+  IsUniqueId(uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUniqueId(uint idToTest)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>idToTest</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ItemsCanBeAdded_" data-uid="Sandbox.Game.MyInventory.ItemsCanBeAdded*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ItemsCanBeAdded_VRage_MyFixedPoint_VRage_Game_ModAPI_Ingame_IMyInventoryItem_" data-uid="Sandbox.Game.MyInventory.ItemsCanBeAdded(VRage.MyFixedPoint,VRage.Game.ModAPI.Ingame.IMyInventoryItem)">
+  ItemsCanBeAdded(MyFixedPoint, IMyInventoryItem)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ItemsCanBeAdded(MyFixedPoint amount, IMyInventoryItem item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>item</code> <a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventoryItem.html">IMyInventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ItemsCanBeRemoved_" data-uid="Sandbox.Game.MyInventory.ItemsCanBeRemoved*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ItemsCanBeRemoved_VRage_MyFixedPoint_VRage_Game_ModAPI_Ingame_IMyInventoryItem_" data-uid="Sandbox.Game.MyInventory.ItemsCanBeRemoved(VRage.MyFixedPoint,VRage.Game.ModAPI.Ingame.IMyInventoryItem)">
+  ItemsCanBeRemoved(MyFixedPoint, IMyInventoryItem)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ItemsCanBeRemoved(MyFixedPoint amount, IMyInventoryItem item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>item</code> <a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventoryItem.html">IMyInventoryItem</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_IterateInventory_" data-uid="Sandbox.Game.MyInventory.IterateInventory*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_IterateInventory_System_Int32_System_Int32_" data-uid="Sandbox.Game.MyInventory.IterateInventory(System.Int32,System.Int32)">
+  IterateInventory(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyInventoryBase IterateInventory(int searchIndex, int currentIndex = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>searchIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>currentIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyInventoryBase.html">MyInventoryBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ModifyContent_" data-uid="Sandbox.Game.MyInventory.ModifyContent*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ModifyContent_VRage_Game_Entity_MyPhysicalInventoryItem_System_Action_VRage_Game_MyObjectBuilder_PhysicalObject__" data-uid="Sandbox.Game.MyInventory.ModifyContent(VRage.Game.Entity.MyPhysicalInventoryItem,System.Action{VRage.Game.MyObjectBuilder_PhysicalObject})">
+  ModifyContent(MyPhysicalInventoryItem, Action&lt;MyObjectBuilder_PhysicalObject&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ModifyContent(MyPhysicalInventoryItem item, Action&lt;MyObjectBuilder_PhysicalObject&gt; action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="VRage.Game.MyObjectBuilder_PhysicalObject.html">MyObjectBuilder_PhysicalObject</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ModifyDatapad_" data-uid="Sandbox.Game.MyInventory.ModifyDatapad*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ModifyDatapad_System_Int32_System_UInt32_System_String_System_String_" data-uid="Sandbox.Game.MyInventory.ModifyDatapad(System.Int32,System.UInt32,System.String,System.String)">
+  ModifyDatapad(int, uint, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Event(null, 2094)]
+[Reliable]
+[Server]
+public void ModifyDatapad(int inventoryIndex, uint itemId, string name, string data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>inventoryIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>itemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_OnAddedToContainer_" data-uid="Sandbox.Game.MyInventory.OnAddedToContainer*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_OnAddedToContainer" data-uid="Sandbox.Game.MyInventory.OnAddedToContainer">
+  OnAddedToContainer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAddedToContainer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_OnBeforeContentsChanged_" data-uid="Sandbox.Game.MyInventory.OnBeforeContentsChanged*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_OnBeforeContentsChanged" data-uid="Sandbox.Game.MyInventory.OnBeforeContentsChanged">
+  OnBeforeContentsChanged()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnBeforeContentsChanged()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_OnContentsAdded_" data-uid="Sandbox.Game.MyInventory.OnContentsAdded*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_OnContentsAdded_VRage_Game_Entity_MyPhysicalInventoryItem_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.OnContentsAdded(VRage.Game.Entity.MyPhysicalInventoryItem,VRage.MyFixedPoint)">
+  OnContentsAdded(MyPhysicalInventoryItem, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnContentsAdded(MyPhysicalInventoryItem item, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_OnContentsChanged_" data-uid="Sandbox.Game.MyInventory.OnContentsChanged*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_OnContentsChanged" data-uid="Sandbox.Game.MyInventory.OnContentsChanged">
+  OnContentsChanged()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnContentsChanged()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_OnContentsRemoved_" data-uid="Sandbox.Game.MyInventory.OnContentsRemoved*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_OnContentsRemoved_VRage_Game_Entity_MyPhysicalInventoryItem_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.OnContentsRemoved(VRage.Game.Entity.MyPhysicalInventoryItem,VRage.MyFixedPoint)">
+  OnContentsRemoved(MyPhysicalInventoryItem, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnContentsRemoved(MyPhysicalInventoryItem item, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_PickupItem_" data-uid="Sandbox.Game.MyInventory.PickupItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_PickupItem_Sandbox_Game_Entities_MyFloatingObject_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.PickupItem(Sandbox.Game.Entities.MyFloatingObject,VRage.MyFixedPoint)">
+  PickupItem(MyFloatingObject, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PickupItem(MyFloatingObject obj, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="Sandbox.Game.Entities.MyFloatingObject.html">MyFloatingObject</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Refresh_" data-uid="Sandbox.Game.MyInventory.Refresh*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Refresh" data-uid="Sandbox.Game.MyInventory.Refresh">
+  Refresh()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Refresh()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Remove_" data-uid="Sandbox.Game.MyInventory.Remove*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Remove_VRage_Game_ModAPI_Ingame_IMyInventoryItem_VRage_MyFixedPoint_" data-uid="Sandbox.Game.MyInventory.Remove(VRage.Game.ModAPI.Ingame.IMyInventoryItem,VRage.MyFixedPoint)">
+  Remove(IMyInventoryItem, MyFixedPoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Remove(IMyInventoryItem item, MyFixedPoint amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventoryItem.html">IMyInventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_RemoveItemClient_" data-uid="Sandbox.Game.MyInventory.RemoveItemClient*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_RemoveItemClient_System_UInt32_" data-uid="Sandbox.Game.MyInventory.RemoveItemClient(System.UInt32)">
+  RemoveItemClient(uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveItemClient(uint itemId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_RemoveItems_" data-uid="Sandbox.Game.MyInventory.RemoveItems*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_RemoveItems_System_UInt32_System_Nullable_VRage_MyFixedPoint__System_Boolean_System_Boolean_System_Nullable_VRageMath_MatrixD__System_Action_VRage_Game_MyDefinitionId_VRage_Game_Entity_MyEntity__System_Boolean_" data-uid="Sandbox.Game.MyInventory.RemoveItems(System.UInt32,System.Nullable{VRage.MyFixedPoint},System.Boolean,System.Boolean,System.Nullable{VRageMath.MatrixD},System.Action{VRage.Game.MyDefinitionId,VRage.Game.Entity.MyEntity},System.Boolean)">
+  RemoveItems(uint, MyFixedPoint?, bool, bool, MatrixD?, Action&lt;MyDefinitionId, MyEntity&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveItems(uint itemId, MyFixedPoint? amount = null, bool sendEvent = true, bool spawn = false, MatrixD? spawnPos = null, Action&lt;MyDefinitionId, MyEntity&gt; itemSpawned = null, bool refreshVolumeAndMass = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+    <dt><code>sendEvent</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>spawn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>spawnPos</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a>?</dt>
+    <dd></dd>
+    <dt><code>itemSpawned</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a>, <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>refreshVolumeAndMass</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_RemoveItemsAt_" data-uid="Sandbox.Game.MyInventory.RemoveItemsAt*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_RemoveItemsAt_System_Int32_System_Nullable_VRage_MyFixedPoint__System_Boolean_System_Boolean_System_Boolean_" data-uid="Sandbox.Game.MyInventory.RemoveItemsAt(System.Int32,System.Nullable{VRage.MyFixedPoint},System.Boolean,System.Boolean,System.Boolean)">
+  RemoveItemsAt(int, MyFixedPoint?, bool, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveItemsAt(int itemIndex, MyFixedPoint? amount = null, bool sendEvent = true, bool spawn = false, bool refreshVolumeAndMass = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+    <dt><code>sendEvent</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>spawn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>refreshVolumeAndMass</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_RemoveItemsOfType_" data-uid="Sandbox.Game.MyInventory.RemoveItemsOfType*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_RemoveItemsOfType_VRage_MyFixedPoint_VRage_Game_MyDefinitionId_VRage_Game_MyItemFlags_System_Boolean_" data-uid="Sandbox.Game.MyInventory.RemoveItemsOfType(VRage.MyFixedPoint,VRage.Game.MyDefinitionId,VRage.Game.MyItemFlags,System.Boolean)">
+  RemoveItemsOfType(MyFixedPoint, MyDefinitionId, MyItemFlags, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyFixedPoint RemoveItemsOfType(MyFixedPoint amount, MyDefinitionId contentId, MyItemFlags flags = MyItemFlags.None, bool spawn = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyItemFlags.html">MyItemFlags</a></dt>
+    <dd></dd>
+    <dt><code>spawn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_RemoveItemsOfType_" data-uid="Sandbox.Game.MyInventory.RemoveItemsOfType*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_RemoveItemsOfType_VRage_MyFixedPoint_VRage_Game_MyObjectBuilder_PhysicalObject_System_Boolean_System_Boolean_" data-uid="Sandbox.Game.MyInventory.RemoveItemsOfType(VRage.MyFixedPoint,VRage.Game.MyObjectBuilder_PhysicalObject,System.Boolean,System.Boolean)">
+  RemoveItemsOfType(MyFixedPoint, MyObjectBuilder_PhysicalObject, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveItemsOfType(MyFixedPoint amount, MyObjectBuilder_PhysicalObject objectBuilder, bool spawn = false, bool onlyWhole = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>objectBuilder</code> <a class="xref" href="VRage.Game.MyObjectBuilder_PhysicalObject.html">MyObjectBuilder_PhysicalObject</a></dt>
+    <dd></dd>
+    <dt><code>spawn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>onlyWhole</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ResetVolume_" data-uid="Sandbox.Game.MyInventory.ResetVolume*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ResetVolume" data-uid="Sandbox.Game.MyInventory.ResetVolume">
+  ResetVolume()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetVolume()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Serialize_" data-uid="Sandbox.Game.MyInventory.Serialize*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Serialize_System_Boolean_" data-uid="Sandbox.Game.MyInventory.Serialize(System.Boolean)">
+  Serialize(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyObjectBuilder_ComponentBase Serialize(bool copy = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>copy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.ObjectBuilders.ComponentSystem.MyObjectBuilder_ComponentBase.html">MyObjectBuilder_ComponentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_SetFlags_" data-uid="Sandbox.Game.MyInventory.SetFlags*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_SetFlags_VRage_Game_MyInventoryFlags_" data-uid="Sandbox.Game.MyInventory.SetFlags(VRage.Game.MyInventoryFlags)">
+  SetFlags(MyInventoryFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFlags(MyInventoryFlags flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyInventoryFlags.html">MyInventoryFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ShowCantConsume_" data-uid="Sandbox.Game.MyInventory.ShowCantConsume*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ShowCantConsume" data-uid="Sandbox.Game.MyInventory.ShowCantConsume">
+  ShowCantConsume()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Event(null, 2405)]
+[Reliable]
+[Client]
+public static void ShowCantConsume()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TakeFloatingBag_" data-uid="Sandbox.Game.MyInventory.TakeFloatingBag*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TakeFloatingBag_Sandbox_Game_Entities_MyCargoContainerInventoryBagEntity_" data-uid="Sandbox.Game.MyInventory.TakeFloatingBag(Sandbox.Game.Entities.MyCargoContainerInventoryBagEntity)">
+  TakeFloatingBag(MyCargoContainerInventoryBagEntity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TakeFloatingBag(MyCargoContainerInventoryBagEntity obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="Sandbox.Game.Entities.MyCargoContainerInventoryBagEntity.html">MyCargoContainerInventoryBagEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TakeFloatingObject_" data-uid="Sandbox.Game.MyInventory.TakeFloatingObject*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TakeFloatingObject_Sandbox_Game_Entities_MyFloatingObject_" data-uid="Sandbox.Game.MyInventory.TakeFloatingObject(Sandbox.Game.Entities.MyFloatingObject)">
+  TakeFloatingObject(MyFloatingObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TakeFloatingObject(MyFloatingObject obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="Sandbox.Game.Entities.MyFloatingObject.html">MyFloatingObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Transfer_" data-uid="Sandbox.Game.MyInventory.Transfer*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Transfer_Sandbox_Game_MyInventory_Sandbox_Game_MyInventory_System_UInt32_System_Int32_System_Nullable_VRage_MyFixedPoint__System_Boolean_" data-uid="Sandbox.Game.MyInventory.Transfer(Sandbox.Game.MyInventory,Sandbox.Game.MyInventory,System.UInt32,System.Int32,System.Nullable{VRage.MyFixedPoint},System.Boolean)">
+  Transfer(MyInventory, MyInventory, uint, int, MyFixedPoint?, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyFixedPoint Transfer(MyInventory src, MyInventory dst, uint srcItemId, int dstIdx = -1, MyFixedPoint? amount = null, bool spawn = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>dst</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>srcItemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>dstIdx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+    <dt><code>spawn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_Transfer_" data-uid="Sandbox.Game.MyInventory.Transfer*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_Transfer_Sandbox_Game_MyInventory_Sandbox_Game_MyInventory_VRage_Game_MyDefinitionId_VRage_Game_MyItemFlags_System_Nullable_VRage_MyFixedPoint__System_Boolean_" data-uid="Sandbox.Game.MyInventory.Transfer(Sandbox.Game.MyInventory,Sandbox.Game.MyInventory,VRage.Game.MyDefinitionId,VRage.Game.MyItemFlags,System.Nullable{VRage.MyFixedPoint},System.Boolean)">
+  Transfer(MyInventory, MyInventory, MyDefinitionId, MyItemFlags, MyFixedPoint?, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyFixedPoint Transfer(MyInventory src, MyInventory dst, MyDefinitionId contentId, MyItemFlags flags = MyItemFlags.None, MyFixedPoint? amount = null, bool spawn = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>dst</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyItemFlags.html">MyItemFlags</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+    <dt><code>spawn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TransferAll_" data-uid="Sandbox.Game.MyInventory.TransferAll*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TransferAll_Sandbox_Game_MyInventory_Sandbox_Game_MyInventory_" data-uid="Sandbox.Game.MyInventory.TransferAll(Sandbox.Game.MyInventory,Sandbox.Game.MyInventory)">
+  TransferAll(MyInventory, MyInventory)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void TransferAll(MyInventory src, MyInventory dst)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>dst</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TransferByPlanner_" data-uid="Sandbox.Game.MyInventory.TransferByPlanner*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TransferByPlanner_Sandbox_Game_MyInventory_Sandbox_Game_MyInventory_VRage_ObjectBuilders_SerializableDefinitionId_VRage_Game_MyItemFlags_System_Nullable_VRage_MyFixedPoint__System_Boolean_" data-uid="Sandbox.Game.MyInventory.TransferByPlanner(Sandbox.Game.MyInventory,Sandbox.Game.MyInventory,VRage.ObjectBuilders.SerializableDefinitionId,VRage.Game.MyItemFlags,System.Nullable{VRage.MyFixedPoint},System.Boolean)">
+  TransferByPlanner(MyInventory, MyInventory, SerializableDefinitionId, MyItemFlags, MyFixedPoint?, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void TransferByPlanner(MyInventory src, MyInventory dst, SerializableDefinitionId contentId, MyItemFlags flags = MyItemFlags.None, MyFixedPoint? amount = null, bool spawn = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>dst</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>contentId</code> <a class="xref" href="VRage.ObjectBuilders.SerializableDefinitionId.html">SerializableDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.MyItemFlags.html">MyItemFlags</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+    <dt><code>spawn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TransferByUser_" data-uid="Sandbox.Game.MyInventory.TransferByUser*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TransferByUser_Sandbox_Game_MyInventory_Sandbox_Game_MyInventory_System_UInt32_System_Int32_System_Nullable_VRage_MyFixedPoint__" data-uid="Sandbox.Game.MyInventory.TransferByUser(Sandbox.Game.MyInventory,Sandbox.Game.MyInventory,System.UInt32,System.Int32,System.Nullable{VRage.MyFixedPoint})">
+  TransferByUser(MyInventory, MyInventory, uint, int, MyFixedPoint?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void TransferByUser(MyInventory src, MyInventory dst, uint srcItemId, int dstIdx = -1, MyFixedPoint? amount = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>dst</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>srcItemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>dstIdx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TransferItemFrom_" data-uid="Sandbox.Game.MyInventory.TransferItemFrom*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TransferItemFrom_Sandbox_Game_MyInventory_System_Int32_System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_VRage_MyFixedPoint__" data-uid="Sandbox.Game.MyInventory.TransferItemFrom(Sandbox.Game.MyInventory,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{VRage.MyFixedPoint})">
+  TransferItemFrom(MyInventory, int, int?, bool?, MyFixedPoint?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TransferItemFrom(MyInventory sourceInventory, int sourceItemIndex, int? targetItemIndex = null, bool? stackIfPossible = null, MyFixedPoint? amount = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sourceInventory</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>sourceItemIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>targetItemIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>stackIfPossible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_UpdateItem_" data-uid="Sandbox.Game.MyInventory.UpdateItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_UpdateItem_VRage_Game_MyDefinitionId_System_Nullable_System_UInt32__System_Nullable_System_Single__System_Nullable_System_Single__" data-uid="Sandbox.Game.MyInventory.UpdateItem(VRage.Game.MyDefinitionId,System.Nullable{System.UInt32},System.Nullable{System.Single},System.Nullable{System.Single})">
+  UpdateItem(MyDefinitionId, uint?, float?, float?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateItem(MyDefinitionId contentId, uint? itemId = null, float? amount = null, float? itemHP = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>itemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+    <dt><code>itemHP</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_UpdateItemAmoutClient_" data-uid="Sandbox.Game.MyInventory.UpdateItemAmoutClient*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_UpdateItemAmoutClient_System_UInt32_VRage_MyFixedPoint_System_Single_" data-uid="Sandbox.Game.MyInventory.UpdateItemAmoutClient(System.UInt32,VRage.MyFixedPoint,System.Single)">
+  UpdateItemAmoutClient(uint, MyFixedPoint, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateItemAmoutClient(uint itemId, MyFixedPoint amount, float gasAmount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>itemId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>gasAmount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_OnTransferByUser" data-uid="Sandbox.Game.MyInventory.OnTransferByUser">
+  OnTransferByUser
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event Action&lt;IMyInventory, IMyInventory, IMyInventoryItem, MyFixedPoint&gt; OnTransferByUser</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;<a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventory.html">IMyInventory</a>, <a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventory.html">IMyInventory</a>, <a class="xref" href="VRage.Game.ModAPI.Ingame.IMyInventoryItem.html">IMyInventoryItem</a>, <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_OnVolumeChanged" data-uid="Sandbox.Game.MyInventory.OnVolumeChanged">
+  OnVolumeChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;IMyInventory, float, float&gt; OnVolumeChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-3">Action</a>&lt;<a class="xref" href="VRage.Game.ModAPI.IMyInventory.html">IMyInventory</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

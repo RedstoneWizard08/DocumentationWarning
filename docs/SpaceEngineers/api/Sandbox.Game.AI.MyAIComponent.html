@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyAIComponent | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyAIComponent | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Game.AI.MyAIComponent">
+
+
+
+  <h1 id="Sandbox_Game_AI_MyAIComponent" data-uid="Sandbox.Game.AI.MyAIComponent" class="text-break">
+Class MyAIComponent  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Game.html">Game</a>.<a class="xref" href="Sandbox.Game.AI.html">AI</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MySessionComponentDescriptor(MyUpdateOrder.Simulation|MyUpdateOrder.AfterSimulation, 1000, typeof(MyObjectBuilder_AIComponent), null, false)]
+public class MyAIComponent : MySessionComponentBase, IMyUserInputComponent</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MySessionComponentBase.html">MySessionComponentBase</a></div>
+      <div><span class="xref">MyAIComponent</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyUserInputComponent.html">IMyUserInputComponent</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_DebugName">MySessionComponentBase.DebugName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Priority">MySessionComponentBase.Priority</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ComponentType">MySessionComponentBase.ComponentType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatedBeforeInit">MySessionComponentBase.UpdatedBeforeInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SetUpdateOrder_VRage_Game_Components_MyUpdateOrder_">MySessionComponentBase.SetUpdateOrder(MyUpdateOrder)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_InitFromDefinition_VRage_Game_Components_Session_MySessionComponentDefinition_">MySessionComponentBase.InitFromDefinition(MySessionComponentDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_AfterLoadData">MySessionComponentBase.AfterLoadData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UnloadDataConditional">MySessionComponentBase.UnloadDataConditional()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SaveData">MySessionComponentBase.SaveData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateBeforeSimulation">MySessionComponentBase.UpdateBeforeSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatingStopped">MySessionComponentBase.UpdatingStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Draw">MySessionComponentBase.Draw()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ToString">MySessionComponentBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOrder">MySessionComponentBase.UpdateOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ObjectBuilderType">MySessionComponentBase.ObjectBuilderType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ModContext">MySessionComponentBase.ModContext</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Loaded">MySessionComponentBase.Loaded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Initialized">MySessionComponentBase.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOnPause">MySessionComponentBase.UpdateOnPause</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsServerOnly">MySessionComponentBase.IsServerOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Definition">MySessionComponentBase.Definition</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsRequiredByGame">MySessionComponentBase.IsRequiredByGame</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent__ctor_" data-uid="Sandbox.Game.AI.MyAIComponent.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent__ctor" data-uid="Sandbox.Game.AI.MyAIComponent.#ctor">
+  MyAIComponent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyAIComponent()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_BotFactory" data-uid="Sandbox.Game.AI.MyAIComponent.BotFactory">
+  BotFactory
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyBotFactoryBase BotFactory</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.AI.MyBotFactoryBase.html">MyBotFactoryBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_BotToSpawn" data-uid="Sandbox.Game.AI.MyAIComponent.BotToSpawn">
+  BotToSpawn
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyAgentDefinition BotToSpawn</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyAgentDefinition.html">MyAgentDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_CommandDefinition" data-uid="Sandbox.Game.AI.MyAIComponent.CommandDefinition">
+  CommandDefinition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyAiCommandDefinition CommandDefinition</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyAiCommandDefinition.html">MyAiCommandDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_Static" data-uid="Sandbox.Game.AI.MyAIComponent.Static">
+  Static
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyAIComponent Static</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.AI.MyAIComponent.html">MyAIComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_BehaviorTrees_" data-uid="Sandbox.Game.AI.MyAIComponent.BehaviorTrees*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_BehaviorTrees" data-uid="Sandbox.Game.AI.MyAIComponent.BehaviorTrees">
+  BehaviorTrees
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyBehaviorTreeCollection BehaviorTrees { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.AI.BehaviorTree.MyBehaviorTreeCollection.html">MyBehaviorTreeCollection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_Bots_" data-uid="Sandbox.Game.AI.MyAIComponent.Bots*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_Bots" data-uid="Sandbox.Game.AI.MyAIComponent.Bots">
+  Bots
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyBotCollection Bots { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.AI.MyBotCollection.html">MyBotCollection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_DebugTarget_" data-uid="Sandbox.Game.AI.MyAIComponent.DebugTarget*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_DebugTarget" data-uid="Sandbox.Game.AI.MyAIComponent.DebugTarget">
+  DebugTarget
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? DebugTarget { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_Dependencies_" data-uid="Sandbox.Game.AI.MyAIComponent.Dependencies*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_Dependencies" data-uid="Sandbox.Game.AI.MyAIComponent.Dependencies">
+  Dependencies
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type[] Dependencies { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_Pathfinding_" data-uid="Sandbox.Game.AI.MyAIComponent.Pathfinding*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_Pathfinding" data-uid="Sandbox.Game.AI.MyAIComponent.Pathfinding">
+  Pathfinding
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMyPathfinding Pathfinding { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.AI.Pathfinding.IMyPathfinding.html">IMyPathfinding</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_BeforeStart_" data-uid="Sandbox.Game.AI.MyAIComponent.BeforeStart*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_BeforeStart" data-uid="Sandbox.Game.AI.MyAIComponent.BeforeStart">
+  BeforeStart()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BeforeStart()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_CanSpawnMoreBots_" data-uid="Sandbox.Game.AI.MyAIComponent.CanSpawnMoreBots*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_CanSpawnMoreBots_Sandbox_Game_World_MyPlayer_PlayerId_" data-uid="Sandbox.Game.AI.MyAIComponent.CanSpawnMoreBots(Sandbox.Game.World.MyPlayer.PlayerId)">
+  CanSpawnMoreBots(PlayerId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanSpawnMoreBots(MyPlayer.PlayerId pid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pid</code> <a class="xref" href="Sandbox.Game.World.MyPlayer.html">MyPlayer</a>.<a class="xref" href="Sandbox.Game.World.MyPlayer.PlayerId.html">PlayerId</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_CleanUnusedIdentities_" data-uid="Sandbox.Game.AI.MyAIComponent.CleanUnusedIdentities*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_CleanUnusedIdentities" data-uid="Sandbox.Game.AI.MyAIComponent.CleanUnusedIdentities">
+  CleanUnusedIdentities()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CleanUnusedIdentities()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_DebugDrawBots_" data-uid="Sandbox.Game.AI.MyAIComponent.DebugDrawBots*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_DebugDrawBots" data-uid="Sandbox.Game.AI.MyAIComponent.DebugDrawBots">
+  DebugDrawBots()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DebugDrawBots()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_DebugSelectNextBot_" data-uid="Sandbox.Game.AI.MyAIComponent.DebugSelectNextBot*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_DebugSelectNextBot" data-uid="Sandbox.Game.AI.MyAIComponent.DebugSelectNextBot">
+  DebugSelectNextBot()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DebugSelectNextBot()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_DebugSelectPreviousBot_" data-uid="Sandbox.Game.AI.MyAIComponent.DebugSelectPreviousBot*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_DebugSelectPreviousBot" data-uid="Sandbox.Game.AI.MyAIComponent.DebugSelectPreviousBot">
+  DebugSelectPreviousBot()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DebugSelectPreviousBot()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_DespawnBotsOfType_" data-uid="Sandbox.Game.AI.MyAIComponent.DespawnBotsOfType*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_DespawnBotsOfType_System_String_" data-uid="Sandbox.Game.AI.MyAIComponent.DespawnBotsOfType(System.String)">
+  DespawnBotsOfType(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DespawnBotsOfType(string botType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>botType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_GenerateBotId_" data-uid="Sandbox.Game.AI.MyAIComponent.GenerateBotId*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_GenerateBotId" data-uid="Sandbox.Game.AI.MyAIComponent.GenerateBotId">
+  GenerateBotId()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GenerateBotId()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_GenerateBotId_" data-uid="Sandbox.Game.AI.MyAIComponent.GenerateBotId*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_GenerateBotId_System_Int32_" data-uid="Sandbox.Game.AI.MyAIComponent.GenerateBotId(System.Int32)">
+  GenerateBotId(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GenerateBotId(int lastSpawnedBot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lastSpawnedBot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_GenerateNavmeshTile_" data-uid="Sandbox.Game.AI.MyAIComponent.GenerateNavmeshTile*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_GenerateNavmeshTile_System_Nullable_VRageMath_Vector3D__" data-uid="Sandbox.Game.AI.MyAIComponent.GenerateNavmeshTile(System.Nullable{VRageMath.Vector3D})">
+  GenerateNavmeshTile(Vector3D?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GenerateNavmeshTile(Vector3D? target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_GetAvailableUncontrolledBotsCount_" data-uid="Sandbox.Game.AI.MyAIComponent.GetAvailableUncontrolledBotsCount*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_GetAvailableUncontrolledBotsCount" data-uid="Sandbox.Game.AI.MyAIComponent.GetAvailableUncontrolledBotsCount">
+  GetAvailableUncontrolledBotsCount()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetAvailableUncontrolledBotsCount()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_GetBotCount_" data-uid="Sandbox.Game.AI.MyAIComponent.GetBotCount*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_GetBotCount_System_String_" data-uid="Sandbox.Game.AI.MyAIComponent.GetBotCount(System.String)">
+  GetBotCount(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetBotCount(string behaviorType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>behaviorType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_GetObjectBuilder_" data-uid="Sandbox.Game.AI.MyAIComponent.GetObjectBuilder*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_GetObjectBuilder" data-uid="Sandbox.Game.AI.MyAIComponent.GetObjectBuilder">
+  GetObjectBuilder()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyObjectBuilder_SessionComponent GetObjectBuilder()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyObjectBuilder_SessionComponent.html">MyObjectBuilder_SessionComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_HandleInput_" data-uid="Sandbox.Game.AI.MyAIComponent.HandleInput*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_HandleInput" data-uid="Sandbox.Game.AI.MyAIComponent.HandleInput">
+  HandleInput()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void HandleInput()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_Init_" data-uid="Sandbox.Game.AI.MyAIComponent.Init*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_Init_VRage_Game_MyObjectBuilder_SessionComponent_" data-uid="Sandbox.Game.AI.MyAIComponent.Init(VRage.Game.MyObjectBuilder_SessionComponent)">
+  Init(MyObjectBuilder_SessionComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(MyObjectBuilder_SessionComponent sessionComponentBuilder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sessionComponentBuilder</code> <a class="xref" href="VRage.Game.MyObjectBuilder_SessionComponent.html">MyObjectBuilder_SessionComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_InvalidateNavmeshPosition_" data-uid="Sandbox.Game.AI.MyAIComponent.InvalidateNavmeshPosition*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_InvalidateNavmeshPosition_System_Nullable_VRageMath_Vector3D__" data-uid="Sandbox.Game.AI.MyAIComponent.InvalidateNavmeshPosition(System.Nullable{VRageMath.Vector3D})">
+  InvalidateNavmeshPosition(Vector3D?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InvalidateNavmeshPosition(Vector3D? target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_LoadData_" data-uid="Sandbox.Game.AI.MyAIComponent.LoadData*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_LoadData" data-uid="Sandbox.Game.AI.MyAIComponent.LoadData">
+  LoadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_PathfindingSetDrawDebug_" data-uid="Sandbox.Game.AI.MyAIComponent.PathfindingSetDrawDebug*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_PathfindingSetDrawDebug_System_Boolean_" data-uid="Sandbox.Game.AI.MyAIComponent.PathfindingSetDrawDebug(System.Boolean)">
+  PathfindingSetDrawDebug(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PathfindingSetDrawDebug(bool drawDebug)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>drawDebug</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_PathfindingSetDrawNavmesh_" data-uid="Sandbox.Game.AI.MyAIComponent.PathfindingSetDrawNavmesh*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_PathfindingSetDrawNavmesh_System_Boolean_" data-uid="Sandbox.Game.AI.MyAIComponent.PathfindingSetDrawNavmesh(System.Boolean)">
+  PathfindingSetDrawNavmesh(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PathfindingSetDrawNavmesh(bool drawNavmesh)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>drawNavmesh</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_RemoveBot_" data-uid="Sandbox.Game.AI.MyAIComponent.RemoveBot*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_RemoveBot_System_Int32_System_Boolean_" data-uid="Sandbox.Game.AI.MyAIComponent.RemoveBot(System.Int32,System.Boolean)">
+  RemoveBot(int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveBot(int playerNumber, bool removeCharacter = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>removeCharacter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_SetPathfindingDebugTarget_" data-uid="Sandbox.Game.AI.MyAIComponent.SetPathfindingDebugTarget*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_SetPathfindingDebugTarget_System_Nullable_VRageMath_Vector3D__" data-uid="Sandbox.Game.AI.MyAIComponent.SetPathfindingDebugTarget(System.Nullable{VRageMath.Vector3D})">
+  SetPathfindingDebugTarget(Vector3D?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPathfindingDebugTarget(Vector3D? target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_Simulate_" data-uid="Sandbox.Game.AI.MyAIComponent.Simulate*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_Simulate" data-uid="Sandbox.Game.AI.MyAIComponent.Simulate">
+  Simulate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Simulate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_SpawnNewBot_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBot*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_SpawnNewBot_Sandbox_Definitions_MyAgentDefinition_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBot(Sandbox.Definitions.MyAgentDefinition)">
+  SpawnNewBot(MyAgentDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SpawnNewBot(MyAgentDefinition agentDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>agentDefinition</code> <a class="xref" href="Sandbox.Definitions.MyAgentDefinition.html">MyAgentDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_SpawnNewBot_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBot*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_SpawnNewBot_Sandbox_Definitions_MyAgentDefinition_System_Nullable_VRageMath_Vector3D__" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBot(Sandbox.Definitions.MyAgentDefinition,System.Nullable{VRageMath.Vector3D})">
+  SpawnNewBot(MyAgentDefinition, Vector3D?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SpawnNewBot(MyAgentDefinition agentDefinition, Vector3D? spawnPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>agentDefinition</code> <a class="xref" href="Sandbox.Definitions.MyAgentDefinition.html">MyAgentDefinition</a></dt>
+    <dd></dd>
+    <dt><code>spawnPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_SpawnNewBot_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBot*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_SpawnNewBot_Sandbox_Definitions_MyAgentDefinition_VRageMath_Vector3D_System_Boolean_System_Boolean_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBot(Sandbox.Definitions.MyAgentDefinition,VRageMath.Vector3D,System.Boolean,System.Boolean)">
+  SpawnNewBot(MyAgentDefinition, Vector3D, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SpawnNewBot(MyAgentDefinition agentDefinition, Vector3D position, bool createdByPlayer = true, bool isWildlifeAgent = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>agentDefinition</code> <a class="xref" href="Sandbox.Definitions.MyAgentDefinition.html">MyAgentDefinition</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>createdByPlayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>isWildlifeAgent</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_SpawnNewBotGroup_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBotGroup*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_SpawnNewBotGroup_System_String_System_Collections_Generic_List_Sandbox_Game_AI_MyAIComponent_AgentGroupData__System_Collections_Generic_List_System_Int32__" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBotGroup(System.String,System.Collections.Generic.List{Sandbox.Game.AI.MyAIComponent.AgentGroupData},System.Collections.Generic.List{System.Int32})">
+  SpawnNewBotGroup(string, List&lt;AgentGroupData&gt;, List&lt;int&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SpawnNewBotGroup(string type, List&lt;MyAIComponent.AgentGroupData&gt; groupData, List&lt;int&gt; outIds)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>groupData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Game.AI.MyAIComponent.html">MyAIComponent</a>.<a class="xref" href="Sandbox.Game.AI.MyAIComponent.AgentGroupData.html">AgentGroupData</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>outIds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_SpawnNewBotSync_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBotSync*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_SpawnNewBotSync_Sandbox_Definitions_MyAgentDefinition_System_UInt64_VRageMath_Vector3D_System_Nullable_VRageMath_Vector3__System_Nullable_VRageMath_Vector3__System_String_" data-uid="Sandbox.Game.AI.MyAIComponent.SpawnNewBotSync(Sandbox.Definitions.MyAgentDefinition,System.UInt64,VRageMath.Vector3D,System.Nullable{VRageMath.Vector3},System.Nullable{VRageMath.Vector3},System.String)">
+  SpawnNewBotSync(MyAgentDefinition, ulong, Vector3D, Vector3?, Vector3?, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long SpawnNewBotSync(MyAgentDefinition agentDefinition, ulong steamId, Vector3D spawnPosition, Vector3? direction, Vector3? up, string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>agentDefinition</code> <a class="xref" href="Sandbox.Definitions.MyAgentDefinition.html">MyAgentDefinition</a></dt>
+    <dd></dd>
+    <dt><code>steamId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+    <dt><code>spawnPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>direction</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a>?</dt>
+    <dd></dd>
+    <dt><code>up</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a>?</dt>
+    <dd></dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_TrySpawnBot_" data-uid="Sandbox.Game.AI.MyAIComponent.TrySpawnBot*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_TrySpawnBot_Sandbox_Definitions_MyAgentDefinition_" data-uid="Sandbox.Game.AI.MyAIComponent.TrySpawnBot(Sandbox.Definitions.MyAgentDefinition)">
+  TrySpawnBot(MyAgentDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TrySpawnBot(MyAgentDefinition agentDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>agentDefinition</code> <a class="xref" href="Sandbox.Definitions.MyAgentDefinition.html">MyAgentDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_UnloadData_" data-uid="Sandbox.Game.AI.MyAIComponent.UnloadData*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_UnloadData" data-uid="Sandbox.Game.AI.MyAIComponent.UnloadData">
+  UnloadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UnloadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_AI_MyAIComponent_UpdateAfterSimulation_" data-uid="Sandbox.Game.AI.MyAIComponent.UpdateAfterSimulation*"></a>
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_UpdateAfterSimulation" data-uid="Sandbox.Game.AI.MyAIComponent.UpdateAfterSimulation">
+  UpdateAfterSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_AI_MyAIComponent_BotCreatedEvent" data-uid="Sandbox.Game.AI.MyAIComponent.BotCreatedEvent">
+  BotCreatedEvent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;int, MyBotDefinition&gt; BotCreatedEvent</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="Sandbox.Definitions.MyBotDefinition.html">MyBotDefinition</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2778 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyPhysics | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyPhysics | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Engine.Physics.MyPhysics">
+
+
+
+  <h1 id="Sandbox_Engine_Physics_MyPhysics" data-uid="Sandbox.Engine.Physics.MyPhysics" class="text-break">
+Class MyPhysics  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Engine.html">Engine</a>.<a class="xref" href="Sandbox.Engine.Physics.html">Physics</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MySessionComponentDescriptor(MyUpdateOrder.Simulation, 1000)]
+[StaticEventOwner]
+public class MyPhysics : MySessionComponentBase, IMyUserInputComponent</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MySessionComponentBase.html">MySessionComponentBase</a></div>
+      <div><span class="xref">MyPhysics</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyUserInputComponent.html">IMyUserInputComponent</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_DebugName">MySessionComponentBase.DebugName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Priority">MySessionComponentBase.Priority</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ComponentType">MySessionComponentBase.ComponentType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatedBeforeInit">MySessionComponentBase.UpdatedBeforeInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SetUpdateOrder_VRage_Game_Components_MyUpdateOrder_">MySessionComponentBase.SetUpdateOrder(MyUpdateOrder)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_InitFromDefinition_VRage_Game_Components_Session_MySessionComponentDefinition_">MySessionComponentBase.InitFromDefinition(MySessionComponentDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Init_VRage_Game_MyObjectBuilder_SessionComponent_">MySessionComponentBase.Init(MyObjectBuilder_SessionComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_GetObjectBuilder">MySessionComponentBase.GetObjectBuilder()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_AfterLoadData">MySessionComponentBase.AfterLoadData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UnloadDataConditional">MySessionComponentBase.UnloadDataConditional()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SaveData">MySessionComponentBase.SaveData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_BeforeStart">MySessionComponentBase.BeforeStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateBeforeSimulation">MySessionComponentBase.UpdateBeforeSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateAfterSimulation">MySessionComponentBase.UpdateAfterSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatingStopped">MySessionComponentBase.UpdatingStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Draw">MySessionComponentBase.Draw()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_HandleInput">MySessionComponentBase.HandleInput()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ToString">MySessionComponentBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOrder">MySessionComponentBase.UpdateOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ObjectBuilderType">MySessionComponentBase.ObjectBuilderType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ModContext">MySessionComponentBase.ModContext</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Loaded">MySessionComponentBase.Loaded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Initialized">MySessionComponentBase.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOnPause">MySessionComponentBase.UpdateOnPause</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsServerOnly">MySessionComponentBase.IsServerOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Definition">MySessionComponentBase.Definition</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Dependencies">MySessionComponentBase.Dependencies</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsRequiredByGame">MySessionComponentBase.IsRequiredByGame</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics__ctor_" data-uid="Sandbox.Engine.Physics.MyPhysics.#ctor*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics__ctor" data-uid="Sandbox.Engine.Physics.MyPhysics.#ctor">
+  MyPhysics()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPhysics()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_Clusters" data-uid="Sandbox.Engine.Physics.MyPhysics.Clusters">
+  Clusters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyClusterTree Clusters</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Spatial.MyClusterTree.html">MyClusterTree</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_DebugDrawClustersEnable" data-uid="Sandbox.Engine.Physics.MyPhysics.DebugDrawClustersEnable">
+  DebugDrawClustersEnable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool DebugDrawClustersEnable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_DebugDrawClustersMatrix" data-uid="Sandbox.Engine.Physics.MyPhysics.DebugDrawClustersMatrix">
+  DebugDrawClustersMatrix
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MatrixD DebugDrawClustersMatrix</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_StopEnable" data-uid="Sandbox.Engine.Physics.MyPhysics.StopEnable">
+  StopEnable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool StopEnable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_SyncVDBCamera" data-uid="Sandbox.Engine.Physics.MyPhysics.SyncVDBCamera">
+  SyncVDBCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SyncVDBCamera</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_ThreadId" data-uid="Sandbox.Engine.Physics.MyPhysics.ThreadId">
+  ThreadId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ThreadId</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_WorkPriority" data-uid="Sandbox.Engine.Physics.MyPhysics.WorkPriority">
+  WorkPriority
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WorkPriority WorkPriority</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ParallelTasks.WorkPriority.html">WorkPriority</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_InsideSimulation_" data-uid="Sandbox.Engine.Physics.MyPhysics.InsideSimulation*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_InsideSimulation" data-uid="Sandbox.Engine.Physics.MyPhysics.InsideSimulation">
+  InsideSimulation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool InsideSimulation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_QueuedForces_" data-uid="Sandbox.Engine.Physics.MyPhysics.QueuedForces*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_QueuedForces" data-uid="Sandbox.Engine.Physics.MyPhysics.QueuedForces">
+  QueuedForces
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ConcurrentQueue&lt;MyPhysics.ForceInfo&gt; QueuedForces { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentqueue-1">ConcurrentQueue</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.ForceInfo.html">ForceInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_RaycastLock_" data-uid="Sandbox.Engine.Physics.MyPhysics.RaycastLock*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_RaycastLock" data-uid="Sandbox.Engine.Physics.MyPhysics.RaycastLock">
+  RaycastLock
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpinLockRef RaycastLock { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Library.Threading.SpinLockRef.html">SpinLockRef</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_RestingVelocity_" data-uid="Sandbox.Engine.Physics.MyPhysics.RestingVelocity*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_RestingVelocity" data-uid="Sandbox.Engine.Physics.MyPhysics.RestingVelocity">
+  RestingVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float RestingVelocity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_SimulationRatio_" data-uid="Sandbox.Engine.Physics.MyPhysics.SimulationRatio*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_SimulationRatio" data-uid="Sandbox.Engine.Physics.MyPhysics.SimulationRatio">
+  SimulationRatio
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float SimulationRatio { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_SingleWorld_" data-uid="Sandbox.Engine.Physics.MyPhysics.SingleWorld*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_SingleWorld" data-uid="Sandbox.Engine.Physics.MyPhysics.SingleWorld">
+  SingleWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HkWorld SingleWorld { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Havok.HkWorld.html">HkWorld</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_StepsLastSecond_" data-uid="Sandbox.Engine.Physics.MyPhysics.StepsLastSecond*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_StepsLastSecond" data-uid="Sandbox.Engine.Physics.MyPhysics.StepsLastSecond">
+  StepsLastSecond
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int StepsLastSecond { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_ActivateInBox_" data-uid="Sandbox.Engine.Physics.MyPhysics.ActivateInBox*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_ActivateInBox_VRageMath_BoundingBoxD__" data-uid="Sandbox.Engine.Physics.MyPhysics.ActivateInBox(VRageMath.BoundingBoxD@)">
+  ActivateInBox(ref BoundingBoxD)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ActivateInBox(ref BoundingBoxD box)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>box</code> <a class="xref" href="VRageMath.BoundingBoxD.html">BoundingBoxD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_AssertThread_" data-uid="Sandbox.Engine.Physics.MyPhysics.AssertThread*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_AssertThread" data-uid="Sandbox.Engine.Physics.MyPhysics.AssertThread">
+  AssertThread()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Conditional(&quot;DEBUG&quot;)]
+public static void AssertThread()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastLongRay_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastLongRay*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastLongRay_VRageMath_Vector3D_VRageMath_Vector3D_System_Boolean_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastLongRay(VRageMath.Vector3D,VRageMath.Vector3D,System.Boolean)">
+  CastLongRay(Vector3D, Vector3D, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyPhysics.HitInfo? CastLongRay(Vector3D from, Vector3D to, bool any = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>any</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastRay_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastRay_VRageMath_Vector3D_VRageMath_Vector3D_Sandbox_Engine_Physics_MyPhysics_HitInfo__System_UInt32_System_Boolean_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay(VRageMath.Vector3D,VRageMath.Vector3D,Sandbox.Engine.Physics.MyPhysics.HitInfo@,System.UInt32,System.Boolean)">
+  CastRay(Vector3D, Vector3D, out HitInfo, uint, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CastRay(Vector3D from, Vector3D to, out MyPhysics.HitInfo hitInfo, uint raycastCollisionFilter, bool ignoreConvexShape)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>hitInfo</code> <a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a></dt>
+    <dd></dd>
+    <dt><code>raycastCollisionFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>ignoreConvexShape</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastRay_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastRay_VRageMath_Vector3D_VRageMath_Vector3D_System_Collections_Generic_List_Sandbox_Engine_Physics_MyPhysics_HitInfo__System_Int32_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay(VRageMath.Vector3D,VRageMath.Vector3D,System.Collections.Generic.List{Sandbox.Engine.Physics.MyPhysics.HitInfo},System.Int32)">
+  CastRay(Vector3D, Vector3D, List&lt;HitInfo&gt;, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CastRay(Vector3D from, Vector3D to, List&lt;MyPhysics.HitInfo&gt; toList, int raycastFilterLayer = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>toList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>raycastFilterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastRay_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastRay_VRageMath_Vector3D_VRageMath_Vector3D_System_Int32_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay(VRageMath.Vector3D,VRageMath.Vector3D,System.Int32)">
+  CastRay(Vector3D, Vector3D, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyPhysics.HitInfo? CastRay(Vector3D from, Vector3D to, int raycastFilterLayer = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>raycastFilterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastRayParallel_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRayParallel*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastRayParallel_VRageMath_Vector3D__VRageMath_Vector3D__System_Collections_Generic_List_Sandbox_Engine_Physics_MyPhysics_HitInfo__System_Int32_System_Action_System_Collections_Generic_List_Sandbox_Engine_Physics_MyPhysics_HitInfo___" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRayParallel(VRageMath.Vector3D@,VRageMath.Vector3D@,System.Collections.Generic.List{Sandbox.Engine.Physics.MyPhysics.HitInfo},System.Int32,System.Action{System.Collections.Generic.List{Sandbox.Engine.Physics.MyPhysics.HitInfo}})">
+  CastRayParallel(ref Vector3D, ref Vector3D, List&lt;HitInfo&gt;, int, Action&lt;List&lt;HitInfo&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CastRayParallel(ref Vector3D from, ref Vector3D to, List&lt;MyPhysics.HitInfo&gt; collector, int raycastFilterLayer, Action&lt;List&lt;MyPhysics.HitInfo&gt;&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>collector</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>raycastFilterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastRayParallel_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRayParallel*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastRayParallel_VRageMath_Vector3D__VRageMath_Vector3D__System_Int32_System_Action_System_Nullable_Sandbox_Engine_Physics_MyPhysics_HitInfo___" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRayParallel(VRageMath.Vector3D@,VRageMath.Vector3D@,System.Int32,System.Action{System.Nullable{Sandbox.Engine.Physics.MyPhysics.HitInfo}})">
+  CastRayParallel(ref Vector3D, ref Vector3D, int, Action&lt;HitInfo?&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CastRayParallel(ref Vector3D from, ref Vector3D to, int raycastFilterLayer, Action&lt;MyPhysics.HitInfo?&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>raycastFilterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>?&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastRayWorld_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRayWorld*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastRayWorld_VRageMath_Spatial_MyClusterTree_MyClusterQueryResult_VRageMath_Vector3D_VRageMath_Vector3D_System_Collections_Generic_List_Sandbox_Engine_Physics_MyPhysics_HitInfo__System_Int32_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRayWorld(VRageMath.Spatial.MyClusterTree.MyClusterQueryResult,VRageMath.Vector3D,VRageMath.Vector3D,System.Collections.Generic.List{Sandbox.Engine.Physics.MyPhysics.HitInfo},System.Int32)">
+  CastRayWorld(MyClusterQueryResult, Vector3D, Vector3D, List&lt;HitInfo&gt;, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CastRayWorld(MyClusterTree.MyClusterQueryResult world, Vector3D from, Vector3D to, List&lt;MyPhysics.HitInfo&gt; raycastResult, int collisionLayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>world</code> <a class="xref" href="VRageMath.Spatial.MyClusterTree.html">MyClusterTree</a>.<a class="xref" href="VRageMath.Spatial.MyClusterTree.MyClusterQueryResult.html">MyClusterQueryResult</a></dt>
+    <dd></dd>
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>raycastResult</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>collisionLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastRay_AllHits_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay_AllHits*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastRay_AllHits_VRageMath_Vector3D_VRageMath_Vector3D_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastRay_AllHits(VRageMath.Vector3D,VRageMath.Vector3D)">
+  CastRay_AllHits(Vector3D, Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;MyPhysics.HitInfo&gt; CastRay_AllHits(Vector3D from, Vector3D to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastShape_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShape*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastShape_VRageMath_Vector3D_Havok_HkShape_VRageMath_MatrixD__System_Int32_System_Single_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShape(VRageMath.Vector3D,Havok.HkShape,VRageMath.MatrixD@,System.Int32,System.Single)">
+  CastShape(Vector3D, HkShape, ref MatrixD, int, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float? CastShape(Vector3D to, HkShape shape, ref MatrixD transform, int filterLayer, float extraPenetration = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>filterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>extraPenetration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastShapeInAllWorlds_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeInAllWorlds*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastShapeInAllWorlds_VRageMath_Vector3D_Havok_HkShape_VRageMath_MatrixD__System_Int32_System_Single_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeInAllWorlds(VRageMath.Vector3D,Havok.HkShape,VRageMath.MatrixD@,System.Int32,System.Single)">
+  CastShapeInAllWorlds(Vector3D, HkShape, ref MatrixD, int, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float? CastShapeInAllWorlds(Vector3D to, HkShape shape, ref MatrixD transform, int filterLayer, float extraPenetration = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>filterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>extraPenetration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContact_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContact*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContact_VRageMath_Vector3D_Havok_HkShape_VRageMath_MatrixD__System_Int32_System_Single_VRageMath_Vector3D__" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContact(VRageMath.Vector3D,Havok.HkShape,VRageMath.MatrixD@,System.Int32,System.Single,VRageMath.Vector3D@)">
+  CastShapeReturnContact(Vector3D, HkShape, ref MatrixD, int, float, out Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HkContactPoint? CastShapeReturnContact(Vector3D to, HkShape shape, ref MatrixD transform, int filterLayer, float extraPenetration, out Vector3D worldTranslation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>filterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>extraPenetration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>worldTranslation</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Havok.HkContactPoint.html">HkContactPoint</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContactBodyData_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContactBodyData*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContactBodyData_VRageMath_Vector3D_Havok_HkShape_VRageMath_MatrixD__System_UInt32_System_Single_System_Boolean_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContactBodyData(VRageMath.Vector3D,Havok.HkShape,VRageMath.MatrixD@,System.UInt32,System.Single,System.Boolean)">
+  CastShapeReturnContactBodyData(Vector3D, HkShape, ref MatrixD, uint, float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyPhysics.HitInfo? CastShapeReturnContactBodyData(Vector3D to, HkShape shape, ref MatrixD transform, uint collisionFilter, float extraPenetration, bool ignoreConvexShape = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>collisionFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>extraPenetration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>ignoreConvexShape</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContactBodyDatas_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContactBodyDatas*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContactBodyDatas_VRageMath_Vector3D_Havok_HkShape_VRageMath_MatrixD__System_UInt32_System_Single_System_Collections_Generic_List_Sandbox_Engine_Physics_MyPhysics_HitInfo__System_Boolean_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContactBodyDatas(VRageMath.Vector3D,Havok.HkShape,VRageMath.MatrixD@,System.UInt32,System.Single,System.Collections.Generic.List{Sandbox.Engine.Physics.MyPhysics.HitInfo},System.Boolean)">
+  CastShapeReturnContactBodyDatas(Vector3D, HkShape, ref MatrixD, uint, float, List&lt;HitInfo&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CastShapeReturnContactBodyDatas(Vector3D to, HkShape shape, ref MatrixD transform, uint collisionFilter, float extraPenetration, List&lt;MyPhysics.HitInfo&gt; result, bool ignoreConvexShape = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>collisionFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>extraPenetration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.HitInfo.html">HitInfo</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>ignoreConvexShape</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContactData_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContactData*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnContactData_VRageMath_Vector3D_Havok_HkShape_VRageMath_MatrixD__System_UInt32_System_Single_System_Boolean_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnContactData(VRageMath.Vector3D,Havok.HkShape,VRageMath.MatrixD@,System.UInt32,System.Single,System.Boolean)">
+  CastShapeReturnContactData(Vector3D, HkShape, ref MatrixD, uint, float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HkContactPointData? CastShapeReturnContactData(Vector3D to, HkShape shape, ref MatrixD transform, uint collisionFilter, float extraPenetration, bool ignoreConvexShape = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>collisionFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>extraPenetration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>ignoreConvexShape</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Havok.HkContactPointData.html">HkContactPointData</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnPoint_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnPoint*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CastShapeReturnPoint_VRageMath_Vector3D_Havok_HkShape_VRageMath_MatrixD__System_Int32_System_Single_" data-uid="Sandbox.Engine.Physics.MyPhysics.CastShapeReturnPoint(VRageMath.Vector3D,Havok.HkShape,VRageMath.MatrixD@,System.Int32,System.Single)">
+  CastShapeReturnPoint(Vector3D, HkShape, ref MatrixD, int, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D? CastShapeReturnPoint(Vector3D to, HkShape shape, ref MatrixD transform, int filterLayer, float extraPenetration)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>filterLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>extraPenetration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CheckThread_" data-uid="Sandbox.Engine.Physics.MyPhysics.CheckThread*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CheckThread" data-uid="Sandbox.Engine.Physics.MyPhysics.CheckThread">
+  CheckThread()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CheckThread()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CommitSchedulingSettingToServer_" data-uid="Sandbox.Engine.Physics.MyPhysics.CommitSchedulingSettingToServer*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CommitSchedulingSettingToServer" data-uid="Sandbox.Engine.Physics.MyPhysics.CommitSchedulingSettingToServer">
+  CommitSchedulingSettingToServer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CommitSchedulingSettingToServer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_ControlVDBRecording_" data-uid="Sandbox.Engine.Physics.MyPhysics.ControlVDBRecording*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_ControlVDBRecording_System_String_" data-uid="Sandbox.Engine.Physics.MyPhysics.ControlVDBRecording(System.String)">
+  ControlVDBRecording(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Event(null, 2153)]
+[Reliable]
+[Server(ValidationType.AdminOnly)]
+public static void ControlVDBRecording(string fileName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_CreateHkWorld_" data-uid="Sandbox.Engine.Physics.MyPhysics.CreateHkWorld*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_CreateHkWorld_System_Single_" data-uid="Sandbox.Engine.Physics.MyPhysics.CreateHkWorld(System.Single)">
+  CreateHkWorld(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HkWorld CreateHkWorld(float broadphaseSize = 100000)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>broadphaseSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Havok.HkWorld.html">HkWorld</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_DebugDrawClusters_" data-uid="Sandbox.Engine.Physics.MyPhysics.DebugDrawClusters*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_DebugDrawClusters" data-uid="Sandbox.Engine.Physics.MyPhysics.DebugDrawClusters">
+  DebugDrawClusters()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DebugDrawClusters()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_DeserializeClusters_" data-uid="Sandbox.Engine.Physics.MyPhysics.DeserializeClusters*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_DeserializeClusters_System_Collections_Generic_List_VRageMath_BoundingBoxD__" data-uid="Sandbox.Engine.Physics.MyPhysics.DeserializeClusters(System.Collections.Generic.List{VRageMath.BoundingBoxD})">
+  DeserializeClusters(List&lt;BoundingBoxD&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DeserializeClusters(List&lt;BoundingBoxD&gt; list)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>list</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.BoundingBoxD.html">BoundingBoxD</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_EnqueueDestruction_" data-uid="Sandbox.Engine.Physics.MyPhysics.EnqueueDestruction*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_EnqueueDestruction_Sandbox_Engine_Physics_MyPhysics_FractureImpactDetails_" data-uid="Sandbox.Engine.Physics.MyPhysics.EnqueueDestruction(Sandbox.Engine.Physics.MyPhysics.FractureImpactDetails)">
+  EnqueueDestruction(FractureImpactDetails)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EnqueueDestruction(MyPhysics.FractureImpactDetails details)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>details</code> <a class="xref" href="Sandbox.Engine.Physics.MyPhysics.html">MyPhysics</a>.<a class="xref" href="Sandbox.Engine.Physics.MyPhysics.FractureImpactDetails.html">FractureImpactDetails</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_EnsurePhysicsSpace_" data-uid="Sandbox.Engine.Physics.MyPhysics.EnsurePhysicsSpace*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_EnsurePhysicsSpace_VRageMath_BoundingBoxD_" data-uid="Sandbox.Engine.Physics.MyPhysics.EnsurePhysicsSpace(VRageMath.BoundingBoxD)">
+  EnsurePhysicsSpace(BoundingBoxD)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EnsurePhysicsSpace(BoundingBoxD aabb)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>aabb</code> <a class="xref" href="VRageMath.BoundingBoxD.html">BoundingBoxD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetAll_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetAll*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetAll_System_Collections_Generic_List_VRageMath_Spatial_MyClusterTree_MyClusterQueryResult__" data-uid="Sandbox.Engine.Physics.MyPhysics.GetAll(System.Collections.Generic.List{VRageMath.Spatial.MyClusterTree.MyClusterQueryResult})">
+  GetAll(List&lt;MyClusterQueryResult&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetAll(List&lt;MyClusterTree.MyClusterQueryResult&gt; results)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>results</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.Spatial.MyClusterTree.html">MyClusterTree</a>.<a class="xref" href="VRageMath.Spatial.MyClusterTree.MyClusterQueryResult.html">MyClusterQueryResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetClusterList_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetClusterList*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetClusterList" data-uid="Sandbox.Engine.Physics.MyPhysics.GetClusterList">
+  GetClusterList()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ListReader&lt;object&gt;? GetClusterList()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Collections.ListReader-1.html">ListReader</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetCollisionLayer_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetCollisionLayer*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetCollisionLayer_System_String_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetCollisionLayer(System.String)">
+  GetCollisionLayer(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetCollisionLayer(string strLayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>strLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetEntityReplicableExistsById_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetEntityReplicableExistsById*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetEntityReplicableExistsById_System_Int64_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetEntityReplicableExistsById(System.Int64)">
+  GetEntityReplicableExistsById(long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetEntityReplicableExistsById(long entityId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetHkWorld_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetHkWorld*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetHkWorld_VRageMath_Vector3D__" data-uid="Sandbox.Engine.Physics.MyPhysics.GetHkWorld(VRageMath.Vector3D@)">
+  GetHkWorld(ref Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyClusterTree.MyClusterQueryResult? GetHkWorld(ref Vector3D pos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Spatial.MyClusterTree.html">MyClusterTree</a>.<a class="xref" href="VRageMath.Spatial.MyClusterTree.MyClusterQueryResult.html">MyClusterQueryResult</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetObjectOffset_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetObjectOffset*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetObjectOffset_System_UInt64_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetObjectOffset(System.UInt64)">
+  GetObjectOffset(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D GetObjectOffset(ulong id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsBox_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsBox*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsBox_VRageMath_Vector3__VRageMath_Vector3D__VRageMath_Quaternion__System_Collections_Generic_List_Havok_HkBodyCollision__System_Int32_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsBox(VRageMath.Vector3@,VRageMath.Vector3D@,VRageMath.Quaternion@,System.Collections.Generic.List{Havok.HkBodyCollision},System.Int32)">
+  GetPenetrationsBox(ref Vector3, ref Vector3D, ref Quaternion, List&lt;HkBodyCollision&gt;, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetPenetrationsBox(ref Vector3 halfExtents, ref Vector3D translation, ref Quaternion rotation, List&lt;HkBodyCollision&gt; results, int filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>halfExtents</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>translation</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>results</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Havok.HkBodyCollision.html">HkBodyCollision</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsBoxParallel_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsBoxParallel*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsBoxParallel_VRageMath_Vector3__VRageMath_Vector3D__VRageMath_Quaternion__System_Collections_Generic_List_Havok_HkBodyCollision__System_Int32_System_Action_System_Collections_Generic_List_Havok_HkBodyCollision___" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsBoxParallel(VRageMath.Vector3@,VRageMath.Vector3D@,VRageMath.Quaternion@,System.Collections.Generic.List{Havok.HkBodyCollision},System.Int32,System.Action{System.Collections.Generic.List{Havok.HkBodyCollision}})">
+  GetPenetrationsBoxParallel(ref Vector3, ref Vector3D, ref Quaternion, List&lt;HkBodyCollision&gt;, int, Action&lt;List&lt;HkBodyCollision&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetPenetrationsBoxParallel(ref Vector3 halfExtents, ref Vector3D translation, ref Quaternion rotation, List&lt;HkBodyCollision&gt; results, int filter, Action&lt;List&lt;HkBodyCollision&gt;&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>halfExtents</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>translation</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>results</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Havok.HkBodyCollision.html">HkBodyCollision</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Havok.HkBodyCollision.html">HkBodyCollision</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShape_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShape*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShape_Havok_HkShape_VRageMath_Vector3D__VRageMath_Quaternion__System_Collections_Generic_HashSet_Havok_HkRigidBody__System_Int32_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShape(Havok.HkShape,VRageMath.Vector3D@,VRageMath.Quaternion@,System.Collections.Generic.HashSet{Havok.HkRigidBody},System.Int32)">
+  GetPenetrationsShape(HkShape, ref Vector3D, ref Quaternion, HashSet&lt;HkRigidBody&gt;, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetPenetrationsShape(HkShape shape, ref Vector3D translation, ref Quaternion rotation, HashSet&lt;HkRigidBody&gt; results, int filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>results</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Havok.HkRigidBody.html">HkRigidBody</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShape_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShape*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShape_Havok_HkShape_VRageMath_Vector3D__VRageMath_Quaternion__System_Collections_Generic_List_Havok_HkBodyCollision__System_Int32_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShape(Havok.HkShape,VRageMath.Vector3D@,VRageMath.Quaternion@,System.Collections.Generic.List{Havok.HkBodyCollision},System.Int32)">
+  GetPenetrationsShape(HkShape, ref Vector3D, ref Quaternion, List&lt;HkBodyCollision&gt;, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetPenetrationsShape(HkShape shape, ref Vector3D translation, ref Quaternion rotation, List&lt;HkBodyCollision&gt; results, int filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>results</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Havok.HkBodyCollision.html">HkBodyCollision</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShapeParallel_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShapeParallel*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShapeParallel_Havok_HkShape_VRageMath_Vector3D__VRageMath_Quaternion__System_Collections_Generic_HashSet_Havok_HkRigidBody__System_Int32_System_Action_System_Collections_Generic_HashSet_Havok_HkRigidBody___" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShapeParallel(Havok.HkShape,VRageMath.Vector3D@,VRageMath.Quaternion@,System.Collections.Generic.HashSet{Havok.HkRigidBody},System.Int32,System.Action{System.Collections.Generic.HashSet{Havok.HkRigidBody}})">
+  GetPenetrationsShapeParallel(HkShape, ref Vector3D, ref Quaternion, HashSet&lt;HkRigidBody&gt;, int, Action&lt;HashSet&lt;HkRigidBody&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetPenetrationsShapeParallel(HkShape shape, ref Vector3D translation, ref Quaternion rotation, HashSet&lt;HkRigidBody&gt; results, int filter, Action&lt;HashSet&lt;HkRigidBody&gt;&gt; callback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>results</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Havok.HkRigidBody.html">HkRigidBody</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Havok.HkRigidBody.html">HkRigidBody</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShapeShape_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShapeShape*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShapeShape_Havok_HkShape_VRageMath_Vector3__VRageMath_Quaternion__Havok_HkShape_VRageMath_Vector3__VRageMath_Quaternion__" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShapeShape(Havok.HkShape,VRageMath.Vector3@,VRageMath.Quaternion@,Havok.HkShape,VRageMath.Vector3@,VRageMath.Quaternion@)">
+  GetPenetrationsShapeShape(HkShape, ref Vector3, ref Quaternion, HkShape, ref Vector3, ref Quaternion)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ClearToken&lt;HkShapeCollision&gt; GetPenetrationsShapeShape(HkShape shape1, ref Vector3 translation1, ref Quaternion rotation1, HkShape shape2, ref Vector3 translation2, ref Quaternion rotation2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape1</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation1</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>rotation1</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>shape2</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation2</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>rotation2</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="System.Collections.Generic.ClearToken-1.html">ClearToken</a>&lt;<a class="xref" href="Havok.HkShapeCollision.html">HkShapeCollision</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShapeShape_" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShapeShape*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_GetPenetrationsShapeShape_Havok_HkShape_VRageMath_Vector3__VRageMath_Quaternion__Havok_HkShape_VRageMath_Vector3__VRageMath_Quaternion__System_Collections_Generic_List_Havok_HkShapeCollision__" data-uid="Sandbox.Engine.Physics.MyPhysics.GetPenetrationsShapeShape(Havok.HkShape,VRageMath.Vector3@,VRageMath.Quaternion@,Havok.HkShape,VRageMath.Vector3@,VRageMath.Quaternion@,System.Collections.Generic.List{Havok.HkShapeCollision})">
+  GetPenetrationsShapeShape(HkShape, ref Vector3, ref Quaternion, HkShape, ref Vector3, ref Quaternion, List&lt;HkShapeCollision&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetPenetrationsShapeShape(HkShape shape1, ref Vector3 translation1, ref Quaternion rotation1, HkShape shape2, ref Vector3 translation2, ref Quaternion rotation2, List&lt;HkShapeCollision&gt; collisions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape1</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation1</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>rotation1</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>shape2</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation2</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>rotation2</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>collisions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Havok.HkShapeCollision.html">HkShapeCollision</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_InformReplicationEnded_" data-uid="Sandbox.Engine.Physics.MyPhysics.InformReplicationEnded*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_InformReplicationEnded_VRage_Game_Entity_MyEntity_" data-uid="Sandbox.Engine.Physics.MyPhysics.InformReplicationEnded(VRage.Game.Entity.MyEntity)">
+  InformReplicationEnded(MyEntity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InformReplicationEnded(MyEntity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_InformReplicationStarted_" data-uid="Sandbox.Engine.Physics.MyPhysics.InformReplicationStarted*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_InformReplicationStarted_VRage_Game_Entity_MyEntity_" data-uid="Sandbox.Engine.Physics.MyPhysics.InformReplicationStarted(VRage.Game.Entity.MyEntity)">
+  InformReplicationStarted(MyEntity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InformReplicationStarted(MyEntity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_IsPenetratingShapeShape_" data-uid="Sandbox.Engine.Physics.MyPhysics.IsPenetratingShapeShape*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_IsPenetratingShapeShape_Havok_HkShape_VRageMath_Matrix__Havok_HkShape_VRageMath_Matrix__" data-uid="Sandbox.Engine.Physics.MyPhysics.IsPenetratingShapeShape(Havok.HkShape,VRageMath.Matrix@,Havok.HkShape,VRageMath.Matrix@)">
+  IsPenetratingShapeShape(HkShape, ref Matrix, HkShape, ref Matrix)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPenetratingShapeShape(HkShape shape1, ref Matrix transform1, HkShape shape2, ref Matrix transform2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape1</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform1</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+    <dt><code>shape2</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>transform2</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_IsPenetratingShapeShape_" data-uid="Sandbox.Engine.Physics.MyPhysics.IsPenetratingShapeShape*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_IsPenetratingShapeShape_Havok_HkShape_VRageMath_Vector3D__VRageMath_Quaternion__Havok_HkShape_VRageMath_Vector3D__VRageMath_Quaternion__" data-uid="Sandbox.Engine.Physics.MyPhysics.IsPenetratingShapeShape(Havok.HkShape,VRageMath.Vector3D@,VRageMath.Quaternion@,Havok.HkShape,VRageMath.Vector3D@,VRageMath.Quaternion@)">
+  IsPenetratingShapeShape(HkShape, ref Vector3D, ref Quaternion, HkShape, ref Vector3D, ref Quaternion)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPenetratingShapeShape(HkShape shape1, ref Vector3D translation1, ref Quaternion rotation1, HkShape shape2, ref Vector3D translation2, ref Quaternion rotation2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape1</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation1</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation1</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>shape2</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation2</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation2</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_IsPenetratingShapeShapeInsideOfHavok_" data-uid="Sandbox.Engine.Physics.MyPhysics.IsPenetratingShapeShapeInsideOfHavok*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_IsPenetratingShapeShapeInsideOfHavok_Havok_HkShape_VRageMath_Vector3D__VRageMath_Quaternion__Havok_HkShape_VRageMath_Vector3D__VRageMath_Quaternion__" data-uid="Sandbox.Engine.Physics.MyPhysics.IsPenetratingShapeShapeInsideOfHavok(Havok.HkShape,VRageMath.Vector3D@,VRageMath.Quaternion@,Havok.HkShape,VRageMath.Vector3D@,VRageMath.Quaternion@)">
+  IsPenetratingShapeShapeInsideOfHavok(HkShape, ref Vector3D, ref Quaternion, HkShape, ref Vector3D, ref Quaternion)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPenetratingShapeShapeInsideOfHavok(HkShape shape1, ref Vector3D translation1, ref Quaternion rotation1, HkShape shape2, ref Vector3D translation2, ref Quaternion rotation2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape1</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation1</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation1</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>shape2</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>translation2</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rotation2</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_LoadData_" data-uid="Sandbox.Engine.Physics.MyPhysics.LoadData*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_LoadData" data-uid="Sandbox.Engine.Physics.MyPhysics.LoadData">
+  LoadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_MoveObject_" data-uid="Sandbox.Engine.Physics.MyPhysics.MoveObject*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_MoveObject_System_UInt64_VRageMath_BoundingBoxD_VRageMath_Vector3_" data-uid="Sandbox.Engine.Physics.MyPhysics.MoveObject(System.UInt64,VRageMath.BoundingBoxD,VRageMath.Vector3)">
+  MoveObject(ulong, BoundingBoxD, Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void MoveObject(ulong id, BoundingBoxD aabb, Vector3 velocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+    <dt><code>aabb</code> <a class="xref" href="VRageMath.BoundingBoxD.html">BoundingBoxD</a></dt>
+    <dd></dd>
+    <dt><code>velocity</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_ProfileHkCall_" data-uid="Sandbox.Engine.Physics.MyPhysics.ProfileHkCall*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_ProfileHkCall_System_Action_" data-uid="Sandbox.Engine.Physics.MyPhysics.ProfileHkCall(System.Action)">
+  ProfileHkCall(Action)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ProfileHkCall(Action action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_RefreshCollisionFilter_" data-uid="Sandbox.Engine.Physics.MyPhysics.RefreshCollisionFilter*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_RefreshCollisionFilter_Sandbox_Engine_Physics_MyPhysicsBody_" data-uid="Sandbox.Engine.Physics.MyPhysics.RefreshCollisionFilter(Sandbox.Engine.Physics.MyPhysicsBody)">
+  RefreshCollisionFilter(MyPhysicsBody)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefreshCollisionFilter(MyPhysicsBody physicsBody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>physicsBody</code> <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html">MyPhysicsBody</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_RemoveDestructions_" data-uid="Sandbox.Engine.Physics.MyPhysics.RemoveDestructions*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_RemoveDestructions_Havok_HkRigidBody_" data-uid="Sandbox.Engine.Physics.MyPhysics.RemoveDestructions(Havok.HkRigidBody)">
+  RemoveDestructions(HkRigidBody)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveDestructions(HkRigidBody body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>body</code> <a class="xref" href="Havok.HkRigidBody.html">HkRigidBody</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_RemoveDestructions_" data-uid="Sandbox.Engine.Physics.MyPhysics.RemoveDestructions*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_RemoveDestructions_VRage_Game_Entity_MyEntity_" data-uid="Sandbox.Engine.Physics.MyPhysics.RemoveDestructions(VRage.Game.Entity.MyEntity)">
+  RemoveDestructions(MyEntity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveDestructions(MyEntity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_RemoveObject_" data-uid="Sandbox.Engine.Physics.MyPhysics.RemoveObject*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_RemoveObject_System_UInt64_" data-uid="Sandbox.Engine.Physics.MyPhysics.RemoveObject(System.UInt64)">
+  RemoveObject(ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveObject(ulong id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_Schedule_" data-uid="Sandbox.Engine.Physics.MyPhysics.Schedule*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_Schedule_System_Action_System_String_" data-uid="Sandbox.Engine.Physics.MyPhysics.Schedule(System.Action,System.String)">
+  Schedule(Action, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Schedule(Action action, string invoker)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+    <dt><code>invoker</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_SerializeClusters_" data-uid="Sandbox.Engine.Physics.MyPhysics.SerializeClusters*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_SerializeClusters_System_Collections_Generic_List_VRageMath_BoundingBoxD__" data-uid="Sandbox.Engine.Physics.MyPhysics.SerializeClusters(System.Collections.Generic.List{VRageMath.BoundingBoxD})">
+  SerializeClusters(List&lt;BoundingBoxD&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SerializeClusters(List&lt;BoundingBoxD&gt; list)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>list</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.BoundingBoxD.html">BoundingBoxD</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_SetScheduling_" data-uid="Sandbox.Engine.Physics.MyPhysics.SetScheduling*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_SetScheduling_System_Boolean_System_Boolean_" data-uid="Sandbox.Engine.Physics.MyPhysics.SetScheduling(System.Boolean,System.Boolean)">
+  SetScheduling(bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Event(null, 207)]
+[Reliable]
+[Server(ValidationType.AdminOnly)]
+public static void SetScheduling(bool multithread, bool parallel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multithread</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>parallel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_Simulate_" data-uid="Sandbox.Engine.Physics.MyPhysics.Simulate*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_Simulate" data-uid="Sandbox.Engine.Physics.MyPhysics.Simulate">
+  Simulate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Simulate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_TryAddEntity_" data-uid="Sandbox.Engine.Physics.MyPhysics.TryAddEntity*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_TryAddEntity_VRage_ModAPI_IMyEntity_Sandbox_Engine_Physics_MyPhysicsBody_System_Boolean_" data-uid="Sandbox.Engine.Physics.MyPhysics.TryAddEntity(VRage.ModAPI.IMyEntity,Sandbox.Engine.Physics.MyPhysicsBody,System.Boolean)">
+  TryAddEntity(IMyEntity, MyPhysicsBody, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ulong TryAddEntity(IMyEntity entity, MyPhysicsBody activationHandler, bool batchRequest)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="VRage.ModAPI.IMyEntity.html">IMyEntity</a></dt>
+    <dd></dd>
+    <dt><code>activationHandler</code> <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html">MyPhysicsBody</a></dt>
+    <dd></dd>
+    <dt><code>batchRequest</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Physics_MyPhysics_UnloadData_" data-uid="Sandbox.Engine.Physics.MyPhysics.UnloadData*"></a>
+
+  <h3 id="Sandbox_Engine_Physics_MyPhysics_UnloadData" data-uid="Sandbox.Engine.Physics.MyPhysics.UnloadData">
+  UnloadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UnloadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

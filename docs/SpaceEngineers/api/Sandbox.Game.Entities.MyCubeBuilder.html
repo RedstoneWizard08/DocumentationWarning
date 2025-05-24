@@ -1,0 +1,4897 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyCubeBuilder | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyCubeBuilder | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Game.Entities.MyCubeBuilder">
+
+
+
+  <h1 id="Sandbox_Game_Entities_MyCubeBuilder" data-uid="Sandbox.Game.Entities.MyCubeBuilder" class="text-break">
+Class MyCubeBuilder  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Game.html">Game</a>.<a class="xref" href="Sandbox.Game.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation|MyUpdateOrder.AfterSimulation)]
+[StaticEventOwner]
+public class MyCubeBuilder : MyBlockBuilderBase, IMyUserInputComponent, IMyFocusHolder, IMyCubeBuilder</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MySessionComponentBase.html">MySessionComponentBase</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html">MyBlockBuilderBase</a></div>
+      <div><span class="xref">MyCubeBuilder</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyUserInputComponent.html">IMyUserInputComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.GameSystems.ContextHandling.IMyFocusHolder.html">IMyFocusHolder</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.IMyCubeBuilder.html">IMyCubeBuilder</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_m_rotationControls">MyBlockBuilderBase.m_rotationControls</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_m_cubeBuilderDefinition">MyBlockBuilderBase.m_cubeBuilderDefinition</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_m_rotationDirections">MyBlockBuilderBase.m_rotationDirections</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_m_currentGrid">MyBlockBuilderBase.m_currentGrid</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_m_invGridWorldMatrix">MyBlockBuilderBase.m_invGridWorldMatrix</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_m_currentVoxelBase">MyBlockBuilderBase.m_currentVoxelBase</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_m_hitInfo">MyBlockBuilderBase.m_hitInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_AddFastBuildModelWithSubparts_VRageMath_MatrixD__System_Collections_Generic_List_VRageMath_MatrixD__System_Collections_Generic_List_System_String__Sandbox_Definitions_MyCubeBlockDefinition_System_Single_">MyBlockBuilderBase.AddFastBuildModelWithSubparts(ref MatrixD, List&lt;MatrixD&gt;, List&lt;string&gt;, MyCubeBlockDefinition, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_FindClosestGrid">MyBlockBuilderBase.FindClosestGrid()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_FindClosestPlacementObject_Sandbox_Game_Entities_MyCubeGrid__Sandbox_Game_Entities_MyVoxelBase__">MyBlockBuilderBase.FindClosestPlacementObject(out MyCubeGrid, out MyVoxelBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_IntersectCubes_Sandbox_Game_Entities_MyCubeGrid_System_Double__">MyBlockBuilderBase.IntersectCubes(MyCubeGrid, out double)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_IntersectExact_Sandbox_Game_Entities_MyCubeGrid_VRageMath_MatrixD__VRageMath_Vector3D__Sandbox_Game_Entities_Cube_MySlimBlock__">MyBlockBuilderBase.IntersectExact(MyCubeGrid, ref MatrixD, out Vector3D, out MySlimBlock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_GetIntersectedBlockData_VRageMath_MatrixD__VRageMath_Vector3D__Sandbox_Game_Entities_Cube_MySlimBlock__System_Nullable_System_UInt16___">MyBlockBuilderBase.GetIntersectedBlockData(ref MatrixD, out Vector3D, out MySlimBlock, out ushort?)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_IntersectInflated_System_Collections_Generic_List_VRageMath_Vector3I__Sandbox_Game_Entities_MyCubeGrid_">MyBlockBuilderBase.IntersectInflated(List&lt;Vector3I&gt;, MyCubeGrid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_GetCubeBoundingBox_VRageMath_Vector3I_">MyBlockBuilderBase.GetCubeBoundingBox(Vector3I)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_GetCubeAddAndRemovePositions_VRageMath_Vector3I_System_Boolean_VRageMath_Vector3I__VRageMath_Vector3I__VRageMath_Vector3I__">MyBlockBuilderBase.GetCubeAddAndRemovePositions(Vector3I, bool, out Vector3I, out Vector3I, out Vector3I)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_GetBlockAddPosition_System_Single_System_Boolean_Sandbox_Game_Entities_Cube_MySlimBlock__VRageMath_Vector3D__VRageMath_Vector3D__VRageMath_Vector3I__VRageMath_Vector3I__System_Nullable_System_UInt16___">MyBlockBuilderBase.GetBlockAddPosition(float, bool, out MySlimBlock, out Vector3D, out Vector3D, out Vector3I, out Vector3I, out ushort?)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_ComputeSteps_VRageMath_Vector3I_VRageMath_Vector3I_VRageMath_Vector3I_VRageMath_Vector3I__VRageMath_Vector3I__System_Int32__">MyBlockBuilderBase.ComputeSteps(Vector3I, Vector3I, Vector3I, out Vector3I, out Vector3I, out int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_IntersectionDistance">MyBlockBuilderBase.IntersectionDistance</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_HitInfo">MyBlockBuilderBase.HitInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_SpectatorIsBuilding">MyBlockBuilderBase.SpectatorIsBuilding</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_CameraControllerSpectator">MyBlockBuilderBase.CameraControllerSpectator</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_IntersectionStart">MyBlockBuilderBase.IntersectionStart</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_IntersectionDirection">MyBlockBuilderBase.IntersectionDirection</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_FreePlacementTarget">MyBlockBuilderBase.FreePlacementTarget</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_PlacementProvider">MyBlockBuilderBase.PlacementProvider</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyBlockBuilderBase.html#Sandbox_Game_Entities_MyBlockBuilderBase_CubeBuilderDefinition">MyBlockBuilderBase.CubeBuilderDefinition</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_DebugName">MySessionComponentBase.DebugName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Priority">MySessionComponentBase.Priority</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ComponentType">MySessionComponentBase.ComponentType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatedBeforeInit">MySessionComponentBase.UpdatedBeforeInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SetUpdateOrder_VRage_Game_Components_MyUpdateOrder_">MySessionComponentBase.SetUpdateOrder(MyUpdateOrder)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Init_VRage_Game_MyObjectBuilder_SessionComponent_">MySessionComponentBase.Init(MyObjectBuilder_SessionComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_GetObjectBuilder">MySessionComponentBase.GetObjectBuilder()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_AfterLoadData">MySessionComponentBase.AfterLoadData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UnloadDataConditional">MySessionComponentBase.UnloadDataConditional()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SaveData">MySessionComponentBase.SaveData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_BeforeStart">MySessionComponentBase.BeforeStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Simulate">MySessionComponentBase.Simulate()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatingStopped">MySessionComponentBase.UpdatingStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_HandleInput">MySessionComponentBase.HandleInput()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ToString">MySessionComponentBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOrder">MySessionComponentBase.UpdateOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ObjectBuilderType">MySessionComponentBase.ObjectBuilderType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ModContext">MySessionComponentBase.ModContext</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Loaded">MySessionComponentBase.Loaded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Initialized">MySessionComponentBase.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOnPause">MySessionComponentBase.UpdateOnPause</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsServerOnly">MySessionComponentBase.IsServerOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Definition">MySessionComponentBase.Definition</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsRequiredByGame">MySessionComponentBase.IsRequiredByGame</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder__ctor_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder__ctor" data-uid="Sandbox.Game.Entities.MyCubeBuilder.#ctor">
+  MyCubeBuilder()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCubeBuilder()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AllPlayersColors" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AllPlayersColors">
+  AllPlayersColors
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;MyPlayer.PlayerId, List&lt;Vector3&gt;&gt; AllPlayersColors</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="Sandbox.Game.World.MyPlayer.html">MyPlayer</a>.<a class="xref" href="Sandbox.Game.World.MyPlayer.PlayerId.html">PlayerId</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.Vector3.html">Vector3</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_BLOCK_ROTATION_SPEED" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BLOCK_ROTATION_SPEED">
+  BLOCK_ROTATION_SPEED
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static double BLOCK_ROTATION_SPEED</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_MaxGridDistanceFrom" data-uid="Sandbox.Game.Entities.MyCubeBuilder.MaxGridDistanceFrom">
+  MaxGridDistanceFrom
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? MaxGridDistanceFrom</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_Static" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Static">
+  Static
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyCubeBuilder Static</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.html">MyCubeBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_canBuild" data-uid="Sandbox.Game.Entities.MyCubeBuilder.canBuild">
+  canBuild
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool canBuild</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_blocksBuildQueue" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_blocksBuildQueue">
+  m_blocksBuildQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected HashSet&lt;MyCubeGrid.MyBlockLocation&gt; m_blocksBuildQueue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a>.<a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.MyBlockLocation.html">MyBlockLocation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_cubeBuilderState" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_cubeBuilderState">
+  m_cubeBuilderState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MyCubeBuilderState m_cubeBuilderState</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Cube.CubeBuilder.MyCubeBuilderState.html">MyCubeBuilderState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_gameInventory" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_gameInventory">
+  m_gameInventory
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MySessionComponentGameInventory m_gameInventory</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.SessionComponents.MySessionComponentGameInventory.html">MySessionComponentGameInventory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_gizmo" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_gizmo">
+  m_gizmo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MyCubeBuilderGizmo m_gizmo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Cube.MyCubeBuilderGizmo.html">MyCubeBuilderGizmo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_lastLocalCoordSysData" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_lastLocalCoordSysData">
+  m_lastLocalCoordSysData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MyCoordinateSystem.CoordSystemData m_lastLocalCoordSysData</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.GameSystems.CoordinateSystem.MyCoordinateSystem.html">MyCoordinateSystem</a>.<a class="xref" href="Sandbox.Game.GameSystems.CoordinateSystem.MyCoordinateSystem.CoordSystemData.html">CoordSystemData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_renderData" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_renderData">
+  m_renderData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MyBlockBuilderRenderData m_renderData</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Cube.MyBlockBuilderRenderData.html">MyBlockBuilderRenderData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_rotationHints" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_rotationHints">
+  m_rotationHints
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MyBlockBuilderRotationHints m_rotationHints</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Cube.MyBlockBuilderRotationHints.html">MyBlockBuilderRotationHints</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_tmpBlockPositionList" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_tmpBlockPositionList">
+  m_tmpBlockPositionList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Vector3I&gt; m_tmpBlockPositionList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_tmpBlockPositionsSet" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_tmpBlockPositionsSet">
+  m_tmpBlockPositionsSet
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected HashSet&lt;Vector3I&gt; m_tmpBlockPositionsSet</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_tmpCompoundBlockPositionIdList" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_tmpCompoundBlockPositionIdList">
+  m_tmpCompoundBlockPositionIdList
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Tuple&lt;Vector3I, ushort&gt;&gt; m_tmpCompoundBlockPositionIdList</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.tuple-2">Tuple</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_m_toolType" data-uid="Sandbox.Game.Entities.MyCubeBuilder.m_toolType">
+  m_toolType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCubeBuilderToolType m_toolType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeBuilderToolType.html">MyCubeBuilderToolType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AlignToDefault_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AlignToDefault*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AlignToDefault" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AlignToDefault">
+  AlignToDefault
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AlignToDefault { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_BlockCreationIsActivated_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BlockCreationIsActivated*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_BlockCreationIsActivated" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BlockCreationIsActivated">
+  BlockCreationIsActivated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BlockCreationIsActivated { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_BuildComponent_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BuildComponent*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_BuildComponent" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BuildComponent">
+  BuildComponent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyBuildComponentBase BuildComponent { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.World.MyBuildComponentBase.html">MyBuildComponentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_BuildInputValid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BuildInputValid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_BuildInputValid" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BuildInputValid">
+  BuildInputValid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool BuildInputValid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_BuildingMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BuildingMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_BuildingMode" data-uid="Sandbox.Game.Entities.MyCubeBuilder.BuildingMode">
+  BuildingMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyCubeBuilder.BuildingModeEnum BuildingMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.html">MyCubeBuilder</a>.<a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.BuildingModeEnum.html">BuildingModeEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CompoundEnabled_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CompoundEnabled*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CompoundEnabled" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CompoundEnabled">
+  CompoundEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CompoundEnabled { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CubeBuilderState_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CubeBuilderState*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CubeBuilderState" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CubeBuilderState">
+  CubeBuilderState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCubeBuilderState CubeBuilderState { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Cube.CubeBuilder.MyCubeBuilderState.html">MyCubeBuilderState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CubePlacementMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CubePlacementMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CubePlacementMode" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CubePlacementMode">
+  CubePlacementMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCubeBuilder.CubePlacementModeEnum CubePlacementMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.html">MyCubeBuilder</a>.<a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.CubePlacementModeEnum.html">CubePlacementModeEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CurrentBlockDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CurrentBlockDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CurrentBlockDefinition" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CurrentBlockDefinition">
+  CurrentBlockDefinition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyCubeBlockDefinition CurrentBlockDefinition { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CurrentGrid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CurrentGrid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CurrentGrid" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CurrentGrid">
+  CurrentGrid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override MyCubeGrid CurrentGrid { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CurrentVoxelBase_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CurrentVoxelBase*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CurrentVoxelBase" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CurrentVoxelBase">
+  CurrentVoxelBase
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override MyVoxelBase CurrentVoxelBase { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyVoxelBase.html">MyVoxelBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_Dependencies_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Dependencies*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_Dependencies" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Dependencies">
+  Dependencies
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type[] Dependencies { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DynamicMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DynamicMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DynamicMode" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DynamicMode">
+  DynamicMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DynamicMode { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_FreezeGizmo_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.FreezeGizmo*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_FreezeGizmo" data-uid="Sandbox.Game.Entities.MyCubeBuilder.FreezeGizmo">
+  FreezeGizmo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FreezeGizmo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GridAndBlockValid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GridAndBlockValid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GridAndBlockValid" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GridAndBlockValid">
+  GridAndBlockValid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool GridAndBlockValid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GridValid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GridValid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GridValid" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GridValid">
+  GridValid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool GridValid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsActivated_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsActivated*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsActivated" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsActivated">
+  IsActivated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsActivated { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsBuildMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsBuildMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsBuildMode" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsBuildMode">
+  IsBuildMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsBuildMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsCubeSizeModesAvailable_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsCubeSizeModesAvailable*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsCubeSizeModesAvailable" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsCubeSizeModesAvailable">
+  IsCubeSizeModesAvailable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsCubeSizeModesAvailable { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_PlacingSmallGridOnLargeStatic_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.PlacingSmallGridOnLargeStatic*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_PlacingSmallGridOnLargeStatic" data-uid="Sandbox.Game.Entities.MyCubeBuilder.PlacingSmallGridOnLargeStatic">
+  PlacingSmallGridOnLargeStatic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PlacingSmallGridOnLargeStatic { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_RotationAxis_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RotationAxis*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_RotationAxis" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RotationAxis">
+  RotationAxis
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RotationAxis { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ShowRemoveGizmo_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ShowRemoveGizmo*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ShowRemoveGizmo" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ShowRemoveGizmo">
+  ShowRemoveGizmo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowRemoveGizmo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ToolType_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToolType*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ToolType" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToolType">
+  ToolType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCubeBuilderToolType ToolType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeBuilderToolType.html">MyCubeBuilderToolType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ToolbarBlockDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToolbarBlockDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ToolbarBlockDefinition" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToolbarBlockDefinition">
+  ToolbarBlockDefinition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCubeBlockDefinition ToolbarBlockDefinition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UseSymmetry_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UseSymmetry*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UseSymmetry" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UseSymmetry">
+  UseSymmetry
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseSymmetry { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UseTransparency_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UseTransparency*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UseTransparency" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UseTransparency">
+  UseTransparency
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseTransparency { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_VoxelMapAndBlockValid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.VoxelMapAndBlockValid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_VoxelMapAndBlockValid" data-uid="Sandbox.Game.Entities.MyCubeBuilder.VoxelMapAndBlockValid">
+  VoxelMapAndBlockValid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool VoxelMapAndBlockValid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_Activate_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Activate*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_Activate_System_Nullable_VRage_Game_MyDefinitionId__System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Activate(System.Nullable{VRage.Game.MyDefinitionId},System.Boolean)">
+  Activate(MyDefinitionId?, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Activate(MyDefinitionId? blockDefinitionId = null, bool groupwideDLCCheck = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockDefinitionId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a>?</dt>
+    <dd></dd>
+    <dt><code>groupwideDLCCheck</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ActivateColorTool_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ActivateColorTool*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ActivateColorTool" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ActivateColorTool">
+  ActivateColorTool()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ActivateColorTool()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ActivateFromRadialMenu_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ActivateFromRadialMenu*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ActivateFromRadialMenu_System_Nullable_VRage_Game_MyDefinitionId__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ActivateFromRadialMenu(System.Nullable{VRage.Game.MyDefinitionId})">
+  ActivateFromRadialMenu(MyDefinitionId?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ActivateFromRadialMenu(MyDefinitionId? blockDefinitionId = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockDefinitionId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_Add_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Add*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_Add" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Add">
+  Add()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Add()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AddBlocksToBuildQueueOrSpawn_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AddBlocksToBuildQueueOrSpawn*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AddBlocksToBuildQueueOrSpawn_Sandbox_Definitions_MyCubeBlockDefinition_VRageMath_MatrixD__VRageMath_Vector3I_VRageMath_Vector3I_VRageMath_Vector3I_VRageMath_Quaternion_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AddBlocksToBuildQueueOrSpawn(Sandbox.Definitions.MyCubeBlockDefinition,VRageMath.MatrixD@,VRageMath.Vector3I,VRageMath.Vector3I,VRageMath.Vector3I,VRageMath.Quaternion)">
+  AddBlocksToBuildQueueOrSpawn(MyCubeBlockDefinition, ref MatrixD, Vector3I, Vector3I, Vector3I, Quaternion)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AddBlocksToBuildQueueOrSpawn(MyCubeBlockDefinition blockDefinition, ref MatrixD worldMatrixAdd, Vector3I min, Vector3I max, Vector3I center, Quaternion localOrientation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockDefinition</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>worldMatrixAdd</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>min</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>max</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>center</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>localOrientation</code> <a class="xref" href="VRageMath.Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AddConstruction_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AddConstruction*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AddConstruction_VRage_Game_Entity_MyEntity_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AddConstruction(VRage.Game.Entity.MyEntity)">
+  AddConstruction(MyEntity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool AddConstruction(MyEntity builder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AddFastBuildModels_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AddFastBuildModels*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AddFastBuildModels_VRageMath_MatrixD_VRageMath_Matrix__System_Collections_Generic_List_VRageMath_MatrixD__System_Collections_Generic_List_System_String__Sandbox_Definitions_MyCubeBlockDefinition_System_Nullable_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3I__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AddFastBuildModels(VRageMath.MatrixD,VRageMath.Matrix@,System.Collections.Generic.List{VRageMath.MatrixD},System.Collections.Generic.List{System.String},Sandbox.Definitions.MyCubeBlockDefinition,System.Nullable{VRageMath.Vector3I},System.Nullable{VRageMath.Vector3I})">
+  AddFastBuildModels(MatrixD, ref Matrix, List&lt;MatrixD&gt;, List&lt;string&gt;, MyCubeBlockDefinition, Vector3I?, Vector3I?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFastBuildModels(MatrixD baseMatrix, ref Matrix localMatrixAdd, List&lt;MatrixD&gt; matrices, List&lt;string&gt; models, MyCubeBlockDefinition definition, Vector3I? startBuild, Vector3I? continueBuild)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>baseMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>localMatrixAdd</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+    <dt><code>matrices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.MatrixD.html">MatrixD</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>models</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>definition</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>startBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>continueBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AfterGridBuild_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AfterGridBuild*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AfterGridBuild_VRage_Game_Entity_MyEntity_Sandbox_Game_Entities_MyCubeGrid_System_Boolean_System_UInt64_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AfterGridBuild(VRage.Game.Entity.MyEntity,Sandbox.Game.Entities.MyCubeGrid,System.Boolean,System.UInt64)">
+  AfterGridBuild(MyEntity, MyCubeGrid, bool, ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void AfterGridBuild(MyEntity builder, MyCubeGrid grid, bool instantBuild, ulong senderId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+    <dt><code>grid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+    <dt><code>instantBuild</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>senderId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AlignToGravity_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AlignToGravity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AlignToGravity_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AlignToGravity(System.Boolean)">
+  AlignToGravity(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AlignToGravity(bool alignToCamera = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>alignToCamera</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AutogenerateMountpoints_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AutogenerateMountpoints*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AutogenerateMountpoints_Havok_HkShape___System_Single_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AutogenerateMountpoints(Havok.HkShape[],System.Single)">
+  AutogenerateMountpoints(HkShape[], float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyCubeBlockDefinition.MountPoint[] AutogenerateMountpoints(HkShape[] shapes, float gridSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shapes</code> <a class="xref" href="Havok.HkShape.html">HkShape</a>[]</dt>
+    <dd></dd>
+    <dt><code>gridSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.MountPoint.html">MountPoint</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_AutogenerateMountpoints_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AutogenerateMountpoints*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_AutogenerateMountpoints_VRage_Game_Models_MyModel_System_Single_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.AutogenerateMountpoints(VRage.Game.Models.MyModel,System.Single)">
+  AutogenerateMountpoints(MyModel, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyCubeBlockDefinition.MountPoint[] AutogenerateMountpoints(MyModel model, float gridSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <a class="xref" href="VRage.Game.Models.MyModel.html">MyModel</a></dt>
+    <dd></dd>
+    <dt><code>gridSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.MountPoint.html">MountPoint</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CalculateBlockRotation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateBlockRotation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CalculateBlockRotation_System_Int32_System_Int32_VRageMath_MatrixD__VRageMath_MatrixD__System_Double_VRage_Game_MyBlockDirection_VRage_Game_MyBlockRotation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateBlockRotation(System.Int32,System.Int32,VRageMath.MatrixD@,VRageMath.MatrixD@,System.Double,VRage.Game.MyBlockDirection,VRage.Game.MyBlockRotation)">
+  CalculateBlockRotation(int, int, ref MatrixD, out MatrixD, double, MyBlockDirection, MyBlockRotation)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CalculateBlockRotation(int index, int sign, ref MatrixD currentMatrix, out MatrixD rotatedMatrix, double angle, MyBlockDirection blockDirection = MyBlockDirection.Both, MyBlockRotation blockRotation = MyBlockRotation.Both)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>sign</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>currentMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>rotatedMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>angle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>blockDirection</code> <a class="xref" href="VRage.Game.MyBlockDirection.html">MyBlockDirection</a></dt>
+    <dd></dd>
+    <dt><code>blockRotation</code> <a class="xref" href="VRage.Game.MyBlockRotation.html">MyBlockRotation</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CalculateFreePlacementMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateFreePlacementMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CalculateFreePlacementMode_VRageMath_Vector3D_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateFreePlacementMode(VRageMath.Vector3D)">
+  CalculateFreePlacementMode(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void CalculateFreePlacementMode(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CalculateGravityAlignedMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateGravityAlignedMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CalculateGravityAlignedMode_VRageMath_Vector3D_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateGravityAlignedMode(VRageMath.Vector3D)">
+  CalculateGravityAlignedMode(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void CalculateGravityAlignedMode(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CalculateLocalCoordinateSystemMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateLocalCoordinateSystemMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CalculateLocalCoordinateSystemMode_VRageMath_Vector3D_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CalculateLocalCoordinateSystemMode(VRageMath.Vector3D)">
+  CalculateLocalCoordinateSystemMode(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void CalculateLocalCoordinateSystemMode(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CaluclateDynamicModePos_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CaluclateDynamicModePos*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CaluclateDynamicModePos_VRageMath_Vector3D_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CaluclateDynamicModePos(VRageMath.Vector3D,System.Boolean)">
+  CaluclateDynamicModePos(Vector3D, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool CaluclateDynamicModePos(Vector3D defaultPos, bool isDynamicOverride = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>defaultPos</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>isDynamicOverride</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CanStartConstruction_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CanStartConstruction*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CanStartConstruction_VRage_Game_Entity_MyEntity_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CanStartConstruction(VRage.Game.Entity.MyEntity)">
+  CanStartConstruction(MyEntity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CanStartConstruction(MyEntity buildingEntity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildingEntity</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CancelBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CancelBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CancelBuilding" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CancelBuilding">
+  CancelBuilding()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool CancelBuilding()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CheckGizmoRotation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckGizmoRotation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CheckGizmoRotation" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckGizmoRotation">
+  CheckGizmoRotation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckGizmoRotation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CheckSmallViewChange_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckSmallViewChange*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CheckSmallViewChange" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckSmallViewChange">
+  CheckSmallViewChange()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool CheckSmallViewChange()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CheckValidBlockRotation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckValidBlockRotation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CheckValidBlockRotation_VRageMath_Matrix_VRage_Game_MyBlockDirection_VRage_Game_MyBlockRotation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckValidBlockRotation(VRageMath.Matrix,VRage.Game.MyBlockDirection,VRage.Game.MyBlockRotation)">
+  CheckValidBlockRotation(Matrix, MyBlockDirection, MyBlockRotation)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CheckValidBlockRotation(Matrix localMatrix, MyBlockDirection blockDirection, MyBlockRotation blockRotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>localMatrix</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+    <dt><code>blockDirection</code> <a class="xref" href="VRage.Game.MyBlockDirection.html">MyBlockDirection</a></dt>
+    <dd></dd>
+    <dt><code>blockRotation</code> <a class="xref" href="VRage.Game.MyBlockRotation.html">MyBlockRotation</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CheckValidBlocksRotation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckValidBlocksRotation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CheckValidBlocksRotation_VRageMath_Matrix_Sandbox_Game_Entities_MyCubeGrid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CheckValidBlocksRotation(VRageMath.Matrix,Sandbox.Game.Entities.MyCubeGrid)">
+  CheckValidBlocksRotation(Matrix, MyCubeGrid)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CheckValidBlocksRotation(Matrix gridLocalMatrix, MyCubeGrid grid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gridLocalMatrix</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+    <dt><code>grid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ChooseHitObject_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ChooseHitObject*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ChooseHitObject" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ChooseHitObject">
+  ChooseHitObject()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ChooseHitObject()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ClearRenderData_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ClearRenderData*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ClearRenderData" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ClearRenderData">
+  ClearRenderData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ClearRenderData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ColorPickerCancel_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ColorPickerCancel*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ColorPickerCancel" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ColorPickerCancel">
+  ColorPickerCancel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ColorPickerCancel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ColorPickerOk_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ColorPickerOk*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ColorPickerOk" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ColorPickerOk">
+  ColorPickerOk()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ColorPickerOk()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ContinueBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ContinueBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ContinueBuilding_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ContinueBuilding(System.Boolean)">
+  ContinueBuilding(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ContinueBuilding(bool planeBuild)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>planeBuild</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ContinueBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ContinueBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ContinueBuilding_System_Boolean_System_Nullable_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3I___VRageMath_Vector3I_VRageMath_Vector3I_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ContinueBuilding(System.Boolean,System.Nullable{VRageMath.Vector3I},System.Nullable{VRageMath.Vector3I},System.Nullable{VRageMath.Vector3I}@,VRageMath.Vector3I,VRageMath.Vector3I)">
+  ContinueBuilding(bool, Vector3I?, Vector3I?, ref Vector3I?, Vector3I, Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ContinueBuilding(bool planeBuild, Vector3I? startBuild, Vector3I? startRemove, ref Vector3I? continueBuild, Vector3I blockMinPosision, Vector3I blockMaxPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>planeBuild</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>startBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>startRemove</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>continueBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>blockMinPosision</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>blockMaxPosition</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ConvertDynamicGridBlockToStatic_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ConvertDynamicGridBlockToStatic*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ConvertDynamicGridBlockToStatic_VRageMath_MatrixD__VRage_Game_MyObjectBuilder_CubeBlock_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ConvertDynamicGridBlockToStatic(VRageMath.MatrixD@,VRage.Game.MyObjectBuilder_CubeBlock)">
+  ConvertDynamicGridBlockToStatic(ref MatrixD, MyObjectBuilder_CubeBlock)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyObjectBuilder_CubeBlock ConvertDynamicGridBlockToStatic(ref MatrixD worldMatrix, MyObjectBuilder_CubeBlock origBlock)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>origBlock</code> <a class="xref" href="VRage.Game.MyObjectBuilder_CubeBlock.html">MyObjectBuilder_CubeBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyObjectBuilder_CubeBlock.html">MyObjectBuilder_CubeBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ConvertGridBuilderToStatic_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ConvertGridBuilderToStatic*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ConvertGridBuilderToStatic_VRage_Game_MyObjectBuilder_CubeGrid_VRageMath_MatrixD_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ConvertGridBuilderToStatic(VRage.Game.MyObjectBuilder_CubeGrid,VRageMath.MatrixD)">
+  ConvertGridBuilderToStatic(MyObjectBuilder_CubeGrid, MatrixD)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyObjectBuilder_CubeGrid ConvertGridBuilderToStatic(MyObjectBuilder_CubeGrid originalGrid, MatrixD worldMatrix)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>originalGrid</code> <a class="xref" href="VRage.Game.MyObjectBuilder_CubeGrid.html">MyObjectBuilder_CubeGrid</a></dt>
+    <dd></dd>
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyObjectBuilder_CubeGrid.html">MyObjectBuilder_CubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CreateMultiBlockGridBuilder_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CreateMultiBlockGridBuilder*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CreateMultiBlockGridBuilder_Sandbox_Definitions_MyMultiBlockDefinition_VRageMath_Matrix_VRageMath_Vector3D_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CreateMultiBlockGridBuilder(Sandbox.Definitions.MyMultiBlockDefinition,VRageMath.Matrix,VRageMath.Vector3D)">
+  CreateMultiBlockGridBuilder(MyMultiBlockDefinition, Matrix, Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static MyObjectBuilder_CubeGrid CreateMultiBlockGridBuilder(MyMultiBlockDefinition multiCubeBlockDefinition, Matrix rotationMatrix, Vector3D position = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>multiCubeBlockDefinition</code> <a class="xref" href="Sandbox.Definitions.MyMultiBlockDefinition.html">MyMultiBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>rotationMatrix</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyObjectBuilder_CubeGrid.html">MyObjectBuilder_CubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_CycleCubePlacementMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CycleCubePlacementMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_CycleCubePlacementMode" data-uid="Sandbox.Game.Entities.MyCubeBuilder.CycleCubePlacementMode">
+  CycleCubePlacementMode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CycleCubePlacementMode()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_Deactivate_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Deactivate*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_Deactivate" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Deactivate">
+  Deactivate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Deactivate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DeactivateBlockCreation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DeactivateBlockCreation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DeactivateBlockCreation" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DeactivateBlockCreation">
+  DeactivateBlockCreation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeactivateBlockCreation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_Draw_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Draw*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_Draw" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Draw">
+  Draw()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Draw()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DrawBuildingStepsCount_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawBuildingStepsCount*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DrawBuildingStepsCount_System_Nullable_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3I__VRageMath_Matrix__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawBuildingStepsCount(System.Nullable{VRageMath.Vector3I},System.Nullable{VRageMath.Vector3I},System.Nullable{VRageMath.Vector3I},VRageMath.Matrix@)">
+  DrawBuildingStepsCount(Vector3I?, Vector3I?, Vector3I?, ref Matrix)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void DrawBuildingStepsCount(Vector3I? startBuild, Vector3I? startRemove, Vector3I? continueBuild, ref Matrix localMatrixAdd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>startRemove</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>continueBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>localMatrixAdd</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DrawMountPoints_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawMountPoints*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DrawMountPoints_System_Single_Sandbox_Definitions_MyCubeBlockDefinition_VRageMath_MatrixD_Sandbox_Definitions_MyCubeBlockDefinition_MountPoint___" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawMountPoints(System.Single,Sandbox.Definitions.MyCubeBlockDefinition,VRageMath.MatrixD,Sandbox.Definitions.MyCubeBlockDefinition.MountPoint[])">
+  DrawMountPoints(float, MyCubeBlockDefinition, MatrixD, MountPoint[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawMountPoints(float cubeSize, MyCubeBlockDefinition def, MatrixD drawMatrix, MyCubeBlockDefinition.MountPoint[] mountPoints)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cubeSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>def</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>drawMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>mountPoints</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.MountPoint.html">MountPoint</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DrawMountPoints_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawMountPoints*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DrawMountPoints_System_Single_Sandbox_Definitions_MyCubeBlockDefinition_VRageMath_MatrixD__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawMountPoints(System.Single,Sandbox.Definitions.MyCubeBlockDefinition,VRageMath.MatrixD@)">
+  DrawMountPoints(float, MyCubeBlockDefinition, ref MatrixD)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawMountPoints(float cubeSize, MyCubeBlockDefinition def, ref MatrixD drawMatrix)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cubeSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>def</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>drawMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DrawRemovingCubes_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawRemovingCubes*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DrawRemovingCubes_System_Nullable_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3I__Sandbox_Game_Entities_Cube_MySlimBlock_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawRemovingCubes(System.Nullable{VRageMath.Vector3I},System.Nullable{VRageMath.Vector3I},Sandbox.Game.Entities.Cube.MySlimBlock)">
+  DrawRemovingCubes(Vector3I?, Vector3I?, MySlimBlock)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void DrawRemovingCubes(Vector3I? startRemove, Vector3I? continueBuild, MySlimBlock removeBlock)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startRemove</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>continueBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>removeBlock</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DrawSemiTransparentBox_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawSemiTransparentBox*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DrawSemiTransparentBox_Sandbox_Game_Entities_MyCubeGrid_Sandbox_Game_Entities_Cube_MySlimBlock_VRageMath_Color_System_Boolean_System_Nullable_VRage_Utils_MyStringId__System_Nullable_VRageMath_Vector4__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawSemiTransparentBox(Sandbox.Game.Entities.MyCubeGrid,Sandbox.Game.Entities.Cube.MySlimBlock,VRageMath.Color,System.Boolean,System.Nullable{VRage.Utils.MyStringId},System.Nullable{VRageMath.Vector4})">
+  DrawSemiTransparentBox(MyCubeGrid, MySlimBlock, Color, bool, MyStringId?, Vector4?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawSemiTransparentBox(MyCubeGrid grid, MySlimBlock block, Color color, bool onlyWireframe = false, MyStringId? lineMaterial = null, Vector4? lineColor = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>grid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+    <dt><code>block</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="VRageMath.Color.html">Color</a></dt>
+    <dd></dd>
+    <dt><code>onlyWireframe</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>lineMaterial</code> <a class="xref" href="VRage.Utils.MyStringId.html">MyStringId</a>?</dt>
+    <dd></dd>
+    <dt><code>lineColor</code> <a class="xref" href="VRageMath.Vector4.html">Vector4</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_DrawSemiTransparentBox_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawSemiTransparentBox*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_DrawSemiTransparentBox_VRageMath_Vector3I_VRageMath_Vector3I_Sandbox_Game_Entities_MyCubeGrid_VRageMath_Color_System_Boolean_System_Nullable_VRage_Utils_MyStringId__System_Nullable_VRageMath_Vector4__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.DrawSemiTransparentBox(VRageMath.Vector3I,VRageMath.Vector3I,Sandbox.Game.Entities.MyCubeGrid,VRageMath.Color,System.Boolean,System.Nullable{VRage.Utils.MyStringId},System.Nullable{VRageMath.Vector4})">
+  DrawSemiTransparentBox(Vector3I, Vector3I, MyCubeGrid, Color, bool, MyStringId?, Vector4?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void DrawSemiTransparentBox(Vector3I minPosition, Vector3I maxPosition, MyCubeGrid grid, Color color, bool onlyWireframe = false, MyStringId? lineMaterial = null, Vector4? lineColor = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>minPosition</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>maxPosition</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>grid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="VRageMath.Color.html">Color</a></dt>
+    <dd></dd>
+    <dt><code>onlyWireframe</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>lineMaterial</code> <a class="xref" href="VRage.Utils.MyStringId.html">MyStringId</a>?</dt>
+    <dd></dd>
+    <dt><code>lineColor</code> <a class="xref" href="VRageMath.Vector4.html">Vector4</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GetAddAndRemovePositions_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetAddAndRemovePositions*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GetAddAndRemovePositions_System_Single_System_Boolean_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3___VRageMath_Vector3I__VRageMath_Vector3I__Sandbox_Game_Entities_Cube_MySlimBlock__System_Nullable_System_UInt16___System_Collections_Generic_HashSet_System_Tuple_Sandbox_Game_Entities_Cube_MySlimBlock_System_Nullable_System_UInt16____" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetAddAndRemovePositions(System.Single,System.Boolean,VRageMath.Vector3I@,System.Nullable{VRageMath.Vector3}@,VRageMath.Vector3I@,VRageMath.Vector3I@,Sandbox.Game.Entities.Cube.MySlimBlock@,System.Nullable{System.UInt16}@,System.Collections.Generic.HashSet{System.Tuple{Sandbox.Game.Entities.Cube.MySlimBlock,System.Nullable{System.UInt16}}})">
+  GetAddAndRemovePositions(float, bool, out Vector3I, out Vector3?, out Vector3I, out Vector3I, out MySlimBlock, out ushort?, HashSet&lt;Tuple&lt;MySlimBlock, ushort?&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool GetAddAndRemovePositions(float gridSize, bool placingSmallGridOnLargeStatic, out Vector3I addPos, out Vector3? addPosSmallOnLarge, out Vector3I addDir, out Vector3I removePos, out MySlimBlock removeBlock, out ushort? compoundBlockId, HashSet&lt;Tuple&lt;MySlimBlock, ushort?&gt;&gt; removeBlocksInMultiBlock)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gridSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>placingSmallGridOnLargeStatic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>addPos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>addPosSmallOnLarge</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a>?</dt>
+    <dd></dd>
+    <dt><code>addDir</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>removePos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>removeBlock</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+    <dt><code>compoundBlockId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>?</dt>
+    <dd></dd>
+    <dt><code>removeBlocksInMultiBlock</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.tuple-2">Tuple</a>&lt;<a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>?&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GetAddPosition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetAddPosition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GetAddPosition_VRageMath_Vector3D__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetAddPosition(VRageMath.Vector3D@)">
+  GetAddPosition(out Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetAddPosition(out Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GetAllBlocksPositions_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetAllBlocksPositions*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GetAllBlocksPositions_System_Collections_Generic_HashSet_System_Tuple_Sandbox_Game_Entities_Cube_MySlimBlock_System_Nullable_System_UInt16____System_Collections_Generic_HashSet_VRageMath_Vector3I__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetAllBlocksPositions(System.Collections.Generic.HashSet{System.Tuple{Sandbox.Game.Entities.Cube.MySlimBlock,System.Nullable{System.UInt16}}},System.Collections.Generic.HashSet{VRageMath.Vector3I})">
+  GetAllBlocksPositions(HashSet&lt;Tuple&lt;MySlimBlock, ushort?&gt;&gt;, HashSet&lt;Vector3I&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GetAllBlocksPositions(HashSet&lt;Tuple&lt;MySlimBlock, ushort?&gt;&gt; blockInCompoundIDs, HashSet&lt;Vector3I&gt; outPositions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockInCompoundIDs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.tuple-2">Tuple</a>&lt;<a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>?&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>outPositions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GetBuildBoundingBox_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetBuildBoundingBox*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GetBuildBoundingBox_System_Single_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetBuildBoundingBox(System.Single)">
+  GetBuildBoundingBox(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyOrientedBoundingBoxD GetBuildBoundingBox(float inflate = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>inflate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.MyOrientedBoundingBoxD.html">MyOrientedBoundingBoxD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GetCurrentRayIntersection_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetCurrentRayIntersection*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GetCurrentRayIntersection" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetCurrentRayIntersection">
+  GetCurrentRayIntersection()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double? GetCurrentRayIntersection()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_GetNextBlockVariantDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetNextBlockVariantDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_GetNextBlockVariantDefinition" data-uid="Sandbox.Game.Entities.MyCubeBuilder.GetNextBlockVariantDefinition">
+  GetNextBlockVariantDefinition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCubeBlockDefinition GetNextBlockVariantDefinition()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_HandleGameInput_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.HandleGameInput*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_HandleGameInput" data-uid="Sandbox.Game.Entities.MyCubeBuilder.HandleGameInput">
+  HandleGameInput()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool HandleGameInput()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_InitFromDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.InitFromDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_InitFromDefinition_VRage_Game_Components_Session_MySessionComponentDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.InitFromDefinition(VRage.Game.Components.Session.MySessionComponentDefinition)">
+  InitFromDefinition(MySessionComponentDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitFromDefinition(MySessionComponentDefinition definition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>definition</code> <a class="xref" href="VRage.Game.Components.Session.MySessionComponentDefinition.html">MySessionComponentDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_InputLost_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.InputLost*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_InputLost" data-uid="Sandbox.Game.Entities.MyCubeBuilder.InputLost">
+  InputLost()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InputLost()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsBuildToolActive_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsBuildToolActive*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsBuildToolActive" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsBuildToolActive">
+  IsBuildToolActive()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsBuildToolActive()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsBuilding" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsBuilding">
+  IsBuilding()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool IsBuilding()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsDynamicOverride_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsDynamicOverride*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsDynamicOverride" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsDynamicOverride">
+  IsDynamicOverride()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool IsDynamicOverride()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsOnlyColorToolActive_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsOnlyColorToolActive*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsOnlyColorToolActive" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsOnlyColorToolActive">
+  IsOnlyColorToolActive()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOnlyColorToolActive()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_IsSymmetrySetupMode_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsSymmetrySetupMode*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_IsSymmetrySetupMode" data-uid="Sandbox.Game.Entities.MyCubeBuilder.IsSymmetrySetupMode">
+  IsSymmetrySetupMode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSymmetrySetupMode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_LoadData_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.LoadData*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_LoadData" data-uid="Sandbox.Game.Entities.MyCubeBuilder.LoadData">
+  LoadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_NotifyPlacementUnable_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.NotifyPlacementUnable*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_NotifyPlacementUnable" data-uid="Sandbox.Game.Entities.MyCubeBuilder.NotifyPlacementUnable">
+  NotifyPlacementUnable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifyPlacementUnable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_OnClosedMessageBox_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnClosedMessageBox*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnClosedMessageBox_Sandbox_Graphics_GUI_MyGuiScreenMessageBox_ResultEnum_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnClosedMessageBox(Sandbox.Graphics.GUI.MyGuiScreenMessageBox.ResultEnum)">
+  OnClosedMessageBox(ResultEnum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnClosedMessageBox(MyGuiScreenMessageBox.ResultEnum result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="Sandbox.Graphics.GUI.MyGuiScreenMessageBox.html">MyGuiScreenMessageBox</a>.<a class="xref" href="Sandbox.Graphics.GUI.MyGuiScreenMessageBox.ResultEnum.html">ResultEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_OnLostFocus_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnLostFocus*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnLostFocus" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnLostFocus">
+  OnLostFocus()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnLostFocus()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_PrepareBlocksToRemove_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.PrepareBlocksToRemove*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_PrepareBlocksToRemove" data-uid="Sandbox.Game.Entities.MyCubeBuilder.PrepareBlocksToRemove">
+  PrepareBlocksToRemove()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void PrepareBlocksToRemove()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_PrepareCharacterCollisionPoints_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.PrepareCharacterCollisionPoints*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_PrepareCharacterCollisionPoints_System_Collections_Generic_List_VRageMath_Vector3D__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.PrepareCharacterCollisionPoints(System.Collections.Generic.List{VRageMath.Vector3D})">
+  PrepareCharacterCollisionPoints(List&lt;Vector3D&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void PrepareCharacterCollisionPoints(List&lt;Vector3D&gt; outList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>outList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_Remove_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Remove*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_Remove" data-uid="Sandbox.Game.Entities.MyCubeBuilder.Remove">
+  Remove()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Remove()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_RemoveBlock_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemoveBlock*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_RemoveBlock_Sandbox_Game_Entities_Cube_MySlimBlock_System_Nullable_System_UInt16__System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemoveBlock(Sandbox.Game.Entities.Cube.MySlimBlock,System.Nullable{System.UInt16},System.Boolean)">
+  RemoveBlock(MySlimBlock, ushort?, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RemoveBlock(MySlimBlock block, ushort? blockIdInCompound, bool checkExisting = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>block</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+    <dt><code>blockIdInCompound</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>?</dt>
+    <dd></dd>
+    <dt><code>checkExisting</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_RemoveBlockInternal_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemoveBlockInternal*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_RemoveBlockInternal_Sandbox_Game_Entities_Cube_MySlimBlock_System_Nullable_System_UInt16__System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemoveBlockInternal(Sandbox.Game.Entities.Cube.MySlimBlock,System.Nullable{System.UInt16},System.Boolean)">
+  RemoveBlockInternal(MySlimBlock, ushort?, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RemoveBlockInternal(MySlimBlock block, ushort? blockIdInCompound, bool checkExisting = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>block</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+    <dt><code>blockIdInCompound</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>?</dt>
+    <dd></dd>
+    <dt><code>checkExisting</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_RemovePlayerColors_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemovePlayerColors*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_RemovePlayerColors_Sandbox_Game_World_MyPlayer_PlayerId_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemovePlayerColors(Sandbox.Game.World.MyPlayer.PlayerId)">
+  RemovePlayerColors(PlayerId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemovePlayerColors(MyPlayer.PlayerId playerId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerId</code> <a class="xref" href="Sandbox.Game.World.MyPlayer.html">MyPlayer</a>.<a class="xref" href="Sandbox.Game.World.MyPlayer.PlayerId.html">PlayerId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_RemovePlayerColors_Internal_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemovePlayerColors_Internal*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_RemovePlayerColors_Internal_Sandbox_Game_World_MyPlayer_PlayerId_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RemovePlayerColors_Internal(Sandbox.Game.World.MyPlayer.PlayerId)">
+  RemovePlayerColors_Internal(PlayerId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemovePlayerColors_Internal(MyPlayer.PlayerId playerId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerId</code> <a class="xref" href="Sandbox.Game.World.MyPlayer.html">MyPlayer</a>.<a class="xref" href="Sandbox.Game.World.MyPlayer.PlayerId.html">PlayerId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_RotateAxis_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RotateAxis*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_RotateAxis_System_Int32_System_Int32_System_Double_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.RotateAxis(System.Int32,System.Int32,System.Double,System.Boolean)">
+  RotateAxis(int, int, double, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void RotateAxis(int index, int sign, double angleDelta, bool newlyPressed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>sign</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>angleDelta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>newlyPressed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_SelectBlockToToolbar_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SelectBlockToToolbar*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_SelectBlockToToolbar_Sandbox_Game_Entities_Cube_MySlimBlock_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SelectBlockToToolbar(Sandbox.Game.Entities.Cube.MySlimBlock,System.Boolean)">
+  SelectBlockToToolbar(MySlimBlock, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SelectBlockToToolbar(MySlimBlock block, bool selectToNextSlot = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>block</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+    <dt><code>selectToNextSlot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_SetToolType_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SetToolType*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_SetToolType_Sandbox_Game_Entities_MyCubeBuilderToolType_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SetToolType(Sandbox.Game.Entities.MyCubeBuilderToolType)">
+  SetToolType(MyCubeBuilderToolType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetToolType(MyCubeBuilderToolType type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeBuilderToolType.html">MyCubeBuilderToolType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_SpawnDynamicGrid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SpawnDynamicGrid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_SpawnDynamicGrid_Sandbox_Definitions_MyCubeBlockDefinition_VRage_Game_Entity_MyEntity_VRageMath_MatrixD_VRageMath_Vector3_VRage_Utils_MyStringHash_System_Int64_Sandbox_Game_Entities_MyCubeBuilder_SpawnFlags_System_Int64_System_Action_VRage_Game_Entity_MyEntity__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SpawnDynamicGrid(Sandbox.Definitions.MyCubeBlockDefinition,VRage.Game.Entity.MyEntity,VRageMath.MatrixD,VRageMath.Vector3,VRage.Utils.MyStringHash,System.Int64,Sandbox.Game.Entities.MyCubeBuilder.SpawnFlags,System.Int64,System.Action{VRage.Game.Entity.MyEntity})">
+  SpawnDynamicGrid(MyCubeBlockDefinition, MyEntity, MatrixD, Vector3, MyStringHash, long, SpawnFlags, long, Action&lt;MyEntity&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyCubeGrid SpawnDynamicGrid(MyCubeBlockDefinition blockDefinition, MyEntity builder, MatrixD worldMatrix, Vector3 color, MyStringHash skinId, long entityId = 0, MyCubeBuilder.SpawnFlags spawnFlags = SpawnFlags.Default, long builtBy = 0, Action&lt;MyEntity&gt; completionCallback = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockDefinition</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>builder</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>skinId</code> <a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+    <dt><code>entityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>spawnFlags</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.html">MyCubeBuilder</a>.<a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.SpawnFlags.html">SpawnFlags</a></dt>
+    <dd></dd>
+    <dt><code>builtBy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>completionCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_SpawnStaticGrid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SpawnStaticGrid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_SpawnStaticGrid_Sandbox_Definitions_MyCubeBlockDefinition_VRage_Game_Entity_MyEntity_VRageMath_MatrixD_VRageMath_Vector3_VRage_Utils_MyStringHash_Sandbox_Game_Entities_MyCubeBuilder_SpawnFlags_System_Int64_System_Action_VRage_Game_Entity_MyEntity__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SpawnStaticGrid(Sandbox.Definitions.MyCubeBlockDefinition,VRage.Game.Entity.MyEntity,VRageMath.MatrixD,VRageMath.Vector3,VRage.Utils.MyStringHash,Sandbox.Game.Entities.MyCubeBuilder.SpawnFlags,System.Int64,System.Action{VRage.Game.Entity.MyEntity})">
+  SpawnStaticGrid(MyCubeBlockDefinition, MyEntity, MatrixD, Vector3, MyStringHash, SpawnFlags, long, Action&lt;MyEntity&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyCubeGrid SpawnStaticGrid(MyCubeBlockDefinition blockDefinition, MyEntity builder, MatrixD worldMatrix, Vector3 color, MyStringHash skinId, MyCubeBuilder.SpawnFlags spawnFlags = SpawnFlags.Default, long builtBy = 0, Action&lt;MyEntity&gt; completionCallback = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockDefinition</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>builder</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>skinId</code> <a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+    <dt><code>spawnFlags</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.html">MyCubeBuilder</a>.<a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.SpawnFlags.html">SpawnFlags</a></dt>
+    <dd></dd>
+    <dt><code>builtBy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>completionCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_SpawnStaticGrid_nonParalel_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SpawnStaticGrid_nonParalel*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_SpawnStaticGrid_nonParalel_Sandbox_Definitions_MyCubeBlockDefinition_VRage_Game_Entity_MyEntity_VRageMath_MatrixD_VRageMath_Vector3_VRage_Utils_MyStringHash_Sandbox_Game_Entities_MyCubeBuilder_SpawnFlags_System_Int64_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.SpawnStaticGrid_nonParalel(Sandbox.Definitions.MyCubeBlockDefinition,VRage.Game.Entity.MyEntity,VRageMath.MatrixD,VRageMath.Vector3,VRage.Utils.MyStringHash,Sandbox.Game.Entities.MyCubeBuilder.SpawnFlags,System.Int64)">
+  SpawnStaticGrid_nonParalel(MyCubeBlockDefinition, MyEntity, MatrixD, Vector3, MyStringHash, SpawnFlags, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MySlimBlock SpawnStaticGrid_nonParalel(MyCubeBlockDefinition blockDefinition, MyEntity builder, MatrixD worldMatrix, Vector3 color, MyStringHash skinId, MyCubeBuilder.SpawnFlags spawnFlags = SpawnFlags.Default, long builtBy = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>blockDefinition</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+    <dt><code>builder</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>skinId</code> <a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+    <dt><code>spawnFlags</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.html">MyCubeBuilder</a>.<a class="xref" href="Sandbox.Game.Entities.MyCubeBuilder.SpawnFlags.html">SpawnFlags</a></dt>
+    <dd></dd>
+    <dt><code>builtBy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_StartBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_StartBuilding" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartBuilding">
+  StartBuilding()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void StartBuilding()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_StartBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_StartBuilding_System_Nullable_VRageMath_Vector3I___System_Nullable_VRageMath_Vector3I__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartBuilding(System.Nullable{VRageMath.Vector3I}@,System.Nullable{VRageMath.Vector3I})">
+  StartBuilding(ref Vector3I?, Vector3I?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void StartBuilding(ref Vector3I? startBuild, Vector3I? startRemove)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>startRemove</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_StartRemoving_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartRemoving*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_StartRemoving" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartRemoving">
+  StartRemoving()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void StartRemoving()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_StartRemoving_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartRemoving*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_StartRemoving_System_Nullable_VRageMath_Vector3I__System_Nullable_VRageMath_Vector3I___" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartRemoving(System.Nullable{VRageMath.Vector3I},System.Nullable{VRageMath.Vector3I}@)">
+  StartRemoving(Vector3I?, ref Vector3I?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void StartRemoving(Vector3I? startBuild, ref Vector3I? startRemove)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>startRemove</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_StartStaticGridPlacement_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartStaticGridPlacement*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_StartStaticGridPlacement_VRage_Game_MyCubeSize_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StartStaticGridPlacement(VRage.Game.MyCubeSize,System.Boolean)">
+  StartStaticGridPlacement(MyCubeSize, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartStaticGridPlacement(MyCubeSize cubeSize, bool isStatic)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cubeSize</code> <a class="xref" href="VRage.Game.MyCubeSize.html">MyCubeSize</a></dt>
+    <dd></dd>
+    <dt><code>isStatic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_StopBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StopBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_StopBuilding" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StopBuilding">
+  StopBuilding()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void StopBuilding()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_StopBuilding_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StopBuilding*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_StopBuilding_System_Boolean_System_Nullable_VRageMath_Vector3I___System_Nullable_VRageMath_Vector3I___System_Nullable_VRageMath_Vector3I___VRageMath_Vector3I_VRageMath_Vector3I_VRageMath_Vector3I_VRageMath_Matrix__Sandbox_Definitions_MyCubeBlockDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.StopBuilding(System.Boolean,System.Nullable{VRageMath.Vector3I}@,System.Nullable{VRageMath.Vector3I}@,System.Nullable{VRageMath.Vector3I}@,VRageMath.Vector3I,VRageMath.Vector3I,VRageMath.Vector3I,VRageMath.Matrix@,Sandbox.Definitions.MyCubeBlockDefinition)">
+  StopBuilding(bool, ref Vector3I?, ref Vector3I?, ref Vector3I?, Vector3I, Vector3I, Vector3I, ref Matrix, MyCubeBlockDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void StopBuilding(bool smallViewChange, ref Vector3I? startBuild, ref Vector3I? startRemove, ref Vector3I? continueBuild, Vector3I blockMinPosition, Vector3I blockMaxPosition, Vector3I blockCenterPosition, ref Matrix localMatrixAdd, MyCubeBlockDefinition blockDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>smallViewChange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>startBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>startRemove</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>continueBuild</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>?</dt>
+    <dd></dd>
+    <dt><code>blockMinPosition</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>blockMaxPosition</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>blockCenterPosition</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>localMatrixAdd</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+    <dt><code>blockDefinition</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ToggleSymmetry_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToggleSymmetry*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ToggleSymmetry" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToggleSymmetry">
+  ToggleSymmetry()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ToggleSymmetry()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_ToggleSymmetrySetup_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToggleSymmetrySetup*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_ToggleSymmetrySetup" data-uid="Sandbox.Game.Entities.MyCubeBuilder.ToggleSymmetrySetup">
+  ToggleSymmetrySetup()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleSymmetrySetup()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_TransformLargeGridHitCoordToSmallGrid_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.TransformLargeGridHitCoordToSmallGrid*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_TransformLargeGridHitCoordToSmallGrid_VRageMath_Vector3D_VRageMath_MatrixD_System_Single_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.TransformLargeGridHitCoordToSmallGrid(VRageMath.Vector3D,VRageMath.MatrixD,System.Single)">
+  TransformLargeGridHitCoordToSmallGrid(Vector3D, MatrixD, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 TransformLargeGridHitCoordToSmallGrid(Vector3D coords, MatrixD worldMatrixNormalizedInv, float gridSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coords</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>worldMatrixNormalizedInv</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>gridSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UnloadData_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UnloadData*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UnloadData" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UnloadData">
+  UnloadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UnloadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UpdateAfterSimulation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateAfterSimulation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UpdateAfterSimulation" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateAfterSimulation">
+  UpdateAfterSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UpdateBeforeSimulation_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateBeforeSimulation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UpdateBeforeSimulation" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateBeforeSimulation">
+  UpdateBeforeSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateBeforeSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UpdateBlockInfoHud_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateBlockInfoHud*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UpdateBlockInfoHud" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateBlockInfoHud">
+  UpdateBlockInfoHud()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void UpdateBlockInfoHud()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UpdateCubeBlockDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateCubeBlockDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UpdateCubeBlockDefinition_System_Nullable_VRage_Game_MyDefinitionId__" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateCubeBlockDefinition(System.Nullable{VRage.Game.MyDefinitionId})">
+  UpdateCubeBlockDefinition(MyDefinitionId?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateCubeBlockDefinition(MyDefinitionId? id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UpdateCubeBlockStageDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateCubeBlockStageDefinition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UpdateCubeBlockStageDefinition_Sandbox_Definitions_MyCubeBlockDefinition_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateCubeBlockStageDefinition(Sandbox.Definitions.MyCubeBlockDefinition)">
+  UpdateCubeBlockStageDefinition(MyCubeBlockDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateCubeBlockStageDefinition(MyCubeBlockDefinition stageCubeBlockDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stageCubeBlockDefinition</code> <a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UpdateGizmo_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateGizmo*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UpdateGizmo_Sandbox_Game_Entities_Cube_MyCubeBuilderGizmo_MyGizmoSpaceProperties_System_Boolean_System_Boolean_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateGizmo(Sandbox.Game.Entities.Cube.MyCubeBuilderGizmo.MyGizmoSpaceProperties,System.Boolean,System.Boolean,System.Boolean)">
+  UpdateGizmo(MyGizmoSpaceProperties, bool, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateGizmo(MyCubeBuilderGizmo.MyGizmoSpaceProperties gizmoSpace, bool add, bool remove, bool draw)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gizmoSpace</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MyCubeBuilderGizmo.html">MyCubeBuilderGizmo</a>.<a class="xref" href="Sandbox.Game.Entities.Cube.MyCubeBuilderGizmo.MyGizmoSpaceProperties.html">MyGizmoSpaceProperties</a></dt>
+    <dd></dd>
+    <dt><code>add</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>remove</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>draw</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_MyCubeBuilder_UpdateNotificationBlockNotAvailable_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateNotificationBlockNotAvailable*"></a>
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_UpdateNotificationBlockNotAvailable_System_Boolean_" data-uid="Sandbox.Game.Entities.MyCubeBuilder.UpdateNotificationBlockNotAvailable(System.Boolean)">
+  UpdateNotificationBlockNotAvailable(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateNotificationBlockNotAvailable(bool updateNotAvailableNotification)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updateNotAvailableNotification</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnActivated" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnActivated">
+  OnActivated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnActivated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnBlockAdded" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnBlockAdded">
+  OnBlockAdded
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;MyCubeBlockDefinition&gt; OnBlockAdded</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Sandbox.Definitions.MyCubeBlockDefinition.html">MyCubeBlockDefinition</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnBlockSizeChanged" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnBlockSizeChanged">
+  OnBlockSizeChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnBlockSizeChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnBlockVariantChanged" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnBlockVariantChanged">
+  OnBlockVariantChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnBlockVariantChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnDeactivated" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnDeactivated">
+  OnDeactivated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnDeactivated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnSymmetrySetupModeChanged" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnSymmetrySetupModeChanged">
+  OnSymmetrySetupModeChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnSymmetrySetupModeChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_MyCubeBuilder_OnToolTypeChanged" data-uid="Sandbox.Game.Entities.MyCubeBuilder.OnToolTypeChanged">
+  OnToolTypeChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnToolTypeChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

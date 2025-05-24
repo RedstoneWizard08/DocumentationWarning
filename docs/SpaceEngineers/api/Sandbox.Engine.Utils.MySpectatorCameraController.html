@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MySpectatorCameraController | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MySpectatorCameraController | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Engine.Utils.MySpectatorCameraController">
+
+
+
+  <h1 id="Sandbox_Engine_Utils_MySpectatorCameraController" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController" class="text-break">
+Class MySpectatorCameraController  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Engine.html">Engine</a>.<a class="xref" href="Sandbox.Engine.Utils.html">Utils</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MySpectatorCameraController : MySpectator, IMyCameraController</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.MySpectator.html">MySpectator</a></div>
+      <div><span class="xref">MySpectatorCameraController</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.ModAPI.Interfaces.IMyCameraController.html">IMyCameraController</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_DEFAULT_SPECTATOR_LINEAR_SPEED">MySpectator.DEFAULT_SPECTATOR_LINEAR_SPEED</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_MIN_SPECTATOR_LINEAR_SPEED">MySpectator.MIN_SPECTATOR_LINEAR_SPEED</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_MAX_SPECTATOR_LINEAR_SPEED">MySpectator.MAX_SPECTATOR_LINEAR_SPEED</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_DEFAULT_SPECTATOR_ANGULAR_SPEED">MySpectator.DEFAULT_SPECTATOR_ANGULAR_SPEED</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_MIN_SPECTATOR_ANGULAR_SPEED">MySpectator.MIN_SPECTATOR_ANGULAR_SPEED</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_MAX_SPECTATOR_ANGULAR_SPEED">MySpectator.MAX_SPECTATOR_ANGULAR_SPEED</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_ThirdPersonCameraDelta">MySpectator.ThirdPersonCameraDelta</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_m_speedModeLinear">MySpectator.m_speedModeLinear</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_m_speedModeAngular">MySpectator.m_speedModeAngular</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_m_orientation">MySpectator.m_orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_m_orientationDirty">MySpectator.m_orientationDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_m_orbitY">MySpectator.m_orbitY</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_m_orbitX">MySpectator.m_orbitX</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_SetTarget_VRageMath_Vector3D_System_Nullable_VRageMath_Vector3D__">MySpectator.SetTarget(Vector3D, Vector3D?)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_UpdateOrientation">MySpectator.UpdateOrientation()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_Rotate_VRageMath_Vector2_System_Single_">MySpectator.Rotate(Vector2, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_RotateStopped">MySpectator.RotateStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_UpdateCameraPosition_VRageMath_Vector2_">MySpectator.UpdateCameraPosition(Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_MoveAndRotateStopped">MySpectator.MoveAndRotateStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_GetViewMatrix">MySpectator.GetViewMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_SetViewMatrix_VRageMath_MatrixD_">MySpectator.SetViewMatrix(MatrixD)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_Reset">MySpectator.Reset()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_SpectatorCameraMovement">MySpectator.SpectatorCameraMovement</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_IsInFirstPersonView">MySpectator.IsInFirstPersonView</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_ForceFirstPersonCamera">MySpectator.ForceFirstPersonCamera</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_Initialized">MySpectator.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_Position">MySpectator.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_SpeedModeLinear">MySpectator.SpeedModeLinear</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_SpeedModeAngular">MySpectator.SpeedModeAngular</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_Target">MySpectator.Target</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_Orientation">MySpectator.Orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.MySpectator.html#VRage_MySpectator_OnModeChanged">MySpectator.OnModeChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController__ctor_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.#ctor*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController__ctor" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.#ctor">
+  MySpectatorCameraController()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MySpectatorCameraController()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_Static" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.Static">
+  Static
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MySpectatorCameraController Static</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Engine.Utils.MySpectatorCameraController.html">MySpectatorCameraController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_AlignSpectatorToGravity_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.AlignSpectatorToGravity*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_AlignSpectatorToGravity" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.AlignSpectatorToGravity">
+  AlignSpectatorToGravity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AlignSpectatorToGravity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_Entity_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.Entity*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_Entity" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.Entity">
+  Entity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyEntity Entity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_IsLightOn_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.IsLightOn*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_IsLightOn" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.IsLightOn">
+  IsLightOn
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLightOn { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_TrackedEntity_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.TrackedEntity*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_TrackedEntity" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.TrackedEntity">
+  TrackedEntity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TrackedEntity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_Velocity_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.Velocity*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_Velocity" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.Velocity">
+  Velocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Velocity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_CleanLight_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.CleanLight*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_CleanLight" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.CleanLight">
+  CleanLight()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CleanLight()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_GetOverridingFocusMatrix_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.GetOverridingFocusMatrix*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_GetOverridingFocusMatrix" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.GetOverridingFocusMatrix">
+  GetOverridingFocusMatrix()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MatrixD? GetOverridingFocusMatrix()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.MatrixD.html">MatrixD</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_InitLight_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.InitLight*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_InitLight_System_Boolean_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.InitLight(System.Boolean)">
+  InitLight(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitLight(bool isLightOn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isLightOn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_MoveAndRotate_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.MoveAndRotate*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_MoveAndRotate_VRageMath_Vector3_VRageMath_Vector2_System_Single_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.MoveAndRotate(VRageMath.Vector3,VRageMath.Vector2,System.Single)">
+  MoveAndRotate(Vector3, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void MoveAndRotate(Vector3 moveIndicator, Vector2 rotationIndicator, float rollIndicator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>moveIndicator</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>rotationIndicator</code> <a class="xref" href="VRageMath.Vector2.html">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>rollIndicator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_OnAssumeControl_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.OnAssumeControl*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_OnAssumeControl_VRage_Game_ModAPI_Interfaces_IMyCameraController_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.OnAssumeControl(VRage.Game.ModAPI.Interfaces.IMyCameraController)">
+  OnAssumeControl(IMyCameraController)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnAssumeControl(IMyCameraController previousCameraController)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>previousCameraController</code> <a class="xref" href="VRage.Game.ModAPI.Interfaces.IMyCameraController.html">IMyCameraController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_OnChangingMode_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.OnChangingMode*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_OnChangingMode_VRage_MySpectatorCameraMovementEnum_VRage_MySpectatorCameraMovementEnum_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.OnChangingMode(VRage.MySpectatorCameraMovementEnum,VRage.MySpectatorCameraMovementEnum)">
+  OnChangingMode(MySpectatorCameraMovementEnum, MySpectatorCameraMovementEnum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnChangingMode(MySpectatorCameraMovementEnum oldMode, MySpectatorCameraMovementEnum newMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>oldMode</code> <a class="xref" href="VRage.MySpectatorCameraMovementEnum.html">MySpectatorCameraMovementEnum</a></dt>
+    <dd></dd>
+    <dt><code>newMode</code> <a class="xref" href="VRage.MySpectatorCameraMovementEnum.html">MySpectatorCameraMovementEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_OnReleaseControl_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.OnReleaseControl*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_OnReleaseControl_VRage_Game_ModAPI_Interfaces_IMyCameraController_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.OnReleaseControl(VRage.Game.ModAPI.Interfaces.IMyCameraController)">
+  OnReleaseControl(IMyCameraController)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnReleaseControl(IMyCameraController newCameraController)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newCameraController</code> <a class="xref" href="VRage.Game.ModAPI.Interfaces.IMyCameraController.html">IMyCameraController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_SwitchLight_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.SwitchLight*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_SwitchLight" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.SwitchLight">
+  SwitchLight()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchLight()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_TurnLightOff_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.TurnLightOff*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_TurnLightOff" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.TurnLightOff">
+  TurnLightOff()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TurnLightOff()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Utils_MySpectatorCameraController_Update_" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.Update*"></a>
+
+  <h3 id="Sandbox_Engine_Utils_MySpectatorCameraController_Update" data-uid="Sandbox.Engine.Utils.MySpectatorCameraController.Update">
+  Update()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Update()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

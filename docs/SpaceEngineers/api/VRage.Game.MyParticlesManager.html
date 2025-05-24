@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyParticlesManager | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyParticlesManager | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VRage.Game.MyParticlesManager">
+
+
+
+  <h1 id="VRage_Game_MyParticlesManager" data-uid="VRage.Game.MyParticlesManager" class="text-break">
+Class MyParticlesManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VRage.html">VRage</a>.<a class="xref" href="VRage.Game.html">Game</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>VRage.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
+public class MyParticlesManager : MySessionComponentBase, IMyUserInputComponent, IParticleManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MySessionComponentBase.html">MySessionComponentBase</a></div>
+      <div><span class="xref">MyParticlesManager</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyUserInputComponent.html">IMyUserInputComponent</a></div>
+      <div><a class="xref" href="VRage.Render.Particles.IParticleManager.html">IParticleManager</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_DebugName">MySessionComponentBase.DebugName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Priority">MySessionComponentBase.Priority</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ComponentType">MySessionComponentBase.ComponentType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatedBeforeInit">MySessionComponentBase.UpdatedBeforeInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SetUpdateOrder_VRage_Game_Components_MyUpdateOrder_">MySessionComponentBase.SetUpdateOrder(MyUpdateOrder)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_InitFromDefinition_VRage_Game_Components_Session_MySessionComponentDefinition_">MySessionComponentBase.InitFromDefinition(MySessionComponentDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Init_VRage_Game_MyObjectBuilder_SessionComponent_">MySessionComponentBase.Init(MyObjectBuilder_SessionComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_GetObjectBuilder">MySessionComponentBase.GetObjectBuilder()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_AfterLoadData">MySessionComponentBase.AfterLoadData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UnloadDataConditional">MySessionComponentBase.UnloadDataConditional()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SaveData">MySessionComponentBase.SaveData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_BeforeStart">MySessionComponentBase.BeforeStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateBeforeSimulation">MySessionComponentBase.UpdateBeforeSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Simulate">MySessionComponentBase.Simulate()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatingStopped">MySessionComponentBase.UpdatingStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Draw">MySessionComponentBase.Draw()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_HandleInput">MySessionComponentBase.HandleInput()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ToString">MySessionComponentBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOrder">MySessionComponentBase.UpdateOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ObjectBuilderType">MySessionComponentBase.ObjectBuilderType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ModContext">MySessionComponentBase.ModContext</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Loaded">MySessionComponentBase.Loaded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Initialized">MySessionComponentBase.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOnPause">MySessionComponentBase.UpdateOnPause</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsServerOnly">MySessionComponentBase.IsServerOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Definition">MySessionComponentBase.Definition</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Dependencies">MySessionComponentBase.Dependencies</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsRequiredByGame">MySessionComponentBase.IsRequiredByGame</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="VRage_Game_MyParticlesManager__ctor_" data-uid="VRage.Game.MyParticlesManager.#ctor*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager__ctor" data-uid="VRage.Game.MyParticlesManager.#ctor">
+  MyParticlesManager()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyParticlesManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="VRage_Game_MyParticlesManager_CalculateGravityInPoint" data-uid="VRage.Game.MyParticlesManager.CalculateGravityInPoint">
+  CalculateGravityInPoint
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use MyGravityProviderSystem or IMyPhysics instead&quot;)]
+public static Func&lt;Vector3D, Vector3&gt; CalculateGravityInPoint</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>, <a class="xref" href="VRageMath.Vector3.html">Vector3</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VRage_Game_MyParticlesManager_Enabled" data-uid="VRage.Game.MyParticlesManager.Enabled">
+  Enabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Enabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="VRage_Game_MyParticlesManager_CurrentTime_" data-uid="VRage.Game.MyParticlesManager.CurrentTime*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_CurrentTime" data-uid="VRage.Game.MyParticlesManager.CurrentTime">
+  CurrentTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyTimeSpan CurrentTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Library.Utils.MyTimeSpan.html">MyTimeSpan</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_Effects_" data-uid="VRage.Game.MyParticlesManager.Effects*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_Effects" data-uid="VRage.Game.MyParticlesManager.Effects">
+  Effects
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;MyParticleEffect&gt; Effects { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_InstanceCount_" data-uid="VRage.Game.MyParticlesManager.InstanceCount*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_InstanceCount" data-uid="VRage.Game.MyParticlesManager.InstanceCount">
+  InstanceCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int InstanceCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_Paused_" data-uid="VRage.Game.MyParticlesManager.Paused*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_Paused" data-uid="VRage.Game.MyParticlesManager.Paused">
+  Paused
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Paused { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VRage_Game_MyParticlesManager_LoadData_" data-uid="VRage.Game.MyParticlesManager.LoadData*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_LoadData" data-uid="VRage.Game.MyParticlesManager.LoadData">
+  LoadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void LoadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_OnRemoved_" data-uid="VRage.Game.MyParticlesManager.OnRemoved*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_OnRemoved_System_UInt32_" data-uid="VRage.Game.MyParticlesManager.OnRemoved(System.UInt32)">
+  OnRemoved(uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void OnRemoved(uint id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_RecreateParticleEffects_" data-uid="VRage.Game.MyParticlesManager.RecreateParticleEffects*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_RecreateParticleEffects_VRage_Render_Particles_MyParticleEffectData_" data-uid="VRage.Game.MyParticlesManager.RecreateParticleEffects(VRage.Render.Particles.MyParticleEffectData)">
+  RecreateParticleEffects(MyParticleEffectData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RecreateParticleEffects(MyParticleEffectData data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="VRage.Render.Particles.MyParticleEffectData.html">MyParticleEffectData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_RemoveParticleEffect_" data-uid="VRage.Game.MyParticlesManager.RemoveParticleEffect*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_RemoveParticleEffect_VRage_Game_MyParticleEffect_" data-uid="VRage.Game.MyParticlesManager.RemoveParticleEffect(VRage.Game.MyParticleEffect)">
+  RemoveParticleEffect(MyParticleEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveParticleEffect(MyParticleEffect effect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_RemoveParticleEffects_" data-uid="VRage.Game.MyParticlesManager.RemoveParticleEffects*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_RemoveParticleEffects_VRage_Render_Particles_MyParticleEffectData_" data-uid="VRage.Game.MyParticlesManager.RemoveParticleEffects(VRage.Render.Particles.MyParticleEffectData)">
+  RemoveParticleEffects(MyParticleEffectData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveParticleEffects(MyParticleEffectData data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="VRage.Render.Particles.MyParticleEffectData.html">MyParticleEffectData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_ScheduleUpdate_" data-uid="VRage.Game.MyParticlesManager.ScheduleUpdate*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_ScheduleUpdate_VRage_Game_MyParticleEffect_" data-uid="VRage.Game.MyParticlesManager.ScheduleUpdate(VRage.Game.MyParticleEffect)">
+  ScheduleUpdate(MyParticleEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ScheduleUpdate(MyParticleEffect effect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_System_Int32_VRage_Game_MyParticleEffect__System_Boolean_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect(System.Int32,VRage.Game.MyParticleEffect@,System.Boolean)">
+  TryCreateParticleEffect(int, out MyParticleEffect, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use TryCreateParticleEffect with parenting instead&quot;)]
+public static bool TryCreateParticleEffect(int id, out MyParticleEffect effect, bool userDraw = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+    <dt><code>userDraw</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_System_Int32_VRage_Game_MyParticleEffect__VRageMath_MatrixD__VRageMath_Vector3D__System_UInt32_System_Boolean_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect(System.Int32,VRage.Game.MyParticleEffect@,VRageMath.MatrixD@,VRageMath.Vector3D@,System.UInt32,System.Boolean)">
+  TryCreateParticleEffect(int, out MyParticleEffect, ref MatrixD, ref Vector3D, uint, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryCreateParticleEffect(int id, out MyParticleEffect effect, ref MatrixD effectMatrix, ref Vector3D worldPosition, uint parentID, bool userDraw = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+    <dt><code>effectMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>parentID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>userDraw</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_System_String_VRage_Game_MyParticleEffect__" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect(System.String,VRage.Game.MyParticleEffect@)">
+  TryCreateParticleEffect(string, out MyParticleEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use TryCreateParticleEffect with parenting instead&quot;)]
+public static bool TryCreateParticleEffect(string effectName, out MyParticleEffect effect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>effectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_System_String_VRageMath_MatrixD_VRage_Game_MyParticleEffect__" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect(System.String,VRageMath.MatrixD,VRage.Game.MyParticleEffect@)">
+  TryCreateParticleEffect(string, MatrixD, out MyParticleEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use TryCreateParticleEffect with parenting instead&quot;)]
+public static bool TryCreateParticleEffect(string effectName, MatrixD worldMatrix, out MyParticleEffect effect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>effectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_System_String_VRageMath_MatrixD__VRageMath_Vector3D__System_UInt32_VRage_Game_MyParticleEffect__" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect(System.String,VRageMath.MatrixD@,VRageMath.Vector3D@,System.UInt32,VRage.Game.MyParticleEffect@)">
+  TryCreateParticleEffect(string, ref MatrixD, ref Vector3D, uint, out MyParticleEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryCreateParticleEffect(string effectName, ref MatrixD effectMatrix, ref Vector3D worldPosition, uint parentID, out MyParticleEffect effect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>effectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>effectMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>parentID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_TryCreateParticleEffect_System_String_VRageMath_MatrixD__VRageMath_Vector3D__System_UInt32_VRage_Game_MyParticleEffect__System_Int32_" data-uid="VRage.Game.MyParticlesManager.TryCreateParticleEffect(System.String,VRageMath.MatrixD@,VRageMath.Vector3D@,System.UInt32,VRage.Game.MyParticleEffect@,System.Int32)">
+  TryCreateParticleEffect(string, ref MatrixD, ref Vector3D, uint, out MyParticleEffect, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryCreateParticleEffect(string effectName, ref MatrixD effectMatrix, ref Vector3D worldPosition, uint parentID, out MyParticleEffect effect, int keepXFramesAhead = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>effectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>effectMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>parentID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>effect</code> <a class="xref" href="VRage.Game.MyParticleEffect.html">MyParticleEffect</a></dt>
+    <dd></dd>
+    <dt><code>keepXFramesAhead</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_UnloadData_" data-uid="VRage.Game.MyParticlesManager.UnloadData*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_UnloadData" data-uid="VRage.Game.MyParticlesManager.UnloadData">
+  UnloadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UnloadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_MyParticlesManager_UpdateAfterSimulation_" data-uid="VRage.Game.MyParticlesManager.UpdateAfterSimulation*"></a>
+
+  <h3 id="VRage_Game_MyParticlesManager_UpdateAfterSimulation" data-uid="VRage.Game.MyParticlesManager.UpdateAfterSimulation">
+  UpdateAfterSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

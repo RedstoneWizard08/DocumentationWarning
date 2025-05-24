@@ -1,0 +1,4812 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyFlightMovementBlock | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyFlightMovementBlock | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock">
+
+
+
+  <h1 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock" class="text-break">
+Class MyFlightMovementBlock  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SpaceEngineers.html">SpaceEngineers</a>.<a class="xref" href="SpaceEngineers.Game.html">Game</a>.<a class="xref" href="SpaceEngineers.Game.Entities.html">Entities</a>.<a class="xref" href="SpaceEngineers.Game.Entities.Blocks.html">Blocks</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SpaceEngineers.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MyCubeBlockType(typeof(MyObjectBuilder_FlightMovementBlock))]
+[MyTerminalInterface(new Type[] { typeof(IMyFlightMovementBlock), typeof(IMyFlightMovementBlock) })]
+public sealed class MyFlightMovementBlock : MyFunctionalBlock, IMyComponentOwner&lt;MyIDModule&gt;, IMyUpgradableBlock, IMyUpgradableBlock, IMyEventProxy, IMyEventOwner, IMySyncedEntity, IMyTieredUpdateBlock, IMyUpdateTimer, IMyTextSurfaceProvider, IMyMultiTextPanelComponentOwner, IMyTextPanelComponentOwner, IMyComponentOwner&lt;MyAutopilotComponent&gt;, IMyControllableEntity, IMyControllableEntity, IMyParallelUpdateable, IMyShipControl, IMyAutopilotable, IMyFlightMovementBlock, IMyFlightMovementBlock, IMyFunctionalBlock, IMyFunctionalBlock, IMyTerminalBlock, IMyTerminalBlock, IMyCubeBlock, IMyCubeBlock, IMyEntity, IMyEntity</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html">MyCubeBlock</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Cube.MySyncedBlock.html">MySyncedBlock</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html">MyTerminalBlock</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html">MyFunctionalBlock</a></div>
+      <div><span class="xref">MyFlightMovementBlock</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.IMyComponentOwner-1.html">IMyComponentOwner</a>&lt;<a class="xref" href="Sandbox.Game.Entities.MyIDModule.html">MyIDModule</a>&gt;</div>
+      <div><a class="xref" href="Sandbox.ModAPI.IMyUpgradableBlock.html">IMyUpgradableBlock</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.Ingame.IMyUpgradableBlock.html">IMyUpgradableBlock</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventProxy.html">IMyEventProxy</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventOwner.html">IMyEventOwner</a></div>
+      <div><a class="xref" href="VRage.Network.IMySyncedEntity.html">IMySyncedEntity</a></div>
+      <div><a class="xref" href="VRage.Game.Entities.IMyTieredUpdateBlock.html">IMyTieredUpdateBlock</a></div>
+      <div><a class="xref" href="VRage.Game.Entities.IMyUpdateTimer.html">IMyUpdateTimer</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.Ingame.IMyTextSurfaceProvider.html">IMyTextSurfaceProvider</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.IMyMultiTextPanelComponentOwner.html">IMyMultiTextPanelComponentOwner</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Blocks.IMyTextPanelComponentOwner.html">IMyTextPanelComponentOwner</a></div>
+      <div><a class="xref" href="VRage.Game.Components.IMyComponentOwner-1.html">IMyComponentOwner</a>&lt;<a class="xref" href="Sandbox.Game.EntityComponents.MyAutopilotComponent.html">MyAutopilotComponent</a>&gt;</div>
+      <div><a class="xref" href="Sandbox.Game.Entities.IMyControllableEntity.html">IMyControllableEntity</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.Interfaces.IMyControllableEntity.html">IMyControllableEntity</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.IMyParallelUpdateable.html">IMyParallelUpdateable</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Interfaces.IMyShipControl.html">IMyShipControl</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Interfaces.IMyAutopilotable.html">IMyAutopilotable</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.IMyFlightMovementBlock.html">IMyFlightMovementBlock</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.Ingame.IMyFlightMovementBlock.html">IMyFlightMovementBlock</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.IMyFunctionalBlock.html">IMyFunctionalBlock</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.Ingame.IMyFunctionalBlock.html">IMyFunctionalBlock</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.IMyTerminalBlock.html">IMyTerminalBlock</a></div>
+      <div><a class="xref" href="Sandbox.ModAPI.Ingame.IMyTerminalBlock.html">IMyTerminalBlock</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.IMyCubeBlock.html">IMyCubeBlock</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.Ingame.IMyCubeBlock.html">IMyCubeBlock</a></div>
+      <div><a class="xref" href="VRage.ModAPI.IMyEntity.html">IMyEntity</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.Ingame.IMyEntity.html">IMyEntity</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_ON_OFF">MyFunctionalBlock.ON_OFF</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_TERMINAL_CHECKBOX_MAX_WIDTH">MyFunctionalBlock.TERMINAL_CHECKBOX_MAX_WIDTH</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_OnRemovedFromScene_System_Object_">MyFunctionalBlock.OnRemovedFromScene(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_UpdateBeforeSimulation100">MyFunctionalBlock.UpdateBeforeSimulation100()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_UpdateSoundEmitters">MyFunctionalBlock.UpdateSoundEmitters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_UpdateAfterSimulation">MyFunctionalBlock.UpdateAfterSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_UpdateAfterSimulation100">MyFunctionalBlock.UpdateAfterSimulation100()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_SetDamageEffect_System_Boolean_">MyFunctionalBlock.SetDamageEffect(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_StopDamageEffect_System_Boolean_">MyFunctionalBlock.StopDamageEffect(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_GetBlockSpecificState">MyFunctionalBlock.GetBlockSpecificState()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_ChangeTier">MyFunctionalBlock.ChangeTier()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_CreateUpdateTimer_System_UInt32_VRage_Game_ObjectBuilders_ComponentSystem_MyTimerTypes_System_Boolean_">MyFunctionalBlock.CreateUpdateTimer(uint, MyTimerTypes, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_GetFramesFromLastTrigger">MyFunctionalBlock.GetFramesFromLastTrigger()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_ChangeTimerTick_System_UInt32_">MyFunctionalBlock.ChangeTimerTick(uint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_GetTimerEnabledState">MyFunctionalBlock.GetTimerEnabledState()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_DoUpdateTimerTick">MyFunctionalBlock.DoUpdateTimerTick()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_UpdateScreen">MyFunctionalBlock.UpdateScreen()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_OnModelChange">MyFunctionalBlock.OnModelChange()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_GetSurface_System_Int32_">MyFunctionalBlock.GetSurface(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_OnSelectImageSuccess_System_Int32_System_Int32___">MyFunctionalBlock.OnSelectImageSuccess(int, int[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_SelectPanel_System_Collections_Generic_List_Sandbox_Graphics_GUI_MyGuiControlListbox_Item__">MyFunctionalBlock.SelectPanel(List&lt;MyGuiControlListbox.Item&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_OpenWindow_System_Boolean_System_Boolean_System_Boolean_">MyFunctionalBlock.OpenWindow(bool, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_OnClosedPanelTextBox_VRage_Game_ModAPI_ResultEnum_">MyFunctionalBlock.OnClosedPanelTextBox(ResultEnum)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_OnClosedPanelMessageBox_Sandbox_Graphics_GUI_MyGuiScreenMessageBox_ResultEnum_">MyFunctionalBlock.OnClosedPanelMessageBox(MyGuiScreenMessageBox.ResultEnum)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_OnChangeDescription_System_Int32_System_String_System_Boolean_">MyFunctionalBlock.OnChangeDescription(int, string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_UseGenericLcd">MyFunctionalBlock.UseGenericLcd</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_IsTieredUpdateSupported">MyFunctionalBlock.IsTieredUpdateSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_AllowTimerForceUpdate">MyFunctionalBlock.AllowTimerForceUpdate</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_Enabled">MyFunctionalBlock.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_SurfaceCount">MyFunctionalBlock.SurfaceCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_MultiTextPanel">MyFunctionalBlock.MultiTextPanel</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_PanelComponent">MyFunctionalBlock.PanelComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_IsTextPanelOpen">MyFunctionalBlock.IsTextPanelOpen</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_EnabledChanged">MyFunctionalBlock.EnabledChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyFunctionalBlock.html#Sandbox_Game_Entities_Cube_MyFunctionalBlock_UpdateTimerTriggered">MyFunctionalBlock.UpdateTimerTriggered</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SHOW_IN_TERMINAL">MyTerminalBlock.SHOW_IN_TERMINAL</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SHOW_ON_HUD">MyTerminalBlock.SHOW_ON_HUD</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SHOW_IN_TOOLBAR_CONFIG">MyTerminalBlock.SHOW_IN_TOOLBAR_CONFIG</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HackAttemptTime">MyTerminalBlock.HackAttemptTime</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_IsAccessibleForProgrammableBlock">MyTerminalBlock.IsAccessibleForProgrammableBlock</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_NotifyTerminalValueChanged_Sandbox_Game_Gui_ITerminalControl_">MyTerminalBlock.NotifyTerminalValueChanged(ITerminalControl)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_RefreshCustomInfo">MyTerminalBlock.RefreshCustomInfo()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SetCustomName_System_String_">MyTerminalBlock.SetCustomName(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_UpdateCustomName_System_String_">MyTerminalBlock.UpdateCustomName(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SetCustomName_System_Text_StringBuilder_">MyTerminalBlock.SetCustomName(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SetCustomNameEvent_System_String_">MyTerminalBlock.SetCustomNameEvent(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_UpdateCustomName_System_Text_StringBuilder_">MyTerminalBlock.UpdateCustomName(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_RaisePropertiesChanged">MyTerminalBlock.RaisePropertiesChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SetDetailedInfoDirty">MyTerminalBlock.SetDetailedInfoDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_SetDetailedInfoDirtyIfCurrentlyOpenInTerminal">MyTerminalBlock.SetDetailedInfoDirtyIfCurrentlyOpenInTerminal()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ClearDetailedInfo">MyTerminalBlock.ClearDetailedInfo()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_GetDetailedInfo">MyTerminalBlock.GetDetailedInfo()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CanLocalPlayerChangeValue">MyTerminalBlock.CanLocalPlayerChangeValue()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CanPlayerChangeValue_System_Int64_">MyTerminalBlock.CanPlayerChangeValue(long)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasLocalPlayerAccessToBlockWithoutOwnership">MyTerminalBlock.HasLocalPlayerAccessToBlockWithoutOwnership()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasPlayerAccessToBlockWithoutOwnership_System_Int64_">MyTerminalBlock.HasPlayerAccessToBlockWithoutOwnership(long)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasNobodyPlayerAccessToBlock">MyTerminalBlock.HasNobodyPlayerAccessToBlock()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasNobodyPlayerAccessToBlockForPB">MyTerminalBlock.HasNobodyPlayerAccessToBlockForPB()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasLocalPlayerAccess">MyTerminalBlock.HasLocalPlayerAccess()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasPlayerAccessWithNobodyCheck_System_Int64_System_Boolean_">MyTerminalBlock.HasPlayerAccessWithNobodyCheck(long, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasPlayerAccessReasonWithNobodyCheck_System_Int64_System_Boolean_">MyTerminalBlock.HasPlayerAccessReasonWithNobodyCheck(long, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasPlayerAccess_System_Int64_VRage_Game_MyRelationsBetweenPlayerAndBlock_">MyTerminalBlock.HasPlayerAccess(long, MyRelationsBetweenPlayerAndBlock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasPlayerAccessReason_System_Int64_VRage_Game_MyRelationsBetweenPlayerAndBlock_">MyTerminalBlock.HasPlayerAccessReason(long, MyRelationsBetweenPlayerAndBlock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_GetHudParams_System_Boolean_">MyTerminalBlock.GetHudParams(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_GetTerminalName_System_Text_StringBuilder_">MyTerminalBlock.GetTerminalName(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_OpenWindow_System_Boolean_System_Boolean_">MyTerminalBlock.OpenWindow(bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_OnClosedTextBox_VRage_Game_ModAPI_ResultEnum_">MyTerminalBlock.OnClosedTextBox(ResultEnum)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_OnClosedMessageBox_VRage_Game_ModAPI_ResultEnum_">MyTerminalBlock.OnClosedMessageBox(ResultEnum)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ToString">MyTerminalBlock.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_OnOpenedInTerminal_System_Boolean_">MyTerminalBlock.OnOpenedInTerminal(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_RemoveContainerDropComponent">MyTerminalBlock.RemoveContainerDropComponent()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_GetProperty_System_String_">MyTerminalBlock.GetProperty(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_GetProperties_System_Collections_Generic_List_Sandbox_ModAPI_Interfaces_ITerminalProperty__System_Func_Sandbox_ModAPI_Interfaces_ITerminalProperty_System_Boolean__">MyTerminalBlock.GetProperties(List&lt;ITerminalProperty&gt;, Func&lt;ITerminalProperty, bool&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_IsCreativeModeEnabled">MyTerminalBlock.IsCreativeModeEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_IsSurvivalModeForced">MyTerminalBlock.IsSurvivalModeForced</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CustomName">MyTerminalBlock.CustomName</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_DisplayNameText">MyTerminalBlock.DisplayNameText</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CustomNameWithFaction">MyTerminalBlock.CustomNameWithFaction</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CustomData">MyTerminalBlock.CustomData</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowOnHUD">MyTerminalBlock.ShowOnHUD</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowInTerminal">MyTerminalBlock.ShowInTerminal</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowInInventory">MyTerminalBlock.ShowInInventory</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowInToolbarConfig">MyTerminalBlock.ShowInToolbarConfig</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_IsBeingHacked">MyTerminalBlock.IsBeingHacked</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_IsDetailedInfoDirty">MyTerminalBlock.IsDetailedInfoDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_DetailedInfo">MyTerminalBlock.DetailedInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CustomInfo">MyTerminalBlock.CustomInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_HasUnsafeValues">MyTerminalBlock.HasUnsafeValues</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_IsOpenedInTerminal">MyTerminalBlock.IsOpenedInTerminal</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CustomDataChanged">MyTerminalBlock.CustomDataChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_CustomNameChanged">MyTerminalBlock.CustomNameChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_PropertiesChanged">MyTerminalBlock.PropertiesChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_OwnershipChanged">MyTerminalBlock.OwnershipChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_VisibilityChanged">MyTerminalBlock.VisibilityChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowOnHUDChanged">MyTerminalBlock.ShowOnHUDChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowInTerminalChanged">MyTerminalBlock.ShowInTerminalChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowInIventoryChanged">MyTerminalBlock.ShowInIventoryChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_ShowInToolbarConfigChanged">MyTerminalBlock.ShowInToolbarConfigChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_IsBeingHackedChanged">MyTerminalBlock.IsBeingHackedChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_AppendingCustomInfo">MyTerminalBlock.AppendingCustomInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MyTerminalBlock.html#Sandbox_Game_Entities_Cube_MyTerminalBlock_OpenedInTerminal">MyTerminalBlock.OpenedInTerminal</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MySyncedBlock.html#Sandbox_Game_Entities_Cube_MySyncedBlock_SyncType">MySyncedBlock.SyncType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.Cube.MySyncedBlock.html#Sandbox_Game_Entities_Cube_MySyncedBlock_SyncPropertyChanged">MySyncedBlock.SyncPropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_MAX_CUSTOM_NAME_LENGTH">MyCubeBlock.MAX_CUSTOM_NAME_LENGTH</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_m_soundEmitter">MyCubeBlock.m_soundEmitter</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_m_emissiveNames">MyCubeBlock.m_emissiveNames</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CurrentAttachedUpgradeModules">MyCubeBlock.CurrentAttachedUpgradeModules</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IsBeingRemoved">MyCubeBlock.IsBeingRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SlimBlock">MyCubeBlock.SlimBlock</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IsSilenced">MyCubeBlock.IsSilenced</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SilenceInChange">MyCubeBlock.SilenceInChange</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UsedUpdateEveryFrame">MyCubeBlock.UsedUpdateEveryFrame</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_HandleEmissiveStateChange">MyCubeBlock.HandleEmissiveStateChange</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_InitSkinUpdateHandled">MyCubeBlock.InitSkinUpdateHandled</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetOwnerFactionTag">MyCubeBlock.GetOwnerFactionTag()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetUserRelationToOwner_System_Int64_VRage_Game_MyRelationsBetweenPlayerAndBlock_">MyCubeBlock.GetUserRelationToOwner(long, MyRelationsBetweenPlayerAndBlock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetPlayerRelationToOwner">MyCubeBlock.GetPlayerRelationToOwner()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_FriendlyWithBlock_Sandbox_Game_Entities_MyCubeBlock_">MyCubeBlock.FriendlyWithBlock(MyCubeBlock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UpdateIsWorking">MyCubeBlock.UpdateIsWorking()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CanContinueBuild">MyCubeBlock.CanContinueBuild()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetInteractiveObject_System_UInt32_">MyCubeBlock.GetInteractiveObject(uint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ReleaseInventory_Sandbox_Game_MyInventory_System_Boolean_">MyCubeBlock.ReleaseInventory(MyInventory, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_InitComponents">MyCubeBlock.InitComponents()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_Init">MyCubeBlock.Init()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetLocalMatrix_VRageMath_Matrix__">MyCubeBlock.GetLocalMatrix(out Matrix)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CalcLocalMatrix_VRageMath_Matrix__System_String__">MyCubeBlock.CalcLocalMatrix(out Matrix, out string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetObjectBuilder_System_Boolean_">MyCubeBlock.GetObjectBuilder(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ConnectionAllowed_VRageMath_Vector3I__VRageMath_Vector3I__Sandbox_Definitions_MyCubeBlockDefinition_">MyCubeBlock.ConnectionAllowed(ref Vector3I, ref Vector3I, MyCubeBlockDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ConnectionAllowed_VRageMath_Vector3I__VRageMath_Vector3I__VRageMath_Vector3I__Sandbox_Definitions_MyCubeBlockDefinition_">MyCubeBlock.ConnectionAllowed(ref Vector3I, ref Vector3I, ref Vector3I, MyCubeBlockDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SetEmissiveStateWorking">MyCubeBlock.SetEmissiveStateWorking()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SetEmissiveStateDisabled">MyCubeBlock.SetEmissiveStateDisabled()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SetEmissiveStateDamaged">MyCubeBlock.SetEmissiveStateDamaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CheckEmissiveState_System_Boolean_">MyCubeBlock.CheckEmissiveState(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SetEmissiveState_VRage_Utils_MyStringHash_System_UInt32_System_String_">MyCubeBlock.SetEmissiveState(MyStringHash, uint, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UpdateEmissiveParts_System_UInt32_System_Single_VRageMath_Color_VRageMath_Color_">MyCubeBlock.UpdateEmissiveParts(uint, float, Color, Color)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UpdateSkin_System_Boolean_">MyCubeBlock.UpdateSkin(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UpdateVisual">MyCubeBlock.UpdateVisual()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UpdateBeforeSimulation10">MyCubeBlock.UpdateBeforeSimulation10()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OnBuildSuccess_System_Int64_System_Boolean_">MyCubeBlock.OnBuildSuccess(long, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OnRemovedByCubeBuilder">MyCubeBlock.OnRemovedByCubeBuilder()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ContactPointCallback_Sandbox_Game_Entities_Cube_MyGridContactInfo__">MyCubeBlock.ContactPointCallback(ref MyGridContactInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OnDestroy">MyCubeBlock.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CalculateCurrentModel_VRageMath_Matrix__">MyCubeBlock.CalculateCurrentModel(out Matrix)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ChangeBlockOwnerRequest_System_Int64_VRage_Game_MyOwnershipShareModeEnum_">MyCubeBlock.ChangeBlockOwnerRequest(long, MyOwnershipShareModeEnum)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SetEffect_System_String_System_Boolean_">MyCubeBlock.SetEffect(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SetEffect_System_String_System_Single_System_Boolean_System_Boolean_System_Boolean_">MyCubeBlock.SetEffect(string, float, bool, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_RemoveEffect_System_String_System_Int32_">MyCubeBlock.RemoveEffect(string, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SetDamageEffectDelayed_System_Boolean_">MyCubeBlock.SetDamageEffectDelayed(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ChangeOwner_System_Int64_VRage_Game_MyOwnershipShareModeEnum_">MyCubeBlock.ChangeOwner(long, MyOwnershipShareModeEnum)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OnTeleport">MyCubeBlock.OnTeleport()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetBlockGridOffset_Sandbox_Definitions_MyCubeBlockDefinition_">MyCubeBlock.GetBlockGridOffset(MyCubeBlockDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetSubBlockDataFromDummy_Sandbox_Definitions_MyCubeBlockDefinition_System_String_VRageRender_Import_MyModelDummy_System_Boolean_Sandbox_Definitions_MyCubeBlockDefinition__VRageMath_MatrixD__VRageMath_Vector3__">MyCubeBlock.GetSubBlockDataFromDummy(MyCubeBlockDefinition, string, MyModelDummy, bool, out MyCubeBlockDefinition, out MatrixD, out Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetMass">MyCubeBlock.GetMass()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetGeometryLocalBox">MyCubeBlock.GetGeometryLocalBox()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetSubBlocks">MyCubeBlock.GetSubBlocks()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_TryGetSubBlock_System_String_Sandbox_Game_Entities_Cube_MySlimBlock__">MyCubeBlock.TryGetSubBlock(string, out MySlimBlock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetComponent">MyCubeBlock.GetComponent()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_AddUpgradeValue_System_String_System_Single_">MyCubeBlock.AddUpgradeValue(string, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CommitUpgradeValues">MyCubeBlock.CommitUpgradeValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CreateRenderer_VRage_ObjectBuilders_MyPersistentEntityFlags2_VRageMath_Vector3_System_Object_">MyCubeBlock.CreateRenderer(MyPersistentEntityFlags2, Vector3, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetFractureComponent">MyCubeBlock.GetFractureComponent()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_RefreshModels_System_String_System_String_">MyCubeBlock.RefreshModels(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetIntersectionWithLine_VRageMath_LineD__System_Nullable_VRage_Game_Models_MyIntersectionResultLineTriangleEx___VRage_Game_Components_IntersectionFlags_">MyCubeBlock.GetIntersectionWithLine(ref LineD, out MyIntersectionResultLineTriangleEx?, IntersectionFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ReceivedDamage_System_Single_VRage_Utils_MyStringHash_System_Int64_System_Int64_System_Boolean_System_Nullable_VRage_Utils_MyStringHash__">MyCubeBlock.ReceivedDamage(float, MyStringHash, long, long, bool, MyStringHash?)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_Init_VRage_Game_MyObjectBuilder_CubeBlock_VRage_Game_ModAPI_IMyCubeGrid_">MyCubeBlock.Init(MyObjectBuilder_CubeBlock, IMyCubeGrid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UsesEmissivePreset">MyCubeBlock.UsesEmissivePreset</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_HighlightMode">MyCubeBlock.HighlightMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_Physics">MyCubeBlock.Physics</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OwnerId">MyCubeBlock.OwnerId</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_BuiltBy">MyCubeBlock.BuiltBy</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ResourceSink">MyCubeBlock.ResourceSink</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_Min">MyCubeBlock.Min</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_Max">MyCubeBlock.Max</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_Orientation">MyCubeBlock.Orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_Position">MyCubeBlock.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CubeGrid">MyCubeBlock.CubeGrid</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UseObjectsComponent">MyCubeBlock.UseObjectsComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CheckConnectionAllowed">MyCubeBlock.CheckConnectionAllowed</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_NumberInGrid">MyCubeBlock.NumberInGrid</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IsFunctional">MyCubeBlock.IsFunctional</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IsBuilt">MyCubeBlock.IsBuilt</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_DisassembleRatio">MyCubeBlock.DisassembleRatio</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IsWorking">MyCubeBlock.IsWorking</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IDModule">MyCubeBlock.IDModule</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IsSubBlock">MyCubeBlock.IsSubBlock</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_SubBlockName">MyCubeBlock.SubBlockName</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OwnerBlock">MyCubeBlock.OwnerBlock</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_DefinitionDisplayNameText">MyCubeBlock.DefinitionDisplayNameText</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_ForceBlockDestructible">MyCubeBlock.ForceBlockDestructible</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_UpgradeValues">MyCubeBlock.UpgradeValues</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CheckConnectionChanged">MyCubeBlock.CheckConnectionChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_IsWorkingChanged">MyCubeBlock.IsWorkingChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_GetEmissiveStateHashFromComponent">MyCubeBlock.GetEmissiveStateHashFromComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CanContinueBuildCheck">MyCubeBlock.CanContinueBuildCheck</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OnUpdateBeforenextFrame">MyCubeBlock.OnUpdateBeforenextFrame</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_OnUpgradeValuesChanged">MyCubeBlock.OnUpgradeValuesChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.Entities.MyCubeBlock.html#Sandbox_Game_Entities_MyCubeBlock_CubeGridChanged">MyCubeBlock.CubeGridChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DefinitionId">MyEntity.DefinitionId</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DebugAsyncLoading">MyEntity.DebugAsyncLoading</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_m_positionResetFromServer">MyEntity.m_positionResetFromServer</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GamePruningProxyId">MyEntity.GamePruningProxyId</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_TopMostPruningProxyId">MyEntity.TopMostPruningProxyId</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_StaticForPruningStructure">MyEntity.StaticForPruningStructure</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_TargetPruningProxyId">MyEntity.TargetPruningProxyId</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_IsPreviewChanged">MyEntity.IsPreviewChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ReadyForReplicationAction">MyEntity.ReadyForReplicationAction</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_PropagateSubpartRotationThroughHieerarchy">MyEntity.PropagateSubpartRotationThroughHieerarchy</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ReplicationStarted">MyEntity.ReplicationStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ReplicationEnded">MyEntity.ReplicationEnded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnEntityCloseRequest">MyEntity.OnEntityCloseRequest</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_InstantiateSubpartOverrideFunc">MyEntity.InstantiateSubpartOverrideFunc</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_AddToGamePruningStructureExtCallBack">MyEntity.AddToGamePruningStructureExtCallBack</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_RemoveFromGamePruningStructureExtCallBack">MyEntity.RemoveFromGamePruningStructureExtCallBack</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_UpdateGamePruningStructureExtCallBack">MyEntity.UpdateGamePruningStructureExtCallBack</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MyEntityFactoryCreateObjectBuilderExtCallback">MyEntity.MyEntityFactoryCreateObjectBuilderExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_CreateDefaultSyncEntityExtCallback">MyEntity.CreateDefaultSyncEntityExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MyWeldingGroupsAddNodeExtCallback">MyEntity.MyWeldingGroupsAddNodeExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MyWeldingGroupsRemoveNodeExtCallback">MyEntity.MyWeldingGroupsRemoveNodeExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MyWeldingGroupsGetGroupNodesExtCallback">MyEntity.MyWeldingGroupsGetGroupNodesExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MyWeldingGroupsGroupExistsExtCallback">MyEntity.MyWeldingGroupsGroupExistsExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MyProceduralWorldGeneratorTrackEntityExtCallback">MyEntity.MyProceduralWorldGeneratorTrackEntityExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_CreateStandardRenderComponentsExtCallback">MyEntity.CreateStandardRenderComponentsExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_InitComponentsExtCallback">MyEntity.InitComponentsExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MyEntitiesCreateFromObjectBuilderExtCallback">MyEntity.MyEntitiesCreateFromObjectBuilderExtCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DebugDraw">MyEntity.DebugDraw()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DebugDrawInvalidTriangles">MyEntity.DebugDrawInvalidTriangles()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_AddDebugRenderComponent_VRage_Game_Components_MyDebugRenderComponentBase_">MyEntity.AddDebugRenderComponent(MyDebugRenderComponentBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ContainsDebugRenderComponent_System_Type_">MyEntity.ContainsDebugRenderComponent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_TryGetDebugRenderComponent__1___0__">MyEntity.TryGetDebugRenderComponent&lt;T&gt;(out T)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_RemoveDebugRenderComponent_System_Type_">MyEntity.RemoveDebugRenderComponent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_RemoveDebugRenderComponent_VRage_Game_Components_MyDebugRenderComponentBase_">MyEntity.RemoveDebugRenderComponent(MyDebugRenderComponentBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ClearDebugRenderComponents">MyEntity.ClearDebugRenderComponents()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetTopMostParent_System_Type_">MyEntity.GetTopMostParent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_InitComponentsForTesting">MyEntity.InitComponentsForTesting()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_CreateSync">MyEntity.CreateSync()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetSubpart_System_String_">MyEntity.GetSubpart(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_TryGetSubpart_System_String_VRage_Game_Entity_MyEntitySubpart__">MyEntity.TryGetSubpart(string, out MyEntitySubpart)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Simulate">MyEntity.Simulate()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_UpdatingStopped">MyEntity.UpdatingStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetFriendlyName">MyEntity.GetFriendlyName()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetViewMatrix">MyEntity.GetViewMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Teleport_VRageMath_MatrixD_System_Object_System_Boolean_">MyEntity.Teleport(MatrixD, object, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DebugDrawPhysics">MyEntity.DebugDrawPhysics()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetIntersectionWithLine_VRageMath_LineD__System_Nullable_VRageMath_Vector3D___System_Boolean_VRage_Game_Components_IntersectionFlags_">MyEntity.GetIntersectionWithLine(ref LineD, out Vector3D?, bool, IntersectionFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetIntersectionWithLineAndBoundingSphere_VRageMath_LineD__System_Single_">MyEntity.GetIntersectionWithLineAndBoundingSphere(ref LineD, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetIntersectionWithSphere_VRageMath_BoundingSphereD__">MyEntity.GetIntersectionWithSphere(ref BoundingSphereD)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetIntersectionWithAABB_VRageMath_BoundingBoxD__">MyEntity.GetIntersectionWithAABB(ref BoundingBoxD)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetTrianglesIntersectingSphere_VRageMath_BoundingSphere__System_Nullable_VRageMath_Vector3__System_Nullable_System_Single__System_Collections_Generic_List_VRage_Utils_MyTriangle_Vertex_Normals__System_Int32_">MyEntity.GetTrianglesIntersectingSphere(ref BoundingSphere, Vector3?, float?, List&lt;MyTriangle_Vertex_Normals&gt;, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DoOverlapSphereTest_System_Single_VRageMath_Vector3D_">MyEntity.DoOverlapSphereTest(float, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetSmallestDistanceBetweenCameraAndBoundingSphere">MyEntity.GetSmallestDistanceBetweenCameraAndBoundingSphere()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetLargestDistanceBetweenCameraAndBoundingSphere">MyEntity.GetLargestDistanceBetweenCameraAndBoundingSphere()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetDistanceBetweenCameraAndBoundingSphere">MyEntity.GetDistanceBetweenCameraAndBoundingSphere()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetDistanceBetweenPlayerPositionAndBoundingSphere">MyEntity.GetDistanceBetweenPlayerPositionAndBoundingSphere()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetDistanceBetweenCameraAndPosition">MyEntity.GetDistanceBetweenCameraAndPosition()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetBaseEntity">MyEntity.GetBaseEntity()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnReplicationStarted">MyEntity.OnReplicationStarted()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnReplicationEnded">MyEntity.OnReplicationEnded()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_SetFadeOut_System_Boolean_">MyEntity.SetFadeOut(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_AddToGamePruningStructure">MyEntity.AddToGamePruningStructure()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_RemoveFromGamePruningStructure">MyEntity.RemoveFromGamePruningStructure()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_UpdateGamePruningStructure">MyEntity.UpdateGamePruningStructure()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_RaisePhysicsChanged">MyEntity.RaisePhysicsChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Init_VRage_ObjectBuilders_MyObjectBuilder_EntityBase_">MyEntity.Init(MyObjectBuilder_EntityBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Init_System_Text_StringBuilder_System_String_VRage_Game_Entity_MyEntity_System_Nullable_System_Single__System_String_">MyEntity.Init(StringBuilder, string, MyEntity, float?, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Delete">MyEntity.Delete()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Close">MyEntity.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_BeforeSave">MyEntity.BeforeSave()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_PrepareForDraw">MyEntity.PrepareForDraw()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_BeforePaste">MyEntity.BeforePaste()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_AfterPaste">MyEntity.AfterPaste()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_SetEmissiveParts_System_String_VRageMath_Color_System_Single_">MyEntity.SetEmissiveParts(string, Color, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_SetEmissivePartsForSubparts_System_String_VRageMath_Color_System_Single_">MyEntity.SetEmissivePartsForSubparts(string, Color, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetCubeBlockParent_VRage_Game_Entity_MyEntity_">MyEntity.GetCubeBlockParent(MyEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetInventoryBase_System_Int32_">MyEntity.GetInventoryBase(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GetInventoryBase">MyEntity.GetInventoryBase()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_SerializeControls_VRage_Library_Collections_BitStream_">MyEntity.SerializeControls(BitStream)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DeserializeControls_VRage_Library_Collections_BitStream_System_Boolean_">MyEntity.DeserializeControls(BitStream, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ApplyLastControls">MyEntity.ApplyLastControls()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ResetControls">MyEntity.ResetControls()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Pin">MyEntity.Pin()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Unpin">MyEntity.Unpin()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_UpdateSoundContactPoint_System_Int64_VRageMath_Vector3_VRageMath_Vector3_VRageMath_Vector3_System_Single_">MyEntity.UpdateSoundContactPoint(long, Vector3, Vector3, Vector3, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Components">MyEntity.Components</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Name">MyEntity.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_PositionComp">MyEntity.PositionComp</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Render">MyEntity.Render</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_GameLogic">MyEntity.GameLogic</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_EntityId">MyEntity.EntityId</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_SyncObject">MyEntity.SyncObject</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Storage">MyEntity.Storage</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_EntityStorage">MyEntity.EntityStorage</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Closed">MyEntity.Closed</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MarkedForClose">MyEntity.MarkedForClose</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_MaxGlassDistSq">MyEntity.MaxGlassDistSq</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Save">MyEntity.Save</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_IsPreview">MyEntity.IsPreview</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_IsReadyForReplication">MyEntity.IsReadyForReplication</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_NeedsUpdate">MyEntity.NeedsUpdate</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_WorldMatrix">MyEntity.WorldMatrix</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Parent">MyEntity.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Hierarchy">MyEntity.Hierarchy</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_InvalidateOnMove">MyEntity.InvalidateOnMove</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_SyncFlag">MyEntity.SyncFlag</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_NeedsWorldMatrix">MyEntity.NeedsWorldMatrix</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_InScene">MyEntity.InScene</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_IsVolumetric">MyEntity.IsVolumetric</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_LocationForHudMarker">MyEntity.LocationForHudMarker</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Model">MyEntity.Model</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_ModelCollision">MyEntity.ModelCollision</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DisplayName">MyEntity.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_DebugName">MyEntity.DebugName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Subparts">MyEntity.Subparts</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_IsCCDForProjectiles">MyEntity.IsCCDForProjectiles</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Pinned">MyEntity.Pinned</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_UpdateDuration">MyEntity.UpdateDuration</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_IsReplicated">MyEntity.IsReplicated</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_InventoryCount">MyEntity.InventoryCount</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_HasInventory">MyEntity.HasInventory</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_LastSnapshotFlags">MyEntity.LastSnapshotFlags</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_Flags">MyEntity.Flags</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_StopPhysicsActivation">MyEntity.StopPhysicsActivation</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnMarkForClose">MyEntity.OnMarkForClose</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnClose">MyEntity.OnClose</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnClosing">MyEntity.OnClosing</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnModelRefresh">MyEntity.OnModelRefresh</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnUpdateOnceBeforeNextFrame">MyEntity.OnUpdateOnceBeforeNextFrame</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnDebugDraw">MyEntity.OnDebugDraw</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnPhysicsChanged">MyEntity.OnPhysicsChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnPhysicsComponentChanged">MyEntity.OnPhysicsComponentChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_AddedToScene">MyEntity.AddedToScene</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_RemovedFromScene">MyEntity.RemovedFromScene</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyEntity.html#VRage_Game_Entity_MyEntity_OnTeleported">MyEntity.OnTeleported</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock__ctor_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.#ctor*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock__ctor" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.#ctor">
+  MyFlightMovementBlock()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyFlightMovementBlock()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AditionalDetailInfo_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AditionalDetailInfo*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AditionalDetailInfo" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AditionalDetailInfo">
+  AditionalDetailInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AditionalDetailInfo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AlignToPGravity_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AlignToPGravity*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AlignToPGravity" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AlignToPGravity">
+  AlignToPGravity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AlignToPGravity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AuxiliaryContext_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AuxiliaryContext*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AuxiliaryContext" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AuxiliaryContext">
+  AuxiliaryContext
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyStringId AuxiliaryContext { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Utils.MyStringId.html">MyStringId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_BlockDefinition_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.BlockDefinition*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_BlockDefinition" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.BlockDefinition">
+  BlockDefinition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyFlightMovementBlockDefinition BlockDefinition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Definitions.MyFlightMovementBlockDefinition.html">MyFlightMovementBlockDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CanSwitchLandingGears_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CanSwitchLandingGears*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CanSwitchLandingGears" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CanSwitchLandingGears">
+  CanSwitchLandingGears
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanSwitchLandingGears { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CollisionAvoidance_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CollisionAvoidance*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CollisionAvoidance" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CollisionAvoidance">
+  CollisionAvoidance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CollisionAvoidance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControlContext_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControlContext*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControlContext" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControlContext">
+  ControlContext
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyStringId ControlContext { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Utils.MyStringId.html">MyStringId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControlGroup_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControlGroup*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControlGroup" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControlGroup">
+  ControlGroup
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyGroups&lt;MyCubeGrid, MyGridPhysicalGroupData&gt; ControlGroup { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Groups.MyGroups-2.html">MyGroups</a>&lt;<a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a>, <a class="xref" href="Sandbox.Game.Entities.MyGridPhysicalGroupData.html">MyGridPhysicalGroupData</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControlThrusters_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControlThrusters*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControlThrusters" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControlThrusters">
+  ControlThrusters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ControlThrusters { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControllableEntity_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControllableEntity*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControllableEntity" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControllableEntity">
+  ControllableEntity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMyControllableEntity ControllableEntity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.IMyControllableEntity.html">IMyControllableEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControllerInfo_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControllerInfo*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ControllerInfo" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ControllerInfo">
+  ControllerInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyControllerInfo ControllerInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.World.MyControllerInfo.html">MyControllerInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CurrentWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CurrentWaypoint*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CurrentWaypoint" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CurrentWaypoint">
+  CurrentWaypoint
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyAutopilotWaypoint CurrentWaypoint { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyAutopilotWaypoint.html">MyAutopilotWaypoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledBroadcasting_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledBroadcasting*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledBroadcasting" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledBroadcasting">
+  EnabledBroadcasting
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnabledBroadcasting { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledDamping_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledDamping*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledDamping" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledDamping">
+  EnabledDamping
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnabledDamping { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledHelmet_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledHelmet*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledHelmet" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledHelmet">
+  EnabledHelmet
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnabledHelmet { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledLeadingGears_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledLeadingGears*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledLeadingGears" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledLeadingGears">
+  EnabledLeadingGears
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnabledLeadingGears { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledLights_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledLights*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledLights" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledLights">
+  EnabledLights
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnabledLights { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledReactors_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledReactors*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledReactors" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledReactors">
+  EnabledReactors
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnabledReactors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledThrusts_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledThrusts*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnabledThrusts" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnabledThrusts">
+  EnabledThrusts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnabledThrusts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Entity_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Entity*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Entity" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Entity">
+  Entity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyEntity Entity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_FacingDirection_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.FacingDirection*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_FacingDirection" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.FacingDirection">
+  FacingDirection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Base6Directions.DirectionFlags FacingDirection { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Base6Directions.html">Base6Directions</a>.<a class="xref" href="VRageMath.Base6Directions.DirectionFlags.html">DirectionFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_FlightMode_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.FlightMode*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_FlightMode" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.FlightMode">
+  FlightMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlightMode FlightMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.ModAPI.Ingame.FlightMode.html">FlightMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ForceFirstPersonCamera_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ForceFirstPersonCamera*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ForceFirstPersonCamera" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ForceFirstPersonCamera">
+  ForceFirstPersonCamera
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ForceFirstPersonCamera { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetCurrentLookVector_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetCurrentLookVector*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetCurrentLookVector" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetCurrentLookVector">
+  GetCurrentLookVector
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? GetCurrentLookVector { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GridWheels_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GridWheels*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GridWheels" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GridWheels">
+  GridWheels
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyGridWheelSystem GridWheels { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.GameSystems.MyGridWheelSystem.html">MyGridWheelSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_HeadLocalXAngle_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.HeadLocalXAngle*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_HeadLocalXAngle" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.HeadLocalXAngle">
+  HeadLocalXAngle
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float HeadLocalXAngle { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_HeadLocalYAngle_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.HeadLocalYAngle*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_HeadLocalYAngle" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.HeadLocalYAngle">
+  HeadLocalYAngle
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float HeadLocalYAngle { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsAutoPilotEnabled_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsAutoPilotEnabled*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsAutoPilotEnabled" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsAutoPilotEnabled">
+  IsAutoPilotEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAutoPilotEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsAutopilotControlled_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsAutopilotControlled*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsAutopilotControlled" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsAutopilotControlled">
+  IsAutopilotControlled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAutopilotControlled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsAutopilotEnabled_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsAutopilotEnabled*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsAutopilotEnabled" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsAutopilotEnabled">
+  IsAutopilotEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAutopilotEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsPowered_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsPowered*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_IsPowered" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.IsPowered">
+  IsPowered
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPowered { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_LastMotionIndicator_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.LastMotionIndicator*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_LastMotionIndicator" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.LastMotionIndicator">
+  LastMotionIndicator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 LastMotionIndicator { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_LastRotationIndicator_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.LastRotationIndicator*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_LastRotationIndicator" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.LastRotationIndicator">
+  LastRotationIndicator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 LastRotationIndicator { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_LookAtPosition_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.LookAtPosition*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_LookAtPosition" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.LookAtPosition">
+  LookAtPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? LookAtPosition { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_MinimalAltitude_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.MinimalAltitude*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_MinimalAltitude" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.MinimalAltitude">
+  MinimalAltitude
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MinimalAltitude { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Pilot_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Pilot*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Pilot" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Pilot">
+  Pilot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCharacter Pilot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Character.MyCharacter.html">MyCharacter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PrecisionMode_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PrecisionMode*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PrecisionMode" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PrecisionMode">
+  PrecisionMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PrecisionMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PreviousControlledEntity_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PreviousControlledEntity*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PreviousControlledEntity" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PreviousControlledEntity">
+  PreviousControlledEntity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMyControllableEntity PreviousControlledEntity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.IMyControllableEntity.html">IMyControllableEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PrimaryLookaround_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PrimaryLookaround*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PrimaryLookaround" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PrimaryLookaround">
+  PrimaryLookaround
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PrimaryLookaround { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Priority_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Priority*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Priority" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Priority">
+  Priority
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ControllerPriority Priority { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.ControllerPriority.html">ControllerPriority</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RelativeDampeningDistance_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RelativeDampeningDistance*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RelativeDampeningDistance" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RelativeDampeningDistance">
+  RelativeDampeningDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RelativeDampeningDistance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RelativeDampeningEntity_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RelativeDampeningEntity*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RelativeDampeningEntity" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RelativeDampeningEntity">
+  RelativeDampeningEntity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyEntity RelativeDampeningEntity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SpeedLimit_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SpeedLimit*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SpeedLimit" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SpeedLimit">
+  SpeedLimit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SpeedLimit { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Toolbar_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Toolbar*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Toolbar" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Toolbar">
+  Toolbar
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyToolbar Toolbar { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Screens.Helpers.MyToolbar.html">MyToolbar</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ToolbarType_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ToolbarType*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ToolbarType" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ToolbarType">
+  ToolbarType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyToolbarType ToolbarType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyToolbarType.html">MyToolbarType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_TopGrid_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.TopGrid*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_TopGrid" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.TopGrid">
+  TopGrid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyEntity TopGrid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateFlags_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateFlags*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateFlags" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateFlags">
+  UpdateFlags
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyParallelUpdateFlags UpdateFlags { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.MyParallelUpdateFlags.html">MyParallelUpdateFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AddWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AddWaypoint*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AddWaypoint_Sandbox_ModAPI_Ingame_IMyAutopilotWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AddWaypoint(Sandbox.ModAPI.Ingame.IMyAutopilotWaypoint)">
+  AddWaypoint(IMyAutopilotWaypoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddWaypoint(IMyAutopilotWaypoint waypoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waypoint</code> <a class="xref" href="Sandbox.ModAPI.Ingame.IMyAutopilotWaypoint.html">IMyAutopilotWaypoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_BeginShoot_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.BeginShoot*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_BeginShoot_VRage_Game_ModAPI_MyShootActionEnum_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.BeginShoot(VRage.Game.ModAPI.MyShootActionEnum)">
+  BeginShoot(MyShootActionEnum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BeginShoot(MyShootActionEnum action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="VRage.Game.ModAPI.MyShootActionEnum.html">MyShootActionEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CanSwitchAmmoMagazine_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CanSwitchAmmoMagazine*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CanSwitchAmmoMagazine" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CanSwitchAmmoMagazine">
+  CanSwitchAmmoMagazine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanSwitchAmmoMagazine()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CanSwitchToWeapon_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CanSwitchToWeapon*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CanSwitchToWeapon_System_Nullable_VRage_Game_MyDefinitionId__" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CanSwitchToWeapon(System.Nullable{VRage.Game.MyDefinitionId})">
+  CanSwitchToWeapon(MyDefinitionId?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanSwitchToWeapon(MyDefinitionId? weaponDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weaponDefinition</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CheckIsWorking_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CheckIsWorking*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CheckIsWorking" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CheckIsWorking">
+  CheckIsWorking()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool CheckIsWorking()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ClearMovementControl_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ClearMovementControl*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ClearMovementControl" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ClearMovementControl">
+  ClearMovementControl()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearMovementControl()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Closing_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Closing*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Closing" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Closing">
+  Closing()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Closing()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Components_ComponentAdded_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Components_ComponentAdded*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Components_ComponentAdded_System_Type_VRage_Game_Components_Interfaces_IMyEntityComponentBase_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Components_ComponentAdded(System.Type,VRage.Game.Components.Interfaces.IMyEntityComponentBase)">
+  Components_ComponentAdded(Type, IMyEntityComponentBase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Components_ComponentAdded(Type t, IMyEntityComponentBase c)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>t</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+    <dt><code>c</code> <a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CreateTerminalControls_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CreateTerminalControls*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_CreateTerminalControls" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.CreateTerminalControls">
+  CreateTerminalControls()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void CreateTerminalControls()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Crouch_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Crouch*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Crouch" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Crouch">
+  Crouch()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Crouch()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Die_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Die*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Die" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Die">
+  Die()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Die()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_DisableUpdates_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.DisableUpdates*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_DisableUpdates" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.DisableUpdates">
+  DisableUpdates()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DisableUpdates()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Down_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Down*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Down" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Down">
+  Down()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Down()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_DrawHud_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.DrawHud*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_DrawHud_VRage_Game_ModAPI_Interfaces_IMyCameraController_System_Int64_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.DrawHud(VRage.Game.ModAPI.Interfaces.IMyCameraController,System.Int64)">
+  DrawHud(IMyCameraController, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawHud(IMyCameraController camera, long playerId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>camera</code> <a class="xref" href="VRage.Game.ModAPI.Interfaces.IMyCameraController.html">IMyCameraController</a></dt>
+    <dd></dd>
+    <dt><code>playerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnableAutopilot_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnableAutopilot*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EnableAutopilot_System_Boolean_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EnableAutopilot(System.Boolean)">
+  EnableAutopilot(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnableAutopilot(bool continueOnCurrentCourse)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>continueOnCurrentCourse</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EndShoot_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EndShoot*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_EndShoot_VRage_Game_ModAPI_MyShootActionEnum_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.EndShoot(VRage.Game.ModAPI.MyShootActionEnum)">
+  EndShoot(MyShootActionEnum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EndShoot(MyShootActionEnum action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="VRage.Game.ModAPI.MyShootActionEnum.html">MyShootActionEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetCameraEntitySettings_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetCameraEntitySettings*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetCameraEntitySettings" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetCameraEntitySettings">
+  GetCameraEntitySettings()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyEntityCameraSettings GetCameraEntitySettings()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Multiplayer.MyEntityCameraSettings.html">MyEntityCameraSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetComponent_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetComponent*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetComponent_Sandbox_Game_EntityComponents_MyAutopilotComponent__" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetComponent(Sandbox.Game.EntityComponents.MyAutopilotComponent@)">
+  GetComponent(out MyAutopilotComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetComponent(out MyAutopilotComponent component)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>component</code> <a class="xref" href="Sandbox.Game.EntityComponents.MyAutopilotComponent.html">MyAutopilotComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetHeadMatrix_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetHeadMatrix*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetHeadMatrix_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetHeadMatrix(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+  GetHeadMatrix(bool, bool, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MatrixD GetHeadMatrix(bool includeY, bool includeX = true, bool forceHeadAnim = false, bool forceHeadBone = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>includeY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>includeX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>forceHeadAnim</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>forceHeadBone</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetObjectBuilderCubeBlock_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetObjectBuilderCubeBlock*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetObjectBuilderCubeBlock_System_Boolean_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetObjectBuilderCubeBlock(System.Boolean)">
+  GetObjectBuilderCubeBlock(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyObjectBuilder_CubeBlock GetObjectBuilderCubeBlock(bool copy = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>copy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyObjectBuilder_CubeBlock.html">MyObjectBuilder_CubeBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetWaypoints_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetWaypoints*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_GetWaypoints_System_Collections_Generic_List_Sandbox_ModAPI_Ingame_IMyAutopilotWaypoint__" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.GetWaypoints(System.Collections.Generic.List{Sandbox.ModAPI.Ingame.IMyAutopilotWaypoint})">
+  GetWaypoints(List&lt;IMyAutopilotWaypoint&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetWaypoints(List&lt;IMyAutopilotWaypoint&gt; points)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>points</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.ModAPI.Ingame.IMyAutopilotWaypoint.html">IMyAutopilotWaypoint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_HasPriorityOver_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.HasPriorityOver*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_HasPriorityOver_Sandbox_Game_Entities_Interfaces_IMyShipControl_Sandbox_Game_Entities_Interfaces_IMyShipControl_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.HasPriorityOver(Sandbox.Game.Entities.Interfaces.IMyShipControl,Sandbox.Game.Entities.Interfaces.IMyShipControl)">
+  HasPriorityOver(IMyShipControl, IMyShipControl)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasPriorityOver(IMyShipControl first, IMyShipControl second)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>first</code> <a class="xref" href="Sandbox.Game.Entities.Interfaces.IMyShipControl.html">IMyShipControl</a></dt>
+    <dd></dd>
+    <dt><code>second</code> <a class="xref" href="Sandbox.Game.Entities.Interfaces.IMyShipControl.html">IMyShipControl</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Init_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Init*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Init_VRage_Game_MyObjectBuilder_CubeBlock_Sandbox_Game_Entities_MyCubeGrid_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Init(VRage.Game.MyObjectBuilder_CubeBlock,Sandbox.Game.Entities.MyCubeGrid)">
+  Init(MyObjectBuilder_CubeBlock, MyCubeGrid)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(MyObjectBuilder_CubeBlock objectBuilder, MyCubeGrid cubeGrid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectBuilder</code> <a class="xref" href="VRage.Game.MyObjectBuilder_CubeBlock.html">MyObjectBuilder_CubeBlock</a></dt>
+    <dd></dd>
+    <dt><code>cubeGrid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Jump_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Jump*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Jump_VRageMath_Vector3_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Jump(VRageMath.Vector3)">
+  Jump(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Jump(Vector3 moveindicator = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>moveindicator</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_MoveAndRotate_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.MoveAndRotate*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_MoveAndRotate_VRageMath_Vector3_VRageMath_Vector2_System_Single_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.MoveAndRotate(VRageMath.Vector3,VRageMath.Vector2,System.Single)">
+  MoveAndRotate(Vector3, Vector2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveAndRotate(Vector3 moveIndicator, Vector2 rotationIndicator, float rollIndicator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>moveIndicator</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>rotationIndicator</code> <a class="xref" href="VRageMath.Vector2.html">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>rollIndicator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_MoveAndRotateStopped_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.MoveAndRotateStopped*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_MoveAndRotateStopped" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.MoveAndRotateStopped">
+  MoveAndRotateStopped()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveAndRotateStopped()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnAddedToScene_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnAddedToScene*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnAddedToScene_System_Object_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnAddedToScene(System.Object)">
+  OnAddedToScene(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAddedToScene(object source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnBeginShoot_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnBeginShoot*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnBeginShoot_VRage_Game_ModAPI_MyShootActionEnum_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnBeginShoot(VRage.Game.ModAPI.MyShootActionEnum)">
+  OnBeginShoot(MyShootActionEnum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnBeginShoot(MyShootActionEnum action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="VRage.Game.ModAPI.MyShootActionEnum.html">MyShootActionEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnCubeGridChanged_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnCubeGridChanged*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnCubeGridChanged_Sandbox_Game_Entities_MyCubeGrid_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnCubeGridChanged(Sandbox.Game.Entities.MyCubeGrid)">
+  OnCubeGridChanged(MyCubeGrid)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnCubeGridChanged(MyCubeGrid oldGrid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>oldGrid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnEndShoot_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnEndShoot*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnEndShoot_VRage_Game_ModAPI_MyShootActionEnum_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnEndShoot(VRage.Game.ModAPI.MyShootActionEnum)">
+  OnEndShoot(MyShootActionEnum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnEndShoot(MyShootActionEnum action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="VRage.Game.ModAPI.MyShootActionEnum.html">MyShootActionEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnRegisteredToGridSystems_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnRegisteredToGridSystems*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnRegisteredToGridSystems" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnRegisteredToGridSystems">
+  OnRegisteredToGridSystems()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnRegisteredToGridSystems()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnUnregisteredFromGridSystems_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnUnregisteredFromGridSystems*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnUnregisteredFromGridSystems" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnUnregisteredFromGridSystems">
+  OnUnregisteredFromGridSystems()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnUnregisteredFromGridSystems()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PickUp_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PickUp*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PickUp" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PickUp">
+  PickUp()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PickUp()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PickUpContinues_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PickUpContinues*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PickUpContinues" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PickUpContinues">
+  PickUpContinues()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PickUpContinues()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PickUpFinished_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PickUpFinished*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_PickUpFinished" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.PickUpFinished">
+  PickUpFinished()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PickUpFinished()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RemoveWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RemoveWaypoint*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RemoveWaypoint_Sandbox_Game_Entities_MyAutopilotWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RemoveWaypoint(Sandbox.Game.Entities.MyAutopilotWaypoint)">
+  RemoveWaypoint(MyAutopilotWaypoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveWaypoint(MyAutopilotWaypoint waypoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waypoint</code> <a class="xref" href="Sandbox.Game.Entities.MyAutopilotWaypoint.html">MyAutopilotWaypoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RemoveWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RemoveWaypoint*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_RemoveWaypoint_Sandbox_ModAPI_Ingame_IMyAutopilotWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.RemoveWaypoint(Sandbox.ModAPI.Ingame.IMyAutopilotWaypoint)">
+  RemoveWaypoint(IMyAutopilotWaypoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveWaypoint(IMyAutopilotWaypoint waypoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waypoint</code> <a class="xref" href="Sandbox.ModAPI.Ingame.IMyAutopilotWaypoint.html">IMyAutopilotWaypoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetCollisionAvoidanceErrorState_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetCollisionAvoidanceErrorState*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetCollisionAvoidanceErrorState_System_Boolean_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetCollisionAvoidanceErrorState(System.Boolean)">
+  SetCollisionAvoidanceErrorState(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCollisionAvoidanceErrorState(bool state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetCustomAdjustWaypointAboveMinHeightFunction_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetCustomAdjustWaypointAboveMinHeightFunction*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetCustomAdjustWaypointAboveMinHeightFunction_Sandbox_Game_EntityComponents_CustomAdjustWaypointAboveMinHeightFunction_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetCustomAdjustWaypointAboveMinHeightFunction(Sandbox.Game.EntityComponents.CustomAdjustWaypointAboveMinHeightFunction)">
+  SetCustomAdjustWaypointAboveMinHeightFunction(CustomAdjustWaypointAboveMinHeightFunction)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCustomAdjustWaypointAboveMinHeightFunction(CustomAdjustWaypointAboveMinHeightFunction function)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>function</code> <a class="xref" href="Sandbox.Game.EntityComponents.CustomAdjustWaypointAboveMinHeightFunction.html">CustomAdjustWaypointAboveMinHeightFunction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetCustomMovementFunction_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetCustomMovementFunction*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetCustomMovementFunction_Sandbox_Game_EntityComponents_CustomMovementFunction_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetCustomMovementFunction(Sandbox.Game.EntityComponents.CustomMovementFunction)">
+  SetCustomMovementFunction(CustomMovementFunction)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCustomMovementFunction(CustomMovementFunction function)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>function</code> <a class="xref" href="Sandbox.Game.EntityComponents.CustomMovementFunction.html">CustomMovementFunction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetWaypoint*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetWaypoint_Sandbox_Game_Entities_MyAutopilotWaypoint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetWaypoint(Sandbox.Game.Entities.MyAutopilotWaypoint)">
+  SetWaypoint(MyAutopilotWaypoint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetWaypoint(MyAutopilotWaypoint waypoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waypoint</code> <a class="xref" href="Sandbox.Game.Entities.MyAutopilotWaypoint.html">MyAutopilotWaypoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetWaypoints_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetWaypoints*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SetWaypoints_System_Collections_Generic_List_Sandbox_Game_Entities_MyAutopilotWaypoint__System_Boolean_System_Boolean_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SetWaypoints(System.Collections.Generic.List{Sandbox.Game.Entities.MyAutopilotWaypoint},System.Boolean,System.Boolean)">
+  SetWaypoints(List&lt;MyAutopilotWaypoint&gt;, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetWaypoints(List&lt;MyAutopilotWaypoint&gt; waypoints, bool continueOnCurrentCourse, bool continueOnReversedCourse)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waypoints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Game.Entities.MyAutopilotWaypoint.html">MyAutopilotWaypoint</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>continueOnCurrentCourse</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>continueOnReversedCourse</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShouldEndShootingOnPause_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShouldEndShootingOnPause*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShouldEndShootingOnPause_VRage_Game_ModAPI_MyShootActionEnum_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShouldEndShootingOnPause(VRage.Game.ModAPI.MyShootActionEnum)">
+  ShouldEndShootingOnPause(MyShootActionEnum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldEndShootingOnPause(MyShootActionEnum action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="VRage.Game.ModAPI.MyShootActionEnum.html">MyShootActionEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShowInventory_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShowInventory*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShowInventory" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShowInventory">
+  ShowInventory()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShowInventory()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShowRemoteAccessMenu_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShowRemoteAccessMenu*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShowRemoteAccessMenu" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShowRemoteAccessMenu">
+  ShowRemoteAccessMenu()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShowRemoteAccessMenu()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShowTerminal_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShowTerminal*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_ShowTerminal" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.ShowTerminal">
+  ShowTerminal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShowTerminal()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Sprint_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Sprint*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Sprint_System_Boolean_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Sprint(System.Boolean)">
+  Sprint(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Sprint(bool enabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchAmmoMagazine_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchAmmoMagazine*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchAmmoMagazine" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchAmmoMagazine">
+  SwitchAmmoMagazine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchAmmoMagazine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchBroadcasting_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchBroadcasting*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchBroadcasting" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchBroadcasting">
+  SwitchBroadcasting()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchBroadcasting()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchDamping_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchDamping*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchDamping" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchDamping">
+  SwitchDamping()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchDamping()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchHandbrake_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchHandbrake*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchHandbrake" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchHandbrake">
+  SwitchHandbrake()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchHandbrake()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchHelmet_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchHelmet*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchHelmet" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchHelmet">
+  SwitchHelmet()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchHelmet()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchLandingGears_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchLandingGears*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchLandingGears" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchLandingGears">
+  SwitchLandingGears()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchLandingGears()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchLights_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchLights*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchLights" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchLights">
+  SwitchLights()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchLights()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchReactors_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchReactors*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchReactors" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchReactors">
+  SwitchReactors()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchReactors()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchReactorsLocal_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchReactorsLocal*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchReactorsLocal" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchReactorsLocal">
+  SwitchReactorsLocal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchReactorsLocal()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchThrusts_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchThrusts*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchThrusts" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchThrusts">
+  SwitchThrusts()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchThrusts()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchToWeapon_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchToWeapon*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchToWeapon_Sandbox_Game_Screens_Helpers_MyToolbarItemWeapon_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchToWeapon(Sandbox.Game.Screens.Helpers.MyToolbarItemWeapon)">
+  SwitchToWeapon(MyToolbarItemWeapon)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchToWeapon(MyToolbarItemWeapon weapon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weapon</code> <a class="xref" href="Sandbox.Game.Screens.Helpers.MyToolbarItemWeapon.html">MyToolbarItemWeapon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchToWeapon_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchToWeapon*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchToWeapon_VRage_Game_MyDefinitionId_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchToWeapon(VRage.Game.MyDefinitionId)">
+  SwitchToWeapon(MyDefinitionId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchToWeapon(MyDefinitionId weaponDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weaponDefinition</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchWalk_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchWalk*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_SwitchWalk" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.SwitchWalk">
+  SwitchWalk()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SwitchWalk()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Up_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Up*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Up" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Up">
+  Up()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Up()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateAfterSimulation10_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateAfterSimulation10*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateAfterSimulation10" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateAfterSimulation10">
+  UpdateAfterSimulation10()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation10()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateAfterSimulationParallel_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateAfterSimulationParallel*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateAfterSimulationParallel" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateAfterSimulationParallel">
+  UpdateAfterSimulationParallel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAfterSimulationParallel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateBeforeSimulation_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateBeforeSimulation*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateBeforeSimulation" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateBeforeSimulation">
+  UpdateBeforeSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateBeforeSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateBeforeSimulationParallel_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateBeforeSimulationParallel*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateBeforeSimulationParallel" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateBeforeSimulationParallel">
+  UpdateBeforeSimulationParallel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateBeforeSimulationParallel()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateDetailedInfo_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateDetailedInfo*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateDetailedInfo_System_Text_StringBuilder_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateDetailedInfo(System.Text.StringBuilder)">
+  UpdateDetailedInfo(StringBuilder)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UpdateDetailedInfo(StringBuilder detailedInfo)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>detailedInfo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateOnceBeforeFrame_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateOnceBeforeFrame*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UpdateOnceBeforeFrame" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UpdateOnceBeforeFrame">
+  UpdateOnceBeforeFrame()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateOnceBeforeFrame()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Use_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Use*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_Use" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.Use">
+  Use()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Use()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UseContinues_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UseContinues*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UseContinues" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UseContinues">
+  UseContinues()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UseContinues()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UseFinished_" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UseFinished*"></a>
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_UseFinished" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.UseFinished">
+  UseFinished()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UseFinished()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_AutopilotSpeedLimitValueChanged" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.AutopilotSpeedLimitValueChanged">
+  AutopilotSpeedLimitValueChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;IMyFlightMovementBlock&gt; AutopilotSpeedLimitValueChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Sandbox.ModAPI.IMyFlightMovementBlock.html">IMyFlightMovementBlock</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="SpaceEngineers_Game_Entities_Blocks_MyFlightMovementBlock_OnWaypointReached" data-uid="SpaceEngineers.Game.Entities.Blocks.MyFlightMovementBlock.OnWaypointReached">
+  OnWaypointReached
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;IMyFlightMovementBlock, IMyAutopilotWaypoint&gt; OnWaypointReached</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="Sandbox.ModAPI.IMyFlightMovementBlock.html">IMyFlightMovementBlock</a>, <a class="xref" href="Sandbox.ModAPI.Ingame.IMyAutopilotWaypoint.html">IMyAutopilotWaypoint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

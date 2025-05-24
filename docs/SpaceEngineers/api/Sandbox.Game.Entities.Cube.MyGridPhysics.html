@@ -1,0 +1,3058 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyGridPhysics | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyGridPhysics | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics">
+
+
+
+  <h1 id="Sandbox_Game_Entities_Cube_MyGridPhysics" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics" class="text-break">
+Class MyGridPhysics  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Game.html">Game</a>.<a class="xref" href="Sandbox.Game.Entities.html">Entities</a>.<a class="xref" href="Sandbox.Game.Entities.Cube.html">Cube</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MyGridPhysics : MyPhysicsBody, IMyEntityComponentBase, IMyComponentBase, MyClusterTree.IMyActivationHandler</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MyComponentBase.html">MyComponentBase</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html">MyEntityComponentBase</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html">MyPhysicsComponentBase</a></div>
+      <div><a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html">MyPhysicsBody</a></div>
+      <div><span class="xref">MyGridPhysics</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></div>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyComponentBase.html">IMyComponentBase</a></div>
+      <div><a class="xref" href="VRageMath.Spatial.MyClusterTree.html">MyClusterTree</a>.<a class="xref" href="VRageMath.Spatial.MyClusterTree.IMyActivationHandler.html">IMyActivationHandler</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_m_angularDamping">MyPhysicsBody.m_angularDamping</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_m_linearDamping">MyPhysicsBody.m_linearDamping</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_m_bodyMatrix">MyPhysicsBody.m_bodyMatrix</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_m_world">MyPhysicsBody.m_world</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_InitialSolverDeactivation">MyPhysicsBody.InitialSolverDeactivation</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_m_ragdoll">MyPhysicsBody.m_ragdoll</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_InvokeOnBodyActiveStateChanged_System_Boolean_">MyPhysicsBody.InvokeOnBodyActiveStateChanged(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CloseRigidBody">MyPhysicsBody.CloseRigidBody()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_AddForce_VRage_Game_Components_MyPhysicsForceType_System_Nullable_VRageMath_Vector3__System_Nullable_VRageMath_Vector3D__System_Nullable_VRageMath_Vector3__System_Nullable_System_Single__System_Boolean_System_Boolean_">MyPhysicsBody.AddForce(MyPhysicsForceType, Vector3?, Vector3D?, Vector3?, float?, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ApplyImpulse_VRageMath_Vector3_VRageMath_Vector3D_">MyPhysicsBody.ApplyImpulse(Vector3, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ClearSpeed">MyPhysicsBody.ClearSpeed()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Clear">MyPhysicsBody.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CreateFromCollisionObject_Havok_HkShape_VRageMath_Vector3_VRageMath_MatrixD_System_Nullable_Havok_HkMassProperties__System_Int32_">MyPhysicsBody.CreateFromCollisionObject(HkShape, Vector3, MatrixD, HkMassProperties?, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_GetInfoFromFlags_Havok_HkRigidBodyCinfo_VRage_Game_Components_RigidBodyFlag_">MyPhysicsBody.GetInfoFromFlags(HkRigidBodyCinfo, RigidBodyFlag)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CreateCharacterCollision_VRageMath_Vector3_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_VRageMath_MatrixD_System_Single_System_UInt16_System_Boolean_System_Single_System_Single_System_Single_System_Boolean_System_Nullable_System_Single__">MyPhysicsBody.CreateCharacterCollision(Vector3, float, float, float, float, float, float, MatrixD, float, ushort, bool, float, float, float, bool, float?)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Deactivate">MyPhysicsBody.Deactivate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_FinishAddBatch">MyPhysicsBody.FinishAddBatch()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_FinishRemoveBatch_System_Object_">MyPhysicsBody.FinishRemoveBatch(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ForceActivate">MyPhysicsBody.ForceActivate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_OnMotionKinematic">MyPhysicsBody.OnMotionKinematic()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_OnMotionDynamic">MyPhysicsBody.OnMotionDynamic()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_SynchronizeKeyframedRigidBody">MyPhysicsBody.SynchronizeKeyframedRigidBody()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_GetWorldMatrix_VRageMath_MatrixD__">MyPhysicsBody.GetWorldMatrix(out MatrixD)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_GetVelocityAtPoint_VRageMath_Vector3D_">MyPhysicsBody.GetVelocityAtPoint(Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_GetVelocityAtPointLocal_VRageMath_Vector3D__VRageMath_Vector3__">MyPhysicsBody.GetVelocityAtPointLocal(ref Vector3D, out Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_OnWorldPositionChanged_System_Object_">MyPhysicsBody.OnWorldPositionChanged(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_GetRigidBodyMatrix_VRageMath_Matrix__System_Boolean_">MyPhysicsBody.GetRigidBodyMatrix(out Matrix, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_GetRigidBodyMatrix">MyPhysicsBody.GetRigidBodyMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_GetRigidBodyMatrix_VRageMath_MatrixD_">MyPhysicsBody.GetRigidBodyMatrix(MatrixD)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ChangeQualityType_Havok_HkCollidableQualityType_">MyPhysicsBody.ChangeQualityType(HkCollidableQualityType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsConstraintValid_Havok_HkConstraint_">MyPhysicsBody.IsConstraintValid(HkConstraint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_AddConstraint_Havok_HkConstraint_">MyPhysicsBody.AddConstraint(HkConstraint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_UpdateConstraintsForceDisable">MyPhysicsBody.UpdateConstraintsForceDisable()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_UpdateConstraintForceDisable_Havok_HkConstraint_">MyPhysicsBody.UpdateConstraintForceDisable(HkConstraint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_RemoveConstraint_Havok_HkConstraint_">MyPhysicsBody.RemoveConstraint(HkConstraint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_WorldToCluster_VRageMath_Vector3D_">MyPhysicsBody.WorldToCluster(Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ClusterToWorld_VRageMath_Vector3_">MyPhysicsBody.ClusterToWorld(Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_EnableBatched">MyPhysicsBody.EnableBatched()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Activate">MyPhysicsBody.Activate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_UpdateCluster">MyPhysicsBody.UpdateCluster()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Init_VRage_Game_MyComponentDefinitionBase_">MyPhysicsBody.Init(MyComponentDefinitionBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_OnAddedToContainer">MyPhysicsBody.OnAddedToContainer()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_OnAddedToScene">MyPhysicsBody.OnAddedToScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_UpdateFromSystem">MyPhysicsBody.UpdateFromSystem()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_NotifyConstraintsAddedToWorld">MyPhysicsBody.NotifyConstraintsAddedToWorld()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_NotifyConstraintsRemovedFromWorld">MyPhysicsBody.NotifyConstraintsRemovedFromWorld()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CloseRagdoll">MyPhysicsBody.CloseRagdoll()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_SwitchToRagdollMode_System_Boolean_System_Int32_">MyPhysicsBody.SwitchToRagdollMode(bool, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CloseRagdollMode">MyPhysicsBody.CloseRagdollMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CloseRagdollMode_Havok_HkWorld_">MyPhysicsBody.CloseRagdollMode(HkWorld)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_SetRagdollDefaults">MyPhysicsBody.SetRagdollDefaults()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_SetRagdollVelocities_System_Collections_Generic_List_System_Int32__Havok_HkRigidBody_">MyPhysicsBody.SetRagdollVelocities(List&lt;int&gt;, HkRigidBody)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Weld_VRage_Game_Components_MyPhysicsComponentBase_System_Boolean_">MyPhysicsBody.Weld(MyPhysicsComponentBase, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Weld_Sandbox_Engine_Physics_MyPhysicsBody_System_Boolean_">MyPhysicsBody.Weld(MyPhysicsBody, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_RecreateWeldedShape">MyPhysicsBody.RecreateWeldedShape()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_UpdateMassProps">MyPhysicsBody.UpdateMassProps()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_UnweldAll_System_Boolean_">MyPhysicsBody.UnweldAll(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Unweld_Sandbox_Engine_Physics_MyPhysicsBody_System_Boolean_System_Boolean_">MyPhysicsBody.Unweld(MyPhysicsBody, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Unweld_System_Boolean_">MyPhysicsBody.Unweld(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ClusterObjectID">MyPhysicsBody.ClusterObjectID</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Offset">MyPhysicsBody.Offset</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Definition">MyPhysicsBody.Definition</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_HavokWorld">MyPhysicsBody.HavokWorld</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_RigidBody2">MyPhysicsBody.RigidBody2</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Speed">MyPhysicsBody.Speed</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Friction">MyPhysicsBody.Friction</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsStatic">MyPhysicsBody.IsStatic</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsKinematic">MyPhysicsBody.IsKinematic</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsSubpart">MyPhysicsBody.IsSubpart</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsActive">MyPhysicsBody.IsActive</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CharacterProxy">MyPhysicsBody.CharacterProxy</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CharacterSystemGroupCollisionFilterID">MyPhysicsBody.CharacterSystemGroupCollisionFilterID</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CharacterCollisionFilter">MyPhysicsBody.CharacterCollisionFilter</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsInWorld">MyPhysicsBody.IsInWorld</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ShapeChangeInProgress">MyPhysicsBody.ShapeChangeInProgress</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_AngularVelocityLocal">MyPhysicsBody.AngularVelocityLocal</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_LinearVelocityLocal">MyPhysicsBody.LinearVelocityLocal</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_LinearVelocity">MyPhysicsBody.LinearVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_LinearVelocityUnsafe">MyPhysicsBody.LinearVelocityUnsafe</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_LinearDamping">MyPhysicsBody.LinearDamping</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_AngularDamping">MyPhysicsBody.AngularDamping</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_AngularVelocity">MyPhysicsBody.AngularVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_SupportNormal">MyPhysicsBody.SupportNormal</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsMoving">MyPhysicsBody.IsMoving</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_HasRigidBody">MyPhysicsBody.HasRigidBody</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CenterOfMassLocal">MyPhysicsBody.CenterOfMassLocal</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_CenterOfMassWorld">MyPhysicsBody.CenterOfMassWorld</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Constraints">MyPhysicsBody.Constraints</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsStaticForCluster">MyPhysicsBody.IsStaticForCluster</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_LastLinearVelocity">MyPhysicsBody.LastLinearVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_LastAngularVelocity">MyPhysicsBody.LastAngularVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_BreakableBody">MyPhysicsBody.BreakableBody</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_RagdollSystemGroupCollisionFilterID">MyPhysicsBody.RagdollSystemGroupCollisionFilterID</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsRagdollModeActive">MyPhysicsBody.IsRagdollModeActive</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_Ragdoll">MyPhysicsBody.Ragdoll</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ReactivateRagdoll">MyPhysicsBody.ReactivateRagdoll</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_SwitchToRagdollModeOnActivate">MyPhysicsBody.SwitchToRagdollModeOnActivate</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_IsWelded">MyPhysicsBody.IsWelded</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_WeldInfo">MyPhysicsBody.WeldInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_WeldedRigidBody">MyPhysicsBody.WeldedRigidBody</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_OnBodyActiveStateChanged">MyPhysicsBody.OnBodyActiveStateChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html#Sandbox_Engine_Physics_MyPhysicsBody_ContactPointCallback">MyPhysicsBody.ContactPointCallback</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_m_lastLinearVelocity">MyPhysicsComponentBase.m_lastLinearVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_m_lastAngularVelocity">MyPhysicsComponentBase.m_lastAngularVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_ContactPointDelay">MyPhysicsComponentBase.ContactPointDelay</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_EnabledChanged">MyPhysicsComponentBase.EnabledChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_Flags">MyPhysicsComponentBase.Flags</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_IsPhantom">MyPhysicsComponentBase.IsPhantom</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_m_enabled">MyPhysicsComponentBase.m_enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_UpdateAccelerations">MyPhysicsComponentBase.UpdateAccelerations()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_SetSpeeds_VRageMath_Vector3_VRageMath_Vector3_">MyPhysicsComponentBase.SetSpeeds(Vector3, Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_GetWorldMatrix">MyPhysicsComponentBase.GetWorldMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_OnBeforeRemovedFromContainer">MyPhysicsComponentBase.OnBeforeRemovedFromContainer()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_IsSerialized">MyPhysicsComponentBase.IsSerialized()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_Serialize_System_Boolean_">MyPhysicsComponentBase.Serialize(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_Deserialize_VRage_Game_ObjectBuilders_ComponentSystem_MyObjectBuilder_ComponentBase_">MyPhysicsComponentBase.Deserialize(MyObjectBuilder_ComponentBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_ReportAllContacts">MyPhysicsComponentBase.ReportAllContacts</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_Entity">MyPhysicsComponentBase.Entity</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_CanUpdateAccelerations">MyPhysicsComponentBase.CanUpdateAccelerations</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_MaterialType">MyPhysicsComponentBase.MaterialType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_Enabled">MyPhysicsComponentBase.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_PlayCollisionCueEnabled">MyPhysicsComponentBase.PlayCollisionCueEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_Center">MyPhysicsComponentBase.Center</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_LinearAcceleration">MyPhysicsComponentBase.LinearAcceleration</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_AngularAcceleration">MyPhysicsComponentBase.AngularAcceleration</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyPhysicsComponentBase.html#VRage_Game_Components_MyPhysicsComponentBase_ComponentTypeDebugString">MyPhysicsComponentBase.ComponentTypeDebugString</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_AttachSyncToEntity">MyEntityComponentBase.AttachSyncToEntity</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAfterAddedToContainer">MyEntityComponentBase.OnAfterAddedToContainer</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_BeforeRemovedFromContainer">MyEntityComponentBase.BeforeRemovedFromContainer</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_SetContainer_VRage_Game_Components_Interfaces_IMyComponentContainer_">MyComponentBase.SetContainer(IMyComponentContainer)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_GetAs__1">MyComponentBase.GetAs&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_OnRemovedFromScene">MyComponentBase.OnRemovedFromScene()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_RemoveExistingComponentOnNewInsert">MyComponentBase.RemoveExistingComponentOnNewInsert</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsExtensions.html#Sandbox_Engine_Physics_MyPhysicsExtensions_IsInWorldWelded_Sandbox_Engine_Physics_MyPhysicsBody_">MyPhysicsExtensions.IsInWorldWelded(MyPhysicsBody)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_RaiseEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Utils_MyStringHash_VRage_Game_Components_MyEntityContainerEventExtensions_EntityEventParams_">MyEntityContainerEventExtensions.RaiseEntityEvent(MyEntityComponentBase, MyStringHash, MyEntityContainerEventExtensions.EntityEventParams)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_RegisterForEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Game_Entity_MyEntity_VRage_Utils_MyStringHash_VRage_Game_Components_MyEntityContainerEventExtensions_EntityEventHandler_">MyEntityContainerEventExtensions.RegisterForEntityEvent(MyEntityComponentBase, MyEntity, MyStringHash, MyEntityContainerEventExtensions.EntityEventHandler)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_RegisterForEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Utils_MyStringHash_VRage_Game_Components_MyEntityContainerEventExtensions_EntityEventHandler_">MyEntityContainerEventExtensions.RegisterForEntityEvent(MyEntityComponentBase, MyStringHash, MyEntityContainerEventExtensions.EntityEventHandler)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityContainerEventExtensions.html#VRage_Game_Components_MyEntityContainerEventExtensions_UnregisterForEntityEvent_VRage_Game_Components_MyEntityComponentBase_VRage_Game_Entity_MyEntity_VRage_Utils_MyStringHash_">MyEntityContainerEventExtensions.UnregisterForEntityEvent(MyEntityComponentBase, MyEntity, MyStringHash)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsExtensions.html#Sandbox_Engine_Physics_MyPhysicsExtensions_ActivateIfNeeded_VRage_Game_Components_MyPhysicsComponentBase_">MyPhysicsExtensions.ActivateIfNeeded(MyPhysicsComponentBase)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsExtensions.html#Sandbox_Engine_Physics_MyPhysicsExtensions_IsInWorldWelded_VRage_Game_Components_MyPhysicsComponentBase_">MyPhysicsExtensions.IsInWorldWelded(MyPhysicsComponentBase)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics__ctor_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics__ctor_Sandbox_Game_Entities_MyCubeGrid_Sandbox_Game_Entities_Cube_MyGridShape_System_Boolean_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.#ctor(Sandbox.Game.Entities.MyCubeGrid,Sandbox.Game.Entities.Cube.MyGridShape,System.Boolean)">
+  MyGridPhysics(MyCubeGrid, MyGridShape, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyGridPhysics(MyCubeGrid grid, MyGridShape shape = null, bool staticPhysics = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>grid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+    <dt><code>shape</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MyGridShape.html">MyGridShape</a></dt>
+    <dd></dd>
+    <dt><code>staticPhysics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ACCUMULATION_TIME" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ACCUMULATION_TIME">
+  ACCUMULATION_TIME
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ACCUMULATION_TIME = 30</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_COLLISION_SPARK_LIMIT_COUNT" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.COLLISION_SPARK_LIMIT_COUNT">
+  COLLISION_SPARK_LIMIT_COUNT
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int COLLISION_SPARK_LIMIT_COUNT = 3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_COLLISION_SPARK_LIMIT_TIME" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.COLLISION_SPARK_LIMIT_TIME">
+  COLLISION_SPARK_LIMIT_TIME
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int COLLISION_SPARK_LIMIT_TIME = 20</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_CRASH_LIMIT" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.CRASH_LIMIT">
+  CRASH_LIMIT
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int CRASH_LIMIT = 90</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_LargeShipMaxAngularVelocityLimit" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.LargeShipMaxAngularVelocityLimit">
+  LargeShipMaxAngularVelocityLimit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly float LargeShipMaxAngularVelocityLimit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_MAX" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.MAX">
+  MAX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float MAX = 100</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_MAX_SHIP_SPEED" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.MAX_SHIP_SPEED">
+  MAX_SHIP_SPEED
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float MAX_SHIP_SPEED = 149896220</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PLANET_CRASH_MIN_BLOCK_COUNT" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PLANET_CRASH_MIN_BLOCK_COUNT">
+  PLANET_CRASH_MIN_BLOCK_COUNT
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int PLANET_CRASH_MIN_BLOCK_COUNT = 5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PREDICTION_IMPULSE_SCALE" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PREDICTION_IMPULSE_SCALE">
+  PREDICTION_IMPULSE_SCALE
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float PREDICTION_IMPULSE_SCALE</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_SmallShipMaxAngularVelocityLimit" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.SmallShipMaxAngularVelocityLimit">
+  SmallShipMaxAngularVelocityLimit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly float SmallShipMaxAngularVelocityLimit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_DeformationRatio_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DeformationRatio*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_DeformationRatio" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DeformationRatio">
+  DeformationRatio
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float DeformationRatio { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_DisableGravity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DisableGravity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_DisableGravity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DisableGravity">
+  DisableGravity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DisableGravity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_Gravity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Gravity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_Gravity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Gravity">
+  Gravity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3 Gravity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_HavokCollisionSystemID_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.HavokCollisionSystemID*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_HavokCollisionSystemID" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.HavokCollisionSystemID">
+  HavokCollisionSystemID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int HavokCollisionSystemID { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_LowSimulationQuality_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.LowSimulationQuality*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_LowSimulationQuality" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.LowSimulationQuality">
+  LowSimulationQuality
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LowSimulationQuality { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_Mass_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Mass*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_Mass" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Mass">
+  Mass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float Mass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_PredictCollisions_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PredictCollisions*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PredictCollisions" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PredictCollisions">
+  PredictCollisions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PredictCollisions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_PredictedContactLastTime_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PredictedContactLastTime*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PredictedContactLastTime" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PredictedContactLastTime">
+  PredictedContactLastTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyTimeSpan PredictedContactLastTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Library.Utils.MyTimeSpan.html">MyTimeSpan</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_PredictedContactsCounter_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PredictedContactsCounter*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PredictedContactsCounter" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PredictedContactsCounter">
+  PredictedContactsCounter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PredictedContactsCounter { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_RigidBody_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.RigidBody*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_RigidBody" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.RigidBody">
+  RigidBody
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override HkRigidBody RigidBody { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Havok.HkRigidBody.html">HkRigidBody</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_Shape_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Shape*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_Shape" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Shape">
+  Shape
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyGridShape Shape { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Cube.MyGridShape.html">MyGridShape</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_Activate_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Activate*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_Activate_System_Object_System_UInt64_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Activate(System.Object,System.UInt64)">
+  Activate(object, ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Activate(object world, ulong clusterObjectID)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>world</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>clusterObjectID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ActivateBatch_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ActivateBatch*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ActivateBatch_System_Object_System_UInt64_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ActivateBatch(System.Object,System.UInt64)">
+  ActivateBatch(object, ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ActivateBatch(object world, ulong clusterObjectID)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>world</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>clusterObjectID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ActivateCollision_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ActivateCollision*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ActivateCollision" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ActivateCollision">
+  ActivateCollision()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ActivateCollision()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_AddBlock_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AddBlock*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_AddBlock_Sandbox_Game_Entities_Cube_MySlimBlock_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AddBlock(Sandbox.Game.Entities.Cube.MySlimBlock)">
+  AddBlock(MySlimBlock)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddBlock(MySlimBlock block)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>block</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_AddDirtyArea_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AddDirtyArea*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_AddDirtyArea_VRageMath_Vector3I_VRageMath_Vector3I_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AddDirtyArea(VRageMath.Vector3I,VRageMath.Vector3I)">
+  AddDirtyArea(Vector3I, Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddDirtyArea(Vector3I min, Vector3I max)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>min</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>max</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_AddDirtyBlock_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AddDirtyBlock*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_AddDirtyBlock_Sandbox_Game_Entities_Cube_MySlimBlock_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AddDirtyBlock(Sandbox.Game.Entities.Cube.MySlimBlock)">
+  AddDirtyBlock(MySlimBlock)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddDirtyBlock(MySlimBlock block)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>block</code> <a class="xref" href="Sandbox.Game.Entities.Cube.MySlimBlock.html">MySlimBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_AnyPredictedContactEntities_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AnyPredictedContactEntities*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_AnyPredictedContactEntities" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.AnyPredictedContactEntities">
+  AnyPredictedContactEntities()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AnyPredictedContactEntities()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ApplyDeformation_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ApplyDeformation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ApplyDeformation_System_Single_System_Single_System_Single_VRageMath_Vector3_VRageMath_Vector3_VRage_Utils_MyStringHash_System_Int32__System_Single_System_Single_System_Int64_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ApplyDeformation(System.Single,System.Single,System.Single,VRageMath.Vector3,VRageMath.Vector3,VRage.Utils.MyStringHash,System.Int32@,System.Single,System.Single,System.Int64)">
+  ApplyDeformation(float, float, float, Vector3, Vector3, MyStringHash, out int, float, float, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ApplyDeformation(float deformationOffset, float softAreaPlanar, float softAreaVertical, Vector3 localPos, Vector3 localNormal, MyStringHash damageType, out int blocksDestroyedByThisCp, float offsetThreshold = 0, float lowerRatioLimit = 0, long attackerId = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deformationOffset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>softAreaPlanar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>softAreaVertical</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>localPos</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>localNormal</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>damageType</code> <a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+    <dt><code>blocksDestroyedByThisCp</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>offsetThreshold</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>lowerRatioLimit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>attackerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ApplyDeformation_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ApplyDeformation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ApplyDeformation_System_Single_System_Single_System_Single_VRageMath_Vector3_VRageMath_Vector3_VRage_Utils_MyStringHash_System_Single_System_Single_System_Int64_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ApplyDeformation(System.Single,System.Single,System.Single,VRageMath.Vector3,VRageMath.Vector3,VRage.Utils.MyStringHash,System.Single,System.Single,System.Int64)">
+  ApplyDeformation(float, float, float, Vector3, Vector3, MyStringHash, float, float, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ApplyDeformation(float deformationOffset, float softAreaPlanar, float softAreaVertical, Vector3 localPos, Vector3 localNormal, MyStringHash damageType, float offsetThreshold = 0, float lowerRatioLimit = 0, long attackerId = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deformationOffset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>softAreaPlanar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>softAreaVertical</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>localPos</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>localNormal</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>damageType</code> <a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+    <dt><code>offsetThreshold</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>lowerRatioLimit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>attackerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_CheckLastDestroyedBlockFracturePieces_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.CheckLastDestroyedBlockFracturePieces*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_CheckLastDestroyedBlockFracturePieces" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.CheckLastDestroyedBlockFracturePieces">
+  CheckLastDestroyedBlockFracturePieces()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckLastDestroyedBlockFracturePieces()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ClearFractureBlockComponents_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ClearFractureBlockComponents*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ClearFractureBlockComponents" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ClearFractureBlockComponents">
+  ClearFractureBlockComponents()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearFractureBlockComponents()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_Close_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Close*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_Close" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Close">
+  Close()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Close()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ConsiderDisablingTOIs_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ConsiderDisablingTOIs*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ConsiderDisablingTOIs" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ConsiderDisablingTOIs">
+  ConsiderDisablingTOIs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConsiderDisablingTOIs()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ConvertToDynamic_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ConvertToDynamic*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ConvertToDynamic_System_Boolean_System_Boolean_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ConvertToDynamic(System.Boolean,System.Boolean)">
+  ConvertToDynamic(bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertToDynamic(bool doubledKinematic, bool isPredicted)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>doubledKinematic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>isPredicted</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ConvertToStatic_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ConvertToStatic*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ConvertToStatic" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ConvertToStatic">
+  ConvertToStatic()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertToStatic()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_CreateBody_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.CreateBody*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_CreateBody_Havok_HkShape__System_Nullable_Havok_HkMassProperties__" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.CreateBody(Havok.HkShape@,System.Nullable{Havok.HkMassProperties})">
+  CreateBody(ref HkShape, HkMassProperties?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void CreateBody(ref HkShape shape, HkMassProperties? massProperties)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>shape</code> <a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+    <dt><code>massProperties</code> <a class="xref" href="Havok.HkMassProperties.html">HkMassProperties</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_CreateDestructionEffect_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.CreateDestructionEffect*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_CreateDestructionEffect_System_String_VRageMath_Vector3D_VRageMath_Vector3_System_Single_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.CreateDestructionEffect(System.String,VRageMath.Vector3D,VRageMath.Vector3,System.Single)">
+  CreateDestructionEffect(string, Vector3D, Vector3, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CreateDestructionEffect(string effectName, Vector3D position, Vector3 direction, float scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>effectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>direction</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_Deactivate_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Deactivate*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_Deactivate_System_Object_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.Deactivate(System.Object)">
+  Deactivate(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Deactivate(object world)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>world</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_DeactivateBatch_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DeactivateBatch*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_DeactivateBatch_System_Object_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DeactivateBatch(System.Object)">
+  DeactivateBatch(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DeactivateBatch(object world)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>world</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_DebugDraw_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DebugDraw*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_DebugDraw" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DebugDraw">
+  DebugDraw()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DebugDraw()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_DisableTOIOptimization_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DisableTOIOptimization*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_DisableTOIOptimization" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.DisableTOIOptimization">
+  DisableTOIOptimization()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisableTOIOptimization()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_FracturedBody_AfterReplaceBody_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.FracturedBody_AfterReplaceBody*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_FracturedBody_AfterReplaceBody_Havok_HkdReplaceBodyEvent__" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.FracturedBody_AfterReplaceBody(Havok.HkdReplaceBodyEvent@)">
+  FracturedBody_AfterReplaceBody(ref HkdReplaceBodyEvent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void FracturedBody_AfterReplaceBody(ref HkdReplaceBodyEvent e)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>e</code> <a class="xref" href="Havok.HkdReplaceBodyEvent.html">HkdReplaceBodyEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetCollisionSparkMultiplier_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetCollisionSparkMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetCollisionSparkMultiplier_System_Single_System_Boolean_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetCollisionSparkMultiplier(System.Single,System.Boolean)">
+  GetCollisionSparkMultiplier(float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetCollisionSparkMultiplier(float separatingVelocity, bool isLargeGrid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>separatingVelocity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>isLargeGrid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetCollisionSparkScale_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetCollisionSparkScale*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetCollisionSparkScale_System_Single_System_Boolean_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetCollisionSparkScale(System.Single,System.Boolean)">
+  GetCollisionSparkScale(float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetCollisionSparkScale(float impulseApplied, bool isLargeGrid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>impulseApplied</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>isLargeGrid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetFractureBlockComponents_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetFractureBlockComponents*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetFractureBlockComponents" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetFractureBlockComponents">
+  GetFractureBlockComponents()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MyFractureComponentBase.Info&gt; GetFractureBlockComponents()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Game.EntityComponents.MyFractureComponentBase.html">MyFractureComponentBase</a>.<a class="xref" href="Sandbox.Game.EntityComponents.MyFractureComponentBase.Info.html">Info</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetFracturedBlocks_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetFracturedBlocks*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetFracturedBlocks" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetFracturedBlocks">
+  GetFracturedBlocks()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MyFracturedBlock.Info&gt; GetFracturedBlocks()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Sandbox.Game.Entities.Cube.MyFracturedBlock.html">MyFracturedBlock</a>.<a class="xref" href="Sandbox.Game.Entities.Cube.MyFracturedBlock.Info.html">Info</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetLargeShipMaxAngularVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetLargeShipMaxAngularVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetLargeShipMaxAngularVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetLargeShipMaxAngularVelocity">
+  GetLargeShipMaxAngularVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetLargeShipMaxAngularVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaterialAt_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaterialAt*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaterialAt_VRageMath_Vector3D_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaterialAt(VRageMath.Vector3D)">
+  GetMaterialAt(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyStringHash GetMaterialAt(Vector3D worldPos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldPos</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxAngularVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxAngularVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxAngularVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxAngularVelocity">
+  GetMaxAngularVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxAngularVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxLinearVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxLinearVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxLinearVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxLinearVelocity">
+  GetMaxLinearVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxLinearVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxRelaxedAngularVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxRelaxedAngularVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxRelaxedAngularVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxRelaxedAngularVelocity">
+  GetMaxRelaxedAngularVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxRelaxedAngularVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxRelaxedLinearVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxRelaxedLinearVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetMaxRelaxedLinearVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetMaxRelaxedLinearVelocity">
+  GetMaxRelaxedLinearVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxRelaxedLinearVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShape_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShape*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShape" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShape">
+  GetShape()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override HkShape GetShape()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Havok.HkShape.html">HkShape</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShapesFromPosition_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShapesFromPosition*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShapesFromPosition_VRageMath_Vector3I_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShapesFromPosition(VRageMath.Vector3I)">
+  GetShapesFromPosition(Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;HkShape&gt; GetShapesFromPosition(Vector3I pos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Havok.HkShape.html">HkShape</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShipMaxAngularVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShipMaxAngularVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShipMaxAngularVelocity_VRage_Game_MyCubeSize_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShipMaxAngularVelocity(VRage.Game.MyCubeSize)">
+  GetShipMaxAngularVelocity(MyCubeSize)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetShipMaxAngularVelocity(MyCubeSize size)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>size</code> <a class="xref" href="VRage.Game.MyCubeSize.html">MyCubeSize</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShipMaxLinearVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShipMaxLinearVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetShipMaxLinearVelocity_VRage_Game_MyCubeSize_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetShipMaxLinearVelocity(VRage.Game.MyCubeSize)">
+  GetShipMaxLinearVelocity(MyCubeSize)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetShipMaxLinearVelocity(MyCubeSize size)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>size</code> <a class="xref" href="VRage.Game.MyCubeSize.html">MyCubeSize</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetSmallShipMaxAngularVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetSmallShipMaxAngularVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_GetSmallShipMaxAngularVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.GetSmallShipMaxAngularVelocity">
+  GetSmallShipMaxAngularVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetSmallShipMaxAngularVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_IsDirty_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.IsDirty*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_IsDirty" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.IsDirty">
+  IsDirty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDirty()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_IsPlanetCrashing_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.IsPlanetCrashing*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_IsPlanetCrashing" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.IsPlanetCrashing">
+  IsPlanetCrashing()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPlanetCrashing()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_IsPlanetCrashing_PointConcealed_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.IsPlanetCrashing_PointConcealed*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_IsPlanetCrashing_PointConcealed_VRageMath_Vector3D_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.IsPlanetCrashing_PointConcealed(VRageMath.Vector3D)">
+  IsPlanetCrashing_PointConcealed(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPlanetCrashing_PointConcealed(Vector3D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_LargeShipMaxLinearVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.LargeShipMaxLinearVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_LargeShipMaxLinearVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.LargeShipMaxLinearVelocity">
+  LargeShipMaxLinearVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float LargeShipMaxLinearVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_OnUnwelded_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.OnUnwelded*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_OnUnwelded_Sandbox_Engine_Physics_MyPhysicsBody_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.OnUnwelded(Sandbox.Engine.Physics.MyPhysicsBody)">
+  OnUnwelded(MyPhysicsBody)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnUnwelded(MyPhysicsBody other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html">MyPhysicsBody</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_OnWelded_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.OnWelded*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_OnWelded_Sandbox_Engine_Physics_MyPhysicsBody_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.OnWelded(Sandbox.Engine.Physics.MyPhysicsBody)">
+  OnWelded(MyPhysicsBody)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnWelded(MyPhysicsBody other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Sandbox.Engine.Physics.MyPhysicsBody.html">MyPhysicsBody</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_PerformMeteoriteDeformation_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PerformMeteoriteDeformation*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PerformMeteoriteDeformation_Sandbox_Game_Entities_MyMeteor_MyMeteorGameLogic_ContactProperties__" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PerformMeteoriteDeformation(Sandbox.Game.Entities.MyMeteor.MyMeteorGameLogic.ContactProperties@)">
+  PerformMeteoriteDeformation(in ContactProperties)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PerformMeteoriteDeformation(in MyMeteor.MyMeteorGameLogic.ContactProperties pt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pt</code> <a class="xref" href="Sandbox.Game.Entities.MyMeteor.html">MyMeteor</a>.<a class="xref" href="Sandbox.Game.Entities.MyMeteor.MyMeteorGameLogic.html">MyMeteorGameLogic</a>.<a class="xref" href="Sandbox.Game.Entities.MyMeteor.MyMeteorGameLogic.ContactProperties.html">ContactProperties</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_PlanetCrashingNeedsUpdates_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PlanetCrashingNeedsUpdates*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PlanetCrashingNeedsUpdates" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PlanetCrashingNeedsUpdates">
+  PlanetCrashingNeedsUpdates()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PlanetCrashingNeedsUpdates()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_PlayCollisionParticlesInternal_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PlayCollisionParticlesInternal*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_PlayCollisionParticlesInternal_VRage_ModAPI_IMyEntity_VRageMath_Vector3D__VRageMath_Vector3__VRageMath_Vector3__System_Single_System_Single_VRage_Game_Entity_MyEntity_ContactPointData_ContactPointDataTypes_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.PlayCollisionParticlesInternal(VRage.ModAPI.IMyEntity,VRageMath.Vector3D@,VRageMath.Vector3@,VRageMath.Vector3@,System.Single,System.Single,VRage.Game.Entity.MyEntity.ContactPointData.ContactPointDataTypes)">
+  PlayCollisionParticlesInternal(IMyEntity, ref Vector3D, ref Vector3, ref Vector3, float, float, ContactPointDataTypes)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PlayCollisionParticlesInternal(IMyEntity otherEntity, ref Vector3D worldPosition, ref Vector3 normal, ref Vector3 separatingVelocity, float separatingSpeed, float impulse, MyEntity.ContactPointData.ContactPointDataTypes flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>otherEntity</code> <a class="xref" href="VRage.ModAPI.IMyEntity.html">IMyEntity</a></dt>
+    <dd></dd>
+    <dt><code>worldPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>normal</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>separatingVelocity</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>separatingSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>impulse</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Game.Entity.MyEntity.html">MyEntity</a>.<a class="xref" href="VRage.Game.Entity.MyEntity.ContactPointData.html">ContactPointData</a>.<a class="xref" href="VRage.Game.Entity.MyEntity.ContactPointData.ContactPointDataTypes.html">ContactPointDataTypes</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_RecreateHkShape_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.RecreateHkShape*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_RecreateHkShape" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.RecreateHkShape">
+  RecreateHkShape()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RecreateHkShape()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_SetDefaultRigidBodyMaxVelocities_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.SetDefaultRigidBodyMaxVelocities*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_SetDefaultRigidBodyMaxVelocities" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.SetDefaultRigidBodyMaxVelocities">
+  SetDefaultRigidBodyMaxVelocities()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDefaultRigidBodyMaxVelocities()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_SetRelaxedRigidBodyMaxVelocities_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.SetRelaxedRigidBodyMaxVelocities*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_SetRelaxedRigidBodyMaxVelocities" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.SetRelaxedRigidBodyMaxVelocities">
+  SetRelaxedRigidBodyMaxVelocities()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRelaxedRigidBodyMaxVelocities()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_ShipMaxLinearVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ShipMaxLinearVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_ShipMaxLinearVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.ShipMaxLinearVelocity">
+  ShipMaxLinearVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float ShipMaxLinearVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_SmallShipMaxLinearVelocity_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.SmallShipMaxLinearVelocity*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_SmallShipMaxLinearVelocity" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.SmallShipMaxLinearVelocity">
+  SmallShipMaxLinearVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float SmallShipMaxLinearVelocity()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateCollisionParticleEffects_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateCollisionParticleEffects*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateCollisionParticleEffects" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateCollisionParticleEffects">
+  UpdateCollisionParticleEffects()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateCollisionParticleEffects()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateMass_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateMass*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateMass" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateMass">
+  UpdateMass()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateMass()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateShape_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateShape*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateShape" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateShape">
+  UpdateShape()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateShape()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateTOIOptimizer_" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateTOIOptimizer*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Cube_MyGridPhysics_UpdateTOIOptimizer" data-uid="Sandbox.Game.Entities.Cube.MyGridPhysics.UpdateTOIOptimizer">
+  UpdateTOIOptimizer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateTOIOptimizer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

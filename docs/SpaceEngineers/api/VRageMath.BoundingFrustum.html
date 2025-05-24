@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class BoundingFrustum | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class BoundingFrustum | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VRageMath.BoundingFrustum">
+
+
+
+  <h1 id="VRageMath_BoundingFrustum" data-uid="VRageMath.BoundingFrustum" class="text-break">
+Class BoundingFrustum  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VRageMath.html">VRageMath</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>VRage.Math.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BoundingFrustum : IEquatable&lt;BoundingFrustum&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">BoundingFrustum</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageMath.BoundingFrustumExtensions.html#VRageMath_BoundingFrustumExtensions_ToBoundingSphere_VRageMath_BoundingFrustum_VRageMath_Vector3___">BoundingFrustumExtensions.ToBoundingSphere(BoundingFrustum, Vector3[])</a>
+  </div>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="VRageMath_BoundingFrustum__ctor_" data-uid="VRageMath.BoundingFrustum.#ctor*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum__ctor" data-uid="VRageMath.BoundingFrustum.#ctor">
+  BoundingFrustum()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundingFrustum()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum__ctor_" data-uid="VRageMath.BoundingFrustum.#ctor*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum__ctor_VRageMath_Matrix_" data-uid="VRageMath.BoundingFrustum.#ctor(VRageMath.Matrix)">
+  BoundingFrustum(Matrix)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundingFrustum(Matrix value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="VRageMath_BoundingFrustum_CornerCount" data-uid="VRageMath.BoundingFrustum.CornerCount">
+  CornerCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int CornerCount = 8</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="VRageMath_BoundingFrustum_Bottom_" data-uid="VRageMath.BoundingFrustum.Bottom*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Bottom" data-uid="VRageMath.BoundingFrustum.Bottom">
+  Bottom
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane Bottom { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Far_" data-uid="VRageMath.BoundingFrustum.Far*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Far" data-uid="VRageMath.BoundingFrustum.Far">
+  Far
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane Far { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Item_" data-uid="VRageMath.BoundingFrustum.Item*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Item_System_Int32_" data-uid="VRageMath.BoundingFrustum.Item(System.Int32)">
+  this[int]
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane this[int index] { get; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Left_" data-uid="VRageMath.BoundingFrustum.Left*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Left" data-uid="VRageMath.BoundingFrustum.Left">
+  Left
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane Left { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Matrix_" data-uid="VRageMath.BoundingFrustum.Matrix*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Matrix" data-uid="VRageMath.BoundingFrustum.Matrix">
+  Matrix
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix Matrix { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Matrix.html">Matrix</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Near_" data-uid="VRageMath.BoundingFrustum.Near*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Near" data-uid="VRageMath.BoundingFrustum.Near">
+  Near
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane Near { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Planes_" data-uid="VRageMath.BoundingFrustum.Planes*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Planes" data-uid="VRageMath.BoundingFrustum.Planes">
+  Planes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane[] Planes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Right_" data-uid="VRageMath.BoundingFrustum.Right*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Right" data-uid="VRageMath.BoundingFrustum.Right">
+  Right
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane Right { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Top_" data-uid="VRageMath.BoundingFrustum.Top*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Top" data-uid="VRageMath.BoundingFrustum.Top">
+  Top
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane Top { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VRageMath_BoundingFrustum_Contains_" data-uid="VRageMath.BoundingFrustum.Contains*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Contains_VRageMath_BoundingBox__" data-uid="VRageMath.BoundingFrustum.Contains(VRageMath.BoundingBox@)">
+  Contains(ref BoundingBox)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContainmentType Contains(ref BoundingBox box)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>box</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Contains_" data-uid="VRageMath.BoundingFrustum.Contains*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Contains_VRageMath_BoundingBox__VRageMath_ContainmentType__" data-uid="VRageMath.BoundingFrustum.Contains(VRageMath.BoundingBox@,VRageMath.ContainmentType@)">
+  Contains(ref BoundingBox, out ContainmentType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Contains(ref BoundingBox box, out ContainmentType result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>box</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Contains_" data-uid="VRageMath.BoundingFrustum.Contains*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Contains_VRageMath_BoundingFrustum_" data-uid="VRageMath.BoundingFrustum.Contains(VRageMath.BoundingFrustum)">
+  Contains(BoundingFrustum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContainmentType Contains(BoundingFrustum frustum)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Contains_" data-uid="VRageMath.BoundingFrustum.Contains*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Contains_VRageMath_BoundingSphere_" data-uid="VRageMath.BoundingFrustum.Contains(VRageMath.BoundingSphere)">
+  Contains(BoundingSphere)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContainmentType Contains(BoundingSphere sphere)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sphere</code> <a class="xref" href="VRageMath.BoundingSphere.html">BoundingSphere</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Contains_" data-uid="VRageMath.BoundingFrustum.Contains*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Contains_VRageMath_BoundingSphere__VRageMath_ContainmentType__" data-uid="VRageMath.BoundingFrustum.Contains(VRageMath.BoundingSphere@,VRageMath.ContainmentType@)">
+  Contains(ref BoundingSphere, out ContainmentType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Contains(ref BoundingSphere sphere, out ContainmentType result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sphere</code> <a class="xref" href="VRageMath.BoundingSphere.html">BoundingSphere</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Contains_" data-uid="VRageMath.BoundingFrustum.Contains*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Contains_VRageMath_Vector3_" data-uid="VRageMath.BoundingFrustum.Contains(VRageMath.Vector3)">
+  Contains(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContainmentType Contains(Vector3 point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Contains_" data-uid="VRageMath.BoundingFrustum.Contains*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Contains_VRageMath_Vector3__VRageMath_ContainmentType__" data-uid="VRageMath.BoundingFrustum.Contains(VRageMath.Vector3@,VRageMath.ContainmentType@)">
+  Contains(ref Vector3, out ContainmentType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Contains(ref Vector3 point, out ContainmentType result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Equals_" data-uid="VRageMath.BoundingFrustum.Equals*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Equals_System_Object_" data-uid="VRageMath.BoundingFrustum.Equals(System.Object)">
+  Equals(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Equals_" data-uid="VRageMath.BoundingFrustum.Equals*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Equals_VRageMath_BoundingFrustum_" data-uid="VRageMath.BoundingFrustum.Equals(VRageMath.BoundingFrustum)">
+  Equals(BoundingFrustum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(BoundingFrustum other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_GetCorners_" data-uid="VRageMath.BoundingFrustum.GetCorners*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_GetCorners" data-uid="VRageMath.BoundingFrustum.GetCorners">
+  GetCorners()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3[] GetCorners()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_GetCorners_" data-uid="VRageMath.BoundingFrustum.GetCorners*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_GetCorners_VRageMath_Vector3___" data-uid="VRageMath.BoundingFrustum.GetCorners(VRageMath.Vector3[])">
+  GetCorners(Vector3[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetCorners(Vector3[] corners)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>corners</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_GetCornersUnsafe_" data-uid="VRageMath.BoundingFrustum.GetCornersUnsafe*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_GetCornersUnsafe_VRageMath_Vector3__" data-uid="VRageMath.BoundingFrustum.GetCornersUnsafe(VRageMath.Vector3*)">
+  GetCornersUnsafe(Vector3*)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetCornersUnsafe(Vector3* corners)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>corners</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_GetHashCode_" data-uid="VRageMath.BoundingFrustum.GetHashCode*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_GetHashCode" data-uid="VRageMath.BoundingFrustum.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_BoundingBox_" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.BoundingBox)">
+  Intersects(BoundingBox)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Intersects(BoundingBox box)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>box</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_BoundingBox__System_Boolean__" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.BoundingBox@,System.Boolean@)">
+  Intersects(ref BoundingBox, out bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Intersects(ref BoundingBox box, out bool result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>box</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_BoundingFrustum_" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.BoundingFrustum)">
+  Intersects(BoundingFrustum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Intersects(BoundingFrustum frustum)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_BoundingSphere_" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.BoundingSphere)">
+  Intersects(BoundingSphere)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Intersects(BoundingSphere sphere)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sphere</code> <a class="xref" href="VRageMath.BoundingSphere.html">BoundingSphere</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_BoundingSphere__System_Boolean__" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.BoundingSphere@,System.Boolean@)">
+  Intersects(ref BoundingSphere, out bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Intersects(ref BoundingSphere sphere, out bool result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sphere</code> <a class="xref" href="VRageMath.BoundingSphere.html">BoundingSphere</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_Plane_" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.Plane)">
+  Intersects(Plane)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlaneIntersectionType Intersects(Plane plane)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>plane</code> <a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.PlaneIntersectionType.html">PlaneIntersectionType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_Plane__VRageMath_PlaneIntersectionType__" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.Plane@,VRageMath.PlaneIntersectionType@)">
+  Intersects(ref Plane, out PlaneIntersectionType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Intersects(ref Plane plane, out PlaneIntersectionType result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>plane</code> <a class="xref" href="VRageMath.Plane.html">Plane</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="VRageMath.PlaneIntersectionType.html">PlaneIntersectionType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_Ray_" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.Ray)">
+  Intersects(Ray)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? Intersects(Ray ray)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="VRageMath.Ray.html">Ray</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_Intersects_" data-uid="VRageMath.BoundingFrustum.Intersects*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_Intersects_VRageMath_Ray__System_Nullable_System_Single___" data-uid="VRageMath.BoundingFrustum.Intersects(VRageMath.Ray@,System.Nullable{System.Single}@)">
+  Intersects(ref Ray, out float?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Intersects(ref Ray ray, out float? result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="VRageMath.Ray.html">Ray</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_ToString_" data-uid="VRageMath.BoundingFrustum.ToString*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_ToString" data-uid="VRageMath.BoundingFrustum.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="VRageMath_BoundingFrustum_op_Equality_" data-uid="VRageMath.BoundingFrustum.op_Equality*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_op_Equality_VRageMath_BoundingFrustum_VRageMath_BoundingFrustum_" data-uid="VRageMath.BoundingFrustum.op_Equality(VRageMath.BoundingFrustum,VRageMath.BoundingFrustum)">
+  operator ==(BoundingFrustum, BoundingFrustum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(BoundingFrustum a, BoundingFrustum b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_BoundingFrustum_op_Inequality_" data-uid="VRageMath.BoundingFrustum.op_Inequality*"></a>
+
+  <h3 id="VRageMath_BoundingFrustum_op_Inequality_VRageMath_BoundingFrustum_VRageMath_BoundingFrustum_" data-uid="VRageMath.BoundingFrustum.op_Inequality(VRageMath.BoundingFrustum,VRageMath.BoundingFrustum)">
+  operator !=(BoundingFrustum, BoundingFrustum)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(BoundingFrustum a, BoundingFrustum b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

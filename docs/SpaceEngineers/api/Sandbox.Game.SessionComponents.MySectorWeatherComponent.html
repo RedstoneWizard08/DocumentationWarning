@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MySectorWeatherComponent | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MySectorWeatherComponent | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent">
+
+
+
+  <h1 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent" class="text-break">
+Class MySectorWeatherComponent  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Game.html">Game</a>.<a class="xref" href="Sandbox.Game.SessionComponents.html">SessionComponents</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[StaticEventOwner]
+[MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation|MyUpdateOrder.AfterSimulation, 555, typeof(MyObjectBuilder_SectorWeatherComponent), null, false)]
+public class MySectorWeatherComponent : MySessionComponentBase, IMyUserInputComponent, IMyWeatherEffects</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VRage.Game.Components.MySessionComponentBase.html">MySessionComponentBase</a></div>
+      <div><span class="xref">MySectorWeatherComponent</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyUserInputComponent.html">IMyUserInputComponent</a></div>
+      <div><a class="xref" href="VRage.Game.ModAPI.IMyWeatherEffects.html">IMyWeatherEffects</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_DebugName">MySessionComponentBase.DebugName</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Priority">MySessionComponentBase.Priority</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ComponentType">MySessionComponentBase.ComponentType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatedBeforeInit">MySessionComponentBase.UpdatedBeforeInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SetUpdateOrder_VRage_Game_Components_MyUpdateOrder_">MySessionComponentBase.SetUpdateOrder(MyUpdateOrder)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_InitFromDefinition_VRage_Game_Components_Session_MySessionComponentDefinition_">MySessionComponentBase.InitFromDefinition(MySessionComponentDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_AfterLoadData">MySessionComponentBase.AfterLoadData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UnloadDataConditional">MySessionComponentBase.UnloadDataConditional()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_LoadData">MySessionComponentBase.LoadData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_SaveData">MySessionComponentBase.SaveData()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Simulate">MySessionComponentBase.Simulate()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatingStopped">MySessionComponentBase.UpdatingStopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_HandleInput">MySessionComponentBase.HandleInput()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ToString">MySessionComponentBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOrder">MySessionComponentBase.UpdateOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ObjectBuilderType">MySessionComponentBase.ObjectBuilderType</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ModContext">MySessionComponentBase.ModContext</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Loaded">MySessionComponentBase.Loaded</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Initialized">MySessionComponentBase.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdateOnPause">MySessionComponentBase.UpdateOnPause</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsServerOnly">MySessionComponentBase.IsServerOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Definition">MySessionComponentBase.Definition</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Dependencies">MySessionComponentBase.Dependencies</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_IsRequiredByGame">MySessionComponentBase.IsRequiredByGame</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent__ctor_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent__ctor" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.#ctor">
+  MySectorWeatherComponent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MySectorWeatherComponent()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_CalculateGravityInPoint" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.CalculateGravityInPoint">
+  CalculateGravityInPoint
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Func&lt;Vector3D, Vector3&gt; CalculateGravityInPoint</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>, <a class="xref" href="VRageMath.Vector3.html">Vector3</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_Cozy" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.Cozy">
+  Cozy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float Cozy = 0.5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ExtremeFreeze" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ExtremeFreeze">
+  ExtremeFreeze
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float ExtremeFreeze = 0</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ExtremeHot" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ExtremeHot">
+  ExtremeHot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float ExtremeHot = 1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_Freeze" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.Freeze">
+  Freeze
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float Freeze = 0.25</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_Hot" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.Hot">
+  Hot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float Hot = 0.75</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogAtmoOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogAtmoOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogAtmoOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogAtmoOverride">
+  FogAtmoOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? FogAtmoOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogColorOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogColorOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogColorOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogColorOverride">
+  FogColorOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3? FogColorOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogDensityOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogDensityOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogDensityOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogDensityOverride">
+  FogDensityOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? FogDensityOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogMultiplierOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogMultiplierOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogMultiplierOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogMultiplierOverride">
+  FogMultiplierOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? FogMultiplierOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogSkyboxOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogSkyboxOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_FogSkyboxOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.FogSkyboxOverride">
+  FogSkyboxOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? FogSkyboxOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ParticleDirectionOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ParticleDirectionOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ParticleDirectionOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ParticleDirectionOverride">
+  ParticleDirectionOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MatrixD? ParticleDirectionOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.MatrixD.html">MatrixD</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ParticleVelocityOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ParticleVelocityOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ParticleVelocityOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ParticleVelocityOverride">
+  ParticleVelocityOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3? ParticleVelocityOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RotationInterval_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RotationInterval*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RotationInterval" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RotationInterval">
+  RotationInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RotationInterval { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_SunIntensityOverride_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.SunIntensityOverride*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_SunIntensityOverride" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.SunIntensityOverride">
+  SunIntensityOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? SunIntensityOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_AreDecoysWithinRadius_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.AreDecoysWithinRadius*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_AreDecoysWithinRadius_VRageMath_BoundingSphereD__Sandbox_Game_Entities_MyPlanet_System_Nullable_VRageMath_Vector3D___" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.AreDecoysWithinRadius(VRageMath.BoundingSphereD@,Sandbox.Game.Entities.MyPlanet,System.Nullable{VRageMath.Vector3D}@)">
+  AreDecoysWithinRadius(ref BoundingSphereD, MyPlanet, ref Vector3D?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AreDecoysWithinRadius(ref BoundingSphereD localSphere, MyPlanet planet, ref Vector3D? hitPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>localSphere</code> <a class="xref" href="VRageMath.BoundingSphereD.html">BoundingSphereD</a></dt>
+    <dd></dd>
+    <dt><code>planet</code> <a class="xref" href="Sandbox.Game.Entities.MyPlanet.html">MyPlanet</a></dt>
+    <dd></dd>
+    <dt><code>hitPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_BeforeStart_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.BeforeStart*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_BeforeStart" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.BeforeStart">
+  BeforeStart()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BeforeStart()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_CreateLightning_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.CreateLightning*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_CreateLightning_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherLightning_System_Boolean_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.CreateLightning(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherLightning,System.Boolean)">
+  CreateLightning(Vector3D, MyObjectBuilder_WeatherLightning, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateLightning(Vector3D position, MyObjectBuilder_WeatherLightning lightning, bool doDamage = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>lightning</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherLightning.html">MyObjectBuilder_WeatherLightning</a></dt>
+    <dd></dd>
+    <dt><code>doDamage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_CreateRandomLightning_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.CreateRandomLightning*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_CreateRandomLightning_VRage_Game_MyObjectBuilder_WeatherEffect_VRage_Game_MyObjectBuilder_WeatherLightning_System_Boolean_System_Boolean_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.CreateRandomLightning(VRage.Game.MyObjectBuilder_WeatherEffect,VRage.Game.MyObjectBuilder_WeatherLightning,System.Boolean,System.Boolean)">
+  CreateRandomLightning(MyObjectBuilder_WeatherEffect, MyObjectBuilder_WeatherLightning, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateRandomLightning(MyObjectBuilder_WeatherEffect weatherEffect, MyObjectBuilder_WeatherLightning lightningBuilder, bool doHitGrid, bool doHitPlayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weatherEffect</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+    <dt><code>lightningBuilder</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherLightning.html">MyObjectBuilder_WeatherLightning</a></dt>
+    <dd></dd>
+    <dt><code>doHitGrid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>doHitPlayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_CreateRandomWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.CreateRandomWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_CreateRandomWeather_Sandbox_Game_Entities_MyPlanet_System_Boolean_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.CreateRandomWeather(Sandbox.Game.Entities.MyPlanet,System.Boolean)">
+  CreateRandomWeather(MyPlanet, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateRandomWeather(MyPlanet planet, bool verbose = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>planet</code> <a class="xref" href="Sandbox.Game.Entities.MyPlanet.html">MyPlanet</a></dt>
+    <dd></dd>
+    <dt><code>verbose</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_Draw_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.Draw*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_Draw" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.Draw">
+  Draw()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Draw()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetObjectBuilder_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetObjectBuilder*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetObjectBuilder" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetObjectBuilder">
+  GetObjectBuilder()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MyObjectBuilder_SessionComponent GetObjectBuilder()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyObjectBuilder_SessionComponent.html">MyObjectBuilder_SessionComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetOxygenMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetOxygenMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetOxygenMultiplier_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetOxygenMultiplier(VRageMath.Vector3D)">
+  GetOxygenMultiplier(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetOxygenMultiplier(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetOxygenMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetOxygenMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetOxygenMultiplier_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherEffect_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetOxygenMultiplier(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherEffect)">
+  GetOxygenMultiplier(Vector3D, MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetOxygenMultiplier(Vector3D position, MyObjectBuilder_WeatherEffect weatherEffect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>weatherEffect</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetSolarMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetSolarMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetSolarMultiplier_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetSolarMultiplier(VRageMath.Vector3D)">
+  GetSolarMultiplier(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetSolarMultiplier(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetSolarMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetSolarMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetSolarMultiplier_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherEffect_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetSolarMultiplier(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherEffect)">
+  GetSolarMultiplier(Vector3D, MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetSolarMultiplier(Vector3D position, MyObjectBuilder_WeatherEffect weather)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>weather</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetTemperatureInPoint_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetTemperatureInPoint*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetTemperatureInPoint_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetTemperatureInPoint(VRageMath.Vector3D)">
+  GetTemperatureInPoint(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetTemperatureInPoint(Vector3D worldPoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldPoint</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetTemperatureMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetTemperatureMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetTemperatureMultiplier_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetTemperatureMultiplier(VRageMath.Vector3D)">
+  GetTemperatureMultiplier(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetTemperatureMultiplier(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetTemperatureMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetTemperatureMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetTemperatureMultiplier_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherEffect_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetTemperatureMultiplier(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherEffect)">
+  GetTemperatureMultiplier(Vector3D, MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetTemperatureMultiplier(Vector3D position, MyObjectBuilder_WeatherEffect weather)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>weather</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeather_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeather(VRageMath.Vector3D)">
+  GetWeather(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetWeather(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeather_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherEffect__" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeather(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherEffect@)">
+  GetWeather(Vector3D, out MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetWeather(Vector3D position, out MyObjectBuilder_WeatherEffect weatherEffect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>weatherEffect</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeatherIntensity_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeatherIntensity*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeatherIntensity_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeatherIntensity(VRageMath.Vector3D)">
+  GetWeatherIntensity(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetWeatherIntensity(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeatherIntensity_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeatherIntensity*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeatherIntensity_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherEffect_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeatherIntensity(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherEffect)">
+  GetWeatherIntensity(Vector3D, MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetWeatherIntensity(Vector3D position, MyObjectBuilder_WeatherEffect weatherEffect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>weatherEffect</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeatherPlanetData_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeatherPlanetData*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWeatherPlanetData" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWeatherPlanetData">
+  GetWeatherPlanetData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MyObjectBuilder_WeatherPlanetData&gt; GetWeatherPlanetData()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.MyObjectBuilder_WeatherPlanetData.html">MyObjectBuilder_WeatherPlanetData</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWindMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWindMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWindMultiplier_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWindMultiplier(VRageMath.Vector3D)">
+  GetWindMultiplier(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetWindMultiplier(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWindMultiplier_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWindMultiplier*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_GetWindMultiplier_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherEffect_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.GetWindMultiplier(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherEffect)">
+  GetWindMultiplier(Vector3D, MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetWindMultiplier(Vector3D position, MyObjectBuilder_WeatherEffect weather)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>weather</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_Init_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.Init*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_Init_VRage_Game_MyObjectBuilder_SessionComponent_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.Init(VRage.Game.MyObjectBuilder_SessionComponent)">
+  Init(MyObjectBuilder_SessionComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(MyObjectBuilder_SessionComponent sessionComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sessionComponent</code> <a class="xref" href="VRage.Game.MyObjectBuilder_SessionComponent.html">MyObjectBuilder_SessionComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_InsideWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.InsideWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_InsideWeather_VRageMath_Vector3D_VRage_Game_MyObjectBuilder_WeatherEffect_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.InsideWeather(VRageMath.Vector3D,VRage.Game.MyObjectBuilder_WeatherEffect)">
+  InsideWeather(Vector3D, MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool InsideWeather(Vector3D position, MyObjectBuilder_WeatherEffect weather)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>weather</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsOnDarkSide_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsOnDarkSide*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsOnDarkSide_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsOnDarkSide(VRageMath.Vector3D)">
+  IsOnDarkSide(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsOnDarkSide(Vector3D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsPositionAirtight_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsPositionAirtight*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsPositionAirtight_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsPositionAirtight(VRageMath.Vector3D)">
+  IsPositionAirtight(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPositionAirtight(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsPositionAirtight_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsPositionAirtight*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsPositionAirtight_VRageMath_Vector3D_Sandbox_Game_Entities_MyCubeGrid__" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsPositionAirtight(VRageMath.Vector3D,Sandbox.Game.Entities.MyCubeGrid@)">
+  IsPositionAirtight(Vector3D, out MyCubeGrid)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPositionAirtight(Vector3D position, out MyCubeGrid grid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>grid</code> <a class="xref" href="Sandbox.Game.Entities.MyCubeGrid.html">MyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsThereNight_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsThereNight*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_IsThereNight_Sandbox_Game_Entities_MyPlanet_VRageMath_Vector3D__" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.IsThereNight(Sandbox.Game.Entities.MyPlanet,VRageMath.Vector3D@)">
+  IsThereNight(MyPlanet, ref Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsThereNight(MyPlanet planet, ref Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>planet</code> <a class="xref" href="Sandbox.Game.Entities.MyPlanet.html">MyPlanet</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_LevelToTemperature_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.LevelToTemperature*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_LevelToTemperature_VRage_Game_MyTemperatureLevel_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.LevelToTemperature(VRage.Game.MyTemperatureLevel)">
+  LevelToTemperature(MyTemperatureLevel)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float LevelToTemperature(MyTemperatureLevel level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="VRage.Game.MyTemperatureLevel.html">MyTemperatureLevel</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_NightValue_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.NightValue*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_NightValue_Sandbox_Game_Entities_MyPlanet_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.NightValue(Sandbox.Game.Entities.MyPlanet,VRageMath.Vector3D)">
+  NightValue(MyPlanet, Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float NightValue(MyPlanet planet, Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>planet</code> <a class="xref" href="Sandbox.Game.Entities.MyPlanet.html">MyPlanet</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RemoveWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RemoveWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RemoveWeather_VRage_Game_MyObjectBuilder_WeatherEffect_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RemoveWeather(VRage.Game.MyObjectBuilder_WeatherEffect)">
+  RemoveWeather(MyObjectBuilder_WeatherEffect)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveWeather(MyObjectBuilder_WeatherEffect weatherEffect)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weatherEffect</code> <a class="xref" href="VRage.Game.MyObjectBuilder_WeatherEffect.html">MyObjectBuilder_WeatherEffect</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RemoveWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RemoveWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RemoveWeather_VRageMath_Vector3D_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RemoveWeather(VRageMath.Vector3D)">
+  RemoveWeather(Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveWeather(Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ReplaceWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ReplaceWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_ReplaceWeather_System_String_System_Nullable_VRageMath_Vector3D__" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.ReplaceWeather(System.String,System.Nullable{VRageMath.Vector3D})">
+  ReplaceWeather(string, Vector3D?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ReplaceWeather(string weatherEffect, Vector3D? weatherPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weatherEffect</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>weatherPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RequestWeathersUpdate_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RequestWeathersUpdate*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_RequestWeathersUpdate" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.RequestWeathersUpdate">
+  RequestWeathersUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RequestWeathersUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_SetWeather_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.SetWeather*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_SetWeather_System_String_System_Single_System_Nullable_VRageMath_Vector3D__System_Boolean_VRageMath_Vector3D_System_Int32_System_Single_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.SetWeather(System.String,System.Single,System.Nullable{VRageMath.Vector3D},System.Boolean,VRageMath.Vector3D,System.Int32,System.Single)">
+  SetWeather(string, float, Vector3D?, bool, Vector3D, int, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetWeather(string weatherEffect, float radius, Vector3D? weatherPosition, bool verbose, Vector3D velocity, int length = 0, float intensity = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>weatherEffect</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>radius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>weatherPosition</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a>?</dt>
+    <dd></dd>
+    <dt><code>verbose</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>velocity</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>intensity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_TemperatureToLevel_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.TemperatureToLevel*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_TemperatureToLevel_System_Single_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.TemperatureToLevel(System.Single)">
+  TemperatureToLevel(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MyTemperatureLevel TemperatureToLevel(float temperature)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>temperature</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.MyTemperatureLevel.html">MyTemperatureLevel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_UnloadData_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.UnloadData*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_UnloadData" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.UnloadData">
+  UnloadData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void UnloadData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_UpdateAfterSimulation_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.UpdateAfterSimulation*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_UpdateAfterSimulation" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.UpdateAfterSimulation">
+  UpdateAfterSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_UpdateBeforeSimulation_" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.UpdateBeforeSimulation*"></a>
+
+  <h3 id="Sandbox_Game_SessionComponents_MySectorWeatherComponent_UpdateBeforeSimulation" data-uid="Sandbox.Game.SessionComponents.MySectorWeatherComponent.UpdateBeforeSimulation">
+  UpdateBeforeSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateBeforeSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

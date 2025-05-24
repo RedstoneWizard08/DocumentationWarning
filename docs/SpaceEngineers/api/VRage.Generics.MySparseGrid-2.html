@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MySparseGrid&lt;TItemData, TCellData&gt; | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MySparseGrid&lt;TItemData, TCellData&gt; | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VRage.Generics.MySparseGrid`2">
+
+
+
+  <h1 id="VRage_Generics_MySparseGrid_2" data-uid="VRage.Generics.MySparseGrid`2" class="text-break">
+Class MySparseGrid&lt;TItemData, TCellData&gt;  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VRage.html">VRage</a>.<a class="xref" href="VRage.Generics.html">Generics</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>VRage.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MySparseGrid&lt;TItemData, TCellData&gt; : IDictionary&lt;Vector3I, TItemData&gt;, ICollection&lt;KeyValuePair&lt;Vector3I, TItemData&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;Vector3I, TItemData&gt;&gt;, IEnumerable</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TItemData</code></dt>
+    <dd></dd>
+    <dt><code>TCellData</code></dt>
+    <dd></dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">MySparseGrid&lt;TItemData, TCellData&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>, TItemData&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>, TItemData&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>, TItemData&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="VRage_Generics_MySparseGrid_2__ctor_" data-uid="VRage.Generics.MySparseGrid`2.#ctor*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2__ctor_System_Int32_" data-uid="VRage.Generics.MySparseGrid`2.#ctor(System.Int32)">
+  MySparseGrid(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MySparseGrid(int cellSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cellSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="VRage_Generics_MySparseGrid_2_CellSize" data-uid="VRage.Generics.MySparseGrid`2.CellSize">
+  CellSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int CellSize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="VRage_Generics_MySparseGrid_2_CellCount_" data-uid="VRage.Generics.MySparseGrid`2.CellCount*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_CellCount" data-uid="VRage.Generics.MySparseGrid`2.CellCount">
+  CellCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CellCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_Cells_" data-uid="VRage.Generics.MySparseGrid`2.Cells*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_Cells" data-uid="VRage.Generics.MySparseGrid`2.Cells">
+  Cells
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DictionaryReader&lt;Vector3I, MySparseGrid&lt;TItemData, TCellData&gt;.Cell&gt; Cells { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Collections.DictionaryReader-2.html">DictionaryReader</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>, <a class="xref" href="VRage.Generics.MySparseGrid-2.html">MySparseGrid</a>&lt;TItemData, TCellData&gt;.<a class="xref" href="VRage.Generics.MySparseGrid-2.Cell.html">Cell</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_DirtyCells_" data-uid="VRage.Generics.MySparseGrid`2.DirtyCells*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_DirtyCells" data-uid="VRage.Generics.MySparseGrid`2.DirtyCells">
+  DirtyCells
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HashSetReader&lt;Vector3I&gt; DirtyCells { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Collections.HashSetReader-1.html">HashSetReader</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_ItemCount_" data-uid="VRage.Generics.MySparseGrid`2.ItemCount*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_ItemCount" data-uid="VRage.Generics.MySparseGrid`2.ItemCount">
+  ItemCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ItemCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VRage_Generics_MySparseGrid_2_Add_" data-uid="VRage.Generics.MySparseGrid`2.Add*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_Add_VRageMath_Vector3I__0_" data-uid="VRage.Generics.MySparseGrid`2.Add(VRageMath.Vector3I,`0)">
+  Add(Vector3I, TItemData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3I Add(Vector3I pos, TItemData data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <span class="xref">TItemData</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_Clear_" data-uid="VRage.Generics.MySparseGrid`2.Clear*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_Clear" data-uid="VRage.Generics.MySparseGrid`2.Clear">
+  Clear()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_ClearCells_" data-uid="VRage.Generics.MySparseGrid`2.ClearCells*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_ClearCells" data-uid="VRage.Generics.MySparseGrid`2.ClearCells">
+  ClearCells()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearCells()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_Contains_" data-uid="VRage.Generics.MySparseGrid`2.Contains*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_Contains_VRageMath_Vector3I_" data-uid="VRage.Generics.MySparseGrid`2.Contains(VRageMath.Vector3I)">
+  Contains(Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(Vector3I pos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_Get_" data-uid="VRage.Generics.MySparseGrid`2.Get*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_Get_VRageMath_Vector3I_" data-uid="VRage.Generics.MySparseGrid`2.Get(VRageMath.Vector3I)">
+  Get(Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TItemData Get(Vector3I pos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TItemData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_GetCell_" data-uid="VRage.Generics.MySparseGrid`2.GetCell*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_GetCell_VRageMath_Vector3I_" data-uid="VRage.Generics.MySparseGrid`2.GetCell(VRageMath.Vector3I)">
+  GetCell(Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MySparseGrid&lt;TItemData, TCellData&gt;.Cell GetCell(Vector3I cell)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Generics.MySparseGrid-2.html">MySparseGrid</a>&lt;TItemData, TCellData&gt;.<a class="xref" href="VRage.Generics.MySparseGrid-2.Cell.html">Cell</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_GetEnumerator_" data-uid="VRage.Generics.MySparseGrid`2.GetEnumerator*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_GetEnumerator" data-uid="VRage.Generics.MySparseGrid`2.GetEnumerator">
+  GetEnumerator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Vector3I, MySparseGrid&lt;TItemData, TCellData&gt;.Cell&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="VRageMath.Vector3I.html">Vector3I</a>, <a class="xref" href="VRage.Generics.MySparseGrid-2.html">MySparseGrid</a>&lt;TItemData, TCellData&gt;.<a class="xref" href="VRage.Generics.MySparseGrid-2.Cell.html">Cell</a>&gt;.<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2.enumerator">Enumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_IsDirty_" data-uid="VRage.Generics.MySparseGrid`2.IsDirty*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_IsDirty_VRageMath_Vector3I_" data-uid="VRage.Generics.MySparseGrid`2.IsDirty(VRageMath.Vector3I)">
+  IsDirty(Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDirty(Vector3I cell)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_MarkDirty_" data-uid="VRage.Generics.MySparseGrid`2.MarkDirty*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_MarkDirty_VRageMath_Vector3I_" data-uid="VRage.Generics.MySparseGrid`2.MarkDirty(VRageMath.Vector3I)">
+  MarkDirty(Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MarkDirty(Vector3I cell)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_Remove_" data-uid="VRage.Generics.MySparseGrid`2.Remove*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_Remove_VRageMath_Vector3I_System_Boolean_" data-uid="VRage.Generics.MySparseGrid`2.Remove(VRageMath.Vector3I,System.Boolean)">
+  Remove(Vector3I, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(Vector3I pos, bool removeEmptyCell = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>removeEmptyCell</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_TryGet_" data-uid="VRage.Generics.MySparseGrid`2.TryGet*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_TryGet_VRageMath_Vector3I__0__" data-uid="VRage.Generics.MySparseGrid`2.TryGet(VRageMath.Vector3I,`0@)">
+  TryGet(Vector3I, out TItemData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGet(Vector3I pos, out TItemData data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <span class="xref">TItemData</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_TryGetCell_" data-uid="VRage.Generics.MySparseGrid`2.TryGetCell*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_TryGetCell_VRageMath_Vector3I_VRage_Generics_MySparseGrid__0__1__Cell__" data-uid="VRage.Generics.MySparseGrid`2.TryGetCell(VRageMath.Vector3I,VRage.Generics.MySparseGrid{`0,`1}.Cell@)">
+  TryGetCell(Vector3I, out Cell)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetCell(Vector3I cell, out MySparseGrid&lt;TItemData, TCellData&gt;.Cell result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="VRage.Generics.MySparseGrid-2.html">MySparseGrid</a>&lt;TItemData, TCellData&gt;.<a class="xref" href="VRage.Generics.MySparseGrid-2.Cell.html">Cell</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_UnmarkDirty_" data-uid="VRage.Generics.MySparseGrid`2.UnmarkDirty*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_UnmarkDirty_VRageMath_Vector3I_" data-uid="VRage.Generics.MySparseGrid`2.UnmarkDirty(VRageMath.Vector3I)">
+  UnmarkDirty(Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnmarkDirty(Vector3I cell)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Generics_MySparseGrid_2_UnmarkDirtyAll_" data-uid="VRage.Generics.MySparseGrid`2.UnmarkDirtyAll*"></a>
+
+  <h3 id="VRage_Generics_MySparseGrid_2_UnmarkDirtyAll" data-uid="VRage.Generics.MySparseGrid`2.UnmarkDirtyAll">
+  UnmarkDirtyAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnmarkDirtyAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

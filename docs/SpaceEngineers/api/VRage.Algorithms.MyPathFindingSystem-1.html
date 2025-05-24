@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyPathFindingSystem&lt;V&gt; | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyPathFindingSystem&lt;V&gt; | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VRage.Algorithms.MyPathFindingSystem`1">
+
+
+
+  <h1 id="VRage_Algorithms_MyPathFindingSystem_1" data-uid="VRage.Algorithms.MyPathFindingSystem`1" class="text-break">
+Class MyPathFindingSystem&lt;V&gt;  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VRage.html">VRage</a>.<a class="xref" href="VRage.Algorithms.html">Algorithms</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>VRage.Library.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MyPathFindingSystem&lt;V&gt; : IEnumerable&lt;V&gt;, IEnumerable where V : class, IMyPathVertex&lt;V&gt;</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>V</code></dt>
+    <dd></dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">MyPathFindingSystem&lt;V&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;V&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="Sandbox.Game.AI.Pathfinding.MyAutopilotPathfinding.html">MyAutopilotPathfinding</a></div>
+      <div><a class="xref" href="Sandbox.Game.AI.Pathfinding.MyHighLevelGroup.html">MyHighLevelGroup</a></div>
+      <div><a class="xref" href="Sandbox.Game.AI.Pathfinding.Obsolete.MyNavigationMesh.html">MyNavigationMesh</a></div>
+      <div><a class="xref" href="Sandbox.Game.AI.Pathfinding.Obsolete.MyPathfinding.html">MyPathfinding</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="System.Collections.Generic.ListExtensions.html#System_Collections_Generic_ListExtensions_MaxBy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">ListExtensions.MaxBy&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.ListExtensions.html#System_Collections_Generic_ListExtensions_MaxBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IComparer___1__">ListExtensions.MaxBy&lt;TItem, TKey&gt;(IEnumerable&lt;TItem&gt;, Func&lt;TItem, TKey&gt;, IComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.ListExtensions.html#System_Collections_Generic_ListExtensions_MinBy__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">ListExtensions.MinBy&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Linq.LinqExtensions.html#System_Linq_LinqExtensions_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__">LinqExtensions.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1__ctor_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.#ctor*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1__ctor_System_Int32_System_Func_System_Int64__" data-uid="VRage.Algorithms.MyPathFindingSystem`1.#ctor(System.Int32,System.Func{System.Int64})">
+  MyPathFindingSystem(int, Func&lt;long&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPathFindingSystem(int queueInitSize = 128, Func&lt;long&gt; timestampFunction = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queueInitSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>timestampFunction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_CalculateNextTimestamp_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.CalculateNextTimestamp*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_CalculateNextTimestamp" data-uid="VRage.Algorithms.MyPathFindingSystem`1.CalculateNextTimestamp">
+  CalculateNextTimestamp()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected long CalculateNextTimestamp()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_FindPath_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.FindPath*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_FindPath__0_System_Func__0_System_Single__System_Func__0_System_Single__System_Predicate__0__System_Boolean_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.FindPath(`0,System.Func{`0,System.Single},System.Func{`0,System.Single},System.Predicate{`0},System.Boolean)">
+  FindPath(V, Func&lt;V, float&gt;, Func&lt;V, float&gt;, Predicate&lt;V&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPath&lt;V&gt; FindPath(V start, Func&lt;V, float&gt; heuristic, Func&lt;V, float&gt; terminationCriterion, Predicate&lt;V&gt; vertexTraversable = null, bool returnClosest = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>heuristic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;V, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>terminationCriterion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;V, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>vertexTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>returnClosest</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Algorithms.MyPath-1.html">MyPath</a>&lt;V&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_FindPath_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.FindPath*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_FindPath__0__0_System_Predicate__0__System_Predicate_VRage_Algorithms_IMyPathEdge__0___" data-uid="VRage.Algorithms.MyPathFindingSystem`1.FindPath(`0,`0,System.Predicate{`0},System.Predicate{VRage.Algorithms.IMyPathEdge{`0}})">
+  FindPath(V, V, Predicate&lt;V&gt;, Predicate&lt;IMyPathEdge&lt;V&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPath&lt;V&gt; FindPath(V start, V end, Predicate&lt;V&gt; vertexTraversable = null, Predicate&lt;IMyPathEdge&lt;V&gt;&gt; edgeTraversable = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>start</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>end</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>vertexTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>edgeTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="VRage.Algorithms.IMyPathEdge-1.html">IMyPathEdge</a>&lt;V&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Algorithms.MyPath-1.html">MyPath</a>&lt;V&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_FindReachable_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.FindReachable*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_FindReachable__0_System_Collections_Generic_List__0__System_Predicate__0__System_Predicate__0__System_Predicate_VRage_Algorithms_IMyPathEdge__0___" data-uid="VRage.Algorithms.MyPathFindingSystem`1.FindReachable(`0,System.Collections.Generic.List{`0},System.Predicate{`0},System.Predicate{`0},System.Predicate{VRage.Algorithms.IMyPathEdge{`0}})">
+  FindReachable(V, List&lt;V&gt;, Predicate&lt;V&gt;, Predicate&lt;V&gt;, Predicate&lt;IMyPathEdge&lt;V&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FindReachable(V from, List&lt;V&gt; reachableVertices, Predicate&lt;V&gt; vertexFilter = null, Predicate&lt;V&gt; vertexTraversable = null, Predicate&lt;IMyPathEdge&lt;V&gt;&gt; edgeTraversable = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>reachableVertices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>vertexFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>vertexTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>edgeTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="VRage.Algorithms.IMyPathEdge-1.html">IMyPathEdge</a>&lt;V&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_GetCurrentTimestamp_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.GetCurrentTimestamp*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_GetCurrentTimestamp" data-uid="VRage.Algorithms.MyPathFindingSystem`1.GetCurrentTimestamp">
+  GetCurrentTimestamp()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetCurrentTimestamp()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_GetEnumerator_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.GetEnumerator*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_GetEnumerator" data-uid="VRage.Algorithms.MyPathFindingSystem`1.GetEnumerator">
+  GetEnumerator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPathFindingSystem&lt;V&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Algorithms.MyPathFindingSystem-1.html">MyPathFindingSystem</a>&lt;V&gt;.<a class="xref" href="VRage.Algorithms.MyPathFindingSystem-1.Enumerator.html">Enumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_PerformTraversal_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.PerformTraversal*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_PerformTraversal" data-uid="VRage.Algorithms.MyPathFindingSystem`1.PerformTraversal">
+  PerformTraversal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PerformTraversal()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_PrepareTraversal_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.PrepareTraversal*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_PrepareTraversal__0_System_Predicate__0__System_Predicate__0__System_Predicate_VRage_Algorithms_IMyPathEdge__0___" data-uid="VRage.Algorithms.MyPathFindingSystem`1.PrepareTraversal(`0,System.Predicate{`0},System.Predicate{`0},System.Predicate{VRage.Algorithms.IMyPathEdge{`0}})">
+  PrepareTraversal(V, Predicate&lt;V&gt;, Predicate&lt;V&gt;, Predicate&lt;IMyPathEdge&lt;V&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PrepareTraversal(V startingVertex, Predicate&lt;V&gt; vertexFilter = null, Predicate&lt;V&gt; vertexTraversable = null, Predicate&lt;IMyPathEdge&lt;V&gt;&gt; edgeTraversable = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startingVertex</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>vertexFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>vertexTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>edgeTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="VRage.Algorithms.IMyPathEdge-1.html">IMyPathEdge</a>&lt;V&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_Reachable_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.Reachable*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_Reachable__0__0_System_Predicate__0__System_Predicate__0__System_Predicate_VRage_Algorithms_IMyPathEdge__0___" data-uid="VRage.Algorithms.MyPathFindingSystem`1.Reachable(`0,`0,System.Predicate{`0},System.Predicate{`0},System.Predicate{VRage.Algorithms.IMyPathEdge{`0}})">
+  Reachable(V, V, Predicate&lt;V&gt;, Predicate&lt;V&gt;, Predicate&lt;IMyPathEdge&lt;V&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Reachable(V from, V to, Predicate&lt;V&gt; vertexFilter = null, Predicate&lt;V&gt; vertexTraversable = null, Predicate&lt;IMyPathEdge&lt;V&gt;&gt; edgeTraversable = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>to</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>vertexFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>vertexTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;V&gt;</dt>
+    <dd></dd>
+    <dt><code>edgeTraversable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="VRage.Algorithms.IMyPathEdge-1.html">IMyPathEdge</a>&lt;V&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Algorithms_MyPathFindingSystem_1_VisitedBetween_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.VisitedBetween*"></a>
+
+  <h3 id="VRage_Algorithms_MyPathFindingSystem_1_VisitedBetween__0_System_Int64_System_Int64_" data-uid="VRage.Algorithms.MyPathFindingSystem`1.VisitedBetween(`0,System.Int64,System.Int64)">
+  VisitedBetween(V, long, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VisitedBetween(V vertex, long start, long end)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vertex</code> <span class="xref">V</span></dt>
+    <dd></dd>
+    <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

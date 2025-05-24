@@ -121,6 +121,12 @@ Class CVROverlay
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
     <div>
@@ -134,12 +140,6 @@ Class CVROverlay
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
   </dd></dl>
 
@@ -155,7 +155,7 @@ Class CVROverlay
   <a id="Valve_VR_CVROverlay__ctor_" data-uid="Valve.VR.CVROverlay.#ctor*"></a>
 
   <h3 id="Valve_VR_CVROverlay__ctor_System_IntPtr_" data-uid="Valve.VR.CVROverlay.#ctor(System.IntPtr)">
-  CVROverlay(IntPtr)
+  CVROverlay(nint)
   
   </h3>
 
@@ -163,12 +163,12 @@ Class CVROverlay
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CVROverlay(IntPtr pInterface)</code></pre>
+    <pre><code class="lang-csharp hljs">public CVROverlay(nint pInterface)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pInterface</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dt><code>pInterface</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
     <dd></dd>
   </dl>
 
@@ -790,7 +790,7 @@ Class CVROverlay
   <a id="Valve_VR_CVROverlay_GetOverlayImageData_" data-uid="Valve.VR.CVROverlay.GetOverlayImageData*"></a>
 
   <h3 id="Valve_VR_CVROverlay_GetOverlayImageData_System_UInt64_System_IntPtr_System_UInt32_System_UInt32__System_UInt32__" data-uid="Valve.VR.CVROverlay.GetOverlayImageData(System.UInt64,System.IntPtr,System.UInt32,System.UInt32@,System.UInt32@)">
-  GetOverlayImageData(ulong, IntPtr, uint, ref uint, ref uint)
+  GetOverlayImageData(ulong, nint, uint, ref uint, ref uint)
   
   </h3>
 
@@ -798,14 +798,14 @@ Class CVROverlay
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EVROverlayError GetOverlayImageData(ulong ulOverlayHandle, IntPtr pvBuffer, uint unBufferSize, ref uint punWidth, ref uint punHeight)</code></pre>
+    <pre><code class="lang-csharp hljs">public EVROverlayError GetOverlayImageData(ulong ulOverlayHandle, nint pvBuffer, uint unBufferSize, ref uint punWidth, ref uint punHeight)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>ulOverlayHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
     <dd></dd>
-    <dt><code>pvBuffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dt><code>pvBuffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
     <dd></dd>
     <dt><code>unBufferSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
     <dd></dd>
@@ -1106,7 +1106,7 @@ Class CVROverlay
   <a id="Valve_VR_CVROverlay_GetOverlayTexture_" data-uid="Valve.VR.CVROverlay.GetOverlayTexture*"></a>
 
   <h3 id="Valve_VR_CVROverlay_GetOverlayTexture_System_UInt64_System_IntPtr__System_IntPtr_System_UInt32__System_UInt32__System_UInt32__Valve_VR_EGraphicsAPIConvention__Valve_VR_EColorSpace__" data-uid="Valve.VR.CVROverlay.GetOverlayTexture(System.UInt64,System.IntPtr@,System.IntPtr,System.UInt32@,System.UInt32@,System.UInt32@,Valve.VR.EGraphicsAPIConvention@,Valve.VR.EColorSpace@)">
-  GetOverlayTexture(ulong, ref IntPtr, IntPtr, ref uint, ref uint, ref uint, ref EGraphicsAPIConvention, ref EColorSpace)
+  GetOverlayTexture(ulong, ref nint, nint, ref uint, ref uint, ref uint, ref EGraphicsAPIConvention, ref EColorSpace)
   
   </h3>
 
@@ -1114,16 +1114,16 @@ Class CVROverlay
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EVROverlayError GetOverlayTexture(ulong ulOverlayHandle, ref IntPtr pNativeTextureHandle, IntPtr pNativeTextureRef, ref uint pWidth, ref uint pHeight, ref uint pNativeFormat, ref EGraphicsAPIConvention pAPI, ref EColorSpace pColorSpace)</code></pre>
+    <pre><code class="lang-csharp hljs">public EVROverlayError GetOverlayTexture(ulong ulOverlayHandle, ref nint pNativeTextureHandle, nint pNativeTextureRef, ref uint pWidth, ref uint pHeight, ref uint pNativeFormat, ref EGraphicsAPIConvention pAPI, ref EColorSpace pColorSpace)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>ulOverlayHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
     <dd></dd>
-    <dt><code>pNativeTextureHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dt><code>pNativeTextureHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
     <dd></dd>
-    <dt><code>pNativeTextureRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dt><code>pNativeTextureRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
     <dd></dd>
     <dt><code>pWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
     <dd></dd>
@@ -1860,7 +1860,7 @@ Class CVROverlay
   <a id="Valve_VR_CVROverlay_ReleaseNativeOverlayHandle_" data-uid="Valve.VR.CVROverlay.ReleaseNativeOverlayHandle*"></a>
 
   <h3 id="Valve_VR_CVROverlay_ReleaseNativeOverlayHandle_System_UInt64_System_IntPtr_" data-uid="Valve.VR.CVROverlay.ReleaseNativeOverlayHandle(System.UInt64,System.IntPtr)">
-  ReleaseNativeOverlayHandle(ulong, IntPtr)
+  ReleaseNativeOverlayHandle(ulong, nint)
   
   </h3>
 
@@ -1868,14 +1868,14 @@ Class CVROverlay
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EVROverlayError ReleaseNativeOverlayHandle(ulong ulOverlayHandle, IntPtr pNativeTextureHandle)</code></pre>
+    <pre><code class="lang-csharp hljs">public EVROverlayError ReleaseNativeOverlayHandle(ulong ulOverlayHandle, nint pNativeTextureHandle)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>ulOverlayHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
     <dd></dd>
-    <dt><code>pNativeTextureHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dt><code>pNativeTextureHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
     <dd></dd>
   </dl>
 
@@ -2388,7 +2388,7 @@ Class CVROverlay
   <a id="Valve_VR_CVROverlay_SetOverlayRaw_" data-uid="Valve.VR.CVROverlay.SetOverlayRaw*"></a>
 
   <h3 id="Valve_VR_CVROverlay_SetOverlayRaw_System_UInt64_System_IntPtr_System_UInt32_System_UInt32_System_UInt32_" data-uid="Valve.VR.CVROverlay.SetOverlayRaw(System.UInt64,System.IntPtr,System.UInt32,System.UInt32,System.UInt32)">
-  SetOverlayRaw(ulong, IntPtr, uint, uint, uint)
+  SetOverlayRaw(ulong, nint, uint, uint, uint)
   
   </h3>
 
@@ -2396,14 +2396,14 @@ Class CVROverlay
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EVROverlayError SetOverlayRaw(ulong ulOverlayHandle, IntPtr pvBuffer, uint unWidth, uint unHeight, uint unDepth)</code></pre>
+    <pre><code class="lang-csharp hljs">public EVROverlayError SetOverlayRaw(ulong ulOverlayHandle, nint pvBuffer, uint unWidth, uint unHeight, uint unDepth)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>ulOverlayHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
     <dd></dd>
-    <dt><code>pvBuffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dt><code>pvBuffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
     <dd></dd>
     <dt><code>unWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
     <dd></dd>

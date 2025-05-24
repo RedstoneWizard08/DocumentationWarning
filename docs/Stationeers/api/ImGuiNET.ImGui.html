@@ -101,7 +101,8 @@ Class ImGui
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ImGui</code></pre>
+    <pre><code class="lang-csharp hljs">[Preserve]
+public static class ImGui</code></pre>
   </div>
 
 
@@ -136,23 +137,13 @@ Class ImGui
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
   </dd></dl>
 
-  <dl class="typelist extensionMethods">
-    <dt>Extension Methods</dt>
-    <dd>
-  <div>
-      <a class="xref" href="Assets.Scripts.Serialization.XmlSerialization.html#Assets_Scripts_Serialization_XmlSerialization_SaveXml__1___0_System_String_">XmlSerialization.SaveXml&lt;T&gt;(T, string)</a>
-  </div>
-  <div>
-      <a class="xref" href="Assets.Scripts.Util.ExtensionMethods.html#Assets_Scripts_Util_ExtensionMethods_AsList__1___0_">ExtensionMethods.AsList&lt;T&gt;(T)</a>
-  </div>
-  </dd></dl>
 
 
 
@@ -239,7 +230,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_AcceptDragDropPayload_" data-uid="ImGuiNET.ImGui.AcceptDragDropPayload*"></a>
 
   <h3 id="ImGuiNET_ImGui_AcceptDragDropPayload_System_String_System_String__ImGuiNET_ImGuiDragDropFlags_" data-uid="ImGuiNET.ImGui.AcceptDragDropPayload(System.String,System.String@,ImGuiNET.ImGuiDragDropFlags)">
-  AcceptDragDropPayload(string, out string, ImGuiDragDropFlags)
+  AcceptDragDropPayload(string, out string?, ImGuiDragDropFlags)
   
   </h3>
 
@@ -247,7 +238,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool AcceptDragDropPayload(string type, out string payload, ImGuiDragDropFlags flags)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool AcceptDragDropPayload(string type, out string? payload, ImGuiDragDropFlags flags = ImGuiDragDropFlags.None)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -287,7 +278,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool AcceptDragDropPayload&lt;T&gt;(string type, out T payload, ImGuiDragDropFlags flags)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool AcceptDragDropPayload&lt;T&gt;(string type, out T payload, ImGuiDragDropFlags flags = ImGuiDragDropFlags.None) where T : unmanaged</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -32770,7 +32761,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextCallback)">
-  InputText(string, ref byte, uint, ImGuiInputTextCallback)
+  InputText(string, ref byte, uint, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -32778,7 +32769,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -32812,7 +32803,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputText(string, ref byte, uint, ImGuiInputTextCallback, IntPtr)
+  InputText(string, ref byte, uint, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -32820,7 +32811,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -32898,7 +32889,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputText(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputText(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -32906,7 +32897,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -32942,7 +32933,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputText(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputText(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -32950,7 +32941,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33156,7 +33147,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_Byte___System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.Byte[],System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputText(string, byte[], uint, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputText(string, byte[], uint, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -33164,7 +33155,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, byte[] buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, byte[] buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33200,7 +33191,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_Byte___System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.Byte[],System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputText(string, byte[], uint, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputText(string, byte[], uint, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -33208,7 +33199,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, byte[] buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, byte[] buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33328,7 +33319,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_IntPtr_System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.IntPtr,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputText(string, IntPtr, uint, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputText(string, IntPtr, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -33336,7 +33327,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, IntPtr buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, IntPtr buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33372,7 +33363,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_IntPtr_System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.IntPtr,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputText(string, IntPtr, uint, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputText(string, IntPtr, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -33380,7 +33371,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, IntPtr buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, IntPtr buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33500,7 +33491,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_String__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.String@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputText(string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputText(string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -33508,7 +33499,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33544,7 +33535,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputText_" data-uid="ImGuiNET.ImGui.InputText*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputText_System_String_System_String__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputText(System.String,System.String@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputText(string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputText(string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -33552,7 +33543,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputText(string label, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33636,7 +33627,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextEx_" data-uid="ImGuiNET.ImGui.InputTextEx*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextEx_System_String_System_String_System_Byte__System_Int32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextEx(System.String,System.String,System.Byte@,System.Int32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextEx(string, string, ref byte, int, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputTextEx(string, string, ref byte, int, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -33644,7 +33635,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextEx(string label, string hint, ref byte buf, int buf_size, Vector2 size_arg, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextEx(string label, string hint, ref byte buf, int buf_size, Vector2 size_arg, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33684,7 +33675,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextEx_" data-uid="ImGuiNET.ImGui.InputTextEx*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextEx_System_String_System_String_System_Byte__System_Int32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextEx(System.String,System.String,System.Byte@,System.Int32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextEx(string, string, ref byte, int, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputTextEx(string, string, ref byte, int, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -33692,7 +33683,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextEx(string label, string hint, ref byte buf, int buf_size, Vector2 size_arg, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextEx(string label, string hint, ref byte buf, int buf_size, Vector2 size_arg, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33822,7 +33813,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextMultiline(string, ref byte, uint, ImGuiInputTextCallback)
+  InputTextMultiline(string, ref byte, uint, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -33830,7 +33821,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33864,7 +33855,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextMultiline(string, ref byte, uint, ImGuiInputTextCallback, IntPtr)
+  InputTextMultiline(string, ref byte, uint, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -33872,7 +33863,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33950,7 +33941,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextMultiline(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputTextMultiline(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -33958,7 +33949,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -33994,7 +33985,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextMultiline(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputTextMultiline(string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -34002,7 +33993,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34168,7 +34159,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextCallback)
+  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -34176,7 +34167,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34212,7 +34203,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextCallback, IntPtr)
+  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -34220,7 +34211,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34302,7 +34293,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -34310,7 +34301,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34348,7 +34339,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_Byte__System_UInt32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.Byte@,System.UInt32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputTextMultiline(string, ref byte, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -34356,7 +34347,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref byte buf, uint buf_size, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34572,7 +34563,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_String__System_UInt32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.String@,System.UInt32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextMultiline(string, ref string, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputTextMultiline(string, ref string, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -34580,7 +34571,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref string input, uint maxLength, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref string input, uint maxLength, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34618,7 +34609,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextMultiline_" data-uid="ImGuiNET.ImGui.InputTextMultiline*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextMultiline_System_String_System_String__System_UInt32_UnityEngine_Vector2_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextMultiline(System.String,System.String@,System.UInt32,UnityEngine.Vector2,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextMultiline(string, ref string, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputTextMultiline(string, ref string, uint, Vector2, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -34626,7 +34617,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref string input, uint maxLength, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextMultiline(string label, ref string input, uint maxLength, Vector2 size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34708,7 +34699,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextWithHint_" data-uid="ImGuiNET.ImGui.InputTextWithHint*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextWithHint_System_String_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextWithHint(System.String,System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextCallback)
+  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -34716,7 +34707,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34752,7 +34743,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextWithHint_" data-uid="ImGuiNET.ImGui.InputTextWithHint*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextWithHint_System_String_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextWithHint(System.String,System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextCallback, IntPtr)
+  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -34760,7 +34751,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34842,7 +34833,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextWithHint_" data-uid="ImGuiNET.ImGui.InputTextWithHint*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextWithHint_System_String_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextWithHint(System.String,System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -34850,7 +34841,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -34888,7 +34879,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextWithHint_" data-uid="ImGuiNET.ImGui.InputTextWithHint*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextWithHint_System_String_System_String_System_Byte__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextWithHint(System.String,System.String,System.Byte@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputTextWithHint(string, string, ref byte, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -34896,7 +34887,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref byte buf, uint buf_size, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -35112,7 +35103,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextWithHint_" data-uid="ImGuiNET.ImGui.InputTextWithHint*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextWithHint_System_String_System_String_System_String__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_" data-uid="ImGuiNET.ImGui.InputTextWithHint(System.String,System.String,System.String@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback)">
-  InputTextWithHint(string, string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback)
+  InputTextWithHint(string, string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?)
   
   </h3>
 
@@ -35120,7 +35111,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -35158,7 +35149,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_InputTextWithHint_" data-uid="ImGuiNET.ImGui.InputTextWithHint*"></a>
 
   <h3 id="ImGuiNET_ImGui_InputTextWithHint_System_String_System_String_System_String__System_UInt32_ImGuiNET_ImGuiInputTextFlags_ImGuiNET_ImGuiInputTextCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.InputTextWithHint(System.String,System.String,System.String@,System.UInt32,ImGuiNET.ImGuiInputTextFlags,ImGuiNET.ImGuiInputTextCallback,System.IntPtr)">
-  InputTextWithHint(string, string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback, IntPtr)
+  InputTextWithHint(string, string, ref string, uint, ImGuiInputTextFlags, ImGuiInputTextCallback?, IntPtr)
   
   </h3>
 
@@ -35166,7 +35157,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback callback, IntPtr user_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool InputTextWithHint(string label, string hint, ref string input, uint maxLength, ImGuiInputTextFlags flags, ImGuiInputTextCallback? callback, IntPtr user_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -50232,7 +50223,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void SetDragDropPayload(string type, string data, ImGuiCond cond)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void SetDragDropPayload(string type, string data, ImGuiCond cond = ImGuiCond.None)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -50267,7 +50258,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void SetDragDropPayload&lt;T&gt;(string type, T data, ImGuiCond cond)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void SetDragDropPayload&lt;T&gt;(string type, T data, ImGuiCond cond = ImGuiCond.None) where T : unmanaged</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -51203,7 +51194,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_SetNextWindowSizeConstraints_" data-uid="ImGuiNET.ImGui.SetNextWindowSizeConstraints*"></a>
 
   <h3 id="ImGuiNET_ImGui_SetNextWindowSizeConstraints_UnityEngine_Vector2_UnityEngine_Vector2_ImGuiNET_ImGuiSizeCallback_" data-uid="ImGuiNET.ImGui.SetNextWindowSizeConstraints(UnityEngine.Vector2,UnityEngine.Vector2,ImGuiNET.ImGuiSizeCallback)">
-  SetNextWindowSizeConstraints(Vector2, Vector2, ImGuiSizeCallback)
+  SetNextWindowSizeConstraints(Vector2, Vector2, ImGuiSizeCallback?)
   
   </h3>
 
@@ -51211,7 +51202,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void SetNextWindowSizeConstraints(Vector2 size_min, Vector2 size_max, ImGuiSizeCallback custom_callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void SetNextWindowSizeConstraints(Vector2 size_min, Vector2 size_max, ImGuiSizeCallback? custom_callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -51238,7 +51229,7 @@ Class ImGui
   <a id="ImGuiNET_ImGui_SetNextWindowSizeConstraints_" data-uid="ImGuiNET.ImGui.SetNextWindowSizeConstraints*"></a>
 
   <h3 id="ImGuiNET_ImGui_SetNextWindowSizeConstraints_UnityEngine_Vector2_UnityEngine_Vector2_ImGuiNET_ImGuiSizeCallback_System_IntPtr_" data-uid="ImGuiNET.ImGui.SetNextWindowSizeConstraints(UnityEngine.Vector2,UnityEngine.Vector2,ImGuiNET.ImGuiSizeCallback,System.IntPtr)">
-  SetNextWindowSizeConstraints(Vector2, Vector2, ImGuiSizeCallback, IntPtr)
+  SetNextWindowSizeConstraints(Vector2, Vector2, ImGuiSizeCallback?, IntPtr)
   
   </h3>
 
@@ -51246,7 +51237,7 @@ Class ImGui
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void SetNextWindowSizeConstraints(Vector2 size_min, Vector2 size_max, ImGuiSizeCallback custom_callback, IntPtr custom_callback_data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void SetNextWindowSizeConstraints(Vector2 size_min, Vector2 size_max, ImGuiSizeCallback? custom_callback, IntPtr custom_callback_data)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

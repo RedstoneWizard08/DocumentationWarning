@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyPathfindingOctreeNode | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyPathfindingOctreeNode | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VRage.Game.AI.MyPathfindingOctreeNode">
+
+
+
+  <h1 id="VRage_Game_AI_MyPathfindingOctreeNode" data-uid="VRage.Game.AI.MyPathfindingOctreeNode" class="text-break">
+Class MyPathfindingOctreeNode  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VRage.html">VRage</a>.<a class="xref" href="VRage.Game.html">Game</a>.<a class="xref" href="VRage.Game.AI.html">AI</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>VRage.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MyPathfindingOctreeNode</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">MyPathfindingOctreeNode</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode__ctor_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.#ctor*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode__ctor_VRageMath_BoundingBoxI_VRage_Game_ModAPI_IMyCubeGrid_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.#ctor(VRageMath.BoundingBoxI,VRage.Game.ModAPI.IMyCubeGrid)">
+  MyPathfindingOctreeNode(BoundingBoxI, IMyCubeGrid)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPathfindingOctreeNode(BoundingBoxI bounds, IMyCubeGrid grid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bounds</code> <a class="xref" href="VRageMath.BoundingBoxI.html">BoundingBoxI</a></dt>
+    <dd></dd>
+    <dt><code>grid</code> <a class="xref" href="VRage.Game.ModAPI.IMyCubeGrid.html">IMyCubeGrid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_Bounds_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Bounds*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_Bounds" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Bounds">
+  Bounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundingBoxI Bounds { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.BoundingBoxI.html">BoundingBoxI</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_Center_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Center*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_Center" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Center">
+  Center
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Center { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_Children_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Children*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_Children" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Children">
+  Children
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPathfindingOctreeNode[] Children { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.AI.MyPathfindingOctreeNode.html">MyPathfindingOctreeNode</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_CornerVertexes_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.CornerVertexes*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_CornerVertexes" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.CornerVertexes">
+  CornerVertexes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MyPathVertex&gt; CornerVertexes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.AI.MyPathVertex.html">MyPathVertex</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_IsEmpty_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.IsEmpty*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_IsEmpty" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.IsEmpty">
+  IsEmpty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmpty { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_LocalAABB_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.LocalAABB*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_LocalAABB" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.LocalAABB">
+  LocalAABB
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundingBoxD LocalAABB { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.BoundingBoxD.html">BoundingBoxD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_Neighbours_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Neighbours*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_Neighbours" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Neighbours">
+  Neighbours
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MyPathfindingOctreeNode&gt; Neighbours { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.AI.MyPathfindingOctreeNode.html">MyPathfindingOctreeNode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_PathVertex_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.PathVertex*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_PathVertex" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.PathVertex">
+  PathVertex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyPathVertex PathVertex { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.AI.MyPathVertex.html">MyPathVertex</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_WorldOBB_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.WorldOBB*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_WorldOBB" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.WorldOBB">
+  WorldOBB
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyOrientedBoundingBoxD WorldOBB { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.MyOrientedBoundingBoxD.html">MyOrientedBoundingBoxD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_AddChild_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddChild*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_AddChild_VRage_Game_AI_MyPathfindingOctreeNode_System_Int32_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddChild(VRage.Game.AI.MyPathfindingOctreeNode,System.Int32)">
+  AddChild(MyPathfindingOctreeNode, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddChild(MyPathfindingOctreeNode child, int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>child</code> <a class="xref" href="VRage.Game.AI.MyPathfindingOctreeNode.html">MyPathfindingOctreeNode</a></dt>
+    <dd></dd>
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_AddCornerVertex_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddCornerVertex*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_AddCornerVertex_VRage_Game_AI_MyPathVertex_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddCornerVertex(VRage.Game.AI.MyPathVertex)">
+  AddCornerVertex(MyPathVertex)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddCornerVertex(MyPathVertex corner)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>corner</code> <a class="xref" href="VRage.Game.AI.MyPathVertex.html">MyPathVertex</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_AddCornerVertexes_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddCornerVertexes*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_AddCornerVertexes_System_Collections_Generic_List_VRage_Game_AI_MyPathVertex__" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddCornerVertexes(System.Collections.Generic.List{VRage.Game.AI.MyPathVertex})">
+  AddCornerVertexes(List&lt;MyPathVertex&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddCornerVertexes(List&lt;MyPathVertex&gt; corners)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>corners</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.AI.MyPathVertex.html">MyPathVertex</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_AddNeighbour_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddNeighbour*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_AddNeighbour_VRage_Game_AI_MyPathfindingOctreeNode_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddNeighbour(VRage.Game.AI.MyPathfindingOctreeNode)">
+  AddNeighbour(MyPathfindingOctreeNode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNeighbour(MyPathfindingOctreeNode neighbour)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>neighbour</code> <a class="xref" href="VRage.Game.AI.MyPathfindingOctreeNode.html">MyPathfindingOctreeNode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_AddNeighbours_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddNeighbours*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_AddNeighbours_System_Collections_Generic_List_VRage_Game_AI_MyPathfindingOctreeNode__" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.AddNeighbours(System.Collections.Generic.List{VRage.Game.AI.MyPathfindingOctreeNode})">
+  AddNeighbours(List&lt;MyPathfindingOctreeNode&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNeighbours(List&lt;MyPathfindingOctreeNode&gt; neighbours)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>neighbours</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.AI.MyPathfindingOctreeNode.html">MyPathfindingOctreeNode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_ClearNeighbours_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.ClearNeighbours*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_ClearNeighbours" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.ClearNeighbours">
+  ClearNeighbours()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearNeighbours()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_Contains_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Contains*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_Contains_VRage_Game_ModAPI_IMyCubeGrid_VRageMath_Vector3D_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Contains(VRage.Game.ModAPI.IMyCubeGrid,VRageMath.Vector3D)">
+  Contains(IMyCubeGrid, Vector3D)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(IMyCubeGrid grid, Vector3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>grid</code> <a class="xref" href="VRage.Game.ModAPI.IMyCubeGrid.html">IMyCubeGrid</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="VRageMath.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_GetEmptyLeafs_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.GetEmptyLeafs*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_GetEmptyLeafs_System_Collections_Generic_List_VRage_Game_AI_MyPathfindingOctreeNode__" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.GetEmptyLeafs(System.Collections.Generic.List{VRage.Game.AI.MyPathfindingOctreeNode})">
+  GetEmptyLeafs(List&lt;MyPathfindingOctreeNode&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetEmptyLeafs(List&lt;MyPathfindingOctreeNode&gt; leafsList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>leafsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.AI.MyPathfindingOctreeNode.html">MyPathfindingOctreeNode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_GetLeafs_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.GetLeafs*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_GetLeafs_System_Collections_Generic_List_VRage_Game_AI_MyPathfindingOctreeNode__" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.GetLeafs(System.Collections.Generic.List{VRage.Game.AI.MyPathfindingOctreeNode})">
+  GetLeafs(List&lt;MyPathfindingOctreeNode&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetLeafs(List&lt;MyPathfindingOctreeNode&gt; leafsList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>leafsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRage.Game.AI.MyPathfindingOctreeNode.html">MyPathfindingOctreeNode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRage_Game_AI_MyPathfindingOctreeNode_Intersects_" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Intersects*"></a>
+
+  <h3 id="VRage_Game_AI_MyPathfindingOctreeNode_Intersects_VRage_Game_ModAPI_IMyCubeGrid_VRageMath_MyOrientedBoundingBoxD__" data-uid="VRage.Game.AI.MyPathfindingOctreeNode.Intersects(VRage.Game.ModAPI.IMyCubeGrid,VRageMath.MyOrientedBoundingBoxD@)">
+  Intersects(IMyCubeGrid, ref MyOrientedBoundingBoxD)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Intersects(IMyCubeGrid grid, ref MyOrientedBoundingBoxD box)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>grid</code> <a class="xref" href="VRage.Game.ModAPI.IMyCubeGrid.html">IMyCubeGrid</a></dt>
+    <dd></dd>
+    <dt><code>box</code> <a class="xref" href="VRageMath.MyOrientedBoundingBoxD.html">MyOrientedBoundingBoxD</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

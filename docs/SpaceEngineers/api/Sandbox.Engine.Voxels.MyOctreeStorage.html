@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyOctreeStorage | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyOctreeStorage | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Sandbox.Engine.Voxels.MyOctreeStorage">
+
+
+
+  <h1 id="Sandbox_Engine_Voxels_MyOctreeStorage" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage" class="text-break">
+Class MyOctreeStorage  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Sandbox.html">Sandbox</a>.<a class="xref" href="Sandbox.Engine.html">Engine</a>.<a class="xref" href="Sandbox.Engine.Voxels.html">Voxels</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Sandbox.Game.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MyOctreeStorage : MyStorageBase, IMyStorage, IMyStorage, IMyCompositeShape</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html">MyStorageBase</a></div>
+      <div><span class="xref">MyOctreeStorage</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="VRage.Game.Voxels.IMyStorage.html">IMyStorage</a></div>
+      <div><a class="xref" href="VRage.ModAPI.IMyStorage.html">IMyStorage</a></div>
+      <div><a class="xref" href="Sandbox.Game.World.Generator.IMyCompositeShape.html">IMyCompositeShape</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_STORAGE_TYPE_VERSION_CELL">MyStorageBase.STORAGE_TYPE_VERSION_CELL</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_STORAGE_TYPE_VERSION_OCTREE">MyStorageBase.STORAGE_TYPE_VERSION_OCTREE</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_STORAGE_TYPE_VERSION_OCTREE_ACCESS">MyStorageBase.STORAGE_TYPE_VERSION_OCTREE_ACCESS</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_StorageLock">MyStorageBase.StorageLock</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_UseStorageCache">MyStorageBase.UseStorageCache</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_ConvertAccessCoordinates_VRageMath_Vector3I__VRageMath_BoundingBoxD__">MyStorageBase.ConvertAccessCoordinates(ref Vector3I, out BoundingBoxD)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_AccessDeleteFirst">MyStorageBase.AccessDeleteFirst()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_MarkClear_VRageMath_Vector3I__">MyStorageBase.MarkClear(ref Vector3I)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_AccessDelete_VRageMath_Vector3I__VRage_Voxels_MyStorageDataTypeFlags_System_Boolean_">MyStorageBase.AccessDelete(ref Vector3I, MyStorageDataTypeFlags, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_GetAccessRange_VRageMath_Vector3I_VRageMath_Vector3I__VRageMath_Vector3I__">MyStorageBase.GetAccessRange(Vector3I, out Vector3I, out Vector3I)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_AccessReset">MyStorageBase.AccessReset()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_AccessRange_Sandbox_Engine_Voxels_MyStorageBase_MyAccessType_VRage_Voxels_MyStorageDataTypeEnum_VRage_Voxels_MyCellCoord__">MyStorageBase.AccessRange(MyStorageBase.MyAccessType, MyStorageDataTypeEnum, ref MyCellCoord)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_ReadStorageAccess_System_IO_Stream_">MyStorageBase.ReadStorageAccess(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_WriteStorageAccess_System_IO_Stream_">MyStorageBase.WriteStorageAccess(Stream)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_LoadAccess_System_IO_Stream_VRage_Voxels_MyCellCoord_">MyStorageBase.LoadAccess(Stream, MyCellCoord)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_SaveAccess_System_IO_Stream_VRage_Voxels_MyCellCoord_">MyStorageBase.SaveAccess(Stream, MyCellCoord)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_DebugDrawDelete_VRageMath_Vector3I_Sandbox_Game_Entities_MyVoxelBase_">MyStorageBase.DebugDrawDelete(Vector3I, MyVoxelBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_InitWriteCache_System_Int32_">MyStorageBase.InitWriteCache(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_CleanCachedChunks">MyStorageBase.CleanCachedChunks()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_WritePending_System_Boolean_">MyStorageBase.WritePending(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_GetStats_Sandbox_Engine_Voxels_MyStorageBase_WriteCacheStats__">MyStorageBase.GetStats(out MyStorageBase.WriteCacheStats)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_FlushCache_VRageMath_BoundingBoxI__System_Int32_">MyStorageBase.FlushCache(ref BoundingBoxI, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_CreateAsteroidStorage_System_String_">MyStorageBase.CreateAsteroidStorage(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_NotifyChanged_VRageMath_Vector3I_VRageMath_Vector3I_VRage_Voxels_MyStorageDataTypeFlags_">MyStorageBase.NotifyChanged(Vector3I, Vector3I, MyStorageDataTypeFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_OnRangeChanged_VRageMath_Vector3I_VRageMath_Vector3I_VRage_Voxels_MyStorageDataTypeFlags_">MyStorageBase.OnRangeChanged(Vector3I, Vector3I, MyStorageDataTypeFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_ResetDataCache">MyStorageBase.ResetDataCache()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_SetDataCache_System_Byte___System_Boolean_">MyStorageBase.SetDataCache(byte[], bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_LoadFromFile_System_String_System_Collections_Generic_Dictionary_System_Byte_System_Byte__System_Boolean_">MyStorageBase.LoadFromFile(string, Dictionary&lt;byte, byte&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_ResetCache">MyStorageBase.ResetCache()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Load_System_String_System_Boolean_System_Boolean_">MyStorageBase.Load(string, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Load_System_Byte___System_Boolean__">MyStorageBase.Load(byte[], out bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Save_System_Byte____">MyStorageBase.Save(out byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_GetVoxelData">MyStorageBase.GetVoxelData()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Reset_VRage_Voxels_MyStorageDataTypeFlags_">MyStorageBase.Reset(MyStorageDataTypeFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_OverwriteAllMaterials_VRage_Game_MyVoxelMaterialDefinition_">MyStorageBase.OverwriteAllMaterials(MyVoxelMaterialDefinition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_ExecuteOperationFast__1___0__VRage_Voxels_MyStorageDataTypeFlags_VRageMath_Vector3I__VRageMath_Vector3I__System_Boolean_System_Boolean_">MyStorageBase.ExecuteOperationFast&lt;TVoxelOperator&gt;(ref TVoxelOperator, MyStorageDataTypeFlags, ref Vector3I, ref Vector3I, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_WriteRange_VRage_Voxels_MyStorageData_VRage_Voxels_MyStorageDataTypeFlags_VRageMath_Vector3I_VRageMath_Vector3I_System_Boolean_System_Boolean_">MyStorageBase.WriteRange(MyStorageData, MyStorageDataTypeFlags, Vector3I, Vector3I, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Sweep_VRage_Voxels_MyStorageDataTypeFlags_">MyStorageBase.Sweep(MyStorageDataTypeFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_IsRangeModified_VRageMath_BoundingBoxI__">MyStorageBase.IsRangeModified(ref BoundingBoxI)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_ReadRange_VRage_Voxels_MyStorageData_VRage_Voxels_MyStorageDataTypeFlags_System_Int32_VRageMath_Vector3I_VRageMath_Vector3I_">MyStorageBase.ReadRange(MyStorageData, MyStorageDataTypeFlags, int, Vector3I, Vector3I)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_ReadRange_VRage_Voxels_MyStorageData_VRage_Voxels_MyStorageDataTypeFlags_System_Int32_VRageMath_Vector3I_VRageMath_Vector3I_VRage_Voxels_MyVoxelRequestFlags__">MyStorageBase.ReadRange(MyStorageData, MyStorageDataTypeFlags, int, Vector3I, Vector3I, ref MyVoxelRequestFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_PinAndExecute_System_Action_">MyStorageBase.PinAndExecute(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_PinAndExecute_System_Action_VRage_ModAPI_IMyStorage__">MyStorageBase.PinAndExecute(Action&lt;IMyStorage&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Intersect_VRageMath_BoundingBoxI__System_Int32_System_Boolean_">MyStorageBase.Intersect(ref BoundingBoxI, int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Intersect_VRageMath_LineD__">MyStorageBase.Intersect(ref LineD)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_PerformClose">MyStorageBase.PerformClose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Close">MyStorageBase.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Pin">MyStorageBase.Pin()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Unpin">MyStorageBase.Unpin()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_GetStoragePath_System_String_">MyStorageBase.GetStoragePath(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_OverwriteAllMaterials_System_Byte_">MyStorageBase.OverwriteAllMaterials(byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_AccessEnumerator">MyStorageBase.AccessEnumerator</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_CachedWrites">MyStorageBase.CachedWrites</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_HasPendingWrites">MyStorageBase.HasPendingWrites</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_HasCachedChunks">MyStorageBase.HasCachedChunks</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_CachedChunksCount">MyStorageBase.CachedChunksCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_PendingCachedChunksCount">MyStorageBase.PendingCachedChunksCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_DeleteSupported">MyStorageBase.DeleteSupported</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Shared">MyStorageBase.Shared</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_StorageId">MyStorageBase.StorageId</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Geometry">MyStorageBase.Geometry</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Size">MyStorageBase.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_AreDataCached">MyStorageBase.AreDataCached</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_AreDataCachedCompressed">MyStorageBase.AreDataCachedCompressed</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_Closed">MyStorageBase.Closed</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_MarkedForClose">MyStorageBase.MarkedForClose</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.MyStorageBase.html#Sandbox_Engine_Voxels_MyStorageBase_RangeChanged">MyStorageBase.RangeChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.IMyStorageExtensions.html#Sandbox_Engine_Voxels_IMyStorageExtensions_DebugDrawChunk_VRage_Game_Voxels_IMyStorage_VRageMath_Vector3I_VRageMath_Vector3I_System_Nullable_VRageMath_Color__">IMyStorageExtensions.DebugDrawChunk(IMyStorage, Vector3I, Vector3I, Color?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.IMyStorageExtensions.html#Sandbox_Engine_Voxels_IMyStorageExtensions_GetGeometry_VRage_Game_Voxels_IMyStorage_">IMyStorageExtensions.GetGeometry(IMyStorage)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.IMyStorageExtensions.html#Sandbox_Engine_Voxels_IMyStorageExtensions_GetMaterialAt_VRage_Game_Voxels_IMyStorage_VRageMath_Vector3D__">IMyStorageExtensions.GetMaterialAt(IMyStorage, ref Vector3D)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.IMyStorageExtensions.html#Sandbox_Engine_Voxels_IMyStorageExtensions_GetMaterialAt_VRage_Game_Voxels_IMyStorage_VRageMath_Vector3I__">IMyStorageExtensions.GetMaterialAt(IMyStorage, ref Vector3I)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.IMyStorageExtensions.html#Sandbox_Engine_Voxels_IMyStorageExtensions_Intersect_VRage_Game_Voxels_IMyStorage_VRageMath_BoundingBox__System_Boolean_">IMyStorageExtensions.Intersect(IMyStorage, ref BoundingBox, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="Sandbox.Engine.Voxels.IMyStorageExtensions.html#Sandbox_Engine_Voxels_IMyStorageExtensions_ClampVoxelCoord_VRage_ModAPI_IMyStorage_VRageMath_Vector3I__System_Int32_">IMyStorageExtensions.ClampVoxelCoord(IMyStorage, ref Vector3I, int)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage__ctor_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.#ctor*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage__ctor" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.#ctor">
+  MyOctreeStorage()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyOctreeStorage()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage__ctor_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.#ctor*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage__ctor_VRage_Voxels_IMyStorageDataProvider_VRageMath_Vector3I_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.#ctor(VRage.Voxels.IMyStorageDataProvider,VRageMath.Vector3I)">
+  MyOctreeStorage(IMyStorageDataProvider, Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyOctreeStorage(IMyStorageDataProvider dataProvider, Vector3I size)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataProvider</code> <a class="xref" href="VRage.Voxels.IMyStorageDataProvider.html">IMyStorageDataProvider</a></dt>
+    <dd></dd>
+    <dt><code>size</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_LeafLodCount" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.LeafLodCount">
+  LeafLodCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int LeafLodCount = 4</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_LeafSizeInVoxels" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.LeafSizeInVoxels">
+  LeafSizeInVoxels
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int LeafSizeInVoxels = 16</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_DataProvider_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DataProvider*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_DataProvider" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DataProvider">
+  DataProvider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IMyStorageDataProvider DataProvider { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Voxels.IMyStorageDataProvider.html">IMyStorageDataProvider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_CloseInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.CloseInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_CloseInternal" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.CloseInternal">
+  CloseInternal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void CloseInternal()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_ComputeContent_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.ComputeContent*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_ComputeContent_VRage_Voxels_MyStorageData_System_Int32_VRageMath_Vector3I_VRageMath_Vector3I_System_Int32_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.ComputeContent(VRage.Voxels.MyStorageData,System.Int32,VRageMath.Vector3I,VRageMath.Vector3I,System.Int32)">
+  ComputeContent(MyStorageData, int, Vector3I, Vector3I, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ComputeContent(MyStorageData storage, int lodIndex, Vector3I lodVoxelRangeMin, Vector3I lodVoxelRangeMax, int lodVoxelSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>storage</code> <a class="xref" href="VRage.Voxels.MyStorageData.html">MyStorageData</a></dt>
+    <dd></dd>
+    <dt><code>lodIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>lodVoxelRangeMin</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>lodVoxelRangeMax</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>lodVoxelSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_Contains_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Contains*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_Contains_VRageMath_BoundingBox__VRageMath_BoundingSphere__System_Int32_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Contains(VRageMath.BoundingBox@,VRageMath.BoundingSphere@,System.Int32)">
+  Contains(ref BoundingBox, ref BoundingSphere, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContainmentType Contains(ref BoundingBox queryBox, ref BoundingSphere querySphere, int lodVoxelSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queryBox</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>querySphere</code> <a class="xref" href="VRageMath.BoundingSphere.html">BoundingSphere</a></dt>
+    <dd></dd>
+    <dt><code>lodVoxelSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_Copy_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Copy*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_Copy" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Copy">
+  Copy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IMyStorage Copy()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Game.Voxels.IMyStorage.html">IMyStorage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_DebugDraw_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DebugDraw*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_DebugDraw_VRageMath_MatrixD__VRage_Game_Voxels_MyVoxelDebugDrawMode_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DebugDraw(VRageMath.MatrixD@,VRage.Game.Voxels.MyVoxelDebugDrawMode)">
+  DebugDraw(ref MatrixD, MyVoxelDebugDrawMode)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DebugDraw(ref MatrixD worldMatrix, MyVoxelDebugDrawMode mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="VRage.Game.Voxels.MyVoxelDebugDrawMode.html">MyVoxelDebugDrawMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_DebugDraw_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DebugDraw*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_DebugDraw_VRageMath_MatrixD__VRage_Game_Voxels_MyVoxelDebugDrawMode_VRageMath_Color_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DebugDraw(VRageMath.MatrixD@,VRage.Game.Voxels.MyVoxelDebugDrawMode,VRageMath.Color)">
+  DebugDraw(ref MatrixD, MyVoxelDebugDrawMode, Color)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DebugDraw(ref MatrixD worldMatrix, MyVoxelDebugDrawMode mode, Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="VRage.Game.Voxels.MyVoxelDebugDrawMode.html">MyVoxelDebugDrawMode</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="VRageMath.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_DebugDraw_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DebugDraw*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_DebugDraw_VRageMath_MatrixD__VRageMath_Color_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DebugDraw(VRageMath.MatrixD@,VRageMath.Color)">
+  DebugDraw(ref MatrixD, Color)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DebugDraw(ref MatrixD worldMatrix, Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldMatrix</code> <a class="xref" href="VRageMath.MatrixD.html">MatrixD</a></dt>
+    <dd></dd>
+    <dt><code>color</code> <a class="xref" href="VRageMath.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_DeleteRangeInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DeleteRangeInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_DeleteRangeInternal_VRage_Voxels_MyStorageDataTypeFlags_VRageMath_Vector3I__VRageMath_Vector3I__" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.DeleteRangeInternal(VRage.Voxels.MyStorageDataTypeFlags,VRageMath.Vector3I@,VRageMath.Vector3I@)">
+  DeleteRangeInternal(MyStorageDataTypeFlags, ref Vector3I, ref Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DeleteRangeInternal(MyStorageDataTypeFlags dataToDelete, ref Vector3I voxelRangeMin, ref Vector3I voxelRangeMax)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataToDelete</code> <a class="xref" href="VRage.Voxels.MyStorageDataTypeFlags.html">MyStorageDataTypeFlags</a></dt>
+    <dd></dd>
+    <dt><code>voxelRangeMin</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>voxelRangeMax</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_Intersect_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Intersect*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_Intersect_VRageMath_BoundingBox__System_Boolean_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Intersect(VRageMath.BoundingBox@,System.Boolean)">
+  Intersect(ref BoundingBox, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ContainmentType Intersect(ref BoundingBox box, bool lazy)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>box</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>lazy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_IntersectInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.IntersectInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_IntersectInternal_VRageMath_BoundingBoxI__System_Int32_System_Boolean_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.IntersectInternal(VRageMath.BoundingBoxI@,System.Int32,System.Boolean)">
+  IntersectInternal(ref BoundingBoxI, int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ContainmentType IntersectInternal(ref BoundingBoxI box, int lod, bool exhaustiveContainmentCheck)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>box</code> <a class="xref" href="VRageMath.BoundingBoxI.html">BoundingBoxI</a></dt>
+    <dd></dd>
+    <dt><code>lod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>exhaustiveContainmentCheck</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.ContainmentType.html">ContainmentType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_IntersectInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.IntersectInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_IntersectInternal_VRageMath_LineD__" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.IntersectInternal(VRageMath.LineD@)">
+  IntersectInternal(ref LineD)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IntersectInternal(ref LineD line)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>line</code> <a class="xref" href="VRageMath.LineD.html">LineD</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_IsModifiedInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.IsModifiedInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_IsModifiedInternal_VRageMath_BoundingBoxI__" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.IsModifiedInternal(VRageMath.BoundingBoxI@)">
+  IsModifiedInternal(ref BoundingBoxI)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool IsModifiedInternal(ref BoundingBoxI range)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>range</code> <a class="xref" href="VRageMath.BoundingBoxI.html">BoundingBoxI</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_LoadInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.LoadInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_LoadInternal_System_Int32_System_IO_Stream_System_Boolean__" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.LoadInternal(System.Int32,System.IO.Stream,System.Boolean@)">
+  LoadInternal(int, Stream, ref bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void LoadInternal(int fileVersion, Stream stream, ref bool isOldFormat)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+    <dt><code>isOldFormat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_OverwriteAllMaterialsInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.OverwriteAllMaterialsInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_OverwriteAllMaterialsInternal_VRage_Game_MyVoxelMaterialDefinition_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.OverwriteAllMaterialsInternal(VRage.Game.MyVoxelMaterialDefinition)">
+  OverwriteAllMaterialsInternal(MyVoxelMaterialDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OverwriteAllMaterialsInternal(MyVoxelMaterialDefinition material)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>material</code> <a class="xref" href="VRage.Game.MyVoxelMaterialDefinition.html">MyVoxelMaterialDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_ReadRangeInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.ReadRangeInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_ReadRangeInternal_VRage_Voxels_MyStorageData_VRageMath_Vector3I__VRage_Voxels_MyStorageDataTypeFlags_System_Int32_VRageMath_Vector3I__VRageMath_Vector3I__VRage_Voxels_MyVoxelRequestFlags__" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.ReadRangeInternal(VRage.Voxels.MyStorageData,VRageMath.Vector3I@,VRage.Voxels.MyStorageDataTypeFlags,System.Int32,VRageMath.Vector3I@,VRageMath.Vector3I@,VRage.Voxels.MyVoxelRequestFlags@)">
+  ReadRangeInternal(MyStorageData, ref Vector3I, MyStorageDataTypeFlags, int, ref Vector3I, ref Vector3I, ref MyVoxelRequestFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ReadRangeInternal(MyStorageData target, ref Vector3I targetWriteOffset, MyStorageDataTypeFlags dataToRead, int lodIndex, ref Vector3I lodVoxelCoordStart, ref Vector3I lodVoxelCoordEnd, ref MyVoxelRequestFlags flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="VRage.Voxels.MyStorageData.html">MyStorageData</a></dt>
+    <dd></dd>
+    <dt><code>targetWriteOffset</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>dataToRead</code> <a class="xref" href="VRage.Voxels.MyStorageDataTypeFlags.html">MyStorageDataTypeFlags</a></dt>
+    <dd></dd>
+    <dt><code>lodIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>lodVoxelCoordStart</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>lodVoxelCoordEnd</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>flags</code> <a class="xref" href="VRage.Voxels.MyVoxelRequestFlags.html">MyVoxelRequestFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_RegisterTypes_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.RegisterTypes*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_RegisterTypes_System_Reflection_Assembly___" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.RegisterTypes(System.Reflection.Assembly[])">
+  RegisterTypes(Assembly[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RegisterTypes(Assembly[] assemblies)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>assemblies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_ResetInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.ResetInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_ResetInternal_VRage_Voxels_MyStorageDataTypeFlags_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.ResetInternal(VRage.Voxels.MyStorageDataTypeFlags)">
+  ResetInternal(MyStorageDataTypeFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ResetInternal(MyStorageDataTypeFlags dataToReset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataToReset</code> <a class="xref" href="VRage.Voxels.MyStorageDataTypeFlags.html">MyStorageDataTypeFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_SaveInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.SaveInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_SaveInternal_System_IO_Stream_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.SaveInternal(System.IO.Stream)">
+  SaveInternal(Stream)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SaveInternal(Stream stream)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stream</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_SignedDistance_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.SignedDistance*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_SignedDistance_VRageMath_Vector3__System_Int32_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.SignedDistance(VRageMath.Vector3@,System.Int32)">
+  SignedDistance(ref Vector3, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SignedDistance(ref Vector3 localPos, int lodVoxelSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>localPos</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>lodVoxelSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_SweepInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.SweepInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_SweepInternal_VRage_Voxels_MyStorageDataTypeFlags_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.SweepInternal(VRage.Voxels.MyStorageDataTypeFlags)">
+  SweepInternal(MyStorageDataTypeFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SweepInternal(MyStorageDataTypeFlags dataToSweep)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataToSweep</code> <a class="xref" href="VRage.Voxels.MyStorageDataTypeFlags.html">MyStorageDataTypeFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_Voxelize_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Voxelize*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_Voxelize_VRage_Voxels_MyStorageDataTypeFlags_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.Voxelize(VRage.Voxels.MyStorageDataTypeFlags)">
+  Voxelize(MyStorageDataTypeFlags)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Voxelize(MyStorageDataTypeFlags data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="VRage.Voxels.MyStorageDataTypeFlags.html">MyStorageDataTypeFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Engine_Voxels_MyOctreeStorage_WriteRangeInternal_" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.WriteRangeInternal*"></a>
+
+  <h3 id="Sandbox_Engine_Voxels_MyOctreeStorage_WriteRangeInternal__1___0__VRage_Voxels_MyStorageDataTypeFlags_VRageMath_Vector3I__VRageMath_Vector3I__" data-uid="Sandbox.Engine.Voxels.MyOctreeStorage.WriteRangeInternal``1(``0@,VRage.Voxels.MyStorageDataTypeFlags,VRageMath.Vector3I@,VRageMath.Vector3I@)">
+  WriteRangeInternal&lt;TOperator&gt;(ref TOperator, MyStorageDataTypeFlags, ref Vector3I, ref Vector3I)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void WriteRangeInternal&lt;TOperator&gt;(ref TOperator source, MyStorageDataTypeFlags dataToWrite, ref Vector3I voxelRangeMin, ref Vector3I voxelRangeMax) where TOperator : struct, IVoxelOperator</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <span class="xref">TOperator</span></dt>
+    <dd></dd>
+    <dt><code>dataToWrite</code> <a class="xref" href="VRage.Voxels.MyStorageDataTypeFlags.html">MyStorageDataTypeFlags</a></dt>
+    <dd></dd>
+    <dt><code>voxelRangeMin</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+    <dt><code>voxelRangeMax</code> <a class="xref" href="VRageMath.Vector3I.html">Vector3I</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TOperator</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

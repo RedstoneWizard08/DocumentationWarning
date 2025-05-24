@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MyDynamicAABBTree | Space Engineers </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MyDynamicAABBTree | Space Engineers ">
+      
+      
+      <link rel="icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VRageMath.MyDynamicAABBTree">
+
+
+
+  <h1 id="VRageMath_MyDynamicAABBTree" data-uid="VRageMath.MyDynamicAABBTree" class="text-break">
+Class MyDynamicAABBTree  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VRageMath.html">VRageMath</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>VRage.Math.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MyDynamicAABBTree</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">MyDynamicAABBTree</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="VRageRender.IEnumerableExtensions.html#VRageRender_IEnumerableExtensions_Yield___1___0_">IEnumerableExtensions.Yield_&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="VRageMath_MyDynamicAABBTree__ctor_" data-uid="VRageMath.MyDynamicAABBTree.#ctor*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree__ctor" data-uid="VRageMath.MyDynamicAABBTree.#ctor">
+  MyDynamicAABBTree()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyDynamicAABBTree()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree__ctor_" data-uid="VRageMath.MyDynamicAABBTree.#ctor*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree__ctor_VRageMath_Vector3_System_Single_" data-uid="VRageMath.MyDynamicAABBTree.#ctor(VRageMath.Vector3,System.Single)">
+  MyDynamicAABBTree(Vector3, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyDynamicAABBTree(Vector3 extension, float aabbMultiplier = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>extension</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+    <dt><code>aabbMultiplier</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="VRageMath_MyDynamicAABBTree_NullNode" data-uid="VRageMath.MyDynamicAABBTree.NullNode">
+  NullNode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int NullNode = -1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="VRageMath_MyDynamicAABBTree_Leaves_" data-uid="VRageMath.MyDynamicAABBTree.Leaves*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_Leaves" data-uid="VRageMath.MyDynamicAABBTree.Leaves">
+  Leaves
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DictionaryValuesReader&lt;int, MyDynamicAABBTree.DynamicTreeNode&gt; Leaves { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Collections.DictionaryValuesReader-2.html">DictionaryValuesReader</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="VRageMath.MyDynamicAABBTree.html">MyDynamicAABBTree</a>.<a class="xref" href="VRageMath.MyDynamicAABBTree.DynamicTreeNode.html">DynamicTreeNode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_Nodes_" data-uid="VRageMath.MyDynamicAABBTree.Nodes*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_Nodes" data-uid="VRageMath.MyDynamicAABBTree.Nodes">
+  Nodes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadOnlySpan&lt;MyDynamicAABBTree.DynamicTreeNode&gt; Nodes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="VRageMath.MyDynamicAABBTree.html">MyDynamicAABBTree</a>.<a class="xref" href="VRageMath.MyDynamicAABBTree.DynamicTreeNode.html">DynamicTreeNode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VRageMath_MyDynamicAABBTree_AddProxy_" data-uid="VRageMath.MyDynamicAABBTree.AddProxy*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_AddProxy_VRageMath_BoundingBox__System_Object_System_UInt32_System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.AddProxy(VRageMath.BoundingBox@,System.Object,System.UInt32,System.Boolean)">
+  AddProxy(ref BoundingBox, object, uint, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AddProxy(ref BoundingBox aabb, object userData, uint userFlags, bool rebalance = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>aabb</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>userData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>userFlags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>rebalance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_Balance_" data-uid="VRageMath.MyDynamicAABBTree.Balance*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_Balance_System_Int32_" data-uid="VRageMath.MyDynamicAABBTree.Balance(System.Int32)">
+  Balance(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Balance(int iA)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>iA</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_Clear_" data-uid="VRageMath.MyDynamicAABBTree.Clear*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_Clear" data-uid="VRageMath.MyDynamicAABBTree.Clear">
+  Clear()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_CountLeaves_" data-uid="VRageMath.MyDynamicAABBTree.CountLeaves*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_CountLeaves_System_Int32_" data-uid="VRageMath.MyDynamicAABBTree.CountLeaves(System.Int32)">
+  CountLeaves(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CountLeaves(int nodeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_Dispose_" data-uid="VRageMath.MyDynamicAABBTree.Dispose*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_Dispose" data-uid="VRageMath.MyDynamicAABBTree.Dispose">
+  Dispose()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetAabb_" data-uid="VRageMath.MyDynamicAABBTree.GetAabb*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetAabb_System_Int32_" data-uid="VRageMath.MyDynamicAABBTree.GetAabb(System.Int32)">
+  GetAabb(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundingBox GetAabb(int proxyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetAllNodeBounds_" data-uid="VRageMath.MyDynamicAABBTree.GetAllNodeBounds*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetAllNodeBounds_System_Collections_Generic_List_VRageMath_BoundingBox__" data-uid="VRageMath.MyDynamicAABBTree.GetAllNodeBounds(System.Collections.Generic.List{VRageMath.BoundingBox})">
+  GetAllNodeBounds(List&lt;BoundingBox&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetAllNodeBounds(List&lt;BoundingBox&gt; boxsList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>boxsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetAll_" data-uid="VRageMath.MyDynamicAABBTree.GetAll*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetAll__1_System_Collections_Generic_List___0__System_Boolean_System_Collections_Generic_List_VRageMath_BoundingBox__" data-uid="VRageMath.MyDynamicAABBTree.GetAll``1(System.Collections.Generic.List{``0},System.Boolean,System.Collections.Generic.List{VRageMath.BoundingBox})">
+  GetAll&lt;T&gt;(List&lt;T&gt;, bool, List&lt;BoundingBox&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetAll&lt;T&gt;(List&lt;T&gt; elementsList, bool clear, List&lt;BoundingBox&gt; boxsList = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>boxsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetChildren_" data-uid="VRageMath.MyDynamicAABBTree.GetChildren*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetChildren_System_Int32_System_Int32__System_Int32__" data-uid="VRageMath.MyDynamicAABBTree.GetChildren(System.Int32,System.Int32@,System.Int32@)">
+  GetChildren(int, out int, out int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetChildren(int proxyId, out int left, out int right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>left</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetFatAABB_" data-uid="VRageMath.MyDynamicAABBTree.GetFatAABB*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetFatAABB_System_Int32_VRageMath_BoundingBox__" data-uid="VRageMath.MyDynamicAABBTree.GetFatAABB(System.Int32,VRageMath.BoundingBox@)">
+  GetFatAABB(int, out BoundingBox)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetFatAABB(int proxyId, out BoundingBox fatAABB)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>fatAABB</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetHeight_" data-uid="VRageMath.MyDynamicAABBTree.GetHeight*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetHeight" data-uid="VRageMath.MyDynamicAABBTree.GetHeight">
+  GetHeight()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetHeight()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetLeafCount_" data-uid="VRageMath.MyDynamicAABBTree.GetLeafCount*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetLeafCount" data-uid="VRageMath.MyDynamicAABBTree.GetLeafCount">
+  GetLeafCount()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetLeafCount()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetLeafCount_" data-uid="VRageMath.MyDynamicAABBTree.GetLeafCount*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetLeafCount_System_Int32_" data-uid="VRageMath.MyDynamicAABBTree.GetLeafCount(System.Int32)">
+  GetLeafCount(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetLeafCount(int proxyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetNodeLeaves_" data-uid="VRageMath.MyDynamicAABBTree.GetNodeLeaves*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetNodeLeaves_System_Int32_System_Collections_Generic_List_System_Int32__" data-uid="VRageMath.MyDynamicAABBTree.GetNodeLeaves(System.Int32,System.Collections.Generic.List{System.Int32})">
+  GetNodeLeaves(int, List&lt;int&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetNodeLeaves(int proxyId, List&lt;int&gt; children)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>children</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetRoot_" data-uid="VRageMath.MyDynamicAABBTree.GetRoot*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetRoot" data-uid="VRageMath.MyDynamicAABBTree.GetRoot">
+  GetRoot()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetRoot()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_GetUserData_" data-uid="VRageMath.MyDynamicAABBTree.GetUserData*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_GetUserData__1_System_Int32_" data-uid="VRageMath.MyDynamicAABBTree.GetUserData``1(System.Int32)">
+  GetUserData&lt;T&gt;(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetUserData&lt;T&gt;(int proxyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_MoveProxy_" data-uid="VRageMath.MyDynamicAABBTree.MoveProxy*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_MoveProxy_System_Int32_VRageMath_BoundingBox__VRageMath_Vector3_" data-uid="VRageMath.MyDynamicAABBTree.MoveProxy(System.Int32,VRageMath.BoundingBox@,VRageMath.Vector3)">
+  MoveProxy(int, ref BoundingBox, Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MoveProxy(int proxyId, ref BoundingBox aabb, Vector3 displacement)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>aabb</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>displacement</code> <a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllBoundingBox_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllBoundingBox*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllBoundingBox__1_VRageMath_BoundingBox__System_Collections_Generic_List___0__System_UInt32_System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllBoundingBox``1(VRageMath.BoundingBox@,System.Collections.Generic.List{``0},System.UInt32,System.Boolean)">
+  OverlapAllBoundingBox&lt;T&gt;(ref BoundingBox, List&lt;T&gt;, uint, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllBoundingBox&lt;T&gt;(ref BoundingBox bbox, List&lt;T&gt; elementsList, uint requiredFlags = 0, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bbox</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>requiredFlags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllBoundingSphere_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllBoundingSphere*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllBoundingSphere__1_VRageMath_BoundingSphere__System_Collections_Generic_List___0__System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllBoundingSphere``1(VRageMath.BoundingSphere@,System.Collections.Generic.List{``0},System.Boolean)">
+  OverlapAllBoundingSphere&lt;T&gt;(ref BoundingSphere, List&lt;T&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllBoundingSphere&lt;T&gt;(ref BoundingSphere sphere, List&lt;T&gt; overlapElementsList, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sphere</code> <a class="xref" href="VRageMath.BoundingSphere.html">BoundingSphere</a></dt>
+    <dd></dd>
+    <dt><code>overlapElementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustumAny_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustumAny*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustumAny__1_VRageMath_BoundingFrustum__System_Collections_Generic_List___0__System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustumAny``1(VRageMath.BoundingFrustum@,System.Collections.Generic.List{``0},System.Boolean)">
+  OverlapAllFrustumAny&lt;T&gt;(ref BoundingFrustum, List&lt;T&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustumAny&lt;T&gt;(ref BoundingFrustum frustum, List&lt;T&gt; elementsList, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustumConservative_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustumConservative*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustumConservative__1_VRageMath_BoundingFrustum__System_Collections_Generic_List___0__System_UInt32_System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustumConservative``1(VRageMath.BoundingFrustum@,System.Collections.Generic.List{``0},System.UInt32,System.Boolean)">
+  OverlapAllFrustumConservative&lt;T&gt;(ref BoundingFrustum, List&lt;T&gt;, uint, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustumConservative&lt;T&gt;(ref BoundingFrustum frustum, List&lt;T&gt; elementsList, uint requiredFlags, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>requiredFlags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__1_VRageMath_BoundingFrustum__System_Action___0_System_Boolean__" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``1(VRageMath.BoundingFrustum@,System.Action{``0,System.Boolean})">
+  OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum, Action&lt;T, bool&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum frustum, Action&lt;T, bool&gt; add)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>add</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__1_VRageMath_BoundingFrustum__System_Action___0_System_Boolean__System_Single_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``1(VRageMath.BoundingFrustum@,System.Action{``0,System.Boolean},System.Single)">
+  OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum, Action&lt;T, bool&gt;, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum frustum, Action&lt;T, bool&gt; add, float tSqr)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>add</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>tSqr</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__1_VRageMath_BoundingFrustum__System_Collections_Generic_List___0__System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``1(VRageMath.BoundingFrustum@,System.Collections.Generic.List{``0},System.Boolean)">
+  OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum, List&lt;T&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum frustum, List&lt;T&gt; elementsList, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__1_VRageMath_BoundingFrustum__System_Collections_Generic_List___0__System_Collections_Generic_List_System_Boolean__System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``1(VRageMath.BoundingFrustum@,System.Collections.Generic.List{``0},System.Collections.Generic.List{System.Boolean},System.Boolean)">
+  OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum, List&lt;T&gt;, List&lt;bool&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum frustum, List&lt;T&gt; elementsList, List&lt;bool&gt; isInsideList, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>isInsideList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__1_VRageMath_BoundingFrustum__System_Collections_Generic_List___0__System_Collections_Generic_List_System_Boolean__System_Single_System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``1(VRageMath.BoundingFrustum@,System.Collections.Generic.List{``0},System.Collections.Generic.List{System.Boolean},System.Single,System.Boolean)">
+  OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum, List&lt;T&gt;, List&lt;bool&gt;, float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum frustum, List&lt;T&gt; elementsList, List&lt;bool&gt; isInsideList, float tSqr, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>isInsideList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>tSqr</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__1_VRageMath_BoundingFrustum__System_Collections_Generic_List___0__System_UInt32_System_Boolean_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``1(VRageMath.BoundingFrustum@,System.Collections.Generic.List{``0},System.UInt32,System.Boolean)">
+  OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum, List&lt;T&gt;, uint, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T&gt;(ref BoundingFrustum frustum, List&lt;T&gt; elementsList, uint requiredFlags, bool clear = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>requiredFlags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>clear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__2_VRageMath_BoundingFrustum__System_Single___1__" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``2(VRageMath.BoundingFrustum@,System.Single,``1@)">
+  OverlapAllFrustum&lt;T, Op&gt;(ref BoundingFrustum, float, ref Op)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T, Op&gt;(ref BoundingFrustum frustum, float tSqr, ref Op add) where Op : struct, IAddOp&lt;T&gt;</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>tSqr</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>add</code> <span class="xref">Op</span></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+    <dt><code>Op</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllFrustum__2_VRageMath_BoundingFrustum____1__" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllFrustum``2(VRageMath.BoundingFrustum@,``1@)">
+  OverlapAllFrustum&lt;T, Op&gt;(ref BoundingFrustum, ref Op)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllFrustum&lt;T, Op&gt;(ref BoundingFrustum frustum, ref Op add) where Op : struct, IAddOp&lt;T&gt;</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frustum</code> <a class="xref" href="VRageMath.BoundingFrustum.html">BoundingFrustum</a></dt>
+    <dd></dd>
+    <dt><code>add</code> <span class="xref">Op</span></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+    <dt><code>Op</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllLineSegment_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllLineSegment*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllLineSegment__1_VRageMath_Line__System_Collections_Generic_List_VRageMath_MyLineSegmentOverlapResult___0___" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllLineSegment``1(VRageMath.Line@,System.Collections.Generic.List{VRageMath.MyLineSegmentOverlapResult{``0}})">
+  OverlapAllLineSegment&lt;T&gt;(ref Line, List&lt;MyLineSegmentOverlapResult&lt;T&gt;&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllLineSegment&lt;T&gt;(ref Line line, List&lt;MyLineSegmentOverlapResult&lt;T&gt;&gt; elementsList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>line</code> <a class="xref" href="VRageMath.Line.html">Line</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.MyLineSegmentOverlapResult-1.html">MyLineSegmentOverlapResult</a>&lt;T&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapAllLineSegment_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllLineSegment*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapAllLineSegment__1_VRageMath_Line__System_Collections_Generic_List_VRageMath_MyLineSegmentOverlapResult___0___System_UInt32_" data-uid="VRageMath.MyDynamicAABBTree.OverlapAllLineSegment``1(VRageMath.Line@,System.Collections.Generic.List{VRageMath.MyLineSegmentOverlapResult{``0}},System.UInt32)">
+  OverlapAllLineSegment&lt;T&gt;(ref Line, List&lt;MyLineSegmentOverlapResult&lt;T&gt;&gt;, uint)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapAllLineSegment&lt;T&gt;(ref Line line, List&lt;MyLineSegmentOverlapResult&lt;T&gt;&gt; elementsList, uint requiredFlags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>line</code> <a class="xref" href="VRageMath.Line.html">Line</a></dt>
+    <dd></dd>
+    <dt><code>elementsList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.MyLineSegmentOverlapResult-1.html">MyLineSegmentOverlapResult</a>&lt;T&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>requiredFlags</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapSizeableClusters_" data-uid="VRageMath.MyDynamicAABBTree.OverlapSizeableClusters*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapSizeableClusters_VRageMath_BoundingBox__System_Collections_Generic_List_VRageMath_BoundingBox__System_Double_" data-uid="VRageMath.MyDynamicAABBTree.OverlapSizeableClusters(VRageMath.BoundingBox@,System.Collections.Generic.List{VRageMath.BoundingBox},System.Double)">
+  OverlapSizeableClusters(ref BoundingBox, List&lt;BoundingBox&gt;, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OverlapSizeableClusters(ref BoundingBox bbox, List&lt;BoundingBox&gt; boundList, double minSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bbox</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+    <dt><code>boundList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>minSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_OverlapsAnyLeafBoundingBox_" data-uid="VRageMath.MyDynamicAABBTree.OverlapsAnyLeafBoundingBox*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_OverlapsAnyLeafBoundingBox_VRageMath_BoundingBox__" data-uid="VRageMath.MyDynamicAABBTree.OverlapsAnyLeafBoundingBox(VRageMath.BoundingBox@)">
+  OverlapsAnyLeafBoundingBox(ref BoundingBox)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool OverlapsAnyLeafBoundingBox(ref BoundingBox bbox)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bbox</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_Query_" data-uid="VRageMath.MyDynamicAABBTree.Query*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_Query_System_Func_System_Int32_System_Boolean__VRageMath_BoundingBox__" data-uid="VRageMath.MyDynamicAABBTree.Query(System.Func{System.Int32,System.Boolean},VRageMath.BoundingBox@)">
+  Query(Func&lt;int, bool&gt;, ref BoundingBox)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Query(Func&lt;int, bool&gt; callback, ref BoundingBox aabb)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>aabb</code> <a class="xref" href="VRageMath.BoundingBox.html">BoundingBox</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VRageMath_MyDynamicAABBTree_RemoveProxy_" data-uid="VRageMath.MyDynamicAABBTree.RemoveProxy*"></a>
+
+  <h3 id="VRageMath_MyDynamicAABBTree_RemoveProxy_System_Int32_" data-uid="VRageMath.MyDynamicAABBTree.RemoveProxy(System.Int32)">
+  RemoveProxy(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveProxy(int proxyId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>proxyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
