@@ -19,7 +19,6 @@ public sealed class FixYaml : Step {
         var startRegex = new Regex($@"^{config.Game.Namespace}\.");
         var path = Path.Join(config.DocDir, "_site", "xrefmap.yml");
         var map = YamlUtility.Deserialize<XRefMap>(path);
-        var refs = new List<XRefSpec>();
         var total = map.References.Count;
 
         using (var bar = new ProgressBar(total, "Fixing xrefmap...")) {
@@ -38,18 +37,11 @@ public sealed class FixYaml : Step {
 
                 item.Uid = item.Uid.ReplaceRegex(startRegex, "");
 
-                if (map.References.Find(v => v.Uid == item.Uid) != null)
-                    continue;
-
                 if (item.ContainsKey("fullName")) {
                     item["fullName"] = item["fullName"].ToString().ReplaceRegex(startRegex, "");
                 }
-
-                refs.Add(item);
             }
         }
-
-        map.References.AddRange(refs);
 
         var stream = File.Open(path, FileMode.Create);
         var writer = new StreamWriter(stream);

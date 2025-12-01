@@ -1,5 +1,5 @@
 name: Deploy to Pages
-on: [push, workflow_dispatch]
+on: [ push, workflow_dispatch ]
 
 permissions:
   contents: write
@@ -9,28 +9,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup DotNET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: "10.0.x"
-      
-      - name: Install Tools
-        run: |
-          dotnet tool update -g docfx
-      
-      - name: Build
-        run: |
-          dotnet run --project Cli/Cli.csproj
-          mkdir Output
-          cp -r docs games.json index.html Output/
-        env:
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
-          STEAM_LOGIN_TOKEN: ${{ secrets.STEAM_LOGIN_TOKEN }}
+    - name: Checkout
+      uses: actions/checkout@v4
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: Output
+    - name: Setup DotNET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: "10.0.x"
+
+    - name: Install Tools
+      run: |
+        dotnet tool update -g docfx
+
+    - name: Build
+      run: |
+        dotnet run -c Release --project Cli/Cli.csproj
+        mkdir Output
+        cp -r docs games.json index.html Output/
+      env:
+        STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+        STEAM_LOGIN_TOKEN: ${{ secrets.STEAM_LOGIN_TOKEN }}
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: Output
