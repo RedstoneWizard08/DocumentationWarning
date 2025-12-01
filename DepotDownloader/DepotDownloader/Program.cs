@@ -17,6 +17,7 @@ namespace DepotDownloader
 {
     class Program
     {
+        private static bool DumpAuth = false;
         private static bool[] consumedArgs;
 
         static async Task<int> Main(string[] args)
@@ -62,6 +63,11 @@ namespace DepotDownloader
                 });
 
                 var httpEventListener = new HttpDiagnosticEventListener();
+            }
+
+            if (HasParameter(args, "-dump-auth"))
+            {
+                DumpAuth = true;
             }
 
             var username = GetParameter<string>(args, "-username") ?? GetParameter<string>(args, "-user");
@@ -392,7 +398,7 @@ namespace DepotDownloader
                 }
             }
 
-            return ContentDownloader.InitializeSteam3(username, password);
+            return ContentDownloader.InitializeSteam3(username, password, DumpAuth);
         }
 
         static int IndexOfParam(string[] args, string param)

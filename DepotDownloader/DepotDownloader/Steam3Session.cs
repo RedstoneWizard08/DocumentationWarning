@@ -18,6 +18,7 @@ namespace DepotDownloader
 {
     class Steam3Session
     {
+        public bool DumpAuth = false;
         public bool IsLoggedOn { get; private set; }
 
         public ReadOnlyCollection<SteamApps.LicenseListCallback.License> Licenses
@@ -572,7 +573,7 @@ namespace DepotDownloader
                         }
 
                         AccountSettingsStore.Instance.LoginTokens[result.AccountName] = result.RefreshToken;
-                        AccountSettingsStore.Save();
+                        AccountSettingsStore.Save(DumpAuth);
                     }
                     catch (TaskCanceledException)
                     {
@@ -667,7 +668,7 @@ namespace DepotDownloader
                 else if (isAccessToken)
                 {
                     AccountSettingsStore.Instance.LoginTokens.Remove(logonDetails.Username);
-                    AccountSettingsStore.Save();
+                    AccountSettingsStore.Save(DumpAuth);
 
                     // TODO: Handle gracefully by falling back to password prompt?
                     Console.WriteLine($"Access token was rejected ({loggedOn.Result}).");

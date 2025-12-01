@@ -311,7 +311,7 @@ namespace DepotDownloader
             return info["name"].AsString();
         }
 
-        public static bool InitializeSteam3(string username, string password)
+        public static bool InitializeSteam3(string username, string password, bool dumpAuth = false)
         {
             string loginToken = null;
 
@@ -330,6 +330,8 @@ namespace DepotDownloader
                     LoginID = Config.LoginID ?? 0x534B32, // "SK2"
                 }
             );
+
+            steam3.DumpAuth = dumpAuth;
 
             if (!steam3.WaitForCredentials())
             {

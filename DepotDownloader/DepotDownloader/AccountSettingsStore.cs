@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.IO.IsolatedStorage;
+using Newtonsoft.Json;
 using ProtoBuf;
 
 namespace DepotDownloader
@@ -21,11 +22,9 @@ namespace DepotDownloader
 
         // Member 3 was a Dictionary<string, string> for LoginKeys.
 
-        [ProtoMember(4, IsRequired = false)]
-        public Dictionary<string, string> LoginTokens { get; private set; }
+        [ProtoMember(4, IsRequired = false)] public Dictionary<string, string> LoginTokens { get; private set; }
 
-        [ProtoMember(5, IsRequired = false)]
-        public Dictionary<string, string> GuardData { get; private set; }
+        [ProtoMember(5, IsRequired = false)] public Dictionary<string, string> GuardData { get; private set; }
 
         string FileName;
 
@@ -70,7 +69,7 @@ namespace DepotDownloader
             Instance.FileName = filename;
         }
 
-        public static void Save()
+        public static void Save(bool dumpJson = false)
         {
             if (!Loaded)
                 throw new Exception("Saved config before loading");
@@ -84,6 +83,11 @@ namespace DepotDownloader
             catch (IOException ex)
             {
                 Console.WriteLine("Failed to save account settings: {0}", ex.Message);
+            }
+
+            if (dumpJson)
+            {
+                File.WriteAllText("account.json", JsonConvert.SerializeObject(Instance));
             }
         }
     }

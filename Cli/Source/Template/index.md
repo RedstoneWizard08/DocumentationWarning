@@ -28,4 +28,7 @@ class. This is not how it is in-game or in the assemblies. Just be wary of that.
 > For the game's devs, if you want me to take this site down, I will,
 > upon request. Just shoot me a DM, I'm on Discord as `@RedstoneWizard08`.
 > I'll usually reply within a day or two. This project is NOT intended
-> to cause any harm or anything like that.
+> to cause any harm or anything like that, just to be a good resource
+> for modders.
+
+[Project GitHub](https://github.com/RedstoneWizard08/DocumentationWarning)

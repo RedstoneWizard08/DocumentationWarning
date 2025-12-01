@@ -107,6 +107,6 @@ public sealed class Init : Command<Init.Options> {
 
         var path = Path.Join(dir, "config.json");
 
-        await File.WriteAllTextAsync(path, it.ToJsonString(Formatting.Indented));
+        await File.WriteAllTextAsync(path, it.ToJsonString());
     }
 }

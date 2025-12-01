@@ -24,6 +24,7 @@ public sealed class Build : Command<Build.Options> {
         new ExtractAsm(),
         new GenDocs(),
         new BuildDocs(),
+        new FixToc(),
         new FixYaml(),
         new CopyDocs(),
     ];
