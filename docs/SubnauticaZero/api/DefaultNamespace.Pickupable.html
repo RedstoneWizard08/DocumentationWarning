@@ -104,7 +104,7 @@ Class Pickupable
     <pre><code class="lang-csharp hljs">[ProtoContract]
 [ProtoInclude(1010, typeof(CreepvineSeed))]
 [DisallowMultipleComponent]
-public class Pickupable : HandTarget, IProtoEventListenerAsync, IProtoTreeEventListener, IHandTarget, ILocalizationCheckable</code></pre>
+public class Pickupable : HandTarget, IProtoEventListenerAsync, IProtoTreeEventListener, IHandTarget, ISpyPenguinTarget, ILocalizationCheckable, ICompileTimeCheckable</code></pre>
   </div>
 
 
@@ -129,7 +129,9 @@ public class Pickupable : HandTarget, IProtoEventListenerAsync, IProtoTreeEventL
       <div><a class="xref" href="DefaultNamespace.IProtoEventListenerAsync.html">IProtoEventListenerAsync</a></div>
       <div><a class="xref" href="DefaultNamespace.IProtoTreeEventListener.html">IProtoTreeEventListener</a></div>
       <div><a class="xref" href="DefaultNamespace.IHandTarget.html">IHandTarget</a></div>
+      <div><a class="xref" href="DefaultNamespace.ISpyPenguinTarget.html">ISpyPenguinTarget</a></div>
       <div><a class="xref" href="DefaultNamespace.ILocalizationCheckable.html">ILocalizationCheckable</a></div>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeCheckable.html">ICompileTimeCheckable</a></div>
     </dd>
   </dl>
 
@@ -642,6 +644,36 @@ public bool isPickupable</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_Pickupable_overrideSubPlacement" data-uid="DefaultNamespace.Pickupable.overrideSubPlacement">
+  overrideSubPlacement
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool overrideSubPlacement</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Pickupable_overrideTechType" data-uid="DefaultNamespace.Pickupable.overrideTechType">
   overrideTechType
   
@@ -734,6 +766,38 @@ public bool overrideTechUsed</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_Pickupable_pickupCinematic" data-uid="DefaultNamespace.Pickupable.pickupCinematic">
+  pickupCinematic
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Optional Cinematic Controller that will be used to play a pickup animation instead of the generic Grab. Will NOT be used if the component is disabled (eg: maybe you only want this on the first pickup and disable it with a story goal).&quot;)]
+[SerializeField]
+public PlayerCinematicController pickupCinematic</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PlayerCinematicController.html">PlayerCinematicController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Pickupable_prefabData" data-uid="DefaultNamespace.Pickupable.prefabData">
   prefabData
   
@@ -764,6 +828,36 @@ public bool overrideTechUsed</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_Pickupable_quickSlot" data-uid="DefaultNamespace.Pickupable.quickSlot">
+  quickSlot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int quickSlot</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Pickupable_randomizeRotationWhenDropped" data-uid="DefaultNamespace.Pickupable.randomizeRotationWhenDropped">
   randomizeRotationWhenDropped
   
@@ -782,6 +876,36 @@ public bool overrideTechUsed</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Pickupable_scaler" data-uid="DefaultNamespace.Pickupable.scaler">
+  scaler
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScaleLerp scaler</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ScaleLerp.html">ScaleLerp</a></dt>
     <dd></dd>
   </dl>
 
@@ -1599,6 +1723,135 @@ public int version</code></pre>
 
 
 
+  <a id="DefaultNamespace_Pickupable_OnPenguinAction_" data-uid="DefaultNamespace.Pickupable.OnPenguinAction*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnPenguinAction_SpyPenguin_" data-uid="DefaultNamespace.Pickupable.OnPenguinAction(SpyPenguin)">
+  OnPenguinAction(SpyPenguin)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPenguinAction(SpyPenguin penguin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>penguin</code> <a class="xref" href="DefaultNamespace.SpyPenguin.html">SpyPenguin</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnPenguinClick_" data-uid="DefaultNamespace.Pickupable.OnPenguinClick*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnPenguinClick_SpyPenguin_" data-uid="DefaultNamespace.Pickupable.OnPenguinClick(SpyPenguin)">
+  OnPenguinClick(SpyPenguin)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpyPenguinTargetActionType OnPenguinClick(SpyPenguin penguin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>penguin</code> <a class="xref" href="DefaultNamespace.SpyPenguin.html">SpyPenguin</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.SpyPenguinTargetActionType.html">SpyPenguinTargetActionType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnPenguinHover_" data-uid="DefaultNamespace.Pickupable.OnPenguinHover*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnPenguinHover_SpyPenguin_" data-uid="DefaultNamespace.Pickupable.OnPenguinHover(SpyPenguin)">
+  OnPenguinHover(SpyPenguin)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPenguinHover(SpyPenguin penguin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>penguin</code> <a class="xref" href="DefaultNamespace.SpyPenguin.html">SpyPenguin</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Pickupable_OnPlayerCinematicModeEnd_" data-uid="DefaultNamespace.Pickupable.OnPlayerCinematicModeEnd*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_OnPlayerCinematicModeEnd_PlayerCinematicController_" data-uid="DefaultNamespace.Pickupable.OnPlayerCinematicModeEnd(PlayerCinematicController)">
+  OnPlayerCinematicModeEnd(PlayerCinematicController)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPlayerCinematicModeEnd(PlayerCinematicController controller)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>controller</code> <a class="xref" href="DefaultNamespace.PlayerCinematicController.html">PlayerCinematicController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_Pickupable_OnProtoDeserializeAsync_" data-uid="DefaultNamespace.Pickupable.OnProtoDeserializeAsync*"></a>
 
   <h3 id="DefaultNamespace_Pickupable_OnProtoDeserializeAsync_ProtobufSerializer_" data-uid="DefaultNamespace.Pickupable.OnProtoDeserializeAsync(ProtobufSerializer)">
@@ -2011,6 +2264,41 @@ public int version</code></pre>
     <dt><a class="xref" href="DefaultNamespace.OnTechTypeChanged.html">OnTechTypeChanged</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+  <h2 class="section" id="eii">Explicit Interface Implementations
+</h2>
+
+
+  <a id="DefaultNamespace_Pickupable_ICompileTimeCheckable_CompileTimeCheck_" data-uid="DefaultNamespace.Pickupable.ICompileTimeCheckable#CompileTimeCheck*"></a>
+
+  <h3 id="DefaultNamespace_Pickupable_ICompileTimeCheckable_CompileTimeCheck" data-uid="DefaultNamespace.Pickupable.ICompileTimeCheckable#CompileTimeCheck">
+  ICompileTimeCheckable.CompileTimeCheck()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ICompileTimeCheckable.CompileTimeCheck()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
 
 
 

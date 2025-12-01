@@ -101,7 +101,7 @@ Class Atmosphere
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Atmosphere : IReferencable, IEvaluable</code></pre>
+    <pre><code class="lang-csharp hljs">public class Atmosphere : IReferencable, IEvaluable, IDensePoolable</code></pre>
   </div>
 
 
@@ -120,6 +120,7 @@ Class Atmosphere
     <dd>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
     </dd>
   </dl>
 
@@ -541,6 +542,36 @@ Class Atmosphere
 
 
 
+  <h3 id="Assets_Scripts_Atmospherics_Atmosphere_FaceFlags" data-uid="Assets.Scripts.Atmospherics.Atmosphere.FaceFlags">
+  FaceFlags
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Atmosphere.OutsideFaceFlags FaceFlags</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Atmospherics.Atmosphere.html">Atmosphere</a>.<a class="xref" href="Assets.Scripts.Atmospherics.Atmosphere.OutsideFaceFlags.html">OutsideFaceFlags</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Assets_Scripts_Atmospherics_Atmosphere_ForceNonCachable" data-uid="Assets.Scripts.Atmospherics.Atmosphere.ForceNonCachable">
   ForceNonCachable
   
@@ -641,6 +672,36 @@ Class Atmosphere
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasLight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Atmospherics_Atmosphere_HasPartialFrame" data-uid="Assets.Scripts.Atmospherics.Atmosphere.HasPartialFrame">
+  HasPartialFrame
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasPartialFrame</code></pre>
   </div>
 
 
@@ -1513,37 +1574,6 @@ Class Atmosphere
 
 
 
-  <a id="Assets_Scripts_Atmospherics_Atmosphere_Index_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.Index*"></a>
-
-  <h3 id="Assets_Scripts_Atmospherics_Atmosphere_Index" data-uid="Assets.Scripts.Atmospherics.Atmosphere.Index">
-  Index
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Index { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="Assets_Scripts_Atmospherics_Atmosphere_Inflamed_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.Inflamed*"></a>
 
   <h3 id="Assets_Scripts_Atmospherics_Atmosphere_Inflamed" data-uid="Assets.Scripts.Atmospherics.Atmosphere.Inflamed">
@@ -1618,37 +1648,6 @@ Class Atmosphere
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsGlobalAtmosphere { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_Atmospherics_Atmosphere_IsRoomTransitionGrid_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.IsRoomTransitionGrid*"></a>
-
-  <h3 id="Assets_Scripts_Atmospherics_Atmosphere_IsRoomTransitionGrid" data-uid="Assets.Scripts.Atmospherics.Atmosphere.IsRoomTransitionGrid">
-  IsRoomTransitionGrid
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsRoomTransitionGrid { get; }</code></pre>
   </div>
 
 
@@ -3892,6 +3891,44 @@ Class Atmosphere
 
 
 
+  <a id="Assets_Scripts_Atmospherics_Atmosphere_OnAddToPool_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.OnAddToPool*"></a>
+
+  <h3 id="Assets_Scripts_Atmospherics_Atmosphere_OnAddToPool_System_Object_System_Int32_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.OnAddToPool(System.Object,System.Int32)">
+  OnAddToPool(object, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool OnAddToPool(object densePool, int slot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>slot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Atmospherics_Atmosphere_OnAssignedReference_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.OnAssignedReference*"></a>
 
   <h3 id="Assets_Scripts_Atmospherics_Atmosphere_OnAssignedReference" data-uid="Assets.Scripts.Atmospherics.Atmosphere.OnAssignedReference">
@@ -3906,6 +3943,37 @@ Class Atmosphere
     <pre><code class="lang-csharp hljs">public void OnAssignedReference()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Atmospherics_Atmosphere_OnRemoveFromPool_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.OnRemoveFromPool*"></a>
+
+  <h3 id="Assets_Scripts_Atmospherics_Atmosphere_OnRemoveFromPool_System_Object_" data-uid="Assets.Scripts.Atmospherics.Atmosphere.OnRemoveFromPool(System.Object)">
+  OnRemoveFromPool(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRemoveFromPool(object densePool)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

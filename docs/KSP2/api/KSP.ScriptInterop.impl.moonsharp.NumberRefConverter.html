@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NumberRefConverter | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NumberRefConverter | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter">
+
+
+
+  <h1 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter" class="text-break">
+Class NumberRefConverter  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.ScriptInterop.html">ScriptInterop</a>.<a class="xref" href="KSP.ScriptInterop.impl.html">impl</a>.<a class="xref" href="KSP.ScriptInterop.impl.moonsharp.html">moonsharp</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TypeInterop(typeof(float?), &quot;Float&quot;, new string[] { &quot;Single&quot;, &quot;System.Single&quot; })]
+[TypeInterop(typeof(double?), &quot;Double&quot;, new string[] { &quot;System.Double&quot; })]
+[TypeInterop(typeof(int?), &quot;Int&quot;, new string[] { &quot;int32&quot;, &quot;System.Int32&quot; })]
+[TypeInterop(typeof(uint?), &quot;Uint&quot;, new string[] { &quot;uint32&quot;, &quot;System.UInt32&quot; })]
+[TypeInterop(typeof(long?), &quot;Long&quot;, new string[] { &quot;int64&quot;, &quot;System.Int64&quot; })]
+[TypeInterop(typeof(ulong?), &quot;Ulong&quot;, new string[] { &quot;uint64&quot;, &quot;System.UInt64&quot; })]
+public class NumberRefConverter : IValueConverter&lt;float?&gt;, IValueConverter&lt;double?&gt;, IValueConverter&lt;int?&gt;, IValueConverter&lt;long?&gt;, IValueConverter&lt;uint?&gt;, IValueConverter&lt;ulong?&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">NumberRefConverter</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.ScriptInterop.impl.moonsharp.IValueConverter-1.html">IValueConverter</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?&gt;</div>
+      <div><a class="xref" href="KSP.ScriptInterop.impl.moonsharp.IValueConverter-1.html">IValueConverter</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?&gt;</div>
+      <div><a class="xref" href="KSP.ScriptInterop.impl.moonsharp.IValueConverter-1.html">IValueConverter</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?&gt;</div>
+      <div><a class="xref" href="KSP.ScriptInterop.impl.moonsharp.IValueConverter-1.html">IValueConverter</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?&gt;</div>
+      <div><a class="xref" href="KSP.ScriptInterop.impl.moonsharp.IValueConverter-1.html">IValueConverter</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?&gt;</div>
+      <div><a class="xref" href="KSP.ScriptInterop.impl.moonsharp.IValueConverter-1.html">IValueConverter</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a>?&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter__ctor_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.#ctor*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter__ctor_KSP_ScriptInterop_impl_moonsharp_TypeInterop_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.#ctor(KSP.ScriptInterop.impl.moonsharp.TypeInterop)">
+  NumberRefConverter(TypeInterop)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NumberRefConverter(TypeInterop typeInterop)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>typeInterop</code> <a class="xref" href="KSP.ScriptInterop.impl.moonsharp.TypeInterop.html">TypeInterop</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_System_Nullable_System_Double__MoonSharp_Interpreter_Script_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue(System.Nullable{System.Double},MoonSharp.Interpreter.Script)">
+  FromValue(double?, Script)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynValue FromValue(double? value, Script script)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>script</code> <a class="xref" href="MoonSharp.Interpreter.Script.html">Script</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MoonSharp.Interpreter.DynValue.html">DynValue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_System_Nullable_System_Int32__MoonSharp_Interpreter_Script_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue(System.Nullable{System.Int32},MoonSharp.Interpreter.Script)">
+  FromValue(int?, Script)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynValue FromValue(int? value, Script script)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>script</code> <a class="xref" href="MoonSharp.Interpreter.Script.html">Script</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MoonSharp.Interpreter.DynValue.html">DynValue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_System_Nullable_System_Int64__MoonSharp_Interpreter_Script_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue(System.Nullable{System.Int64},MoonSharp.Interpreter.Script)">
+  FromValue(long?, Script)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynValue FromValue(long? value, Script script)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+    <dt><code>script</code> <a class="xref" href="MoonSharp.Interpreter.Script.html">Script</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MoonSharp.Interpreter.DynValue.html">DynValue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_System_Nullable_System_Single__MoonSharp_Interpreter_Script_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue(System.Nullable{System.Single},MoonSharp.Interpreter.Script)">
+  FromValue(float?, Script)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynValue FromValue(float? value, Script script)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+    <dt><code>script</code> <a class="xref" href="MoonSharp.Interpreter.Script.html">Script</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MoonSharp.Interpreter.DynValue.html">DynValue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_System_Nullable_System_UInt32__MoonSharp_Interpreter_Script_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue(System.Nullable{System.UInt32},MoonSharp.Interpreter.Script)">
+  FromValue(uint?, Script)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynValue FromValue(uint? value, Script script)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</dt>
+    <dd></dd>
+    <dt><code>script</code> <a class="xref" href="MoonSharp.Interpreter.Script.html">Script</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MoonSharp.Interpreter.DynValue.html">DynValue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_FromValue_System_Nullable_System_UInt64__MoonSharp_Interpreter_Script_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.FromValue(System.Nullable{System.UInt64},MoonSharp.Interpreter.Script)">
+  FromValue(ulong?, Script)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynValue FromValue(ulong? value, Script script)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a>?</dt>
+    <dd></dd>
+    <dt><code>script</code> <a class="xref" href="MoonSharp.Interpreter.Script.html">Script</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MoonSharp.Interpreter.DynValue.html">DynValue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_ToValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.ToValue*"></a>
+
+  <h3 id="KSP_ScriptInterop_impl_moonsharp_NumberRefConverter_ToValue_MoonSharp_Interpreter_DynValue_" data-uid="KSP.ScriptInterop.impl.moonsharp.NumberRefConverter.ToValue(MoonSharp.Interpreter.DynValue)">
+  ToValue(DynValue)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? ToValue(DynValue scriptValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scriptValue</code> <a class="xref" href="MoonSharp.Interpreter.DynValue.html">DynValue</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

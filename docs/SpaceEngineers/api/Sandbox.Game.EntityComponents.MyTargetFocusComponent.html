@@ -101,10 +101,9 @@ Class MyTargetFocusComponent
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[StaticEventOwner]
-[MyComponentType(typeof(MyTargetFocusComponent))]
+    <pre><code class="lang-csharp hljs">[MyComponentType(typeof(MyTargetFocusComponent))]
 [MyComponentBuilder(typeof(MyObjectBuilder_TargetFocusComponent), true)]
-public class MyTargetFocusComponent : MyGameLogicComponent, IMyEntityComponentBase, IMyComponentBase, IMyGameLogicComponent</code></pre>
+public class MyTargetFocusComponent : MyUpdatingEntityComponent, IMyEntityComponentBase, IMyComponentBase, IMyEventProxy, IMyEventOwner, IMyUpdatingEntityComponent</code></pre>
   </div>
 
 
@@ -116,7 +115,8 @@ public class MyTargetFocusComponent : MyGameLogicComponent, IMyEntityComponentBa
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyComponentBase.html">MyComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html">MyEntityComponentBase</a></div>
-      <div><a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html">MyGameLogicComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html">MyEventProxyEntityComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html">MyUpdatingEntityComponent</a></div>
       <div><span class="xref">MyTargetFocusComponent</span></div>
     </dd>
   </dl>
@@ -126,7 +126,9 @@ public class MyTargetFocusComponent : MyGameLogicComponent, IMyEntityComponentBa
     <dd>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyComponentBase.html">IMyComponentBase</a></div>
-      <div><a class="xref" href="VRage.Game.Entity.EntityComponents.Interfaces.IMyGameLogicComponent.html">IMyGameLogicComponent</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventProxy.html">IMyEventProxy</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventOwner.html">IMyEventOwner</a></div>
+      <div><a class="xref" href="VRage.Game.Entity.EntityComponents.Interfaces.IMyUpdatingEntityComponent.html">IMyUpdatingEntityComponent</a></div>
     </dd>
   </dl>
 
@@ -135,64 +137,76 @@ public class MyTargetFocusComponent : MyGameLogicComponent, IMyEntityComponentBa
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateOnceBeforeFrame">MyGameLogicComponent.UpdateOnceBeforeFrame()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateOnceBeforeFrame">MyUpdatingEntityComponent.UpdateOnceBeforeFrame()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateBeforeSimulation">MyGameLogicComponent.UpdateBeforeSimulation()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulation">MyUpdatingEntityComponent.UpdateBeforeSimulation()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateBeforeSimulation10">MyGameLogicComponent.UpdateBeforeSimulation10()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulation100">MyUpdatingEntityComponent.UpdateBeforeSimulation100()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateBeforeSimulation100">MyGameLogicComponent.UpdateBeforeSimulation100()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulationParallel">MyUpdatingEntityComponent.UpdateBeforeSimulationParallel()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateAfterSimulation">MyGameLogicComponent.UpdateAfterSimulation()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateSimulate">MyUpdatingEntityComponent.UpdateSimulate()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdatingStopped">MyGameLogicComponent.UpdatingStopped()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulationParallel">MyUpdatingEntityComponent.UpdateAfterSimulationParallel()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_Init_VRage_ObjectBuilders_MyObjectBuilder_EntityBase_">MyGameLogicComponent.Init(MyObjectBuilder_EntityBase)</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_ParentEntity">MyUpdatingEntityComponent.ParentEntity</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_GetObjectBuilder_System_Boolean_">MyGameLogicComponent.GetObjectBuilder(bool)</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdate">MyUpdatingEntityComponent.NeedsUpdate</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_MarkForClose">MyGameLogicComponent.MarkForClose()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_Close">MyGameLogicComponent.Close()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation100">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation100</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_EntityUpdate">MyGameLogicComponent.EntityUpdate</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateSimulation">MyUpdatingEntityComponent.NeedsUpdateSimulation</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_NeedsUpdate">MyGameLogicComponent.NeedsUpdate</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_Closed">MyGameLogicComponent.Closed</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation10">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation10</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_MarkedForClose">MyGameLogicComponent.MarkedForClose</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation100">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation100</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_ModContext">MyGameLogicComponent.ModContext</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallel">MyUpdatingEntityComponent.UpdateParallel</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdatingType">MyUpdatingEntityComponent.UpdatingType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateChanged">MyUpdatingEntityComponent.NeedsUpdateChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallelChanged">MyUpdatingEntityComponent.UpdateParallelChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_SyncType">MyEventProxyEntityComponent.SyncType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_OnBeforeRemovedFromContainer">MyEventProxyEntityComponent.OnBeforeRemovedFromContainer()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_AttachSyncToEntity">MyEventProxyEntityComponent.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAddedToContainer">MyEntityComponentBase.OnAddedToContainer()</a>
-    </div>
-    <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnBeforeRemovedFromContainer">MyEntityComponentBase.OnBeforeRemovedFromContainer()</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Entity">MyEntityComponentBase.Entity</a>
-    </div>
-    <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_AttachSyncToEntity">MyEntityComponentBase.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAfterAddedToContainer">MyEntityComponentBase.OnAfterAddedToContainer</a>
@@ -223,6 +237,9 @@ public class MyTargetFocusComponent : MyGameLogicComponent, IMyEntityComponentBa
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -668,6 +685,32 @@ public class MyTargetFocusComponent : MyGameLogicComponent, IMyEntityComponentBa
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void OnLockRequest()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_EntityComponents_MyTargetFocusComponent_UpdateAfterSimulation_" data-uid="Sandbox.Game.EntityComponents.MyTargetFocusComponent.UpdateAfterSimulation*"></a>
+
+  <h3 id="Sandbox_Game_EntityComponents_MyTargetFocusComponent_UpdateAfterSimulation" data-uid="Sandbox.Game.EntityComponents.MyTargetFocusComponent.UpdateAfterSimulation">
+  UpdateAfterSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation()</code></pre>
   </div>
 
 

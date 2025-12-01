@@ -101,7 +101,8 @@ Class MyCharacterRagdollComponent
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MyCharacterRagdollComponent : MyCharacterComponent, IMyEntityComponentBase, IMyComponentBase</code></pre>
+    <pre><code class="lang-csharp hljs">[MyComponentType(typeof(MyCharacterRagdollComponent))]
+public class MyCharacterRagdollComponent : MyUpdatingEntityComponent, IMyEntityComponentBase, IMyComponentBase, IMyEventProxy, IMyEventOwner, IMyUpdatingEntityComponent</code></pre>
   </div>
 
 
@@ -113,7 +114,8 @@ Class MyCharacterRagdollComponent
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyComponentBase.html">MyComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html">MyEntityComponentBase</a></div>
-      <div><a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html">MyCharacterComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html">MyEventProxyEntityComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html">MyUpdatingEntityComponent</a></div>
       <div><span class="xref">MyCharacterRagdollComponent</span></div>
     </dd>
   </dl>
@@ -123,6 +125,9 @@ Class MyCharacterRagdollComponent
     <dd>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyComponentBase.html">IMyComponentBase</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventProxy.html">IMyEventProxy</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventOwner.html">IMyEventOwner</a></div>
+      <div><a class="xref" href="VRage.Game.Entity.EntityComponents.Interfaces.IMyUpdatingEntityComponent.html">IMyUpdatingEntityComponent</a></div>
     </dd>
   </dl>
 
@@ -131,52 +136,73 @@ Class MyCharacterRagdollComponent
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateAfterSimulation10">MyCharacterComponent.UpdateAfterSimulation10()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateOnceBeforeFrame">MyUpdatingEntityComponent.UpdateOnceBeforeFrame()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateBeforeSimulationParallel">MyCharacterComponent.UpdateBeforeSimulationParallel()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulationParallel">MyUpdatingEntityComponent.UpdateBeforeSimulationParallel()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateAfterSimulation">MyCharacterComponent.UpdateAfterSimulation()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation">MyUpdatingEntityComponent.UpdateAfterSimulation()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_OnCharacterDead">MyCharacterComponent.OnCharacterDead()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation10">MyUpdatingEntityComponent.UpdateAfterSimulation10()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_OnBeforeRemovedFromContainer">MyCharacterComponent.OnBeforeRemovedFromContainer()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation100">MyUpdatingEntityComponent.UpdateAfterSimulation100()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulation">MyCharacterComponent.NeedsUpdateAfterSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulationParallel">MyUpdatingEntityComponent.UpdateAfterSimulationParallel()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulationParallel">MyCharacterComponent.NeedsUpdateAfterSimulationParallel</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_ParentEntity">MyUpdatingEntityComponent.ParentEntity</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateSimulation">MyCharacterComponent.NeedsUpdateSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdate">MyUpdatingEntityComponent.NeedsUpdate</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulation10">MyCharacterComponent.NeedsUpdateAfterSimulation10</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulation100">MyCharacterComponent.NeedsUpdateBeforeSimulation100</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation100">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation100</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulation">MyCharacterComponent.NeedsUpdateBeforeSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateSimulation">MyUpdatingEntityComponent.NeedsUpdateSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulationParallel">MyCharacterComponent.NeedsUpdateBeforeSimulationParallel</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_Character">MyCharacterComponent.Character</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation10">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation10</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation100">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation100</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallel">MyUpdatingEntityComponent.UpdateParallel</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdatingType">MyUpdatingEntityComponent.UpdatingType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateChanged">MyUpdatingEntityComponent.NeedsUpdateChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallelChanged">MyUpdatingEntityComponent.UpdateParallelChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_SyncType">MyEventProxyEntityComponent.SyncType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_OnBeforeRemovedFromContainer">MyEventProxyEntityComponent.OnBeforeRemovedFromContainer()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_AttachSyncToEntity">MyEventProxyEntityComponent.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Entity">MyEntityComponentBase.Entity</a>
-    </div>
-    <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_AttachSyncToEntity">MyEntityComponentBase.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAfterAddedToContainer">MyEntityComponentBase.OnAfterAddedToContainer</a>
@@ -213,6 +239,9 @@ Class MyCharacterRagdollComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -291,72 +320,39 @@ Class MyCharacterRagdollComponent
 
 
 
-  <h2 class="section" id="fields">Fields
-</h2>
-
-
-
-  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_Distance" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.Distance">
-  Distance
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float Distance</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_RagdollMapper" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.RagdollMapper">
-  RagdollMapper
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MyRagdollMapper RagdollMapper</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Sandbox.Engine.Physics.MyRagdollMapper.html">MyRagdollMapper</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
+
+
+  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_Character_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.Character*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_Character" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.Character">
+  Character
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCharacter Character { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Character.MyCharacter.html">MyCharacter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
   <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_ComponentTypeDebugString_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.ComponentTypeDebugString*"></a>
@@ -380,6 +376,37 @@ Class MyCharacterRagdollComponent
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_Distance_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.Distance*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_Distance" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.Distance">
+  Distance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Distance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -452,14 +479,10 @@ Class MyCharacterRagdollComponent
 
 
 
-  <h2 class="section" id="methods">Methods
-</h2>
+  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_RagdollMapper_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.RagdollMapper*"></a>
 
-
-  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_InitDeadBodyPhysics_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.InitDeadBodyPhysics*"></a>
-
-  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_InitDeadBodyPhysics" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.InitDeadBodyPhysics">
-  InitDeadBodyPhysics()
+  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_RagdollMapper" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.RagdollMapper">
+  RagdollMapper
   
   </h3>
 
@@ -467,19 +490,28 @@ Class MyCharacterRagdollComponent
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void InitDeadBodyPhysics()</code></pre>
+    <pre><code class="lang-csharp hljs">public MyRagdollMapper RagdollMapper { get; set; }</code></pre>
   </div>
 
 
 
 
 
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Engine.Physics.MyRagdollMapper.html">MyRagdollMapper</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
 
 
 
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
 
 
   <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_InitRagdoll_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.InitRagdoll*"></a>
@@ -513,32 +545,6 @@ Class MyCharacterRagdollComponent
 
 
 
-  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_InitRagdollMapper_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.InitRagdollMapper*"></a>
-
-  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_InitRagdollMapper" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.InitRagdollMapper">
-  InitRagdollMapper()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void InitRagdollMapper()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_OnAddedToContainer_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.OnAddedToContainer*"></a>
 
   <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_OnAddedToContainer" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.OnAddedToContainer">
@@ -551,58 +557,6 @@ Class MyCharacterRagdollComponent
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void OnAddedToContainer()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_Simulate_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.Simulate*"></a>
-
-  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_Simulate" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.Simulate">
-  Simulate()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Simulate()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_UpdateAfterSimulationParallel_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.UpdateAfterSimulationParallel*"></a>
-
-  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_UpdateAfterSimulationParallel" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.UpdateAfterSimulationParallel">
-  UpdateAfterSimulationParallel()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulationParallel()</code></pre>
   </div>
 
 
@@ -669,10 +623,10 @@ Class MyCharacterRagdollComponent
 
 
 
-  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_UpdateCharacterPhysics_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.UpdateCharacterPhysics*"></a>
+  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_UpdateSimulate_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.UpdateSimulate*"></a>
 
-  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_UpdateCharacterPhysics" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.UpdateCharacterPhysics">
-  UpdateCharacterPhysics()
+  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterRagdollComponent_UpdateSimulate" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterRagdollComponent.UpdateSimulate">
+  UpdateSimulate()
   
   </h3>
 
@@ -680,7 +634,7 @@ Class MyCharacterRagdollComponent
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateCharacterPhysics()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void UpdateSimulate()</code></pre>
   </div>
 
 

@@ -104,7 +104,8 @@ Class SeaMoth
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(EnergyMixin))]
 [RequireComponent(typeof(Rigidbody))]
 [ProtoContract]
-public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventListenerAsync, IProtoTreeEventListener, IAnimParamReceiver, IQuickSlots</code></pre>
+[Obsolete(&quot;This is an SN1 Vehicle, not used in BZ&quot;, false)]
+public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventListenerAsync, IProtoTreeEventListener, IAnimParamReceiver, IQuickSlots, IInteriorSpace</code></pre>
   </div>
 
 
@@ -133,6 +134,7 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <div><a class="xref" href="DefaultNamespace.IProtoTreeEventListener.html">IProtoTreeEventListener</a></div>
       <div><a class="xref" href="DefaultNamespace.IAnimParamReceiver.html">IAnimParamReceiver</a></div>
       <div><a class="xref" href="DefaultNamespace.IQuickSlots.html">IQuickSlots</a></div>
+      <div><a class="xref" href="DefaultNamespace.IInteriorSpace.html">IInteriorSpace</a></div>
     </dd>
   </dl>
 
@@ -142,6 +144,9 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_torpedoTypes">Vehicle.torpedoTypes</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_dockable">Vehicle.dockable</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_currentVersion">Vehicle.currentVersion</a>
@@ -165,7 +170,7 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_serializedModuleSlots">Vehicle.serializedModuleSlots</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_precursorOutOfWater">Vehicle.precursorOutOfWater</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_forceWalkMotorMode">Vehicle.forceWalkMotorMode</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_pilotId">Vehicle.pilotId</a>
@@ -180,15 +185,6 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_surfaceNormal">Vehicle.surfaceNormal</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_constructionFallOverride">Vehicle.constructionFallOverride</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ignoreInput">Vehicle.ignoreInput</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_teleporting">Vehicle.teleporting</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_prevVelocity">Vehicle.prevVelocity</a>
     </div>
     <div>
@@ -198,7 +194,7 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_destructionEffect">Vehicle.destructionEffect</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_subName">Vehicle.subName</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_colorNameControl">Vehicle.colorNameControl</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_handLabel">Vehicle.handLabel</a>
@@ -225,6 +221,9 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_moveOnLand">Vehicle.moveOnLand</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_movementEnabled">Vehicle.movementEnabled</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_customGoalOnEnter">Vehicle.customGoalOnEnter</a>
     </div>
     <div>
@@ -235,6 +234,9 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_enterSound">Vehicle.enterSound</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitSound">Vehicle.exitSound</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_leftHandPlug">Vehicle.leftHandPlug</a>
@@ -270,9 +272,6 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_playerPosition">Vehicle.playerPosition</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_chargingSound">Vehicle.chargingSound</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_splashSound">Vehicle.splashSound</a>
     </div>
     <div>
@@ -285,10 +284,7 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_crushDamage">Vehicle.crushDamage</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_worldSettledTracker">Vehicle.worldSettledTracker</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_vfxConstructing">Vehicle.vfxConstructing</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ecoTarget">Vehicle.ecoTarget</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_powerDownSound">Vehicle.powerDownSound</a>
@@ -306,7 +302,19 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_depthAlarms">Vehicle.depthAlarms</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_maxRechargeFraction">Vehicle.maxRechargeFraction</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ejectDelay">Vehicle.ejectDelay</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_movePlayerComp">Vehicle.movePlayerComp</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitPosWater">Vehicle.exitPosWater</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitPosLand">Vehicle.exitPosLand</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_altExitPositions">Vehicle.altExitPositions</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_timeLastCollision">Vehicle.timeLastCollision</a>
@@ -346,6 +354,27 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_isInitialized">Vehicle.isInitialized</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_cachedBaseTemperature">Vehicle.cachedBaseTemperature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_cachedBaseTemperaturePosition">Vehicle.cachedBaseTemperaturePosition</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ignoreInput">Vehicle.ignoreInput</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_teleporting">Vehicle.teleporting</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_torpedoNoAmmoMessage">Vehicle.torpedoNoAmmoMessage</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitFailedMessage">Vehicle.exitFailedMessage</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_upgradesStorageLabel">Vehicle.upgradesStorageLabel</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_turnedOnEvent">Vehicle.turnedOnEvent</a>
@@ -390,6 +419,9 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetTemperature">Vehicle.GetTemperature()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetUpwardsVelocity_UnityEngine_Transform_UnityEngine_Rigidbody_">Vehicle.GetUpwardsVelocity(Transform, Rigidbody)</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetDepth_System_Int32__System_Int32__">Vehicle.GetDepth(out int, out int)</a>
     </div>
     <div>
@@ -403,12 +435,6 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_LazyInitialize">Vehicle.LazyInitialize()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ReAttach_UnityEngine_Vector3_">Vehicle.ReAttach(Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_AttachToBay">Vehicle.AttachToBay()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_UnlockDefaultModuleSlots">Vehicle.UnlockDefaultModuleSlots()</a>
@@ -429,12 +455,6 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnUnequip_System_String_InventoryItem_">Vehicle.OnUnequip(string, InventoryItem)</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_UpdateEnergyRecharge">Vehicle.UpdateEnergyRecharge()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetName">Vehicle.GetName()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_IAnimParamReceiver_ForwardAnimationParameterBool_System_String_System_Boolean_">Vehicle.IAnimParamReceiver.ForwardAnimationParameterBool(string, bool)</a>
     </div>
     <div>
@@ -450,10 +470,19 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnHandClick_GUIHand_">Vehicle.OnHandClick(GUIHand)</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_EnterVehicle_Player_System_Boolean_System_Boolean_">Vehicle.EnterVehicle(Player, bool, bool)</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetEnabled">Vehicle.GetEnabled()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_EjectPlayer_System_Boolean_">Vehicle.EjectPlayer(bool)</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnKill">Vehicle.OnKill()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnOpenPDA">Vehicle.OnOpenPDA()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnConsoleCommand_interpolate">Vehicle.OnConsoleCommand_interpolate()</a>
@@ -471,10 +500,7 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ApplyPhysicsMove">Vehicle.ApplyPhysicsMove()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_CalculateAutopilotLocalWishDir">Vehicle.CalculateAutopilotLocalWishDir()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_TeleportVehicle_UnityEngine_Vector3_UnityEngine_Quaternion_System_Boolean_">Vehicle.TeleportVehicle(Vector3, Quaternion, bool)</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_TeleportVehicle_UnityEngine_Vector3_UnityEngine_Quaternion_">Vehicle.TeleportVehicle(Vector3, Quaternion)</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnTeleportationStart">Vehicle.OnTeleportationStart()</a>
@@ -483,19 +509,13 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnTeleportationComplete">Vehicle.OnTeleportationComplete()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_SetAutopilotDestination_UnityEngine_Vector3_">Vehicle.SetAutopilotDestination(Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_EnableAutopilot">Vehicle.EnableAutopilot()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_DisableAutopilot">Vehicle.DisableAutopilot()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnPoweredChanged_System_Boolean_">Vehicle.OnPoweredChanged(bool)</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_StabilizeRoll">Vehicle.StabilizeRoll()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_FixedUpdate">Vehicle.FixedUpdate()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_CanLand">Vehicle.CanLand()</a>
@@ -541,9 +561,6 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetQuickSlotCooldown_System_Int32_">Vehicle.GetQuickSlotCooldown(int)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ShouldSetKinematic">Vehicle.ShouldSetKinematic()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_IsPowered">Vehicle.IsPowered()</a>
@@ -621,6 +638,12 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_SlotRightUp">Vehicle.SlotRightUp()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_DeselectSlots">Vehicle.DeselectSlots()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_EjectSequence_System_Single_">Vehicle.EjectSequence(float)</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetActiveSlotID">Vehicle.GetActiveSlotID()</a>
     </div>
     <div>
@@ -675,16 +698,7 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_turnedOn">Vehicle.turnedOn</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_playerFullyEntered">Vehicle.playerFullyEntered</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_docked">Vehicle.docked</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_AutopilotDestination">Vehicle.AutopilotDestination</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_IsAutopilotEnabled">Vehicle.IsAutopilotEnabled</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_onBind">Vehicle.onBind</a>
@@ -917,6 +931,36 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
+  <h3 id="DefaultNamespace_SeaMoth_defaultNameKey" data-uid="DefaultNamespace.SeaMoth.defaultNameKey">
+  defaultNameKey
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string defaultNameKey = &quot;SeamothDefaultName&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_SeaMoth_enginePowerConsumption" data-uid="DefaultNamespace.SeaMoth.enginePowerConsumption">
   enginePowerConsumption
   
@@ -995,6 +1039,36 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DefaultNamespace.FMOD_CustomEmitter.html">FMOD_CustomEmitter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SeaMoth_exteriorSky" data-uid="DefaultNamespace.SeaMoth.exteriorSky">
+  exteriorSky
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sky exteriorSky</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="mset.Sky.html">Sky</a></dt>
     <dd></dd>
   </dl>
 
@@ -1115,6 +1189,36 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Gradient.html">Gradient</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SeaMoth_interiorSky" data-uid="DefaultNamespace.SeaMoth.interiorSky">
+  interiorSky
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sky interiorSky</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="mset.Sky.html">Sky</a></dt>
     <dd></dd>
   </dl>
 
@@ -1535,6 +1639,36 @@ public class SeaMoth : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="SeamothStorageInput.html">SeamothStorageInput</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_SeaMoth_storageNotEmptyMessage" data-uid="DefaultNamespace.SeaMoth.storageNotEmptyMessage">
+  storageNotEmptyMessage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string storageNotEmptyMessage = &quot;SeamothStorageNotEmpty&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -2008,93 +2142,6 @@ public VFXVolumetricLight[] volumeticLights</code></pre>
 
 
 
-  <a id="DefaultNamespace_SeaMoth_DeselectSlots_" data-uid="DefaultNamespace.SeaMoth.DeselectSlots*"></a>
-
-  <h3 id="DefaultNamespace_SeaMoth_DeselectSlots" data-uid="DefaultNamespace.SeaMoth.DeselectSlots">
-  DeselectSlots()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void DeselectSlots()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_SeaMoth_EnterVehicle_" data-uid="DefaultNamespace.SeaMoth.EnterVehicle*"></a>
-
-  <h3 id="DefaultNamespace_SeaMoth_EnterVehicle_Player_System_Boolean_System_Boolean_" data-uid="DefaultNamespace.SeaMoth.EnterVehicle(Player,System.Boolean,System.Boolean)">
-  EnterVehicle(Player, bool, bool)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void EnterVehicle(Player player, bool teleport, bool playEnterAnimation = true)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>player</code> <a class="xref" href="DefaultNamespace.Player.html">Player</a></dt>
-    <dd></dd>
-    <dt><code>teleport</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-    <dt><code>playEnterAnimation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_SeaMoth_FixedUpdate_" data-uid="DefaultNamespace.SeaMoth.FixedUpdate*"></a>
-
-  <h3 id="DefaultNamespace_SeaMoth_FixedUpdate" data-uid="DefaultNamespace.SeaMoth.FixedUpdate">
-  FixedUpdate()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void FixedUpdate()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_SeaMoth_GetAllowedToEject_" data-uid="DefaultNamespace.SeaMoth.GetAllowedToEject*"></a>
 
   <h3 id="DefaultNamespace_SeaMoth_GetAllowedToEject" data-uid="DefaultNamespace.SeaMoth.GetAllowedToEject">
@@ -2330,32 +2377,6 @@ public VFXVolumetricLight[] volumeticLights</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void OnPilotModeEnd()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_SeaMoth_OnPlayerEntered_" data-uid="DefaultNamespace.SeaMoth.OnPlayerEntered*"></a>
-
-  <h3 id="DefaultNamespace_SeaMoth_OnPlayerEntered" data-uid="DefaultNamespace.SeaMoth.OnPlayerEntered">
-  OnPlayerEntered()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnPlayerEntered()</code></pre>
   </div>
 
 
@@ -2634,7 +2655,7 @@ public VFXVolumetricLight[] volumeticLights</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void SubConstructionComplete()</code></pre>
+    <pre><code class="lang-csharp hljs">public void SubConstructionComplete()</code></pre>
   </div>
 
 
@@ -2874,6 +2895,444 @@ public VFXVolumetricLight[] volumeticLights</code></pre>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>active</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="eii">Explicit Interface Implementations
+</h2>
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_CanBreathe_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#CanBreathe*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_CanBreathe" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#CanBreathe">
+  IInteriorSpace.CanBreathe()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IInteriorSpace.CanBreathe()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_CanDropItemsInside_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#CanDropItemsInside*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_CanDropItemsInside" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#CanDropItemsInside">
+  IInteriorSpace.CanDropItemsInside()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IInteriorSpace.CanDropItemsInside()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_GetDefaultSurface_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetDefaultSurface*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_GetDefaultSurface" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetDefaultSurface">
+  IInteriorSpace.GetDefaultSurface()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">VFXSurfaceTypes IInteriorSpace.GetDefaultSurface()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.VFXSurfaceTypes.html">VFXSurfaceTypes</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_GetGameObject_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetGameObject*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_GetGameObject" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetGameObject">
+  IInteriorSpace.GetGameObject()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GameObject IInteriorSpace.GetGameObject()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_GetGlassSky_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetGlassSky*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_GetGlassSky" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetGlassSky">
+  IInteriorSpace.GetGlassSky()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Sky IInteriorSpace.GetGlassSky()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="mset.Sky.html">Sky</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_GetInsideTemperature_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetInsideTemperature*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_GetInsideTemperature" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetInsideTemperature">
+  IInteriorSpace.GetInsideTemperature()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float IInteriorSpace.GetInsideTemperature()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_GetInteriorSky_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetInteriorSky*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_GetInteriorSky" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetInteriorSky">
+  IInteriorSpace.GetInteriorSky()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Sky IInteriorSpace.GetInteriorSky()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="mset.Sky.html">Sky</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_GetRespawnPoint_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetRespawnPoint*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_GetRespawnPoint" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#GetRespawnPoint">
+  IInteriorSpace.GetRespawnPoint()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">RespawnPoint IInteriorSpace.GetRespawnPoint()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.RespawnPoint.html">RespawnPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_IsInside_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsInside*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_IsInside_UnityEngine_GameObject_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsInside(UnityEngine.GameObject)">
+  IInteriorSpace.IsInside(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IInteriorSpace.IsInside(GameObject obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_IsPlayerInside_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsPlayerInside*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_IsPlayerInside" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsPlayerInside">
+  IInteriorSpace.IsPlayerInside()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IInteriorSpace.IsPlayerInside()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_IsStoryBase_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsStoryBase*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_IsStoryBase" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsStoryBase">
+  IInteriorSpace.IsStoryBase()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IInteriorSpace.IsStoryBase()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_IsValidForRespawn_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsValidForRespawn*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_IsValidForRespawn" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#IsValidForRespawn">
+  IInteriorSpace.IsValidForRespawn()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IInteriorSpace.IsValidForRespawn()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_OnPlayerKill_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#OnPlayerKill*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_OnPlayerKill" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#OnPlayerKill">
+  IInteriorSpace.OnPlayerKill()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IInteriorSpace.OnPlayerKill()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_SeaMoth_IInteriorSpace_SetPlayerInsideState_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#SetPlayerInsideState*"></a>
+
+  <h3 id="DefaultNamespace_SeaMoth_IInteriorSpace_SetPlayerInsideState_System_Boolean_" data-uid="DefaultNamespace.SeaMoth.IInteriorSpace#SetPlayerInsideState(System.Boolean)">
+  IInteriorSpace.SetPlayerInsideState(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IInteriorSpace.SetPlayerInsideState(bool state)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 

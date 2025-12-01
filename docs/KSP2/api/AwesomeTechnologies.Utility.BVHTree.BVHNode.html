@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct BVHNode | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct BVHNode | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode">
+
+
+
+  <h1 id="AwesomeTechnologies_Utility_BVHTree_BVHNode" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode" class="text-break">
+Struct BVHNode  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="AwesomeTechnologies.html">AwesomeTechnologies</a>.<a class="xref" href="AwesomeTechnologies.Utility.html">Utility</a>.<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.html">BVHTree</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct BVHNode</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="AwesomeTechnologies_Utility_BVHTree_BVHNode__ctor_" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.#ctor*"></a>
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode__ctor_System_Collections_Generic_List_AwesomeTechnologies_Utility_BVHTree_BVHTriangle__System_Collections_Generic_List_AwesomeTechnologies_Utility_BVHTree_BVHNode__System_Collections_Generic_List_AwesomeTechnologies_Utility_BVHTree_BVHTriangle___" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.#ctor(System.Collections.Generic.List{AwesomeTechnologies.Utility.BVHTree.BVHTriangle},System.Collections.Generic.List{AwesomeTechnologies.Utility.BVHTree.BVHNode},System.Collections.Generic.List{AwesomeTechnologies.Utility.BVHTree.BVHTriangle}@)">
+  BVHNode(List&lt;BVHTriangle&gt;, List&lt;BVHNode&gt;, ref List&lt;BVHTriangle&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BVHNode(List&lt;BVHTriangle&gt; tris, List&lt;BVHNode&gt; nodes, ref List&lt;BVHTriangle&gt; finalPrims)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tris</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHTriangle.html">BVHTriangle</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>nodes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHNode.html">BVHNode</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>finalPrims</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHTriangle.html">BVHTriangle</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_Centroid" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.Centroid">
+  Centroid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Centroid</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_FarNodeID" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.FarNodeID">
+  FarNodeID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FarNodeID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_IsLeaf" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.IsLeaf">
+  IsLeaf
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IsLeaf</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_LChildID" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.LChildID">
+  LChildID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LChildID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_Max" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.Max">
+  Max
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Max</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_Min" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.Min">
+  Min
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Min</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_NearNodeID" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.NearNodeID">
+  NearNodeID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NearNodeID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_NodeID" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.NodeID">
+  NodeID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NodeID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_NodeType" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.NodeType">
+  NodeType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NodeType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_ParentID" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.ParentID">
+  ParentID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ParentID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_PrimID" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.PrimID">
+  PrimID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PrimID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_PrimitivesCount" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.PrimitivesCount">
+  PrimitivesCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PrimitivesCount</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_PrimitivesOffset" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.PrimitivesOffset">
+  PrimitivesOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PrimitivesOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_RChildID" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.RChildID">
+  RChildID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RChildID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_SplitAxis" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.SplitAxis">
+  SplitAxis
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SplitAxis</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_SplitMethod" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.SplitMethod">
+  SplitMethod
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SplitMethod</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_SplitValue" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.SplitValue">
+  SplitValue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SplitValue</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="AwesomeTechnologies_Utility_BVHTree_BVHNode_Build_" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.Build*"></a>
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_Build_System_Int32_System_Collections_Generic_List_AwesomeTechnologies_Utility_BVHTree_BVHTriangle__System_Collections_Generic_List_AwesomeTechnologies_Utility_BVHTree_BVHNode___System_Collections_Generic_List_AwesomeTechnologies_Utility_BVHTree_BVHTriangle___" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.Build(System.Int32,System.Collections.Generic.List{AwesomeTechnologies.Utility.BVHTree.BVHTriangle},System.Collections.Generic.List{AwesomeTechnologies.Utility.BVHTree.BVHNode}@,System.Collections.Generic.List{AwesomeTechnologies.Utility.BVHTree.BVHTriangle}@)">
+  Build(int, List&lt;BVHTriangle&gt;, ref List&lt;BVHNode&gt;, ref List&lt;BVHTriangle&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Build(int nodeID, List&lt;BVHTriangle&gt; tris, ref List&lt;BVHNode&gt; nodes, ref List&lt;BVHTriangle&gt; finalPrims)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nodeID</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>tris</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHTriangle.html">BVHTriangle</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>nodes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHNode.html">BVHNode</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>finalPrims</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHTriangle.html">BVHTriangle</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="AwesomeTechnologies_Utility_BVHTree_BVHNode_CalculateBBox_" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.CalculateBBox*"></a>
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_CalculateBBox_System_Collections_Generic_List_AwesomeTechnologies_Utility_BVHTree_BVHTriangle__" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.CalculateBBox(System.Collections.Generic.List{AwesomeTechnologies.Utility.BVHTree.BVHTriangle})">
+  CalculateBBox(List&lt;BVHTriangle&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject CalculateBBox(List&lt;BVHTriangle&gt; tris)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tris</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHTriangle.html">BVHTriangle</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="AwesomeTechnologies_Utility_BVHTree_BVHNode_CreateBVHNode_" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.CreateBVHNode*"></a>
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_CreateBVHNode" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.CreateBVHNode">
+  CreateBVHNode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BVHNode CreateBVHNode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="AwesomeTechnologies.Utility.BVHTree.BVHNode.html">BVHNode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="AwesomeTechnologies_Utility_BVHTree_BVHNode_GetLongestAxisAndValue_" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.GetLongestAxisAndValue*"></a>
+
+  <h3 id="AwesomeTechnologies_Utility_BVHTree_BVHNode_GetLongestAxisAndValue" data-uid="AwesomeTechnologies.Utility.BVHTree.BVHNode.GetLongestAxisAndValue">
+  GetLongestAxisAndValue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetLongestAxisAndValue()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

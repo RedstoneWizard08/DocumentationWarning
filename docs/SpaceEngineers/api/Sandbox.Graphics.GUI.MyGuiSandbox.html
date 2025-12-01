@@ -373,6 +373,37 @@ Class MyGuiSandbox
 
 
 
+  <a id="Sandbox_Graphics_GUI_MyGuiSandbox_AddUserDebugInputComponent_" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.AddUserDebugInputComponent*"></a>
+
+  <h3 id="Sandbox_Graphics_GUI_MyGuiSandbox_AddUserDebugInputComponent_Sandbox_Game_GUI_DebugInputComponents_MyDebugComponent_" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.AddUserDebugInputComponent(Sandbox.Game.GUI.DebugInputComponents.MyDebugComponent)">
+  AddUserDebugInputComponent(MyDebugComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddUserDebugInputComponent(MyDebugComponent debugInputComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>debugInputComponent</code> <a class="xref" href="Sandbox.Game.GUI.DebugInputComponents.MyDebugComponent.html">MyDebugComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Sandbox_Graphics_GUI_MyGuiSandbox_Ansel_IsSpectatorEnabled_" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.Ansel_IsSpectatorEnabled*"></a>
 
   <h3 id="Sandbox_Graphics_GUI_MyGuiSandbox_Ansel_IsSpectatorEnabled" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.Ansel_IsSpectatorEnabled">
@@ -1305,8 +1336,8 @@ Class MyGuiSandbox
 
   <a id="Sandbox_Graphics_GUI_MyGuiSandbox_ShowSetValueActionDialog_" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.ShowSetValueActionDialog*"></a>
 
-  <h3 id="Sandbox_Graphics_GUI_MyGuiSandbox_ShowSetValueActionDialog_Sandbox_ModAPI_Ingame_IUserCustomizableTerminalAction_System_Action_System_Boolean__System_Single_System_Single_System_Single_System_String_VRage_Utils_MyStringId_System_Boolean_System_Single_" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.ShowSetValueActionDialog(Sandbox.ModAPI.Ingame.IUserCustomizableTerminalAction,System.Action{System.Boolean},System.Single,System.Single,System.Single,System.String,VRage.Utils.MyStringId,System.Boolean,System.Single)">
-  ShowSetValueActionDialog(IUserCustomizableTerminalAction, Action&lt;bool&gt;, float, float, float, string, MyStringId, bool, float)
+  <h3 id="Sandbox_Graphics_GUI_MyGuiSandbox_ShowSetValueActionDialog_Sandbox_ModAPI_Ingame_IUserCustomizableTerminalAction_System_Action_System_Boolean__System_Single_System_Single_System_Single_System_String_VRage_Utils_MyStringId_System_Boolean_System_Single_System_Action_System_Text_StringBuilder_System_Single__System_Func_System_String_System_Boolean_System_Nullable_System_Single___" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.ShowSetValueActionDialog(Sandbox.ModAPI.Ingame.IUserCustomizableTerminalAction,System.Action{System.Boolean},System.Single,System.Single,System.Single,System.String,VRage.Utils.MyStringId,System.Boolean,System.Single,System.Action{System.Text.StringBuilder,System.Single},System.Func{System.String,System.Boolean,System.Nullable{System.Single}})">
+  ShowSetValueActionDialog(IUserCustomizableTerminalAction, Action&lt;bool&gt;, float, float, float, string, MyStringId, bool, float, Action&lt;StringBuilder, float&gt;, Func&lt;string, bool, float?&gt;)
   
   </h3>
 
@@ -1314,7 +1345,7 @@ Class MyGuiSandbox
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void ShowSetValueActionDialog(IUserCustomizableTerminalAction block, Action&lt;bool&gt; callback, float min, float max, float defaultVal, string pattern, MyStringId caption, bool parseAsInteger = false, float incStep = 1)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void ShowSetValueActionDialog(IUserCustomizableTerminalAction block, Action&lt;bool&gt; callback, float min, float max, float defaultVal, string pattern, MyStringId caption, bool parseAsInteger = false, float incStep = 1, Action&lt;StringBuilder, float&gt; writer = null, Func&lt;string, bool, float?&gt; parser = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1328,6 +1359,55 @@ Class MyGuiSandbox
     <dt><code>max</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>defaultVal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>caption</code> <a class="xref" href="VRage.Utils.MyStringId.html">MyStringId</a></dt>
+    <dd></dd>
+    <dt><code>parseAsInteger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>incStep</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>writer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>parser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Graphics_GUI_MyGuiSandbox_ShowSetValueActionDialog_" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.ShowSetValueActionDialog*"></a>
+
+  <h3 id="Sandbox_Graphics_GUI_MyGuiSandbox_ShowSetValueActionDialog_Sandbox_ModAPI_Ingame_IUserCustomizableTerminalAction_System_Action_System_Boolean__System_String_System_Int32_System_String_VRage_Utils_MyStringId_System_Boolean_System_Single_" data-uid="Sandbox.Graphics.GUI.MyGuiSandbox.ShowSetValueActionDialog(Sandbox.ModAPI.Ingame.IUserCustomizableTerminalAction,System.Action{System.Boolean},System.String,System.Int32,System.String,VRage.Utils.MyStringId,System.Boolean,System.Single)">
+  ShowSetValueActionDialog(IUserCustomizableTerminalAction, Action&lt;bool&gt;, string, int, string, MyStringId, bool, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShowSetValueActionDialog(IUserCustomizableTerminalAction block, Action&lt;bool&gt; callback, string defaultText, int maxTextLength, string pattern, MyStringId caption, bool parseAsInteger = false, float incStep = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>block</code> <a class="xref" href="Sandbox.ModAPI.Ingame.IUserCustomizableTerminalAction.html">IUserCustomizableTerminalAction</a></dt>
+    <dd></dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>defaultText</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>maxTextLength</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
     <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>

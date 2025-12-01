@@ -389,6 +389,69 @@ public const string createFailedOutOfSpaceMessage = &quot;CreateFailedSpace&quot
 
 
 
+  <h3 id="DefaultNamespace_uGUI_MainMenu_gameModeOptionsWindow" data-uid="DefaultNamespace.uGUI_MainMenu.gameModeOptionsWindow">
+  gameModeOptionsWindow
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public uGUI_GameModeOptions gameModeOptionsWindow</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_GameModeOptions.html">uGUI_GameModeOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_gameUnderConstruction" data-uid="DefaultNamespace.uGUI_MainMenu.gameUnderConstruction">
+  gameUnderConstruction
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertLocalization]
+public const string gameUnderConstruction = &quot;UnderConstructionWarning&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_uGUI_MainMenu_graphicRaycaster" data-uid="DefaultNamespace.uGUI_MainMenu.graphicRaycaster">
   graphicRaycaster
   
@@ -603,6 +666,38 @@ public const string loadFailedOutOfSpaceMessage = &quot;LoadFailedSpace&quot;</c
 
 
 
+  <h3 id="DefaultNamespace_uGUI_MainMenu_newGameMenu" data-uid="DefaultNamespace.uGUI_MainMenu.newGameMenu">
+  newGameMenu
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public uGUI_MainMenuNewGameMenu newGameMenu</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.uGUI_MainMenuNewGameMenu.html">uGUI_MainMenuNewGameMenu</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_uGUI_MainMenu_primaryOptions" data-uid="DefaultNamespace.uGUI_MainMenu.primaryOptions">
   primaryOptions
   
@@ -663,8 +758,8 @@ public const string loadFailedOutOfSpaceMessage = &quot;LoadFailedSpace&quot;</c
 
 
 
-  <h3 id="DefaultNamespace_uGUI_MainMenu_saveMigrationButton" data-uid="DefaultNamespace.uGUI_MainMenu.saveMigrationButton">
-  saveMigrationButton
+  <h3 id="DefaultNamespace_uGUI_MainMenu_selectedStoryVersion" data-uid="DefaultNamespace.uGUI_MainMenu.selectedStoryVersion">
+  selectedStoryVersion
   
   </h3>
 
@@ -672,8 +767,7 @@ public const string loadFailedOutOfSpaceMessage = &quot;LoadFailedSpace&quot;</c
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Button that opens the Save Migration panel for moving local Windows Store save games into the cloud save space.&quot;)]
-public GameObject saveMigrationButton</code></pre>
+    <pre><code class="lang-csharp hljs">public const int selectedStoryVersion = 2</code></pre>
   </div>
 
 
@@ -681,7 +775,7 @@ public GameObject saveMigrationButton</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -957,8 +1051,8 @@ public GameObject saveMigrationButton</code></pre>
 
   <a id="DefaultNamespace_uGUI_MainMenu_LoadGameAsync_" data-uid="DefaultNamespace.uGUI_MainMenu.LoadGameAsync*"></a>
 
-  <h3 id="DefaultNamespace_uGUI_MainMenu_LoadGameAsync_System_String_System_String_System_Int32_GameMode_" data-uid="DefaultNamespace.uGUI_MainMenu.LoadGameAsync(System.String,System.String,System.Int32,GameMode)">
-  LoadGameAsync(string, string, int, GameMode)
+  <h3 id="DefaultNamespace_uGUI_MainMenu_LoadGameAsync_System_String_System_String_System_Int32_GameModePresetId_GameOptions_System_Int32_" data-uid="DefaultNamespace.uGUI_MainMenu.LoadGameAsync(System.String,System.String,System.Int32,GameModePresetId,GameOptions,System.Int32)">
+  LoadGameAsync(string, string, int, GameModePresetId, GameOptions, int)
   
   </h3>
 
@@ -966,7 +1060,7 @@ public GameObject saveMigrationButton</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator LoadGameAsync(string saveGame, string sessionId, int changeSet, GameMode gameMode)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerator LoadGameAsync(string saveGame, string sessionId, int changeSet, GameModePresetId gameModePresetId, GameOptions gameOptions, int storyVersion)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -977,7 +1071,11 @@ public GameObject saveMigrationButton</code></pre>
     <dd></dd>
     <dt><code>changeSet</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
-    <dt><code>gameMode</code> <a class="xref" href="DefaultNamespace.GameMode.html">GameMode</a></dt>
+    <dt><code>gameModePresetId</code> <a class="xref" href="DefaultNamespace.GameModePresetId.html">GameModePresetId</a></dt>
+    <dd></dd>
+    <dt><code>gameOptions</code> <a class="xref" href="DefaultNamespace.GameOptions.html">GameOptions</a></dt>
+    <dd></dd>
+    <dt><code>storyVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -1009,32 +1107,6 @@ public GameObject saveMigrationButton</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void LoadMostRecentSavedGame()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_uGUI_MainMenu_OnButtonCreative_" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonCreative*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_MainMenu_OnButtonCreative" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonCreative">
-  OnButtonCreative()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnButtonCreative()</code></pre>
   </div>
 
 
@@ -1087,58 +1159,6 @@ public GameObject saveMigrationButton</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void OnButtonFeedback()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_uGUI_MainMenu_OnButtonFreedom_" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonFreedom*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_MainMenu_OnButtonFreedom" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonFreedom">
-  OnButtonFreedom()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnButtonFreedom()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_uGUI_MainMenu_OnButtonHardcore_" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonHardcore*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_MainMenu_OnButtonHardcore" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonHardcore">
-  OnButtonHardcore()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnButtonHardcore()</code></pre>
   </div>
 
 
@@ -1283,32 +1303,6 @@ public GameObject saveMigrationButton</code></pre>
 
 
 
-  <a id="DefaultNamespace_uGUI_MainMenu_OnButtonSaveMigration_" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonSaveMigration*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_MainMenu_OnButtonSaveMigration" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonSaveMigration">
-  OnButtonSaveMigration()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnButtonSaveMigration()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_uGUI_MainMenu_OnButtonStore_" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonStore*"></a>
 
   <h3 id="DefaultNamespace_uGUI_MainMenu_OnButtonStore" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonStore">
@@ -1321,32 +1315,6 @@ public GameObject saveMigrationButton</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void OnButtonStore()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_uGUI_MainMenu_OnButtonSurvival_" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonSurvival*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_MainMenu_OnButtonSurvival" data-uid="DefaultNamespace.uGUI_MainMenu.OnButtonSurvival">
-  OnButtonSurvival()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnButtonSurvival()</code></pre>
   </div>
 
 
@@ -1413,10 +1381,10 @@ public GameObject saveMigrationButton</code></pre>
 
 
 
-  <a id="DefaultNamespace_uGUI_MainMenu_OnErrorConfirmed_" data-uid="DefaultNamespace.uGUI_MainMenu.OnErrorConfirmed*"></a>
+  <a id="DefaultNamespace_uGUI_MainMenu_OnDestroy_" data-uid="DefaultNamespace.uGUI_MainMenu.OnDestroy*"></a>
 
-  <h3 id="DefaultNamespace_uGUI_MainMenu_OnErrorConfirmed_System_Boolean_System_String_System_String_System_Int32_GameMode_" data-uid="DefaultNamespace.uGUI_MainMenu.OnErrorConfirmed(System.Boolean,System.String,System.String,System.Int32,GameMode)">
-  OnErrorConfirmed(bool, string, string, int, GameMode)
+  <h3 id="DefaultNamespace_uGUI_MainMenu_OnDestroy" data-uid="DefaultNamespace.uGUI_MainMenu.OnDestroy">
+  OnDestroy()
   
   </h3>
 
@@ -1424,7 +1392,33 @@ public GameObject saveMigrationButton</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnErrorConfirmed(bool confirmed, string sessionId, string saveGame, int changeSet, GameMode gameMode)</code></pre>
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_MainMenu_OnErrorConfirmed_" data-uid="DefaultNamespace.uGUI_MainMenu.OnErrorConfirmed*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_OnErrorConfirmed_System_Boolean_System_String_System_String_System_Int32_GameModePresetId_GameOptions_System_Int32_" data-uid="DefaultNamespace.uGUI_MainMenu.OnErrorConfirmed(System.Boolean,System.String,System.String,System.Int32,GameModePresetId,GameOptions,System.Int32)">
+  OnErrorConfirmed(bool, string, string, int, GameModePresetId, GameOptions, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnErrorConfirmed(bool confirmed, string sessionId, string saveGame, int changeSet, GameModePresetId gameModePresetId, GameOptions gameOptions, int storyVersion)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1437,7 +1431,75 @@ public GameObject saveMigrationButton</code></pre>
     <dd></dd>
     <dt><code>changeSet</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
-    <dt><code>gameMode</code> <a class="xref" href="DefaultNamespace.GameMode.html">GameMode</a></dt>
+    <dt><code>gameModePresetId</code> <a class="xref" href="DefaultNamespace.GameModePresetId.html">GameModePresetId</a></dt>
+    <dd></dd>
+    <dt><code>gameOptions</code> <a class="xref" href="DefaultNamespace.GameOptions.html">GameOptions</a></dt>
+    <dd></dd>
+    <dt><code>storyVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_MainMenu_OnGameModePresetClick_" data-uid="DefaultNamespace.uGUI_MainMenu.OnGameModePresetClick*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_OnGameModePresetClick_GameModePresetId_" data-uid="DefaultNamespace.uGUI_MainMenu.OnGameModePresetClick(GameModePresetId)">
+  OnGameModePresetClick(GameModePresetId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnGameModePresetClick(GameModePresetId presetId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>presetId</code> <a class="xref" href="DefaultNamespace.GameModePresetId.html">GameModePresetId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_MainMenu_OnGameOptionsApply_" data-uid="DefaultNamespace.uGUI_MainMenu.OnGameOptionsApply*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_OnGameOptionsApply_GameModePresetId_GameOptions_" data-uid="DefaultNamespace.uGUI_MainMenu.OnGameOptionsApply(GameModePresetId,GameOptions)">
+  OnGameOptionsApply(GameModePresetId, GameOptions)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnGameOptionsApply(GameModePresetId gameModePresetId, GameOptions gameOptions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameModePresetId</code> <a class="xref" href="DefaultNamespace.GameModePresetId.html">GameModePresetId</a></dt>
+    <dd></dd>
+    <dt><code>gameOptions</code> <a class="xref" href="DefaultNamespace.GameOptions.html">GameOptions</a></dt>
     <dd></dd>
   </dl>
 
@@ -1526,6 +1588,68 @@ public GameObject saveMigrationButton</code></pre>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>lockMovement</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_MainMenu_OnToggleStoryOG_" data-uid="DefaultNamespace.uGUI_MainMenu.OnToggleStoryOG*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_OnToggleStoryOG_System_Boolean_" data-uid="DefaultNamespace.uGUI_MainMenu.OnToggleStoryOG(System.Boolean)">
+  OnToggleStoryOG(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnToggleStoryOG(bool isOn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isOn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_MainMenu_OnToggleStoryReboot_" data-uid="DefaultNamespace.uGUI_MainMenu.OnToggleStoryReboot*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_OnToggleStoryReboot_System_Boolean_" data-uid="DefaultNamespace.uGUI_MainMenu.OnToggleStoryReboot(System.Boolean)">
+  OnToggleStoryReboot(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnToggleStoryReboot(bool isOn)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isOn</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -1630,8 +1754,8 @@ public GameObject saveMigrationButton</code></pre>
 
   <a id="DefaultNamespace_uGUI_MainMenu_StartNewGame_" data-uid="DefaultNamespace.uGUI_MainMenu.StartNewGame*"></a>
 
-  <h3 id="DefaultNamespace_uGUI_MainMenu_StartNewGame_GameMode_" data-uid="DefaultNamespace.uGUI_MainMenu.StartNewGame(GameMode)">
-  StartNewGame(GameMode)
+  <h3 id="DefaultNamespace_uGUI_MainMenu_StartNewGame_GameModePresetId_GameOptions_" data-uid="DefaultNamespace.uGUI_MainMenu.StartNewGame(GameModePresetId,GameOptions)">
+  StartNewGame(GameModePresetId, GameOptions)
   
   </h3>
 
@@ -1639,12 +1763,14 @@ public GameObject saveMigrationButton</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator StartNewGame(GameMode gameMode)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerator StartNewGame(GameModePresetId gameModePresetId, GameOptions gameOptions = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>gameMode</code> <a class="xref" href="DefaultNamespace.GameMode.html">GameMode</a></dt>
+    <dt><code>gameModePresetId</code> <a class="xref" href="DefaultNamespace.GameModePresetId.html">GameModePresetId</a></dt>
+    <dd></dd>
+    <dt><code>gameOptions</code> <a class="xref" href="DefaultNamespace.GameOptions.html">GameOptions</a></dt>
     <dd></dd>
   </dl>
 
@@ -1653,6 +1779,65 @@ public GameObject saveMigrationButton</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_MainMenu_StartNewGameAsync_" data-uid="DefaultNamespace.uGUI_MainMenu.StartNewGameAsync*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_StartNewGameAsync_GameModePresetId_GameOptions_" data-uid="DefaultNamespace.uGUI_MainMenu.StartNewGameAsync(GameModePresetId,GameOptions)">
+  StartNewGameAsync(GameModePresetId, GameOptions)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartNewGameAsync(GameModePresetId gameModePresetId, GameOptions gameOptions = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameModePresetId</code> <a class="xref" href="DefaultNamespace.GameModePresetId.html">GameModePresetId</a></dt>
+    <dd></dd>
+    <dt><code>gameOptions</code> <a class="xref" href="DefaultNamespace.GameOptions.html">GameOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_MainMenu_StartNewGameWithDefaultPreset_" data-uid="DefaultNamespace.uGUI_MainMenu.StartNewGameWithDefaultPreset*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_MainMenu_StartNewGameWithDefaultPreset" data-uid="DefaultNamespace.uGUI_MainMenu.StartNewGameWithDefaultPreset">
+  StartNewGameWithDefaultPreset()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartNewGameWithDefaultPreset()</code></pre>
+  </div>
+
+
 
 
 

@@ -101,7 +101,7 @@ Class VehicleDockingBay
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class VehicleDockingBay : MonoBehaviour, IAnimParamReceiver</code></pre>
+    <pre><code class="lang-csharp hljs">public class VehicleDockingBay : MonoBehaviour, IAnimParamReceiver, IDockingBay, IObstacle</code></pre>
   </div>
 
 
@@ -123,6 +123,8 @@ Class VehicleDockingBay
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="DefaultNamespace.IAnimParamReceiver.html">IAnimParamReceiver</a></div>
+      <div><a class="xref" href="DefaultNamespace.IDockingBay.html">IDockingBay</a></div>
+      <div><a class="xref" href="DefaultNamespace.IObstacle.html">IObstacle</a></div>
     </dd>
   </dl>
 
@@ -193,8 +195,8 @@ Class VehicleDockingBay
 
 
 
-  <h3 id="DefaultNamespace_VehicleDockingBay__dockedVehicle" data-uid="DefaultNamespace.VehicleDockingBay._dockedVehicle">
-  _dockedVehicle
+  <h3 id="DefaultNamespace_VehicleDockingBay__dockedObject" data-uid="DefaultNamespace.VehicleDockingBay._dockedObject">
+  _dockedObject
   
   </h3>
 
@@ -202,7 +204,7 @@ Class VehicleDockingBay
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vehicle _dockedVehicle</code></pre>
+    <pre><code class="lang-csharp hljs">public Dockable _dockedObject</code></pre>
   </div>
 
 
@@ -210,38 +212,7 @@ Class VehicleDockingBay
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_VehicleDockingBay_animationStateNameForDocking" data-uid="DefaultNamespace.VehicleDockingBay.animationStateNameForDocking">
-  animationStateNameForDocking
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-public string animationStateNameForDocking</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
     <dd></dd>
   </dl>
 
@@ -263,7 +234,8 @@ public string animationStateNameForDocking</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Animator animator</code></pre>
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public Animator animator</code></pre>
   </div>
 
 
@@ -344,8 +316,69 @@ public string animationStateNameForDocking</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_castBoxCollider" data-uid="DefaultNamespace.VehicleDockingBay.castBoxCollider">
-  castBoxCollider
+  <h3 id="DefaultNamespace_VehicleDockingBay_chargeInterval" data-uid="DefaultNamespace.VehicleDockingBay.chargeInterval">
+  chargeInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float chargeInterval = 1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_chargingSound" data-uid="DefaultNamespace.VehicleDockingBay.chargingSound">
+  chargingSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public FMOD_CustomLoopingEmitter chargingSound</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FMOD_CustomLoopingEmitter.html">FMOD_CustomLoopingEmitter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_disableDockableCollisionInProcess" data-uid="DefaultNamespace.VehicleDockingBay.disableDockableCollisionInProcess">
+  disableDockableCollisionInProcess
   
   </h3>
 
@@ -354,7 +387,7 @@ public string animationStateNameForDocking</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeField]
-public BoxCollider castBoxCollider</code></pre>
+public bool disableDockableCollisionInProcess</code></pre>
   </div>
 
 
@@ -362,7 +395,37 @@ public BoxCollider castBoxCollider</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">BoxCollider</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_dockPlayer" data-uid="DefaultNamespace.VehicleDockingBay.dockPlayer">
+  dockPlayer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool dockPlayer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -405,6 +468,36 @@ public BoxCollider castBoxCollider</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_VehicleDockingBay_dockType" data-uid="DefaultNamespace.VehicleDockingBay.dockType">
+  dockType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vehicle.DockType dockType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Vehicle.html">Vehicle</a>.<a class="xref" href="Vehicle.DockType.html">DockType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_VehicleDockingBay_dockedCollision" data-uid="DefaultNamespace.VehicleDockingBay.dockedCollision">
   dockedCollision
   
@@ -424,6 +517,36 @@ public GameObject dockedCollision</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_docked_param" data-uid="DefaultNamespace.VehicleDockingBay.docked_param">
+  docked_param
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool docked_param</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -496,6 +619,36 @@ public GameObject dockedCollision</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_VehicleDockingBay_docklockColliderScalar" data-uid="DefaultNamespace.VehicleDockingBay.docklockColliderScalar">
+  docklockColliderScalar
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float docklockColliderScalar</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_VehicleDockingBay_exit" data-uid="DefaultNamespace.VehicleDockingBay.exit">
   exit
   
@@ -556,8 +709,8 @@ public GameObject dockedCollision</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_interpolatingVehicle" data-uid="DefaultNamespace.VehicleDockingBay.interpolatingVehicle">
-  interpolatingVehicle
+  <h3 id="DefaultNamespace_VehicleDockingBay_expansionManager" data-uid="DefaultNamespace.VehicleDockingBay.expansionManager">
+  expansionManager
   
   </h3>
 
@@ -565,7 +718,7 @@ public GameObject dockedCollision</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vehicle interpolatingVehicle</code></pre>
+    <pre><code class="lang-csharp hljs">public MoonpoolExpansionManager expansionManager</code></pre>
   </div>
 
 
@@ -573,7 +726,67 @@ public GameObject dockedCollision</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.MoonpoolExpansionManager.html">MoonpoolExpansionManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_fullyConstructed" data-uid="DefaultNamespace.VehicleDockingBay.fullyConstructed">
+  fullyConstructed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool fullyConstructed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_interpolatingDockable" data-uid="DefaultNamespace.VehicleDockingBay.interpolatingDockable">
+  interpolatingDockable
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dockable interpolatingDockable</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
     <dd></dd>
   </dl>
 
@@ -616,8 +829,8 @@ public GameObject dockedCollision</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_nearbyVehicle" data-uid="DefaultNamespace.VehicleDockingBay.nearbyVehicle">
-  nearbyVehicle
+  <h3 id="DefaultNamespace_VehicleDockingBay_nearbyDockable" data-uid="DefaultNamespace.VehicleDockingBay.nearbyDockable">
+  nearbyDockable
   
   </h3>
 
@@ -625,7 +838,7 @@ public GameObject dockedCollision</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vehicle nearbyVehicle</code></pre>
+    <pre><code class="lang-csharp hljs">public Dockable nearbyDockable</code></pre>
   </div>
 
 
@@ -633,7 +846,7 @@ public GameObject dockedCollision</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
     <dd></dd>
   </dl>
 
@@ -676,6 +889,37 @@ public GameObject dockedCollision</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_VehicleDockingBay_powerConsumer" data-uid="DefaultNamespace.VehicleDockingBay.powerConsumer">
+  powerConsumer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public PowerConsumer powerConsumer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PowerConsumer.html">PowerConsumer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_VehicleDockingBay_powerRelay" data-uid="DefaultNamespace.VehicleDockingBay.powerRelay">
   powerRelay
   
@@ -706,8 +950,8 @@ public GameObject dockedCollision</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_requiresAnimationStateForDocking" data-uid="DefaultNamespace.VehicleDockingBay.requiresAnimationStateForDocking">
-  requiresAnimationStateForDocking
+  <h3 id="DefaultNamespace_VehicleDockingBay_powered" data-uid="DefaultNamespace.VehicleDockingBay.powered">
+  powered
   
   </h3>
 
@@ -715,9 +959,7 @@ public GameObject dockedCollision</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-[Tooltip(&quot;Whether the animator needs to have a particular state before docking can take place&quot;)]
-public bool requiresAnimationStateForDocking</code></pre>
+    <pre><code class="lang-csharp hljs">public bool powered</code></pre>
   </div>
 
 
@@ -738,8 +980,8 @@ public bool requiresAnimationStateForDocking</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_requiresUndockingClearance" data-uid="DefaultNamespace.VehicleDockingBay.requiresUndockingClearance">
-  requiresUndockingClearance
+  <h3 id="DefaultNamespace_VehicleDockingBay_pushObjects" data-uid="DefaultNamespace.VehicleDockingBay.pushObjects">
+  pushObjects
   
   </h3>
 
@@ -747,8 +989,8 @@ public bool requiresAnimationStateForDocking</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-public bool requiresUndockingClearance</code></pre>
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public PushObjects pushObjects</code></pre>
   </div>
 
 
@@ -756,7 +998,67 @@ public bool requiresUndockingClearance</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.PushObjects.html">PushObjects</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_sObstacles" data-uid="DefaultNamespace.VehicleDockingBay.sObstacles">
+  sObstacles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;IObstacle&gt; sObstacles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="IObstacle.html">IObstacle</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_seaTruckRedockLock" data-uid="DefaultNamespace.VehicleDockingBay.seaTruckRedockLock">
+  seaTruckRedockLock
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SeaTruckRedockLock seaTruckRedockLock</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.SeaTruckRedockLock.html">SeaTruckRedockLock</a></dt>
     <dd></dd>
   </dl>
 
@@ -919,8 +1221,8 @@ public bool requiresUndockingClearance</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_undockingClearanceCastDistance" data-uid="DefaultNamespace.VehicleDockingBay.undockingClearanceCastDistance">
-  undockingClearanceCastDistance
+  <h3 id="DefaultNamespace_VehicleDockingBay_timeLastCharged" data-uid="DefaultNamespace.VehicleDockingBay.timeLastCharged">
+  timeLastCharged
   
   </h3>
 
@@ -928,8 +1230,7 @@ public bool requiresUndockingClearance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-public float undockingClearanceCastDistance</code></pre>
+    <pre><code class="lang-csharp hljs">public float timeLastCharged</code></pre>
   </div>
 
 
@@ -949,44 +1250,14 @@ public float undockingClearanceCastDistance</code></pre>
 
 
 
-
-  <h3 id="DefaultNamespace_VehicleDockingBay_vehicle_docked_param" data-uid="DefaultNamespace.VehicleDockingBay.vehicle_docked_param">
-  vehicle_docked_param
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool vehicle_docked_param</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="DefaultNamespace_VehicleDockingBay_dockedVehicle_" data-uid="DefaultNamespace.VehicleDockingBay.dockedVehicle*"></a>
+  <a id="DefaultNamespace_VehicleDockingBay_dockedObject_" data-uid="DefaultNamespace.VehicleDockingBay.dockedObject*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_dockedVehicle" data-uid="DefaultNamespace.VehicleDockingBay.dockedVehicle">
-  dockedVehicle
+  <h3 id="DefaultNamespace_VehicleDockingBay_dockedObject" data-uid="DefaultNamespace.VehicleDockingBay.dockedObject">
+  dockedObject
   
   </h3>
 
@@ -994,7 +1265,7 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vehicle dockedVehicle { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Dockable dockedObject { get; set; }</code></pre>
   </div>
 
 
@@ -1003,7 +1274,7 @@ public float undockingClearanceCastDistance</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
     <dd></dd>
   </dl>
 
@@ -1018,10 +1289,10 @@ public float undockingClearanceCastDistance</code></pre>
 </h2>
 
 
-  <a id="DefaultNamespace_VehicleDockingBay_DockVehicle_" data-uid="DefaultNamespace.VehicleDockingBay.DockVehicle*"></a>
+  <a id="DefaultNamespace_VehicleDockingBay_CanDeconstruct_" data-uid="DefaultNamespace.VehicleDockingBay.CanDeconstruct*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_DockVehicle_Vehicle_System_Boolean_" data-uid="DefaultNamespace.VehicleDockingBay.DockVehicle(Vehicle,System.Boolean)">
-  DockVehicle(Vehicle, bool)
+  <h3 id="DefaultNamespace_VehicleDockingBay_CanDeconstruct_System_String__" data-uid="DefaultNamespace.VehicleDockingBay.CanDeconstruct(System.String@)">
+  CanDeconstruct(out string)
   
   </h3>
 
@@ -1029,14 +1300,74 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DockVehicle(Vehicle vehicle, bool rebuildBase = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool CanDeconstruct(out string reason)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>vehicle</code> <a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
+    <dt><code>reason</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
-    <dt><code>rebuildBase</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleDockingBay_DisablePushObjects_" data-uid="DefaultNamespace.VehicleDockingBay.DisablePushObjects*"></a>
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_DisablePushObjects" data-uid="DefaultNamespace.VehicleDockingBay.DisablePushObjects">
+  DisablePushObjects()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisablePushObjects()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleDockingBay_Dock_" data-uid="DefaultNamespace.VehicleDockingBay.Dock*"></a>
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_Dock_Dockable_" data-uid="DefaultNamespace.VehicleDockingBay.Dock(Dockable)">
+  Dock(Dockable)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dock(Dockable dockable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dockable</code> <a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
     <dd></dd>
   </dl>
 
@@ -1051,10 +1382,10 @@ public float undockingClearanceCastDistance</code></pre>
 
 
 
-  <a id="DefaultNamespace_VehicleDockingBay_GetDockedVehicle_" data-uid="DefaultNamespace.VehicleDockingBay.GetDockedVehicle*"></a>
+  <a id="DefaultNamespace_VehicleDockingBay_GetDockedObject_" data-uid="DefaultNamespace.VehicleDockingBay.GetDockedObject*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_GetDockedVehicle" data-uid="DefaultNamespace.VehicleDockingBay.GetDockedVehicle">
-  GetDockedVehicle()
+  <h3 id="DefaultNamespace_VehicleDockingBay_GetDockedObject" data-uid="DefaultNamespace.VehicleDockingBay.GetDockedObject">
+  GetDockedObject()
   
   </h3>
 
@@ -1062,13 +1393,44 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vehicle GetDockedVehicle()</code></pre>
+    <pre><code class="lang-csharp hljs">public Dockable GetDockedObject()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleDockingBay_GetPowerSource_" data-uid="DefaultNamespace.VehicleDockingBay.GetPowerSource*"></a>
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_GetPowerSource" data-uid="DefaultNamespace.VehicleDockingBay.GetPowerSource">
+  GetPowerSource()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPowerInterface GetPowerSource()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.IPowerInterface.html">IPowerInterface</a></dt>
     <dd></dd>
   </dl>
 
@@ -1113,10 +1475,10 @@ public float undockingClearanceCastDistance</code></pre>
 
 
 
-  <a id="DefaultNamespace_VehicleDockingBay_HasUndockingClearance_" data-uid="DefaultNamespace.VehicleDockingBay.HasUndockingClearance*"></a>
+  <a id="DefaultNamespace_VehicleDockingBay_IsDeconstructionObstacle_" data-uid="DefaultNamespace.VehicleDockingBay.IsDeconstructionObstacle*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_HasUndockingClearance" data-uid="DefaultNamespace.VehicleDockingBay.HasUndockingClearance">
-  HasUndockingClearance()
+  <h3 id="DefaultNamespace_VehicleDockingBay_IsDeconstructionObstacle" data-uid="DefaultNamespace.VehicleDockingBay.IsDeconstructionObstacle">
+  IsDeconstructionObstacle()
   
   </h3>
 
@@ -1124,38 +1486,7 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool HasUndockingClearance()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_VehicleDockingBay_IsPowered_" data-uid="DefaultNamespace.VehicleDockingBay.IsPowered*"></a>
-
-  <h3 id="DefaultNamespace_VehicleDockingBay_IsPowered" data-uid="DefaultNamespace.VehicleDockingBay.IsPowered">
-  IsPowered()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsPowered()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsDeconstructionObstacle()</code></pre>
   </div>
 
 
@@ -1263,10 +1594,10 @@ public float undockingClearanceCastDistance</code></pre>
 
 
 
-  <a id="DefaultNamespace_VehicleDockingBay_OnDestroy_" data-uid="DefaultNamespace.VehicleDockingBay.OnDestroy*"></a>
+  <a id="DefaultNamespace_VehicleDockingBay_LockSeatruckRedocking_" data-uid="DefaultNamespace.VehicleDockingBay.LockSeatruckRedocking*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_OnDestroy" data-uid="DefaultNamespace.VehicleDockingBay.OnDestroy">
-  OnDestroy()
+  <h3 id="DefaultNamespace_VehicleDockingBay_LockSeatruckRedocking" data-uid="DefaultNamespace.VehicleDockingBay.LockSeatruckRedocking">
+  LockSeatruckRedocking()
   
   </h3>
 
@@ -1274,7 +1605,7 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+    <pre><code class="lang-csharp hljs">public void LockSeatruckRedocking()</code></pre>
   </div>
 
 
@@ -1289,10 +1620,10 @@ public float undockingClearanceCastDistance</code></pre>
 
 
 
-  <a id="DefaultNamespace_VehicleDockingBay_OnDrawGizmosSelected_" data-uid="DefaultNamespace.VehicleDockingBay.OnDrawGizmosSelected*"></a>
+  <a id="DefaultNamespace_VehicleDockingBay_MoonpoolExpansionEnabled_" data-uid="DefaultNamespace.VehicleDockingBay.MoonpoolExpansionEnabled*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_OnDrawGizmosSelected" data-uid="DefaultNamespace.VehicleDockingBay.OnDrawGizmosSelected">
-  OnDrawGizmosSelected()
+  <h3 id="DefaultNamespace_VehicleDockingBay_MoonpoolExpansionEnabled" data-uid="DefaultNamespace.VehicleDockingBay.MoonpoolExpansionEnabled">
+  MoonpoolExpansionEnabled()
   
   </h3>
 
@@ -1300,7 +1631,38 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnDrawGizmosSelected()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool MoonpoolExpansionEnabled()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleDockingBay_OnDestroy_" data-uid="DefaultNamespace.VehicleDockingBay.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_OnDestroy" data-uid="DefaultNamespace.VehicleDockingBay.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
   </div>
 
 
@@ -1431,8 +1793,8 @@ public float undockingClearanceCastDistance</code></pre>
 
   <a id="DefaultNamespace_VehicleDockingBay_SetVehicleDocked_" data-uid="DefaultNamespace.VehicleDockingBay.SetVehicleDocked*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_SetVehicleDocked_Vehicle_" data-uid="DefaultNamespace.VehicleDockingBay.SetVehicleDocked(Vehicle)">
-  SetVehicleDocked(Vehicle)
+  <h3 id="DefaultNamespace_VehicleDockingBay_SetVehicleDocked_Dockable_" data-uid="DefaultNamespace.VehicleDockingBay.SetVehicleDocked(Dockable)">
+  SetVehicleDocked(Dockable)
   
   </h3>
 
@@ -1440,12 +1802,12 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVehicleDocked(Vehicle vehicle)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVehicleDocked(Dockable dockable)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>vehicle</code> <a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
+    <dt><code>dockable</code> <a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
     <dd></dd>
   </dl>
 
@@ -1540,8 +1902,8 @@ public float undockingClearanceCastDistance</code></pre>
 
   <a id="DefaultNamespace_VehicleDockingBay_UpdateDockedPosition_" data-uid="DefaultNamespace.VehicleDockingBay.UpdateDockedPosition*"></a>
 
-  <h3 id="DefaultNamespace_VehicleDockingBay_UpdateDockedPosition_Vehicle_System_Single_" data-uid="DefaultNamespace.VehicleDockingBay.UpdateDockedPosition(Vehicle,System.Single)">
-  UpdateDockedPosition(Vehicle, float)
+  <h3 id="DefaultNamespace_VehicleDockingBay_UpdateDockedPosition_Dockable_System_Single_" data-uid="DefaultNamespace.VehicleDockingBay.UpdateDockedPosition(Dockable,System.Single)">
+  UpdateDockedPosition(Dockable, float)
   
   </h3>
 
@@ -1549,16 +1911,42 @@ public float undockingClearanceCastDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateDockedPosition(Vehicle vehicle, float interpfraction)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UpdateDockedPosition(Dockable dockable, float interpfraction)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>vehicle</code> <a class="xref" href="DefaultNamespace.Vehicle.html">Vehicle</a></dt>
+    <dt><code>dockable</code> <a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
     <dd></dd>
     <dt><code>interpfraction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleDockingBay_UpdateDocking_" data-uid="DefaultNamespace.VehicleDockingBay.UpdateDocking*"></a>
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_UpdateDocking" data-uid="DefaultNamespace.VehicleDockingBay.UpdateDocking">
+  UpdateDocking()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateDocking()</code></pre>
+  </div>
+
 
 
 
@@ -1596,6 +1984,68 @@ public float undockingClearanceCastDistance</code></pre>
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleDockingBay_IDockingBay_AllowedToDock_" data-uid="DefaultNamespace.VehicleDockingBay.IDockingBay#AllowedToDock*"></a>
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_IDockingBay_AllowedToDock_Dockable_" data-uid="DefaultNamespace.VehicleDockingBay.IDockingBay#AllowedToDock(Dockable)">
+  IDockingBay.AllowedToDock(Dockable)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDockingBay.AllowedToDock(Dockable dockable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dockable</code> <a class="xref" href="DefaultNamespace.Dockable.html">Dockable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleDockingBay_IDockingBay_EjectDocked_" data-uid="DefaultNamespace.VehicleDockingBay.IDockingBay#EjectDocked*"></a>
+
+  <h3 id="DefaultNamespace_VehicleDockingBay_IDockingBay_EjectDocked" data-uid="DefaultNamespace.VehicleDockingBay.IDockingBay#EjectDocked">
+  IDockingBay.EjectDocked()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IDockingBay.EjectDocked()</code></pre>
+  </div>
+
 
 
 

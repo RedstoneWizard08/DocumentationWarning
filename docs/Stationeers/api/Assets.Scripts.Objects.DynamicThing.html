@@ -102,7 +102,7 @@ Class DynamicThing
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(Rigidbody))]
-public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IWeatherDamagable, ILodRequester, IReferencable, IEvaluable</code></pre>
+public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICreativeSpawnable, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IDensePoolable, IWeatherDamagable, ILodRequester, IReferencable, IEvaluable, IThreadable</code></pre>
   </div>
 
 
@@ -127,13 +127,16 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <div><a class="xref" href="Audio.IAudioParent.html">IAudioParent</a></div>
       <div><a class="xref" href="Assets.Scripts.ISyncListable.html">ISyncListable</a></div>
       <div><a class="xref" href="DefaultNamespace.ITooltip.html">ITooltip</a></div>
+      <div><a class="xref" href="Assets.Scripts.ICreativeSpawnable.html">ICreativeSpawnable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a>&gt;</div>
       <div><a class="xref" href="Objects.Electrical.IPhysical.html">IPhysical</a></div>
       <div><a class="xref" href="Objects.Electrical.IProfile.html">IProfile</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
       <div><a class="xref" href="Weather.IWeatherDamagable.html">IWeatherDamagable</a></div>
       <div><a class="xref" href="TerrainSystem.Lods.ILodRequester.html">ILodRequester</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
+      <div><a class="xref" href="TerrainSystem.IThreadable.html">IThreadable</a></div>
     </dd>
   </dl>
 
@@ -148,9 +151,6 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <div><a class="xref" href="Assets.Scripts.Objects.Item.html">Item</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.LanderCapsule.html">LanderCapsule</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Monster.html">Monster</a></div>
-      <div><a class="xref" href="Assets.Scripts.Objects.MonsterEgg.html">MonsterEgg</a></div>
-      <div><a class="xref" href="Assets.Scripts.Objects.Shuttle.html">Shuttle</a></div>
-      <div><a class="xref" href="DefaultNamespace.Meteor.html">Meteor</a></div>
       <div><a class="xref" href="DefaultNamespace.SuitModBase.html">SuitModBase</a></div>
     </dd>
   </dl>
@@ -159,10 +159,13 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllPhysicalThings">Thing.AllPhysicalThings</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PhysicalPoolActive">Thing.PhysicalPoolActive</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllILights">Thing.AllILights</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllIWearableLights">Thing.AllIWearableLights</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SuppressSound">Thing.SuppressSound</a>
@@ -225,12 +228,6 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_WillSave">Thing.WillSave</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChange">Thing.OnPositionChange</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChangeLava">Thing.OnPositionChangeLava</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_position">Thing.position</a>
     </div>
     <div>
@@ -271,9 +268,6 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__customMaterials">Thing._customMaterials</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PaintableMaterial">Thing.PaintableMaterial</a>
@@ -358,9 +352,6 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnimTask">Thing.ErrorAnimTask</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalGrid">Thing.LocalGrid</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_BoundingSphereCenter">Thing.BoundingSphereCenter</a>
@@ -660,6 +651,9 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
     </div>
     <div>
@@ -705,7 +699,7 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildBatteryCellChange_Assets_Scripts_Objects_Items_BatteryCell_">Thing.OnChildBatteryCellChange(BatteryCell)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindMiningBeltOnParent">Thing.FindMiningBeltOnParent()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAvailableDirtCanister">Thing.FindAvailableDirtCanister()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsState_Assets_Scripts_Objects_InteractableType_System_Int32_">Thing.IsState(InteractableType, int)</a>
@@ -726,6 +720,9 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableUpdated_Assets_Scripts_Objects_Interactable_">Thing.OnInteractableUpdated(Interactable)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ValidateOnLoad_System_Int32_">Thing.ValidateOnLoad(int)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnFinishedInteractionSync_Assets_Scripts_Objects_Interactable_">Thing.OnFinishedInteractionSync(Interactable)</a>
     </div>
     <div>
@@ -739,6 +736,9 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RemoveAccess_System_Int32_">Thing.RemoveAccess(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshOnOffAnimState_System_Boolean_">Thing.RefreshOnOffAnimState(bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshAnimState_System_Boolean_">Thing.RefreshAnimState(bool)</a>
@@ -843,6 +843,9 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HandleCollisionWith_Assets_Scripts_Objects_Thing_System_Boolean_">Thing.HandleCollisionWith(Thing, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsAudible">Thing.IsAudible()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InitializeDamageState">Thing.InitializeDamageState()</a>
     </div>
     <div>
@@ -858,9 +861,6 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateLodFlares">Thing.UpdateLodFlares()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnAroundChunk">Thing.SpawnAroundChunk()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ScheduleGridEventFromThread_Assets_Scripts_GridSystem_GridEvent_">Thing.ScheduleGridEventFromThread(GridEvent)</a>
     </div>
     <div>
@@ -871,6 +871,12 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetDamageColor">Thing.GetDamageColor()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
@@ -1065,7 +1071,7 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Remove_Sound_PooledAudioSource_">Thing.Remove(PooledAudioSource)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoint_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoint(RocketBinaryWriter)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Thing_">Thing.GetNextFreeSlot(Thing)</a>
@@ -1090,9 +1096,6 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReferenceId">Thing.ReferenceId</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllThings">Thing.AllThings</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
@@ -1170,6 +1173,9 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventStateChange">Thing.PreventStateChange</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetLocalBounds">Thing.GetLocalBounds</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Position">Thing.Position</a>
     </div>
     <div>
@@ -1200,7 +1206,13 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CustomName">Thing.CustomName</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DisplayName">Thing.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnableName">Thing.SpawnableName</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ProfilerTag">Thing.ProfilerTag</a>
@@ -1225,6 +1237,9 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OccludeAudio">Thing.OccludeAudio</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnId">Thing.SpawnId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
@@ -1380,7 +1395,7 @@ public class DynamicThing : Thing, IAudioParent, ISyncListable, ITooltip, ICompa
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsInstantiated">Thing.IsInstantiated</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ForceUseColorSwatchMaterial">Thing.ForceUseColorSwatchMaterial</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AudioDistanceSquared">Thing.AudioDistanceSquared</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsBeingDestroyed">Thing.IsBeingDestroyed</a>
@@ -2060,36 +2075,6 @@ public HashSet&lt;MachineInputTrigger&gt; CurrentMachineInputTriggers</code></pr
 
 
 
-  <h3 id="Assets_Scripts_Objects_DynamicThing_FastSpeed" data-uid="Assets.Scripts.Objects.DynamicThing.FastSpeed">
-  FastSpeed
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float FastSpeed</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="Assets_Scripts_Objects_DynamicThing_ForceKinematicDistance" data-uid="Assets.Scripts.Objects.DynamicThing.ForceKinematicDistance">
   ForceKinematicDistance
   
@@ -2301,6 +2286,36 @@ public HandPosition GripType</code></pre>
 
 
 
+  <h3 id="Assets_Scripts_Objects_DynamicThing_IsInLavaObject" data-uid="Assets.Scripts.Objects.DynamicThing.IsInLavaObject">
+  IsInLavaObject
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInLavaObject</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Assets_Scripts_Objects_DynamicThing_IsKinematic" data-uid="Assets.Scripts.Objects.DynamicThing.IsKinematic">
   IsKinematic
   
@@ -2361,8 +2376,8 @@ public HandPosition GripType</code></pre>
 
 
 
-  <h3 id="Assets_Scripts_Objects_DynamicThing_IsSmall" data-uid="Assets.Scripts.Objects.DynamicThing.IsSmall">
-  IsSmall
+  <h3 id="Assets_Scripts_Objects_DynamicThing_IsUnderLava" data-uid="Assets.Scripts.Objects.DynamicThing.IsUnderLava">
+  IsUnderLava
   
   </h3>
 
@@ -2370,7 +2385,7 @@ public HandPosition GripType</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsSmall</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsUnderLava</code></pre>
   </div>
 
 
@@ -3215,37 +3230,6 @@ public string UsingSound</code></pre>
 
 
 
-  <a id="Assets_Scripts_Objects_DynamicThing_ChunkGenerationRadius_" data-uid="Assets.Scripts.Objects.DynamicThing.ChunkGenerationRadius*"></a>
-
-  <h3 id="Assets_Scripts_Objects_DynamicThing_ChunkGenerationRadius" data-uid="Assets.Scripts.Objects.DynamicThing.ChunkGenerationRadius">
-  ChunkGenerationRadius
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual int ChunkGenerationRadius { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="Assets_Scripts_Objects_DynamicThing_ConvectionFactor_" data-uid="Assets.Scripts.Objects.DynamicThing.ConvectionFactor*"></a>
 
   <h3 id="Assets_Scripts_Objects_DynamicThing_ConvectionFactor" data-uid="Assets.Scripts.Objects.DynamicThing.ConvectionFactor">
@@ -3494,10 +3478,10 @@ public string UsingSound</code></pre>
 
 
 
-  <a id="Assets_Scripts_Objects_DynamicThing_IsChunkRendered_" data-uid="Assets.Scripts.Objects.DynamicThing.IsChunkRendered*"></a>
+  <a id="Assets_Scripts_Objects_DynamicThing_IsHiddenInSlot_" data-uid="Assets.Scripts.Objects.DynamicThing.IsHiddenInSlot*"></a>
 
-  <h3 id="Assets_Scripts_Objects_DynamicThing_IsChunkRendered" data-uid="Assets.Scripts.Objects.DynamicThing.IsChunkRendered">
-  IsChunkRendered
+  <h3 id="Assets_Scripts_Objects_DynamicThing_IsHiddenInSlot" data-uid="Assets.Scripts.Objects.DynamicThing.IsHiddenInSlot">
+  IsHiddenInSlot
   
   </h3>
 
@@ -3505,7 +3489,7 @@ public string UsingSound</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool IsChunkRendered { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsHiddenInSlot { get; }</code></pre>
   </div>
 
 
@@ -3525,10 +3509,10 @@ public string UsingSound</code></pre>
 
 
 
-  <a id="Assets_Scripts_Objects_DynamicThing_IsHiddenInSlot_" data-uid="Assets.Scripts.Objects.DynamicThing.IsHiddenInSlot*"></a>
+  <a id="Assets_Scripts_Objects_DynamicThing_IsInLava_" data-uid="Assets.Scripts.Objects.DynamicThing.IsInLava*"></a>
 
-  <h3 id="Assets_Scripts_Objects_DynamicThing_IsHiddenInSlot" data-uid="Assets.Scripts.Objects.DynamicThing.IsHiddenInSlot">
-  IsHiddenInSlot
+  <h3 id="Assets_Scripts_Objects_DynamicThing_IsInLava" data-uid="Assets.Scripts.Objects.DynamicThing.IsInLava">
+  IsInLava
   
   </h3>
 
@@ -3536,7 +3520,7 @@ public string UsingSound</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsHiddenInSlot { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsInLava { get; }</code></pre>
   </div>
 
 
@@ -3608,6 +3592,37 @@ public string UsingSound</code></pre>
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_DynamicThing_LavaDamage_" data-uid="Assets.Scripts.Objects.DynamicThing.LavaDamage*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_LavaDamage" data-uid="Assets.Scripts.Objects.DynamicThing.LavaDamage">
+  LavaDamage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual float LavaDamage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -3835,10 +3850,10 @@ public string UsingSound</code></pre>
 
 
 
-  <a id="Assets_Scripts_Objects_DynamicThing_PreviousPosition_" data-uid="Assets.Scripts.Objects.DynamicThing.PreviousPosition*"></a>
+  <a id="Assets_Scripts_Objects_DynamicThing_PreviousLodRequestPosition_" data-uid="Assets.Scripts.Objects.DynamicThing.PreviousLodRequestPosition*"></a>
 
-  <h3 id="Assets_Scripts_Objects_DynamicThing_PreviousPosition" data-uid="Assets.Scripts.Objects.DynamicThing.PreviousPosition">
-  PreviousPosition
+  <h3 id="Assets_Scripts_Objects_DynamicThing_PreviousLodRequestPosition" data-uid="Assets.Scripts.Objects.DynamicThing.PreviousLodRequestPosition">
+  PreviousLodRequestPosition
   
   </h3>
 
@@ -3846,7 +3861,7 @@ public string UsingSound</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 PreviousPosition { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 PreviousLodRequestPosition { get; set; }</code></pre>
   </div>
 
 
@@ -4207,6 +4222,37 @@ public string UsingSound</code></pre>
 
 
 
+  <a id="Assets_Scripts_Objects_DynamicThing_ThreadCost_" data-uid="Assets.Scripts.Objects.DynamicThing.ThreadCost*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_ThreadCost" data-uid="Assets.Scripts.Objects.DynamicThing.ThreadCost">
+  ThreadCost
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ThreadCost { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Objects_DynamicThing_UnEquipSoundHash_" data-uid="Assets.Scripts.Objects.DynamicThing.UnEquipSoundHash*"></a>
 
   <h3 id="Assets_Scripts_Objects_DynamicThing_UnEquipSoundHash" data-uid="Assets.Scripts.Objects.DynamicThing.UnEquipSoundHash">
@@ -4356,6 +4402,32 @@ public string UsingSound</code></pre>
     <dt><code>flatCameraForward</code> <span class="xref">Vector3</span></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_DynamicThing_ApplyLavaDamage_" data-uid="Assets.Scripts.Objects.DynamicThing.ApplyLavaDamage*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_ApplyLavaDamage" data-uid="Assets.Scripts.Objects.DynamicThing.ApplyLavaDamage">
+  ApplyLavaDamage()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ApplyLavaDamage()</code></pre>
+  </div>
+
 
 
 
@@ -4791,6 +4863,37 @@ public string UsingSound</code></pre>
 
 
 
+  <a id="Assets_Scripts_Objects_DynamicThing_CanThread_" data-uid="Assets.Scripts.Objects.DynamicThing.CanThread*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_CanThread" data-uid="Assets.Scripts.Objects.DynamicThing.CanThread">
+  CanThread()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanThread()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Objects_DynamicThing_CheckForCollectorProximity_" data-uid="Assets.Scripts.Objects.DynamicThing.CheckForCollectorProximity*"></a>
 
   <h3 id="Assets_Scripts_Objects_DynamicThing_CheckForCollectorProximity" data-uid="Assets.Scripts.Objects.DynamicThing.CheckForCollectorProximity">
@@ -4832,6 +4935,37 @@ public string UsingSound</code></pre>
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_DynamicThing_CheckPlayableArea_" data-uid="Assets.Scripts.Objects.DynamicThing.CheckPlayableArea*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_CheckPlayableArea" data-uid="Assets.Scripts.Objects.DynamicThing.CheckPlayableArea">
+  CheckPlayableArea()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayableAreaRule CheckPlayableArea()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PlayableAreaRule.html">PlayableAreaRule</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -4897,6 +5031,37 @@ public string UsingSound</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_DynamicThing_DebugName_" data-uid="Assets.Scripts.Objects.DynamicThing.DebugName*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_DebugName" data-uid="Assets.Scripts.Objects.DynamicThing.DebugName">
+  DebugName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DebugName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -5915,6 +6080,37 @@ public string UsingSound</code></pre>
 
 
 
+  <a id="Assets_Scripts_Objects_DynamicThing_IsHiddenInParentSlot_" data-uid="Assets.Scripts.Objects.DynamicThing.IsHiddenInParentSlot*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_IsHiddenInParentSlot" data-uid="Assets.Scripts.Objects.DynamicThing.IsHiddenInParentSlot">
+  IsHiddenInParentSlot()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsHiddenInParentSlot()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Objects_DynamicThing_IsLogicReadable_" data-uid="Assets.Scripts.Objects.DynamicThing.IsLogicReadable*"></a>
 
   <h3 id="Assets_Scripts_Objects_DynamicThing_IsLogicReadable" data-uid="Assets.Scripts.Objects.DynamicThing.IsLogicReadable">
@@ -6256,6 +6452,44 @@ public string UsingSound</code></pre>
     <dt><code>angularVelocity</code> <span class="xref">Vector3</span></dt>
     <dd></dd>
     <dt><code>force</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_DynamicThing_OnAddToPool_" data-uid="Assets.Scripts.Objects.DynamicThing.OnAddToPool*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_OnAddToPool_System_Object_System_Int32_" data-uid="Assets.Scripts.Objects.DynamicThing.OnAddToPool(System.Object,System.Int32)">
+  OnAddToPool(object, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool OnAddToPool(object densePool, int slot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>slot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -6718,72 +6952,6 @@ public string UsingSound</code></pre>
 
 
 
-  <a id="Assets_Scripts_Objects_DynamicThing_OnPositionChanged_" data-uid="Assets.Scripts.Objects.DynamicThing.OnPositionChanged*"></a>
-
-  <h3 id="Assets_Scripts_Objects_DynamicThing_OnPositionChanged_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_" data-uid="Assets.Scripts.Objects.DynamicThing.OnPositionChanged(Assets.Scripts.GridSystem.Grid3,UnityEngine.Vector3)">
-  OnPositionChanged(Grid3, Vector3)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnPositionChanged(Grid3 newChunkPos, Vector3 newWorldPos)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>newChunkPos</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
-    <dd></dd>
-    <dt><code>newWorldPos</code> <span class="xref">Vector3</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_Objects_DynamicThing_OnPositionChangedClient_" data-uid="Assets.Scripts.Objects.DynamicThing.OnPositionChangedClient*"></a>
-
-  <h3 id="Assets_Scripts_Objects_DynamicThing_OnPositionChangedClient_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_" data-uid="Assets.Scripts.Objects.DynamicThing.OnPositionChangedClient(Assets.Scripts.GridSystem.Grid3,UnityEngine.Vector3)">
-  OnPositionChangedClient(Grid3, Vector3)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnPositionChangedClient(Grid3 newChunkPos, Vector3 newWorldPos)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>newChunkPos</code> <a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
-    <dd></dd>
-    <dt><code>newWorldPos</code> <span class="xref">Vector3</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Assets_Scripts_Objects_DynamicThing_OnPrimaryUseEnd_" data-uid="Assets.Scripts.Objects.DynamicThing.OnPrimaryUseEnd*"></a>
 
   <h3 id="Assets_Scripts_Objects_DynamicThing_OnPrimaryUseEnd" data-uid="Assets.Scripts.Objects.DynamicThing.OnPrimaryUseEnd">
@@ -6824,6 +6992,37 @@ public string UsingSound</code></pre>
     <pre><code class="lang-csharp hljs">public virtual void OnPrimaryUseStart()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_DynamicThing_OnRemoveFromPool_" data-uid="Assets.Scripts.Objects.DynamicThing.OnRemoveFromPool*"></a>
+
+  <h3 id="Assets_Scripts_Objects_DynamicThing_OnRemoveFromPool_System_Object_" data-uid="Assets.Scripts.Objects.DynamicThing.OnRemoveFromPool(System.Object)">
+  OnRemoveFromPool(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnRemoveFromPool(object densePool)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

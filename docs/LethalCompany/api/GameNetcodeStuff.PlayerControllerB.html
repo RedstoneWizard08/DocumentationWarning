@@ -134,6 +134,9 @@ Class PlayerControllerB
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -152,13 +155,31 @@ Class PlayerControllerB
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -167,10 +188,16 @@ Class PlayerControllerB
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -182,7 +209,13 @@ Class PlayerControllerB
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -192,6 +225,9 @@ Class PlayerControllerB
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -5793,6 +5829,36 @@ public float movementSpeed</code></pre>
 
 
 
+  <h3 id="GameNetcodeStuff_PlayerControllerB_nightVisionRadar" data-uid="GameNetcodeStuff.PlayerControllerB.nightVisionRadar">
+  nightVisionRadar
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Light nightVisionRadar</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Light.html">Light</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="GameNetcodeStuff_PlayerControllerB_oldCameraUp" data-uid="GameNetcodeStuff.PlayerControllerB.oldCameraUp">
   oldCameraUp
   
@@ -9102,6 +9168,36 @@ public Vector3 targetScreenPos</code></pre>
 
 
 
+  <h3 id="GameNetcodeStuff_PlayerControllerB_timeSinceFearLevelUp" data-uid="GameNetcodeStuff.PlayerControllerB.timeSinceFearLevelUp">
+  timeSinceFearLevelUp
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timeSinceFearLevelUp</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="GameNetcodeStuff_PlayerControllerB_timeSinceMakingLoudNoise" data-uid="GameNetcodeStuff.PlayerControllerB.timeSinceMakingLoudNoise">
   timeSinceMakingLoudNoise
   
@@ -11245,6 +11341,86 @@ public void DestroyItemInSlotServerRpc(int itemSlot)</code></pre>
 
 
 
+  <a id="GameNetcodeStuff_PlayerControllerB_DisableInVehicleAnimationClientRpc_" data-uid="GameNetcodeStuff.PlayerControllerB.DisableInVehicleAnimationClientRpc*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB_DisableInVehicleAnimationClientRpc" data-uid="GameNetcodeStuff.PlayerControllerB.DisableInVehicleAnimationClientRpc">
+  DisableInVehicleAnimationClientRpc()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void DisableInVehicleAnimationClientRpc()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GameNetcodeStuff_PlayerControllerB_DisableInVehicleAnimationServerRpc_" data-uid="GameNetcodeStuff.PlayerControllerB.DisableInVehicleAnimationServerRpc*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB_DisableInVehicleAnimationServerRpc" data-uid="GameNetcodeStuff.PlayerControllerB.DisableInVehicleAnimationServerRpc">
+  DisableInVehicleAnimationServerRpc()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc(RequireOwnership = false)]
+public void DisableInVehicleAnimationServerRpc()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GameNetcodeStuff_PlayerControllerB_DisableInVehicleAnimationSync_" data-uid="GameNetcodeStuff.PlayerControllerB.DisableInVehicleAnimationSync*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB_DisableInVehicleAnimationSync" data-uid="GameNetcodeStuff.PlayerControllerB.DisableInVehicleAnimationSync">
+  DisableInVehicleAnimationSync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisableInVehicleAnimationSync()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="GameNetcodeStuff_PlayerControllerB_DisableJetpackControlsLocally_" data-uid="GameNetcodeStuff.PlayerControllerB.DisableJetpackControlsLocally*"></a>
 
   <h3 id="GameNetcodeStuff_PlayerControllerB_DisableJetpackControlsLocally" data-uid="GameNetcodeStuff.PlayerControllerB.DisableJetpackControlsLocally">
@@ -11997,33 +12173,6 @@ public void HealServerRpc()</code></pre>
     <dt><code>cap</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="GameNetcodeStuff_PlayerControllerB_InitializeRPCS_PlayerControllerB_" data-uid="GameNetcodeStuff.PlayerControllerB.InitializeRPCS_PlayerControllerB*"></a>
-
-  <h3 id="GameNetcodeStuff_PlayerControllerB_InitializeRPCS_PlayerControllerB" data-uid="GameNetcodeStuff.PlayerControllerB.InitializeRPCS_PlayerControllerB">
-  InitializeRPCS_PlayerControllerB()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_PlayerControllerB()</code></pre>
-  </div>
-
 
 
 
@@ -15736,6 +15885,32 @@ public void UpdatePlayerRotationServerRpc(short newRot, short newYRot)</code></p
 
 
 
+  <a id="GameNetcodeStuff_PlayerControllerB___initializeRpcs_" data-uid="GameNetcodeStuff.PlayerControllerB.__initializeRpcs*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB___initializeRpcs" data-uid="GameNetcodeStuff.PlayerControllerB.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="GameNetcodeStuff_PlayerControllerB___initializeVariables_" data-uid="GameNetcodeStuff.PlayerControllerB.__initializeVariables*"></a>
 
   <h3 id="GameNetcodeStuff_PlayerControllerB___initializeVariables" data-uid="GameNetcodeStuff.PlayerControllerB.__initializeVariables">
@@ -17197,6 +17372,76 @@ public void UpdatePlayerRotationServerRpc(short newRot, short newYRot)</code></p
 
 
 
+  <a id="GameNetcodeStuff_PlayerControllerB___rpc_handler_3483566845_" data-uid="GameNetcodeStuff.PlayerControllerB.__rpc_handler_3483566845*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB___rpc_handler_3483566845_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="GameNetcodeStuff.PlayerControllerB.__rpc_handler_3483566845(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_3483566845(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_3483566845(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GameNetcodeStuff_PlayerControllerB___rpc_handler_3511599861_" data-uid="GameNetcodeStuff.PlayerControllerB.__rpc_handler_3511599861*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB___rpc_handler_3511599861_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="GameNetcodeStuff.PlayerControllerB.__rpc_handler_3511599861(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_3511599861(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_3511599861(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="GameNetcodeStuff_PlayerControllerB___rpc_handler_3591743514_" data-uid="GameNetcodeStuff.PlayerControllerB.__rpc_handler_3591743514*"></a>
 
   <h3 id="GameNetcodeStuff_PlayerControllerB___rpc_handler_3591743514_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="GameNetcodeStuff.PlayerControllerB.__rpc_handler_3591743514(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
@@ -18370,6 +18615,37 @@ public void UpdatePlayerRotationServerRpc(short newRot, short newYRot)</code></p
 
 
 
+  <a id="GameNetcodeStuff_PlayerControllerB_IVisibleThreat_GetHeldObject_" data-uid="GameNetcodeStuff.PlayerControllerB.IVisibleThreat#GetHeldObject*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB_IVisibleThreat_GetHeldObject" data-uid="GameNetcodeStuff.PlayerControllerB.IVisibleThreat#GetHeldObject">
+  IVisibleThreat.GetHeldObject()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GrabbableObject IVisibleThreat.GetHeldObject()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.GrabbableObject.html">GrabbableObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="GameNetcodeStuff_PlayerControllerB_IVisibleThreat_GetInterestLevel_" data-uid="GameNetcodeStuff.PlayerControllerB.IVisibleThreat#GetInterestLevel*"></a>
 
   <h3 id="GameNetcodeStuff_PlayerControllerB_IVisibleThreat_GetInterestLevel" data-uid="GameNetcodeStuff.PlayerControllerB.IVisibleThreat#GetInterestLevel">
@@ -18548,6 +18824,37 @@ public void UpdatePlayerRotationServerRpc(short newRot, short newYRot)</code></p
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GameNetcodeStuff_PlayerControllerB_IVisibleThreat_IsThreatDead_" data-uid="GameNetcodeStuff.PlayerControllerB.IVisibleThreat#IsThreatDead*"></a>
+
+  <h3 id="GameNetcodeStuff_PlayerControllerB_IVisibleThreat_IsThreatDead" data-uid="GameNetcodeStuff.PlayerControllerB.IVisibleThreat#IsThreatDead">
+  IVisibleThreat.IsThreatDead()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IVisibleThreat.IsThreatDead()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 

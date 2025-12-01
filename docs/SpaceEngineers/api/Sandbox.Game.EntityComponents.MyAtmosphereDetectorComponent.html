@@ -101,8 +101,9 @@ Class MyAtmosphereDetectorComponent
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MyComponentBuilder(typeof(MyObjectBuilder_AtmosphereDetectorComponent), true)]
-public class MyAtmosphereDetectorComponent : MyEntityComponentBase, IMyEntityComponentBase, IMyComponentBase</code></pre>
+    <pre><code class="lang-csharp hljs">[MyComponentType(typeof(MyAtmosphereDetectorComponent))]
+[MyComponentBuilder(typeof(MyObjectBuilder_AtmosphereDetectorComponent), true)]
+public class MyAtmosphereDetectorComponent : MyUpdatingEntityComponent, IMyEntityComponentBase, IMyComponentBase, IMyEventProxy, IMyEventOwner, IMyUpdatingEntityComponent</code></pre>
   </div>
 
 
@@ -114,6 +115,8 @@ public class MyAtmosphereDetectorComponent : MyEntityComponentBase, IMyEntityCom
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyComponentBase.html">MyComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html">MyEntityComponentBase</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html">MyEventProxyEntityComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html">MyUpdatingEntityComponent</a></div>
       <div><span class="xref">MyAtmosphereDetectorComponent</span></div>
     </dd>
   </dl>
@@ -123,6 +126,9 @@ public class MyAtmosphereDetectorComponent : MyEntityComponentBase, IMyEntityCom
     <dd>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyComponentBase.html">IMyComponentBase</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventProxy.html">IMyEventProxy</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventOwner.html">IMyEventOwner</a></div>
+      <div><a class="xref" href="VRage.Game.Entity.EntityComponents.Interfaces.IMyUpdatingEntityComponent.html">IMyUpdatingEntityComponent</a></div>
     </dd>
   </dl>
 
@@ -131,19 +137,82 @@ public class MyAtmosphereDetectorComponent : MyEntityComponentBase, IMyEntityCom
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAddedToContainer">MyEntityComponentBase.OnAddedToContainer()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateOnceBeforeFrame">MyUpdatingEntityComponent.UpdateOnceBeforeFrame()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnBeforeRemovedFromContainer">MyEntityComponentBase.OnBeforeRemovedFromContainer()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulation">MyUpdatingEntityComponent.UpdateBeforeSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulationParallel">MyUpdatingEntityComponent.UpdateBeforeSimulationParallel()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateSimulate">MyUpdatingEntityComponent.UpdateSimulate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation">MyUpdatingEntityComponent.UpdateAfterSimulation()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation10">MyUpdatingEntityComponent.UpdateAfterSimulation10()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation100">MyUpdatingEntityComponent.UpdateAfterSimulation100()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulationParallel">MyUpdatingEntityComponent.UpdateAfterSimulationParallel()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_ParentEntity">MyUpdatingEntityComponent.ParentEntity</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdate">MyUpdatingEntityComponent.NeedsUpdate</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation100">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation100</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateSimulation">MyUpdatingEntityComponent.NeedsUpdateSimulation</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation10">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation10</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation100">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation100</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallel">MyUpdatingEntityComponent.UpdateParallel</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdatingType">MyUpdatingEntityComponent.UpdatingType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateChanged">MyUpdatingEntityComponent.NeedsUpdateChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallelChanged">MyUpdatingEntityComponent.UpdateParallelChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_SyncType">MyEventProxyEntityComponent.SyncType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_OnBeforeRemovedFromContainer">MyEventProxyEntityComponent.OnBeforeRemovedFromContainer()</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_AttachSyncToEntity">MyEventProxyEntityComponent.AttachSyncToEntity</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAddedToContainer">MyEntityComponentBase.OnAddedToContainer()</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Entity">MyEntityComponentBase.Entity</a>
-    </div>
-    <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_AttachSyncToEntity">MyEntityComponentBase.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAfterAddedToContainer">MyEntityComponentBase.OnAfterAddedToContainer</a>
@@ -180,6 +249,9 @@ public class MyAtmosphereDetectorComponent : MyEntityComponentBase, IMyEntityCom
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -423,10 +495,10 @@ public class MyAtmosphereDetectorComponent : MyEntityComponentBase, IMyEntityCom
 
 
 
-  <a id="Sandbox_Game_EntityComponents_MyAtmosphereDetectorComponent_UpdateAtmosphereStatus_" data-uid="Sandbox.Game.EntityComponents.MyAtmosphereDetectorComponent.UpdateAtmosphereStatus*"></a>
+  <a id="Sandbox_Game_EntityComponents_MyAtmosphereDetectorComponent_UpdateBeforeSimulation100_" data-uid="Sandbox.Game.EntityComponents.MyAtmosphereDetectorComponent.UpdateBeforeSimulation100*"></a>
 
-  <h3 id="Sandbox_Game_EntityComponents_MyAtmosphereDetectorComponent_UpdateAtmosphereStatus" data-uid="Sandbox.Game.EntityComponents.MyAtmosphereDetectorComponent.UpdateAtmosphereStatus">
-  UpdateAtmosphereStatus()
+  <h3 id="Sandbox_Game_EntityComponents_MyAtmosphereDetectorComponent_UpdateBeforeSimulation100" data-uid="Sandbox.Game.EntityComponents.MyAtmosphereDetectorComponent.UpdateBeforeSimulation100">
+  UpdateBeforeSimulation100()
   
   </h3>
 
@@ -434,7 +506,7 @@ public class MyAtmosphereDetectorComponent : MyEntityComponentBase, IMyEntityCom
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateAtmosphereStatus()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void UpdateBeforeSimulation100()</code></pre>
   </div>
 
 

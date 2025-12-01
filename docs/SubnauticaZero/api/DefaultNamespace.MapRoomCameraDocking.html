@@ -102,7 +102,7 @@ Class MapRoomCameraDocking
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class MapRoomCameraDocking : MonoBehaviour, IProtoEventListener</code></pre>
+public class MapRoomCameraDocking : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehaviour</code></pre>
   </div>
 
 
@@ -123,7 +123,8 @@ public class MapRoomCameraDocking : MonoBehaviour, IProtoEventListener</code></p
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="DefaultNamespace.IProtoEventListener.html">IProtoEventListener</a></div>
+      <div><a class="xref" href="DefaultNamespace.IManagedUpdateBehaviour.html">IManagedUpdateBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.IManagedBehaviour.html">IManagedBehaviour</a></div>
     </dd>
   </dl>
 
@@ -315,8 +316,8 @@ public bool cameraDocked</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_MapRoomCameraDocking_deserialized" data-uid="DefaultNamespace.MapRoomCameraDocking.deserialized">
-  deserialized
+  <h3 id="DefaultNamespace_MapRoomCameraDocking_dockingLerp" data-uid="DefaultNamespace.MapRoomCameraDocking.dockingLerp">
+  dockingLerp
   
   </h3>
 
@@ -324,7 +325,7 @@ public bool cameraDocked</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool deserialized</code></pre>
+    <pre><code class="lang-csharp hljs">public float dockingLerp</code></pre>
   </div>
 
 
@@ -332,7 +333,67 @@ public bool cameraDocked</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_MapRoomCameraDocking_dockingStartPos" data-uid="DefaultNamespace.MapRoomCameraDocking.dockingStartPos">
+  dockingStartPos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 dockingStartPos</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_MapRoomCameraDocking_dockingStartRot" data-uid="DefaultNamespace.MapRoomCameraDocking.dockingStartRot">
+  dockingStartRot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion dockingStartRot</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
     <dd></dd>
   </dl>
 
@@ -435,6 +496,41 @@ public int version</code></pre>
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_MapRoomCameraDocking_managedUpdateIndex_" data-uid="DefaultNamespace.MapRoomCameraDocking.managedUpdateIndex*"></a>
+
+  <h3 id="DefaultNamespace_MapRoomCameraDocking_managedUpdateIndex" data-uid="DefaultNamespace.MapRoomCameraDocking.managedUpdateIndex">
+  managedUpdateIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int managedUpdateIndex { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -458,6 +554,63 @@ public int version</code></pre>
     <dt><code>camera</code> <a class="xref" href="DefaultNamespace.MapRoomCamera.html">MapRoomCamera</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_MapRoomCameraDocking_GetProfileTag_" data-uid="DefaultNamespace.MapRoomCameraDocking.GetProfileTag*"></a>
+
+  <h3 id="DefaultNamespace_MapRoomCameraDocking_GetProfileTag" data-uid="DefaultNamespace.MapRoomCameraDocking.GetProfileTag">
+  GetProfileTag()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetProfileTag()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_MapRoomCameraDocking_ManagedUpdate_" data-uid="DefaultNamespace.MapRoomCameraDocking.ManagedUpdate*"></a>
+
+  <h3 id="DefaultNamespace_MapRoomCameraDocking_ManagedUpdate" data-uid="DefaultNamespace.MapRoomCameraDocking.ManagedUpdate">
+  ManagedUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ManagedUpdate()</code></pre>
+  </div>
+
 
 
 
@@ -496,68 +649,6 @@ public int version</code></pre>
 
 
 
-  <a id="DefaultNamespace_MapRoomCameraDocking_OnProtoDeserialize_" data-uid="DefaultNamespace.MapRoomCameraDocking.OnProtoDeserialize*"></a>
-
-  <h3 id="DefaultNamespace_MapRoomCameraDocking_OnProtoDeserialize_ProtobufSerializer_" data-uid="DefaultNamespace.MapRoomCameraDocking.OnProtoDeserialize(ProtobufSerializer)">
-  OnProtoDeserialize(ProtobufSerializer)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnProtoDeserialize(ProtobufSerializer serializer)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_MapRoomCameraDocking_OnProtoSerialize_" data-uid="DefaultNamespace.MapRoomCameraDocking.OnProtoSerialize*"></a>
-
-  <h3 id="DefaultNamespace_MapRoomCameraDocking_OnProtoSerialize_ProtobufSerializer_" data-uid="DefaultNamespace.MapRoomCameraDocking.OnProtoSerialize(ProtobufSerializer)">
-  OnProtoSerialize(ProtobufSerializer)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnProtoSerialize(ProtobufSerializer serializer)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_MapRoomCameraDocking_OnTriggerEnter_" data-uid="DefaultNamespace.MapRoomCameraDocking.OnTriggerEnter*"></a>
 
   <h3 id="DefaultNamespace_MapRoomCameraDocking_OnTriggerEnter_UnityEngine_Collider_" data-uid="DefaultNamespace.MapRoomCameraDocking.OnTriggerEnter(UnityEngine.Collider)">
@@ -577,32 +668,6 @@ public int version</code></pre>
     <dt><code>other</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Collider.html">Collider</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_MapRoomCameraDocking_Start_" data-uid="DefaultNamespace.MapRoomCameraDocking.Start*"></a>
-
-  <h3 id="DefaultNamespace_MapRoomCameraDocking_Start" data-uid="DefaultNamespace.MapRoomCameraDocking.Start">
-  Start()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
-  </div>
-
 
 
 

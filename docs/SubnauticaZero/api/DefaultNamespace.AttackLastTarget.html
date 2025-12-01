@@ -103,7 +103,7 @@ Class AttackLastTarget
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(LastTarget))]
 [RequireComponent(typeof(SwimBehaviour))]
-public class AttackLastTarget : CreatureAction</code></pre>
+public class AttackLastTarget : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -122,11 +122,20 @@ public class AttackLastTarget : CreatureAction</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="DefaultNamespace.RangedAttackLastTarget.html">RangedAttackLastTarget</a></div>
+      <div><a class="xref" href="DefaultNamespace.SnowStalkerAttackLastTarget.html">SnowStalkerAttackLastTarget</a></div>
+      <div><a class="xref" href="DefaultNamespace.SquidsharkAttackLastTarget.html">SquidsharkAttackLastTarget</a></div>
+      <div><a class="xref" href="DefaultNamespace.WhaleAttackLastTarget.html">WhaleAttackLastTarget</a></div>
     </dd>
   </dl>
 
@@ -135,6 +144,9 @@ public class AttackLastTarget : CreatureAction</code></pre>
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -149,25 +161,22 @@ public class AttackLastTarget : CreatureAction</code></pre>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Start">CreatureAction.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetMaxEvaluatePriority">CreatureAction.GetMaxEvaluatePriority()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -262,6 +271,36 @@ public class AttackLastTarget : CreatureAction</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_AttackLastTarget_attackLoopSound" data-uid="DefaultNamespace.AttackLastTarget.attackLoopSound">
+  attackLoopSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FMOD_CustomLoopingEmitter attackLoopSound</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FMOD_CustomLoopingEmitter.html">FMOD_CustomLoopingEmitter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_AttackLastTarget_attackStartFXcontrol" data-uid="DefaultNamespace.AttackLastTarget.attackStartFXcontrol">
   attackStartFXcontrol
   
@@ -280,6 +319,36 @@ public class AttackLastTarget : CreatureAction</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DefaultNamespace.VFXController.html">VFXController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_AttackLastTarget_attackStartRoar" data-uid="DefaultNamespace.AttackLastTarget.attackStartRoar">
+  attackStartRoar
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool attackStartRoar</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -340,6 +409,96 @@ public class AttackLastTarget : CreatureAction</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_AttackLastTarget_forceStart" data-uid="DefaultNamespace.AttackLastTarget.forceStart">
+  forceStart
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool forceStart</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_AttackLastTarget_ignoreAboveWaterTargets" data-uid="DefaultNamespace.AttackLastTarget.ignoreAboveWaterTargets">
+  ignoreAboveWaterTargets
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ignoreAboveWaterTargets</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_AttackLastTarget_ignoreUnderWaterTargets" data-uid="DefaultNamespace.AttackLastTarget.ignoreUnderWaterTargets">
+  ignoreUnderWaterTargets
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ignoreUnderWaterTargets</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -473,6 +632,36 @@ public LastTarget lastTarget</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_AttackLastTarget_predictTargetMovement" data-uid="DefaultNamespace.AttackLastTarget.predictTargetMovement">
+  predictTargetMovement
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool predictTargetMovement</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_AttackLastTarget_rememberTargetTime" data-uid="DefaultNamespace.AttackLastTarget.rememberTargetTime">
   rememberTargetTime
   
@@ -543,6 +732,36 @@ public LastTarget lastTarget</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float swimInterval</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_AttackLastTarget_swimIntoPlayerViewMinDistance" data-uid="DefaultNamespace.AttackLastTarget.swimIntoPlayerViewMinDistance">
+  swimIntoPlayerViewMinDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float swimIntoPlayerViewMinDistance</code></pre>
   </div>
 
 
@@ -686,6 +905,41 @@ public LastTarget lastTarget</code></pre>
 </h2>
 
 
+  <a id="DefaultNamespace_AttackLastTarget_AttackTarget_" data-uid="DefaultNamespace.AttackLastTarget.AttackTarget*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_AttackTarget_UnityEngine_GameObject_UnityEngine_Vector3_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.AttackTarget(UnityEngine.GameObject,UnityEngine.Vector3,System.Single)">
+  AttackTarget(GameObject, Vector3, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AttackTarget(GameObject target, Vector3 targetPosition, float velocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+    <dt><code>targetPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>velocity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_AttackLastTarget_CanAttackTarget_" data-uid="DefaultNamespace.AttackLastTarget.CanAttackTarget*"></a>
 
   <h3 id="DefaultNamespace_AttackLastTarget_CanAttackTarget_UnityEngine_GameObject_" data-uid="DefaultNamespace.AttackLastTarget.CanAttackTarget(UnityEngine.GameObject)">
@@ -724,8 +978,8 @@ public LastTarget lastTarget</code></pre>
 
   <a id="DefaultNamespace_AttackLastTarget_Evaluate_" data-uid="DefaultNamespace.AttackLastTarget.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_AttackLastTarget_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_AttackLastTarget_Evaluate_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -733,13 +987,11 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -747,6 +999,42 @@ public LastTarget lastTarget</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackLastTarget_ForceAttackTarget_" data-uid="DefaultNamespace.AttackLastTarget.ForceAttackTarget*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_ForceAttackTarget_UnityEngine_GameObject_" data-uid="DefaultNamespace.AttackLastTarget.ForceAttackTarget(UnityEngine.GameObject)">
+  ForceAttackTarget(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ForceAttackTarget(GameObject target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -791,6 +1079,166 @@ public LastTarget lastTarget</code></pre>
 
 
 
+  <a id="DefaultNamespace_AttackLastTarget_GetModifiedPauseInterval_" data-uid="DefaultNamespace.AttackLastTarget.GetModifiedPauseInterval*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_GetModifiedPauseInterval" data-uid="DefaultNamespace.AttackLastTarget.GetModifiedPauseInterval">
+  GetModifiedPauseInterval()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetModifiedPauseInterval()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackLastTarget_GetTargetPosition_" data-uid="DefaultNamespace.AttackLastTarget.GetTargetPosition*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_GetTargetPosition" data-uid="DefaultNamespace.AttackLastTarget.GetTargetPosition">
+  GetTargetPosition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GetTargetPosition()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackLastTarget_GetTargetPosition_" data-uid="DefaultNamespace.AttackLastTarget.GetTargetPosition*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_GetTargetPosition_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.GetTargetPosition(System.Single)">
+  GetTargetPosition(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Vector3 GetTargetPosition(float moveVelocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>moveVelocity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackLastTarget_GoToCurrentTarget_" data-uid="DefaultNamespace.AttackLastTarget.GoToCurrentTarget*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_GoToCurrentTarget" data-uid="DefaultNamespace.AttackLastTarget.GoToCurrentTarget">
+  GoToCurrentTarget()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void GoToCurrentTarget()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackLastTarget_IsCurrentTarget_" data-uid="DefaultNamespace.AttackLastTarget.IsCurrentTarget*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_IsCurrentTarget_UnityEngine_GameObject_" data-uid="DefaultNamespace.AttackLastTarget.IsCurrentTarget(UnityEngine.GameObject)">
+  IsCurrentTarget(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrentTarget(GameObject target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_AttackLastTarget_OnMeleeAttack_" data-uid="DefaultNamespace.AttackLastTarget.OnMeleeAttack*"></a>
 
   <h3 id="DefaultNamespace_AttackLastTarget_OnMeleeAttack_UnityEngine_GameObject_" data-uid="DefaultNamespace.AttackLastTarget.OnMeleeAttack(UnityEngine.GameObject)">
@@ -802,7 +1250,7 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnMeleeAttack(GameObject target)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnMeleeAttack(GameObject target)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -824,8 +1272,8 @@ public LastTarget lastTarget</code></pre>
 
   <a id="DefaultNamespace_AttackLastTarget_Perform_" data-uid="DefaultNamespace.AttackLastTarget.Perform*"></a>
 
-  <h3 id="DefaultNamespace_AttackLastTarget_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_AttackLastTarget_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -833,13 +1281,11 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -857,10 +1303,10 @@ public LastTarget lastTarget</code></pre>
 
 
 
-  <a id="DefaultNamespace_AttackLastTarget_StartPerform_" data-uid="DefaultNamespace.AttackLastTarget.StartPerform*"></a>
+  <a id="DefaultNamespace_AttackLastTarget_StartAttackSoundAndAnimation_" data-uid="DefaultNamespace.AttackLastTarget.StartAttackSoundAndAnimation*"></a>
 
-  <h3 id="DefaultNamespace_AttackLastTarget_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_AttackLastTarget_StartAttackSoundAndAnimation" data-uid="DefaultNamespace.AttackLastTarget.StartAttackSoundAndAnimation">
+  StartAttackSoundAndAnimation()
   
   </h3>
 
@@ -868,13 +1314,37 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void StartAttackSoundAndAnimation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackLastTarget_StartPerform_" data-uid="DefaultNamespace.AttackLastTarget.StartPerform*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_StartPerform_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.StartPerform(System.Single)">
+  StartPerform(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -916,10 +1386,10 @@ public LastTarget lastTarget</code></pre>
 
 
 
-  <a id="DefaultNamespace_AttackLastTarget_StopPerform_" data-uid="DefaultNamespace.AttackLastTarget.StopPerform*"></a>
+  <a id="DefaultNamespace_AttackLastTarget_StopAttackSoundAndAnimation_" data-uid="DefaultNamespace.AttackLastTarget.StopAttackSoundAndAnimation*"></a>
 
-  <h3 id="DefaultNamespace_AttackLastTarget_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_AttackLastTarget_StopAttackSoundAndAnimation" data-uid="DefaultNamespace.AttackLastTarget.StopAttackSoundAndAnimation">
+  StopAttackSoundAndAnimation()
   
   </h3>
 
@@ -927,13 +1397,37 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public void StopAttackSoundAndAnimation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackLastTarget_StopPerform_" data-uid="DefaultNamespace.AttackLastTarget.StopPerform*"></a>
+
+  <h3 id="DefaultNamespace_AttackLastTarget_StopPerform_System_Single_" data-uid="DefaultNamespace.AttackLastTarget.StopPerform(System.Single)">
+  StopPerform(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

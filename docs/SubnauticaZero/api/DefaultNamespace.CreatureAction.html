@@ -101,7 +101,7 @@ Class CreatureAction
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class CreatureAction : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class CreatureAction : MonoBehaviour, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -119,6 +119,12 @@ Class CreatureAction
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist derived">
     <dt>Derived</dt>
@@ -126,12 +132,16 @@ Class CreatureAction
       <div><a class="xref" href="DefaultNamespace.AttachAndSuck.html">AttachAndSuck</a></div>
       <div><a class="xref" href="DefaultNamespace.AttachToVehicle.html">AttachToVehicle</a></div>
       <div><a class="xref" href="DefaultNamespace.AttackCyclops.html">AttackCyclops</a></div>
+      <div><a class="xref" href="DefaultNamespace.AttackFrozenCreature.html">AttackFrozenCreature</a></div>
       <div><a class="xref" href="DefaultNamespace.AttackLastTarget.html">AttackLastTarget</a></div>
-      <div><a class="xref" href="DefaultNamespace.AvoidEscapePod.html">AvoidEscapePod</a></div>
+      <div><a class="xref" href="DefaultNamespace.AvoidEdges.html">AvoidEdges</a></div>
+      <div><a class="xref" href="DefaultNamespace.AvoidInteriors.html">AvoidInteriors</a></div>
       <div><a class="xref" href="DefaultNamespace.AvoidObstacles.html">AvoidObstacles</a></div>
+      <div><a class="xref" href="DefaultNamespace.AvoidObstaclesOnLand.html">AvoidObstaclesOnLand</a></div>
       <div><a class="xref" href="DefaultNamespace.AvoidPosition.html">AvoidPosition</a></div>
       <div><a class="xref" href="DefaultNamespace.AvoidTerrain.html">AvoidTerrain</a></div>
-      <div><a class="xref" href="DefaultNamespace.BirdsFlapping.html">BirdsFlapping</a></div>
+      <div><a class="xref" href="DefaultNamespace.BegForFood.html">BegForFood</a></div>
+      <div><a class="xref" href="DefaultNamespace.BirdFlap.html">BirdFlap</a></div>
       <div><a class="xref" href="DefaultNamespace.Breach.html">Breach</a></div>
       <div><a class="xref" href="DefaultNamespace.BurryInSand.html">BurryInSand</a></div>
       <div><a class="xref" href="DefaultNamespace.CircleAroundPlayer.html">CircleAroundPlayer</a></div>
@@ -139,8 +149,7 @@ Class CreatureAction
       <div><a class="xref" href="DefaultNamespace.Coil.html">Coil</a></div>
       <div><a class="xref" href="DefaultNamespace.CollectShiny.html">CollectShiny</a></div>
       <div><a class="xref" href="DefaultNamespace.CrawlerAttackLastTarget.html">CrawlerAttackLastTarget</a></div>
-      <div><a class="xref" href="DefaultNamespace.CrawlerAvoidEdges.html">CrawlerAvoidEdges</a></div>
-      <div><a class="xref" href="DefaultNamespace.CrawlerJumpRandom.html">CrawlerJumpRandom</a></div>
+      <div><a class="xref" href="DefaultNamespace.CreaturePlayAnimation.html">CreaturePlayAnimation</a></div>
       <div><a class="xref" href="DefaultNamespace.DescendToGround.html">DescendToGround</a></div>
       <div><a class="xref" href="DefaultNamespace.DescentToLava.html">DescentToLava</a></div>
       <div><a class="xref" href="DefaultNamespace.EMPAttack.html">EMPAttack</a></div>
@@ -149,37 +158,57 @@ Class CreatureAction
       <div><a class="xref" href="DefaultNamespace.FleeWhenScared.html">FleeWhenScared</a></div>
       <div><a class="xref" href="DefaultNamespace.FlyAboveMinHeight.html">FlyAboveMinHeight</a></div>
       <div><a class="xref" href="DefaultNamespace.FlyAwayWhenScared.html">FlyAwayWhenScared</a></div>
+      <div><a class="xref" href="DefaultNamespace.FollowPatrolPath.html">FollowPatrolPath</a></div>
+      <div><a class="xref" href="DefaultNamespace.GoToDivePoint.html">GoToDivePoint</a></div>
+      <div><a class="xref" href="DefaultNamespace.GoToPlayerHoldingFish.html">GoToPlayerHoldingFish</a></div>
       <div><a class="xref" href="DefaultNamespace.Hide.html">Hide</a></div>
-      <div><a class="xref" href="DefaultNamespace.JumperDrift.html">JumperDrift</a></div>
-      <div><a class="xref" href="DefaultNamespace.JumperWalkOnGround.html">JumperWalkOnGround</a></div>
+      <div><a class="xref" href="DefaultNamespace.LilyPaddlerHypnotize.html">LilyPaddlerHypnotize</a></div>
+      <div><a class="xref" href="DefaultNamespace.LoopTheLoop.html">LoopTheLoop</a></div>
       <div><a class="xref" href="DefaultNamespace.MoveOnGround.html">MoveOnGround</a></div>
+      <div><a class="xref" href="DefaultNamespace.MoveOnNavMesh.html">MoveOnNavMesh</a></div>
       <div><a class="xref" href="DefaultNamespace.MoveOnSurface.html">MoveOnSurface</a></div>
       <div><a class="xref" href="DefaultNamespace.MoveTowardsTarget.html">MoveTowardsTarget</a></div>
       <div><a class="xref" href="DefaultNamespace.MushroomAttack.html">MushroomAttack</a></div>
-      <div><a class="xref" href="DefaultNamespace.PlayAnimation.html">PlayAnimation</a></div>
+      <div><a class="xref" href="DefaultNamespace.PenguinGroupDefense.html">PenguinGroupDefense</a></div>
+      <div><a class="xref" href="DefaultNamespace.PenguinHuddleDuringBlizzard.html">PenguinHuddleDuringBlizzard</a></div>
       <div><a class="xref" href="DefaultNamespace.Poop.html">Poop</a></div>
-      <div><a class="xref" href="DefaultNamespace.PrisonPredatorSwimToPlayer.html">PrisonPredatorSwimToPlayer</a></div>
       <div><a class="xref" href="DefaultNamespace.ProtectCrashHome.html">ProtectCrashHome</a></div>
-      <div><a class="xref" href="DefaultNamespace.PullCreatures.html">PullCreatures</a></div>
+      <div><a class="xref" href="DefaultNamespace.ProtectFriendlyPlayer.html">ProtectFriendlyPlayer</a></div>
+      <div><a class="xref" href="DefaultNamespace.RockPuncherAttackLastTarget.html">RockPuncherAttackLastTarget</a></div>
+      <div><a class="xref" href="DefaultNamespace.RockPuncherHunt.html">RockPuncherHunt</a></div>
+      <div><a class="xref" href="DefaultNamespace.RockPuncherTreasureHunt.html">RockPuncherTreasureHunt</a></div>
       <div><a class="xref" href="DefaultNamespace.Roost.html">Roost</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaMonkeyBringGift.html">SeaMonkeyBringGift</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaMonkeyStealShiny.html">SeaMonkeyStealShiny</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaMonkeySwimToNest.html">SeaMonkeySwimToNest</a></div>
+      <div><a class="xref" href="DefaultNamespace.SeaMonkeyTauntPlayer.html">SeaMonkeyTauntPlayer</a></div>
+      <div><a class="xref" href="DefaultNamespace.SnowStalkerBabyGrowlAtPlayer.html">SnowStalkerBabyGrowlAtPlayer</a></div>
+      <div><a class="xref" href="DefaultNamespace.SnowStalkerBabyReactToFlare.html">SnowStalkerBabyReactToFlare</a></div>
+      <div><a class="xref" href="DefaultNamespace.SnowStalkerFleeWhenScared.html">SnowStalkerFleeWhenScared</a></div>
+      <div><a class="xref" href="DefaultNamespace.SnowStalkerGoToPlayerWithFruit.html">SnowStalkerGoToPlayerWithFruit</a></div>
+      <div><a class="xref" href="DefaultNamespace.SnowStalkerHunt.html">SnowStalkerHunt</a></div>
       <div><a class="xref" href="DefaultNamespace.StareAtNearbyPlayer.html">StareAtNearbyPlayer</a></div>
       <div><a class="xref" href="DefaultNamespace.StayAtLeashPosition.html">StayAtLeashPosition</a></div>
+      <div><a class="xref" href="DefaultNamespace.StayOnFlatSurface.html">StayOnFlatSurface</a></div>
+      <div><a class="xref" href="DefaultNamespace.SwimCloseToTarget.html">SwimCloseToTarget</a></div>
       <div><a class="xref" href="DefaultNamespace.SwimFigureEight.html">SwimFigureEight</a></div>
       <div><a class="xref" href="DefaultNamespace.SwimInGroup.html">SwimInGroup</a></div>
       <div><a class="xref" href="DefaultNamespace.SwimInSchool.html">SwimInSchool</a></div>
       <div><a class="xref" href="DefaultNamespace.SwimRandom.html">SwimRandom</a></div>
-      <div><a class="xref" href="DefaultNamespace.SwimToEnzymeCloud.html">SwimToEnzymeCloud</a></div>
-      <div><a class="xref" href="DefaultNamespace.SwimToEnzymes.html">SwimToEnzymes</a></div>
-      <div><a class="xref" href="DefaultNamespace.SwimToHeroPeeper.html">SwimToHeroPeeper</a></div>
+      <div><a class="xref" href="DefaultNamespace.SwimToFriend.html">SwimToFriend</a></div>
       <div><a class="xref" href="DefaultNamespace.SwimToMeat.html">SwimToMeat</a></div>
       <div><a class="xref" href="DefaultNamespace.SwimToMushroom.html">SwimToMushroom</a></div>
       <div><a class="xref" href="DefaultNamespace.SwimToTarget.html">SwimToTarget</a></div>
-      <div><a class="xref" href="DefaultNamespace.SwimToVent.html">SwimToVent</a></div>
+      <div><a class="xref" href="DefaultNamespace.SwimToWall.html">SwimToWall</a></div>
       <div><a class="xref" href="DefaultNamespace.TreaderMoveOnSurface.html">TreaderMoveOnSurface</a></div>
       <div><a class="xref" href="DefaultNamespace.TreaderStayAtLeashPosition.html">TreaderStayAtLeashPosition</a></div>
+      <div><a class="xref" href="DefaultNamespace.TrivalveFollowPlayerAboveWater.html">TrivalveFollowPlayerAboveWater</a></div>
       <div><a class="xref" href="DefaultNamespace.WalkOnGround.html">WalkOnGround</a></div>
       <div><a class="xref" href="DefaultNamespace.WarpOut.html">WarpOut</a></div>
       <div><a class="xref" href="DefaultNamespace.WarperInspectPlayer.html">WarperInspectPlayer</a></div>
+      <div><a class="xref" href="DefaultNamespace.WhaleBreach.html">WhaleBreach</a></div>
+      <div><a class="xref" href="DefaultNamespace.WhaleDiveDeep.html">WhaleDiveDeep</a></div>
+      <div><a class="xref" href="DefaultNamespace.WhaleSwimNearSurface.html">WhaleSwimNearSurface</a></div>
     </dd>
   </dl>
 
@@ -258,7 +287,9 @@ Class CreatureAction
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Creature creature</code></pre>
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public Creature creature</code></pre>
   </div>
 
 
@@ -297,36 +328,6 @@ Class CreatureAction
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CreatureAction_initialized" data-uid="DefaultNamespace.CreatureAction.initialized">
-  initialized
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool initialized</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -401,6 +402,38 @@ public AnimationCurve priorityMultiplier</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_CreatureAction_swimBehaviour" data-uid="DefaultNamespace.CreatureAction.swimBehaviour">
+  swimBehaviour
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public SwimBehaviour swimBehaviour</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.SwimBehaviour.html">SwimBehaviour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_CreatureAction_timeLastChecked" data-uid="DefaultNamespace.CreatureAction.timeLastChecked">
   timeLastChecked
   
@@ -430,49 +463,14 @@ public AnimationCurve priorityMultiplier</code></pre>
 
 
 
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="DefaultNamespace_CreatureAction_swimBehaviour_" data-uid="DefaultNamespace.CreatureAction.swimBehaviour*"></a>
-
-  <h3 id="DefaultNamespace_CreatureAction_swimBehaviour" data-uid="DefaultNamespace.CreatureAction.swimBehaviour">
-  swimBehaviour
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SwimBehaviour swimBehaviour { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.SwimBehaviour.html">SwimBehaviour</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="DefaultNamespace_CreatureAction_Awake_" data-uid="DefaultNamespace.CreatureAction.Awake*"></a>
+  <a id="DefaultNamespace_CreatureAction_CompileTimeSetup_" data-uid="DefaultNamespace.CreatureAction.CompileTimeSetup*"></a>
 
-  <h3 id="DefaultNamespace_CreatureAction_Awake" data-uid="DefaultNamespace.CreatureAction.Awake">
-  Awake()
+  <h3 id="DefaultNamespace_CreatureAction_CompileTimeSetup" data-uid="DefaultNamespace.CreatureAction.CompileTimeSetup">
+  CompileTimeSetup()
   
   </h3>
 
@@ -480,10 +478,15 @@ public AnimationCurve priorityMultiplier</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Awake()</code></pre>
+    <pre><code class="lang-csharp hljs">public string CompileTimeSetup()</code></pre>
   </div>
 
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -497,8 +500,8 @@ public AnimationCurve priorityMultiplier</code></pre>
 
   <a id="DefaultNamespace_CreatureAction_Evaluate_" data-uid="DefaultNamespace.CreatureAction.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_CreatureAction_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.CreatureAction.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_CreatureAction_Evaluate_System_Single_" data-uid="DefaultNamespace.CreatureAction.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -506,13 +509,11 @@ public AnimationCurve priorityMultiplier</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -606,7 +607,7 @@ public AnimationCurve priorityMultiplier</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetMaxEvaluatePriority()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual float GetMaxEvaluatePriority()</code></pre>
   </div>
 
 
@@ -662,36 +663,10 @@ public AnimationCurve priorityMultiplier</code></pre>
 
 
 
-  <a id="DefaultNamespace_CreatureAction_OnEnable_" data-uid="DefaultNamespace.CreatureAction.OnEnable*"></a>
-
-  <h3 id="DefaultNamespace_CreatureAction_OnEnable" data-uid="DefaultNamespace.CreatureAction.OnEnable">
-  OnEnable()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnEnable()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_CreatureAction_Perform_" data-uid="DefaultNamespace.CreatureAction.Perform*"></a>
 
-  <h3 id="DefaultNamespace_CreatureAction_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.CreatureAction.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_CreatureAction_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.CreatureAction.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -699,13 +674,11 @@ public AnimationCurve priorityMultiplier</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -723,10 +696,10 @@ public AnimationCurve priorityMultiplier</code></pre>
 
 
 
-  <a id="DefaultNamespace_CreatureAction_StartPerform_" data-uid="DefaultNamespace.CreatureAction.StartPerform*"></a>
+  <a id="DefaultNamespace_CreatureAction_Start_" data-uid="DefaultNamespace.CreatureAction.Start*"></a>
 
-  <h3 id="DefaultNamespace_CreatureAction_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.CreatureAction.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_CreatureAction_Start" data-uid="DefaultNamespace.CreatureAction.Start">
+  Start()
   
   </h3>
 
@@ -734,13 +707,37 @@ public AnimationCurve priorityMultiplier</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Start()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CreatureAction_StartPerform_" data-uid="DefaultNamespace.CreatureAction.StartPerform*"></a>
+
+  <h3 id="DefaultNamespace_CreatureAction_StartPerform_System_Single_" data-uid="DefaultNamespace.CreatureAction.StartPerform(System.Single)">
+  StartPerform(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -758,8 +755,8 @@ public AnimationCurve priorityMultiplier</code></pre>
 
   <a id="DefaultNamespace_CreatureAction_StopPerform_" data-uid="DefaultNamespace.CreatureAction.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_CreatureAction_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.CreatureAction.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_CreatureAction_StopPerform_System_Single_" data-uid="DefaultNamespace.CreatureAction.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -767,16 +764,40 @@ public AnimationCurve priorityMultiplier</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_CreatureAction_TryStartAction_" data-uid="DefaultNamespace.CreatureAction.TryStartAction*"></a>
+
+  <h3 id="DefaultNamespace_CreatureAction_TryStartAction" data-uid="DefaultNamespace.CreatureAction.TryStartAction">
+  TryStartAction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void TryStartAction()</code></pre>
+  </div>
+
 
 
 

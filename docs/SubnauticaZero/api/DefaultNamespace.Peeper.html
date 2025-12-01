@@ -246,15 +246,6 @@ public class Peeper : Creature, IProtoEventListener, IScheduledUpdateBehaviour, 
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_animHappy">Creature.animHappy</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_kSafeShallows">Creature.kSafeShallows</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_prisonAquriumBounds">Creature.prisonAquriumBounds</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_kPrisonAquariumPrefix">Creature.kPrisonAquariumPrefix</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_indexLastActionChecked">Creature.indexLastActionChecked</a>
     </div>
     <div>
@@ -267,10 +258,13 @@ public class Peeper : Creature, IProtoEventListener, IScheduledUpdateBehaviour, 
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetProfileTag">Creature.GetProfileTag()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_InitializeAgain">Creature.InitializeAgain()</a>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_Start">Creature.Start()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_ProcessInfection">Creature.ProcessInfection()</a>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_InitializeOnce">Creature.InitializeOnce()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_InitializeAgain">Creature.InitializeAgain()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_ChooseBestAction_System_Single_">Creature.ChooseBestAction(float)</a>
@@ -327,10 +321,19 @@ public class Peeper : Creature, IProtoEventListener, IScheduledUpdateBehaviour, 
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetDebugString">Creature.GetDebugString()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetLastAction">Creature.GetLastAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetLastActionDebugString">Creature.GetLastActionDebugString()</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnKill">Creature.OnKill()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnDrop">Creature.OnDrop()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetLeashPosition">Creature.GetLeashPosition()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetTechTypeHash">Creature.GetTechTypeHash()</a>
@@ -340,6 +343,12 @@ public class Peeper : Creature, IProtoEventListener, IScheduledUpdateBehaviour, 
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_IsInFieldOfView_UnityEngine_GameObject_">Creature.IsInFieldOfView(GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnProtoSerialize_ProtobufSerializer_">Creature.OnProtoSerialize(ProtobufSerializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnProtoDeserialize_ProtobufSerializer_">Creature.OnProtoDeserialize(ProtobufSerializer)</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnEnable">Creature.OnEnable()</a>
@@ -428,36 +437,6 @@ public class Peeper : Creature, IProtoEventListener, IScheduledUpdateBehaviour, 
 
 
 
-  <h3 id="DefaultNamespace_Peeper__inPrisonAquarium" data-uid="DefaultNamespace.Peeper._inPrisonAquarium">
-  _inPrisonAquarium
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool _inPrisonAquarium</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="DefaultNamespace_Peeper_currentVersion" data-uid="DefaultNamespace.Peeper.currentVersion">
   currentVersion
   
@@ -467,7 +446,7 @@ public class Peeper : Creature, IProtoEventListener, IScheduledUpdateBehaviour, 
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int currentVersion = 2</code></pre>
+    <pre><code class="lang-csharp hljs">public const int currentVersion = 3</code></pre>
   </div>
 
 
@@ -476,343 +455,6 @@ public class Peeper : Creature, IProtoEventListener, IScheduledUpdateBehaviour, 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_enzymeAmount" data-uid="DefaultNamespace.Peeper.enzymeAmount">
-  enzymeAmount
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ProtoMember(2)]
-public float enzymeAmount</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_enzymeDuration" data-uid="DefaultNamespace.Peeper.enzymeDuration">
-  enzymeDuration
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float enzymeDuration</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_enzymeParticles" data-uid="DefaultNamespace.Peeper.enzymeParticles">
-  enzymeParticles
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public ParticleSystem enzymeParticles</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/ParticleSystem.html">ParticleSystem</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_enzymeParticlesRate" data-uid="DefaultNamespace.Peeper.enzymeParticlesRate">
-  enzymeParticlesRate
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float enzymeParticlesRate</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_enzymeTrail" data-uid="DefaultNamespace.Peeper.enzymeTrail">
-  enzymeTrail
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public TrailRenderer enzymeTrail</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/TrailRenderer.html">TrailRenderer</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_healingTrigger" data-uid="DefaultNamespace.Peeper.healingTrigger">
-  healingTrigger
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public GameObject healingTrigger</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_largeWorldEntity" data-uid="DefaultNamespace.Peeper.largeWorldEntity">
-  largeWorldEntity
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public LargeWorldEntity largeWorldEntity</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.LargeWorldEntity.html">LargeWorldEntity</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_rechargeInterval" data-uid="DefaultNamespace.Peeper.rechargeInterval">
-  rechargeInterval
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float rechargeInterval</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_timeRechargeEnzyme" data-uid="DefaultNamespace.Peeper.timeRechargeEnzyme">
-  timeRechargeEnzyme
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ProtoMember(3)]
-public float timeRechargeEnzyme</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_trailDuration" data-uid="DefaultNamespace.Peeper.trailDuration">
-  trailDuration
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float trailDuration</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_Peeper_useRigidbody" data-uid="DefaultNamespace.Peeper.useRigidbody">
-  useRigidbody
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public Rigidbody useRigidbody</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Rigidbody.html">Rigidbody</a></dt>
     <dd></dd>
   </dl>
 
@@ -846,325 +488,6 @@ public int version</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="DefaultNamespace_Peeper_isBornHero_" data-uid="DefaultNamespace.Peeper.isBornHero*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_isBornHero" data-uid="DefaultNamespace.Peeper.isBornHero">
-  isBornHero
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool isBornHero { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_isHero_" data-uid="DefaultNamespace.Peeper.isHero*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_isHero" data-uid="DefaultNamespace.Peeper.isHero">
-  isHero
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool isHero { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_isInPrisonAquarium_" data-uid="DefaultNamespace.Peeper.isInPrisonAquarium*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_isInPrisonAquarium" data-uid="DefaultNamespace.Peeper.isInPrisonAquarium">
-  isInPrisonAquarium
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool isInPrisonAquarium { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="DefaultNamespace_Peeper_BecomeHero_" data-uid="DefaultNamespace.Peeper.BecomeHero*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_BecomeHero" data-uid="DefaultNamespace.Peeper.BecomeHero">
-  BecomeHero()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void BecomeHero()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_InitializeInPrison_" data-uid="DefaultNamespace.Peeper.InitializeInPrison*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_InitializeInPrison" data-uid="DefaultNamespace.Peeper.InitializeInPrison">
-  InitializeInPrison()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void InitializeInPrison()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_InitializeOnce_" data-uid="DefaultNamespace.Peeper.InitializeOnce*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_InitializeOnce" data-uid="DefaultNamespace.Peeper.InitializeOnce">
-  InitializeOnce()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void InitializeOnce()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_OnProtoDeserialize_" data-uid="DefaultNamespace.Peeper.OnProtoDeserialize*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_OnProtoDeserialize_ProtobufSerializer_" data-uid="DefaultNamespace.Peeper.OnProtoDeserialize(ProtobufSerializer)">
-  OnProtoDeserialize(ProtobufSerializer)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnProtoDeserialize(ProtobufSerializer serializer)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_OnProtoSerialize_" data-uid="DefaultNamespace.Peeper.OnProtoSerialize*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_OnProtoSerialize_ProtobufSerializer_" data-uid="DefaultNamespace.Peeper.OnProtoSerialize(ProtobufSerializer)">
-  OnProtoSerialize(ProtobufSerializer)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnProtoSerialize(ProtobufSerializer serializer)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_Start_" data-uid="DefaultNamespace.Peeper.Start*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_Start" data-uid="DefaultNamespace.Peeper.Start">
-  Start()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_Update_" data-uid="DefaultNamespace.Peeper.Update*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_Update" data-uid="DefaultNamespace.Peeper.Update">
-  Update()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Update()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Peeper_UpdateEnzymeFX_" data-uid="DefaultNamespace.Peeper.UpdateEnzymeFX*"></a>
-
-  <h3 id="DefaultNamespace_Peeper_UpdateEnzymeFX" data-uid="DefaultNamespace.Peeper.UpdateEnzymeFX">
-  UpdateEnzymeFX()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateEnzymeFX()</code></pre>
-  </div>
-
-
-
-
 
 
 

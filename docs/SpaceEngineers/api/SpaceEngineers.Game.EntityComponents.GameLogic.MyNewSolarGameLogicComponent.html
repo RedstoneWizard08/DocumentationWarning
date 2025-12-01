@@ -101,7 +101,10 @@ Class MyNewSolarGameLogicComponent
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MyNewSolarGameLogicComponent : MyGameLogicComponent, IMyEntityComponentBase, IMyComponentBase, IMyGameLogicComponent, IMySolarPanelComponent</code></pre>
+    <pre><code class="lang-csharp hljs">[MyComponentType(typeof(MyNewSolarGameLogicComponent))]
+[MyEntityDependencyType(typeof(IMyFunctionalBlock))]
+[MyComponentBuilder(typeof(MyObjectBuilder_NewSolarGameLogicComponent), true)]
+public class MyNewSolarGameLogicComponent : MyGameLogicComponent, IMyEntityComponentBase, IMyComponentBase, IMyGameLogicComponent, IMySolarPanelComponent</code></pre>
   </div>
 
 
@@ -136,9 +139,6 @@ Class MyNewSolarGameLogicComponent
       <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateOnceBeforeFrame">MyGameLogicComponent.UpdateOnceBeforeFrame()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateBeforeSimulation">MyGameLogicComponent.UpdateBeforeSimulation()</a>
-    </div>
-    <div>
       <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_UpdateBeforeSimulation10">MyGameLogicComponent.UpdateBeforeSimulation10()</a>
     </div>
     <div>
@@ -155,6 +155,9 @@ Class MyNewSolarGameLogicComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_Init_VRage_ObjectBuilders_MyObjectBuilder_EntityBase_">MyGameLogicComponent.Init(MyObjectBuilder_EntityBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_GetObjectBuilder_System_Boolean_">MyGameLogicComponent.GetObjectBuilder(bool)</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyGameLogicComponent.html#VRage_Game_Components_MyGameLogicComponent_MarkForClose">MyGameLogicComponent.MarkForClose()</a>
@@ -208,9 +211,6 @@ Class MyNewSolarGameLogicComponent
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_GetAs__1">MyComponentBase.GetAs&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_OnAddedToScene">MyComponentBase.OnAddedToScene()</a>
-    </div>
-    <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_OnRemovedFromScene">MyComponentBase.OnRemovedFromScene()</a>
     </div>
     <div>
@@ -220,9 +220,6 @@ Class MyNewSolarGameLogicComponent
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_Deserialize_VRage_Game_ObjectBuilders_ComponentSystem_MyObjectBuilder_ComponentBase_">MyComponentBase.Deserialize(MyObjectBuilder_ComponentBase)</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_Init_VRage_Game_MyComponentDefinitionBase_">MyComponentBase.Init(MyComponentDefinitionBase)</a>
-    </div>
-    <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_IsSerialized">MyComponentBase.IsSerialized()</a>
     </div>
     <div>
@@ -230,6 +227,9 @@ Class MyNewSolarGameLogicComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -311,7 +311,7 @@ Class MyNewSolarGameLogicComponent
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float MaxOutput { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float MaxOutput { get; }</code></pre>
   </div>
 
 
@@ -331,45 +331,14 @@ Class MyNewSolarGameLogicComponent
 
 
 
-  <a id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_PanelOrientation_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.PanelOrientation*"></a>
-
-  <h3 id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_PanelOrientation" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.PanelOrientation">
-  PanelOrientation
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 PanelOrientation { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="VRageMath.Vector3.html">Vector3</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_GetObjectBuilder_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.GetObjectBuilder*"></a>
+  <a id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_Init_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.Init*"></a>
 
-  <h3 id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_GetObjectBuilder_System_Boolean_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.GetObjectBuilder(System.Boolean)">
-  GetObjectBuilder(bool)
+  <h3 id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_Init_VRage_Game_MyComponentDefinitionBase_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.Init(VRage.Game.MyComponentDefinitionBase)">
+  Init(MyComponentDefinitionBase)
   
   </h3>
 
@@ -377,20 +346,15 @@ Class MyNewSolarGameLogicComponent
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override MyObjectBuilder_EntityBase GetObjectBuilder(bool copy = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Init(MyComponentDefinitionBase definition)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>copy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>definition</code> <a class="xref" href="VRage.Game.MyComponentDefinitionBase.html">MyComponentDefinitionBase</a></dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="VRage.ObjectBuilders.MyObjectBuilder_EntityBase.html">MyObjectBuilder_EntityBase</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -439,6 +403,32 @@ Class MyNewSolarGameLogicComponent
 
 
 
+  <a id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_OnAddedToScene_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.OnAddedToScene*"></a>
+
+  <h3 id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_OnAddedToScene" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.OnAddedToScene">
+  OnAddedToScene()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAddedToScene()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_UpdateAfterSimulation100_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.UpdateAfterSimulation100*"></a>
 
   <h3 id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_UpdateAfterSimulation100" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.UpdateAfterSimulation100">
@@ -451,6 +441,32 @@ Class MyNewSolarGameLogicComponent
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation100()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_UpdateBeforeSimulation_" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.UpdateBeforeSimulation*"></a>
+
+  <h3 id="SpaceEngineers_Game_EntityComponents_GameLogic_MyNewSolarGameLogicComponent_UpdateBeforeSimulation" data-uid="SpaceEngineers.Game.EntityComponents.GameLogic.MyNewSolarGameLogicComponent.UpdateBeforeSimulation">
+  UpdateBeforeSimulation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateBeforeSimulation()</code></pre>
   </div>
 
 

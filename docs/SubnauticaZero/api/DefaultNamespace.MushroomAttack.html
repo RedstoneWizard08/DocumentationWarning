@@ -101,7 +101,7 @@ Class MushroomAttack
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MushroomAttack : CreatureAction, IOnTakeDamage</code></pre>
+    <pre><code class="lang-csharp hljs">public class MushroomAttack : CreatureAction, ICompileTimeSetupable, IOnTakeDamage</code></pre>
   </div>
 
 
@@ -123,6 +123,7 @@ Class MushroomAttack
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
       <div><a class="xref" href="DefaultNamespace.IOnTakeDamage.html">IOnTakeDamage</a></div>
     </dd>
   </dl>
@@ -133,6 +134,9 @@ Class MushroomAttack
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -147,16 +151,19 @@ Class MushroomAttack
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_Creature_System_Single_">CreatureAction.StopPerform(Creature, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Start">CreatureAction.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_System_Single_">CreatureAction.StopPerform(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -166,9 +173,6 @@ Class MushroomAttack
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -332,7 +336,9 @@ Class MushroomAttack
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CrabSnake crabsnakeBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public CrabSnake crabsnakeBehaviour</code></pre>
   </div>
 
 
@@ -572,7 +578,9 @@ Class MushroomAttack
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EcoTargetDistanceTracker targetTracker</code></pre>
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public EcoTargetDistanceTracker targetTracker</code></pre>
   </div>
 
 
@@ -598,8 +606,8 @@ Class MushroomAttack
 
   <a id="DefaultNamespace_MushroomAttack_Evaluate_" data-uid="DefaultNamespace.MushroomAttack.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_MushroomAttack_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.MushroomAttack.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_MushroomAttack_Evaluate_System_Single_" data-uid="DefaultNamespace.MushroomAttack.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -607,13 +615,11 @@ Class MushroomAttack
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -665,32 +671,6 @@ Class MushroomAttack
 
 
 
-  <a id="DefaultNamespace_MushroomAttack_OnEnable_" data-uid="DefaultNamespace.MushroomAttack.OnEnable*"></a>
-
-  <h3 id="DefaultNamespace_MushroomAttack_OnEnable" data-uid="DefaultNamespace.MushroomAttack.OnEnable">
-  OnEnable()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnEnable()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_MushroomAttack_OnTakeDamage_" data-uid="DefaultNamespace.MushroomAttack.OnTakeDamage*"></a>
 
   <h3 id="DefaultNamespace_MushroomAttack_OnTakeDamage_DamageInfo_" data-uid="DefaultNamespace.MushroomAttack.OnTakeDamage(DamageInfo)">
@@ -724,8 +704,8 @@ Class MushroomAttack
 
   <a id="DefaultNamespace_MushroomAttack_Perform_" data-uid="DefaultNamespace.MushroomAttack.Perform*"></a>
 
-  <h3 id="DefaultNamespace_MushroomAttack_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.MushroomAttack.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_MushroomAttack_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.MushroomAttack.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -733,13 +713,11 @@ Class MushroomAttack
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -759,8 +737,8 @@ Class MushroomAttack
 
   <a id="DefaultNamespace_MushroomAttack_StartPerform_" data-uid="DefaultNamespace.MushroomAttack.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_MushroomAttack_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.MushroomAttack.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_MushroomAttack_StartPerform_System_Single_" data-uid="DefaultNamespace.MushroomAttack.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -768,13 +746,11 @@ Class MushroomAttack
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

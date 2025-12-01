@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class KerbalBehavior | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KerbalBehavior | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.KerbalBehavior">
+
+
+
+  <h1 id="KSP_Sim_impl_KerbalBehavior" data-uid="KSP.Sim.impl.KerbalBehavior" class="text-break">
+Class KerbalBehavior  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KerbalBehavior : ViewObjectComponent&lt;KerbalComponent&gt;, IFixedUpdate, IUpdate, ILateUpdate, IPriorityOverride</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Game.KerbalMonoBehaviour.html">KerbalMonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent.html">ViewObjectComponent</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent-1.html">ViewObjectComponent</a>&lt;<a class="xref" href="KSP.Sim.impl.KerbalComponent.html">KerbalComponent</a>&gt;</div>
+      <div><span class="xref">KerbalBehavior</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.IFixedUpdate.html">IFixedUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.IUpdate.html">IUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.ILateUpdate.html">ILateUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.IPriorityOverride.html">IPriorityOverride</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1__simObjectComponent">ViewObjectComponent&lt;KerbalComponent&gt;._simObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SyncTo_KSP_Sim_impl_ObjectComponent_">ViewObjectComponent&lt;KerbalComponent&gt;.SyncTo(ObjectComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_IsSimObjectDestroyed">ViewObjectComponent&lt;KerbalComponent&gt;.IsSimObjectDestroyed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SimObjectComponent">ViewObjectComponent&lt;KerbalComponent&gt;.SimObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent__viewObject">ViewObjectComponent._viewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent_ViewObject">ViewObjectComponent.ViewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Game">KerbalMonoBehaviour.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Assets">KerbalMonoBehaviour.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Messages">KerbalMonoBehaviour.Messages</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_CFXSystem">KerbalMonoBehaviour.CFXSystem</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_IsGameShuttingDown">KerbalMonoBehaviour.IsGameShuttingDown</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentCached__1_UnityEngine_Component___0__">GameObjectExtension.GetComponentCached&lt;T&gt;(Component, ref T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GameObjectExtension.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.ComponentExtensions.html#KSP_ComponentExtensions_CopyFrom__1_UnityEngine_Component___0_">ComponentExtensions.CopyFrom&lt;T&gt;(Component, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.OAB.DataContextMonoBehaviorExtensionDooblyDo.html#KSP_OAB_DataContextMonoBehaviorExtensionDooblyDo_FindDataContextProviderInHierarchy_UnityEngine_MonoBehaviour_">DataContextMonoBehaviorExtensionDooblyDo.FindDataContextProviderInHierarchy(MonoBehaviour)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_SetDebugName_UnityEngine_Object_System_String_">GameObjectExtension.SetDebugName(Object, string)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior__ctor_" data-uid="KSP.Sim.impl.KerbalBehavior.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior__ctor" data-uid="KSP.Sim.impl.KerbalBehavior.#ctor">
+  KerbalBehavior()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KerbalBehavior()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_CharacterCapsuleBottomPos" data-uid="KSP.Sim.impl.KerbalBehavior.CharacterCapsuleBottomPos">
+  CharacterCapsuleBottomPos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 CharacterCapsuleBottomPos</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_CharacterState" data-uid="KSP.Sim.impl.KerbalBehavior.CharacterState">
+  CharacterState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KerbalCharacterState CharacterState</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.KerbalCharacterState.html">KerbalCharacterState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_DefaultCapsuleColliderHeight" data-uid="KSP.Sim.impl.KerbalBehavior.DefaultCapsuleColliderHeight">
+  DefaultCapsuleColliderHeight
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public float DefaultCapsuleColliderHeight</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_DefaultCapsuleColliderRadius" data-uid="KSP.Sim.impl.KerbalBehavior.DefaultCapsuleColliderRadius">
+  DefaultCapsuleColliderRadius
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public float DefaultCapsuleColliderRadius</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_EVAAnimationState" data-uid="KSP.Sim.impl.KerbalBehavior.EVAAnimationState">
+  EVAAnimationState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EVAKerbalAnimationState EVAAnimationState</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.EVAKerbalAnimationState.html">EVAKerbalAnimationState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_ForceUpdateFallingRequested" data-uid="KSP.Sim.impl.KerbalBehavior.ForceUpdateFallingRequested">
+  ForceUpdateFallingRequested
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public bool ForceUpdateFallingRequested</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_ForceUpdateUnderwaterRequested" data-uid="KSP.Sim.impl.KerbalBehavior.ForceUpdateUnderwaterRequested">
+  ForceUpdateUnderwaterRequested
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public bool ForceUpdateUnderwaterRequested</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GravityMultiplier" data-uid="KSP.Sim.impl.KerbalBehavior.GravityMultiplier">
+  GravityMultiplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public float GravityMultiplier</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GroundFutureContactNormal" data-uid="KSP.Sim.impl.KerbalBehavior.GroundFutureContactNormal">
+  GroundFutureContactNormal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 GroundFutureContactNormal</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GroundPresentContactNormalSmoothed" data-uid="KSP.Sim.impl.KerbalBehavior.GroundPresentContactNormalSmoothed">
+  GroundPresentContactNormalSmoothed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 GroundPresentContactNormalSmoothed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GroundPresentFutureContactNormalAverage" data-uid="KSP.Sim.impl.KerbalBehavior.GroundPresentFutureContactNormalAverage">
+  GroundPresentFutureContactNormalAverage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 GroundPresentFutureContactNormalAverage</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_HorizonUp" data-uid="KSP.Sim.impl.KerbalBehavior.HorizonUp">
+  HorizonUp
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 HorizonUp</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_LastMoveBestUpSurfaceWorldSpace" data-uid="KSP.Sim.impl.KerbalBehavior.LastMoveBestUpSurfaceWorldSpace">
+  LastMoveBestUpSurfaceWorldSpace
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 LastMoveBestUpSurfaceWorldSpace</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_LastMoveOnGroundWorldSpace" data-uid="KSP.Sim.impl.KerbalBehavior.LastMoveOnGroundWorldSpace">
+  LastMoveOnGroundWorldSpace
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 LastMoveOnGroundWorldSpace</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_OnPlantFlagAllowedChanged" data-uid="KSP.Sim.impl.KerbalBehavior.OnPlantFlagAllowedChanged">
+  OnPlantFlagAllowedChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;bool&gt; OnPlantFlagAllowedChanged</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_PhysicsCastLayerMask" data-uid="KSP.Sim.impl.KerbalBehavior.PhysicsCastLayerMask">
+  PhysicsCastLayerMask
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly LayerMask PhysicsCastLayerMask</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_RotateForwardAngularVelocity" data-uid="KSP.Sim.impl.KerbalBehavior.RotateForwardAngularVelocity">
+  RotateForwardAngularVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 RotateForwardAngularVelocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_RotateJetpackAngularVelocity" data-uid="KSP.Sim.impl.KerbalBehavior.RotateJetpackAngularVelocity">
+  RotateJetpackAngularVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 RotateJetpackAngularVelocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_RotateUprightAngularVelocity" data-uid="KSP.Sim.impl.KerbalBehavior.RotateUprightAngularVelocity">
+  RotateUprightAngularVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public Vector3 RotateUprightAngularVelocity</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_SampleContainerAnimationTypeID" data-uid="KSP.Sim.impl.KerbalBehavior.SampleContainerAnimationTypeID">
+  SampleContainerAnimationTypeID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SampleContainerAnimationTypeID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_SampleContainerPrefabName" data-uid="KSP.Sim.impl.KerbalBehavior.SampleContainerPrefabName">
+  SampleContainerPrefabName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SampleContainerPrefabName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_SampleContainerTriggerID" data-uid="KSP.Sim.impl.KerbalBehavior.SampleContainerTriggerID">
+  SampleContainerTriggerID
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SampleContainerTriggerID</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_CharacterCapsuleCollider_" data-uid="KSP.Sim.impl.KerbalBehavior.CharacterCapsuleCollider*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_CharacterCapsuleCollider" data-uid="KSP.Sim.impl.KerbalBehavior.CharacterCapsuleCollider">
+  CharacterCapsuleCollider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CapsuleCollider CharacterCapsuleCollider { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">CapsuleCollider</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_CharacterCurrentLocomotionHandlerType_" data-uid="KSP.Sim.impl.KerbalBehavior.CharacterCurrentLocomotionHandlerType*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_CharacterCurrentLocomotionHandlerType" data-uid="KSP.Sim.impl.KerbalBehavior.CharacterCurrentLocomotionHandlerType">
+  CharacterCurrentLocomotionHandlerType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KerbalCharacterStateHandlerType CharacterCurrentLocomotionHandlerType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.KerbalCharacterStateHandlerType.html">KerbalCharacterStateHandlerType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_EVAAnimationManager_" data-uid="KSP.Sim.impl.KerbalBehavior.EVAAnimationManager*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_EVAAnimationManager" data-uid="KSP.Sim.impl.KerbalBehavior.EVAAnimationManager">
+  EVAAnimationManager
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationManager_EVA EVAAnimationManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Animation.AnimationManager_EVA.html">AnimationManager_EVA</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_EVAJetpackVFXManager_" data-uid="KSP.Sim.impl.KerbalBehavior.EVAJetpackVFXManager*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_EVAJetpackVFXManager" data-uid="KSP.Sim.impl.KerbalBehavior.EVAJetpackVFXManager">
+  EVAJetpackVFXManager
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JetpackVFXManager EVAJetpackVFXManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.VFX.JetpackVFXManager.html">JetpackVFXManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_GroundFutureCollisionResult_" data-uid="KSP.Sim.impl.KerbalBehavior.GroundFutureCollisionResult*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GroundFutureCollisionResult" data-uid="KSP.Sim.impl.KerbalBehavior.GroundFutureCollisionResult">
+  GroundFutureCollisionResult
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CollisionResult GroundFutureCollisionResult { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.CollisionResult.html">CollisionResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_GroundPresentCollisionResult_" data-uid="KSP.Sim.impl.KerbalBehavior.GroundPresentCollisionResult*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GroundPresentCollisionResult" data-uid="KSP.Sim.impl.KerbalBehavior.GroundPresentCollisionResult">
+  GroundPresentCollisionResult
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CollisionResult GroundPresentCollisionResult { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.CollisionResult.html">CollisionResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsInitialized_" data-uid="KSP.Sim.impl.KerbalBehavior.IsInitialized*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsInitialized" data-uid="KSP.Sim.impl.KerbalBehavior.IsInitialized">
+  IsInitialized
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInitialized { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsInputMovingStrafeOnly_" data-uid="KSP.Sim.impl.KerbalBehavior.IsInputMovingStrafeOnly*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsInputMovingStrafeOnly" data-uid="KSP.Sim.impl.KerbalBehavior.IsInputMovingStrafeOnly">
+  IsInputMovingStrafeOnly
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInputMovingStrafeOnly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsStaticFrictionActive_" data-uid="KSP.Sim.impl.KerbalBehavior.IsStaticFrictionActive*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsStaticFrictionActive" data-uid="KSP.Sim.impl.KerbalBehavior.IsStaticFrictionActive">
+  IsStaticFrictionActive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsStaticFrictionActive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsStrafeMode_" data-uid="KSP.Sim.impl.KerbalBehavior.IsStrafeMode*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsStrafeMode" data-uid="KSP.Sim.impl.KerbalBehavior.IsStrafeMode">
+  IsStrafeMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsStrafeMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_KerbalModule_" data-uid="KSP.Sim.impl.KerbalBehavior.KerbalModule*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_KerbalModule" data-uid="KSP.Sim.impl.KerbalBehavior.KerbalModule">
+  KerbalModule
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Module_Kerbal KerbalModule { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Modules.Module_Kerbal.html">Module_Kerbal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_KerbalRigidbody_" data-uid="KSP.Sim.impl.KerbalBehavior.KerbalRigidbody*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_KerbalRigidbody" data-uid="KSP.Sim.impl.KerbalBehavior.KerbalRigidbody">
+  KerbalRigidbody
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rigidbody KerbalRigidbody { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Rigidbody.html">Rigidbody</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_KerbalRigidbodyBehavior_" data-uid="KSP.Sim.impl.KerbalBehavior.KerbalRigidbodyBehavior*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_KerbalRigidbodyBehavior" data-uid="KSP.Sim.impl.KerbalBehavior.KerbalRigidbodyBehavior">
+  KerbalRigidbodyBehavior
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RigidbodyBehavior KerbalRigidbodyBehavior { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.RigidbodyBehavior.html">RigidbodyBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_MainPart_" data-uid="KSP.Sim.impl.KerbalBehavior.MainPart*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_MainPart" data-uid="KSP.Sim.impl.KerbalBehavior.MainPart">
+  MainPart
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartBehavior MainPart { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_Model_" data-uid="KSP.Sim.impl.KerbalBehavior.Model*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_Model" data-uid="KSP.Sim.impl.KerbalBehavior.Model">
+  Model
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KerbalComponent Model { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.KerbalComponent.html">KerbalComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_WaterCollisionResult_" data-uid="KSP.Sim.impl.KerbalBehavior.WaterCollisionResult*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_WaterCollisionResult" data-uid="KSP.Sim.impl.KerbalBehavior.WaterCollisionResult">
+  WaterCollisionResult
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CollisionResult WaterCollisionResult { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.CollisionResult.html">CollisionResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_Cleanup_" data-uid="KSP.Sim.impl.KerbalBehavior.Cleanup*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_Cleanup" data-uid="KSP.Sim.impl.KerbalBehavior.Cleanup">
+  Cleanup()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Cleanup()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_GetBestUp_" data-uid="KSP.Sim.impl.KerbalBehavior.GetBestUp*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GetBestUp" data-uid="KSP.Sim.impl.KerbalBehavior.GetBestUp">
+  GetBestUp()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GetBestUp()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_GetWaterDetectPosition_" data-uid="KSP.Sim.impl.KerbalBehavior.GetWaterDetectPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_GetWaterDetectPosition" data-uid="KSP.Sim.impl.KerbalBehavior.GetWaterDetectPosition">
+  GetWaterDetectPosition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GetWaterDetectPosition()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsFallingAboveHighAltitude_" data-uid="KSP.Sim.impl.KerbalBehavior.IsFallingAboveHighAltitude*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsFallingAboveHighAltitude" data-uid="KSP.Sim.impl.KerbalBehavior.IsFallingAboveHighAltitude">
+  IsFallingAboveHighAltitude()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFallingAboveHighAltitude()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsInputAllowed_" data-uid="KSP.Sim.impl.KerbalBehavior.IsInputAllowed*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsInputAllowed" data-uid="KSP.Sim.impl.KerbalBehavior.IsInputAllowed">
+  IsInputAllowed()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInputAllowed()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsMovingInGroundPlane_" data-uid="KSP.Sim.impl.KerbalBehavior.IsMovingInGroundPlane*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsMovingInGroundPlane" data-uid="KSP.Sim.impl.KerbalBehavior.IsMovingInGroundPlane">
+  IsMovingInGroundPlane()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMovingInGroundPlane()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsOnGround_" data-uid="KSP.Sim.impl.KerbalBehavior.IsOnGround*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsOnGround" data-uid="KSP.Sim.impl.KerbalBehavior.IsOnGround">
+  IsOnGround()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOnGround()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsRunningExperiment_" data-uid="KSP.Sim.impl.KerbalBehavior.IsRunningExperiment*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsRunningExperiment" data-uid="KSP.Sim.impl.KerbalBehavior.IsRunningExperiment">
+  IsRunningExperiment()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRunningExperiment()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsToggleJetpackAllowed_" data-uid="KSP.Sim.impl.KerbalBehavior.IsToggleJetpackAllowed*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsToggleJetpackAllowed" data-uid="KSP.Sim.impl.KerbalBehavior.IsToggleJetpackAllowed">
+  IsToggleJetpackAllowed()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsToggleJetpackAllowed()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_IsTogglingJetpack_" data-uid="KSP.Sim.impl.KerbalBehavior.IsTogglingJetpack*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_IsTogglingJetpack" data-uid="KSP.Sim.impl.KerbalBehavior.IsTogglingJetpack">
+  IsTogglingJetpack()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTogglingJetpack()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_OnToggleJetpack_" data-uid="KSP.Sim.impl.KerbalBehavior.OnToggleJetpack*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_OnToggleJetpack" data-uid="KSP.Sim.impl.KerbalBehavior.OnToggleJetpack">
+  OnToggleJetpack()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnToggleJetpack()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_ProcessRotateForward_" data-uid="KSP.Sim.impl.KerbalBehavior.ProcessRotateForward*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_ProcessRotateForward_UnityEngine_Vector3_System_Single_System_Single_System_Single_" data-uid="KSP.Sim.impl.KerbalBehavior.ProcessRotateForward(UnityEngine.Vector3,System.Single,System.Single,System.Single)">
+  ProcessRotateForward(Vector3, float, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ProcessRotateForward(Vector3 desiredForward, float rotateAngularSpeed, float rotateChangeAngularSpeed, float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>desiredForward</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>rotateAngularSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>rotateChangeAngularSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_ResetRotateForward_" data-uid="KSP.Sim.impl.KerbalBehavior.ResetRotateForward*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_ResetRotateForward" data-uid="KSP.Sim.impl.KerbalBehavior.ResetRotateForward">
+  ResetRotateForward()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetRotateForward()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_SetContactObjectRelativeVelocity_" data-uid="KSP.Sim.impl.KerbalBehavior.SetContactObjectRelativeVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_SetContactObjectRelativeVelocity_UnityEngine_Vector3_" data-uid="KSP.Sim.impl.KerbalBehavior.SetContactObjectRelativeVelocity(UnityEngine.Vector3)">
+  SetContactObjectRelativeVelocity(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetContactObjectRelativeVelocity(Vector3 velocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>velocity</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_SetGravityDisabled_" data-uid="KSP.Sim.impl.KerbalBehavior.SetGravityDisabled*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_SetGravityDisabled_System_Boolean_" data-uid="KSP.Sim.impl.KerbalBehavior.SetGravityDisabled(System.Boolean)">
+  SetGravityDisabled(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetGravityDisabled(bool disabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_SetLadderUpPosOffsetSigned_" data-uid="KSP.Sim.impl.KerbalBehavior.SetLadderUpPosOffsetSigned*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_SetLadderUpPosOffsetSigned_System_Single_" data-uid="KSP.Sim.impl.KerbalBehavior.SetLadderUpPosOffsetSigned(System.Single)">
+  SetLadderUpPosOffsetSigned(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetLadderUpPosOffsetSigned(float ladderUpPosOffsetSigned)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ladderUpPosOffsetSigned</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_StopScienceAnimation_" data-uid="KSP.Sim.impl.KerbalBehavior.StopScienceAnimation*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_StopScienceAnimation" data-uid="KSP.Sim.impl.KerbalBehavior.StopScienceAnimation">
+  StopScienceAnimation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopScienceAnimation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_SyncTo_" data-uid="KSP.Sim.impl.KerbalBehavior.SyncTo*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_SyncTo_KSP_Sim_impl_KerbalComponent_" data-uid="KSP.Sim.impl.KerbalBehavior.SyncTo(KSP.Sim.impl.KerbalComponent)">
+  SyncTo(KerbalComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SyncTo(KerbalComponent simObjectComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>simObjectComponent</code> <a class="xref" href="KSP.Sim.impl.KerbalComponent.html">KerbalComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_TryClimbLadderPartId_" data-uid="KSP.Sim.impl.KerbalBehavior.TryClimbLadderPartId*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_TryClimbLadderPartId_KSP_Sim_impl_IGGuid_System_Boolean_" data-uid="KSP.Sim.impl.KerbalBehavior.TryClimbLadderPartId(KSP.Sim.impl.IGGuid,System.Boolean)">
+  TryClimbLadderPartId(IGGuid, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryClimbLadderPartId(IGGuid ladderPartId, bool tweenTo)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ladderPartId</code> <a class="xref" href="KSP.Sim.impl.IGGuid.html">IGGuid</a></dt>
+    <dd></dd>
+    <dt><code>tweenTo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_TryPlantFlag_" data-uid="KSP.Sim.impl.KerbalBehavior.TryPlantFlag*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_TryPlantFlag_KSP_Sim_Definitions_FlagComponentDefinition_" data-uid="KSP.Sim.impl.KerbalBehavior.TryPlantFlag(KSP.Sim.Definitions.FlagComponentDefinition)">
+  TryPlantFlag(FlagComponentDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryPlantFlag(FlagComponentDefinition definition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>definition</code> <a class="xref" href="KSP.Sim.Definitions.FlagComponentDefinition.html">FlagComponentDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_TryRunExperiment_" data-uid="KSP.Sim.impl.KerbalBehavior.TryRunExperiment*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_TryRunExperiment_KSP_Game_Science_ExperimentDefinition_" data-uid="KSP.Sim.impl.KerbalBehavior.TryRunExperiment(KSP.Game.Science.ExperimentDefinition)">
+  TryRunExperiment(ExperimentDefinition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryRunExperiment(ExperimentDefinition experiment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>experiment</code> <a class="xref" href="KSP.Game.Science.ExperimentDefinition.html">ExperimentDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_KerbalBehavior_TryStartPlantFlag_" data-uid="KSP.Sim.impl.KerbalBehavior.TryStartPlantFlag*"></a>
+
+  <h3 id="KSP_Sim_impl_KerbalBehavior_TryStartPlantFlag" data-uid="KSP.Sim.impl.KerbalBehavior.TryStartPlantFlag">
+  TryStartPlantFlag()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryStartPlantFlag()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

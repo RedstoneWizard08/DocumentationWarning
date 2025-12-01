@@ -101,7 +101,7 @@ Class MovementController
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MovementController : GameBase, IPhysical, IProfile</code></pre>
+    <pre><code class="lang-csharp hljs">public class MovementController : GameBase, IPhysical, IProfile, IDensePoolable</code></pre>
   </div>
 
 
@@ -125,6 +125,7 @@ Class MovementController
     <dd>
       <div><a class="xref" href="Objects.Electrical.IPhysical.html">IPhysical</a></div>
       <div><a class="xref" href="Objects.Electrical.IProfile.html">IProfile</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
     </dd>
   </dl>
 
@@ -1019,38 +1020,6 @@ public float gravityInRoom</code></pre>
 
 
 
-  <h3 id="Assets_Scripts_MovementController_jetPackForce" data-uid="Assets.Scripts.MovementController.jetPackForce">
-  jetPackForce
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[FormerlySerializedAs(&quot;JetPackForce&quot;)]
-[Header(&quot;Movement Forces&quot;)]
-public float jetPackForce</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="Assets_Scripts_MovementController_jumpForce" data-uid="Assets.Scripts.MovementController.jumpForce">
   jumpForce
   
@@ -1123,7 +1092,8 @@ public float maxStepUpHeight</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[FormerlySerializedAs(&quot;MovementForce&quot;)]
+    <pre><code class="lang-csharp hljs">[Header(&quot;Movement Forces&quot;)]
+[FormerlySerializedAs(&quot;MovementForce&quot;)]
 public float movementForce</code></pre>
   </div>
 
@@ -1496,6 +1466,44 @@ public float stepUpVelocity</code></pre>
 
 
 
+  <a id="Assets_Scripts_MovementController_OnAddToPool_" data-uid="Assets.Scripts.MovementController.OnAddToPool*"></a>
+
+  <h3 id="Assets_Scripts_MovementController_OnAddToPool_System_Object_System_Int32_" data-uid="Assets.Scripts.MovementController.OnAddToPool(System.Object,System.Int32)">
+  OnAddToPool(object, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool OnAddToPool(object densePool, int slot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>slot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_MovementController_OnEnable_" data-uid="Assets.Scripts.MovementController.OnEnable*"></a>
 
   <h3 id="Assets_Scripts_MovementController_OnEnable" data-uid="Assets.Scripts.MovementController.OnEnable">
@@ -1510,6 +1518,37 @@ public float stepUpVelocity</code></pre>
     <pre><code class="lang-csharp hljs">public void OnEnable()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_MovementController_OnRemoveFromPool_" data-uid="Assets.Scripts.MovementController.OnRemoveFromPool*"></a>
+
+  <h3 id="Assets_Scripts_MovementController_OnRemoveFromPool_System_Object_" data-uid="Assets.Scripts.MovementController.OnRemoveFromPool(System.Object)">
+  OnRemoveFromPool(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRemoveFromPool(object densePool)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -1603,40 +1642,6 @@ public float stepUpVelocity</code></pre>
 
 
 
-
-
-
-
-
-
-
-  <h2 class="section" id="events">Events
-</h2>
-
-
-
-  <h3 id="Assets_Scripts_MovementController_OnMovementModeChanged" data-uid="Assets.Scripts.MovementController.OnMovementModeChanged">
-  OnMovementModeChanged
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event BaseEvent.Event OnMovementModeChanged</code></pre>
-  </div>
-
-
-
-
-
-
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.BaseEvent.html">BaseEvent</a>.<a class="xref" href="Assets.Scripts.BaseEvent.Event.html">Event</a></dt>
-    <dd></dd>
-  </dl>
 
 
 

@@ -103,7 +103,7 @@ Class Roost
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
 [RequireComponent(typeof(SwimBehaviour))]
-public class Roost : CreatureAction, IShouldSerialize</code></pre>
+public class Roost : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -125,7 +125,7 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="DefaultNamespace.IShouldSerialize.html">IShouldSerialize</a></div>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
     </dd>
   </dl>
 
@@ -135,6 +135,9 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -149,16 +152,13 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -168,9 +168,6 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -232,6 +229,38 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
   <h2 class="section" id="fields">Fields
 </h2>
+
+
+
+  <h3 id="DefaultNamespace_Roost_creatureFear" data-uid="DefaultNamespace.Roost.creatureFear">
+  creatureFear
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public CreatureFear creatureFear</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.CreatureFear.html">CreatureFear</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 
 
@@ -325,6 +354,38 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_Roost_idleAnimations" data-uid="DefaultNamespace.Roost.idleAnimations">
+  idleAnimations
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public string[] idleAnimations</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Roost_lastRoostingTime" data-uid="DefaultNamespace.Roost.lastRoostingTime">
   lastRoostingTime
   
@@ -335,6 +396,100 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float lastRoostingTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Roost_liveMixin" data-uid="DefaultNamespace.Roost.liveMixin">
+  liveMixin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public LiveMixin liveMixin</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.LiveMixin.html">LiveMixin</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Roost_locomotion" data-uid="DefaultNamespace.Roost.locomotion">
+  locomotion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public Locomotion locomotion</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Locomotion.html">Locomotion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Roost_maxIdleAnimationInterval" data-uid="DefaultNamespace.Roost.maxIdleAnimationInterval">
+  maxIdleAnimationInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float maxIdleAnimationInterval</code></pre>
   </div>
 
 
@@ -385,6 +540,36 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_Roost_minIdleAnimationInterval" data-uid="DefaultNamespace.Roost.minIdleAnimationInterval">
+  minIdleAnimationInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float minIdleAnimationInterval</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Roost_offsetPosition" data-uid="DefaultNamespace.Roost.offsetPosition">
   offsetPosition
   
@@ -403,6 +588,38 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Roost_rb" data-uid="DefaultNamespace.Roost.rb">
+  rb
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[AssertNotNull]
+public Rigidbody rb</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Rigidbody.html">Rigidbody</a></dt>
     <dd></dd>
   </dl>
 
@@ -463,6 +680,66 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Roost_scareTakeOffSpeedMutliplier" data-uid="DefaultNamespace.Roost.scareTakeOffSpeedMutliplier">
+  scareTakeOffSpeedMutliplier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationCurve scareTakeOffSpeedMutliplier</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Roost_scaredThreshold" data-uid="DefaultNamespace.Roost.scaredThreshold">
+  scaredThreshold
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float scaredThreshold</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -655,6 +932,66 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_Roost_takeOffDuration" data-uid="DefaultNamespace.Roost.takeOffDuration">
+  takeOffDuration
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float takeOffDuration</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Roost_takeOffStartMoveDelay" data-uid="DefaultNamespace.Roost.takeOffStartMoveDelay">
+  takeOffStartMoveDelay
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float takeOffStartMoveDelay</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Roost_targetPos" data-uid="DefaultNamespace.Roost.targetPos">
   targetPos
   
@@ -715,6 +1052,36 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_Roost_timeNextIdleAnimation" data-uid="DefaultNamespace.Roost.timeNextIdleAnimation">
+  timeNextIdleAnimation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timeNextIdleAnimation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Roost_transitionTime" data-uid="DefaultNamespace.Roost.transitionTime">
   transitionTime
   
@@ -750,8 +1117,8 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
   <a id="DefaultNamespace_Roost_Evaluate_" data-uid="DefaultNamespace.Roost.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_Roost_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.Roost.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_Roost_Evaluate_System_Single_" data-uid="DefaultNamespace.Roost.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -759,13 +1126,11 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -933,8 +1298,8 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
   <a id="DefaultNamespace_Roost_Perform_" data-uid="DefaultNamespace.Roost.Perform*"></a>
 
-  <h3 id="DefaultNamespace_Roost_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.Roost.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_Roost_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.Roost.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -942,13 +1307,11 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -966,10 +1329,10 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
 
 
-  <a id="DefaultNamespace_Roost_ShouldSerialize_" data-uid="DefaultNamespace.Roost.ShouldSerialize*"></a>
+  <a id="DefaultNamespace_Roost_ResetIdleAnimations_" data-uid="DefaultNamespace.Roost.ResetIdleAnimations*"></a>
 
-  <h3 id="DefaultNamespace_Roost_ShouldSerialize" data-uid="DefaultNamespace.Roost.ShouldSerialize">
-  ShouldSerialize()
+  <h3 id="DefaultNamespace_Roost_ResetIdleAnimations" data-uid="DefaultNamespace.Roost.ResetIdleAnimations">
+  ResetIdleAnimations()
   
   </h3>
 
@@ -977,15 +1340,10 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ShouldSerialize()</code></pre>
+    <pre><code class="lang-csharp hljs">public void ResetIdleAnimations()</code></pre>
   </div>
 
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -1008,7 +1366,7 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
   </div>
 
 
@@ -1025,8 +1383,8 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
   <a id="DefaultNamespace_Roost_StartPerform_" data-uid="DefaultNamespace.Roost.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_Roost_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.Roost.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_Roost_StartPerform_System_Single_" data-uid="DefaultNamespace.Roost.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -1034,13 +1392,11 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -1058,8 +1414,8 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
 
   <a id="DefaultNamespace_Roost_StopPerform_" data-uid="DefaultNamespace.Roost.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_Roost_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.Roost.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_Roost_StopPerform_System_Single_" data-uid="DefaultNamespace.Roost.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -1067,17 +1423,72 @@ public class Roost : CreatureAction, IShouldSerialize</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Roost_TakeOff_" data-uid="DefaultNamespace.Roost.TakeOff*"></a>
+
+  <h3 id="DefaultNamespace_Roost_TakeOff" data-uid="DefaultNamespace.Roost.TakeOff">
+  TakeOff()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TakeOff()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Roost_TakeOffAsync_" data-uid="DefaultNamespace.Roost.TakeOffAsync*"></a>
+
+  <h3 id="DefaultNamespace_Roost_TakeOffAsync" data-uid="DefaultNamespace.Roost.TakeOffAsync">
+  TakeOffAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator TakeOffAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

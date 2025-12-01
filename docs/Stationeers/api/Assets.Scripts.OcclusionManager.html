@@ -283,7 +283,7 @@ Class OcclusionManager
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly ConcurrentDictionary&lt;DynamicThing, byte&gt; AllDynamicThings</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly ConcurrentDensePool&lt;DynamicThing&gt; AllDynamicThings</code></pre>
   </div>
 
 
@@ -291,7 +291,7 @@ Class OcclusionManager
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dt><a class="xref" href="Assets.Scripts.Util.ConcurrentDensePool-1.html">ConcurrentDensePool</a>&lt;<a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -343,7 +343,7 @@ Class OcclusionManager
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly ConcurrentDictionary&lt;Thing, byte&gt; AllThings</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly ConcurrentDensePool&lt;Thing&gt; AllThings</code></pre>
   </div>
 
 
@@ -351,37 +351,7 @@ Class OcclusionManager
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Assets_Scripts_OcclusionManager_AllThingsHashSet" data-uid="Assets.Scripts.OcclusionManager.AllThingsHashSet">
-  AllThingsHashSet
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;Thing&gt; AllThingsHashSet</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dt><a class="xref" href="Assets.Scripts.Util.ConcurrentDensePool-1.html">ConcurrentDensePool</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -412,6 +382,36 @@ Class OcclusionManager
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="Assets.Scripts.OcclusionManager.html">OcclusionManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_OcclusionManager_LOD_GENERATION_MOVE_DISTANCE" data-uid="Assets.Scripts.OcclusionManager.LOD_GENERATION_MOVE_DISTANCE">
+  LOD_GENERATION_MOVE_DISTANCE
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float LOD_GENERATION_MOVE_DISTANCE = 8</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -514,36 +514,6 @@ Class OcclusionManager
 
 
 
-  <h3 id="Assets_Scripts_OcclusionManager_RenderRatioSend" data-uid="Assets.Scripts.OcclusionManager.RenderRatioSend">
-  RenderRatioSend
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const float RenderRatioSend = 2</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="Assets_Scripts_OcclusionManager_ShadowQualitySetting" data-uid="Assets.Scripts.OcclusionManager.ShadowQualitySetting">
   ShadowQualitySetting
   
@@ -583,42 +553,7 @@ Class OcclusionManager
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Header(&quot;Occlusion Manager&quot;)]
-[ReadOnly]
-[Tooltip(&quot;The total number of dynamic things managed by the Occlusion Manager&quot;)]
-public int TotalDynamicThings</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Assets_Scripts_OcclusionManager_TotalStructures" data-uid="Assets.Scripts.OcclusionManager.TotalStructures">
-  TotalStructures
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ReadOnly]
-[Tooltip(&quot;The total number of structures managed by the Occlusion Manager&quot;)]
-public int TotalStructures</code></pre>
+    <pre><code class="lang-csharp hljs">public static int TotalDynamicThings</code></pre>
   </div>
 
 
@@ -678,7 +613,7 @@ public int TotalStructures</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly HashSet&lt;Thing&gt; UpdatingThings</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly DensePool&lt;Thing&gt; UpdatingThings</code></pre>
   </div>
 
 
@@ -686,7 +621,7 @@ public int TotalStructures</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
+    <dt><a class="xref" href="Assets.Scripts.Util.DensePool-1.html">DensePool</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -758,6 +693,36 @@ public int TotalStructures</code></pre>
 
 
 
+
+  <h3 id="Assets_Scripts_OcclusionManager_VEIN_GENERATION_MOVE_DISTANCE" data-uid="Assets.Scripts.OcclusionManager.VEIN_GENERATION_MOVE_DISTANCE">
+  VEIN_GENERATION_MOVE_DISTANCE
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float VEIN_GENERATION_MOVE_DISTANCE = 32</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -774,6 +739,37 @@ public int TotalStructures</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float DeltaTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_OcclusionManager_LavaDamage_" data-uid="Assets.Scripts.OcclusionManager.LavaDamage*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_LavaDamage" data-uid="Assets.Scripts.OcclusionManager.LavaDamage">
+  LavaDamage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float LavaDamage { get; }</code></pre>
   </div>
 
 
@@ -1004,6 +1000,37 @@ public int TotalStructures</code></pre>
 
 
 
+  <a id="Assets_Scripts_OcclusionManager_HelmetLightShadowDistanceSq_" data-uid="Assets.Scripts.OcclusionManager.HelmetLightShadowDistanceSq*"></a>
+
+  <h3 id="Assets_Scripts_OcclusionManager_HelmetLightShadowDistanceSq" data-uid="Assets.Scripts.OcclusionManager.HelmetLightShadowDistanceSq">
+  HelmetLightShadowDistanceSq()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int HelmetLightShadowDistanceSq()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_OcclusionManager_ManagerAwake_" data-uid="Assets.Scripts.OcclusionManager.ManagerAwake*"></a>
 
   <h3 id="Assets_Scripts_OcclusionManager_ManagerAwake" data-uid="Assets.Scripts.OcclusionManager.ManagerAwake">
@@ -1016,32 +1043,6 @@ public int TotalStructures</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void ManagerAwake()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_OcclusionManager_Mineables_" data-uid="Assets.Scripts.OcclusionManager.Mineables*"></a>
-
-  <h3 id="Assets_Scripts_OcclusionManager_Mineables" data-uid="Assets.Scripts.OcclusionManager.Mineables">
-  Mineables()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Mineables()</code></pre>
   </div>
 
 

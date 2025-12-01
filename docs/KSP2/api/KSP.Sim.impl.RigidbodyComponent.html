@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class RigidbodyComponent | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class RigidbodyComponent | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.RigidbodyComponent">
+
+
+
+  <h1 id="KSP_Sim_impl_RigidbodyComponent" data-uid="KSP.Sim.impl.RigidbodyComponent" class="text-break">
+Class RigidbodyComponent  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RigidbodyComponent : ObjectComponent, IGuidIdentity, IRigidbodyDriver, IPositionDriver, IRotationDriver, ILinearMotionDriver, IAngularMotionDriver</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="KSP.Sim.impl.ObjectComponent.html">ObjectComponent</a></div>
+      <div><span class="xref">RigidbodyComponent</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Sim.IGuidIdentity.html">IGuidIdentity</a></div>
+      <div><a class="xref" href="KSP.Sim.IRigidbodyDriver.html">IRigidbodyDriver</a></div>
+      <div><a class="xref" href="KSP.Sim.IPositionDriver.html">IPositionDriver</a></div>
+      <div><a class="xref" href="KSP.Sim.IRotationDriver.html">IRotationDriver</a></div>
+      <div><a class="xref" href="KSP.Sim.ILinearMotionDriver.html">ILinearMotionDriver</a></div>
+      <div><a class="xref" href="KSP.Sim.IAngularMotionDriver.html">IAngularMotionDriver</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent__isEnabled">ObjectComponent._isEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_initialDefinitionData">ObjectComponent.initialDefinitionData</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_Is_KSP_Sim_IGuidIdentity_">ObjectComponent.Is(IGuidIdentity)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_OnAdded_KSP_Sim_impl_SimulationObjectModel_System_Double_">ObjectComponent.OnAdded(SimulationObjectModel, double)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_OnRemoved_KSP_Sim_impl_SimulationObjectModel_System_Double_">ObjectComponent.OnRemoved(SimulationObjectModel, double)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_OnUpdate_System_Double_System_Double_">ObjectComponent.OnUpdate(double, double)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_OnLateUpdate_System_Double_">ObjectComponent.OnLateUpdate(double)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_SetDefinition_System_Object_">ObjectComponent.SetDefinition(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_Game">ObjectComponent.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_SimulationObject">ObjectComponent.SimulationObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_transform">ObjectComponent.transform</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_IsDestroyed">ObjectComponent.IsDestroyed</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_IsDestroyedOrBeingDestroyed">ObjectComponent.IsDestroyedOrBeingDestroyed</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_IsValidInSim">ObjectComponent.IsValidInSim</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_IsEnabled">ObjectComponent.IsEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_GlobalId">ObjectComponent.GlobalId</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_Guid">ObjectComponent.Guid</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_Name">ObjectComponent.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_DisplayName">ObjectComponent.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_IsLocallyAuthorized">ObjectComponent.IsLocallyAuthorized</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.impl.ObjectComponent.html#KSP_Sim_impl_ObjectComponent_IsLocallyOwned">ObjectComponent.IsLocallyOwned</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent__ctor_" data-uid="KSP.Sim.impl.RigidbodyComponent.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent__ctor" data-uid="KSP.Sim.impl.RigidbodyComponent.#ctor">
+  RigidbodyComponent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RigidbodyComponent()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent__ctor_" data-uid="KSP.Sim.impl.RigidbodyComponent.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent__ctor_KSP_Sim_impl_UniverseModel_KSP_Sim_PartPhysicsModes_" data-uid="KSP.Sim.impl.RigidbodyComponent.#ctor(KSP.Sim.impl.UniverseModel,KSP.Sim.PartPhysicsModes)">
+  RigidbodyComponent(UniverseModel, PartPhysicsModes)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RigidbodyComponent(UniverseModel universeModel, PartPhysicsModes physicsMode = PartPhysicsModes.Full)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>universeModel</code> <a class="xref" href="KSP.Sim.impl.UniverseModel.html">UniverseModel</a></dt>
+    <dd></dd>
+    <dt><code>physicsMode</code> <a class="xref" href="KSP.Sim.PartPhysicsModes.html">PartPhysicsModes</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_trackPhysXPositionDriver" data-uid="KSP.Sim.impl.RigidbodyComponent.trackPhysXPositionDriver">
+  trackPhysXPositionDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool trackPhysXPositionDriver</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_AngularVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.AngularVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_AngularVelocity" data-uid="KSP.Sim.impl.RigidbodyComponent.AngularVelocity">
+  AngularVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AngularVelocity AngularVelocity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.AngularVelocity.html">AngularVelocity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_CanAcceptPositionUpdate_" data-uid="KSP.Sim.impl.RigidbodyComponent.CanAcceptPositionUpdate*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_CanAcceptPositionUpdate" data-uid="KSP.Sim.impl.RigidbodyComponent.CanAcceptPositionUpdate">
+  CanAcceptPositionUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanAcceptPositionUpdate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_CanAcceptRotationUpdate_" data-uid="KSP.Sim.impl.RigidbodyComponent.CanAcceptRotationUpdate*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_CanAcceptRotationUpdate" data-uid="KSP.Sim.impl.RigidbodyComponent.CanAcceptRotationUpdate">
+  CanAcceptRotationUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanAcceptRotationUpdate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_DefinitionType_" data-uid="KSP.Sim.impl.RigidbodyComponent.DefinitionType*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_DefinitionType" data-uid="KSP.Sim.impl.RigidbodyComponent.DefinitionType">
+  DefinitionType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TypeConverterIgnore]
+public override Type DefinitionType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_Forces_" data-uid="KSP.Sim.impl.RigidbodyComponent.Forces*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_Forces" data-uid="KSP.Sim.impl.RigidbodyComponent.Forces">
+  Forces
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;IForce&gt; Forces { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.Sim.IForce.html">IForce</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_PendingImpulses_" data-uid="KSP.Sim.impl.RigidbodyComponent.PendingImpulses*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_PendingImpulses" data-uid="KSP.Sim.impl.RigidbodyComponent.PendingImpulses">
+  PendingImpulses
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;RigidbodyComponent.Impulse&gt; PendingImpulses { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.Sim.impl.RigidbodyComponent.html">RigidbodyComponent</a>.<a class="xref" href="KSP.Sim.impl.RigidbodyComponent.Impulse.html">Impulse</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_PhysXBodyDriver_" data-uid="KSP.Sim.impl.RigidbodyComponent.PhysXBodyDriver*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_PhysXBodyDriver" data-uid="KSP.Sim.impl.RigidbodyComponent.PhysXBodyDriver">
+  PhysXBodyDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IRigidbodyDriver PhysXBodyDriver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IRigidbodyDriver.html">IRigidbodyDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_PhysicsMode_" data-uid="KSP.Sim.impl.RigidbodyComponent.PhysicsMode*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_PhysicsMode" data-uid="KSP.Sim.impl.RigidbodyComponent.PhysicsMode">
+  PhysicsMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartPhysicsModes PhysicsMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.PartPhysicsModes.html">PartPhysicsModes</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_Position_" data-uid="KSP.Sim.impl.RigidbodyComponent.Position*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_Position" data-uid="KSP.Sim.impl.RigidbodyComponent.Position">
+  Position
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Position Position { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_Rotation_" data-uid="KSP.Sim.impl.RigidbodyComponent.Rotation*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_Rotation" data-uid="KSP.Sim.impl.RigidbodyComponent.Rotation">
+  Rotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rotation Rotation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Rotation.html">Rotation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_SingleFrameForces_" data-uid="KSP.Sim.impl.RigidbodyComponent.SingleFrameForces*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_SingleFrameForces" data-uid="KSP.Sim.impl.RigidbodyComponent.SingleFrameForces">
+  SingleFrameForces
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;IForce&gt; SingleFrameForces { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.Sim.IForce.html">IForce</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_StartingLocalPosition_" data-uid="KSP.Sim.impl.RigidbodyComponent.StartingLocalPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_StartingLocalPosition" data-uid="KSP.Sim.impl.RigidbodyComponent.StartingLocalPosition">
+  StartingLocalPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d StartingLocalPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_StartingLocalRotation_" data-uid="KSP.Sim.impl.RigidbodyComponent.StartingLocalRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_StartingLocalRotation" data-uid="KSP.Sim.impl.RigidbodyComponent.StartingLocalRotation">
+  StartingLocalRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuaternionD StartingLocalRotation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.QuaternionD.html">QuaternionD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_StateType_" data-uid="KSP.Sim.impl.RigidbodyComponent.StateType*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_StateType" data-uid="KSP.Sim.impl.RigidbodyComponent.StateType">
+  StateType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TypeConverterIgnore]
+public override Type StateType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_Torques_" data-uid="KSP.Sim.impl.RigidbodyComponent.Torques*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_Torques" data-uid="KSP.Sim.impl.RigidbodyComponent.Torques">
+  Torques
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ITorque&gt; Torques { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.Sim.ITorque.html">ITorque</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_TrackPhysXPositionDriver_" data-uid="KSP.Sim.impl.RigidbodyComponent.TrackPhysXPositionDriver*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_TrackPhysXPositionDriver" data-uid="KSP.Sim.impl.RigidbodyComponent.TrackPhysXPositionDriver">
+  TrackPhysXPositionDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrackPhysXPositionDriver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_Type_" data-uid="KSP.Sim.impl.RigidbodyComponent.Type*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_Type" data-uid="KSP.Sim.impl.RigidbodyComponent.Type">
+  Type
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TypeConverterIgnore]
+public override Type Type { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_Velocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.Velocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_Velocity" data-uid="KSP.Sim.impl.RigidbodyComponent.Velocity">
+  Velocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Velocity Velocity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Velocity.html">Velocity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_ViewObjectComponentType_" data-uid="KSP.Sim.impl.RigidbodyComponent.ViewObjectComponentType*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_ViewObjectComponentType" data-uid="KSP.Sim.impl.RigidbodyComponent.ViewObjectComponentType">
+  ViewObjectComponentType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TypeConverterIgnore]
+public override Type ViewObjectComponentType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_angularDrag_" data-uid="KSP.Sim.impl.RigidbodyComponent.angularDrag*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_angularDrag" data-uid="KSP.Sim.impl.RigidbodyComponent.angularDrag">
+  angularDrag
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double angularDrag { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_angularDragPressureOverride_" data-uid="KSP.Sim.impl.RigidbodyComponent.angularDragPressureOverride*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_angularDragPressureOverride" data-uid="KSP.Sim.impl.RigidbodyComponent.angularDragPressureOverride">
+  angularDragPressureOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool angularDragPressureOverride { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_centerOfMass_" data-uid="KSP.Sim.impl.RigidbodyComponent.centerOfMass*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_centerOfMass" data-uid="KSP.Sim.impl.RigidbodyComponent.centerOfMass">
+  centerOfMass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Position centerOfMass { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_coordinateSystem_" data-uid="KSP.Sim.impl.RigidbodyComponent.coordinateSystem*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_coordinateSystem" data-uid="KSP.Sim.impl.RigidbodyComponent.coordinateSystem">
+  coordinateSystem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICoordinateSystem coordinateSystem { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Api.ICoordinateSystem.html">ICoordinateSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_drag_" data-uid="KSP.Sim.impl.RigidbodyComponent.drag*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_drag" data-uid="KSP.Sim.impl.RigidbodyComponent.drag">
+  drag
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double drag { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_inertiaTensor_" data-uid="KSP.Sim.impl.RigidbodyComponent.inertiaTensor*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_inertiaTensor" data-uid="KSP.Sim.impl.RigidbodyComponent.inertiaTensor">
+  inertiaTensor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector inertiaTensor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_inertiaTensorRotation_" data-uid="KSP.Sim.impl.RigidbodyComponent.inertiaTensorRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_inertiaTensorRotation" data-uid="KSP.Sim.impl.RigidbodyComponent.inertiaTensorRotation">
+  inertiaTensorRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rotation inertiaTensorRotation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Rotation.html">Rotation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_localPosition_" data-uid="KSP.Sim.impl.RigidbodyComponent.localPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_localPosition" data-uid="KSP.Sim.impl.RigidbodyComponent.localPosition">
+  localPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d localPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_localRotation_" data-uid="KSP.Sim.impl.RigidbodyComponent.localRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_localRotation" data-uid="KSP.Sim.impl.RigidbodyComponent.localRotation">
+  localRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuaternionD localRotation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.QuaternionD.html">QuaternionD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_mass_" data-uid="KSP.Sim.impl.RigidbodyComponent.mass*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_mass" data-uid="KSP.Sim.impl.RigidbodyComponent.mass">
+  mass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float mass { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_physicsOwner_" data-uid="KSP.Sim.impl.RigidbodyComponent.physicsOwner*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_physicsOwner" data-uid="KSP.Sim.impl.RigidbodyComponent.physicsOwner">
+  physicsOwner
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPhysicsOwner physicsOwner { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IPhysicsOwner.html">IPhysicsOwner</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_relativeAngularVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.relativeAngularVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_relativeAngularVelocity" data-uid="KSP.Sim.impl.RigidbodyComponent.relativeAngularVelocity">
+  relativeAngularVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector relativeAngularVelocity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_relativeToMotion_" data-uid="KSP.Sim.impl.RigidbodyComponent.relativeToMotion*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_relativeToMotion" data-uid="KSP.Sim.impl.RigidbodyComponent.relativeToMotion">
+  relativeToMotion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMotion relativeToMotion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Api.IMotion.html">IMotion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_relativeVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.relativeVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_relativeVelocity" data-uid="KSP.Sim.impl.RigidbodyComponent.relativeVelocity">
+  relativeVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector relativeVelocity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_AddForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.AddForce*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_AddForce_KSP_Sim_IForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.AddForce(KSP.Sim.IForce)">
+  AddForce(IForce)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddForce(IForce force)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="KSP.Sim.IForce.html">IForce</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_AddSingleFrameForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.AddSingleFrameForce*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_AddSingleFrameForce_KSP_Sim_IForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.AddSingleFrameForce(KSP.Sim.IForce)">
+  AddSingleFrameForce(IForce)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSingleFrameForce(IForce singleFrameForce)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>singleFrameForce</code> <a class="xref" href="KSP.Sim.IForce.html">IForce</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_AddTorque_" data-uid="KSP.Sim.impl.RigidbodyComponent.AddTorque*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_AddTorque_KSP_Sim_ITorque_" data-uid="KSP.Sim.impl.RigidbodyComponent.AddTorque(KSP.Sim.ITorque)">
+  AddTorque(ITorque)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddTorque(ITorque torque)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>torque</code> <a class="xref" href="KSP.Sim.ITorque.html">ITorque</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_ApplyImpulse_" data-uid="KSP.Sim.impl.RigidbodyComponent.ApplyImpulse*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_ApplyImpulse_KSP_Sim_ForceType_Vector3d_Vector3d_" data-uid="KSP.Sim.impl.RigidbodyComponent.ApplyImpulse(KSP.Sim.ForceType,Vector3d,Vector3d)">
+  ApplyImpulse(ForceType, Vector3d, Vector3d)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyImpulse(ForceType forceType, Vector3d relativeImpulse, Vector3d relativePosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>forceType</code> <a class="xref" href="KSP.Sim.ForceType.html">ForceType</a></dt>
+    <dd></dd>
+    <dt><code>relativeImpulse</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+    <dt><code>relativePosition</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_ClearPendingImpulses_" data-uid="KSP.Sim.impl.RigidbodyComponent.ClearPendingImpulses*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_ClearPendingImpulses" data-uid="KSP.Sim.impl.RigidbodyComponent.ClearPendingImpulses">
+  ClearPendingImpulses()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearPendingImpulses()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_ClearSingleFrameForces_" data-uid="KSP.Sim.impl.RigidbodyComponent.ClearSingleFrameForces*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_ClearSingleFrameForces" data-uid="KSP.Sim.impl.RigidbodyComponent.ClearSingleFrameForces">
+  ClearSingleFrameForces()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearSingleFrameForces()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_GetDefinition_" data-uid="KSP.Sim.impl.RigidbodyComponent.GetDefinition*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_GetDefinition" data-uid="KSP.Sim.impl.RigidbodyComponent.GetDefinition">
+  GetDefinition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object GetDefinition()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_GetState_" data-uid="KSP.Sim.impl.RigidbodyComponent.GetState*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_GetState" data-uid="KSP.Sim.impl.RigidbodyComponent.GetState">
+  GetState()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object GetState()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_IsUnderAcceleration_" data-uid="KSP.Sim.impl.RigidbodyComponent.IsUnderAcceleration*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_IsUnderAcceleration" data-uid="KSP.Sim.impl.RigidbodyComponent.IsUnderAcceleration">
+  IsUnderAcceleration()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUnderAcceleration()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_KillAngularVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.KillAngularVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_KillAngularVelocity" data-uid="KSP.Sim.impl.RigidbodyComponent.KillAngularVelocity">
+  KillAngularVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void KillAngularVelocity()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_KillVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.KillVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_KillVelocity" data-uid="KSP.Sim.impl.RigidbodyComponent.KillVelocity">
+  KillVelocity()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void KillVelocity()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_OnFixedUpdate_" data-uid="KSP.Sim.impl.RigidbodyComponent.OnFixedUpdate*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_OnFixedUpdate_System_Double_System_Double_" data-uid="KSP.Sim.impl.RigidbodyComponent.OnFixedUpdate(System.Double,System.Double)">
+  OnFixedUpdate(double, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnFixedUpdate(double universalTime, double deltaUniversalTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>universalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>deltaUniversalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_OnStart_" data-uid="KSP.Sim.impl.RigidbodyComponent.OnStart*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_OnStart_System_Double_" data-uid="KSP.Sim.impl.RigidbodyComponent.OnStart(System.Double)">
+  OnStart(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnStart(double universalTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>universalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_RecordStartingLocalPositionAndRotation_" data-uid="KSP.Sim.impl.RigidbodyComponent.RecordStartingLocalPositionAndRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_RecordStartingLocalPositionAndRotation" data-uid="KSP.Sim.impl.RigidbodyComponent.RecordStartingLocalPositionAndRotation">
+  RecordStartingLocalPositionAndRotation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RecordStartingLocalPositionAndRotation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_RemoveForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.RemoveForce*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_RemoveForce_KSP_Sim_IForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.RemoveForce(KSP.Sim.IForce)">
+  RemoveForce(IForce)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveForce(IForce force)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="KSP.Sim.IForce.html">IForce</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_RemoveSingleFrameForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.RemoveSingleFrameForce*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_RemoveSingleFrameForce_KSP_Sim_IForce_" data-uid="KSP.Sim.impl.RigidbodyComponent.RemoveSingleFrameForce(KSP.Sim.IForce)">
+  RemoveSingleFrameForce(IForce)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveSingleFrameForce(IForce singleFrameForce)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>singleFrameForce</code> <a class="xref" href="KSP.Sim.IForce.html">IForce</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_RemoveTorque_" data-uid="KSP.Sim.impl.RigidbodyComponent.RemoveTorque*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_RemoveTorque_KSP_Sim_ITorque_" data-uid="KSP.Sim.impl.RigidbodyComponent.RemoveTorque(KSP.Sim.ITorque)">
+  RemoveTorque(ITorque)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveTorque(ITorque torque)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>torque</code> <a class="xref" href="KSP.Sim.ITorque.html">ITorque</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_SetState_" data-uid="KSP.Sim.impl.RigidbodyComponent.SetState*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_SetState_System_Object_KSP_Sim_ISimulationModelMap_" data-uid="KSP.Sim.impl.RigidbodyComponent.SetState(System.Object,KSP.Sim.ISimulationModelMap)">
+  SetState(object, ISimulationModelMap)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object SetState(object stateData, ISimulationModelMap simulationModelMap)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stateData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>simulationModelMap</code> <a class="xref" href="KSP.Sim.ISimulationModelMap.html">ISimulationModelMap</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_UpdateAngularVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdateAngularVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_UpdateAngularVelocity_KSP_Sim_AngularVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdateAngularVelocity(KSP.Sim.AngularVelocity)">
+  UpdateAngularVelocity(AngularVelocity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAngularVelocity(AngularVelocity newAngularVelocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newAngularVelocity</code> <a class="xref" href="KSP.Sim.AngularVelocity.html">AngularVelocity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_UpdatePosition_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdatePosition*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_UpdatePosition_KSP_Sim_Position_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdatePosition(KSP.Sim.Position)">
+  UpdatePosition(Position)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePosition(Position newPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newPosition</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_UpdateRotation_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdateRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_UpdateRotation_KSP_Sim_Rotation_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdateRotation(KSP.Sim.Rotation)">
+  UpdateRotation(Rotation)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateRotation(Rotation newRotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newRotation</code> <a class="xref" href="KSP.Sim.Rotation.html">Rotation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_UpdateVelocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdateVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_UpdateVelocity_KSP_Sim_Velocity_" data-uid="KSP.Sim.impl.RigidbodyComponent.UpdateVelocity(KSP.Sim.Velocity)">
+  UpdateVelocity(Velocity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateVelocity(Velocity newVelocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newVelocity</code> <a class="xref" href="KSP.Sim.Velocity.html">Velocity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_RigidbodyComponent_ValidateState_" data-uid="KSP.Sim.impl.RigidbodyComponent.ValidateState*"></a>
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_ValidateState_System_Object_KSP_Sim_ISimulationModelMap_" data-uid="KSP.Sim.impl.RigidbodyComponent.ValidateState(System.Object,KSP.Sim.ISimulationModelMap)">
+  ValidateState(object, ISimulationModelMap)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ValidateState(object stateData, ISimulationModelMap simulationModelMap)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stateData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>simulationModelMap</code> <a class="xref" href="KSP.Sim.ISimulationModelMap.html">ISimulationModelMap</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_AngularVelocityUpdated" data-uid="KSP.Sim.impl.RigidbodyComponent.AngularVelocityUpdated">
+  AngularVelocityUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;AngularVelocity&gt; AngularVelocityUpdated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.AngularVelocity.html">AngularVelocity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_PositionUpdated" data-uid="KSP.Sim.impl.RigidbodyComponent.PositionUpdated">
+  PositionUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Position&gt; PositionUpdated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.Position.html">Position</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_RotationUpdated" data-uid="KSP.Sim.impl.RigidbodyComponent.RotationUpdated">
+  RotationUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Rotation&gt; RotationUpdated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.Rotation.html">Rotation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_RigidbodyComponent_VelocityUpdated" data-uid="KSP.Sim.impl.RigidbodyComponent.VelocityUpdated">
+  VelocityUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Velocity&gt; VelocityUpdated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.Velocity.html">Velocity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

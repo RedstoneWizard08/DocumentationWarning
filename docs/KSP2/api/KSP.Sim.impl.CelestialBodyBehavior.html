@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CelestialBodyBehavior | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CelestialBodyBehavior | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.CelestialBodyBehavior">
+
+
+
+  <h1 id="KSP_Sim_impl_CelestialBodyBehavior" data-uid="KSP.Sim.impl.CelestialBodyBehavior" class="text-break">
+Class CelestialBodyBehavior  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CelestialBodyBehavior : ViewObjectComponent&lt;CelestialBodyComponent&gt;, ISurfaceProvider</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Game.KerbalMonoBehaviour.html">KerbalMonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent.html">ViewObjectComponent</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent-1.html">ViewObjectComponent</a>&lt;<a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a>&gt;</div>
+      <div><span class="xref">CelestialBodyBehavior</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Sim.impl.ISurfaceProvider.html">ISurfaceProvider</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1__simObjectComponent">ViewObjectComponent&lt;CelestialBodyComponent&gt;._simObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SyncTo_KSP_Sim_impl_ObjectComponent_">ViewObjectComponent&lt;CelestialBodyComponent&gt;.SyncTo(ObjectComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_IsSimObjectDestroyed">ViewObjectComponent&lt;CelestialBodyComponent&gt;.IsSimObjectDestroyed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SimObjectComponent">ViewObjectComponent&lt;CelestialBodyComponent&gt;.SimObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent__viewObject">ViewObjectComponent._viewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent_ViewObject">ViewObjectComponent.ViewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Game">KerbalMonoBehaviour.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Assets">KerbalMonoBehaviour.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Messages">KerbalMonoBehaviour.Messages</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_CFXSystem">KerbalMonoBehaviour.CFXSystem</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_IsGameShuttingDown">KerbalMonoBehaviour.IsGameShuttingDown</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentCached__1_UnityEngine_Component___0__">GameObjectExtension.GetComponentCached&lt;T&gt;(Component, ref T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GameObjectExtension.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.ComponentExtensions.html#KSP_ComponentExtensions_CopyFrom__1_UnityEngine_Component___0_">ComponentExtensions.CopyFrom&lt;T&gt;(Component, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.OAB.DataContextMonoBehaviorExtensionDooblyDo.html#KSP_OAB_DataContextMonoBehaviorExtensionDooblyDo_FindDataContextProviderInHierarchy_UnityEngine_MonoBehaviour_">DataContextMonoBehaviorExtensionDooblyDo.FindDataContextProviderInHierarchy(MonoBehaviour)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_SetDebugName_UnityEngine_Object_System_String_">GameObjectExtension.SetDebugName(Object, string)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior__ctor_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior__ctor" data-uid="KSP.Sim.impl.CelestialBodyBehavior.#ctor">
+  CelestialBodyBehavior()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialBodyBehavior()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_CelestialBodyData_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.CelestialBodyData*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_CelestialBodyData" data-uid="KSP.Sim.impl.CelestialBodyBehavior.CelestialBodyData">
+  CelestialBodyData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoreCelestialBodyData CelestialBodyData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.CoreCelestialBodyData.html">CoreCelestialBodyData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_IsLocalSpaceLoaded_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.IsLocalSpaceLoaded*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_IsLocalSpaceLoaded" data-uid="KSP.Sim.impl.CelestialBodyBehavior.IsLocalSpaceLoaded">
+  IsLocalSpaceLoaded
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLocalSpaceLoaded { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_IsScaledSpaceLoaded_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.IsScaledSpaceLoaded*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_IsScaledSpaceLoaded" data-uid="KSP.Sim.impl.CelestialBodyBehavior.IsScaledSpaceLoaded">
+  IsScaledSpaceLoaded
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsScaledSpaceLoaded { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_IsSpawningSurfaceObjects_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.IsSpawningSurfaceObjects*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_IsSpawningSurfaceObjects" data-uid="KSP.Sim.impl.CelestialBodyBehavior.IsSpawningSurfaceObjects">
+  IsSpawningSurfaceObjects
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSpawningSurfaceObjects { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_Model_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.Model*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_Model" data-uid="KSP.Sim.impl.CelestialBodyBehavior.Model">
+  Model
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialBodyComponent Model { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_ModelType_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.ModelType*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_ModelType" data-uid="KSP.Sim.impl.CelestialBodyBehavior.ModelType">
+  ModelType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type ModelType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_PqsController_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.PqsController*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_PqsController" data-uid="KSP.Sim.impl.CelestialBodyBehavior.PqsController">
+  PqsController
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PQS PqsController { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Rendering.Planets.PQS.html">PQS</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_RingGroup_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.RingGroup*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_RingGroup" data-uid="KSP.Sim.impl.CelestialBodyBehavior.RingGroup">
+  RingGroup
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialBodyRingGroup RingGroup { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Rendering.CelestialBodyRingGroup.html">CelestialBodyRingGroup</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_ScaledObject_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.ScaledObject*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_ScaledObject" data-uid="KSP.Sim.impl.CelestialBodyBehavior.ScaledObject">
+  ScaledObject
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScaledPlanetaryBodyView ScaledObject { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.ScaledPlanetaryBodyView.html">ScaledPlanetaryBodyView</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_SurfaceProxy_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SurfaceProxy*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_SurfaceProxy" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SurfaceProxy">
+  SurfaceProxy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialBodyProxy SurfaceProxy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.CelestialBodyProxy.html">CelestialBodyProxy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_VegetationSystem_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.VegetationSystem*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_VegetationSystem" data-uid="KSP.Sim.impl.CelestialBodyBehavior.VegetationSystem">
+  VegetationSystem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VegetationSystemPro VegetationSystem { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="AwesomeTechnologies.VegetationSystem.VegetationSystemPro.html">VegetationSystemPro</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_BeginSpawnLocalSpaceView_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.BeginSpawnLocalSpaceView*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_BeginSpawnLocalSpaceView" data-uid="KSP.Sim.impl.CelestialBodyBehavior.BeginSpawnLocalSpaceView">
+  BeginSpawnLocalSpaceView()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BeginSpawnLocalSpaceView()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_BeginSpawnScaledSpaceView_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.BeginSpawnScaledSpaceView*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_BeginSpawnScaledSpaceView" data-uid="KSP.Sim.impl.CelestialBodyBehavior.BeginSpawnScaledSpaceView">
+  BeginSpawnScaledSpaceView()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BeginSpawnScaledSpaceView()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_CoroutineSpawnLocalSpaceView_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.CoroutineSpawnLocalSpaceView*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_CoroutineSpawnLocalSpaceView_System_Boolean_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.CoroutineSpawnLocalSpaceView(System.Boolean)">
+  CoroutineSpawnLocalSpaceView(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator CoroutineSpawnLocalSpaceView(bool waitForSurfaceObjects)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waitForSurfaceObjects</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_CoroutineSpawnScaledSpaceView_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.CoroutineSpawnScaledSpaceView*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_CoroutineSpawnScaledSpaceView" data-uid="KSP.Sim.impl.CelestialBodyBehavior.CoroutineSpawnScaledSpaceView">
+  CoroutineSpawnScaledSpaceView()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator CoroutineSpawnScaledSpaceView()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_DestroyLocalSpaceView_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.DestroyLocalSpaceView*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_DestroyLocalSpaceView" data-uid="KSP.Sim.impl.CelestialBodyBehavior.DestroyLocalSpaceView">
+  DestroyLocalSpaceView()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyLocalSpaceView()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_DestroyScaledSpaceView_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.DestroyScaledSpaceView*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_DestroyScaledSpaceView" data-uid="KSP.Sim.impl.CelestialBodyBehavior.DestroyScaledSpaceView">
+  DestroyScaledSpaceView()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyScaledSpaceView()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_DestroySurfaceProxy_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.DestroySurfaceProxy*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_DestroySurfaceProxy" data-uid="KSP.Sim.impl.CelestialBodyBehavior.DestroySurfaceProxy">
+  DestroySurfaceProxy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroySurfaceProxy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetAltitudeFromRadius_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetAltitudeFromRadius*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetAltitudeFromRadius_KSP_Sim_Position_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetAltitudeFromRadius(KSP.Sim.Position)">
+  GetAltitudeFromRadius(Position)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double GetAltitudeFromRadius(Position position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetAltitudeFromTerrain_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetAltitudeFromTerrain*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetAltitudeFromTerrain_KSP_Sim_Position_System_Double__System_Double__" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetAltitudeFromTerrain(KSP.Sim.Position,System.Double@,System.Double@)">
+  GetAltitudeFromTerrain(Position, out double, out double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetAltitudeFromTerrain(Position position, out double altitudeFromTerrain, out double terrainToSceneryOffset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+    <dt><code>altitudeFromTerrain</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>terrainToSceneryOffset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeDataAtPosition_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeDataAtPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeDataAtPosition_KSP_Sim_Position_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeDataAtPosition(KSP.Sim.Position)">
+  GetBiomeDataAtPosition(Position)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PQSData.BiomeSurfaceData GetBiomeDataAtPosition(Position position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Rendering.Planets.PQSData.html">PQSData</a>.<a class="xref" href="KSP.Rendering.Planets.PQSData.BiomeSurfaceData.html">BiomeSurfaceData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeDataAtPosition_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeDataAtPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeDataAtPosition_UnityEngine_Vector3_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeDataAtPosition(UnityEngine.Vector3)">
+  GetBiomeDataAtPosition(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PQSData.BiomeSurfaceData GetBiomeDataAtPosition(Vector3 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Rendering.Planets.PQSData.html">PQSData</a>.<a class="xref" href="KSP.Rendering.Planets.PQSData.BiomeSurfaceData.html">BiomeSurfaceData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeTypeAtPosition_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeTypeAtPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeTypeAtPosition_KSP_Sim_Position_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeTypeAtPosition(KSP.Sim.Position)">
+  GetBiomeTypeAtPosition(Position)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PQSData.KSP2BiomeType GetBiomeTypeAtPosition(Position position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Rendering.Planets.PQSData.html">PQSData</a>.<a class="xref" href="KSP.Rendering.Planets.PQSData.KSP2BiomeType.html">KSP2BiomeType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeTypeAtPosition_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeTypeAtPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetBiomeTypeAtPosition_UnityEngine_Vector3_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetBiomeTypeAtPosition(UnityEngine.Vector3)">
+  GetBiomeTypeAtPosition(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PQSData.KSP2BiomeType GetBiomeTypeAtPosition(Vector3 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Rendering.Planets.PQSData.html">PQSData</a>.<a class="xref" href="KSP.Rendering.Planets.PQSData.KSP2BiomeType.html">KSP2BiomeType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetLatLonAltFromRadius_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetLatLonAltFromRadius*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetLatLonAltFromRadius_Vector3d_System_Double__System_Double__System_Double__" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetLatLonAltFromRadius(Vector3d,System.Double@,System.Double@,System.Double@)">
+  GetLatLonAltFromRadius(Vector3d, out double, out double, out double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetLatLonAltFromRadius(Vector3d physicsSpacePosition, out double lat, out double lon, out double radiusAlt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>physicsSpacePosition</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+    <dt><code>lat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>lon</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>radiusAlt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetRelSurfaceNVector_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetRelSurfaceNVector*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetRelSurfaceNVector_System_Double_System_Double_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetRelSurfaceNVector(System.Double,System.Double)">
+  GetRelSurfaceNVector(double, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetRelSurfaceNVector(double lat, double lon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>lon</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetRelTerrainPosition_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetRelTerrainPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetRelTerrainPosition_System_Double_System_Double_System_Double_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetRelTerrainPosition(System.Double,System.Double,System.Double)">
+  GetRelTerrainPosition(double, double, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetRelTerrainPosition(double latitude, double longitude, double surfaceOffset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>latitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>longitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>surfaceOffset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetSurfaceNVector_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetSurfaceNVector*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetSurfaceNVector_System_Double_System_Double_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetSurfaceNVector(System.Double,System.Double)">
+  GetSurfaceNVector(double, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetSurfaceNVector(double lat, double lon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>lon</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetSurfaceObject_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetSurfaceObject*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetSurfaceObject_System_String_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetSurfaceObject(System.String)">
+  GetSurfaceObject(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PQSSurfaceObject GetSurfaceObject(string key)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PQSSurfaceObject.html">PQSSurfaceObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_GetTerrainAltitudeFromCenter_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetTerrainAltitudeFromCenter*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_GetTerrainAltitudeFromCenter_System_Double_System_Double_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.GetTerrainAltitudeFromCenter(System.Double,System.Double)">
+  GetTerrainAltitudeFromCenter(double, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double GetTerrainAltitudeFromCenter(double lat, double lon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>lon</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_SetTerrainPhysicsAtCachedPosition_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SetTerrainPhysicsAtCachedPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_SetTerrainPhysicsAtCachedPosition_KSP_Rendering_Planets_PQSData_KSP2BiomeType_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SetTerrainPhysicsAtCachedPosition(KSP.Rendering.Planets.PQSData.KSP2BiomeType)">
+  SetTerrainPhysicsAtCachedPosition(KSP2BiomeType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTerrainPhysicsAtCachedPosition(PQSData.KSP2BiomeType biomeType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>biomeType</code> <a class="xref" href="KSP.Rendering.Planets.PQSData.html">PQSData</a>.<a class="xref" href="KSP.Rendering.Planets.PQSData.KSP2BiomeType.html">KSP2BiomeType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_SpawnSurfaceProxy_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SpawnSurfaceProxy*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_SpawnSurfaceProxy" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SpawnSurfaceProxy">
+  SpawnSurfaceProxy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SpawnSurfaceProxy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_SyncTo_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SyncTo*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_SyncTo_KSP_Sim_impl_CelestialBodyComponent_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.SyncTo(KSP.Sim.impl.CelestialBodyComponent)">
+  SyncTo(CelestialBodyComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SyncTo(CelestialBodyComponent simObjectComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>simObjectComponent</code> <a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_CelestialBodyBehavior_TryGetSurfaceObjectPosition_" data-uid="KSP.Sim.impl.CelestialBodyBehavior.TryGetSurfaceObjectPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_CelestialBodyBehavior_TryGetSurfaceObjectPosition_System_String_KSP_Sim_Position__KSP_Sim_Rotation__" data-uid="KSP.Sim.impl.CelestialBodyBehavior.TryGetSurfaceObjectPosition(System.String,KSP.Sim.Position@,KSP.Sim.Rotation@)">
+  TryGetSurfaceObjectPosition(string, out Position, out Rotation)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetSurfaceObjectPosition(string surfaceObjectName, out Position position, out Rotation rotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>surfaceObjectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+    <dt><code>rotation</code> <a class="xref" href="KSP.Sim.Rotation.html">Rotation</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

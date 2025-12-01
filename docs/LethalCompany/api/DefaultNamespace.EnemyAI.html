@@ -139,6 +139,7 @@ Class EnemyAI
       <div><a class="xref" href="DefaultNamespace.FlowerSnakeEnemy.html">FlowerSnakeEnemy</a></div>
       <div><a class="xref" href="DefaultNamespace.FlowermanAI.html">FlowermanAI</a></div>
       <div><a class="xref" href="DefaultNamespace.ForestGiantAI.html">ForestGiantAI</a></div>
+      <div><a class="xref" href="DefaultNamespace.GiantKiwiAI.html">GiantKiwiAI</a></div>
       <div><a class="xref" href="DefaultNamespace.HoarderBugAI.html">HoarderBugAI</a></div>
       <div><a class="xref" href="DefaultNamespace.JesterAI.html">JesterAI</a></div>
       <div><a class="xref" href="DefaultNamespace.LassoManAI.html">LassoManAI</a></div>
@@ -159,6 +160,9 @@ Class EnemyAI
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -177,13 +181,31 @@ Class EnemyAI
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -192,10 +214,16 @@ Class EnemyAI
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -207,7 +235,13 @@ Class EnemyAI
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -217,6 +251,9 @@ Class EnemyAI
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -1425,6 +1462,36 @@ public float mostOptimalDistance</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_EnemyAI_nestObject" data-uid="DefaultNamespace.EnemyAI.nestObject">
+  nestObject
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject nestObject</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_EnemyAI_nodesTempArray" data-uid="DefaultNamespace.EnemyAI.nodesTempArray">
   nodesTempArray
   
@@ -1706,7 +1773,8 @@ public float pathDistance</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool removedPowerLevel</code></pre>
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public bool removedPowerLevel</code></pre>
   </div>
 
 
@@ -2433,6 +2501,58 @@ public NetworkObject thisNetworkObject</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void AnimationEventB()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_AnimationEventC_" data-uid="DefaultNamespace.EnemyAI.AnimationEventC*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_AnimationEventC" data-uid="DefaultNamespace.EnemyAI.AnimationEventC">
+  AnimationEventC()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AnimationEventC()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_AnimationEventD_" data-uid="DefaultNamespace.EnemyAI.AnimationEventD*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_AnimationEventD" data-uid="DefaultNamespace.EnemyAI.AnimationEventD">
+  AnimationEventD()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AnimationEventD()</code></pre>
   </div>
 
 
@@ -3429,33 +3549,6 @@ public void HitEnemyServerRpc(int force, int playerWhoHit, bool playHitSFX, int 
 
 
 
-  <a id="DefaultNamespace_EnemyAI_InitializeRPCS_EnemyAI_" data-uid="DefaultNamespace.EnemyAI.InitializeRPCS_EnemyAI*"></a>
-
-  <h3 id="DefaultNamespace_EnemyAI_InitializeRPCS_EnemyAI" data-uid="DefaultNamespace.EnemyAI.InitializeRPCS_EnemyAI">
-  InitializeRPCS_EnemyAI()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_EnemyAI()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_EnemyAI_KillEnemy_" data-uid="DefaultNamespace.EnemyAI.KillEnemy*"></a>
 
   <h3 id="DefaultNamespace_EnemyAI_KillEnemy_System_Boolean_" data-uid="DefaultNamespace.EnemyAI.KillEnemy(System.Boolean)">
@@ -3642,6 +3735,32 @@ public void KillEnemyServerRpc(bool destroy)</code></pre>
     <dt><a class="xref" href="GameNetcodeStuff.PlayerControllerB.html">PlayerControllerB</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI_NavigateTowardsTargetPlayer_" data-uid="DefaultNamespace.EnemyAI.NavigateTowardsTargetPlayer*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI_NavigateTowardsTargetPlayer" data-uid="DefaultNamespace.EnemyAI.NavigateTowardsTargetPlayer">
+  NavigateTowardsTargetPlayer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void NavigateTowardsTargetPlayer()</code></pre>
+  </div>
+
+
 
 
 
@@ -4762,6 +4881,32 @@ public void UpdateEnemyRotationServerRpc(short rotationY)</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_EnemyAI___initializeRpcs_" data-uid="DefaultNamespace.EnemyAI.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_EnemyAI___initializeRpcs" data-uid="DefaultNamespace.EnemyAI.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
 
 
 

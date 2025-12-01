@@ -101,8 +101,7 @@ Class DoorLock
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RequireComponent(typeof(InteractTrigger))]
-public class DoorLock : NetworkBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class DoorLock : NetworkBehaviour</code></pre>
   </div>
 
 
@@ -127,6 +126,9 @@ public class DoorLock : NetworkBehaviour</code></pre>
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -145,13 +147,31 @@ public class DoorLock : NetworkBehaviour</code></pre>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -160,10 +180,16 @@ public class DoorLock : NetworkBehaviour</code></pre>
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -175,10 +201,16 @@ public class DoorLock : NetworkBehaviour</code></pre>
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnDestroy()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -188,6 +220,9 @@ public class DoorLock : NetworkBehaviour</code></pre>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -279,6 +314,36 @@ public class DoorLock : NetworkBehaviour</code></pre>
 
   <h2 class="section" id="fields">Fields
 </h2>
+
+
+
+  <h3 id="DefaultNamespace_DoorLock_canBeLocked" data-uid="DefaultNamespace.DoorLock.canBeLocked">
+  canBeLocked
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool canBeLocked</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 
 
@@ -413,6 +478,36 @@ public float defaultTimeToHold</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public InteractTrigger doorTrigger</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.InteractTrigger.html">InteractTrigger</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_DoorLock_doorTriggerB" data-uid="DefaultNamespace.DoorLock.doorTriggerB">
+  doorTriggerB
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InteractTrigger doorTriggerB</code></pre>
   </div>
 
 
@@ -983,33 +1078,6 @@ public void CloseDoorNonPlayerClientRpc()</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ServerRpc(RequireOwnership = false)]
 public void CloseDoorNonPlayerServerRpc()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_DoorLock_InitializeRPCS_DoorLock_" data-uid="DefaultNamespace.DoorLock.InitializeRPCS_DoorLock*"></a>
-
-  <h3 id="DefaultNamespace_DoorLock_InitializeRPCS_DoorLock" data-uid="DefaultNamespace.DoorLock.InitializeRPCS_DoorLock">
-  InitializeRPCS_DoorLock()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_DoorLock()</code></pre>
   </div>
 
 
@@ -1597,6 +1665,32 @@ public void UnlockDoorServerRpc()</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_DoorLock___initializeRpcs_" data-uid="DefaultNamespace.DoorLock.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_DoorLock___initializeRpcs" data-uid="DefaultNamespace.DoorLock.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
 
 
 

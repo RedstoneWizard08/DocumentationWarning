@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class TransformModel | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class TransformModel | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.TransformModel">
+
+
+
+  <h1 id="KSP_Sim_impl_TransformModel" data-uid="KSP.Sim.impl.TransformModel" class="text-break">
+Class TransformModel  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TransformModel : ITransformModelInternal, ITransformModel, IStringIdentity, IPositionDriver, IRotationDriver</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">TransformModel</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Sim.impl.ITransformModelInternal.html">ITransformModelInternal</a></div>
+      <div><a class="xref" href="KSP.Sim.ITransformModel.html">ITransformModel</a></div>
+      <div><a class="xref" href="KSP.Sim.IStringIdentity.html">IStringIdentity</a></div>
+      <div><a class="xref" href="KSP.Sim.IPositionDriver.html">IPositionDriver</a></div>
+      <div><a class="xref" href="KSP.Sim.IRotationDriver.html">IRotationDriver</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Rendering.impl.FreeFlightCamera.html">FreeFlightCamera</a></div>
+      <div><a class="xref" href="KSP.Rendering.impl.VABFlightCamera.html">VABFlightCamera</a></div>
+      <div><a class="xref" href="KSP.Sim.impl.UniverseObserver.html">UniverseObserver</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_TransformModel__ctor_" data-uid="KSP.Sim.impl.TransformModel.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel__ctor_KSP_Sim_impl_SimulationObjectModel_" data-uid="KSP.Sim.impl.TransformModel.#ctor(KSP.Sim.impl.SimulationObjectModel)">
+  TransformModel(SimulationObjectModel)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransformModel(SimulationObjectModel objectModel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectModel</code> <a class="xref" href="KSP.Sim.impl.SimulationObjectModel.html">SimulationObjectModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel__ctor_" data-uid="KSP.Sim.impl.TransformModel.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel__ctor_System_String_KSP_Sim_SimTransformTag_" data-uid="KSP.Sim.impl.TransformModel.#ctor(System.String,KSP.Sim.SimTransformTag)">
+  TransformModel(string, SimTransformTag)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransformModel(string guid, SimTransformTag tag = SimTransformTag.None)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>guid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>tag</code> <a class="xref" href="KSP.Sim.SimTransformTag.html">SimTransformTag</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_TransformModel_AngularMotionDriver_" data-uid="KSP.Sim.impl.TransformModel.AngularMotionDriver*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_AngularMotionDriver" data-uid="KSP.Sim.impl.TransformModel.AngularMotionDriver">
+  AngularMotionDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IAngularMotionDriver AngularMotionDriver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IAngularMotionDriver.html">IAngularMotionDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_CanAcceptRotationUpdate_" data-uid="KSP.Sim.impl.TransformModel.CanAcceptRotationUpdate*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_CanAcceptRotationUpdate" data-uid="KSP.Sim.impl.TransformModel.CanAcceptRotationUpdate">
+  CanAcceptRotationUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanAcceptRotationUpdate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_Guid_" data-uid="KSP.Sim.impl.TransformModel.Guid*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_Guid" data-uid="KSP.Sim.impl.TransformModel.Guid">
+  Guid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Guid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_LinearMotionDriver_" data-uid="KSP.Sim.impl.TransformModel.LinearMotionDriver*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_LinearMotionDriver" data-uid="KSP.Sim.impl.TransformModel.LinearMotionDriver">
+  LinearMotionDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILinearMotionDriver LinearMotionDriver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ILinearMotionDriver.html">ILinearMotionDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_Position_" data-uid="KSP.Sim.impl.TransformModel.Position*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_Position" data-uid="KSP.Sim.impl.TransformModel.Position">
+  Position
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Position Position { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_PositionDriver_" data-uid="KSP.Sim.impl.TransformModel.PositionDriver*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_PositionDriver" data-uid="KSP.Sim.impl.TransformModel.PositionDriver">
+  PositionDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPositionDriver PositionDriver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IPositionDriver.html">IPositionDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_RigidbodyDriver_" data-uid="KSP.Sim.impl.TransformModel.RigidbodyDriver*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_RigidbodyDriver" data-uid="KSP.Sim.impl.TransformModel.RigidbodyDriver">
+  RigidbodyDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IRigidbodyDriver RigidbodyDriver { set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IRigidbodyDriver.html">IRigidbodyDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_Rotation_" data-uid="KSP.Sim.impl.TransformModel.Rotation*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_Rotation" data-uid="KSP.Sim.impl.TransformModel.Rotation">
+  Rotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rotation Rotation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Rotation.html">Rotation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_RotationDriver_" data-uid="KSP.Sim.impl.TransformModel.RotationDriver*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_RotationDriver" data-uid="KSP.Sim.impl.TransformModel.RotationDriver">
+  RotationDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IRotationDriver RotationDriver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IRotationDriver.html">IRotationDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_SimTag_" data-uid="KSP.Sim.impl.TransformModel.SimTag*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_SimTag" data-uid="KSP.Sim.impl.TransformModel.SimTag">
+  SimTag
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SimTransformTag SimTag { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.SimTransformTag.html">SimTransformTag</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel__bodyFrameInternal_" data-uid="KSP.Sim.impl.TransformModel._bodyFrameInternal*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel__bodyFrameInternal" data-uid="KSP.Sim.impl.TransformModel._bodyFrameInternal">
+  _bodyFrameInternal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrameInternal _bodyFrameInternal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.ITransformFrameInternal.html">ITransformFrameInternal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel__celestialFrameInternal_" data-uid="KSP.Sim.impl.TransformModel._celestialFrameInternal*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel__celestialFrameInternal" data-uid="KSP.Sim.impl.TransformModel._celestialFrameInternal">
+  _celestialFrameInternal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrameInternal _celestialFrameInternal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.ITransformFrameInternal.html">ITransformFrameInternal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel__parentInternal_" data-uid="KSP.Sim.impl.TransformModel._parentInternal*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel__parentInternal" data-uid="KSP.Sim.impl.TransformModel._parentInternal">
+  _parentInternal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrameInternal _parentInternal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.ITransformFrameInternal.html">ITransformFrameInternal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_back_" data-uid="KSP.Sim.impl.TransformModel.back*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_back" data-uid="KSP.Sim.impl.TransformModel.back">
+  back
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector back { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_bodyFrame_" data-uid="KSP.Sim.impl.TransformModel.bodyFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_bodyFrame" data-uid="KSP.Sim.impl.TransformModel.bodyFrame">
+  bodyFrame
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrame bodyFrame { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_celestialFrame_" data-uid="KSP.Sim.impl.TransformModel.celestialFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_celestialFrame" data-uid="KSP.Sim.impl.TransformModel.celestialFrame">
+  celestialFrame
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrame celestialFrame { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_celestialTilt_" data-uid="KSP.Sim.impl.TransformModel.celestialTilt*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_celestialTilt" data-uid="KSP.Sim.impl.TransformModel.celestialTilt">
+  celestialTilt
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuaternionD celestialTilt { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.QuaternionD.html">QuaternionD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_children_" data-uid="KSP.Sim.impl.TransformModel.children*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_children" data-uid="KSP.Sim.impl.TransformModel.children">
+  children
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ITransformModel&gt; children { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.Sim.ITransformModel.html">ITransformModel</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_coordinateSystem_" data-uid="KSP.Sim.impl.TransformModel.coordinateSystem*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_coordinateSystem" data-uid="KSP.Sim.impl.TransformModel.coordinateSystem">
+  coordinateSystem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICoordinateSystem coordinateSystem { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Api.ICoordinateSystem.html">ICoordinateSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_down_" data-uid="KSP.Sim.impl.TransformModel.down*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_down" data-uid="KSP.Sim.impl.TransformModel.down">
+  down
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector down { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_forward_" data-uid="KSP.Sim.impl.TransformModel.forward*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_forward" data-uid="KSP.Sim.impl.TransformModel.forward">
+  forward
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector forward { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_isInternalTransform_" data-uid="KSP.Sim.impl.TransformModel.isInternalTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_isInternalTransform" data-uid="KSP.Sim.impl.TransformModel.isInternalTransform">
+  isInternalTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isInternalTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_launchTilt_" data-uid="KSP.Sim.impl.TransformModel.launchTilt*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_launchTilt" data-uid="KSP.Sim.impl.TransformModel.launchTilt">
+  launchTilt
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuaternionD launchTilt { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.QuaternionD.html">QuaternionD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_left_" data-uid="KSP.Sim.impl.TransformModel.left*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_left" data-uid="KSP.Sim.impl.TransformModel.left">
+  left
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector left { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_localPosition_" data-uid="KSP.Sim.impl.TransformModel.localPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_localPosition" data-uid="KSP.Sim.impl.TransformModel.localPosition">
+  localPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d localPosition { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_localRotation_" data-uid="KSP.Sim.impl.TransformModel.localRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_localRotation" data-uid="KSP.Sim.impl.TransformModel.localRotation">
+  localRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuaternionD localRotation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.QuaternionD.html">QuaternionD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_motionModel_" data-uid="KSP.Sim.impl.TransformModel.motionModel*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_motionModel" data-uid="KSP.Sim.impl.TransformModel.motionModel">
+  motionModel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMotionModel motionModel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IMotionModel.html">IMotionModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_objectModel_" data-uid="KSP.Sim.impl.TransformModel.objectModel*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_objectModel" data-uid="KSP.Sim.impl.TransformModel.objectModel">
+  objectModel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SimulationObjectModel objectModel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.SimulationObjectModel.html">SimulationObjectModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_parent_" data-uid="KSP.Sim.impl.TransformModel.parent*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_parent" data-uid="KSP.Sim.impl.TransformModel.parent">
+  parent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrame parent { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_parentageCache_" data-uid="KSP.Sim.impl.TransformModel.parentageCache*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_parentageCache" data-uid="KSP.Sim.impl.TransformModel.parentageCache">
+  parentageCache
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ITransformFrameInternal&gt; parentageCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.Sim.impl.ITransformFrameInternal.html">ITransformFrameInternal</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_parentageCacheDirty_" data-uid="KSP.Sim.impl.TransformModel.parentageCacheDirty*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_parentageCacheDirty" data-uid="KSP.Sim.impl.TransformModel.parentageCacheDirty">
+  parentageCacheDirty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool parentageCacheDirty { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_right_" data-uid="KSP.Sim.impl.TransformModel.right*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_right" data-uid="KSP.Sim.impl.TransformModel.right">
+  right
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector right { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_up_" data-uid="KSP.Sim.impl.TransformModel.up*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_up" data-uid="KSP.Sim.impl.TransformModel.up">
+  up
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector up { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_TransformModel_AddChild_" data-uid="KSP.Sim.impl.TransformModel.AddChild*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_AddChild_KSP_Sim_ITransformModel_" data-uid="KSP.Sim.impl.TransformModel.AddChild(KSP.Sim.ITransformModel)">
+  AddChild(ITransformModel)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddChild(ITransformModel youngChild)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>youngChild</code> <a class="xref" href="KSP.Sim.ITransformModel.html">ITransformModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_FindChildByName_" data-uid="KSP.Sim.impl.TransformModel.FindChildByName*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_FindChildByName_System_String_System_Boolean_" data-uid="KSP.Sim.impl.TransformModel.FindChildByName(System.String,System.Boolean)">
+  FindChildByName(string, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformModel FindChildByName(string name, bool recursive)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>recursive</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformModel.html">ITransformModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_GetLocalPosition_" data-uid="KSP.Sim.impl.TransformModel.GetLocalPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_GetLocalPosition" data-uid="KSP.Sim.impl.TransformModel.GetLocalPosition">
+  GetLocalPosition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetLocalPosition()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_GetLocalRotation_" data-uid="KSP.Sim.impl.TransformModel.GetLocalRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_GetLocalRotation" data-uid="KSP.Sim.impl.TransformModel.GetLocalRotation">
+  GetLocalRotation()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuaternionD GetLocalRotation()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.QuaternionD.html">QuaternionD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_GetSimObjectParentTransformFrame_" data-uid="KSP.Sim.impl.TransformModel.GetSimObjectParentTransformFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_GetSimObjectParentTransformFrame" data-uid="KSP.Sim.impl.TransformModel.GetSimObjectParentTransformFrame">
+  GetSimObjectParentTransformFrame()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrame GetSimObjectParentTransformFrame()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_GetSimSOIBodyParentTransformFrame_" data-uid="KSP.Sim.impl.TransformModel.GetSimSOIBodyParentTransformFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_GetSimSOIBodyParentTransformFrame" data-uid="KSP.Sim.impl.TransformModel.GetSimSOIBodyParentTransformFrame">
+  GetSimSOIBodyParentTransformFrame()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrame GetSimSOIBodyParentTransformFrame()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_GetTransformFrame_" data-uid="KSP.Sim.impl.TransformModel.GetTransformFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_GetTransformFrame_KSP_Sim_TransformFrameType_" data-uid="KSP.Sim.impl.TransformModel.GetTransformFrame(KSP.Sim.TransformFrameType)">
+  GetTransformFrame(TransformFrameType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrame GetTransformFrame(TransformFrameType frameType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frameType</code> <a class="xref" href="KSP.Sim.TransformFrameType.html">TransformFrameType</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_Is_" data-uid="KSP.Sim.impl.TransformModel.Is*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_Is_KSP_Sim_IStringIdentity_" data-uid="KSP.Sim.impl.TransformModel.Is(KSP.Sim.IStringIdentity)">
+  Is(IStringIdentity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Is(IStringIdentity other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="KSP.Sim.IStringIdentity.html">IStringIdentity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_PerformFrameSnap_" data-uid="KSP.Sim.impl.TransformModel.PerformFrameSnap*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_PerformFrameSnap_KSP_Sim_IMotionFrame_System_Collections_Generic_List_System_Action__" data-uid="KSP.Sim.impl.TransformModel.PerformFrameSnap(KSP.Sim.IMotionFrame,System.Collections.Generic.List{System.Action})">
+  PerformFrameSnap(IMotionFrame, List&lt;Action&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PerformFrameSnap(IMotionFrame newMotionFrame, List&lt;Action&gt; actionList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newMotionFrame</code> <a class="xref" href="KSP.Sim.IMotionFrame.html">IMotionFrame</a></dt>
+    <dd></dd>
+    <dt><code>actionList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_RemoveChild_" data-uid="KSP.Sim.impl.TransformModel.RemoveChild*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_RemoveChild_KSP_Sim_ITransformModel_" data-uid="KSP.Sim.impl.TransformModel.RemoveChild(KSP.Sim.ITransformModel)">
+  RemoveChild(ITransformModel)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveChild(ITransformModel oldChild)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>oldChild</code> <a class="xref" href="KSP.Sim.ITransformModel.html">ITransformModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_SetLocalPosition_" data-uid="KSP.Sim.impl.TransformModel.SetLocalPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_SetLocalPosition_Vector3d_" data-uid="KSP.Sim.impl.TransformModel.SetLocalPosition(Vector3d)">
+  SetLocalPosition(Vector3d)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetLocalPosition(Vector3d newLocalPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newLocalPosition</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_SetLocalRotation_" data-uid="KSP.Sim.impl.TransformModel.SetLocalRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_SetLocalRotation_QuaternionD_" data-uid="KSP.Sim.impl.TransformModel.SetLocalRotation(QuaternionD)">
+  SetLocalRotation(QuaternionD)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetLocalRotation(QuaternionD newLocalRotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newLocalRotation</code> <a class="xref" href="DefaultNamespace.QuaternionD.html">QuaternionD</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_SetParent_" data-uid="KSP.Sim.impl.TransformModel.SetParent*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_SetParent_KSP_Sim_ITransformFrame_" data-uid="KSP.Sim.impl.TransformModel.SetParent(KSP.Sim.ITransformFrame)">
+  SetParent(ITransformFrame)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetParent(ITransformFrame newParent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newParent</code> <a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_TriggerPositionRotationUpdatedEvents_" data-uid="KSP.Sim.impl.TransformModel.TriggerPositionRotationUpdatedEvents*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_TriggerPositionRotationUpdatedEvents" data-uid="KSP.Sim.impl.TransformModel.TriggerPositionRotationUpdatedEvents">
+  TriggerPositionRotationUpdatedEvents()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TriggerPositionRotationUpdatedEvents()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_UpdatePosition_" data-uid="KSP.Sim.impl.TransformModel.UpdatePosition*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_UpdatePosition_KSP_Sim_Position_" data-uid="KSP.Sim.impl.TransformModel.UpdatePosition(KSP.Sim.Position)">
+  UpdatePosition(Position)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePosition(Position newPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newPosition</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_UpdateRotation_" data-uid="KSP.Sim.impl.TransformModel.UpdateRotation*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_UpdateRotation_KSP_Sim_Rotation_" data-uid="KSP.Sim.impl.TransformModel.UpdateRotation(KSP.Sim.Rotation)">
+  UpdateRotation(Rotation)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateRotation(Rotation newRotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newRotation</code> <a class="xref" href="KSP.Sim.Rotation.html">Rotation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_TransformModel_UpdateSimTransformTagFromSimObject_" data-uid="KSP.Sim.impl.TransformModel.UpdateSimTransformTagFromSimObject*"></a>
+
+  <h3 id="KSP_Sim_impl_TransformModel_UpdateSimTransformTagFromSimObject" data-uid="KSP.Sim.impl.TransformModel.UpdateSimTransformTagFromSimObject">
+  UpdateSimTransformTagFromSimObject()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateSimTransformTagFromSimObject()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_TransformModel_PositionUpdated" data-uid="KSP.Sim.impl.TransformModel.PositionUpdated">
+  PositionUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Position&gt; PositionUpdated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.Position.html">Position</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_TransformModel_RotationUpdated" data-uid="KSP.Sim.impl.TransformModel.RotationUpdated">
+  RotationUpdated
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Rotation&gt; RotationUpdated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.Rotation.html">Rotation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

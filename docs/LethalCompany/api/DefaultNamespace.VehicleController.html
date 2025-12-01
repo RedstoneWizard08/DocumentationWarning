@@ -126,6 +126,9 @@ Class VehicleController
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -144,13 +147,31 @@ Class VehicleController
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -159,10 +180,16 @@ Class VehicleController
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -174,10 +201,16 @@ Class VehicleController
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnDestroy()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -187,6 +220,9 @@ Class VehicleController
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -4607,6 +4643,36 @@ public MeshRenderer leftWheelMesh</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_VehicleController_ontopOfTruckCollider" data-uid="DefaultNamespace.VehicleController.ontopOfTruckCollider">
+  ontopOfTruckCollider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collider ontopOfTruckCollider</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_VehicleController_otherWheels" data-uid="DefaultNamespace.VehicleController.otherWheels">
   otherWheels
   
@@ -5538,6 +5604,36 @@ public AudioClip[] radioClips</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_VehicleController_speed" data-uid="DefaultNamespace.VehicleController.speed">
+  speed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float speed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_VehicleController_springAudio" data-uid="DefaultNamespace.VehicleController.springAudio">
   springAudio
   
@@ -5578,6 +5674,36 @@ public AudioClip[] radioClips</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float springForce</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleController_stability" data-uid="DefaultNamespace.VehicleController.stability">
+  stability
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float stability</code></pre>
   </div>
 
 
@@ -5826,6 +5952,37 @@ public AudioClip[] radioClips</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_VehicleController_switchGearsBoostEnabled" data-uid="DefaultNamespace.VehicleController.switchGearsBoostEnabled">
+  switchGearsBoostEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Boost ability&quot;)]
+public bool switchGearsBoostEnabled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -6537,8 +6694,7 @@ public AudioClip[] radioClips</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Header(&quot;Boost ability&quot;)]
-public int turboBoosts</code></pre>
+    <pre><code class="lang-csharp hljs">public int turboBoosts</code></pre>
   </div>
 
 
@@ -8289,33 +8445,6 @@ public void DestroyCarServerRpc(int sentByClient)</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void GetVehicleInput()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_VehicleController_InitializeRPCS_VehicleController_" data-uid="DefaultNamespace.VehicleController.InitializeRPCS_VehicleController*"></a>
-
-  <h3 id="DefaultNamespace_VehicleController_InitializeRPCS_VehicleController" data-uid="DefaultNamespace.VehicleController.InitializeRPCS_VehicleController">
-  InitializeRPCS_VehicleController()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_VehicleController()</code></pre>
   </div>
 
 
@@ -11049,6 +11178,32 @@ public void UseTurboBoostServerRpc()</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_VehicleController___initializeRpcs_" data-uid="DefaultNamespace.VehicleController.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_VehicleController___initializeRpcs" data-uid="DefaultNamespace.VehicleController.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
 
 
 

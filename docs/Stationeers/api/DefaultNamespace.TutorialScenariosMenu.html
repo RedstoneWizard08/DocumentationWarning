@@ -101,7 +101,7 @@ Class TutorialScenariosMenu
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TutorialScenariosMenu : MainMenuPage, IUiComponent</code></pre>
+    <pre><code class="lang-csharp hljs">public class TutorialScenariosMenu : MainMenuPage</code></pre>
   </div>
 
 
@@ -120,31 +120,37 @@ Class TutorialScenariosMenu
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="Assets.Scripts.UI.IUiComponent.html">IUiComponent</a></div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_SetVisible_System_Boolean_">MainMenuPage.SetVisible(bool)</a>
+      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_MenuSceneShouldBeVisible">MainMenuPage.MenuSceneShouldBeVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_Show">MainMenuPage.Show()</a>
+    </div>
+    <div>
+      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_Hide">MainMenuPage.Hide()</a>
     </div>
     <div>
       <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_OnManagerStart">MainMenuPage.OnManagerStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_OnPageShown">MainMenuPage.OnPageShown()</a>
+    </div>
+    <div>
+      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_OnPageHidden">MainMenuPage.OnPageHidden()</a>
+    </div>
+    <div>
+      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_OnPagePushed">MainMenuPage.OnPagePushed()</a>
     </div>
     <div>
       <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_WindowName">MainMenuPage.WindowName</a>
     </div>
     <div>
       <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_IsVisible">MainMenuPage.IsVisible</a>
-    </div>
-    <div>
-      <a class="xref" href="UI.MainMenuPage.html#UI_MainMenuPage_onBack">MainMenuPage.onBack</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -261,36 +267,6 @@ Class TutorialScenariosMenu
 
 
 
-  <h3 id="DefaultNamespace_TutorialScenariosMenu_PlanetScenePrefab" data-uid="DefaultNamespace.TutorialScenariosMenu.PlanetScenePrefab">
-  PlanetScenePrefab
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PlanetScene PlanetScenePrefab</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.UI.PlanetScene.html">PlanetScene</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="DefaultNamespace_TutorialScenariosMenu_StartGameButton" data-uid="DefaultNamespace.TutorialScenariosMenu.StartGameButton">
   StartGameButton
   
@@ -391,7 +367,7 @@ public LayoutGroup WorldPresetGroup</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WorldPresetItem WorldPresetPrefab</code></pre>
+    <pre><code class="lang-csharp hljs">public WorldPresetItemTutorial WorldPresetPrefab</code></pre>
   </div>
 
 
@@ -399,7 +375,7 @@ public LayoutGroup WorldPresetGroup</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.UI.WorldPresetItem.html">WorldPresetItem</a></dt>
+    <dt><a class="xref" href="Assets.Scripts.UI.WorldPresetItemTutorial.html">WorldPresetItemTutorial</a></dt>
     <dd></dd>
   </dl>
 
@@ -421,7 +397,7 @@ public LayoutGroup WorldPresetGroup</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WorldPresetItem selectedWorld</code></pre>
+    <pre><code class="lang-csharp hljs">public WorldPresetItemTutorial selectedWorld</code></pre>
   </div>
 
 
@@ -429,9 +405,70 @@ public LayoutGroup WorldPresetGroup</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.UI.WorldPresetItem.html">WorldPresetItem</a></dt>
+    <dt><a class="xref" href="Assets.Scripts.UI.WorldPresetItemTutorial.html">WorldPresetItemTutorial</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DefaultNamespace_TutorialScenariosMenu_OnPagePopped_" data-uid="DefaultNamespace.TutorialScenariosMenu.OnPagePopped*"></a>
+
+  <h3 id="DefaultNamespace_TutorialScenariosMenu_OnPagePopped" data-uid="DefaultNamespace.TutorialScenariosMenu.OnPagePopped">
+  OnPagePopped()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnPagePopped()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_TutorialScenariosMenu_SelectNewWorld_" data-uid="DefaultNamespace.TutorialScenariosMenu.SelectNewWorld*"></a>
+
+  <h3 id="DefaultNamespace_TutorialScenariosMenu_SelectNewWorld_Assets_Scripts_UI_WorldPresetItemTutorial_" data-uid="DefaultNamespace.TutorialScenariosMenu.SelectNewWorld(Assets.Scripts.UI.WorldPresetItemTutorial)">
+  SelectNewWorld(WorldPresetItemTutorial)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SelectNewWorld(WorldPresetItemTutorial item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="Assets.Scripts.UI.WorldPresetItemTutorial.html">WorldPresetItemTutorial</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
 
 
 

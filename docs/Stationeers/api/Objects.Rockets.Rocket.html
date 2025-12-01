@@ -101,7 +101,7 @@ Class Rocket
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Rocket : IPhysical, IProfile, IReferencable, IEvaluable, IComboable</code></pre>
+    <pre><code class="lang-csharp hljs">public class Rocket : IPhysical, IProfile, IDensePoolable, IReferencable, IEvaluable, IComboable</code></pre>
   </div>
 
 
@@ -120,6 +120,7 @@ Class Rocket
     <dd>
       <div><a class="xref" href="Objects.Electrical.IPhysical.html">IPhysical</a></div>
       <div><a class="xref" href="Objects.Electrical.IProfile.html">IProfile</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
       <div><a class="xref" href="UI.ImGuiUi.IComboable.html">IComboable</a></div>
@@ -1338,6 +1339,37 @@ Class Rocket
 
 
 
+  <a id="Objects_Rockets_Rocket_MaxRecordedThrust_" data-uid="Objects.Rockets.Rocket.MaxRecordedThrust*"></a>
+
+  <h3 id="Objects_Rockets_Rocket_MaxRecordedThrust" data-uid="Objects.Rockets.Rocket.MaxRecordedThrust">
+  MaxRecordedThrust
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxRecordedThrust { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Objects_Rockets_Rocket_NetworkUpdateFlags_" data-uid="Objects.Rockets.Rocket.NetworkUpdateFlags*"></a>
 
   <h3 id="Objects_Rockets_Rocket_NetworkUpdateFlags" data-uid="Objects.Rockets.Rocket.NetworkUpdateFlags">
@@ -1359,6 +1391,37 @@ Class Rocket
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_Rocket_OrbitalPosition_" data-uid="Objects.Rockets.Rocket.OrbitalPosition*"></a>
+
+  <h3 id="Objects_Rockets_Rocket_OrbitalPosition" data-uid="Objects.Rockets.Rocket.OrbitalPosition">
+  OrbitalPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrbitalPosition { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -2783,13 +2846,13 @@ Class Rocket
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;RocketMiner&gt; GetMiners()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;IRocketMiner&gt; GetMiners()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Pipes.RocketMiner.html">RocketMiner</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Pipes.IRocketMiner.html">IRocketMiner</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -2821,6 +2884,42 @@ Class Rocket
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_Rocket_GetOrbitalPosition_" data-uid="Objects.Rockets.Rocket.GetOrbitalPosition*"></a>
+
+  <h3 id="Objects_Rockets_Rocket_GetOrbitalPosition_System_Single__" data-uid="Objects.Rockets.Rocket.GetOrbitalPosition(System.Single@)">
+  GetOrbitalPosition(out float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetOrbitalPosition(out float position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -3117,6 +3216,44 @@ Class Rocket
 
 
 
+  <a id="Objects_Rockets_Rocket_OnAddToPool_" data-uid="Objects.Rockets.Rocket.OnAddToPool*"></a>
+
+  <h3 id="Objects_Rockets_Rocket_OnAddToPool_System_Object_System_Int32_" data-uid="Objects.Rockets.Rocket.OnAddToPool(System.Object,System.Int32)">
+  OnAddToPool(object, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool OnAddToPool(object densePool, int slot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>slot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Objects_Rockets_Rocket_OnAssignedReference_" data-uid="Objects.Rockets.Rocket.OnAssignedReference*"></a>
 
   <h3 id="Objects_Rockets_Rocket_OnAssignedReference" data-uid="Objects.Rockets.Rocket.OnAssignedReference">
@@ -3157,6 +3294,37 @@ Class Rocket
     <pre><code class="lang-csharp hljs">public static void OnFinishedLoad()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_Rocket_OnRemoveFromPool_" data-uid="Objects.Rockets.Rocket.OnRemoveFromPool*"></a>
+
+  <h3 id="Objects_Rockets_Rocket_OnRemoveFromPool_System_Object_" data-uid="Objects.Rockets.Rocket.OnRemoveFromPool(System.Object)">
+  OnRemoveFromPool(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRemoveFromPool(object densePool)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -3634,6 +3802,32 @@ Class Rocket
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_Rockets_Rocket_TeleportToEndOfPath_" data-uid="Objects.Rockets.Rocket.TeleportToEndOfPath*"></a>
+
+  <h3 id="Objects_Rockets_Rocket_TeleportToEndOfPath" data-uid="Objects.Rockets.Rocket.TeleportToEndOfPath">
+  TeleportToEndOfPath()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TeleportToEndOfPath()</code></pre>
+  </div>
+
+
 
 
 

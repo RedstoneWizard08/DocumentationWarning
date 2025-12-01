@@ -101,7 +101,7 @@ Class Shuttle
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Shuttle : DynamicThing, IAudioParent, ISyncListable, ITooltip, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IWeatherDamagable, ILodRequester, IReferencable, IEvaluable</code></pre>
+    <pre><code class="lang-csharp hljs">public class Shuttle : DraggableThing, IAudioParent, ISyncListable, ITooltip, ICreativeSpawnable, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IDensePoolable, IWeatherDamagable, ILodRequester, IThreadable, IDraggable, IExitable, IRepairable, IPlayerVehicle, IVehicleCamera, IReferencable, IEvaluable</code></pre>
   </div>
 
 
@@ -117,6 +117,7 @@ Class Shuttle
       <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></div>
+      <div><a class="xref" href="Assets.Scripts.DraggableThing.html">DraggableThing</a></div>
       <div><span class="xref">Shuttle</span></div>
     </dd>
   </dl>
@@ -127,11 +128,19 @@ Class Shuttle
       <div><a class="xref" href="Audio.IAudioParent.html">IAudioParent</a></div>
       <div><a class="xref" href="Assets.Scripts.ISyncListable.html">ISyncListable</a></div>
       <div><a class="xref" href="DefaultNamespace.ITooltip.html">ITooltip</a></div>
+      <div><a class="xref" href="Assets.Scripts.ICreativeSpawnable.html">ICreativeSpawnable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a>&gt;</div>
       <div><a class="xref" href="Objects.Electrical.IPhysical.html">IPhysical</a></div>
       <div><a class="xref" href="Objects.Electrical.IProfile.html">IProfile</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
       <div><a class="xref" href="Weather.IWeatherDamagable.html">IWeatherDamagable</a></div>
       <div><a class="xref" href="TerrainSystem.Lods.ILodRequester.html">ILodRequester</a></div>
+      <div><a class="xref" href="TerrainSystem.IThreadable.html">IThreadable</a></div>
+      <div><a class="xref" href="Assets.Scripts.IDraggable.html">IDraggable</a></div>
+      <div><a class="xref" href="DefaultNamespace.IExitable.html">IExitable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.Items.IRepairable.html">IRepairable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.IPlayerVehicle.html">IPlayerVehicle</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.IVehicleCamera.html">IVehicleCamera</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
     </dd>
@@ -141,6 +150,45 @@ Class Shuttle
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_RENDER_DISTANCE">DraggableThing.RENDER_DISTANCE</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_AnchoredState">DraggableThing.AnchoredState</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_DraggingAction">DraggableThing.DraggingAction</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_GetRenderMaxDistanceSquared">DraggableThing.GetRenderMaxDistanceSquared()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_GetShadowMaxDistanceSquared">DraggableThing.GetShadowMaxDistanceSquared()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnAddToPool_System_Object_System_Int32_">DraggableThing.OnAddToPool(object, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnRemoveFromPool_System_Object_">DraggableThing.OnRemoveFromPool(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnJointBreak_System_Single_">DraggableThing.OnJointBreak(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnDestroy">DraggableThing.OnDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_AttackWith_Assets_Scripts_Objects_Attack_System_Boolean_">DraggableThing.AttackWith(Attack, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_Delete_Assets_Scripts_Objects_Thing_">DraggableThing.Delete(Thing)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_CanEnter_Assets_Scripts_Objects_Slot_">DraggableThing.CanEnter(Slot)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_KeepWhenOutOfBounds">DraggableThing.KeepWhenOutOfBounds</a>
+    </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_LastManufacturedItem">DynamicThing.LastManufacturedItem</a>
     </div>
@@ -170,12 +218,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_HasLight">DynamicThing.HasLight</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsSmall">DynamicThing.IsSmall</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_FastSpeed">DynamicThing.FastSpeed</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RigidBody">DynamicThing.RigidBody</a>
@@ -301,6 +343,12 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DYNAMIC_THING_HEALTH_DAMAGE">DynamicThing.DYNAMIC_THING_HEALTH_DAMAGE</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsUnderLava">DynamicThing.IsUnderLava</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsInLavaObject">DynamicThing.IsInLavaObject</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsLogicSlotReadable">DynamicThing.IsLogicSlotReadable()</a>
     </div>
     <div>
@@ -418,9 +466,6 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_GetPassiveTooltip_UnityEngine_Collider_">DynamicThing.GetPassiveTooltip(Collider)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_AttackWith_Assets_Scripts_Objects_Attack_System_Boolean_">DynamicThing.AttackWith(Attack, bool)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_TryInteractWithSlotOccupant_Assets_Scripts_Objects_Interactable_Assets_Scripts_Objects_Thing_DelayedActionInstance__System_Boolean_">DynamicThing.TryInteractWithSlotOccupant(Interactable, out Thing.DelayedActionInstance, bool)</a>
     </div>
     <div>
@@ -431,12 +476,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnCollisionEnter_UnityEngine_Collision_">DynamicThing.OnCollisionEnter(Collision)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPositionChanged_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_">DynamicThing.OnPositionChanged(Grid3, Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPositionChangedClient_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_">DynamicThing.OnPositionChangedClient(Grid3, Vector3)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPrimaryUseStart">DynamicThing.OnPrimaryUseStart()</a>
@@ -461,9 +500,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DragInSlot_Assets_Scripts_Objects_Slot_UnityEngine_Vector3_">DynamicThing.DragInSlot(Slot, Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnGravityEnabled">DynamicThing.OnGravityEnabled()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnGravityDisabled">DynamicThing.OnGravityDisabled()</a>
@@ -493,6 +529,9 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnThreadUpdate">DynamicThing.OnThreadUpdate()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CheckPlayableArea">DynamicThing.CheckPlayableArea()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SetOnBaseOfSlot">DynamicThing.SetOnBaseOfSlot()</a>
     </div>
     <div>
@@ -511,22 +550,19 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsStop">DynamicThing.IsStop()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PhysicsUpdate">DynamicThing.PhysicsUpdate()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CacheVelocity">DynamicThing.CacheVelocity()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ShouldIgnite_Assets_Scripts_Atmospherics_Atmosphere_">DynamicThing.ShouldIgnite(Atmosphere)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsHiddenInParentSlot">DynamicThing.IsHiddenInParentSlot()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnFireTick">DynamicThing.OnFireTick()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_Explosion_UnityEngine_Vector3_System_Single_">DynamicThing.Explosion(Vector3, float)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnDamageDestroyed">DynamicThing.OnDamageDestroyed()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnAssignedReference">DynamicThing.OnAssignedReference()</a>
@@ -539,9 +575,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SetPhysicsDelayedColliders_System_Boolean_System_Boolean_">DynamicThing.SetPhysicsDelayedColliders(bool, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnDestroy">DynamicThing.OnDestroy()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SetWearVisibility_System_Boolean_">DynamicThing.SetWearVisibility(bool)</a>
@@ -613,18 +646,6 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsNetworkUpdate">DynamicThing.IsNetworkUpdate()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_BuildUpdate_Assets_Scripts_Networking_RocketBinaryWriter_System_UInt16_">DynamicThing.BuildUpdate(RocketBinaryWriter, ushort)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ProcessUpdate_Assets_Scripts_Networking_RocketBinaryReader_System_UInt16_">DynamicThing.ProcessUpdate(RocketBinaryReader, ushort)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_BuildOwnerUpdate_Assets_Scripts_Networking_RocketBinaryWriter_">DynamicThing.BuildOwnerUpdate(RocketBinaryWriter)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ProcessOwnerUpdate_Assets_Scripts_Networking_RocketBinaryReader_">DynamicThing.ProcessOwnerUpdate(RocketBinaryReader)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SerializeOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">DynamicThing.SerializeOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
@@ -649,13 +670,19 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DoWeatherDamage_System_Single_">DynamicThing.DoWeatherDamage(float)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ApplyLavaDamage">DynamicThing.ApplyLavaDamage()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CheckForCollectorProximity">DynamicThing.CheckForCollectorProximity()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanTogglePower">DynamicThing.CanTogglePower</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanThread">DynamicThing.CanThread()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_HasAuthority">DynamicThing.HasAuthority</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DebugName">DynamicThing.DebugName()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanTogglePower">DynamicThing.CanTogglePower</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_MovingFast">DynamicThing.MovingFast</a>
@@ -668,9 +695,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UnEquipSoundHash">DynamicThing.UnEquipSoundHash</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ChunkGenerationRadius">DynamicThing.ChunkGenerationRadius</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ConvectionFactor">DynamicThing.ConvectionFactor</a>
@@ -691,9 +715,6 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_HasAtmosphere">DynamicThing.HasAtmosphere</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsChunkRendered">DynamicThing.IsChunkRendered</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RootParent">DynamicThing.RootParent</a>
     </div>
     <div>
@@ -710,9 +731,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ParentReferenceId">DynamicThing.ParentReferenceId</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_KeepWhenOutOfBounds">DynamicThing.KeepWhenOutOfBounds</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_Joint">DynamicThing.Joint</a>
@@ -733,7 +751,7 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RotationLerpRate">DynamicThing.RotationLerpRate</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PreviousPosition">DynamicThing.PreviousPosition</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PreviousLodRequestPosition">DynamicThing.PreviousLodRequestPosition</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_LodRequesterId">DynamicThing.LodRequesterId</a>
@@ -757,9 +775,6 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_StormWindStrength">DynamicThing.StormWindStrength</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_MaxMovementSpeed">DynamicThing.MaxMovementSpeed</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RunPhysicsUpdate">DynamicThing.RunPhysicsUpdate</a>
     </div>
     <div>
@@ -767,6 +782,15 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RegisteredCollector">DynamicThing.RegisteredCollector</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsInLava">DynamicThing.IsInLava</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_LavaDamage">DynamicThing.LavaDamage</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ThreadCost">DynamicThing.ThreadCost</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnManufactured">DynamicThing.OnManufactured</a>
@@ -784,10 +808,13 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnCollision">DynamicThing.OnCollision</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllPhysicalThings">Thing.AllPhysicalThings</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PhysicalPoolActive">Thing.PhysicalPoolActive</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllILights">Thing.AllILights</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllIWearableLights">Thing.AllIWearableLights</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SuppressSound">Thing.SuppressSound</a>
@@ -850,12 +877,6 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_WillSave">Thing.WillSave</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChange">Thing.OnPositionChange</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChangeLava">Thing.OnPositionChangeLava</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_position">Thing.position</a>
     </div>
     <div>
@@ -896,9 +917,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__customMaterials">Thing._customMaterials</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PaintableMaterial">Thing.PaintableMaterial</a>
@@ -983,9 +1001,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnimTask">Thing.ErrorAnimTask</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalGrid">Thing.LocalGrid</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_BoundingSphereCenter">Thing.BoundingSphereCenter</a>
@@ -1162,9 +1177,6 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAsync__1_System_Int64_System_Single_">Thing.FindAsync&lt;T1&gt;(long, float)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPrefabLoad">Thing.OnPrefabLoad()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetAudioEvent_System_Int32_">Thing.GetAudioEvent(int)</a>
     </div>
     <div>
@@ -1285,6 +1297,9 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
     </div>
     <div>
@@ -1330,7 +1345,7 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildBatteryCellChange_Assets_Scripts_Objects_Items_BatteryCell_">Thing.OnChildBatteryCellChange(BatteryCell)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindMiningBeltOnParent">Thing.FindMiningBeltOnParent()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAvailableDirtCanister">Thing.FindAvailableDirtCanister()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsState_Assets_Scripts_Objects_InteractableType_System_Int32_">Thing.IsState(InteractableType, int)</a>
@@ -1345,10 +1360,10 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnAtmosphericsBegin">Thing.OnAtmosphericsBegin()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableStateChanged_Assets_Scripts_Objects_Interactable_System_Int32_System_Int32_">Thing.OnInteractableStateChanged(Interactable, int, int)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableUpdated_Assets_Scripts_Objects_Interactable_">Thing.OnInteractableUpdated(Interactable)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableUpdated_Assets_Scripts_Objects_Interactable_">Thing.OnInteractableUpdated(Interactable)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ValidateOnLoad_System_Int32_">Thing.ValidateOnLoad(int)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnFinishedInteractionSync_Assets_Scripts_Objects_Interactable_">Thing.OnFinishedInteractionSync(Interactable)</a>
@@ -1366,16 +1381,13 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RemoveAccess_System_Int32_">Thing.RemoveAccess(int)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshAnimState_System_Boolean_">Thing.RefreshAnimState(bool)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshOnOffAnimState_System_Boolean_">Thing.RefreshOnOffAnimState(bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnim">Thing.ErrorAnim()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Explode">Thing.Explode()</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetContextualName_Assets_Scripts_Objects_Interactable_">Thing.GetContextualName(Interactable)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReactWithTemperature">Thing.ReactWithTemperature()</a>
@@ -1403,12 +1415,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DropReagent_Reagents_Reagent_Assets_Scripts_Objects_Slot_">Thing.DropReagent(Reagent, Slot)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetRenderMaxDistanceSquared">Thing.GetRenderMaxDistanceSquared()</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetShadowMaxDistanceSquared">Thing.GetShadowMaxDistanceSquared()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RenderChange_System_Boolean_Assets_Scripts_Objects_Thing_">Thing.RenderChange(bool, Thing)</a>
@@ -1468,6 +1474,9 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HandleCollisionWith_Assets_Scripts_Objects_Thing_System_Boolean_">Thing.HandleCollisionWith(Thing, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsAudible">Thing.IsAudible()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InitializeDamageState">Thing.InitializeDamageState()</a>
     </div>
     <div>
@@ -1483,19 +1492,19 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateLodFlares">Thing.UpdateLodFlares()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnAroundChunk">Thing.SpawnAroundChunk()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ScheduleGridEventFromThread_Assets_Scripts_GridSystem_GridEvent_">Thing.ScheduleGridEventFromThread(GridEvent)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnGridEvent_Assets_Scripts_GridSystem_GridEvent_">Thing.OnGridEvent(GridEvent)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CanEnter_Assets_Scripts_Objects_Slot_">Thing.CanEnter(Slot)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetDamageColor">Thing.GetDamageColor()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
@@ -1549,13 +1558,7 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SetLightVisibility_System_Boolean_System_Boolean_">Thing.SetLightVisibility(bool, bool)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildEnterInventory_Assets_Scripts_Objects_DynamicThing_">Thing.OnChildEnterInventory(DynamicThing)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SetSlotOccupantTransformData_Assets_Scripts_Objects_DynamicThing_">Thing.SetSlotOccupantTransformData(DynamicThing)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildExitInventory_Assets_Scripts_Objects_DynamicThing_">Thing.OnChildExitInventory(DynamicThing)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CheckOnSlot">Thing.CheckOnSlot()</a>
@@ -1568,9 +1571,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventInteraction_Assets_Scripts_Objects_Thing_DelayedActionInstance__Assets_Scripts_Objects_Interactable_Assets_Scripts_Objects_Interaction_">Thing.PreventInteraction(out Thing.DelayedActionInstance, Interactable, Interaction)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractWith_Assets_Scripts_Objects_Interactable_Assets_Scripts_Objects_Interaction_System_Boolean_">Thing.InteractWith(Interactable, Interaction, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnAtmosphericTick">Thing.OnAtmosphericTick()</a>
@@ -1598,9 +1598,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddReferenceIDToContextualMessage_Assets_Scripts_Objects_Thing_DelayedActionInstance__">Thing.AddReferenceIDToContextualMessage(ref Thing.DelayedActionInstance)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Delete_Assets_Scripts_Objects_Thing_">Thing.Delete(Thing)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DestroyFromThread">Thing.DestroyFromThread()</a>
@@ -1690,7 +1687,7 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Remove_Sound_PooledAudioSource_">Thing.Remove(PooledAudioSource)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoint_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoint(RocketBinaryWriter)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Thing_">Thing.GetNextFreeSlot(Thing)</a>
@@ -1715,9 +1712,6 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReferenceId">Thing.ReferenceId</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllThings">Thing.AllThings</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
@@ -1795,6 +1789,9 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventStateChange">Thing.PreventStateChange</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetLocalBounds">Thing.GetLocalBounds</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Position">Thing.Position</a>
     </div>
     <div>
@@ -1825,7 +1822,13 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CustomName">Thing.CustomName</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DisplayName">Thing.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnableName">Thing.SpawnableName</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ProfilerTag">Thing.ProfilerTag</a>
@@ -1850,6 +1853,9 @@ Class Shuttle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OccludeAudio">Thing.OccludeAudio</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnId">Thing.SpawnId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
@@ -2005,7 +2011,7 @@ Class Shuttle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsInstantiated">Thing.IsInstantiated</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ForceUseColorSwatchMaterial">Thing.ForceUseColorSwatchMaterial</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AudioDistanceSquared">Thing.AudioDistanceSquared</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsBeingDestroyed">Thing.IsBeingDestroyed</a>
@@ -2137,8 +2143,368 @@ Class Shuttle
 
 
 
-  <h3 id="Assets_Scripts_Objects_Shuttle_AccelerationSpeed" data-uid="Assets.Scripts.Objects.Shuttle.AccelerationSpeed">
-  AccelerationSpeed
+  <h3 id="Assets_Scripts_Objects_Shuttle_CameraPointDriver" data-uid="Assets.Scripts.Objects.Shuttle.CameraPointDriver">
+  CameraPointDriver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform CameraPointDriver</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_CameraPointPassenger" data-uid="Assets.Scripts.Objects.Shuttle.CameraPointPassenger">
+  CameraPointPassenger
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform CameraPointPassenger</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_CameraPointThirdPerson" data-uid="Assets.Scripts.Objects.Shuttle.CameraPointThirdPerson">
+  CameraPointThirdPerson
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform CameraPointThirdPerson</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_DriverExit" data-uid="Assets.Scripts.Objects.Shuttle.DriverExit">
+  DriverExit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform DriverExit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_DriverSlotIndex" data-uid="Assets.Scripts.Objects.Shuttle.DriverSlotIndex">
+  DriverSlotIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DriverSlotIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_EnginePower" data-uid="Assets.Scripts.Objects.Shuttle.EnginePower">
+  EnginePower
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float EnginePower</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_MaxPitch" data-uid="Assets.Scripts.Objects.Shuttle.MaxPitch">
+  MaxPitch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxPitch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_MaxRoll" data-uid="Assets.Scripts.Objects.Shuttle.MaxRoll">
+  MaxRoll
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxRoll</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_MaxSpeed" data-uid="Assets.Scripts.Objects.Shuttle.MaxSpeed">
+  MaxSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxSpeed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_PassengerExit" data-uid="Assets.Scripts.Objects.Shuttle.PassengerExit">
+  PassengerExit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform PassengerExit</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_PassengerSlotIndex" data-uid="Assets.Scripts.Objects.Shuttle.PassengerSlotIndex">
+  PassengerSlotIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PassengerSlotIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_RollCurve" data-uid="Assets.Scripts.Objects.Shuttle.RollCurve">
+  RollCurve
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationCurve RollCurve</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AnimationCurve.html">AnimationCurve</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_RotationSpeed" data-uid="Assets.Scripts.Objects.Shuttle.RotationSpeed">
+  RotationSpeed
   
   </h3>
 
@@ -2147,7 +2513,7 @@ Class Shuttle
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Header(&quot;Shuttle&quot;)]
-public float AccelerationSpeed</code></pre>
+public float RotationSpeed</code></pre>
   </div>
 
 
@@ -2168,8 +2534,8 @@ public float AccelerationSpeed</code></pre>
 
 
 
-  <h3 id="Assets_Scripts_Objects_Shuttle_ControllingBody" data-uid="Assets.Scripts.Objects.Shuttle.ControllingBody">
-  ControllingBody
+  <h3 id="Assets_Scripts_Objects_Shuttle_SmoothTime" data-uid="Assets.Scripts.Objects.Shuttle.SmoothTime">
+  SmoothTime
   
   </h3>
 
@@ -2177,38 +2543,7 @@ public float AccelerationSpeed</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Rigidbody ControllingBody</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Rigidbody.html">Rigidbody</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Assets_Scripts_Objects_Shuttle_LookX" data-uid="Assets.Scripts.Objects.Shuttle.LookX">
-  LookX
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ReadOnly]
-public float LookX</code></pre>
+    <pre><code class="lang-csharp hljs">public float SmoothTime</code></pre>
   </div>
 
 
@@ -2229,8 +2564,8 @@ public float LookX</code></pre>
 
 
 
-  <h3 id="Assets_Scripts_Objects_Shuttle_LookY" data-uid="Assets.Scripts.Objects.Shuttle.LookY">
-  LookY
+  <h3 id="Assets_Scripts_Objects_Shuttle_Switches" data-uid="Assets.Scripts.Objects.Shuttle.Switches">
+  Switches
   
   </h3>
 
@@ -2238,8 +2573,37 @@ public float LookX</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ReadOnly]
-public float LookY</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;DevicePart&gt; Switches</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Objects.DevicePart.html">DevicePart</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_ThrustSmoothTime" data-uid="Assets.Scripts.Objects.Shuttle.ThrustSmoothTime">
+  ThrustSmoothTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ThrustSmoothTime</code></pre>
   </div>
 
 
@@ -2260,8 +2624,8 @@ public float LookY</code></pre>
 
 
 
-  <h3 id="Assets_Scripts_Objects_Shuttle_TurnSpeed" data-uid="Assets.Scripts.Objects.Shuttle.TurnSpeed">
-  TurnSpeed
+  <h3 id="Assets_Scripts_Objects_Shuttle_Thrusters" data-uid="Assets.Scripts.Objects.Shuttle.Thrusters">
+  Thrusters
   
   </h3>
 
@@ -2269,7 +2633,7 @@ public float LookY</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float TurnSpeed</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;Thruster&gt; Thrusters</code></pre>
   </div>
 
 
@@ -2277,10 +2641,200 @@ public float LookY</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Objects.Thruster.html">Thruster</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_DriverSlot_" data-uid="Assets.Scripts.Objects.Shuttle.DriverSlot*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_DriverSlot" data-uid="Assets.Scripts.Objects.Shuttle.DriverSlot">
+  DriverSlot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Slot DriverSlot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.Slot.html">Slot</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_FreeLook_" data-uid="Assets.Scripts.Objects.Shuttle.FreeLook*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_FreeLook" data-uid="Assets.Scripts.Objects.Shuttle.FreeLook">
+  FreeLook
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FreeLook { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_HasAuthority_" data-uid="Assets.Scripts.Objects.Shuttle.HasAuthority*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_HasAuthority" data-uid="Assets.Scripts.Objects.Shuttle.HasAuthority">
+  HasAuthority
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool HasAuthority { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_MaxMovementSpeed_" data-uid="Assets.Scripts.Objects.Shuttle.MaxMovementSpeed*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_MaxMovementSpeed" data-uid="Assets.Scripts.Objects.Shuttle.MaxMovementSpeed">
+  MaxMovementSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float MaxMovementSpeed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_PassengerSlot_" data-uid="Assets.Scripts.Objects.Shuttle.PassengerSlot*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_PassengerSlot" data-uid="Assets.Scripts.Objects.Shuttle.PassengerSlot">
+  PassengerSlot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Slot PassengerSlot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.Slot.html">Slot</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_RepairRatio_" data-uid="Assets.Scripts.Objects.Shuttle.RepairRatio*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_RepairRatio" data-uid="Assets.Scripts.Objects.Shuttle.RepairRatio">
+  RepairRatio
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RepairRatio { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -2307,6 +2861,576 @@ public float LookY</code></pre>
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_BuildOwnerUpdate_" data-uid="Assets.Scripts.Objects.Shuttle.BuildOwnerUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_BuildOwnerUpdate_Assets_Scripts_Networking_RocketBinaryWriter_" data-uid="Assets.Scripts.Objects.Shuttle.BuildOwnerUpdate(Assets.Scripts.Networking.RocketBinaryWriter)">
+  BuildOwnerUpdate(RocketBinaryWriter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BuildOwnerUpdate(RocketBinaryWriter writer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>writer</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryWriter.html">RocketBinaryWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_BuildUpdate_" data-uid="Assets.Scripts.Objects.Shuttle.BuildUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_BuildUpdate_Assets_Scripts_Networking_RocketBinaryWriter_System_UInt16_" data-uid="Assets.Scripts.Objects.Shuttle.BuildUpdate(Assets.Scripts.Networking.RocketBinaryWriter,System.UInt16)">
+  BuildUpdate(RocketBinaryWriter, ushort)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BuildUpdate(RocketBinaryWriter writer, ushort networkUpdateType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>writer</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryWriter.html">RocketBinaryWriter</a></dt>
+    <dd></dd>
+    <dt><code>networkUpdateType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_Exit_" data-uid="Assets.Scripts.Objects.Shuttle.Exit*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_Exit_Assets_Scripts_Objects_Entities_Human_" data-uid="Assets.Scripts.Objects.Shuttle.Exit(Assets.Scripts.Objects.Entities.Human)">
+  Exit(Human)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Exit(Human parent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="Assets.Scripts.Objects.Entities.Human.html">Human</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_GetCameraPoint_" data-uid="Assets.Scripts.Objects.Shuttle.GetCameraPoint*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_GetCameraPoint_Assets_Scripts_Objects_Entity_" data-uid="Assets.Scripts.Objects.Shuttle.GetCameraPoint(Assets.Scripts.Objects.Entity)">
+  GetCameraPoint(Entity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform GetCameraPoint(Entity entity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="Assets.Scripts.Objects.Entity.html">Entity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_GetContextualName_" data-uid="Assets.Scripts.Objects.Shuttle.GetContextualName*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_GetContextualName_Assets_Scripts_Objects_Interactable_" data-uid="Assets.Scripts.Objects.Shuttle.GetContextualName(Assets.Scripts.Objects.Interactable)">
+  GetContextualName(Interactable)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetContextualName(Interactable interactable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>interactable</code> <a class="xref" href="Assets.Scripts.Objects.Interactable.html">Interactable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_GetExitPosition_" data-uid="Assets.Scripts.Objects.Shuttle.GetExitPosition*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_GetExitPosition_Assets_Scripts_Objects_Entity_" data-uid="Assets.Scripts.Objects.Shuttle.GetExitPosition(Assets.Scripts.Objects.Entity)">
+  GetExitPosition(Entity)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GetExitPosition(Entity human)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>human</code> <a class="xref" href="Assets.Scripts.Objects.Entity.html">Entity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_GetVehicleCameraTransform_" data-uid="Assets.Scripts.Objects.Shuttle.GetVehicleCameraTransform*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_GetVehicleCameraTransform" data-uid="Assets.Scripts.Objects.Shuttle.GetVehicleCameraTransform">
+  GetVehicleCameraTransform()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform GetVehicleCameraTransform()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_InteractWith_" data-uid="Assets.Scripts.Objects.Shuttle.InteractWith*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_InteractWith_Assets_Scripts_Objects_Interactable_Assets_Scripts_Objects_Interaction_System_Boolean_" data-uid="Assets.Scripts.Objects.Shuttle.InteractWith(Assets.Scripts.Objects.Interactable,Assets.Scripts.Objects.Interaction,System.Boolean)">
+  InteractWith(Interactable, Interaction, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Thing.DelayedActionInstance InteractWith(Interactable interactable, Interaction interaction, bool doAction = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>interactable</code> <a class="xref" href="Assets.Scripts.Objects.Interactable.html">Interactable</a></dt>
+    <dd></dd>
+    <dt><code>interaction</code> <a class="xref" href="Assets.Scripts.Objects.Interaction.html">Interaction</a></dt>
+    <dd></dd>
+    <dt><code>doAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a>.<a class="xref" href="Assets.Scripts.Objects.Thing.DelayedActionInstance.html">DelayedActionInstance</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_OnChildEnterInventory_" data-uid="Assets.Scripts.Objects.Shuttle.OnChildEnterInventory*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_OnChildEnterInventory_Assets_Scripts_Objects_DynamicThing_" data-uid="Assets.Scripts.Objects.Shuttle.OnChildEnterInventory(Assets.Scripts.Objects.DynamicThing)">
+  OnChildEnterInventory(DynamicThing)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnChildEnterInventory(DynamicThing newChild)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newChild</code> <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_OnChildExitInventory_" data-uid="Assets.Scripts.Objects.Shuttle.OnChildExitInventory*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_OnChildExitInventory_Assets_Scripts_Objects_DynamicThing_" data-uid="Assets.Scripts.Objects.Shuttle.OnChildExitInventory(Assets.Scripts.Objects.DynamicThing)">
+  OnChildExitInventory(DynamicThing)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnChildExitInventory(DynamicThing previousChild)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>previousChild</code> <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_OnDamageDestroyed_" data-uid="Assets.Scripts.Objects.Shuttle.OnDamageDestroyed*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_OnDamageDestroyed" data-uid="Assets.Scripts.Objects.Shuttle.OnDamageDestroyed">
+  OnDamageDestroyed()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnDamageDestroyed()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_OnGravityEnabled_" data-uid="Assets.Scripts.Objects.Shuttle.OnGravityEnabled*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_OnGravityEnabled" data-uid="Assets.Scripts.Objects.Shuttle.OnGravityEnabled">
+  OnGravityEnabled()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnGravityEnabled()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_OnInteractableStateChanged_" data-uid="Assets.Scripts.Objects.Shuttle.OnInteractableStateChanged*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_OnInteractableStateChanged_Assets_Scripts_Objects_Interactable_System_Int32_System_Int32_" data-uid="Assets.Scripts.Objects.Shuttle.OnInteractableStateChanged(Assets.Scripts.Objects.Interactable,System.Int32,System.Int32)">
+  OnInteractableStateChanged(Interactable, int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnInteractableStateChanged(Interactable interactable, int newState, int oldState)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>interactable</code> <a class="xref" href="Assets.Scripts.Objects.Interactable.html">Interactable</a></dt>
+    <dd></dd>
+    <dt><code>newState</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>oldState</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_OnPrefabLoad_" data-uid="Assets.Scripts.Objects.Shuttle.OnPrefabLoad*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_OnPrefabLoad" data-uid="Assets.Scripts.Objects.Shuttle.OnPrefabLoad">
+  OnPrefabLoad()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnPrefabLoad()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_PhysicsUpdate_" data-uid="Assets.Scripts.Objects.Shuttle.PhysicsUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_PhysicsUpdate" data-uid="Assets.Scripts.Objects.Shuttle.PhysicsUpdate">
+  PhysicsUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PhysicsUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_ProcessOwnerUpdate_" data-uid="Assets.Scripts.Objects.Shuttle.ProcessOwnerUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_ProcessOwnerUpdate_Assets_Scripts_Networking_RocketBinaryReader_" data-uid="Assets.Scripts.Objects.Shuttle.ProcessOwnerUpdate(Assets.Scripts.Networking.RocketBinaryReader)">
+  ProcessOwnerUpdate(RocketBinaryReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ProcessOwnerUpdate(RocketBinaryReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reader</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryReader.html">RocketBinaryReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_ProcessUpdate_" data-uid="Assets.Scripts.Objects.Shuttle.ProcessUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_ProcessUpdate_Assets_Scripts_Networking_RocketBinaryReader_System_UInt16_" data-uid="Assets.Scripts.Objects.Shuttle.ProcessUpdate(Assets.Scripts.Networking.RocketBinaryReader,System.UInt16)">
+  ProcessUpdate(RocketBinaryReader, ushort)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ProcessUpdate(RocketBinaryReader reader, ushort networkUpdateType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reader</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryReader.html">RocketBinaryReader</a></dt>
+    <dd></dd>
+    <dt><code>networkUpdateType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Shuttle_RefreshAnimState_" data-uid="Assets.Scripts.Objects.Shuttle.RefreshAnimState*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Shuttle_RefreshAnimState_System_Boolean_" data-uid="Assets.Scripts.Objects.Shuttle.RefreshAnimState(System.Boolean)">
+  RefreshAnimState(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void RefreshAnimState(bool skipAnimation = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>skipAnimation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

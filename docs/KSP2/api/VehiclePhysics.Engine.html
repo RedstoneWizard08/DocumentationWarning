@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Engine | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Engine | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VehiclePhysics.Engine">
+
+
+
+  <h1 id="VehiclePhysics_Engine" data-uid="VehiclePhysics.Engine" class="text-break">
+Class Engine  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VehiclePhysics.html">VehiclePhysics</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Engine : Block</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="VehiclePhysics.Block.html">Block</a></div>
+      <div><span class="xref">Engine</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_RpmToW">Block.RpmToW</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_WToRpm">Block.WToRpm</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_ComputeStateUpstream">Block.ComputeStateUpstream()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_SetInputs_System_Int32_">Block.SetInputs(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_SetOutputs_System_Int32_">Block.SetOutputs(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_Connect_VehiclePhysics_Block_System_Int32_VehiclePhysics_Block_System_Int32_">Block.Connect(Block, int, Block, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_Connect_VehiclePhysics_Block_VehiclePhysics_Block_">Block.Connect(Block, Block)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_Connect_VehiclePhysics_Block_VehiclePhysics_Block_System_Int32_">Block.Connect(Block, Block, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_Connect_VehiclePhysics_Block___">Block.Connect(params Block[])</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_DisconnectInput_System_Int32_">Block.DisconnectInput(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_DisconnectOutput_System_Int32_">Block.DisconnectOutput(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_CountConnections">Block.CountConnections()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_inputs">Block.inputs</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_outputs">Block.outputs</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_hasInputs">Block.hasInputs</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_hasOutputs">Block.hasOutputs</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_connectedInputs">Block.connectedInputs</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.Block.html#VehiclePhysics_Block_connectedOutputs">Block.connectedOutputs</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="VehiclePhysics_Engine__ctor_" data-uid="VehiclePhysics.Engine.#ctor*"></a>
+
+  <h3 id="VehiclePhysics_Engine__ctor" data-uid="VehiclePhysics.Engine.#ctor">
+  Engine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Engine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="VehiclePhysics_Engine_KwToHp" data-uid="VehiclePhysics.Engine.KwToHp">
+  KwToHp
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float KwToHp</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_allowedFuelRatio" data-uid="VehiclePhysics.Engine.allowedFuelRatio">
+  allowedFuelRatio
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float allowedFuelRatio</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_autoRpms" data-uid="VehiclePhysics.Engine.autoRpms">
+  autoRpms
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool autoRpms</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_clutchInput" data-uid="VehiclePhysics.Engine.clutchInput">
+  clutchInput
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float clutchInput</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_clutchSettings" data-uid="VehiclePhysics.Engine.clutchSettings">
+  clutchSettings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Engine.ClutchSettings clutchSettings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Engine.html">Engine</a>.<a class="xref" href="VehiclePhysics.Engine.ClutchSettings.html">ClutchSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_damping" data-uid="VehiclePhysics.Engine.damping">
+  damping
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float damping</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_ignitionInput" data-uid="VehiclePhysics.Engine.ignitionInput">
+  ignitionInput
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ignitionInput</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_settings" data-uid="VehiclePhysics.Engine.settings">
+  settings
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Engine.Settings settings</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Engine.html">Engine</a>.<a class="xref" href="VehiclePhysics.Engine.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_targetRpms" data-uid="VehiclePhysics.Engine.targetRpms">
+  targetRpms
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float targetRpms</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_tcsRatio" data-uid="VehiclePhysics.Engine.tcsRatio">
+  tcsRatio
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float tcsRatio</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_tcsRpms" data-uid="VehiclePhysics.Engine.tcsRpms">
+  tcsRpms
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float tcsRpms</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_tcsThrottleFactor" data-uid="VehiclePhysics.Engine.tcsThrottleFactor">
+  tcsThrottleFactor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float tcsThrottleFactor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_tempDebug1" data-uid="VehiclePhysics.Engine.tempDebug1">
+  tempDebug1
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float tempDebug1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_tempDebug2" data-uid="VehiclePhysics.Engine.tempDebug2">
+  tempDebug2
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float tempDebug2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_Engine_throttleInput" data-uid="VehiclePhysics.Engine.throttleInput">
+  throttleInput
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float throttleInput</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="VehiclePhysics_Engine_sensorClutchLock_" data-uid="VehiclePhysics.Engine.sensorClutchLock*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorClutchLock" data-uid="VehiclePhysics.Engine.sensorClutchLock">
+  sensorClutchLock
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float sensorClutchLock { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorFlywheelTorque_" data-uid="VehiclePhysics.Engine.sensorFlywheelTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorFlywheelTorque" data-uid="VehiclePhysics.Engine.sensorFlywheelTorque">
+  sensorFlywheelTorque
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float sensorFlywheelTorque { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorFuelRate_" data-uid="VehiclePhysics.Engine.sensorFuelRate*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorFuelRate" data-uid="VehiclePhysics.Engine.sensorFuelRate">
+  sensorFuelRate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float sensorFuelRate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorLoad_" data-uid="VehiclePhysics.Engine.sensorLoad*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorLoad" data-uid="VehiclePhysics.Engine.sensorLoad">
+  sensorLoad
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float sensorLoad { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorOutputTorque_" data-uid="VehiclePhysics.Engine.sensorOutputTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorOutputTorque" data-uid="VehiclePhysics.Engine.sensorOutputTorque">
+  sensorOutputTorque
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float sensorOutputTorque { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorPower_" data-uid="VehiclePhysics.Engine.sensorPower*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorPower" data-uid="VehiclePhysics.Engine.sensorPower">
+  sensorPower
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float sensorPower { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorRpm_" data-uid="VehiclePhysics.Engine.sensorRpm*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorRpm" data-uid="VehiclePhysics.Engine.sensorRpm">
+  sensorRpm
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float sensorRpm { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorRpmLimiter_" data-uid="VehiclePhysics.Engine.sensorRpmLimiter*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorRpmLimiter" data-uid="VehiclePhysics.Engine.sensorRpmLimiter">
+  sensorRpmLimiter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool sensorRpmLimiter { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorStalled_" data-uid="VehiclePhysics.Engine.sensorStalled*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorStalled" data-uid="VehiclePhysics.Engine.sensorStalled">
+  sensorStalled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool sensorStalled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorStarting_" data-uid="VehiclePhysics.Engine.sensorStarting*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorStarting" data-uid="VehiclePhysics.Engine.sensorStarting">
+  sensorStarting
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool sensorStarting { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorTcsEngaged_" data-uid="VehiclePhysics.Engine.sensorTcsEngaged*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorTcsEngaged" data-uid="VehiclePhysics.Engine.sensorTcsEngaged">
+  sensorTcsEngaged
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool sensorTcsEngaged { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_sensorWorking_" data-uid="VehiclePhysics.Engine.sensorWorking*"></a>
+
+  <h3 id="VehiclePhysics_Engine_sensorWorking" data-uid="VehiclePhysics.Engine.sensorWorking">
+  sensorWorking
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool sensorWorking { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VehiclePhysics_Engine_AddFrictionTorque_" data-uid="VehiclePhysics.Engine.AddFrictionTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_AddFrictionTorque_System_Single_" data-uid="VehiclePhysics.Engine.AddFrictionTorque(System.Single)">
+  AddFrictionTorque(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AddFrictionTorque(float frictionTorque)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frictionTorque</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_CalculateInstantFuelConsumption_" data-uid="VehiclePhysics.Engine.CalculateInstantFuelConsumption*"></a>
+
+  <h3 id="VehiclePhysics_Engine_CalculateInstantFuelConsumption_System_Single_" data-uid="VehiclePhysics.Engine.CalculateInstantFuelConsumption(System.Single)">
+  CalculateInstantFuelConsumption(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CalculateInstantFuelConsumption(float speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_CalculatePowerInKw_" data-uid="VehiclePhysics.Engine.CalculatePowerInKw*"></a>
+
+  <h3 id="VehiclePhysics_Engine_CalculatePowerInKw_System_Single_" data-uid="VehiclePhysics.Engine.CalculatePowerInKw(System.Single)">
+  CalculatePowerInKw(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CalculatePowerInKw(float rpm)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_CalculateSpecificFuelConsumption_" data-uid="VehiclePhysics.Engine.CalculateSpecificFuelConsumption*"></a>
+
+  <h3 id="VehiclePhysics_Engine_CalculateSpecificFuelConsumption_System_Single_" data-uid="VehiclePhysics.Engine.CalculateSpecificFuelConsumption(System.Single)">
+  CalculateSpecificFuelConsumption(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CalculateSpecificFuelConsumption(float rpm)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_CalculateTorque_" data-uid="VehiclePhysics.Engine.CalculateTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_CalculateTorque_System_Single_System_Single_" data-uid="VehiclePhysics.Engine.CalculateTorque(System.Single,System.Single)">
+  CalculateTorque(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CalculateTorque(float rpm, float throttle = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>throttle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_CheckConnections_" data-uid="VehiclePhysics.Engine.CheckConnections*"></a>
+
+  <h3 id="VehiclePhysics_Engine_CheckConnections" data-uid="VehiclePhysics.Engine.CheckConnections">
+  CheckConnections()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CheckConnections()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_ClampPowerTorque_" data-uid="VehiclePhysics.Engine.ClampPowerTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_ClampPowerTorque_System_Single_System_Single_" data-uid="VehiclePhysics.Engine.ClampPowerTorque(System.Single,System.Single)">
+  ClampPowerTorque(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ClampPowerTorque(float powerTorque, float rpm)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>powerTorque</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_EvaluateTorqueDownstream_" data-uid="VehiclePhysics.Engine.EvaluateTorqueDownstream*"></a>
+
+  <h3 id="VehiclePhysics_Engine_EvaluateTorqueDownstream" data-uid="VehiclePhysics.Engine.EvaluateTorqueDownstream">
+  EvaluateTorqueDownstream()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void EvaluateTorqueDownstream()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetEngineSpecifications_" data-uid="VehiclePhysics.Engine.GetEngineSpecifications*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetEngineSpecifications_VehiclePhysics_Engine_EngineSpecs__System_Single_" data-uid="VehiclePhysics.Engine.GetEngineSpecifications(VehiclePhysics.Engine.EngineSpecs@,System.Single)">
+  GetEngineSpecifications(ref EngineSpecs, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetEngineSpecifications(ref Engine.EngineSpecs data, float deltaRpm = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="VehiclePhysics.Engine.html">Engine</a>.<a class="xref" href="VehiclePhysics.Engine.EngineSpecs.html">EngineSpecs</a></dt>
+    <dd></dd>
+    <dt><code>deltaRpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetFrictionTorque_" data-uid="VehiclePhysics.Engine.GetFrictionTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetFrictionTorque_System_Single_" data-uid="VehiclePhysics.Engine.GetFrictionTorque(System.Single)">
+  GetFrictionTorque(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetFrictionTorque(float rpm)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetMaxFuelRate_" data-uid="VehiclePhysics.Engine.GetMaxFuelRate*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetMaxFuelRate_System_Single_" data-uid="VehiclePhysics.Engine.GetMaxFuelRate(System.Single)">
+  GetMaxFuelRate(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxFuelRate(float rpm)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetMaxPowerTorque_" data-uid="VehiclePhysics.Engine.GetMaxPowerTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetMaxPowerTorque_System_Single_" data-uid="VehiclePhysics.Engine.GetMaxPowerTorque(System.Single)">
+  GetMaxPowerTorque(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxPowerTorque(float rpm)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetMaxPowerTorqueRaw_" data-uid="VehiclePhysics.Engine.GetMaxPowerTorqueRaw*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetMaxPowerTorqueRaw_System_Single_" data-uid="VehiclePhysics.Engine.GetMaxPowerTorqueRaw(System.Single)">
+  GetMaxPowerTorqueRaw(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxPowerTorqueRaw(float rpm)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rpm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetState_" data-uid="VehiclePhysics.Engine.GetState*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetState_VehiclePhysics_Block_State__" data-uid="VehiclePhysics.Engine.GetState(VehiclePhysics.Block.State@)">
+  GetState(ref State)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void GetState(ref Block.State S)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>S</code> <a class="xref" href="VehiclePhysics.Block.html">Block</a>.<a class="xref" href="VehiclePhysics.Block.State.html">State</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetStateVars_" data-uid="VehiclePhysics.Engine.GetStateVars*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetStateVars" data-uid="VehiclePhysics.Engine.GetStateVars">
+  GetStateVars()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Engine.StateVars GetStateVars()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Engine.html">Engine</a>.<a class="xref" href="VehiclePhysics.Engine.StateVars.html">StateVars</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_GetSubstepDerivative_" data-uid="VehiclePhysics.Engine.GetSubstepDerivative*"></a>
+
+  <h3 id="VehiclePhysics_Engine_GetSubstepDerivative_VehiclePhysics_Block_Derivative__" data-uid="VehiclePhysics.Engine.GetSubstepDerivative(VehiclePhysics.Block.Derivative@)">
+  GetSubstepDerivative(ref Derivative)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void GetSubstepDerivative(ref Block.Derivative D)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>D</code> <a class="xref" href="VehiclePhysics.Block.html">Block</a>.<a class="xref" href="VehiclePhysics.Block.Derivative.html">Derivative</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_Initialize_" data-uid="VehiclePhysics.Engine.Initialize*"></a>
+
+  <h3 id="VehiclePhysics_Engine_Initialize" data-uid="VehiclePhysics.Engine.Initialize">
+  Initialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Initialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_PreStep_" data-uid="VehiclePhysics.Engine.PreStep*"></a>
+
+  <h3 id="VehiclePhysics_Engine_PreStep" data-uid="VehiclePhysics.Engine.PreStep">
+  PreStep()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PreStep()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_ResetFrictionTorque_" data-uid="VehiclePhysics.Engine.ResetFrictionTorque*"></a>
+
+  <h3 id="VehiclePhysics_Engine_ResetFrictionTorque" data-uid="VehiclePhysics.Engine.ResetFrictionTorque">
+  ResetFrictionTorque()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetFrictionTorque()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_SetState_" data-uid="VehiclePhysics.Engine.SetState*"></a>
+
+  <h3 id="VehiclePhysics_Engine_SetState_VehiclePhysics_Block_State_" data-uid="VehiclePhysics.Engine.SetState(VehiclePhysics.Block.State)">
+  SetState(State)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetState(Block.State S)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>S</code> <a class="xref" href="VehiclePhysics.Block.html">Block</a>.<a class="xref" href="VehiclePhysics.Block.State.html">State</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_SetStateVars_" data-uid="VehiclePhysics.Engine.SetStateVars*"></a>
+
+  <h3 id="VehiclePhysics_Engine_SetStateVars_VehiclePhysics_Engine_StateVars_" data-uid="VehiclePhysics.Engine.SetStateVars(VehiclePhysics.Engine.StateVars)">
+  SetStateVars(StateVars)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStateVars(Engine.StateVars stateVars)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stateVars</code> <a class="xref" href="VehiclePhysics.Engine.html">Engine</a>.<a class="xref" href="VehiclePhysics.Engine.StateVars.html">StateVars</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_Engine_SetSubstepState_" data-uid="VehiclePhysics.Engine.SetSubstepState*"></a>
+
+  <h3 id="VehiclePhysics_Engine_SetSubstepState_VehiclePhysics_Block_State_" data-uid="VehiclePhysics.Engine.SetSubstepState(VehiclePhysics.Block.State)">
+  SetSubstepState(State)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetSubstepState(Block.State S)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>S</code> <a class="xref" href="VehiclePhysics.Block.html">Block</a>.<a class="xref" href="VehiclePhysics.Block.State.html">State</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

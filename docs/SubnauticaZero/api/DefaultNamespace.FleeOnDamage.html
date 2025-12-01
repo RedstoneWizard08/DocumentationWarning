@@ -102,7 +102,7 @@ Class FleeOnDamage
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(SwimBehaviour))]
-public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
+public class FleeOnDamage : CreatureAction, ICompileTimeSetupable, IOnTakeDamage, IFrozenMixinEventListener</code></pre>
   </div>
 
 
@@ -124,7 +124,9 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
       <div><a class="xref" href="DefaultNamespace.IOnTakeDamage.html">IOnTakeDamage</a></div>
+      <div><a class="xref" href="DefaultNamespace.IFrozenMixinEventListener.html">IFrozenMixinEventListener</a></div>
     </dd>
   </dl>
 
@@ -134,6 +136,9 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -148,16 +153,16 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Start">CreatureAction.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -167,9 +172,6 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -342,6 +344,36 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_FleeOnDamage_frozen" data-uid="DefaultNamespace.FleeOnDamage.frozen">
+  frozen
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool frozen</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -567,10 +599,10 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
 </h2>
 
 
-  <a id="DefaultNamespace_FleeOnDamage_Evaluate_" data-uid="DefaultNamespace.FleeOnDamage.Evaluate*"></a>
+  <a id="DefaultNamespace_FleeOnDamage_CheckAccumulatedDamage_" data-uid="DefaultNamespace.FleeOnDamage.CheckAccumulatedDamage*"></a>
 
-  <h3 id="DefaultNamespace_FleeOnDamage_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_FleeOnDamage_CheckAccumulatedDamage" data-uid="DefaultNamespace.FleeOnDamage.CheckAccumulatedDamage">
+  CheckAccumulatedDamage()
   
   </h3>
 
@@ -578,13 +610,37 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public void CheckAccumulatedDamage()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_FleeOnDamage_Evaluate_" data-uid="DefaultNamespace.FleeOnDamage.Evaluate*"></a>
+
+  <h3 id="DefaultNamespace_FleeOnDamage_Evaluate_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.Evaluate(System.Single)">
+  Evaluate(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -594,6 +650,37 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_FleeOnDamage_OnFreeze_" data-uid="DefaultNamespace.FleeOnDamage.OnFreeze*"></a>
+
+  <h3 id="DefaultNamespace_FleeOnDamage_OnFreeze_FrozenMixin_" data-uid="DefaultNamespace.FleeOnDamage.OnFreeze(FrozenMixin)">
+  OnFreeze(FrozenMixin)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnFreeze(FrozenMixin frozenMixin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>frozenMixin</code> <a class="xref" href="DefaultNamespace.FrozenMixin.html">FrozenMixin</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 
@@ -636,10 +723,10 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
 
 
 
-  <a id="DefaultNamespace_FleeOnDamage_Perform_" data-uid="DefaultNamespace.FleeOnDamage.Perform*"></a>
+  <a id="DefaultNamespace_FleeOnDamage_OnUnfreeze_" data-uid="DefaultNamespace.FleeOnDamage.OnUnfreeze*"></a>
 
-  <h3 id="DefaultNamespace_FleeOnDamage_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_FleeOnDamage_OnUnfreeze_FrozenMixin_" data-uid="DefaultNamespace.FleeOnDamage.OnUnfreeze(FrozenMixin)">
+  OnUnfreeze(FrozenMixin)
   
   </h3>
 
@@ -647,13 +734,42 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public void OnUnfreeze(FrozenMixin frozenMixin)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
+    <dt><code>frozenMixin</code> <a class="xref" href="DefaultNamespace.FrozenMixin.html">FrozenMixin</a></dt>
     <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_FleeOnDamage_Perform_" data-uid="DefaultNamespace.FleeOnDamage.Perform*"></a>
+
+  <h3 id="DefaultNamespace_FleeOnDamage_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.Perform(System.Single,System.Single)">
+  Perform(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -673,8 +789,8 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
 
   <a id="DefaultNamespace_FleeOnDamage_StartPerform_" data-uid="DefaultNamespace.FleeOnDamage.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_FleeOnDamage_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_FleeOnDamage_StartPerform_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -682,13 +798,11 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -706,8 +820,8 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
 
   <a id="DefaultNamespace_FleeOnDamage_StopPerform_" data-uid="DefaultNamespace.FleeOnDamage.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_FleeOnDamage_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_FleeOnDamage_StopPerform_System_Single_" data-uid="DefaultNamespace.FleeOnDamage.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -715,13 +829,11 @@ public class FleeOnDamage : CreatureAction, IOnTakeDamage</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

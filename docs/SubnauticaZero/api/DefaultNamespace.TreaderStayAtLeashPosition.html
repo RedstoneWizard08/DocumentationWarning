@@ -101,7 +101,7 @@ Class TreaderStayAtLeashPosition
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TreaderStayAtLeashPosition : CreatureAction</code></pre>
+    <pre><code class="lang-csharp hljs">public class TreaderStayAtLeashPosition : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -120,6 +120,12 @@ Class TreaderStayAtLeashPosition
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -127,6 +133,9 @@ Class TreaderStayAtLeashPosition
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -141,19 +150,16 @@ Class TreaderStayAtLeashPosition
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_Creature_System_Single_">CreatureAction.StopPerform(Creature, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_System_Single_">CreatureAction.StopPerform(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -163,9 +169,6 @@ Class TreaderStayAtLeashPosition
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -355,8 +358,8 @@ Class TreaderStayAtLeashPosition
 
   <a id="DefaultNamespace_TreaderStayAtLeashPosition_Evaluate_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_TreaderStayAtLeashPosition_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_TreaderStayAtLeashPosition_Evaluate_System_Single_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -364,13 +367,11 @@ Class TreaderStayAtLeashPosition
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -393,8 +394,8 @@ Class TreaderStayAtLeashPosition
 
   <a id="DefaultNamespace_TreaderStayAtLeashPosition_Perform_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.Perform*"></a>
 
-  <h3 id="DefaultNamespace_TreaderStayAtLeashPosition_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_TreaderStayAtLeashPosition_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -402,13 +403,11 @@ Class TreaderStayAtLeashPosition
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -437,7 +436,7 @@ Class TreaderStayAtLeashPosition
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
   </div>
 
 
@@ -454,8 +453,8 @@ Class TreaderStayAtLeashPosition
 
   <a id="DefaultNamespace_TreaderStayAtLeashPosition_StartPerform_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_TreaderStayAtLeashPosition_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_TreaderStayAtLeashPosition_StartPerform_System_Single_" data-uid="DefaultNamespace.TreaderStayAtLeashPosition.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -463,13 +462,11 @@ Class TreaderStayAtLeashPosition
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

@@ -164,8 +164,8 @@ Class Voxeliser
 
   <a id="DefaultNamespace_Voxeliser__ctor_" data-uid="DefaultNamespace.Voxeliser.#ctor*"></a>
 
-  <h3 id="DefaultNamespace_Voxeliser__ctor_System_Single_UnityEngine_Transform_UnityEngine_Collider_" data-uid="DefaultNamespace.Voxeliser.#ctor(System.Single,UnityEngine.Transform,UnityEngine.Collider)">
-  Voxeliser(float, Transform, Collider)
+  <h3 id="DefaultNamespace_Voxeliser__ctor_System_Single_UnityEngine_Bounds_UnityEngine_LayerMask_System_Int32_" data-uid="DefaultNamespace.Voxeliser.#ctor(System.Single,UnityEngine.Bounds,UnityEngine.LayerMask,System.Int32)">
+  Voxeliser(float, Bounds, LayerMask, int)
   
   </h3>
 
@@ -173,16 +173,18 @@ Class Voxeliser
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Voxeliser(float ratio, Transform root, Collider removable)</code></pre>
+    <pre><code class="lang-csharp hljs">public Voxeliser(float ratio, Bounds bounds, LayerMask layerMask, int smoothIterations)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>ratio</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
-    <dt><code>root</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dt><code>bounds</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Bounds.html">Bounds</a></dt>
     <dd></dd>
-    <dt><code>removable</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dt><code>layerMask</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/LayerMask.html">LayerMask</a></dt>
+    <dd></dd>
+    <dt><code>smoothIterations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -199,37 +201,6 @@ Class Voxeliser
 
   <h2 class="section" id="properties">Properties
 </h2>
-
-
-  <a id="DefaultNamespace_Voxeliser_VoxelMap_" data-uid="DefaultNamespace.Voxeliser.VoxelMap*"></a>
-
-  <h3 id="DefaultNamespace_Voxeliser_VoxelMap" data-uid="DefaultNamespace.Voxeliser.VoxelMap">
-  VoxelMap
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Voxel[][][] VoxelMap { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.Voxel.Voxel.html">Voxel</a>[][][]</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
 
 
   <a id="DefaultNamespace_Voxeliser_Xsize_" data-uid="DefaultNamespace.Voxeliser.Xsize*"></a>
@@ -340,7 +311,7 @@ Class Voxeliser
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public byte GetDensity(Bounds bound)</code></pre>
+    <pre><code class="lang-csharp hljs">public float GetDensity(Bounds bound)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -351,7 +322,7 @@ Class Voxeliser
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -376,7 +347,7 @@ Class Voxeliser
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Voxel GetVoxel(int x, int y, int z)</code></pre>
+    <pre><code class="lang-csharp hljs">public float GetVoxel(int x, int y, int z)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -391,7 +362,7 @@ Class Voxeliser
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.Voxel.Voxel.html">Voxel</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -407,8 +378,8 @@ Class Voxeliser
 
   <a id="DefaultNamespace_Voxeliser_SetVoxel_" data-uid="DefaultNamespace.Voxeliser.SetVoxel*"></a>
 
-  <h3 id="DefaultNamespace_Voxeliser_SetVoxel_System_Int32_System_Int32_System_Int32_System_Byte_System_Byte_" data-uid="DefaultNamespace.Voxeliser.SetVoxel(System.Int32,System.Int32,System.Int32,System.Byte,System.Byte)">
-  SetVoxel(int, int, int, byte, byte)
+  <h3 id="DefaultNamespace_Voxeliser_SetVoxel_System_Int32_System_Int32_System_Int32_System_Byte_System_Single_" data-uid="DefaultNamespace.Voxeliser.SetVoxel(System.Int32,System.Int32,System.Int32,System.Byte,System.Single)">
+  SetVoxel(int, int, int, byte, float)
   
   </h3>
 
@@ -416,7 +387,7 @@ Class Voxeliser
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetVoxel(int x, int y, int z, byte type, byte density)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetVoxel(int x, int y, int z, byte type, float density)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -429,7 +400,7 @@ Class Voxeliser
     <dd></dd>
     <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
     <dd></dd>
-    <dt><code>density</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dt><code>density</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 

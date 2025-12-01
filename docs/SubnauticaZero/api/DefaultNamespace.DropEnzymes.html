@@ -102,7 +102,7 @@ Class DropEnzymes
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class DropEnzymes : MonoBehaviour, IProtoTreeEventListener</code></pre>
+public class DropEnzymes : MonoBehaviour, IStoryGoalListener</code></pre>
   </div>
 
 
@@ -123,7 +123,7 @@ public class DropEnzymes : MonoBehaviour, IProtoTreeEventListener</code></pre>
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="DefaultNamespace.IProtoTreeEventListener.html">IProtoTreeEventListener</a></div>
+      <div><a class="xref" href="Story.IStoryGoalListener.html">IStoryGoalListener</a></div>
     </dd>
   </dl>
 
@@ -203,8 +203,7 @@ public class DropEnzymes : MonoBehaviour, IProtoTreeEventListener</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public Animator animator</code></pre>
+    <pre><code class="lang-csharp hljs">public Animator animator</code></pre>
   </div>
 
 
@@ -225,8 +224,8 @@ public Animator animator</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_DropEnzymes_cureBallAttach" data-uid="DefaultNamespace.DropEnzymes.cureBallAttach">
-  cureBallAttach
+  <h3 id="DefaultNamespace_DropEnzymes_enzymeAttach" data-uid="DefaultNamespace.DropEnzymes.enzymeAttach">
+  enzymeAttach
   
   </h3>
 
@@ -235,7 +234,7 @@ public Animator animator</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AssertNotNull]
-public Transform cureBallAttach</code></pre>
+public Transform enzymeAttach</code></pre>
   </div>
 
 
@@ -408,8 +407,8 @@ public bool firstDrop</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_DropEnzymes_spawnedCureBall" data-uid="DefaultNamespace.DropEnzymes.spawnedCureBall">
-  spawnedCureBall
+  <h3 id="DefaultNamespace_DropEnzymes_storyGoal" data-uid="DefaultNamespace.DropEnzymes.storyGoal">
+  storyGoal
   
   </h3>
 
@@ -417,7 +416,8 @@ public bool firstDrop</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GameObject spawnedCureBall</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Story goal that must be complete before this is allowed to drop enzymes.&quot;)]
+public LocationGoal storyGoal</code></pre>
   </div>
 
 
@@ -425,7 +425,7 @@ public bool firstDrop</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dt><a class="xref" href="Story.LocationGoal.html">LocationGoal</a></dt>
     <dd></dd>
   </dl>
 
@@ -472,10 +472,10 @@ public float timeNextDrop</code></pre>
 </h2>
 
 
-  <a id="DefaultNamespace_DropEnzymes_OnDisable_" data-uid="DefaultNamespace.DropEnzymes.OnDisable*"></a>
+  <a id="DefaultNamespace_DropEnzymes_NotifyGoalComplete_" data-uid="DefaultNamespace.DropEnzymes.NotifyGoalComplete*"></a>
 
-  <h3 id="DefaultNamespace_DropEnzymes_OnDisable" data-uid="DefaultNamespace.DropEnzymes.OnDisable">
-  OnDisable()
+  <h3 id="DefaultNamespace_DropEnzymes_NotifyGoalComplete_System_String_" data-uid="DefaultNamespace.DropEnzymes.NotifyGoalComplete(System.String)">
+  NotifyGoalComplete(string)
   
   </h3>
 
@@ -483,38 +483,12 @@ public float timeNextDrop</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnDisable()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_DropEnzymes_OnProtoDeserializeObjectTree_" data-uid="DefaultNamespace.DropEnzymes.OnProtoDeserializeObjectTree*"></a>
-
-  <h3 id="DefaultNamespace_DropEnzymes_OnProtoDeserializeObjectTree_ProtobufSerializer_" data-uid="DefaultNamespace.DropEnzymes.OnProtoDeserializeObjectTree(ProtobufSerializer)">
-  OnProtoDeserializeObjectTree(ProtobufSerializer)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnProtoDeserializeObjectTree(ProtobufSerializer serializer)</code></pre>
+    <pre><code class="lang-csharp hljs">public void NotifyGoalComplete(string key)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -529,10 +503,10 @@ public float timeNextDrop</code></pre>
 
 
 
-  <a id="DefaultNamespace_DropEnzymes_OnProtoSerializeObjectTree_" data-uid="DefaultNamespace.DropEnzymes.OnProtoSerializeObjectTree*"></a>
+  <a id="DefaultNamespace_DropEnzymes_NotifyGoalReset_" data-uid="DefaultNamespace.DropEnzymes.NotifyGoalReset*"></a>
 
-  <h3 id="DefaultNamespace_DropEnzymes_OnProtoSerializeObjectTree_ProtobufSerializer_" data-uid="DefaultNamespace.DropEnzymes.OnProtoSerializeObjectTree(ProtobufSerializer)">
-  OnProtoSerializeObjectTree(ProtobufSerializer)
+  <h3 id="DefaultNamespace_DropEnzymes_NotifyGoalReset_System_String_" data-uid="DefaultNamespace.DropEnzymes.NotifyGoalReset(System.String)">
+  NotifyGoalReset(string)
   
   </h3>
 
@@ -540,14 +514,66 @@ public float timeNextDrop</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnProtoSerializeObjectTree(ProtobufSerializer serializer)</code></pre>
+    <pre><code class="lang-csharp hljs">public void NotifyGoalReset(string key)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_DropEnzymes_NotifyGoalsDeserialized_" data-uid="DefaultNamespace.DropEnzymes.NotifyGoalsDeserialized*"></a>
+
+  <h3 id="DefaultNamespace_DropEnzymes_NotifyGoalsDeserialized" data-uid="DefaultNamespace.DropEnzymes.NotifyGoalsDeserialized">
+  NotifyGoalsDeserialized()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifyGoalsDeserialized()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_DropEnzymes_OnDestroy_" data-uid="DefaultNamespace.DropEnzymes.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_DropEnzymes_OnDestroy" data-uid="DefaultNamespace.DropEnzymes.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
+  </div>
+
 
 
 
@@ -612,6 +638,63 @@ public float timeNextDrop</code></pre>
 
 
 
+  <a id="DefaultNamespace_DropEnzymes_SpawnAndReleaseEnzyme_" data-uid="DefaultNamespace.DropEnzymes.SpawnAndReleaseEnzyme*"></a>
+
+  <h3 id="DefaultNamespace_DropEnzymes_SpawnAndReleaseEnzyme" data-uid="DefaultNamespace.DropEnzymes.SpawnAndReleaseEnzyme">
+  SpawnAndReleaseEnzyme()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SpawnAndReleaseEnzyme()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_DropEnzymes_SpawnAndReleaseEnzymeAsync_" data-uid="DefaultNamespace.DropEnzymes.SpawnAndReleaseEnzymeAsync*"></a>
+
+  <h3 id="DefaultNamespace_DropEnzymes_SpawnAndReleaseEnzymeAsync" data-uid="DefaultNamespace.DropEnzymes.SpawnAndReleaseEnzymeAsync">
+  SpawnAndReleaseEnzymeAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator SpawnAndReleaseEnzymeAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_DropEnzymes_SpawnCureBall_" data-uid="DefaultNamespace.DropEnzymes.SpawnCureBall*"></a>
 
   <h3 id="DefaultNamespace_DropEnzymes_SpawnCureBall" data-uid="DefaultNamespace.DropEnzymes.SpawnCureBall">
@@ -638,37 +721,6 @@ public float timeNextDrop</code></pre>
 
 
 
-  <a id="DefaultNamespace_DropEnzymes_SpawnCureBallAsync_" data-uid="DefaultNamespace.DropEnzymes.SpawnCureBallAsync*"></a>
-
-  <h3 id="DefaultNamespace_DropEnzymes_SpawnCureBallAsync" data-uid="DefaultNamespace.DropEnzymes.SpawnCureBallAsync">
-  SpawnCureBallAsync()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator SpawnCureBallAsync()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_DropEnzymes_Start_" data-uid="DefaultNamespace.DropEnzymes.Start*"></a>
 
   <h3 id="DefaultNamespace_DropEnzymes_Start" data-uid="DefaultNamespace.DropEnzymes.Start">
@@ -681,32 +733,6 @@ public float timeNextDrop</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Start()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_DropEnzymes_StartDropAnimation_" data-uid="DefaultNamespace.DropEnzymes.StartDropAnimation*"></a>
-
-  <h3 id="DefaultNamespace_DropEnzymes_StartDropAnimation" data-uid="DefaultNamespace.DropEnzymes.StartDropAnimation">
-  StartDropAnimation()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void StartDropAnimation()</code></pre>
   </div>
 
 

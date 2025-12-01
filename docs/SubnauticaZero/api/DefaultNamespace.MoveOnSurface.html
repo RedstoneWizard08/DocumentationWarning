@@ -101,7 +101,7 @@ Class MoveOnSurface
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MoveOnSurface : CreatureAction</code></pre>
+    <pre><code class="lang-csharp hljs">public class MoveOnSurface : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -120,6 +120,12 @@ Class MoveOnSurface
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -127,6 +133,9 @@ Class MoveOnSurface
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -141,34 +150,25 @@ Class MoveOnSurface
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StartPerform_Creature_System_Single_">CreatureAction.StartPerform(Creature, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Start">CreatureAction.Start()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_Creature_System_Single_">CreatureAction.StopPerform(Creature, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StartPerform_System_Single_">CreatureAction.StartPerform(float)</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_System_Single_">CreatureAction.StopPerform(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetMaxEvaluatePriority">CreatureAction.GetMaxEvaluatePriority()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -233,36 +233,6 @@ Class MoveOnSurface
 
 
 
-  <h3 id="DefaultNamespace_MoveOnSurface_actionActive" data-uid="DefaultNamespace.MoveOnSurface.actionActive">
-  actionActive
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool actionActive</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="DefaultNamespace_MoveOnSurface_desiredPosition" data-uid="DefaultNamespace.MoveOnSurface.desiredPosition">
   desiredPosition
   
@@ -281,6 +251,36 @@ Class MoveOnSurface
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_MoveOnSurface_moveOnWalls" data-uid="DefaultNamespace.MoveOnSurface.moveOnWalls">
+  moveOnWalls
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool moveOnWalls</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -341,6 +341,37 @@ Class MoveOnSurface
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_MoveOnSurface_onSurfaceMovement" data-uid="DefaultNamespace.MoveOnSurface.onSurfaceMovement">
+  onSurfaceMovement
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public OnSurfaceMovement onSurfaceMovement</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.OnSurfaceMovement.html">OnSurfaceMovement</a></dt>
     <dd></dd>
   </dl>
 
@@ -444,6 +475,36 @@ public OnSurfaceTracker onSurfaceTracker</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_MoveOnSurface_updateTargetRandomInterval" data-uid="DefaultNamespace.MoveOnSurface.updateTargetRandomInterval">
+  updateTargetRandomInterval
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float updateTargetRandomInterval</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_MoveOnSurface_walkBehaviour" data-uid="DefaultNamespace.MoveOnSurface.walkBehaviour">
   walkBehaviour
   
@@ -480,8 +541,8 @@ public WalkBehaviour walkBehaviour</code></pre>
 
   <a id="DefaultNamespace_MoveOnSurface_Evaluate_" data-uid="DefaultNamespace.MoveOnSurface.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_MoveOnSurface_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.MoveOnSurface.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_MoveOnSurface_Evaluate_System_Single_" data-uid="DefaultNamespace.MoveOnSurface.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -489,13 +550,11 @@ public WalkBehaviour walkBehaviour</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -547,10 +606,10 @@ public WalkBehaviour walkBehaviour</code></pre>
 
 
 
-  <a id="DefaultNamespace_MoveOnSurface_Perform_" data-uid="DefaultNamespace.MoveOnSurface.Perform*"></a>
+  <a id="DefaultNamespace_MoveOnSurface_GetDebugString_" data-uid="DefaultNamespace.MoveOnSurface.GetDebugString*"></a>
 
-  <h3 id="DefaultNamespace_MoveOnSurface_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.MoveOnSurface.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_MoveOnSurface_GetDebugString" data-uid="DefaultNamespace.MoveOnSurface.GetDebugString">
+  GetDebugString()
   
   </h3>
 
@@ -558,18 +617,73 @@ public WalkBehaviour walkBehaviour</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override string GetDebugString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_MoveOnSurface_Perform_" data-uid="DefaultNamespace.MoveOnSurface.Perform*"></a>
+
+  <h3 id="DefaultNamespace_MoveOnSurface_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.MoveOnSurface.Perform(System.Single,System.Single)">
+  Perform(float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_MoveOnSurface_TryStartAction_" data-uid="DefaultNamespace.MoveOnSurface.TryStartAction*"></a>
+
+  <h3 id="DefaultNamespace_MoveOnSurface_TryStartAction" data-uid="DefaultNamespace.MoveOnSurface.TryStartAction">
+  TryStartAction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TryStartAction()</code></pre>
+  </div>
+
 
 
 

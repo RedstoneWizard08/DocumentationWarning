@@ -102,7 +102,8 @@ Class LiveMixin
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class LiveMixin : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehaviour, IShouldSerialize, ISerializationCallbackReceiver</code></pre>
+[DisallowMultipleComponent]
+public class LiveMixin : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehaviour, IShouldSerialize, IProtoEventListener, ISerializationCallbackReceiver</code></pre>
   </div>
 
 
@@ -126,6 +127,7 @@ public class LiveMixin : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehavio
       <div><a class="xref" href="DefaultNamespace.IManagedUpdateBehaviour.html">IManagedUpdateBehaviour</a></div>
       <div><a class="xref" href="DefaultNamespace.IManagedBehaviour.html">IManagedBehaviour</a></div>
       <div><a class="xref" href="DefaultNamespace.IShouldSerialize.html">IShouldSerialize</a></div>
+      <div><a class="xref" href="DefaultNamespace.IProtoEventListener.html">IProtoEventListener</a></div>
       <div><span class="xref">ISerializationCallbackReceiver</span></div>
     </dd>
   </dl>
@@ -227,6 +229,36 @@ public class LiveMixin : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehavio
 
 
 
+  <h3 id="DefaultNamespace_LiveMixin_cachedNumResources" data-uid="DefaultNamespace.LiveMixin.cachedNumResources">
+  cachedNumResources
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int cachedNumResources</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_LiveMixin_cinematicModeActive" data-uid="DefaultNamespace.LiveMixin.cinematicModeActive">
   cinematicModeActive
   
@@ -266,7 +298,7 @@ public class LiveMixin : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehavio
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FMOD_StudioEventEmitter damageClip</code></pre>
+    <pre><code class="lang-csharp hljs">public FMOD_CustomEmitter damageClip</code></pre>
   </div>
 
 
@@ -274,7 +306,7 @@ public class LiveMixin : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehavio
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.FMOD_StudioEventEmitter.html">FMOD_StudioEventEmitter</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.FMOD_CustomEmitter.html">FMOD_CustomEmitter</a></dt>
     <dd></dd>
   </dl>
 
@@ -377,6 +409,36 @@ public class LiveMixin : MonoBehaviour, IManagedUpdateBehaviour, IManagedBehavio
 
 
 
+  <h3 id="DefaultNamespace_LiveMixin_damageSound" data-uid="DefaultNamespace.LiveMixin.damageSound">
+  damageSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FMODAsset damageSound</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FMODAsset.html">FMODAsset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_LiveMixin_data" data-uid="DefaultNamespace.LiveMixin.data">
   data
   
@@ -417,7 +479,7 @@ public LiveMixinData data</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FMOD_StudioEventEmitter deathClip</code></pre>
+    <pre><code class="lang-csharp hljs">public FMOD_CustomEmitter deathClip</code></pre>
   </div>
 
 
@@ -425,7 +487,37 @@ public LiveMixinData data</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.FMOD_StudioEventEmitter.html">FMOD_StudioEventEmitter</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.FMOD_CustomEmitter.html">FMOD_CustomEmitter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_LiveMixin_deathSound" data-uid="DefaultNamespace.LiveMixin.deathSound">
+  deathSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FMODAsset deathSound</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FMODAsset.html">FMODAsset</a></dt>
     <dd></dd>
   </dl>
 
@@ -709,6 +801,67 @@ public float health</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_LiveMixin_reqRes" data-uid="DefaultNamespace.LiveMixin.reqRes">
+  reqRes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ProtoMember(5, OverwriteList = true)]
+public TechType[] reqRes</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="TechType.html">TechType</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_LiveMixin_requiredResources" data-uid="DefaultNamespace.LiveMixin.requiredResources">
+  requiredResources
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;TechType&gt; requiredResources</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="TechType.html">TechType</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_LiveMixin_shielded" data-uid="DefaultNamespace.LiveMixin.shielded">
   shielded
   
@@ -748,7 +901,8 @@ public float health</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ReadOnly]
+    <pre><code class="lang-csharp hljs">[Header(&quot;deprecated&quot;)]
+[ReadOnly]
 [Obsolete(&quot;This is a nasty hack. Set health instead!&quot;)]
 public float startHealthPercent</code></pre>
   </div>
@@ -1081,37 +1235,6 @@ public float tempDamage</code></pre>
 
 
 
-  <a id="DefaultNamespace_LiveMixin_invincibleInCreative_" data-uid="DefaultNamespace.LiveMixin.invincibleInCreative*"></a>
-
-  <h3 id="DefaultNamespace_LiveMixin_invincibleInCreative" data-uid="DefaultNamespace.LiveMixin.invincibleInCreative">
-  invincibleInCreative
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool invincibleInCreative { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_LiveMixin_knifeable_" data-uid="DefaultNamespace.LiveMixin.knifeable*"></a>
 
   <h3 id="DefaultNamespace_LiveMixin_knifeable" data-uid="DefaultNamespace.LiveMixin.knifeable">
@@ -1329,6 +1452,68 @@ public float tempDamage</code></pre>
 
 
 
+  <a id="DefaultNamespace_LiveMixin_repairRequiresMaterials_" data-uid="DefaultNamespace.LiveMixin.repairRequiresMaterials*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_repairRequiresMaterials" data-uid="DefaultNamespace.LiveMixin.repairRequiresMaterials">
+  repairRequiresMaterials
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool repairRequiresMaterials { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_LiveMixin_sendKillOnDeath_" data-uid="DefaultNamespace.LiveMixin.sendKillOnDeath*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_sendKillOnDeath" data-uid="DefaultNamespace.LiveMixin.sendKillOnDeath">
+  sendKillOnDeath
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool sendKillOnDeath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_LiveMixin_weldable_" data-uid="DefaultNamespace.LiveMixin.weldable*"></a>
 
   <h3 id="DefaultNamespace_LiveMixin_weldable" data-uid="DefaultNamespace.LiveMixin.weldable">
@@ -1483,6 +1668,68 @@ public float tempDamage</code></pre>
 
 
 
+  <a id="DefaultNamespace_LiveMixin_GetNextStepFraction_" data-uid="DefaultNamespace.LiveMixin.GetNextStepFraction*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_GetNextStepFraction" data-uid="DefaultNamespace.LiveMixin.GetNextStepFraction">
+  GetNextStepFraction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetNextStepFraction()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_LiveMixin_GetNumRequiredResources_" data-uid="DefaultNamespace.LiveMixin.GetNumRequiredResources*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_GetNumRequiredResources" data-uid="DefaultNamespace.LiveMixin.GetNumRequiredResources">
+  GetNumRequiredResources()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetNumRequiredResources()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_LiveMixin_GetProfileTag_" data-uid="DefaultNamespace.LiveMixin.GetProfileTag*"></a>
 
   <h3 id="DefaultNamespace_LiveMixin_GetProfileTag" data-uid="DefaultNamespace.LiveMixin.GetProfileTag">
@@ -1501,6 +1748,37 @@ public float tempDamage</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_LiveMixin_GetRequiredResources_" data-uid="DefaultNamespace.LiveMixin.GetRequiredResources*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_GetRequiredResources" data-uid="DefaultNamespace.LiveMixin.GetRequiredResources">
+  GetRequiredResources()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;TechType&gt; GetRequiredResources()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="TechType.html">TechType</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1976,6 +2254,68 @@ public void MakeScriptableObject()</code></pre>
 
 
 
+  <a id="DefaultNamespace_LiveMixin_OnProtoDeserialize_" data-uid="DefaultNamespace.LiveMixin.OnProtoDeserialize*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_OnProtoDeserialize_ProtobufSerializer_" data-uid="DefaultNamespace.LiveMixin.OnProtoDeserialize(ProtobufSerializer)">
+  OnProtoDeserialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnProtoDeserialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_LiveMixin_OnProtoSerialize_" data-uid="DefaultNamespace.LiveMixin.OnProtoSerialize*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_OnProtoSerialize_ProtobufSerializer_" data-uid="DefaultNamespace.LiveMixin.OnProtoSerialize(ProtobufSerializer)">
+  OnProtoSerialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnProtoSerialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_LiveMixin_OnRespawn_" data-uid="DefaultNamespace.LiveMixin.OnRespawn*"></a>
 
   <h3 id="DefaultNamespace_LiveMixin_OnRespawn_Player_" data-uid="DefaultNamespace.LiveMixin.OnRespawn(Player)">
@@ -2007,6 +2347,42 @@ public void MakeScriptableObject()</code></pre>
 
 
 
+  <a id="DefaultNamespace_LiveMixin_RepairResource_" data-uid="DefaultNamespace.LiveMixin.RepairResource*"></a>
+
+  <h3 id="DefaultNamespace_LiveMixin_RepairResource_TechType_" data-uid="DefaultNamespace.LiveMixin.RepairResource(TechType)">
+  RepairResource(TechType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RepairResource(TechType techType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>techType</code> <a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_LiveMixin_ResetHealth_" data-uid="DefaultNamespace.LiveMixin.ResetHealth*"></a>
 
   <h3 id="DefaultNamespace_LiveMixin_ResetHealth" data-uid="DefaultNamespace.LiveMixin.ResetHealth">
@@ -2022,37 +2398,6 @@ public void MakeScriptableObject()</code></pre>
   </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_LiveMixin_ShouldKillInCinematic_" data-uid="DefaultNamespace.LiveMixin.ShouldKillInCinematic*"></a>
-
-  <h3 id="DefaultNamespace_LiveMixin_ShouldKillInCinematic" data-uid="DefaultNamespace.LiveMixin.ShouldKillInCinematic">
-  ShouldKillInCinematic()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ShouldKillInCinematic()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
 
 
 

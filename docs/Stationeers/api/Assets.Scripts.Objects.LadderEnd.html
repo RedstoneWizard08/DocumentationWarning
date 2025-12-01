@@ -101,7 +101,7 @@ Class LadderEnd
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class LadderEnd : Ladder, IAudioParent, ISyncListable, ISmallGrid, ITooltip, IReferencable, IEvaluable, ISmartRotatable</code></pre>
+    <pre><code class="lang-csharp hljs">public class LadderEnd : Ladder, IAudioParent, ISyncListable, IDensePoolable, ICreativeSpawnable, ISmallGrid, ITooltip, IReferencable, IEvaluable, ISmartRotatable</code></pre>
   </div>
 
 
@@ -128,6 +128,8 @@ Class LadderEnd
     <dd>
       <div><a class="xref" href="Audio.IAudioParent.html">IAudioParent</a></div>
       <div><a class="xref" href="Assets.Scripts.ISyncListable.html">ISyncListable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
+      <div><a class="xref" href="Assets.Scripts.ICreativeSpawnable.html">ICreativeSpawnable</a></div>
       <div><a class="xref" href="DefaultNamespace.ISmallGrid.html">ISmallGrid</a></div>
       <div><a class="xref" href="DefaultNamespace.ITooltip.html">ITooltip</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
@@ -333,6 +335,9 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_AllStructurePrefabs">Structure.AllStructurePrefabs</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_LocalGrid">Structure.LocalGrid</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsCursorCreating">Structure.IsCursorCreating</a>
     </div>
     <div>
@@ -450,7 +455,7 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_MPBRenderers">Structure.MPBRenderers</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_WreckageSpawns">Structure.WreckageSpawns</a>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsUpdateOnServerTick">Structure.IsUpdateOnServerTick</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_ForceGridBounds">Structure.ForceGridBounds</a>
@@ -460,6 +465,15 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_GetShadowCastingMode">Structure.GetShadowCastingMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SnapTransform_UnityEngine_Vector3_UnityEngine_Quaternion_">Structure.SnapTransform(Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnAddToPool_System_Object_System_Int32_">Structure.OnAddToPool(object, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnRemoveFromPool_System_Object_">Structure.OnRemoveFromPool(object)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_BuildUpdate_Assets_Scripts_Networking_RocketBinaryWriter_System_UInt16_">Structure.BuildUpdate(RocketBinaryWriter, ushort)</a>
@@ -487,6 +501,9 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_ClearAll">Structure.ClearAll()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SpawnWreckage">Structure.SpawnWreckage()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SetPrefab_Assets_Scripts_Objects_Thing_">Structure.SetPrefab(Thing)</a>
@@ -540,9 +557,6 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnStructureBroken">Structure.OnStructureBroken()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SpawnWreckageOnLoad">Structure.SpawnWreckageOnLoad()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_UpdateStateVisualizer_System_Boolean_">Structure.UpdateStateVisualizer(bool)</a>
     </div>
     <div>
@@ -577,6 +591,9 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_StructureDestroyed_Assets_Scripts_Objects_ConstructionEventInstance_System_Boolean_">Structure.StructureDestroyed(ConstructionEventInstance, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnPrefabLoad">Structure.OnPrefabLoad()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnServerTick_System_Single_">Structure.OnServerTick(float)</a>
@@ -663,9 +680,6 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_TemperatureRadiationFactor">Structure.TemperatureRadiationFactor</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsChunkRendered">Structure.IsChunkRendered</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsDoor">Structure.IsDoor</a>
     </div>
     <div>
@@ -696,9 +710,6 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_NextBuildState">Structure.NextBuildState</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsUpdateOnServerTick">Structure.IsUpdateOnServerTick</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_AtmosphericsController">Structure.AtmosphericsController</a>
     </div>
     <div>
@@ -714,10 +725,13 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnDeconstruct">Structure.OnDeconstruct</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllPhysicalThings">Thing.AllPhysicalThings</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PhysicalPoolActive">Thing.PhysicalPoolActive</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllILights">Thing.AllILights</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllIWearableLights">Thing.AllIWearableLights</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SuppressSound">Thing.SuppressSound</a>
@@ -780,12 +794,6 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_WillSave">Thing.WillSave</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChange">Thing.OnPositionChange</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChangeLava">Thing.OnPositionChangeLava</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_position">Thing.position</a>
     </div>
     <div>
@@ -826,9 +834,6 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__customMaterials">Thing._customMaterials</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PaintableMaterial">Thing.PaintableMaterial</a>
@@ -913,9 +918,6 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnimTask">Thing.ErrorAnimTask</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalGrid">Thing.LocalGrid</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_BoundingSphereCenter">Thing.BoundingSphereCenter</a>
@@ -1092,9 +1094,6 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAsync__1_System_Int64_System_Single_">Thing.FindAsync&lt;T1&gt;(long, float)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPrefabLoad">Thing.OnPrefabLoad()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetAudioEvent_System_Int32_">Thing.GetAudioEvent(int)</a>
     </div>
     <div>
@@ -1206,6 +1205,9 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
     </div>
     <div>
@@ -1248,7 +1250,7 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildBatteryCellChange_Assets_Scripts_Objects_Items_BatteryCell_">Thing.OnChildBatteryCellChange(BatteryCell)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindMiningBeltOnParent">Thing.FindMiningBeltOnParent()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAvailableDirtCanister">Thing.FindAvailableDirtCanister()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsState_Assets_Scripts_Objects_InteractableType_System_Int32_">Thing.IsState(InteractableType, int)</a>
@@ -1269,6 +1271,9 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableUpdated_Assets_Scripts_Objects_Interactable_">Thing.OnInteractableUpdated(Interactable)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ValidateOnLoad_System_Int32_">Thing.ValidateOnLoad(int)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnFinishedInteractionSync_Assets_Scripts_Objects_Interactable_">Thing.OnFinishedInteractionSync(Interactable)</a>
     </div>
     <div>
@@ -1285,6 +1290,9 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RemoveAccess_System_Int32_">Thing.RemoveAccess(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshOnOffAnimState_System_Boolean_">Thing.RefreshOnOffAnimState(bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshAnimState_System_Boolean_">Thing.RefreshAnimState(bool)</a>
@@ -1380,6 +1388,9 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HandleCollisionWith_Assets_Scripts_Objects_Thing_System_Boolean_">Thing.HandleCollisionWith(Thing, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsAudible">Thing.IsAudible()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InitializeDamageState">Thing.InitializeDamageState()</a>
     </div>
     <div>
@@ -1398,9 +1409,6 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateLodFlares">Thing.UpdateLodFlares()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnAroundChunk">Thing.SpawnAroundChunk()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnThreadUpdate">Thing.OnThreadUpdate()</a>
     </div>
     <div>
@@ -1416,7 +1424,13 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetDamageColor">Thing.GetDamageColor()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetExtendedText">Thing.GetExtendedText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
@@ -1590,9 +1604,6 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DeserializeNew_Assets_Scripts_Networking_RocketBinaryReader_">Thing.DeserializeNew(RocketBinaryReader)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SnapTransform_UnityEngine_Vector3_UnityEngine_Quaternion_">Thing.SnapTransform(Vector3, Quaternion)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeDeltaState_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeDeltaState(RocketBinaryWriter)</a>
     </div>
     <div>
@@ -1635,7 +1646,7 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Remove_Sound_PooledAudioSource_">Thing.Remove(PooledAudioSource)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoint_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoint(RocketBinaryWriter)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Thing_">Thing.GetNextFreeSlot(Thing)</a>
@@ -1660,9 +1671,6 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReferenceId">Thing.ReferenceId</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllThings">Thing.AllThings</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
@@ -1740,6 +1748,9 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventStateChange">Thing.PreventStateChange</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetLocalBounds">Thing.GetLocalBounds</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Position">Thing.Position</a>
     </div>
     <div>
@@ -1779,7 +1790,13 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CustomName">Thing.CustomName</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DisplayName">Thing.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnableName">Thing.SpawnableName</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ProfilerTag">Thing.ProfilerTag</a>
@@ -1807,6 +1824,9 @@ Class LadderEnd
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasAuthority">Thing.HasAuthority</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnId">Thing.SpawnId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
@@ -1965,7 +1985,7 @@ Class LadderEnd
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsInstantiated">Thing.IsInstantiated</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ForceUseColorSwatchMaterial">Thing.ForceUseColorSwatchMaterial</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AudioDistanceSquared">Thing.AudioDistanceSquared</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsBeingDestroyed">Thing.IsBeingDestroyed</a>

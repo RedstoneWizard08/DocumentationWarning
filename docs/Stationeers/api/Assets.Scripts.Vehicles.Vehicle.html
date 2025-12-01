@@ -101,7 +101,7 @@ Class Vehicle
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Vehicle : WheeledBase, IAudioParent, ISyncListable, ITooltip, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IWeatherDamagable, ILodRequester, IDraggable, IReferencable, IEvaluable</code></pre>
+    <pre><code class="lang-csharp hljs">public class Vehicle : WheeledBase, IAudioParent, ISyncListable, ITooltip, ICreativeSpawnable, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IDensePoolable, IWeatherDamagable, ILodRequester, IThreadable, IDraggable, IPlayableArea, IPlayerVehicle, IReferencable, IEvaluable</code></pre>
   </div>
 
 
@@ -129,12 +129,17 @@ Class Vehicle
       <div><a class="xref" href="Audio.IAudioParent.html">IAudioParent</a></div>
       <div><a class="xref" href="Assets.Scripts.ISyncListable.html">ISyncListable</a></div>
       <div><a class="xref" href="DefaultNamespace.ITooltip.html">ITooltip</a></div>
+      <div><a class="xref" href="Assets.Scripts.ICreativeSpawnable.html">ICreativeSpawnable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a>&gt;</div>
       <div><a class="xref" href="Objects.Electrical.IPhysical.html">IPhysical</a></div>
       <div><a class="xref" href="Objects.Electrical.IProfile.html">IProfile</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
       <div><a class="xref" href="Weather.IWeatherDamagable.html">IWeatherDamagable</a></div>
       <div><a class="xref" href="TerrainSystem.Lods.ILodRequester.html">ILodRequester</a></div>
+      <div><a class="xref" href="TerrainSystem.IThreadable.html">IThreadable</a></div>
       <div><a class="xref" href="Assets.Scripts.IDraggable.html">IDraggable</a></div>
+      <div><a class="xref" href="DefaultNamespace.IPlayableArea.html">IPlayableArea</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.IPlayerVehicle.html">IPlayerVehicle</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
     </dd>
@@ -187,16 +192,19 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_MaxTurnAngle">WheeledBase.MaxTurnAngle</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_LastAnimationUpdate">WheeledBase.LastAnimationUpdate</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_BuildOwnerUpdate_Assets_Scripts_Networking_RocketBinaryWriter_">WheeledBase.BuildOwnerUpdate(RocketBinaryWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_ProcessOwnerUpdate_Assets_Scripts_Networking_RocketBinaryReader_">WheeledBase.ProcessOwnerUpdate(RocketBinaryReader)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_BuildUpdate_Assets_Scripts_Networking_RocketBinaryWriter_System_UInt16_">WheeledBase.BuildUpdate(RocketBinaryWriter, ushort)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_ProcessUpdate_Assets_Scripts_Networking_RocketBinaryReader_System_UInt16_">WheeledBase.ProcessUpdate(RocketBinaryReader, ushort)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_SerializeOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">WheeledBase.SerializeOnJoin(RocketBinaryWriter)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_DeserializeOnJoin_Assets_Scripts_Networking_RocketBinaryReader_">WheeledBase.DeserializeOnJoin(RocketBinaryReader)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_GetPitch">WheeledBase.GetPitch()</a>
@@ -205,10 +213,10 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_GetRoll">WheeledBase.GetRoll()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_PhysicsUpdate">WheeledBase.PhysicsUpdate()</a>
+      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_ProcessPhysicsUpdate_Assets_Scripts_Networking_DynamicThingPosition_">WheeledBase.ProcessPhysicsUpdate(DynamicThingPosition)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_UpdateEachFrame">WheeledBase.UpdateEachFrame()</a>
+      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_PhysicsUpdate">WheeledBase.PhysicsUpdate()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_TargetSteeringAngle">WheeledBase.TargetSteeringAngle</a>
@@ -218,6 +226,12 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_TargetBrakePower">WheeledBase.TargetBrakePower</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_PlayableAreaState">WheeledBase.PlayableAreaState</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Vehicles.WheeledBase.html#Assets_Scripts_Vehicles_WheeledBase_LastValidPlayablePosition">WheeledBase.LastValidPlayablePosition</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_RENDER_DISTANCE">DraggableThing.RENDER_DISTANCE</a>
@@ -236,6 +250,12 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_Awake">DraggableThing.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnAddToPool_System_Object_System_Int32_">DraggableThing.OnAddToPool(object, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnRemoveFromPool_System_Object_">DraggableThing.OnRemoveFromPool(object)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnJointBreak_System_Single_">DraggableThing.OnJointBreak(float)</a>
@@ -287,12 +307,6 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_HasLight">DynamicThing.HasLight</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsSmall">DynamicThing.IsSmall</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_FastSpeed">DynamicThing.FastSpeed</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RigidBody">DynamicThing.RigidBody</a>
@@ -416,6 +430,12 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DYNAMIC_THING_HEALTH_DAMAGE">DynamicThing.DYNAMIC_THING_HEALTH_DAMAGE</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsUnderLava">DynamicThing.IsUnderLava</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsInLavaObject">DynamicThing.IsInLavaObject</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsLogicSlotReadable">DynamicThing.IsLogicSlotReadable()</a>
@@ -547,12 +567,6 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnCollisionEnter_UnityEngine_Collision_">DynamicThing.OnCollisionEnter(Collision)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPositionChanged_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_">DynamicThing.OnPositionChanged(Grid3, Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPositionChangedClient_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_">DynamicThing.OnPositionChangedClient(Grid3, Vector3)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPrimaryUseStart">DynamicThing.OnPrimaryUseStart()</a>
     </div>
     <div>
@@ -589,10 +603,10 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ResetInterpolation_UnityEngine_Vector3_UnityEngine_Vector3_">DynamicThing.ResetInterpolation(Vector3, Vector3)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ProcessPhysicsUpdate_Assets_Scripts_Networking_DynamicThingPosition_">DynamicThing.ProcessPhysicsUpdate(DynamicThingPosition)</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UpdateNetworkPosition">DynamicThing.UpdateNetworkPosition()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UpdateNetworkPosition">DynamicThing.UpdateNetworkPosition()</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UpdateEachFrame">DynamicThing.UpdateEachFrame()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OutOfBounds">DynamicThing.OutOfBounds()</a>
@@ -605,6 +619,9 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnThreadUpdate">DynamicThing.OnThreadUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CheckPlayableArea">DynamicThing.CheckPlayableArea()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SetOnBaseOfSlot">DynamicThing.SetOnBaseOfSlot()</a>
@@ -629,6 +646,9 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ShouldIgnite_Assets_Scripts_Atmospherics_Atmosphere_">DynamicThing.ShouldIgnite(Atmosphere)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsHiddenInParentSlot">DynamicThing.IsHiddenInParentSlot()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnFireTick">DynamicThing.OnFireTick()</a>
@@ -721,13 +741,13 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsNetworkUpdate">DynamicThing.IsNetworkUpdate()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_BuildOwnerUpdate_Assets_Scripts_Networking_RocketBinaryWriter_">DynamicThing.BuildOwnerUpdate(RocketBinaryWriter)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ProcessOwnerUpdate_Assets_Scripts_Networking_RocketBinaryReader_">DynamicThing.ProcessOwnerUpdate(RocketBinaryReader)</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SerializeOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">DynamicThing.SerializeOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnFinishedThingSync">DynamicThing.OnFinishedThingSync()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DeserializeOnJoin_Assets_Scripts_Networking_RocketBinaryReader_">DynamicThing.DeserializeOnJoin(RocketBinaryReader)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnFinishedLoad">DynamicThing.OnFinishedLoad()</a>
@@ -745,7 +765,16 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DoWeatherDamage_System_Single_">DynamicThing.DoWeatherDamage(float)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ApplyLavaDamage">DynamicThing.ApplyLavaDamage()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CheckForCollectorProximity">DynamicThing.CheckForCollectorProximity()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanThread">DynamicThing.CanThread()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DebugName">DynamicThing.DebugName()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanTogglePower">DynamicThing.CanTogglePower</a>
@@ -784,9 +813,6 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_HasAtmosphere">DynamicThing.HasAtmosphere</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsChunkRendered">DynamicThing.IsChunkRendered</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RootParent">DynamicThing.RootParent</a>
     </div>
     <div>
@@ -823,7 +849,7 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RotationLerpRate">DynamicThing.RotationLerpRate</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PreviousPosition">DynamicThing.PreviousPosition</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PreviousLodRequestPosition">DynamicThing.PreviousLodRequestPosition</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_LodRequesterId">DynamicThing.LodRequesterId</a>
@@ -859,6 +885,15 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RegisteredCollector">DynamicThing.RegisteredCollector</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsInLava">DynamicThing.IsInLava</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_LavaDamage">DynamicThing.LavaDamage</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ThreadCost">DynamicThing.ThreadCost</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnManufactured">DynamicThing.OnManufactured</a>
     </div>
     <div>
@@ -874,10 +909,13 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnCollision">DynamicThing.OnCollision</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllPhysicalThings">Thing.AllPhysicalThings</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PhysicalPoolActive">Thing.PhysicalPoolActive</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllILights">Thing.AllILights</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllIWearableLights">Thing.AllIWearableLights</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SuppressSound">Thing.SuppressSound</a>
@@ -940,12 +978,6 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_WillSave">Thing.WillSave</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChange">Thing.OnPositionChange</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChangeLava">Thing.OnPositionChangeLava</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_position">Thing.position</a>
     </div>
     <div>
@@ -986,9 +1018,6 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__customMaterials">Thing._customMaterials</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PaintableMaterial">Thing.PaintableMaterial</a>
@@ -1073,9 +1102,6 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnimTask">Thing.ErrorAnimTask</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalGrid">Thing.LocalGrid</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_BoundingSphereCenter">Thing.BoundingSphereCenter</a>
@@ -1375,6 +1401,9 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
     </div>
     <div>
@@ -1420,7 +1449,7 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildBatteryCellChange_Assets_Scripts_Objects_Items_BatteryCell_">Thing.OnChildBatteryCellChange(BatteryCell)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindMiningBeltOnParent">Thing.FindMiningBeltOnParent()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAvailableDirtCanister">Thing.FindAvailableDirtCanister()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsState_Assets_Scripts_Objects_InteractableType_System_Int32_">Thing.IsState(InteractableType, int)</a>
@@ -1441,6 +1470,9 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableUpdated_Assets_Scripts_Objects_Interactable_">Thing.OnInteractableUpdated(Interactable)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ValidateOnLoad_System_Int32_">Thing.ValidateOnLoad(int)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnFinishedInteractionSync_Assets_Scripts_Objects_Interactable_">Thing.OnFinishedInteractionSync(Interactable)</a>
     </div>
     <div>
@@ -1454,6 +1486,9 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RemoveAccess_System_Int32_">Thing.RemoveAccess(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshOnOffAnimState_System_Boolean_">Thing.RefreshOnOffAnimState(bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshAnimState_System_Boolean_">Thing.RefreshAnimState(bool)</a>
@@ -1552,6 +1587,9 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HandleCollisionWith_Assets_Scripts_Objects_Thing_System_Boolean_">Thing.HandleCollisionWith(Thing, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsAudible">Thing.IsAudible()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InitializeDamageState">Thing.InitializeDamageState()</a>
     </div>
     <div>
@@ -1567,9 +1605,6 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateLodFlares">Thing.UpdateLodFlares()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnAroundChunk">Thing.SpawnAroundChunk()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ScheduleGridEventFromThread_Assets_Scripts_GridSystem_GridEvent_">Thing.ScheduleGridEventFromThread(GridEvent)</a>
     </div>
     <div>
@@ -1577,6 +1612,12 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetDamageColor">Thing.GetDamageColor()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
@@ -1759,7 +1800,7 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Remove_Sound_PooledAudioSource_">Thing.Remove(PooledAudioSource)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoint_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoint(RocketBinaryWriter)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Thing_">Thing.GetNextFreeSlot(Thing)</a>
@@ -1784,9 +1825,6 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReferenceId">Thing.ReferenceId</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllThings">Thing.AllThings</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
@@ -1864,6 +1902,9 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventStateChange">Thing.PreventStateChange</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetLocalBounds">Thing.GetLocalBounds</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Position">Thing.Position</a>
     </div>
     <div>
@@ -1894,7 +1935,13 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CustomName">Thing.CustomName</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DisplayName">Thing.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnableName">Thing.SpawnableName</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ProfilerTag">Thing.ProfilerTag</a>
@@ -1919,6 +1966,9 @@ Class Vehicle
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OccludeAudio">Thing.OccludeAudio</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnId">Thing.SpawnId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
@@ -2074,7 +2124,7 @@ Class Vehicle
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsInstantiated">Thing.IsInstantiated</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ForceUseColorSwatchMaterial">Thing.ForceUseColorSwatchMaterial</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AudioDistanceSquared">Thing.AudioDistanceSquared</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsBeingDestroyed">Thing.IsBeingDestroyed</a>
@@ -2206,8 +2256,8 @@ Class Vehicle
 
 
 
-  <h3 id="Assets_Scripts_Vehicles_Vehicle_CameraPoint" data-uid="Assets.Scripts.Vehicles.Vehicle.CameraPoint">
-  CameraPoint
+  <h3 id="Assets_Scripts_Vehicles_Vehicle_CameraPointDriver" data-uid="Assets.Scripts.Vehicles.Vehicle.CameraPointDriver">
+  CameraPointDriver
   
   </h3>
 
@@ -2215,7 +2265,7 @@ Class Vehicle
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Transform CameraPoint</code></pre>
+    <pre><code class="lang-csharp hljs">public Transform CameraPointDriver</code></pre>
   </div>
 
 
@@ -2236,8 +2286,8 @@ Class Vehicle
 
 
 
-  <h3 id="Assets_Scripts_Vehicles_Vehicle_CameraPoint2" data-uid="Assets.Scripts.Vehicles.Vehicle.CameraPoint2">
-  CameraPoint2
+  <h3 id="Assets_Scripts_Vehicles_Vehicle_CameraPointPassenger" data-uid="Assets.Scripts.Vehicles.Vehicle.CameraPointPassenger">
+  CameraPointPassenger
   
   </h3>
 
@@ -2245,7 +2295,7 @@ Class Vehicle
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Transform CameraPoint2</code></pre>
+    <pre><code class="lang-csharp hljs">public Transform CameraPointPassenger</code></pre>
   </div>
 
 
@@ -2327,37 +2377,6 @@ Class Vehicle
 
   <h2 class="section" id="properties">Properties
 </h2>
-
-
-  <a id="Assets_Scripts_Vehicles_Vehicle_ChunkGenerationRadius_" data-uid="Assets.Scripts.Vehicles.Vehicle.ChunkGenerationRadius*"></a>
-
-  <h3 id="Assets_Scripts_Vehicles_Vehicle_ChunkGenerationRadius" data-uid="Assets.Scripts.Vehicles.Vehicle.ChunkGenerationRadius">
-  ChunkGenerationRadius
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int ChunkGenerationRadius { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
 
 
   <a id="Assets_Scripts_Vehicles_Vehicle_DriverSlot_" data-uid="Assets.Scripts.Vehicles.Vehicle.DriverSlot*"></a>
@@ -2477,37 +2496,6 @@ Class Vehicle
     <dd></dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_Vehicles_Vehicle_OnDelayedChildEnterInventory_" data-uid="Assets.Scripts.Vehicles.Vehicle.OnDelayedChildEnterInventory*"></a>
-
-  <h3 id="Assets_Scripts_Vehicles_Vehicle_OnDelayedChildEnterInventory" data-uid="Assets.Scripts.Vehicles.Vehicle.OnDelayedChildEnterInventory">
-  OnDelayedChildEnterInventory()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator OnDelayedChildEnterInventory()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
-    <dd></dd>
-  </dl>
 
 
 

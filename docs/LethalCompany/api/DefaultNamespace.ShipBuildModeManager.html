@@ -126,6 +126,9 @@ Class ShipBuildModeManager
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -144,13 +147,31 @@ Class ShipBuildModeManager
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -159,10 +180,16 @@ Class ShipBuildModeManager
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -174,10 +201,16 @@ Class ShipBuildModeManager
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnDestroy()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -187,6 +220,9 @@ Class ShipBuildModeManager
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -1185,33 +1221,6 @@ public bool InBuildMode</code></pre>
 
 
 
-  <a id="DefaultNamespace_ShipBuildModeManager_InitializeRPCS_ShipBuildModeManager_" data-uid="DefaultNamespace.ShipBuildModeManager.InitializeRPCS_ShipBuildModeManager*"></a>
-
-  <h3 id="DefaultNamespace_ShipBuildModeManager_InitializeRPCS_ShipBuildModeManager" data-uid="DefaultNamespace.ShipBuildModeManager.InitializeRPCS_ShipBuildModeManager">
-  InitializeRPCS_ShipBuildModeManager()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_ShipBuildModeManager()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_ShipBuildModeManager_OffsetObjectFromWallBasedOnDimensions_" data-uid="DefaultNamespace.ShipBuildModeManager.OffsetObjectFromWallBasedOnDimensions*"></a>
 
   <h3 id="DefaultNamespace_ShipBuildModeManager_OffsetObjectFromWallBasedOnDimensions_UnityEngine_Vector3_UnityEngine_RaycastHit_" data-uid="DefaultNamespace.ShipBuildModeManager.OffsetObjectFromWallBasedOnDimensions(UnityEngine.Vector3,UnityEngine.RaycastHit)">
@@ -1655,6 +1664,32 @@ public void StoreShipObjectClientRpc(NetworkObjectReference objectRef, int playe
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_ShipBuildModeManager___initializeRpcs_" data-uid="DefaultNamespace.ShipBuildModeManager.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_ShipBuildModeManager___initializeRpcs" data-uid="DefaultNamespace.ShipBuildModeManager.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
 
 
 

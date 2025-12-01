@@ -101,7 +101,7 @@ Class CableNetwork
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CableNetwork : ILogicable, IReferencable, IEvaluable, ISyncListable</code></pre>
+    <pre><code class="lang-csharp hljs">public class CableNetwork : ILogicable, IReferencable, IEvaluable, ISyncListable, IDensePoolable, IMemoryReadable, IMemory</code></pre>
   </div>
 
 
@@ -122,6 +122,9 @@ Class CableNetwork
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
       <div><a class="xref" href="Assets.Scripts.ISyncListable.html">ISyncListable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.Pipes.IMemoryReadable.html">IMemoryReadable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.Electrical.IMemory.html">IMemory</a></div>
     </dd>
   </dl>
 
@@ -279,7 +282,7 @@ Class CableNetwork
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly List&lt;CableNetwork&gt; AllCableNetworks</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly ConcurrentDensePool&lt;CableNetwork&gt; AllCableNetworks</code></pre>
   </div>
 
 
@@ -287,7 +290,7 @@ Class CableNetwork
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Networks.CableNetwork.html">CableNetwork</a>&gt;</dt>
+    <dt><a class="xref" href="Assets.Scripts.Util.ConcurrentDensePool-1.html">ConcurrentDensePool</a>&lt;<a class="xref" href="Assets.Scripts.Networks.CableNetwork.html">CableNetwork</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -871,37 +874,6 @@ Class CableNetwork
 
   <h2 class="section" id="properties">Properties
 </h2>
-
-
-  <a id="Assets_Scripts_Networks_CableNetwork_AllNetworkIds_" data-uid="Assets.Scripts.Networks.CableNetwork.AllNetworkIds*"></a>
-
-  <h3 id="Assets_Scripts_Networks_CableNetwork_AllNetworkIds" data-uid="Assets.Scripts.Networks.CableNetwork.AllNetworkIds">
-  AllNetworkIds
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static long[] AllNetworkIds { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>[]</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
 
 
   <a id="Assets_Scripts_Networks_CableNetwork_BeingDestroyed_" data-uid="Assets.Scripts.Networks.CableNetwork.BeingDestroyed*"></a>
@@ -1606,6 +1578,37 @@ Class CableNetwork
 
 
 
+  <a id="Assets_Scripts_Networks_CableNetwork_GetAllNetworkIds_" data-uid="Assets.Scripts.Networks.CableNetwork.GetAllNetworkIds*"></a>
+
+  <h3 id="Assets_Scripts_Networks_CableNetwork_GetAllNetworkIds" data-uid="Assets.Scripts.Networks.CableNetwork.GetAllNetworkIds">
+  GetAllNetworkIds()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long[] GetAllNetworkIds()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Networks_CableNetwork_GetDeviceRegistration_" data-uid="Assets.Scripts.Networks.CableNetwork.GetDeviceRegistration*"></a>
 
   <h3 id="Assets_Scripts_Networks_CableNetwork_GetDeviceRegistration_Assets_Scripts_Objects_Pipes_Device_" data-uid="Assets.Scripts.Networks.CableNetwork.GetDeviceRegistration(Assets.Scripts.Objects.Pipes.Device)">
@@ -1839,6 +1842,37 @@ Class CableNetwork
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="Assets.Scripts.Objects.Slot.html">Slot</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Networks_CableNetwork_GetStackSize_" data-uid="Assets.Scripts.Networks.CableNetwork.GetStackSize*"></a>
+
+  <h3 id="Assets_Scripts_Networks_CableNetwork_GetStackSize" data-uid="Assets.Scripts.Networks.CableNetwork.GetStackSize">
+  GetStackSize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetStackSize()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -2146,6 +2180,44 @@ Class CableNetwork
 
 
 
+  <a id="Assets_Scripts_Networks_CableNetwork_OnAddToPool_" data-uid="Assets.Scripts.Networks.CableNetwork.OnAddToPool*"></a>
+
+  <h3 id="Assets_Scripts_Networks_CableNetwork_OnAddToPool_System_Object_System_Int32_" data-uid="Assets.Scripts.Networks.CableNetwork.OnAddToPool(System.Object,System.Int32)">
+  OnAddToPool(object, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool OnAddToPool(object densePool, int slot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>slot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Networks_CableNetwork_OnAssignedReference_" data-uid="Assets.Scripts.Networks.CableNetwork.OnAssignedReference*"></a>
 
   <h3 id="Assets_Scripts_Networks_CableNetwork_OnAssignedReference" data-uid="Assets.Scripts.Networks.CableNetwork.OnAssignedReference">
@@ -2255,6 +2327,37 @@ Class CableNetwork
 
 
 
+  <a id="Assets_Scripts_Networks_CableNetwork_OnRemoveFromPool_" data-uid="Assets.Scripts.Networks.CableNetwork.OnRemoveFromPool*"></a>
+
+  <h3 id="Assets_Scripts_Networks_CableNetwork_OnRemoveFromPool_System_Object_" data-uid="Assets.Scripts.Networks.CableNetwork.OnRemoveFromPool(System.Object)">
+  OnRemoveFromPool(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRemoveFromPool(object densePool)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Networks_CableNetwork_PrintDebugInfo_" data-uid="Assets.Scripts.Networks.CableNetwork.PrintDebugInfo*"></a>
 
   <h3 id="Assets_Scripts_Networks_CableNetwork_PrintDebugInfo_System_Boolean_" data-uid="Assets.Scripts.Networks.CableNetwork.PrintDebugInfo(System.Boolean)">
@@ -2275,6 +2378,42 @@ Class CableNetwork
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Networks_CableNetwork_ReadMemory_" data-uid="Assets.Scripts.Networks.CableNetwork.ReadMemory*"></a>
+
+  <h3 id="Assets_Scripts_Networks_CableNetwork_ReadMemory_System_Int32_" data-uid="Assets.Scripts.Networks.CableNetwork.ReadMemory(System.Int32)">
+  ReadMemory(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ReadMemory(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

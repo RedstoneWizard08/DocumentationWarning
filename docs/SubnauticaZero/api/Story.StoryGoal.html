@@ -119,7 +119,6 @@ Class StoryGoal
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
-      <div><a class="xref" href="DefaultNamespace.StoryGoalCustomEventHandler.SunbeamGoal.html">StoryGoalCustomEventHandler.SunbeamGoal</a></div>
       <div><a class="xref" href="Story.BiomeGoal.html">BiomeGoal</a></div>
       <div><a class="xref" href="Story.CompoundGoal.html">CompoundGoal</a></div>
       <div><a class="xref" href="Story.ItemGoal.html">ItemGoal</a></div>
@@ -226,6 +225,98 @@ public StoryGoal()</code></pre>
 
 
 
+  <h3 id="Story_StoryGoal_KeyComparer" data-uid="Story.StoryGoal.KeyComparer">
+  KeyComparer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly StringComparer KeyComparer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.stringcomparer">StringComparer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Story_StoryGoal_checkInBase" data-uid="Story.StoryGoal.checkInBase">
+  checkInBase
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If checked, prevents this goal from completing unless the player is in a Base. See: Player.IsInBase.&quot;)]
+public bool checkInBase</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Story_StoryGoal_checkPlayerSafety" data-uid="Story.StoryGoal.checkPlayerSafety">
+  checkPlayerSafety
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If checked, prevents this goal from completing if the player is not &#39;safe&#39;. See: Player.GetSafetyForStoryGoals.&quot;)]
+public bool checkPlayerSafety</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Story_StoryGoal_delay" data-uid="Story.StoryGoal.delay">
   delay
   
@@ -295,7 +386,8 @@ public StoryGoal()</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string key</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Identifier for this story goal. If Goal Type is PDA or Encyclopedia, this should match a Log or Encyclopedia ken in PDAData.&quot;)]
+public string key</code></pre>
   </div>
 
 
@@ -315,14 +407,9 @@ public StoryGoal()</code></pre>
 
 
 
-  <h2 class="section" id="methods">Methods
-</h2>
 
-
-  <a id="Story_StoryGoal_Execute_" data-uid="Story.StoryGoal.Execute*"></a>
-
-  <h3 id="Story_StoryGoal_Execute_System_String_Story_GoalType_" data-uid="Story.StoryGoal.Execute(System.String,Story.GoalType)">
-  Execute(string, GoalType)
+  <h3 id="Story_StoryGoal_playInCinematics" data-uid="Story.StoryGoal.playInCinematics">
+  playInCinematics
   
   </h3>
 
@@ -330,7 +417,205 @@ public StoryGoal()</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Execute(string key, GoalType goalType)</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If checked, will play sound and subtitles if this goal is completed during a cinematic, otherwise it will silently complete the goal.&quot;)]
+public bool playInCinematics</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Story_StoryGoal_playInCreative" data-uid="Story.StoryGoal.playInCreative">
+  playInCreative
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;By default, story goals do not get scheduled or completed in Creative Mode. If checked, this goal will behave as normal in Creative Mode.&quot;)]
+public bool playInCreative</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Story_StoryGoal_playMuted" data-uid="Story.StoryGoal.playMuted">
+  playMuted
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If checked, this story goal will always play muted, which means no audio or subtitles for PDA and Encyclopedia goals.&quot;)]
+public bool playMuted</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Story_StoryGoal_playNowOrNever" data-uid="Story.StoryGoal.playNowOrNever">
+  playNowOrNever
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Used for non-essential story bits that are context-sensitive.  If checked, either play this story goal immediately or don&#39;t play it at all.  Currently playing dialogue can prevent the goal from firing.&quot;)]
+public bool playNowOrNever</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Story_StoryGoal_preconditionGoals" data-uid="Story.StoryGoal.preconditionGoals">
+  preconditionGoals
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Key values for story goals that must be completed in order for this goal to trigger&quot;)]
+public string[] preconditionGoals</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Story_StoryGoal_Equals_" data-uid="Story.StoryGoal.Equals*"></a>
+
+  <h3 id="Story_StoryGoal_Equals_System_String_System_String_" data-uid="Story.StoryGoal.Equals(System.String,System.String)">
+  Equals(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Equals(string firstKey, string secondKey)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>firstKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>secondKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_Execute_" data-uid="Story.StoryGoal.Execute*"></a>
+
+  <h3 id="Story_StoryGoal_Execute_System_String_Story_GoalType_System_Boolean_System_Boolean_" data-uid="Story.StoryGoal.Execute(System.String,Story.GoalType,System.Boolean,System.Boolean)">
+  Execute(string, GoalType, bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Execute(string key, GoalType goalType, bool playInCinematics = false, bool playInCreative = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -339,8 +624,289 @@ public StoryGoal()</code></pre>
     <dd></dd>
     <dt><code>goalType</code> <a class="xref" href="Story.GoalType.html">GoalType</a></dt>
     <dd></dd>
+    <dt><code>playInCinematics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>playInCreative</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_HasPrecondition_" data-uid="Story.StoryGoal.HasPrecondition*"></a>
+
+  <h3 id="Story_StoryGoal_HasPrecondition_System_String_" data-uid="Story.StoryGoal.HasPrecondition(System.String)">
+  HasPrecondition(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasPrecondition(string goal)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>goal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_IsComplete_" data-uid="Story.StoryGoal.IsComplete*"></a>
+
+  <h3 id="Story_StoryGoal_IsComplete" data-uid="Story.StoryGoal.IsComplete">
+  IsComplete()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsComplete()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_IsComplete_" data-uid="Story.StoryGoal.IsComplete*"></a>
+
+  <h3 id="Story_StoryGoal_IsComplete_System_String_" data-uid="Story.StoryGoal.IsComplete(System.String)">
+  IsComplete(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsComplete(string key)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_IsConversation_" data-uid="Story.StoryGoal.IsConversation*"></a>
+
+  <h3 id="Story_StoryGoal_IsConversation_Story_GoalType_System_String_" data-uid="Story.StoryGoal.IsConversation(Story.GoalType,System.String)">
+  IsConversation(GoalType, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsConversation(GoalType goalType, string goalKey)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>goalType</code> <a class="xref" href="Story.GoalType.html">GoalType</a></dt>
+    <dd></dd>
+    <dt><code>goalKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_IsLowPriorityVoiceLog_" data-uid="Story.StoryGoal.IsLowPriorityVoiceLog*"></a>
+
+  <h3 id="Story_StoryGoal_IsLowPriorityVoiceLog_Story_GoalType_System_String_" data-uid="Story.StoryGoal.IsLowPriorityVoiceLog(Story.GoalType,System.String)">
+  IsLowPriorityVoiceLog(GoalType, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLowPriorityVoiceLog(GoalType goalType, string goalKey)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>goalType</code> <a class="xref" href="Story.GoalType.html">GoalType</a></dt>
+    <dd></dd>
+    <dt><code>goalKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_MeetsPreconditions_" data-uid="Story.StoryGoal.MeetsPreconditions*"></a>
+
+  <h3 id="Story_StoryGoal_MeetsPreconditions_System_Collections_Generic_ICollection_System_String__" data-uid="Story.StoryGoal.MeetsPreconditions(System.Collections.Generic.ICollection{System.String})">
+  MeetsPreconditions(ICollection&lt;string&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MeetsPreconditions(ICollection&lt;string&gt; completedGoals)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>completedGoals</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_Reset_" data-uid="Story.StoryGoal.Reset*"></a>
+
+  <h3 id="Story_StoryGoal_Reset_System_String_" data-uid="Story.StoryGoal.Reset(System.String)">
+  Reset(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Reset(string key)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoal_ShouldPlayNowOrNever_" data-uid="Story.StoryGoal.ShouldPlayNowOrNever*"></a>
+
+  <h3 id="Story_StoryGoal_ShouldPlayNowOrNever" data-uid="Story.StoryGoal.ShouldPlayNowOrNever">
+  ShouldPlayNowOrNever()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldPlayNowOrNever()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

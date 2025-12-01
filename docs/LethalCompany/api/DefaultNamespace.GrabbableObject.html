@@ -139,6 +139,7 @@ Class GrabbableObject
       <div><a class="xref" href="DefaultNamespace.HauntedMaskItem.html">HauntedMaskItem</a></div>
       <div><a class="xref" href="DefaultNamespace.JetpackItem.html">JetpackItem</a></div>
       <div><a class="xref" href="DefaultNamespace.KeyItem.html">KeyItem</a></div>
+      <div><a class="xref" href="DefaultNamespace.KiwiBabyItem.html">KiwiBabyItem</a></div>
       <div><a class="xref" href="DefaultNamespace.KnifeItem.html">KnifeItem</a></div>
       <div><a class="xref" href="DefaultNamespace.LockPicker.html">LockPicker</a></div>
       <div><a class="xref" href="DefaultNamespace.LungProp.html">LungProp</a></div>
@@ -148,6 +149,7 @@ Class GrabbableObject
       <div><a class="xref" href="DefaultNamespace.PhysicsProp.html">PhysicsProp</a></div>
       <div><a class="xref" href="DefaultNamespace.RadarBoosterItem.html">RadarBoosterItem</a></div>
       <div><a class="xref" href="DefaultNamespace.RagdollGrabbableObject.html">RagdollGrabbableObject</a></div>
+      <div><a class="xref" href="DefaultNamespace.RandomFlyParticle.html">RandomFlyParticle</a></div>
       <div><a class="xref" href="DefaultNamespace.RemoteProp.html">RemoteProp</a></div>
       <div><a class="xref" href="DefaultNamespace.ShotgunItem.html">ShotgunItem</a></div>
       <div><a class="xref" href="DefaultNamespace.Shovel.html">Shovel</a></div>
@@ -163,6 +165,9 @@ Class GrabbableObject
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
     <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
@@ -182,13 +187,31 @@ Class GrabbableObject
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -197,10 +220,16 @@ Class GrabbableObject
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -212,10 +241,16 @@ Class GrabbableObject
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnDestroy()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -225,6 +260,9 @@ Class GrabbableObject
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -1196,6 +1234,36 @@ public Transform radarIcon</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_GrabbableObject_rotateObject" data-uid="DefaultNamespace.GrabbableObject.rotateObject">
+  rotateObject
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool rotateObject</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_GrabbableObject_scrapPersistedThroughRounds" data-uid="DefaultNamespace.GrabbableObject.scrapPersistedThroughRounds">
   scrapPersistedThroughRounds
   
@@ -1876,8 +1944,8 @@ public void EquipItemServerRpc()</code></pre>
 
   <a id="DefaultNamespace_GrabbableObject_FallToGround_" data-uid="DefaultNamespace.GrabbableObject.FallToGround*"></a>
 
-  <h3 id="DefaultNamespace_GrabbableObject_FallToGround_System_Boolean_" data-uid="DefaultNamespace.GrabbableObject.FallToGround(System.Boolean)">
-  FallToGround(bool)
+  <h3 id="DefaultNamespace_GrabbableObject_FallToGround_System_Boolean_System_Boolean_UnityEngine_Vector3_" data-uid="DefaultNamespace.GrabbableObject.FallToGround(System.Boolean,System.Boolean,UnityEngine.Vector3)">
+  FallToGround(bool, bool, Vector3)
   
   </h3>
 
@@ -1885,12 +1953,16 @@ public void EquipItemServerRpc()</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void FallToGround(bool randomizePosition = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public void FallToGround(bool randomizePosition = false, bool justSpawned = false, Vector3 overrideStartPos = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>randomizePosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>justSpawned</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>overrideStartPos</code> <span class="xref">Vector3</span></dt>
     <dd></dd>
   </dl>
 
@@ -2173,10 +2245,10 @@ public void GrabServerRpc()</code></pre>
 
 
 
-  <a id="DefaultNamespace_GrabbableObject_InitializeRPCS_GrabbableObject_" data-uid="DefaultNamespace.GrabbableObject.InitializeRPCS_GrabbableObject*"></a>
+  <a id="DefaultNamespace_GrabbableObject_InitializeAfterPositioning_" data-uid="DefaultNamespace.GrabbableObject.InitializeAfterPositioning*"></a>
 
-  <h3 id="DefaultNamespace_GrabbableObject_InitializeRPCS_GrabbableObject" data-uid="DefaultNamespace.GrabbableObject.InitializeRPCS_GrabbableObject">
-  InitializeRPCS_GrabbableObject()
+  <h3 id="DefaultNamespace_GrabbableObject_InitializeAfterPositioning" data-uid="DefaultNamespace.GrabbableObject.InitializeAfterPositioning">
+  InitializeAfterPositioning()
   
   </h3>
 
@@ -2184,8 +2256,7 @@ public void GrabServerRpc()</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_GrabbableObject()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void InitializeAfterPositioning()</code></pre>
   </div>
 
 
@@ -2652,6 +2723,32 @@ public void PocketItemServerRpc()</code></pre>
 
 
 
+  <a id="DefaultNamespace_GrabbableObject_ReactToSellingItemOnCounter_" data-uid="DefaultNamespace.GrabbableObject.ReactToSellingItemOnCounter*"></a>
+
+  <h3 id="DefaultNamespace_GrabbableObject_ReactToSellingItemOnCounter" data-uid="DefaultNamespace.GrabbableObject.ReactToSellingItemOnCounter">
+  ReactToSellingItemOnCounter()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ReactToSellingItemOnCounter()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_GrabbableObject_RequireCooldown_" data-uid="DefaultNamespace.GrabbableObject.RequireCooldown*"></a>
 
   <h3 id="DefaultNamespace_GrabbableObject_RequireCooldown" data-uid="DefaultNamespace.GrabbableObject.RequireCooldown">
@@ -3025,6 +3122,32 @@ public void UseUpItemBatteriesServerRpc()</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_GrabbableObject___initializeRpcs_" data-uid="DefaultNamespace.GrabbableObject.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_GrabbableObject___initializeRpcs" data-uid="DefaultNamespace.GrabbableObject.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
 
 
 
@@ -3646,6 +3769,42 @@ public void UseUpItemBatteriesServerRpc()</code></pre>
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_GrabbableObject_fallToGroundOnFrameDelay_" data-uid="DefaultNamespace.GrabbableObject.fallToGroundOnFrameDelay*"></a>
+
+  <h3 id="DefaultNamespace_GrabbableObject_fallToGroundOnFrameDelay_UnityEngine_Vector3_" data-uid="DefaultNamespace.GrabbableObject.fallToGroundOnFrameDelay(UnityEngine.Vector3)">
+  fallToGroundOnFrameDelay(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator fallToGroundOnFrameDelay(Vector3 startPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

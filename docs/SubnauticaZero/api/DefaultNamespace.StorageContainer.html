@@ -103,7 +103,8 @@ Class StorageContainer
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
 [SkipProtoContractCheck]
-public class StorageContainer : HandTarget, IHandTarget, IProtoTreeEventListener</code></pre>
+[ProtoInclude(1000, typeof(SupplyDrop))]
+public class StorageContainer : HandTarget, IHandTarget, IProtoTreeEventListener, ICompileTimeCheckable</code></pre>
   </div>
 
 
@@ -127,9 +128,16 @@ public class StorageContainer : HandTarget, IHandTarget, IProtoTreeEventListener
     <dd>
       <div><a class="xref" href="DefaultNamespace.IHandTarget.html">IHandTarget</a></div>
       <div><a class="xref" href="DefaultNamespace.IProtoTreeEventListener.html">IProtoTreeEventListener</a></div>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeCheckable.html">ICompileTimeCheckable</a></div>
     </dd>
   </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.SupplyDrop.html">SupplyDrop</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
@@ -206,6 +214,156 @@ public class StorageContainer : HandTarget, IHandTarget, IProtoTreeEventListener
 
 
 
+  <h3 id="DefaultNamespace_StorageContainer__open" data-uid="DefaultNamespace.StorageContainer._open">
+  _open
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool _open</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_StorageContainer_animator" data-uid="DefaultNamespace.StorageContainer.animator">
+  animator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Animator animator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_StorageContainer_animatorParam" data-uid="DefaultNamespace.StorageContainer.animatorParam">
+  animatorParam
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string animatorParam</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_StorageContainer_closeSound" data-uid="DefaultNamespace.StorageContainer.closeSound">
+  closeSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FMODAsset closeSound</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FMODAsset.html">FMODAsset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_StorageContainer_containerType" data-uid="DefaultNamespace.StorageContainer.containerType">
+  containerType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ItemsContainerType containerType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.ItemsContainerType.html">ItemsContainerType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_StorageContainer_currentVersion" data-uid="DefaultNamespace.StorageContainer.currentVersion">
   currentVersion
   
@@ -267,8 +425,8 @@ public const string deconstructNonEmptyMessage = &quot;DeconstructNonEmptyStorag
 
 
 
-  <h3 id="DefaultNamespace_StorageContainer_emptyHandSubscript" data-uid="DefaultNamespace.StorageContainer.emptyHandSubscript">
-  emptyHandSubscript
+  <h3 id="DefaultNamespace_StorageContainer_disableUseability" data-uid="DefaultNamespace.StorageContainer.disableUseability">
+  disableUseability
   
   </h3>
 
@@ -276,8 +434,7 @@ public const string deconstructNonEmptyMessage = &quot;DeconstructNonEmptyStorag
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertLocalization]
-public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public bool disableUseability</code></pre>
   </div>
 
 
@@ -285,7 +442,7 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -367,7 +524,8 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string hoverText</code></pre>
+    <pre><code class="lang-csharp hljs">[AssertLocalization]
+public string hoverText</code></pre>
   </div>
 
 
@@ -418,8 +576,8 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_StorageContainer_onUse" data-uid="DefaultNamespace.StorageContainer.onUse">
-  onUse
+  <h3 id="DefaultNamespace_StorageContainer_openLoopSound" data-uid="DefaultNamespace.StorageContainer.openLoopSound">
+  openLoopSound
   
   </h3>
 
@@ -427,7 +585,7 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public StorageContainer.UseEvent onUse</code></pre>
+    <pre><code class="lang-csharp hljs">public FMOD_CustomLoopingEmitter openLoopSound</code></pre>
   </div>
 
 
@@ -435,7 +593,7 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="StorageContainer.html">StorageContainer</a>.<a class="xref" href="StorageContainer.UseEvent.html">UseEvent</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.FMOD_CustomLoopingEmitter.html">FMOD_CustomLoopingEmitter</a></dt>
     <dd></dd>
   </dl>
 
@@ -448,8 +606,8 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_StorageContainer_open" data-uid="DefaultNamespace.StorageContainer.open">
-  open
+  <h3 id="DefaultNamespace_StorageContainer_openSound" data-uid="DefaultNamespace.StorageContainer.openSound">
+  openSound
   
   </h3>
 
@@ -457,7 +615,7 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool open</code></pre>
+    <pre><code class="lang-csharp hljs">public FMODAsset openSound</code></pre>
   </div>
 
 
@@ -465,7 +623,37 @@ public const string emptyHandSubscript = &quot;Empty&quot;</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.FMODAsset.html">FMODAsset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_StorageContainer_openedVFX" data-uid="DefaultNamespace.StorageContainer.openedVFX">
+  openedVFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VFXController openedVFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.VFXController.html">VFXController</a></dt>
     <dd></dd>
   </dl>
 
@@ -548,7 +736,8 @@ public GameObject prefabRoot</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string storageLabel</code></pre>
+    <pre><code class="lang-csharp hljs">[AssertLocalization]
+public string storageLabel</code></pre>
   </div>
 
 
@@ -695,6 +884,37 @@ public int version</code></pre>
 
 
 
+  <a id="DefaultNamespace_StorageContainer_open_" data-uid="DefaultNamespace.StorageContainer.open*"></a>
+
+  <h3 id="DefaultNamespace_StorageContainer_open" data-uid="DefaultNamespace.StorageContainer.open">
+  open
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool open { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -743,6 +963,37 @@ public int version</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_StorageContainer_CompileTimeCheck_" data-uid="DefaultNamespace.StorageContainer.CompileTimeCheck*"></a>
+
+  <h3 id="DefaultNamespace_StorageContainer_CompileTimeCheck" data-uid="DefaultNamespace.StorageContainer.CompileTimeCheck">
+  CompileTimeCheck()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CompileTimeCheck()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -963,6 +1214,32 @@ public int version</code></pre>
 
 
 
+  <a id="DefaultNamespace_StorageContainer_OnOpen_" data-uid="DefaultNamespace.StorageContainer.OnOpen*"></a>
+
+  <h3 id="DefaultNamespace_StorageContainer_OnOpen" data-uid="DefaultNamespace.StorageContainer.OnOpen">
+  OnOpen()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnOpen()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_StorageContainer_OnProtoDeserializeObjectTree_" data-uid="DefaultNamespace.StorageContainer.OnProtoDeserializeObjectTree*"></a>
 
   <h3 id="DefaultNamespace_StorageContainer_OnProtoDeserializeObjectTree_ProtobufSerializer_" data-uid="DefaultNamespace.StorageContainer.OnProtoDeserializeObjectTree(ProtobufSerializer)">
@@ -1013,32 +1290,6 @@ public int version</code></pre>
     <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_StorageContainer_Open_" data-uid="DefaultNamespace.StorageContainer.Open*"></a>
-
-  <h3 id="DefaultNamespace_StorageContainer_Open" data-uid="DefaultNamespace.StorageContainer.Open">
-  Open()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Open()</code></pre>
-  </div>
-
 
 
 
@@ -1127,6 +1378,37 @@ public int version</code></pre>
     <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
     <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_StorageContainer_SetContainer_" data-uid="DefaultNamespace.StorageContainer.SetContainer*"></a>
+
+  <h3 id="DefaultNamespace_StorageContainer_SetContainer_ItemsContainer_" data-uid="DefaultNamespace.StorageContainer.SetContainer(ItemsContainer)">
+  SetContainer(ItemsContainer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetContainer(ItemsContainer newcontainer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newcontainer</code> <a class="xref" href="DefaultNamespace.ItemsContainer.html">ItemsContainer</a></dt>
     <dd></dd>
   </dl>
 

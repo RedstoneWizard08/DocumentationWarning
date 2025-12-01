@@ -101,7 +101,7 @@ Class WheeledBase
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class WheeledBase : DraggableThing, IAudioParent, ISyncListable, ITooltip, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IWeatherDamagable, ILodRequester, IDraggable, IReferencable, IEvaluable</code></pre>
+    <pre><code class="lang-csharp hljs">public class WheeledBase : DraggableThing, IAudioParent, ISyncListable, ITooltip, ICreativeSpawnable, IComparable&lt;DynamicThing&gt;, IPhysical, IProfile, IDensePoolable, IWeatherDamagable, ILodRequester, IThreadable, IDraggable, IPlayableArea, IPlayerVehicle, IReferencable, IEvaluable</code></pre>
   </div>
 
 
@@ -128,12 +128,17 @@ Class WheeledBase
       <div><a class="xref" href="Audio.IAudioParent.html">IAudioParent</a></div>
       <div><a class="xref" href="Assets.Scripts.ISyncListable.html">ISyncListable</a></div>
       <div><a class="xref" href="DefaultNamespace.ITooltip.html">ITooltip</a></div>
+      <div><a class="xref" href="Assets.Scripts.ICreativeSpawnable.html">ICreativeSpawnable</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a>&gt;</div>
       <div><a class="xref" href="Objects.Electrical.IPhysical.html">IPhysical</a></div>
       <div><a class="xref" href="Objects.Electrical.IProfile.html">IProfile</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
       <div><a class="xref" href="Weather.IWeatherDamagable.html">IWeatherDamagable</a></div>
       <div><a class="xref" href="TerrainSystem.Lods.ILodRequester.html">ILodRequester</a></div>
+      <div><a class="xref" href="TerrainSystem.IThreadable.html">IThreadable</a></div>
       <div><a class="xref" href="Assets.Scripts.IDraggable.html">IDraggable</a></div>
+      <div><a class="xref" href="DefaultNamespace.IPlayableArea.html">IPlayableArea</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.IPlayerVehicle.html">IPlayerVehicle</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
     </dd>
@@ -167,6 +172,12 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_Awake">DraggableThing.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnAddToPool_System_Object_System_Int32_">DraggableThing.OnAddToPool(object, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnRemoveFromPool_System_Object_">DraggableThing.OnRemoveFromPool(object)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.DraggableThing.html#Assets_Scripts_DraggableThing_OnJointBreak_System_Single_">DraggableThing.OnJointBreak(float)</a>
@@ -218,12 +229,6 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_HasLight">DynamicThing.HasLight</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsSmall">DynamicThing.IsSmall</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_FastSpeed">DynamicThing.FastSpeed</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RigidBody">DynamicThing.RigidBody</a>
@@ -347,6 +352,12 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DYNAMIC_THING_HEALTH_DAMAGE">DynamicThing.DYNAMIC_THING_HEALTH_DAMAGE</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsUnderLava">DynamicThing.IsUnderLava</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsInLavaObject">DynamicThing.IsInLavaObject</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsLogicSlotReadable">DynamicThing.IsLogicSlotReadable()</a>
@@ -478,12 +489,6 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnCollisionEnter_UnityEngine_Collision_">DynamicThing.OnCollisionEnter(Collision)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPositionChanged_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_">DynamicThing.OnPositionChanged(Grid3, Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPositionChangedClient_Assets_Scripts_GridSystem_Grid3_UnityEngine_Vector3_">DynamicThing.OnPositionChangedClient(Grid3, Vector3)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnPrimaryUseStart">DynamicThing.OnPrimaryUseStart()</a>
     </div>
     <div>
@@ -520,10 +525,10 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ResetInterpolation_UnityEngine_Vector3_UnityEngine_Vector3_">DynamicThing.ResetInterpolation(Vector3, Vector3)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ProcessPhysicsUpdate_Assets_Scripts_Networking_DynamicThingPosition_">DynamicThing.ProcessPhysicsUpdate(DynamicThingPosition)</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UpdateNetworkPosition">DynamicThing.UpdateNetworkPosition()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UpdateNetworkPosition">DynamicThing.UpdateNetworkPosition()</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UpdateEachFrame">DynamicThing.UpdateEachFrame()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OutOfBounds">DynamicThing.OutOfBounds()</a>
@@ -536,6 +541,9 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnThreadUpdate">DynamicThing.OnThreadUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CheckPlayableArea">DynamicThing.CheckPlayableArea()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SetOnBaseOfSlot">DynamicThing.SetOnBaseOfSlot()</a>
@@ -560,6 +568,9 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ShouldIgnite_Assets_Scripts_Atmospherics_Atmosphere_">DynamicThing.ShouldIgnite(Atmosphere)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsHiddenInParentSlot">DynamicThing.IsHiddenInParentSlot()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnFireTick">DynamicThing.OnFireTick()</a>
@@ -652,13 +663,13 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsNetworkUpdate">DynamicThing.IsNetworkUpdate()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_BuildOwnerUpdate_Assets_Scripts_Networking_RocketBinaryWriter_">DynamicThing.BuildOwnerUpdate(RocketBinaryWriter)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ProcessOwnerUpdate_Assets_Scripts_Networking_RocketBinaryReader_">DynamicThing.ProcessOwnerUpdate(RocketBinaryReader)</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_SerializeOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">DynamicThing.SerializeOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnFinishedThingSync">DynamicThing.OnFinishedThingSync()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DeserializeOnJoin_Assets_Scripts_Networking_RocketBinaryReader_">DynamicThing.DeserializeOnJoin(RocketBinaryReader)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnFinishedLoad">DynamicThing.OnFinishedLoad()</a>
@@ -676,7 +687,16 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DoWeatherDamage_System_Single_">DynamicThing.DoWeatherDamage(float)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ApplyLavaDamage">DynamicThing.ApplyLavaDamage()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CheckForCollectorProximity">DynamicThing.CheckForCollectorProximity()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanThread">DynamicThing.CanThread()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DebugName">DynamicThing.DebugName()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanTogglePower">DynamicThing.CanTogglePower</a>
@@ -697,9 +717,6 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_UnEquipSoundHash">DynamicThing.UnEquipSoundHash</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ChunkGenerationRadius">DynamicThing.ChunkGenerationRadius</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ConvectionFactor">DynamicThing.ConvectionFactor</a>
     </div>
     <div>
@@ -716,9 +733,6 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_HasAtmosphere">DynamicThing.HasAtmosphere</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsChunkRendered">DynamicThing.IsChunkRendered</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RootParent">DynamicThing.RootParent</a>
@@ -757,7 +771,7 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RotationLerpRate">DynamicThing.RotationLerpRate</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PreviousPosition">DynamicThing.PreviousPosition</a>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PreviousLodRequestPosition">DynamicThing.PreviousLodRequestPosition</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_LodRequesterId">DynamicThing.LodRequesterId</a>
@@ -793,6 +807,15 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RegisteredCollector">DynamicThing.RegisteredCollector</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsInLava">DynamicThing.IsInLava</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_LavaDamage">DynamicThing.LavaDamage</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ThreadCost">DynamicThing.ThreadCost</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnManufactured">DynamicThing.OnManufactured</a>
     </div>
     <div>
@@ -808,10 +831,13 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnCollision">DynamicThing.OnCollision</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllPhysicalThings">Thing.AllPhysicalThings</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PhysicalPoolActive">Thing.PhysicalPoolActive</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllILights">Thing.AllILights</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllIWearableLights">Thing.AllIWearableLights</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SuppressSound">Thing.SuppressSound</a>
@@ -874,12 +900,6 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_WillSave">Thing.WillSave</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChange">Thing.OnPositionChange</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChangeLava">Thing.OnPositionChangeLava</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_position">Thing.position</a>
     </div>
     <div>
@@ -920,9 +940,6 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__customMaterials">Thing._customMaterials</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PaintableMaterial">Thing.PaintableMaterial</a>
@@ -1007,9 +1024,6 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnimTask">Thing.ErrorAnimTask</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalGrid">Thing.LocalGrid</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_BoundingSphereCenter">Thing.BoundingSphereCenter</a>
@@ -1309,6 +1323,9 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
     </div>
     <div>
@@ -1354,7 +1371,7 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildBatteryCellChange_Assets_Scripts_Objects_Items_BatteryCell_">Thing.OnChildBatteryCellChange(BatteryCell)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindMiningBeltOnParent">Thing.FindMiningBeltOnParent()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAvailableDirtCanister">Thing.FindAvailableDirtCanister()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsState_Assets_Scripts_Objects_InteractableType_System_Int32_">Thing.IsState(InteractableType, int)</a>
@@ -1375,6 +1392,9 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableUpdated_Assets_Scripts_Objects_Interactable_">Thing.OnInteractableUpdated(Interactable)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ValidateOnLoad_System_Int32_">Thing.ValidateOnLoad(int)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnFinishedInteractionSync_Assets_Scripts_Objects_Interactable_">Thing.OnFinishedInteractionSync(Interactable)</a>
     </div>
     <div>
@@ -1388,6 +1408,9 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RemoveAccess_System_Int32_">Thing.RemoveAccess(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshOnOffAnimState_System_Boolean_">Thing.RefreshOnOffAnimState(bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshAnimState_System_Boolean_">Thing.RefreshAnimState(bool)</a>
@@ -1486,6 +1509,9 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HandleCollisionWith_Assets_Scripts_Objects_Thing_System_Boolean_">Thing.HandleCollisionWith(Thing, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsAudible">Thing.IsAudible()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InitializeDamageState">Thing.InitializeDamageState()</a>
     </div>
     <div>
@@ -1501,9 +1527,6 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateLodFlares">Thing.UpdateLodFlares()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnAroundChunk">Thing.SpawnAroundChunk()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ScheduleGridEventFromThread_Assets_Scripts_GridSystem_GridEvent_">Thing.ScheduleGridEventFromThread(GridEvent)</a>
     </div>
     <div>
@@ -1511,6 +1534,12 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetDamageColor">Thing.GetDamageColor()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
@@ -1699,7 +1728,7 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Remove_Sound_PooledAudioSource_">Thing.Remove(PooledAudioSource)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoint_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoint(RocketBinaryWriter)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Thing_">Thing.GetNextFreeSlot(Thing)</a>
@@ -1724,9 +1753,6 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReferenceId">Thing.ReferenceId</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllThings">Thing.AllThings</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
@@ -1804,6 +1830,9 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventStateChange">Thing.PreventStateChange</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetLocalBounds">Thing.GetLocalBounds</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Position">Thing.Position</a>
     </div>
     <div>
@@ -1834,7 +1863,13 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CustomName">Thing.CustomName</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DisplayName">Thing.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnableName">Thing.SpawnableName</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ProfilerTag">Thing.ProfilerTag</a>
@@ -1859,6 +1894,9 @@ Class WheeledBase
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OccludeAudio">Thing.OccludeAudio</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnId">Thing.SpawnId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
@@ -2014,7 +2052,7 @@ Class WheeledBase
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsInstantiated">Thing.IsInstantiated</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ForceUseColorSwatchMaterial">Thing.ForceUseColorSwatchMaterial</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AudioDistanceSquared">Thing.AudioDistanceSquared</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsBeingDestroyed">Thing.IsBeingDestroyed</a>
@@ -2329,6 +2367,36 @@ public float CurrentSteeringAngle</code></pre>
 
 
 
+  <h3 id="Assets_Scripts_Vehicles_WheeledBase_LastAnimationUpdate" data-uid="Assets.Scripts.Vehicles.WheeledBase.LastAnimationUpdate">
+  LastAnimationUpdate
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RoverUpdate LastAnimationUpdate</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.Vehicles.RoverUpdate.html">RoverUpdate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Assets_Scripts_Vehicles_WheeledBase_MaxTurnAngle" data-uid="Assets.Scripts.Vehicles.WheeledBase.MaxTurnAngle">
   MaxTurnAngle
   
@@ -2512,6 +2580,68 @@ public float CurrentSteeringAngle</code></pre>
 </h2>
 
 
+  <a id="Assets_Scripts_Vehicles_WheeledBase_LastValidPlayablePosition_" data-uid="Assets.Scripts.Vehicles.WheeledBase.LastValidPlayablePosition*"></a>
+
+  <h3 id="Assets_Scripts_Vehicles_WheeledBase_LastValidPlayablePosition" data-uid="Assets.Scripts.Vehicles.WheeledBase.LastValidPlayablePosition">
+  LastValidPlayablePosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 LastValidPlayablePosition { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Vector2.html">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Vehicles_WheeledBase_PlayableAreaState_" data-uid="Assets.Scripts.Vehicles.WheeledBase.PlayableAreaState*"></a>
+
+  <h3 id="Assets_Scripts_Vehicles_WheeledBase_PlayableAreaState" data-uid="Assets.Scripts.Vehicles.WheeledBase.PlayableAreaState">
+  PlayableAreaState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayableAreaRule PlayableAreaState { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PlayableAreaRule.html">PlayableAreaRule</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Vehicles_WheeledBase_TargetBrakePower_" data-uid="Assets.Scripts.Vehicles.WheeledBase.TargetBrakePower*"></a>
 
   <h3 id="Assets_Scripts_Vehicles_WheeledBase_TargetBrakePower" data-uid="Assets.Scripts.Vehicles.WheeledBase.TargetBrakePower">
@@ -2523,8 +2653,7 @@ public float CurrentSteeringAngle</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ByteArraySync]
-public float TargetBrakePower { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float TargetBrakePower { get; set; }</code></pre>
   </div>
 
 
@@ -2555,8 +2684,7 @@ public float TargetBrakePower { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ByteArraySync]
-public float TargetMotorPower { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float TargetMotorPower { get; set; }</code></pre>
   </div>
 
 
@@ -2587,8 +2715,7 @@ public float TargetMotorPower { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ByteArraySync]
-public float TargetSteeringAngle { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float TargetSteeringAngle { get; set; }</code></pre>
   </div>
 
 
@@ -2612,6 +2739,37 @@ public float TargetSteeringAngle { get; set; }</code></pre>
 </h2>
 
 
+  <a id="Assets_Scripts_Vehicles_WheeledBase_BuildOwnerUpdate_" data-uid="Assets.Scripts.Vehicles.WheeledBase.BuildOwnerUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Vehicles_WheeledBase_BuildOwnerUpdate_Assets_Scripts_Networking_RocketBinaryWriter_" data-uid="Assets.Scripts.Vehicles.WheeledBase.BuildOwnerUpdate(Assets.Scripts.Networking.RocketBinaryWriter)">
+  BuildOwnerUpdate(RocketBinaryWriter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BuildOwnerUpdate(RocketBinaryWriter writer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>writer</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryWriter.html">RocketBinaryWriter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Vehicles_WheeledBase_BuildUpdate_" data-uid="Assets.Scripts.Vehicles.WheeledBase.BuildUpdate*"></a>
 
   <h3 id="Assets_Scripts_Vehicles_WheeledBase_BuildUpdate_Assets_Scripts_Networking_RocketBinaryWriter_System_UInt16_" data-uid="Assets.Scripts.Vehicles.WheeledBase.BuildUpdate(Assets.Scripts.Networking.RocketBinaryWriter,System.UInt16)">
@@ -2631,37 +2789,6 @@ public float TargetSteeringAngle { get; set; }</code></pre>
     <dt><code>writer</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryWriter.html">RocketBinaryWriter</a></dt>
     <dd></dd>
     <dt><code>networkUpdateType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_Vehicles_WheeledBase_DeserializeOnJoin_" data-uid="Assets.Scripts.Vehicles.WheeledBase.DeserializeOnJoin*"></a>
-
-  <h3 id="Assets_Scripts_Vehicles_WheeledBase_DeserializeOnJoin_Assets_Scripts_Networking_RocketBinaryReader_" data-uid="Assets.Scripts.Vehicles.WheeledBase.DeserializeOnJoin(Assets.Scripts.Networking.RocketBinaryReader)">
-  DeserializeOnJoin(RocketBinaryReader)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void DeserializeOnJoin(RocketBinaryReader reader)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>reader</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryReader.html">RocketBinaryReader</a></dt>
     <dd></dd>
   </dl>
 
@@ -2764,6 +2891,68 @@ public float TargetSteeringAngle { get; set; }</code></pre>
 
 
 
+  <a id="Assets_Scripts_Vehicles_WheeledBase_ProcessOwnerUpdate_" data-uid="Assets.Scripts.Vehicles.WheeledBase.ProcessOwnerUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Vehicles_WheeledBase_ProcessOwnerUpdate_Assets_Scripts_Networking_RocketBinaryReader_" data-uid="Assets.Scripts.Vehicles.WheeledBase.ProcessOwnerUpdate(Assets.Scripts.Networking.RocketBinaryReader)">
+  ProcessOwnerUpdate(RocketBinaryReader)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ProcessOwnerUpdate(RocketBinaryReader reader)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>reader</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryReader.html">RocketBinaryReader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Vehicles_WheeledBase_ProcessPhysicsUpdate_" data-uid="Assets.Scripts.Vehicles.WheeledBase.ProcessPhysicsUpdate*"></a>
+
+  <h3 id="Assets_Scripts_Vehicles_WheeledBase_ProcessPhysicsUpdate_Assets_Scripts_Networking_DynamicThingPosition_" data-uid="Assets.Scripts.Vehicles.WheeledBase.ProcessPhysicsUpdate(Assets.Scripts.Networking.DynamicThingPosition)">
+  ProcessPhysicsUpdate(DynamicThingPosition)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ProcessPhysicsUpdate(DynamicThingPosition updateData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>updateData</code> <a class="xref" href="Assets.Scripts.Networking.DynamicThingPosition.html">DynamicThingPosition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Vehicles_WheeledBase_ProcessUpdate_" data-uid="Assets.Scripts.Vehicles.WheeledBase.ProcessUpdate*"></a>
 
   <h3 id="Assets_Scripts_Vehicles_WheeledBase_ProcessUpdate_Assets_Scripts_Networking_RocketBinaryReader_System_UInt16_" data-uid="Assets.Scripts.Vehicles.WheeledBase.ProcessUpdate(Assets.Scripts.Networking.RocketBinaryReader,System.UInt16)">
@@ -2785,63 +2974,6 @@ public float TargetSteeringAngle { get; set; }</code></pre>
     <dt><code>networkUpdateType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_Vehicles_WheeledBase_SerializeOnJoin_" data-uid="Assets.Scripts.Vehicles.WheeledBase.SerializeOnJoin*"></a>
-
-  <h3 id="Assets_Scripts_Vehicles_WheeledBase_SerializeOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_" data-uid="Assets.Scripts.Vehicles.WheeledBase.SerializeOnJoin(Assets.Scripts.Networking.RocketBinaryWriter)">
-  SerializeOnJoin(RocketBinaryWriter)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void SerializeOnJoin(RocketBinaryWriter writer)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>writer</code> <a class="xref" href="Assets.Scripts.Networking.RocketBinaryWriter.html">RocketBinaryWriter</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_Vehicles_WheeledBase_UpdateEachFrame_" data-uid="Assets.Scripts.Vehicles.WheeledBase.UpdateEachFrame*"></a>
-
-  <h3 id="Assets_Scripts_Vehicles_WheeledBase_UpdateEachFrame" data-uid="Assets.Scripts.Vehicles.WheeledBase.UpdateEachFrame">
-  UpdateEachFrame()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void UpdateEachFrame()</code></pre>
-  </div>
-
 
 
 

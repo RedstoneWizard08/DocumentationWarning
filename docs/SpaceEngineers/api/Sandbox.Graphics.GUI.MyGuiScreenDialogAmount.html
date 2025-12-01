@@ -563,8 +563,8 @@ Class MyGuiScreenDialogAmount
 
   <a id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount__ctor_" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.#ctor*"></a>
 
-  <h3 id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount__ctor_System_Single_System_Single_VRage_Utils_MyStringId_System_Int32_System_Boolean_System_Nullable_System_Single__System_Single_System_Single_System_Single_" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.#ctor(System.Single,System.Single,VRage.Utils.MyStringId,System.Int32,System.Boolean,System.Nullable{System.Single},System.Single,System.Single,System.Single)">
-  MyGuiScreenDialogAmount(float, float, MyStringId, int, bool, float?, float, float, float)
+  <h3 id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount__ctor_System_Single_System_Single_VRage_Utils_MyStringId_System_Int32_System_Boolean_System_Nullable_System_Single__System_Single_System_Single_System_Single_System_Action_System_Text_StringBuilder_System_Single__System_Func_System_String_System_Boolean_System_Nullable_System_Single___" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.#ctor(System.Single,System.Single,VRage.Utils.MyStringId,System.Int32,System.Boolean,System.Nullable{System.Single},System.Single,System.Single,System.Single,System.Action{System.Text.StringBuilder,System.Single},System.Func{System.String,System.Boolean,System.Nullable{System.Single}})">
+  MyGuiScreenDialogAmount(float, float, MyStringId, int, bool, float?, float, float, float, Action&lt;StringBuilder, float&gt;, Func&lt;string, bool, float?&gt;)
   
   </h3>
 
@@ -572,7 +572,7 @@ Class MyGuiScreenDialogAmount
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MyGuiScreenDialogAmount(float min, float max, MyStringId caption, int minMaxDecimalDigits = 3, bool parseAsInteger = false, float? defaultAmount = null, float backgroundTransition = 0, float guiTransition = 0, float incrementStep = 1)</code></pre>
+    <pre><code class="lang-csharp hljs">public MyGuiScreenDialogAmount(float min, float max, MyStringId caption, int minMaxDecimalDigits = 3, bool parseAsInteger = false, float? defaultAmount = null, float backgroundTransition = 0, float guiTransition = 0, float incrementStep = 1, Action&lt;StringBuilder, float&gt; writer = null, Func&lt;string, bool, float?&gt; parser = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -595,6 +595,10 @@ Class MyGuiScreenDialogAmount
     <dd></dd>
     <dt><code>incrementStep</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
+    <dt><code>writer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>parser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?&gt;</dt>
+    <dd></dd>
   </dl>
 
 
@@ -608,8 +612,110 @@ Class MyGuiScreenDialogAmount
 
 
 
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount_m_parser" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.m_parser">
+  m_parser
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;string, bool, float?&gt; m_parser</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount_m_writer" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.m_writer">
+  m_writer
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;StringBuilder, float&gt; m_writer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.stringbuilder">StringBuilder</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
+
+
+  <a id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount_DefaultParser_" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.DefaultParser*"></a>
+
+  <h3 id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount_DefaultParser_System_String_System_Boolean_" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.DefaultParser(System.String,System.Boolean)">
+  DefaultParser(string, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float? DefaultParser(string text, bool parseAsInt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>parseAsInt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="Sandbox_Graphics_GUI_MyGuiScreenDialogAmount_GetFriendlyName_" data-uid="Sandbox.Graphics.GUI.MyGuiScreenDialogAmount.GetFriendlyName*"></a>

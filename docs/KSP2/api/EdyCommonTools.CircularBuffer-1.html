@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CircularBuffer&lt;T&gt; | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CircularBuffer&lt;T&gt; | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="EdyCommonTools.CircularBuffer`1">
+
+
+
+  <h1 id="EdyCommonTools_CircularBuffer_1" data-uid="EdyCommonTools.CircularBuffer`1" class="text-break">
+Class CircularBuffer&lt;T&gt;  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="EdyCommonTools.html">EdyCommonTools</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CircularBuffer&lt;T&gt; : ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, ICollection, IEnumerable</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CircularBuffer&lt;T&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.Extensions.html#DefaultNamespace_Extensions_Count__1_System_Collections_Generic_IEnumerable___0__">Extensions.Count&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Aggregate__1_System_Collections_Generic_IEnumerable___0__System_Func___0___0___0__">Enumerable.Aggregate&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TSource, TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Aggregate__2_System_Collections_Generic_IEnumerable___0____1_System_Func___1___0___1__">Enumerable.Aggregate&lt;TSource, TAccumulate&gt;(IEnumerable&lt;TSource&gt;, TAccumulate, Func&lt;TAccumulate, TSource, TAccumulate&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Aggregate__3_System_Collections_Generic_IEnumerable___0____1_System_Func___1___0___1__System_Func___1___2__">Enumerable.Aggregate&lt;TSource, TAccumulate, TResult&gt;(IEnumerable&lt;TSource&gt;, TAccumulate, Func&lt;TAccumulate, TSource, TAccumulate&gt;, Func&lt;TAccumulate, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_All__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.All&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Any__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Any&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Any__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Any&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_AsEnumerable__1_System_Collections_Generic_IEnumerable___0__">Enumerable.AsEnumerable&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Concat__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Concat&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Contains__1_System_Collections_Generic_IEnumerable___0____0_">Enumerable.Contains&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, TSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Contains__1_System_Collections_Generic_IEnumerable___0____0_System_Collections_Generic_IEqualityComparer___0__">Enumerable.Contains&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, TSource, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Count__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Count&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Count__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Count&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_DefaultIfEmpty__1_System_Collections_Generic_IEnumerable___0__">Enumerable.DefaultIfEmpty&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_DefaultIfEmpty__1_System_Collections_Generic_IEnumerable___0____0_">Enumerable.DefaultIfEmpty&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, TSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Distinct__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Distinct&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Distinct__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Distinct&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ElementAtOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.ElementAtOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ElementAt__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.ElementAt&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Except__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Except&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Except__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Except&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_FirstOrDefault__1_System_Collections_Generic_IEnumerable___0__">Enumerable.FirstOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_FirstOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.FirstOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_First__1_System_Collections_Generic_IEnumerable___0__">Enumerable.First&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_First__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.First&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.GroupBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___1_System_Collections_Generic_IEnumerable___0____2__">Enumerable.GroupBy&lt;TSource, TKey, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___1_System_Collections_Generic_IEnumerable___0____2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__">Enumerable.GroupBy&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__4_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Func___1_System_Collections_Generic_IEnumerable___2____3__">Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__4_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Func___1_System_Collections_Generic_IEnumerable___2____3__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupJoin__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0_System_Collections_Generic_IEnumerable___1____3__">Enumerable.GroupJoin&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, IEnumerable&lt;TInner&gt;, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupJoin__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0_System_Collections_Generic_IEnumerable___1____3__System_Collections_Generic_IEqualityComparer___2__">Enumerable.GroupJoin&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, IEnumerable&lt;TInner&gt;, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Intersect__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Intersect&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Intersect__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Intersect&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Join__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0___1___3__">Enumerable.Join&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, TInner, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Join__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0___1___3__System_Collections_Generic_IEqualityComparer___2__">Enumerable.Join&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, TInner, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LastOrDefault__1_System_Collections_Generic_IEnumerable___0__">Enumerable.LastOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LastOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.LastOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Last__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Last&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Last__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Last&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LongCount__1_System_Collections_Generic_IEnumerable___0__">Enumerable.LongCount&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LongCount__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.LongCount&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.Max&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.Min&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderByDescending__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.OrderByDescending&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderByDescending__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IComparer___1__">Enumerable.OrderByDescending&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.OrderBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IComparer___1__">Enumerable.OrderBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Reverse__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Reverse&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___1___">Enumerable.SelectMany&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, IEnumerable&lt;TResult&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Collections_Generic_IEnumerable___1___">Enumerable.SelectMany&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, IEnumerable&lt;TResult&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__3_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___1___System_Func___0___1___2__">Enumerable.SelectMany&lt;TSource, TCollection, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, IEnumerable&lt;TCollection&gt;&gt;, Func&lt;TSource, TCollection, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__3_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Collections_Generic_IEnumerable___1___System_Func___0___1___2__">Enumerable.SelectMany&lt;TSource, TCollection, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, IEnumerable&lt;TCollection&gt;&gt;, Func&lt;TSource, TCollection, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Select__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32___1__">Enumerable.Select&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Select__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.Select&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SequenceEqual__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.SequenceEqual&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SequenceEqual__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.SequenceEqual&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SingleOrDefault__1_System_Collections_Generic_IEnumerable___0__">Enumerable.SingleOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SingleOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.SingleOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Single__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Single&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Single__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Single&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SkipWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.SkipWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SkipWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Boolean__">Enumerable.SkipWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Skip__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.Skip&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_TakeWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.TakeWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_TakeWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Boolean__">Enumerable.TakeWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Take__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.Take&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToArray__1_System_Collections_Generic_IEnumerable___0__">Enumerable.ToArray&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.ToDictionary&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToDictionary&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__">Enumerable.ToDictionary&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToDictionary&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToList__1_System_Collections_Generic_IEnumerable___0__">Enumerable.ToList&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.ToLookup&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToLookup&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__">Enumerable.ToLookup&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToLookup&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Union__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Union&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Union__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Union&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Where__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Where&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Where__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Boolean__">Enumerable.Where&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Cast__1_System_Collections_IEnumerable_">Enumerable.Cast&lt;TResult&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OfType__1_System_Collections_IEnumerable_">Enumerable.OfType&lt;TResult&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="EdyCommonTools_CircularBuffer_1__ctor_" data-uid="EdyCommonTools.CircularBuffer`1.#ctor*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1__ctor_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.#ctor(System.Int32)">
+  CircularBuffer(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CircularBuffer(int m_capacity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>m_capacity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1__ctor_" data-uid="EdyCommonTools.CircularBuffer`1.#ctor*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1__ctor_System_Int32_System_Boolean_" data-uid="EdyCommonTools.CircularBuffer`1.#ctor(System.Int32,System.Boolean)">
+  CircularBuffer(int, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CircularBuffer(int capacity, bool allowOverflow)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>capacity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>allowOverflow</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_allowOverflow_" data-uid="EdyCommonTools.CircularBuffer`1.allowOverflow*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_allowOverflow" data-uid="EdyCommonTools.CircularBuffer`1.allowOverflow">
+  allowOverflow
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool allowOverflow { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_capacity_" data-uid="EdyCommonTools.CircularBuffer`1.capacity*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_capacity" data-uid="EdyCommonTools.CircularBuffer`1.capacity">
+  capacity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int capacity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_headIdx_" data-uid="EdyCommonTools.CircularBuffer`1.headIdx*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_headIdx" data-uid="EdyCommonTools.CircularBuffer`1.headIdx">
+  headIdx
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int headIdx { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_size_" data-uid="EdyCommonTools.CircularBuffer`1.size*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_size" data-uid="EdyCommonTools.CircularBuffer`1.size">
+  size
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int size { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_tailIdx_" data-uid="EdyCommonTools.CircularBuffer`1.tailIdx*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_tailIdx" data-uid="EdyCommonTools.CircularBuffer`1.tailIdx">
+  tailIdx
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int tailIdx { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Clear_" data-uid="EdyCommonTools.CircularBuffer`1.Clear*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Clear" data-uid="EdyCommonTools.CircularBuffer`1.Clear">
+  Clear()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Contains_" data-uid="EdyCommonTools.CircularBuffer`1.Contains*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Contains__0_" data-uid="EdyCommonTools.CircularBuffer`1.Contains(`0)">
+  Contains(T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_CopyTo_" data-uid="EdyCommonTools.CircularBuffer`1.CopyTo*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_CopyTo_System_Int32__0___System_Int32_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.CopyTo(System.Int32,`0[],System.Int32,System.Int32)">
+  CopyTo(int, T[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(int index, T[] array, int arrayIndex, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>array</code> T[]</dt>
+    <dd></dd>
+    <dt><code>arrayIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_CopyTo_" data-uid="EdyCommonTools.CircularBuffer`1.CopyTo*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_CopyTo__0___" data-uid="EdyCommonTools.CircularBuffer`1.CopyTo(`0[])">
+  CopyTo(T[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(T[] array)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> T[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_CopyTo_" data-uid="EdyCommonTools.CircularBuffer`1.CopyTo*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_CopyTo__0___System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.CopyTo(`0[],System.Int32)">
+  CopyTo(T[], int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(T[] array, int arrayIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> T[]</dt>
+    <dd></dd>
+    <dt><code>arrayIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Get_" data-uid="EdyCommonTools.CircularBuffer`1.Get*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Get" data-uid="EdyCommonTools.CircularBuffer`1.Get">
+  Get()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Get()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Get_" data-uid="EdyCommonTools.CircularBuffer`1.Get*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Get_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.Get(System.Int32)">
+  Get(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] Get(int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>T[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Get_" data-uid="EdyCommonTools.CircularBuffer`1.Get*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Get__0___" data-uid="EdyCommonTools.CircularBuffer`1.Get(`0[])">
+  Get(T[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Get(T[] dst)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dst</code> T[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Get_" data-uid="EdyCommonTools.CircularBuffer`1.Get*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Get__0___System_Int32_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.Get(`0[],System.Int32,System.Int32)">
+  Get(T[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Get(T[] dst, int dstOffset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dst</code> T[]</dt>
+    <dd></dd>
+    <dt><code>dstOffset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_GetBuffer_" data-uid="EdyCommonTools.CircularBuffer`1.GetBuffer*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_GetBuffer" data-uid="EdyCommonTools.CircularBuffer`1.GetBuffer">
+  GetBuffer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] GetBuffer()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>T[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_GetEnumerator_" data-uid="EdyCommonTools.CircularBuffer`1.GetEnumerator*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_GetEnumerator" data-uid="EdyCommonTools.CircularBuffer`1.GetEnumerator">
+  GetEnumerator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Head_" data-uid="EdyCommonTools.CircularBuffer`1.Head*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Head" data-uid="EdyCommonTools.CircularBuffer`1.Head">
+  Head()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Head()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_IndexOf_" data-uid="EdyCommonTools.CircularBuffer`1.IndexOf*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_IndexOf__0_" data-uid="EdyCommonTools.CircularBuffer`1.IndexOf(`0)">
+  IndexOf(T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IndexOf(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Peek_" data-uid="EdyCommonTools.CircularBuffer`1.Peek*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Peek_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.Peek(System.Int32)">
+  Peek(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Peek(int offset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Put_" data-uid="EdyCommonTools.CircularBuffer`1.Put*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Put__0_" data-uid="EdyCommonTools.CircularBuffer`1.Put(`0)">
+  Put(T)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Put(T item)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Put_" data-uid="EdyCommonTools.CircularBuffer`1.Put*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Put__0___" data-uid="EdyCommonTools.CircularBuffer`1.Put(`0[])">
+  Put(T[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Put(T[] src)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> T[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Put_" data-uid="EdyCommonTools.CircularBuffer`1.Put*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Put__0___System_Int32_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.Put(`0[],System.Int32,System.Int32)">
+  Put(T[], int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Put(T[] src, int srcOffset, int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> T[]</dt>
+    <dd></dd>
+    <dt><code>srcOffset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_RemoveAt_" data-uid="EdyCommonTools.CircularBuffer`1.RemoveAt*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_RemoveAt_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.RemoveAt(System.Int32)">
+  RemoveAt(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAt(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Skip_" data-uid="EdyCommonTools.CircularBuffer`1.Skip*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Skip_System_Int32_" data-uid="EdyCommonTools.CircularBuffer`1.Skip(System.Int32)">
+  Skip(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Skip(int count)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_Tail_" data-uid="EdyCommonTools.CircularBuffer`1.Tail*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_Tail" data-uid="EdyCommonTools.CircularBuffer`1.Tail">
+  Tail()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Tail()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EdyCommonTools_CircularBuffer_1_ToArray_" data-uid="EdyCommonTools.CircularBuffer`1.ToArray*"></a>
+
+  <h3 id="EdyCommonTools_CircularBuffer_1_ToArray" data-uid="EdyCommonTools.CircularBuffer`1.ToArray">
+  ToArray()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] ToArray()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>T[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -102,7 +102,7 @@ Class StoryGoalScheduler
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class StoryGoalScheduler : MonoBehaviour</code></pre>
+public class StoryGoalScheduler : MonoBehaviour, IProtoEventListener</code></pre>
   </div>
 
 
@@ -120,6 +120,12 @@ public class StoryGoalScheduler : MonoBehaviour</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.IProtoEventListener.html">IProtoEventListener</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -218,6 +224,36 @@ public class StoryGoalScheduler : MonoBehaviour</code></pre>
 
 
 
+  <h3 id="Story_StoryGoalScheduler_listeners" data-uid="Story.StoryGoalScheduler.listeners">
+  listeners
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly HashSet&lt;IStoryGoalScheduleListener&gt; listeners</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1">HashSet</a>&lt;<a class="xref" href="IStoryGoalScheduleListener.html">IStoryGoalScheduleListener</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Story_StoryGoalScheduler_paused" data-uid="Story.StoryGoalScheduler.paused">
   paused
   
@@ -267,6 +303,37 @@ public readonly List&lt;ScheduledGoal&gt; schedule</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Story.ScheduledGoal.html">ScheduledGoal</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Story_StoryGoalScheduler_storyGoalManager" data-uid="Story.StoryGoalScheduler.storyGoalManager">
+  storyGoalManager
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+public StoryGoalManager storyGoalManager</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Story.StoryGoalManager.html">StoryGoalManager</a></dt>
     <dd></dd>
   </dl>
 
@@ -348,6 +415,37 @@ public int version</code></pre>
 </h2>
 
 
+  <a id="Story_StoryGoalScheduler_AddListener_" data-uid="Story.StoryGoalScheduler.AddListener*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_AddListener_IStoryGoalScheduleListener_" data-uid="Story.StoryGoalScheduler.AddListener(IStoryGoalScheduleListener)">
+  AddListener(IStoryGoalScheduleListener)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddListener(IStoryGoalScheduleListener listener)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>listener</code> <a class="xref" href="DefaultNamespace.IStoryGoalScheduleListener.html">IStoryGoalScheduleListener</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Story_StoryGoalScheduler_Awake_" data-uid="Story.StoryGoalScheduler.Awake*"></a>
 
   <h3 id="Story_StoryGoalScheduler_Awake" data-uid="Story.StoryGoalScheduler.Awake">
@@ -363,6 +461,42 @@ public int version</code></pre>
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoalScheduler_CanPlayNow_" data-uid="Story.StoryGoalScheduler.CanPlayNow*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_CanPlayNow_Story_ScheduledGoal_" data-uid="Story.StoryGoalScheduler.CanPlayNow(Story.ScheduledGoal)">
+  CanPlayNow(ScheduledGoal)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanPlayNow(ScheduledGoal entry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entry</code> <a class="xref" href="Story.ScheduledGoal.html">ScheduledGoal</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -392,6 +526,140 @@ public int version</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Story.ScheduledGoal.html">ScheduledGoal</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoalScheduler_GetScheduledGoal_" data-uid="Story.StoryGoalScheduler.GetScheduledGoal*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_GetScheduledGoal_System_String_" data-uid="Story.StoryGoalScheduler.GetScheduledGoal(System.String)">
+  GetScheduledGoal(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScheduledGoal GetScheduledGoal(string goalKey)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>goalKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Story.ScheduledGoal.html">ScheduledGoal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoalScheduler_IsGoalScheduled_" data-uid="Story.StoryGoalScheduler.IsGoalScheduled*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_IsGoalScheduled_System_String_" data-uid="Story.StoryGoalScheduler.IsGoalScheduled(System.String)">
+  IsGoalScheduled(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsGoalScheduled(string key)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoalScheduler_IsPlayerInBase_" data-uid="Story.StoryGoalScheduler.IsPlayerInBase*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_IsPlayerInBase" data-uid="Story.StoryGoalScheduler.IsPlayerInBase">
+  IsPlayerInBase()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPlayerInBase()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoalScheduler_IsPlayerSafe_" data-uid="Story.StoryGoalScheduler.IsPlayerSafe*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_IsPlayerSafe" data-uid="Story.StoryGoalScheduler.IsPlayerSafe">
+  IsPlayerSafe()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPlayerSafe()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -462,6 +730,37 @@ public int version</code></pre>
 
 
 
+  <a id="Story_StoryGoalScheduler_RemoveListener_" data-uid="Story.StoryGoalScheduler.RemoveListener*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_RemoveListener_IStoryGoalScheduleListener_" data-uid="Story.StoryGoalScheduler.RemoveListener(IStoryGoalScheduleListener)">
+  RemoveListener(IStoryGoalScheduleListener)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveListener(IStoryGoalScheduleListener listener)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>listener</code> <a class="xref" href="DefaultNamespace.IStoryGoalScheduleListener.html">IStoryGoalScheduleListener</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Story_StoryGoalScheduler_Schedule_" data-uid="Story.StoryGoalScheduler.Schedule*"></a>
 
   <h3 id="Story_StoryGoalScheduler_Schedule_Story_StoryGoal_" data-uid="Story.StoryGoalScheduler.Schedule(Story.StoryGoal)">
@@ -507,6 +806,72 @@ public int version</code></pre>
     <pre><code class="lang-csharp hljs">public void Update()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="eii">Explicit Interface Implementations
+</h2>
+
+
+  <a id="Story_StoryGoalScheduler_IProtoEventListener_OnProtoDeserialize_" data-uid="Story.StoryGoalScheduler.IProtoEventListener#OnProtoDeserialize*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_IProtoEventListener_OnProtoDeserialize_ProtobufSerializer_" data-uid="Story.StoryGoalScheduler.IProtoEventListener#OnProtoDeserialize(ProtobufSerializer)">
+  IProtoEventListener.OnProtoDeserialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IProtoEventListener.OnProtoDeserialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Story_StoryGoalScheduler_IProtoEventListener_OnProtoSerialize_" data-uid="Story.StoryGoalScheduler.IProtoEventListener#OnProtoSerialize*"></a>
+
+  <h3 id="Story_StoryGoalScheduler_IProtoEventListener_OnProtoSerialize_ProtobufSerializer_" data-uid="Story.StoryGoalScheduler.IProtoEventListener#OnProtoSerialize(ProtobufSerializer)">
+  IProtoEventListener.OnProtoSerialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IProtoEventListener.OnProtoSerialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

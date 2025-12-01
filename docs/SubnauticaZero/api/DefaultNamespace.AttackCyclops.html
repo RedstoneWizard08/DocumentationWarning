@@ -101,7 +101,7 @@ Class AttackCyclops
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AttackCyclops : CreatureAction</code></pre>
+    <pre><code class="lang-csharp hljs">public class AttackCyclops : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -120,6 +120,12 @@ Class AttackCyclops
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -127,6 +133,9 @@ Class AttackCyclops
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -141,13 +150,13 @@ Class AttackCyclops
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -157,9 +166,6 @@ Class AttackCyclops
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -831,8 +837,8 @@ public LastTarget lastTarget</code></pre>
 
   <a id="DefaultNamespace_AttackCyclops_Evaluate_" data-uid="DefaultNamespace.AttackCyclops.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_AttackCyclops_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.AttackCyclops.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_AttackCyclops_Evaluate_System_Single_" data-uid="DefaultNamespace.AttackCyclops.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -840,13 +846,11 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -885,6 +889,37 @@ public LastTarget lastTarget</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DefaultNamespace.CyclopsDecoy.html">CyclopsDecoy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_AttackCyclops_GetModifiedAttackPause_" data-uid="DefaultNamespace.AttackCyclops.GetModifiedAttackPause*"></a>
+
+  <h3 id="DefaultNamespace_AttackCyclops_GetModifiedAttackPause" data-uid="DefaultNamespace.AttackCyclops.GetModifiedAttackPause">
+  GetModifiedAttackPause()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetModifiedAttackPause()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -1069,7 +1104,7 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnEnable()</code></pre>
+    <pre><code class="lang-csharp hljs">public void OnEnable()</code></pre>
   </div>
 
 
@@ -1117,8 +1152,8 @@ public LastTarget lastTarget</code></pre>
 
   <a id="DefaultNamespace_AttackCyclops_Perform_" data-uid="DefaultNamespace.AttackCyclops.Perform*"></a>
 
-  <h3 id="DefaultNamespace_AttackCyclops_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.AttackCyclops.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_AttackCyclops_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.AttackCyclops.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -1126,13 +1161,11 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -1194,7 +1227,7 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
   </div>
 
 
@@ -1211,8 +1244,8 @@ public LastTarget lastTarget</code></pre>
 
   <a id="DefaultNamespace_AttackCyclops_StartPerform_" data-uid="DefaultNamespace.AttackCyclops.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_AttackCyclops_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.AttackCyclops.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_AttackCyclops_StartPerform_System_Single_" data-uid="DefaultNamespace.AttackCyclops.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -1220,13 +1253,11 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -1270,8 +1301,8 @@ public LastTarget lastTarget</code></pre>
 
   <a id="DefaultNamespace_AttackCyclops_StopPerform_" data-uid="DefaultNamespace.AttackCyclops.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_AttackCyclops_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.AttackCyclops.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_AttackCyclops_StopPerform_System_Single_" data-uid="DefaultNamespace.AttackCyclops.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -1279,13 +1310,11 @@ public LastTarget lastTarget</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

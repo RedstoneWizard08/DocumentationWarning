@@ -1,0 +1,2572 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PatchedNBodyOrbit | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PatchedNBodyOrbit | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.PatchedNBodyOrbit">
+
+
+
+  <h1 id="KSP_Sim_impl_PatchedNBodyOrbit" data-uid="KSP.Sim.impl.PatchedNBodyOrbit" class="text-break">
+Class PatchedNBodyOrbit  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PatchedNBodyOrbit : IPatchedOrbit, IDisposable, IComparable&lt;IPatchedOrbit&gt;, IDynamicOrbit, IOrbit</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PatchedNBodyOrbit</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Sim.IPatchedOrbit.html">IPatchedOrbit</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="KSP.Sim.IPatchedOrbit.html">IPatchedOrbit</a>&gt;</div>
+      <div><a class="xref" href="KSP.Sim.IDynamicOrbit.html">IDynamicOrbit</a></div>
+      <div><a class="xref" href="KSP.Sim.IOrbit.html">IOrbit</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit__ctor_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit__ctor" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.#ctor">
+  PatchedNBodyOrbit()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PatchedNBodyOrbit()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_AArray" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.AArray">
+  AArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;double&gt; AArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_BArray" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.BArray">
+  BArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;double&gt; BArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_BURST_ALLOCATOR_TYPE" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.BURST_ALLOCATOR_TYPE">
+  BURST_ALLOCATOR_TYPE
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const Allocator BURST_ALLOCATOR_TYPE = Persistent</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.Allocator.html">Allocator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_CArray" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.CArray">
+  CArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;double&gt; CArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_EArray" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.EArray">
+  EArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;double&gt; EArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_EncounterBodyIndex" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.EncounterBodyIndex">
+  EncounterBodyIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;int&gt; EncounterBodyIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_ErrorEstimateOrder" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ErrorEstimateOrder">
+  ErrorEstimateOrder
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ErrorEstimateOrder</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_KArray" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.KArray">
+  KArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;PatchedNBody.OdeState&gt; KArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="KSP.Sim.impl.PatchedNBody.html">PatchedNBody</a>.<a class="xref" href="KSP.Sim.impl.PatchedNBody.OdeState.html">OdeState</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_MAX_ITERATIONS" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.MAX_ITERATIONS">
+  MAX_ITERATIONS
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MAX_ITERATIONS = 50</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_OdeChildKeplerBodies" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OdeChildKeplerBodies">
+  OdeChildKeplerBodies
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;PatchedNBody.CelestialBodyPositionJob.KeplerBody&gt; OdeChildKeplerBodies</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NativeList</span>&lt;<a class="xref" href="KSP.Sim.impl.PatchedNBody.html">PatchedNBody</a>.<a class="xref" href="KSP.Sim.impl.PatchedNBody.CelestialBodyPositionJob.html">CelestialBodyPositionJob</a>.<a class="xref" href="KSP.Sim.impl.PatchedNBody.CelestialBodyPositionJob.KeplerBody.html">KeplerBody</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_OdeSolveJob" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OdeSolveJob">
+  OdeSolveJob
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PatchedNBody.OdeSolveJob OdeSolveJob</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PatchedNBody.html">PatchedNBody</a>.<a class="xref" href="KSP.Sim.impl.PatchedNBody.OdeSolveJob.html">OdeSolveJob</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_OdeSolveTerminationStatus" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OdeSolveTerminationStatus">
+  OdeSolveTerminationStatus
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;OdeSolveStatus&gt; OdeSolveTerminationStatus</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="KSP.Sim.impl.OdeSolveStatus.html">OdeSolveStatus</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_PArray" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PArray">
+  PArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;double&gt; PArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_PShape" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PShape">
+  PShape
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int2 PShape</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_PatchEndTransitionNative" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PatchEndTransitionNative">
+  PatchEndTransitionNative
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeArray&lt;PatchTransitionType&gt; PatchEndTransitionNative</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<a class="xref" href="KSP.Sim.PatchTransitionType.html">PatchTransitionType</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_QArray" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.QArray">
+  QArray
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;PatchedNBody.OdeState&gt; QArray</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NativeList</span>&lt;<a class="xref" href="KSP.Sim.impl.PatchedNBody.html">PatchedNBody</a>.<a class="xref" href="KSP.Sim.impl.PatchedNBody.OdeState.html">OdeState</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_TOLERANCE" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.TOLERANCE">
+  TOLERANCE
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const double TOLERANCE = 0.01</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_ActivePatch_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ActivePatch*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_ActivePatch" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ActivePatch">
+  ActivePatch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ActivePatch { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_Apoapsis_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Apoapsis*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_Apoapsis" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Apoapsis">
+  Apoapsis
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Apoapsis { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_ApoapsisArl_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ApoapsisArl*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_ApoapsisArl" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ApoapsisArl">
+  ApoapsisArl
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ApoapsisArl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_ClosestApproachDistance_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ClosestApproachDistance*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_ClosestApproachDistance" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ClosestApproachDistance">
+  ClosestApproachDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ClosestApproachDistance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_EndUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.EndUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_EndUT" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.EndUT">
+  EndUT
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EndUT { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_NextPatch_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.NextPatch*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_NextPatch" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.NextPatch">
+  NextPatch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPatchedOrbit NextPatch { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IPatchedOrbit.html">IPatchedOrbit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_OdeSolution_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OdeSolution*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_OdeSolution" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OdeSolution">
+  OdeSolution
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;PatchedNBody.OdeSolutionComponent&gt; OdeSolution { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">NativeList</span>&lt;<a class="xref" href="KSP.Sim.impl.PatchedNBody.html">PatchedNBody</a>.<a class="xref" href="KSP.Sim.impl.PatchedNBody.OdeSolutionComponent.html">OdeSolutionComponent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_OrbitFrame_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OrbitFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_OrbitFrame" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OrbitFrame">
+  OrbitFrame
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialFrame OrbitFrame { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.CelestialFrame.html">CelestialFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_OrbitMarkerHandler_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OrbitMarkerHandler*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_OrbitMarkerHandler" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OrbitMarkerHandler">
+  OrbitMarkerHandler
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OrbitMarkerHandler OrbitMarkerHandler { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.OrbitMarkerHandler.html">OrbitMarkerHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_PatchEndTransition_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PatchEndTransition*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_PatchEndTransition" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PatchEndTransition">
+  PatchEndTransition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PatchTransitionType PatchEndTransition { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.PatchTransitionType.html">PatchTransitionType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_PatchStartTransition_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PatchStartTransition*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_PatchStartTransition" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PatchStartTransition">
+  PatchStartTransition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PatchTransitionType PatchStartTransition { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.PatchTransitionType.html">PatchTransitionType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_Periapsis_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Periapsis*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_Periapsis" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Periapsis">
+  Periapsis
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Periapsis { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_PeriapsisArl_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PeriapsisArl*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_PeriapsisArl" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PeriapsisArl">
+  PeriapsisArl
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double PeriapsisArl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_Position_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Position*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_Position" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Position">
+  Position
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Position Position { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_PreviousPatch_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PreviousPatch*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_PreviousPatch" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.PreviousPatch">
+  PreviousPatch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPatchedOrbit PreviousPatch { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IPatchedOrbit.html">IPatchedOrbit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_ReferenceFrame_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ReferenceFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_ReferenceFrame" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.ReferenceFrame">
+  ReferenceFrame
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITransformFrame ReferenceFrame { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ITransformFrame.html">ITransformFrame</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_SolverParams_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SolverParams*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_SolverParams" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SolverParams">
+  SolverParams
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PatchedNBodyOrbit.SolverParameters SolverParams { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PatchedNBodyOrbit.html">PatchedNBodyOrbit</a>.<a class="xref" href="KSP.Sim.impl.PatchedNBodyOrbit.SolverParameters.html">SolverParameters</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_SpecificAngularMomentum_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SpecificAngularMomentum*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_SpecificAngularMomentum" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SpecificAngularMomentum">
+  SpecificAngularMomentum
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d SpecificAngularMomentum { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_StartUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.StartUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_StartUT" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.StartUT">
+  StartUT
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double StartUT { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_TimeToAp_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.TimeToAp*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_TimeToAp" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.TimeToAp">
+  TimeToAp
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double TimeToAp { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_TimeToPe_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.TimeToPe*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_TimeToPe" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.TimeToPe">
+  TimeToPe
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double TimeToPe { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_UniversalTimeAtClosestApproach_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UniversalTimeAtClosestApproach*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_UniversalTimeAtClosestApproach" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UniversalTimeAtClosestApproach">
+  UniversalTimeAtClosestApproach
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double UniversalTimeAtClosestApproach { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_UniversalTimeAtSoiEncounter_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UniversalTimeAtSoiEncounter*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_UniversalTimeAtSoiEncounter" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UniversalTimeAtSoiEncounter">
+  UniversalTimeAtSoiEncounter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double UniversalTimeAtSoiEncounter { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_coordinateSystem_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.coordinateSystem*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_coordinateSystem" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.coordinateSystem">
+  coordinateSystem
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICoordinateSystem coordinateSystem { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Api.ICoordinateSystem.html">ICoordinateSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_localPosition_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.localPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_localPosition" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.localPosition">
+  localPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d localPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_referenceBody_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.referenceBody*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_referenceBody" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.referenceBody">
+  referenceBody
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialBodyComponent referenceBody { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_relativeToMotion_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.relativeToMotion*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_relativeToMotion" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.relativeToMotion">
+  relativeToMotion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMotion relativeToMotion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Api.IMotion.html">IMotion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_relativeVelocity_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.relativeVelocity*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_relativeVelocity" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.relativeVelocity">
+  relativeVelocity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector relativeVelocity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_CompareTo_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.CompareTo*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_CompareTo_KSP_Sim_IPatchedOrbit_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.CompareTo(KSP.Sim.IPatchedOrbit)">
+  CompareTo(IPatchedOrbit)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(IPatchedOrbit other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="KSP.Sim.IPatchedOrbit.html">IPatchedOrbit</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_CreateInterpolator_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.CreateInterpolator*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_CreateInterpolator" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.CreateInterpolator">
+  CreateInterpolator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateInterpolator()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_Dispose_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Dispose*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_Dispose" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.Dispose">
+  Dispose()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_DisposeMarkerHandler_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.DisposeMarkerHandler*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_DisposeMarkerHandler" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.DisposeMarkerHandler">
+  DisposeMarkerHandler()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisposeMarkerHandler()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetOrbitalStateVectorsAtUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetOrbitalStateVectorsAtUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetOrbitalStateVectorsAtUT_System_Double_Vector3d__Vector3d__" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetOrbitalStateVectorsAtUT(System.Double,Vector3d@,Vector3d@)">
+  GetOrbitalStateVectorsAtUT(double, out Vector3d, out Vector3d)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double GetOrbitalStateVectorsAtUT(double UT, out Vector3d localPositionZup, out Vector3d relativeVelocityZup)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>localPositionZup</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+    <dt><code>relativeVelocityZup</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetOrbitalVelocityAtUTZup_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetOrbitalVelocityAtUTZup*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetOrbitalVelocityAtUTZup_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetOrbitalVelocityAtUTZup(System.Double)">
+  GetOrbitalVelocityAtUTZup(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetOrbitalVelocityAtUTZup(double UT)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativePositionAtUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativePositionAtUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativePositionAtUT_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativePositionAtUT(System.Double)">
+  GetRelativePositionAtUT(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetRelativePositionAtUT(double UT)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativePositionAtUTZup_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativePositionAtUTZup*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativePositionAtUTZup_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativePositionAtUTZup(System.Double)">
+  GetRelativePositionAtUTZup(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetRelativePositionAtUTZup(double UT)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativePositionFromEccAnomaly_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativePositionFromEccAnomaly*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativePositionFromEccAnomaly_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativePositionFromEccAnomaly(System.Double)">
+  GetRelativePositionFromEccAnomaly(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetRelativePositionFromEccAnomaly(double eccentricAnomaly)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eccentricAnomaly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativeVelocityAtUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativeVelocityAtUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetRelativeVelocityAtUT_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetRelativeVelocityAtUT(System.Double)">
+  GetRelativeVelocityAtUT(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetRelativeVelocityAtUT(double UT)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetTimeToPeriapsis_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTimeToPeriapsis*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetTimeToPeriapsis" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTimeToPeriapsis">
+  GetTimeToPeriapsis()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double GetTimeToPeriapsis()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtT_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtT(System.Double)">
+  GetTruePositionAtT(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Position GetTruePositionAtT(double universalTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>universalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtT_System_Double_KSP_Api_ICoordinateSystem_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtT(System.Double,KSP.Api.ICoordinateSystem)">
+  GetTruePositionAtT(double, ICoordinateSystem)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetTruePositionAtT(double universalTime, ICoordinateSystem coordinateSystem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>universalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>coordinateSystem</code> <a class="xref" href="KSP.Api.ICoordinateSystem.html">ICoordinateSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtUT_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtUT(System.Double)">
+  GetTruePositionAtUT(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Position GetTruePositionAtUT(double universalTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>universalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetTruePositionAtUT_System_Double_KSP_Api_ICoordinateSystem_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetTruePositionAtUT(System.Double,KSP.Api.ICoordinateSystem)">
+  GetTruePositionAtUT(double, ICoordinateSystem)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetTruePositionAtUT(double universalTime, ICoordinateSystem coordinateSystem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>universalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>coordinateSystem</code> <a class="xref" href="KSP.Api.ICoordinateSystem.html">ICoordinateSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_GetVel_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetVel*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_GetVel_KSP_Sim_impl_VesselComponent_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.GetVel(KSP.Sim.impl.VesselComponent)">
+  GetVel(VesselComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetVel(VesselComponent relativeVessel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>relativeVessel</code> <a class="xref" href="KSP.Sim.impl.VesselComponent.html">VesselComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_InitializeMarkerHandler_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.InitializeMarkerHandler*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_InitializeMarkerHandler" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.InitializeMarkerHandler">
+  InitializeMarkerHandler()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitializeMarkerHandler()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_InitializeOdeSolverData_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.InitializeOdeSolverData*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_InitializeOdeSolverData" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.InitializeOdeSolverData">
+  InitializeOdeSolverData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitializeOdeSolverData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_OnOdeSolveComplete_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OnOdeSolveComplete*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_OnOdeSolveComplete_KSP_Sim_PatchTransitionType_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.OnOdeSolveComplete(KSP.Sim.PatchTransitionType)">
+  OnOdeSolveComplete(PatchTransitionType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnOdeSolveComplete(PatchTransitionType patchEndTransitionType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>patchEndTransitionType</code> <a class="xref" href="KSP.Sim.PatchTransitionType.html">PatchTransitionType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_SetReferenceBody_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SetReferenceBody*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_SetReferenceBody_KSP_Sim_impl_CelestialBodyComponent_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SetReferenceBody(KSP.Sim.impl.CelestialBodyComponent)">
+  SetReferenceBody(CelestialBodyComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetReferenceBody(CelestialBodyComponent body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>body</code> <a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_SetSolverParams_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SetSolverParams*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_SetSolverParams_System_Double_System_Double_Unity_Mathematics_double3_Unity_Mathematics_double3_KSP_Sim_impl_CelestialBodyComponent_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SetSolverParams(System.Double,System.Double,Unity.Mathematics.double3,Unity.Mathematics.double3,KSP.Sim.impl.CelestialBodyComponent)">
+  SetSolverParams(double, double, double3, double3, CelestialBodyComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSolverParams(double startUt, double endUt, double3 initialPosition, double3 initialVelocity, CelestialBodyComponent parentBody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startUt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>endUt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>initialPosition</code> <span class="xref">double3</span></dt>
+    <dd></dd>
+    <dt><code>initialVelocity</code> <span class="xref">double3</span></dt>
+    <dd></dd>
+    <dt><code>parentBody</code> <a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_SolveClosestApproach_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SolveClosestApproach*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_SolveClosestApproach_KSP_Sim_IKeplerOrbit_System_Double__System_Double_System_Double_System_Double_System_Double_System_Int32_System_Int32__" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SolveClosestApproach(KSP.Sim.IKeplerOrbit,System.Double@,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32@)">
+  SolveClosestApproach(IKeplerOrbit, ref double, double, double, double, double, int, ref int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SolveClosestApproach(IKeplerOrbit secondaryKeplerOrbit, ref double UT, double dT, double minUt, double maxUt, double epsilon, int maxIterations, ref int iterationCount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>secondaryKeplerOrbit</code> <a class="xref" href="KSP.Sim.IKeplerOrbit.html">IKeplerOrbit</a></dt>
+    <dd></dd>
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>dT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>minUt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>maxUt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>epsilon</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>maxIterations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>iterationCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_SolveSOI_BSP_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SolveSOI_BSP*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_SolveSOI_BSP_KSP_Sim_IKeplerOrbit_System_Double__System_Double_System_Double_System_Double_System_Double_System_Double_System_Int32_System_Int32__" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.SolveSOI_BSP(KSP.Sim.IKeplerOrbit,System.Double@,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32@)">
+  SolveSOI_BSP(IKeplerOrbit, ref double, double, double, double, double, double, int, ref int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SolveSOI_BSP(IKeplerOrbit secondaryKeplerOrbit, ref double UT, double dT, double Rsoi, double MinUT, double MaxUT, double epsilon, int maxIterations, ref int iterationCount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>secondaryKeplerOrbit</code> <a class="xref" href="KSP.Sim.IKeplerOrbit.html">IKeplerOrbit</a></dt>
+    <dd></dd>
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>dT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>Rsoi</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>MinUT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>MaxUT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>epsilon</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>maxIterations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>iterationCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromOrbitAtUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromOrbitAtUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromOrbitAtUT_KSP_Sim_IOrbit_System_Double_KSP_Sim_impl_CelestialBodyComponent_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromOrbitAtUT(KSP.Sim.IOrbit,System.Double,KSP.Sim.impl.CelestialBodyComponent)">
+  UpdateFromOrbitAtUT(IOrbit, double, CelestialBodyComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateFromOrbitAtUT(IOrbit orbit, double UT, CelestialBodyComponent toBody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>orbit</code> <a class="xref" href="KSP.Sim.IOrbit.html">IOrbit</a></dt>
+    <dd></dd>
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>toBody</code> <a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromStateVectors_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromStateVectors*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromStateVectors_KSP_Api_ICoordinateSystem_Vector3d_KSP_Api_IMotion_Vector3d_KSP_Sim_impl_CelestialBodyComponent_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromStateVectors(KSP.Api.ICoordinateSystem,Vector3d,KSP.Api.IMotion,Vector3d,KSP.Sim.impl.CelestialBodyComponent,System.Double)">
+  UpdateFromStateVectors(ICoordinateSystem, Vector3d, IMotion, Vector3d, CelestialBodyComponent, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateFromStateVectors(ICoordinateSystem coordinateSystem, Vector3d pos, IMotion relativeMotion, Vector3d vel, CelestialBodyComponent refBody, double UT)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coordinateSystem</code> <a class="xref" href="KSP.Api.ICoordinateSystem.html">ICoordinateSystem</a></dt>
+    <dd></dd>
+    <dt><code>pos</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+    <dt><code>relativeMotion</code> <a class="xref" href="KSP.Api.IMotion.html">IMotion</a></dt>
+    <dd></dd>
+    <dt><code>vel</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+    <dt><code>refBody</code> <a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromStateVectors_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromStateVectors*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromStateVectors_KSP_Sim_Position_KSP_Sim_Velocity_KSP_Sim_impl_CelestialBodyComponent_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromStateVectors(KSP.Sim.Position,KSP.Sim.Velocity,KSP.Sim.impl.CelestialBodyComponent,System.Double)">
+  UpdateFromStateVectors(Position, Velocity, CelestialBodyComponent, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateFromStateVectors(Position pos, Velocity vel, CelestialBodyComponent refBody, double UT)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pos</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+    <dt><code>vel</code> <a class="xref" href="KSP.Sim.Velocity.html">Velocity</a></dt>
+    <dd></dd>
+    <dt><code>refBody</code> <a class="xref" href="KSP.Sim.impl.CelestialBodyComponent.html">CelestialBodyComponent</a></dt>
+    <dd></dd>
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromUT_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromUT*"></a>
+
+  <h3 id="KSP_Sim_impl_PatchedNBodyOrbit_UpdateFromUT_System_Double_" data-uid="KSP.Sim.impl.PatchedNBodyOrbit.UpdateFromUT(System.Double)">
+  UpdateFromUT(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateFromUT(double UT)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>UT</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

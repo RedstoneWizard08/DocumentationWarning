@@ -101,7 +101,7 @@ Class MyCharacterDetectorComponent
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class MyCharacterDetectorComponent : MyCharacterComponent, IMyEntityComponentBase, IMyComponentBase</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class MyCharacterDetectorComponent : MyUpdatingEntityComponent, IMyEntityComponentBase, IMyComponentBase, IMyEventProxy, IMyEventOwner, IMyUpdatingEntityComponent, IMyCharacterComponent</code></pre>
   </div>
 
 
@@ -113,7 +113,8 @@ Class MyCharacterDetectorComponent
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyComponentBase.html">MyComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html">MyEntityComponentBase</a></div>
-      <div><a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html">MyCharacterComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html">MyEventProxyEntityComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html">MyUpdatingEntityComponent</a></div>
       <div><span class="xref">MyCharacterDetectorComponent</span></div>
     </dd>
   </dl>
@@ -123,6 +124,10 @@ Class MyCharacterDetectorComponent
     <dd>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyComponentBase.html">IMyComponentBase</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventProxy.html">IMyEventProxy</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventOwner.html">IMyEventOwner</a></div>
+      <div><a class="xref" href="VRage.Game.Entity.EntityComponents.Interfaces.IMyUpdatingEntityComponent.html">IMyUpdatingEntityComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Character.Components.IMyCharacterComponent.html">IMyCharacterComponent</a></div>
     </dd>
   </dl>
 
@@ -138,49 +143,70 @@ Class MyCharacterDetectorComponent
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateBeforeSimulation">MyCharacterComponent.UpdateBeforeSimulation()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateOnceBeforeFrame">MyUpdatingEntityComponent.UpdateOnceBeforeFrame()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateBeforeSimulationParallel">MyCharacterComponent.UpdateBeforeSimulationParallel()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulation">MyUpdatingEntityComponent.UpdateBeforeSimulation()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_Simulate">MyCharacterComponent.Simulate()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulation100">MyUpdatingEntityComponent.UpdateBeforeSimulation100()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateAfterSimulation">MyCharacterComponent.UpdateAfterSimulation()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulationParallel">MyUpdatingEntityComponent.UpdateBeforeSimulationParallel()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateAfterSimulationParallel">MyCharacterComponent.UpdateAfterSimulationParallel()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateSimulate">MyUpdatingEntityComponent.UpdateSimulate()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateBeforeSimulation100">MyCharacterComponent.UpdateBeforeSimulation100()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation">MyUpdatingEntityComponent.UpdateAfterSimulation()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulation">MyCharacterComponent.NeedsUpdateAfterSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation100">MyUpdatingEntityComponent.UpdateAfterSimulation100()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulationParallel">MyCharacterComponent.NeedsUpdateAfterSimulationParallel</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulationParallel">MyUpdatingEntityComponent.UpdateAfterSimulationParallel()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateSimulation">MyCharacterComponent.NeedsUpdateSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_ParentEntity">MyUpdatingEntityComponent.ParentEntity</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulation10">MyCharacterComponent.NeedsUpdateAfterSimulation10</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdate">MyUpdatingEntityComponent.NeedsUpdate</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulation100">MyCharacterComponent.NeedsUpdateBeforeSimulation100</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulation">MyCharacterComponent.NeedsUpdateBeforeSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation100">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation100</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulationParallel">MyCharacterComponent.NeedsUpdateBeforeSimulationParallel</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateSimulation">MyUpdatingEntityComponent.NeedsUpdateSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_Character">MyCharacterComponent.Character</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_ComponentTypeDebugString">MyCharacterComponent.ComponentTypeDebugString</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation10">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation10</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation100">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation100</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallel">MyUpdatingEntityComponent.UpdateParallel</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdatingType">MyUpdatingEntityComponent.UpdatingType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateChanged">MyUpdatingEntityComponent.NeedsUpdateChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallelChanged">MyUpdatingEntityComponent.UpdateParallelChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_SyncType">MyEventProxyEntityComponent.SyncType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_AttachSyncToEntity">MyEventProxyEntityComponent.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
@@ -189,7 +215,7 @@ Class MyCharacterDetectorComponent
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Entity">MyEntityComponentBase.Entity</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_AttachSyncToEntity">MyEntityComponentBase.AttachSyncToEntity</a>
+      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_ComponentTypeDebugString">MyEntityComponentBase.ComponentTypeDebugString</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAfterAddedToContainer">MyEntityComponentBase.OnAfterAddedToContainer</a>
@@ -223,6 +249,9 @@ Class MyCharacterDetectorComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -397,6 +426,37 @@ Class MyCharacterDetectorComponent
 
   <h2 class="section" id="properties">Properties
 </h2>
+
+
+  <a id="Sandbox_Game_Entities_Character_Components_MyCharacterDetectorComponent_Character_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterDetectorComponent.Character*"></a>
+
+  <h3 id="Sandbox_Game_Entities_Character_Components_MyCharacterDetectorComponent_Character" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterDetectorComponent.Character">
+  Character
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCharacter Character { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Character.MyCharacter.html">MyCharacter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
   <a id="Sandbox_Game_Entities_Character_Components_MyCharacterDetectorComponent_DetectedEntity_" data-uid="Sandbox.Game.Entities.Character.Components.MyCharacterDetectorComponent.DetectedEntity*"></a>
@@ -942,7 +1002,7 @@ Class MyCharacterDetectorComponent
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnCharacterDead()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnCharacterDead()</code></pre>
   </div>
 
 

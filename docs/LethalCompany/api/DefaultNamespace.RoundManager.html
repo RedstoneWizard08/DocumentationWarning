@@ -126,6 +126,9 @@ Class RoundManager
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -144,13 +147,31 @@ Class RoundManager
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -159,10 +180,16 @@ Class RoundManager
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -174,7 +201,13 @@ Class RoundManager
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -184,6 +217,9 @@ Class RoundManager
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -1229,6 +1265,66 @@ public EnemyVent[] allEnemyVents</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_RoundManager_breakSnowmanAudio1" data-uid="DefaultNamespace.RoundManager.breakSnowmanAudio1">
+  breakSnowmanAudio1
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioClip breakSnowmanAudio1</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/AudioClip.html">AudioClip</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_RoundManager_breakSnowmanPrefab" data-uid="DefaultNamespace.RoundManager.breakSnowmanPrefab">
+  breakSnowmanPrefab
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject breakSnowmanPrefab</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
     <dd></dd>
   </dl>
 
@@ -4753,8 +4849,8 @@ public void GenerateNewLevelClientRpc(int randomSeed, int levelID, int moldItera
 
   <a id="DefaultNamespace_RoundManager_GetRandomNavMeshPositionInBoxPredictable_" data-uid="DefaultNamespace.RoundManager.GetRandomNavMeshPositionInBoxPredictable*"></a>
 
-  <h3 id="DefaultNamespace_RoundManager_GetRandomNavMeshPositionInBoxPredictable_UnityEngine_Vector3_System_Single_UnityEngine_AI_NavMeshHit_System_Random_System_Int32_" data-uid="DefaultNamespace.RoundManager.GetRandomNavMeshPositionInBoxPredictable(UnityEngine.Vector3,System.Single,UnityEngine.AI.NavMeshHit,System.Random,System.Int32)">
-  GetRandomNavMeshPositionInBoxPredictable(Vector3, float, NavMeshHit, Random, int)
+  <h3 id="DefaultNamespace_RoundManager_GetRandomNavMeshPositionInBoxPredictable_UnityEngine_Vector3_System_Single_UnityEngine_AI_NavMeshHit_System_Random_System_Int32_System_Single_" data-uid="DefaultNamespace.RoundManager.GetRandomNavMeshPositionInBoxPredictable(UnityEngine.Vector3,System.Single,UnityEngine.AI.NavMeshHit,System.Random,System.Int32,System.Single)">
+  GetRandomNavMeshPositionInBoxPredictable(Vector3, float, NavMeshHit, Random, int, float)
   
   </h3>
 
@@ -4762,7 +4858,7 @@ public void GenerateNewLevelClientRpc(int randomSeed, int levelID, int moldItera
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 GetRandomNavMeshPositionInBoxPredictable(Vector3 pos, float radius = 10, NavMeshHit navHit = default, Random randomSeed = null, int layerMask = -1)</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 GetRandomNavMeshPositionInBoxPredictable(Vector3 pos, float radius = 10, NavMeshHit navHit = default, Random randomSeed = null, int layerMask = -1, float verticalScale = 1)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -4776,6 +4872,8 @@ public void GenerateNewLevelClientRpc(int randomSeed, int levelID, int moldItera
     <dt><code>randomSeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.random">Random</a></dt>
     <dd></dd>
     <dt><code>layerMask</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>verticalScale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -5058,33 +5156,6 @@ public void GenerateNewLevelClientRpc(int randomSeed, int levelID, int moldItera
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_RoundManager_InitializeRPCS_RoundManager_" data-uid="DefaultNamespace.RoundManager.InitializeRPCS_RoundManager*"></a>
-
-  <h3 id="DefaultNamespace_RoundManager_InitializeRPCS_RoundManager" data-uid="DefaultNamespace.RoundManager.InitializeRPCS_RoundManager">
-  InitializeRPCS_RoundManager()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_RoundManager()</code></pre>
-  </div>
-
-
 
 
 
@@ -5465,8 +5536,8 @@ public void LightningStrikeServerRpc(Vector3 strikePosition)</code></pre>
 
   <a id="DefaultNamespace_RoundManager_PositionWithDenialPointsChecked_" data-uid="DefaultNamespace.RoundManager.PositionWithDenialPointsChecked*"></a>
 
-  <h3 id="DefaultNamespace_RoundManager_PositionWithDenialPointsChecked_UnityEngine_Vector3_UnityEngine_GameObject___EnemyType_" data-uid="DefaultNamespace.RoundManager.PositionWithDenialPointsChecked(UnityEngine.Vector3,UnityEngine.GameObject[],EnemyType)">
-  PositionWithDenialPointsChecked(Vector3, GameObject[], EnemyType)
+  <h3 id="DefaultNamespace_RoundManager_PositionWithDenialPointsChecked_UnityEngine_Vector3_UnityEngine_GameObject___EnemyType_System_Single_" data-uid="DefaultNamespace.RoundManager.PositionWithDenialPointsChecked(UnityEngine.Vector3,UnityEngine.GameObject[],EnemyType,System.Single)">
+  PositionWithDenialPointsChecked(Vector3, GameObject[], EnemyType, float)
   
   </h3>
 
@@ -5474,7 +5545,7 @@ public void LightningStrikeServerRpc(Vector3 strikePosition)</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 PositionWithDenialPointsChecked(Vector3 spawnPosition, GameObject[] spawnPoints, EnemyType enemyType)</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 PositionWithDenialPointsChecked(Vector3 spawnPosition, GameObject[] spawnPoints, EnemyType enemyType, float distanceFromShip = -1)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -5484,6 +5555,8 @@ public void LightningStrikeServerRpc(Vector3 strikePosition)</code></pre>
     <dt><code>spawnPoints</code> <span class="xref">GameObject</span>[]</dt>
     <dd></dd>
     <dt><code>enemyType</code> <a class="xref" href="DefaultNamespace.EnemyType.html">EnemyType</a></dt>
+    <dd></dd>
+    <dt><code>distanceFromShip</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -7150,6 +7223,32 @@ public void TurnSnowmanServerRpc(Vector3 pos, Vector3 turnRotation, bool laugh)<
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_RoundManager___initializeRpcs_" data-uid="DefaultNamespace.RoundManager.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_RoundManager___initializeRpcs" data-uid="DefaultNamespace.RoundManager.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
 
 
 

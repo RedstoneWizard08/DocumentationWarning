@@ -101,7 +101,7 @@ Class uGUI_Binding
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class uGUI_Binding : Selectable, IMoveHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler, IPointerClickHandler, ISubmitHandler, ICancelHandler, IEventSystemHandler</code></pre>
+    <pre><code class="lang-csharp hljs">public class uGUI_Binding : Selectable, IMoveHandler, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler, IPointerClickHandler, ISubmitHandler, ICancelHandler, IUpdateSelectedHandler, IEventSystemHandler</code></pre>
   </div>
 
 
@@ -134,6 +134,7 @@ Class uGUI_Binding
       <div><span class="xref">IPointerClickHandler</span></div>
       <div><span class="xref">ISubmitHandler</span></div>
       <div><span class="xref">ICancelHandler</span></div>
+      <div><span class="xref">IUpdateSelectedHandler</span></div>
       <div><span class="xref">IEventSystemHandler</span></div>
     </dd>
   </dl>
@@ -235,8 +236,8 @@ Class uGUI_Binding
 
 
 
-  <h3 id="DefaultNamespace_uGUI_Binding_active" data-uid="DefaultNamespace.uGUI_Binding.active">
-  active
+  <h3 id="DefaultNamespace_uGUI_Binding_binding" data-uid="DefaultNamespace.uGUI_Binding.binding">
+  binding
   
   </h3>
 
@@ -244,7 +245,7 @@ Class uGUI_Binding
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool active</code></pre>
+    <pre><code class="lang-csharp hljs">public string binding</code></pre>
   </div>
 
 
@@ -252,37 +253,7 @@ Class uGUI_Binding
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_uGUI_Binding_bindCallback" data-uid="DefaultNamespace.uGUI_Binding.bindCallback">
-  bindCallback
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Action&lt;GameInput.Device, GameInput.Button, GameInput.BindingSet, string&gt; bindCallback</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;<a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.Device.html">Device</a>, <a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.Button.html">Button</a>, <a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.BindingSet.html">BindingSet</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -416,8 +387,8 @@ public uGUI_BindingData data</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_uGUI_Binding_labelBack" data-uid="DefaultNamespace.uGUI_Binding.labelBack">
-  labelBack
+  <h3 id="DefaultNamespace_uGUI_Binding_isRebinding" data-uid="DefaultNamespace.uGUI_Binding.isRebinding">
+  isRebinding
   
   </h3>
 
@@ -425,8 +396,7 @@ public uGUI_BindingData data</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertLocalization]
-public const string labelBack = &quot;Back&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public bool isRebinding</code></pre>
   </div>
 
 
@@ -434,130 +404,7 @@ public const string labelBack = &quot;Back&quot;</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_uGUI_Binding_labelInputBind" data-uid="DefaultNamespace.uGUI_Binding.labelInputBind">
-  labelInputBind
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertLocalization]
-public const string labelInputBind = &quot;InputBind&quot;</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_uGUI_Binding_labelInputClear" data-uid="DefaultNamespace.uGUI_Binding.labelInputClear">
-  labelInputClear
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertLocalization]
-public const string labelInputClear = &quot;InputClear&quot;</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_uGUI_Binding_labelPressToBind" data-uid="DefaultNamespace.uGUI_Binding.labelPressToBind">
-  labelPressToBind
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertLocalization]
-public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_uGUI_Binding_value" data-uid="DefaultNamespace.uGUI_Binding.value">
-  value
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string value</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -575,8 +422,8 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
 
   <a id="DefaultNamespace_uGUI_Binding_Initialize_" data-uid="DefaultNamespace.uGUI_Binding.Initialize*"></a>
 
-  <h3 id="DefaultNamespace_uGUI_Binding_Initialize_GameInput_Device_GameInput_Button_GameInput_BindingSet_System_Action_GameInput_Device_GameInput_Button_GameInput_BindingSet_System_String__" data-uid="DefaultNamespace.uGUI_Binding.Initialize(GameInput.Device,GameInput.Button,GameInput.BindingSet,System.Action{GameInput.Device,GameInput.Button,GameInput.BindingSet,System.String})">
-  Initialize(Device, Button, BindingSet, Action&lt;Device, Button, BindingSet, string&gt;)
+  <h3 id="DefaultNamespace_uGUI_Binding_Initialize_GameInput_Device_GameInput_Button_GameInput_BindingSet_" data-uid="DefaultNamespace.uGUI_Binding.Initialize(GameInput.Device,GameInput.Button,GameInput.BindingSet)">
+  Initialize(Device, Button, BindingSet)
   
   </h3>
 
@@ -584,7 +431,7 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Initialize(GameInput.Device device, GameInput.Button button, GameInput.BindingSet bindingSet, Action&lt;GameInput.Device, GameInput.Button, GameInput.BindingSet, string&gt; bindCallback)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Initialize(GameInput.Device device, GameInput.Button button, GameInput.BindingSet bindingSet)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -594,8 +441,6 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
     <dt><code>button</code> <a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.Button.html">Button</a></dt>
     <dd></dd>
     <dt><code>bindingSet</code> <a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.BindingSet.html">BindingSet</a></dt>
-    <dd></dd>
-    <dt><code>bindCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;<a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.Device.html">Device</a>, <a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.Button.html">Button</a>, <a class="xref" href="GameInput.html">GameInput</a>.<a class="xref" href="GameInput.BindingSet.html">BindingSet</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -624,37 +469,6 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
     <pre><code class="lang-csharp hljs">public void OnBindingsChanged()</code></pre>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_uGUI_Binding_OnCancel_" data-uid="DefaultNamespace.uGUI_Binding.OnCancel*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_Binding_OnCancel_UnityEngine_EventSystems_BaseEventData_" data-uid="DefaultNamespace.uGUI_Binding.OnCancel(UnityEngine.EventSystems.BaseEventData)">
-  OnCancel(BaseEventData)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnCancel(BaseEventData eventData)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>eventData</code> <span class="xref">BaseEventData</span></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -698,32 +512,6 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
 
 
 
-  <a id="DefaultNamespace_uGUI_Binding_OnDisable_" data-uid="DefaultNamespace.uGUI_Binding.OnDisable*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_Binding_OnDisable" data-uid="DefaultNamespace.uGUI_Binding.OnDisable">
-  OnDisable()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnDisable()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_uGUI_Binding_OnEnable_" data-uid="DefaultNamespace.uGUI_Binding.OnEnable*"></a>
 
   <h3 id="DefaultNamespace_uGUI_Binding_OnEnable" data-uid="DefaultNamespace.uGUI_Binding.OnEnable">
@@ -738,37 +526,6 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
     <pre><code class="lang-csharp hljs">public override void OnEnable()</code></pre>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_uGUI_Binding_OnPointerClick_" data-uid="DefaultNamespace.uGUI_Binding.OnPointerClick*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_Binding_OnPointerClick_UnityEngine_EventSystems_PointerEventData_" data-uid="DefaultNamespace.uGUI_Binding.OnPointerClick(UnityEngine.EventSystems.PointerEventData)">
-  OnPointerClick(PointerEventData)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnPointerClick(PointerEventData eventData)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -807,10 +564,10 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
 
 
 
-  <a id="DefaultNamespace_uGUI_Binding_OnSelect_" data-uid="DefaultNamespace.uGUI_Binding.OnSelect*"></a>
+  <a id="DefaultNamespace_uGUI_Binding_OnRebindCallback_" data-uid="DefaultNamespace.uGUI_Binding.OnRebindCallback*"></a>
 
-  <h3 id="DefaultNamespace_uGUI_Binding_OnSelect_UnityEngine_EventSystems_BaseEventData_" data-uid="DefaultNamespace.uGUI_Binding.OnSelect(UnityEngine.EventSystems.BaseEventData)">
-  OnSelect(BaseEventData)
+  <h3 id="DefaultNamespace_uGUI_Binding_OnRebindCallback_System_Int32_" data-uid="DefaultNamespace.uGUI_Binding.OnRebindCallback(System.Int32)">
+  OnRebindCallback(int)
   
   </h3>
 
@@ -818,12 +575,12 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnSelect(BaseEventData eventData)</code></pre>
+    <pre><code class="lang-csharp hljs">public void OnRebindCallback(int state)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>eventData</code> <span class="xref">BaseEventData</span></dt>
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -838,10 +595,10 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
 
 
 
-  <a id="DefaultNamespace_uGUI_Binding_OnSubmit_" data-uid="DefaultNamespace.uGUI_Binding.OnSubmit*"></a>
+  <a id="DefaultNamespace_uGUI_Binding_OnSelect_" data-uid="DefaultNamespace.uGUI_Binding.OnSelect*"></a>
 
-  <h3 id="DefaultNamespace_uGUI_Binding_OnSubmit_UnityEngine_EventSystems_BaseEventData_" data-uid="DefaultNamespace.uGUI_Binding.OnSubmit(UnityEngine.EventSystems.BaseEventData)">
-  OnSubmit(BaseEventData)
+  <h3 id="DefaultNamespace_uGUI_Binding_OnSelect_UnityEngine_EventSystems_BaseEventData_" data-uid="DefaultNamespace.uGUI_Binding.OnSelect(UnityEngine.EventSystems.BaseEventData)">
+  OnSelect(BaseEventData)
   
   </h3>
 
@@ -849,7 +606,7 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void OnSubmit(BaseEventData eventData)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnSelect(BaseEventData eventData)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -895,10 +652,10 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
 
 
 
-  <a id="DefaultNamespace_uGUI_Binding_SetActive_" data-uid="DefaultNamespace.uGUI_Binding.SetActive*"></a>
+  <a id="DefaultNamespace_uGUI_Binding_StartRebind_" data-uid="DefaultNamespace.uGUI_Binding.StartRebind*"></a>
 
-  <h3 id="DefaultNamespace_uGUI_Binding_SetActive_System_Boolean_" data-uid="DefaultNamespace.uGUI_Binding.SetActive(System.Boolean)">
-  SetActive(bool)
+  <h3 id="DefaultNamespace_uGUI_Binding_StartRebind" data-uid="DefaultNamespace.uGUI_Binding.StartRebind">
+  StartRebind()
   
   </h3>
 
@@ -906,38 +663,7 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetActive(bool _active)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>_active</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_uGUI_Binding_Update_" data-uid="DefaultNamespace.uGUI_Binding.Update*"></a>
-
-  <h3 id="DefaultNamespace_uGUI_Binding_Update" data-uid="DefaultNamespace.uGUI_Binding.Update">
-  Update()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Update()</code></pre>
+    <pre><code class="lang-csharp hljs">public void StartRebind()</code></pre>
   </div>
 
 
@@ -969,6 +695,134 @@ public const string labelPressToBind = &quot;PressToBindFormat&quot;</code></pre
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>forceDeselect</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="eii">Explicit Interface Implementations
+</h2>
+
+
+  <a id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_ICancelHandler_OnCancel_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#ICancelHandler#OnCancel*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_ICancelHandler_OnCancel_UnityEngine_EventSystems_BaseEventData_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#ICancelHandler#OnCancel(UnityEngine.EventSystems.BaseEventData)">
+  ICancelHandler.OnCancel(BaseEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICancelHandler.OnCancel(BaseEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">BaseEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_IPointerClickHandler_OnPointerClick_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#IPointerClickHandler#OnPointerClick*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_IPointerClickHandler_OnPointerClick_UnityEngine_EventSystems_PointerEventData_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#IPointerClickHandler#OnPointerClick(UnityEngine.EventSystems.PointerEventData)">
+  IPointerClickHandler.OnPointerClick(PointerEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPointerClickHandler.OnPointerClick(PointerEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_ISubmitHandler_OnSubmit_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#ISubmitHandler#OnSubmit*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_ISubmitHandler_OnSubmit_UnityEngine_EventSystems_BaseEventData_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#ISubmitHandler#OnSubmit(UnityEngine.EventSystems.BaseEventData)">
+  ISubmitHandler.OnSubmit(BaseEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ISubmitHandler.OnSubmit(BaseEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">BaseEventData</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_IUpdateSelectedHandler_OnUpdateSelected_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#IUpdateSelectedHandler#OnUpdateSelected*"></a>
+
+  <h3 id="DefaultNamespace_uGUI_Binding_UnityEngine_EventSystems_IUpdateSelectedHandler_OnUpdateSelected_UnityEngine_EventSystems_BaseEventData_" data-uid="DefaultNamespace.uGUI_Binding.UnityEngine#EventSystems#IUpdateSelectedHandler#OnUpdateSelected(UnityEngine.EventSystems.BaseEventData)">
+  IUpdateSelectedHandler.OnUpdateSelected(BaseEventData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IUpdateSelectedHandler.OnUpdateSelected(BaseEventData eventData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <span class="xref">BaseEventData</span></dt>
     <dd></dd>
   </dl>
 

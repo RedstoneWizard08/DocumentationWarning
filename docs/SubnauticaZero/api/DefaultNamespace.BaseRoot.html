@@ -102,7 +102,7 @@ Class BaseRoot
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeEventListener</code></pre>
+public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IInteriorSpace, ISpeakerHost</code></pre>
   </div>
 
 
@@ -126,7 +126,8 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
     <dd>
       <div><a class="xref" href="DefaultNamespace.IProtoEventListener.html">IProtoEventListener</a></div>
       <div><a class="xref" href="DefaultNamespace.IOnTakeDamage.html">IOnTakeDamage</a></div>
-      <div><a class="xref" href="DefaultNamespace.IProtoTreeEventListener.html">IProtoTreeEventListener</a></div>
+      <div><a class="xref" href="DefaultNamespace.IInteriorSpace.html">IInteriorSpace</a></div>
+      <div><a class="xref" href="DefaultNamespace.ISpeakerHost.html">ISpeakerHost</a></div>
     </dd>
   </dl>
 
@@ -175,6 +176,9 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_useTwoCams">SubRoot.useTwoCams</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_depthClearer">SubRoot.depthClearer</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_lightControl">SubRoot.lightControl</a>
@@ -339,6 +343,15 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_silentRunningPowerCost">SubRoot.silentRunningPowerCost</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_internalTemperature">SubRoot.internalTemperature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_heatedIndoorTargetTemperature">SubRoot.heatedIndoorTargetTemperature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_poweredWarmUpDegreesPerSecond">SubRoot.poweredWarmUpDegreesPerSecond</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_damageManager">SubRoot.damageManager</a>
     </div>
     <div>
@@ -363,9 +376,6 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_isCyclops">SubRoot.isCyclops</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_targetingTechTypeExcludeList">SubRoot.targetingTechTypeExcludeList</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_currPowerRating">SubRoot.currPowerRating</a>
     </div>
     <div>
@@ -373,6 +383,9 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_lightingState">SubRoot.lightingState</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_waterPlane">SubRoot.waterPlane</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_shieldIntensity">SubRoot.shieldIntensity</a>
@@ -385,6 +398,9 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_oldHPPercent">SubRoot.oldHPPercent</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_waterPlaneComp">SubRoot.waterPlaneComp</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_oxygenMgr">SubRoot.oxygenMgr</a>
@@ -450,9 +466,6 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_Awake">SubRoot.Awake()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_OnDestroy">SubRoot.OnDestroy()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_OnConsoleCommand_flood">SubRoot.OnConsoleCommand_flood()</a>
     </div>
     <div>
@@ -489,7 +502,25 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_UpdateLighting">SubRoot.UpdateLighting()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetTemperature">SubRoot.GetTemperature()</a>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_UpdateInternalTemperature_System_Single_">SubRoot.UpdateInternalTemperature(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetOutdoorTemperature">SubRoot.GetOutdoorTemperature()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_IsHeatOnline">SubRoot.IsHeatOnline()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetTargetInternalTemperature">SubRoot.GetTargetInternalTemperature()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetTargetInternalTemperature_System_Single_">SubRoot.GetTargetInternalTemperature(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_ModifyTargetInternalTemperature_System_Single_">SubRoot.ModifyTargetInternalTemperature(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetInsideTemperature">SubRoot.GetInsideTemperature()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_UpdateThermalReactorCharge">SubRoot.UpdateThermalReactorCharge()</a>
@@ -528,18 +559,6 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetSubName">SubRoot.GetSubName()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_OnProtoSerialize_ProtobufSerializer_">SubRoot.OnProtoSerialize(ProtobufSerializer)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_OnProtoDeserialize_ProtobufSerializer_">SubRoot.OnProtoDeserialize(ProtobufSerializer)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_IProtoTreeEventListener_OnProtoSerializeObjectTree_ProtobufSerializer_">SubRoot.IProtoTreeEventListener.OnProtoSerializeObjectTree(ProtobufSerializer)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_IProtoTreeEventListener_OnProtoDeserializeObjectTree_ProtobufSerializer_">SubRoot.IProtoTreeEventListener.OnProtoDeserializeObjectTree(ProtobufSerializer)</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_StartSubShielded">SubRoot.StartSubShielded()</a>
     </div>
     <div>
@@ -555,10 +574,46 @@ public class BaseRoot : SubRoot, IProtoEventListener, IOnTakeDamage, IProtoTreeE
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_DestroyCyclopsSubRoot">SubRoot.DestroyCyclopsSubRoot()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetDefaultSurface">SubRoot.GetDefaultSurface()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_IsPlayerInside">SubRoot.IsPlayerInside()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_CanBreathe">SubRoot.CanBreathe()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_CanDropItemsInside">SubRoot.CanDropItemsInside()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetInteriorSky">SubRoot.GetInteriorSky()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetGlassSky">SubRoot.GetGlassSky()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetGameObject">SubRoot.GetGameObject()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_GetRespawnPoint">SubRoot.GetRespawnPoint()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_OnPlayerKill">SubRoot.OnPlayerKill()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_SetPlayerInsideState_System_Boolean_">SubRoot.SetPlayerInsideState(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_IsStoryBase">SubRoot.IsStoryBase()</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_ForceInterpolationLock_UnityEngine_RigidbodyInterpolation_System_Boolean_">SubRoot.ForceInterpolationLock(RigidbodyInterpolation, bool)</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_playerInside">SubRoot.playerInside</a>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_IsInside_UnityEngine_GameObject_">SubRoot.IsInside(GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.SubRoot.html#DefaultNamespace_SubRoot_IsValidForRespawn">SubRoot.IsValidForRespawn()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -714,6 +769,36 @@ public BaseFloodSim flood</code></pre>
 
 
 
+
+  <h3 id="DefaultNamespace_BaseRoot_moonpoolExpansionManagers" data-uid="DefaultNamespace.BaseRoot.moonpoolExpansionManagers">
+  moonpoolExpansionManagers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MoonpoolExpansionManager&gt; moonpoolExpansionManagers</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="MoonpoolExpansionManager.html">MoonpoolExpansionManager</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -774,6 +859,68 @@ public BaseFloodSim flood</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_BaseRoot_OnProtoDeserialize_" data-uid="DefaultNamespace.BaseRoot.OnProtoDeserialize*"></a>
+
+  <h3 id="DefaultNamespace_BaseRoot_OnProtoDeserialize_ProtobufSerializer_" data-uid="DefaultNamespace.BaseRoot.OnProtoDeserialize(ProtobufSerializer)">
+  OnProtoDeserialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnProtoDeserialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_BaseRoot_OnProtoSerialize_" data-uid="DefaultNamespace.BaseRoot.OnProtoSerialize*"></a>
+
+  <h3 id="DefaultNamespace_BaseRoot_OnProtoSerialize_ProtobufSerializer_" data-uid="DefaultNamespace.BaseRoot.OnProtoSerialize(ProtobufSerializer)">
+  OnProtoSerialize(ProtobufSerializer)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnProtoSerialize(ProtobufSerializer serializer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serializer</code> <a class="xref" href="DefaultNamespace.ProtobufSerializer.html">ProtobufSerializer</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 

@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Module_Engine | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Module_Engine | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Modules.Module_Engine">
+
+
+
+  <h1 id="KSP_Modules_Module_Engine" data-uid="KSP.Modules.Module_Engine" class="text-break">
+Class Module_Engine  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Modules.html">Modules</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DisallowMultipleComponent]
+[ExecuteInEditMode]
+public class Module_Engine : PartBehaviourModule, IPartModule, IFixedUpdate, IPriorityOverride, IUpdate, IObjectAssemblyPartModule, IEngineStatus</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Game.KerbalMonoBehaviour.html">KerbalMonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html">PartBehaviourModule</a></div>
+      <div><span class="xref">Module_Engine</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Sim.IPartModule.html">IPartModule</a></div>
+      <div><a class="xref" href="DefaultNamespace.IFixedUpdate.html">IFixedUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.IPriorityOverride.html">IPriorityOverride</a></div>
+      <div><a class="xref" href="DefaultNamespace.IUpdate.html">IUpdate</a></div>
+      <div><a class="xref" href="KSP.OAB.IObjectAssemblyPartModule.html">IObjectAssemblyPartModule</a></div>
+      <div><a class="xref" href="DefaultNamespace.IEngineStatus.html">IEngineStatus</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_DataModules">PartBehaviourModule.DataModules</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_ModuleActions">PartBehaviourModule.ModuleActions</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_GetInfo">PartBehaviourModule.GetInfo()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_IsStageable">PartBehaviourModule.IsStageable()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnActive">PartBehaviourModule.OnActive()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnStart">PartBehaviourModule.OnStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_SetLegacyData_KSP_Sim_impl_PartBehavior_KSP_Sim_ISimulationObjectView_">PartBehaviourModule.SetLegacyData(PartBehavior, ISimulationObjectView)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_Init">PartBehaviourModule.Init()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_InitForDataModules">PartBehaviourModule.InitForDataModules()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_SetDataModuleValues_KSP_Sim_Definitions_SerializedPartModule_">PartBehaviourModule.SetDataModuleValues(SerializedPartModule)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_InitForNewOABPart">PartBehaviourModule.InitForNewOABPart()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_RemoveResourceRequest_KSP_Sim_ResourceSystem_ResourceFlowRequestHandle_">PartBehaviourModule.RemoveResourceRequest(ResourceFlowRequestHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnAnimStateExit_UnityEngine_Animator_System_Int32_">PartBehaviourModule.OnAnimStateExit(Animator, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_IsPhysXEnabled">PartBehaviourModule.IsPhysXEnabled()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnFixedUpdate_System_Single_">PartBehaviourModule.OnFixedUpdate(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnModuleUpdate_System_Single_">PartBehaviourModule.OnModuleUpdate(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnModuleOABUpdate_System_Single_">PartBehaviourModule.OnModuleOABUpdate(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnActionActivateEventMessage_KSP_Messages_MessageCenterMessage_">PartBehaviourModule.OnActionActivateEventMessage(MessageCenterMessage)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_AddActionGroupAction_KSP_Sim_Definitions_ModuleActionGroupAction_">PartBehaviourModule.AddActionGroupAction(ModuleActionGroupAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_AddActionGroupAction_System_Action_System_Boolean__KSP_Sim_KSPActionGroup_System_String_KSP_Sim_Definitions_ModuleProperty_System_Boolean__">PartBehaviourModule.AddActionGroupAction(Action&lt;bool&gt;, KSPActionGroup, string, ModuleProperty&lt;bool&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_AddActionGroupAction_System_Action_KSP_Sim_KSPActionGroup_System_String_">PartBehaviourModule.AddActionGroupAction(Action, KSPActionGroup, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OnActionGroupMappingChanged_KSP_Messages_MessageCenterMessage_">PartBehaviourModule.OnActionGroupMappingChanged(MessageCenterMessage)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_TryGetRendererMaterialsByName_System_Collections_Generic_List_System_String__System_Collections_Generic_List_UnityEngine_Material___">PartBehaviourModule.TryGetRendererMaterialsByName(List&lt;string&gt;, out List&lt;Material&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_IsActive">PartBehaviourModule.IsActive</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_LegacyWriteOverTarget">PartBehaviourModule.LegacyWriteOverTarget</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_PartBackingMode">PartBehaviourModule.PartBackingMode</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_part">PartBehaviourModule.part</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_ComponentModule">PartBehaviourModule.ComponentModule</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_resourceFlowRequestBroker">PartBehaviourModule.resourceFlowRequestBroker</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_partOwner">PartBehaviourModule.partOwner</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_vessel">PartBehaviourModule.vessel</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_simulationObject">PartBehaviourModule.simulationObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_transform">PartBehaviourModule.transform</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_moduleIsEnabled">PartBehaviourModule.moduleIsEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_IsInitialized">PartBehaviourModule.IsInitialized</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_executedAction">PartBehaviourModule.executedAction</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_stagingEnabled">PartBehaviourModule.stagingEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_OABPart">PartBehaviourModule.OABPart</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.Definitions.PartBehaviourModule.html#KSP_Sim_Definitions_PartBehaviourModule_IsLocallyAuthorized">PartBehaviourModule.IsLocallyAuthorized</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Game">KerbalMonoBehaviour.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Assets">KerbalMonoBehaviour.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Messages">KerbalMonoBehaviour.Messages</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_CFXSystem">KerbalMonoBehaviour.CFXSystem</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_IsGameShuttingDown">KerbalMonoBehaviour.IsGameShuttingDown</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentCached__1_UnityEngine_Component___0__">GameObjectExtension.GetComponentCached&lt;T&gt;(Component, ref T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GameObjectExtension.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.ComponentExtensions.html#KSP_ComponentExtensions_CopyFrom__1_UnityEngine_Component___0_">ComponentExtensions.CopyFrom&lt;T&gt;(Component, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.OAB.DataContextMonoBehaviorExtensionDooblyDo.html#KSP_OAB_DataContextMonoBehaviorExtensionDooblyDo_FindDataContextProviderInHierarchy_UnityEngine_MonoBehaviour_">DataContextMonoBehaviorExtensionDooblyDo.FindDataContextProviderInHierarchy(MonoBehaviour)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_SetDebugName_UnityEngine_Object_System_String_">GameObjectExtension.SetDebugName(Object, string)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Modules_Module_Engine__ctor_" data-uid="KSP.Modules.Module_Engine.#ctor*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine__ctor" data-uid="KSP.Modules.Module_Engine.#ctor">
+  Module_Engine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Module_Engine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="KSP_Modules_Module_Engine_Alternator" data-uid="KSP.Modules.Module_Engine.Alternator">
+  Alternator
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Module_Generator Alternator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Modules.Module_Generator.html">Module_Generator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Modules_Module_Engine_FlameoutVFX" data-uid="KSP.Modules.Module_Engine.FlameoutVFX">
+  FlameoutVFX
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlameoutVFXData FlameoutVFX</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.VFX.FlameoutVFXData.html">FlameoutVFXData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Modules_Module_Engine_Gimbal" data-uid="KSP.Modules.Module_Engine.Gimbal">
+  Gimbal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Module_Gimbal Gimbal</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Modules.Module_Gimbal.html">Module_Gimbal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Modules_Module_Engine_dataEngine" data-uid="KSP.Modules.Module_Engine.dataEngine">
+  dataEngine
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[FormerlySerializedAs(&quot;data&quot;)]
+[SerializeField]
+protected Data_Engine dataEngine</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Modules.Data_Engine.html">Data_Engine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Modules_Module_Engine_ActualThrust_" data-uid="KSP.Modules.Module_Engine.ActualThrust*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ActualThrust" data-uid="KSP.Modules.Module_Engine.ActualThrust">
+  ActualThrust
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ActualThrust { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_AverageEngineForce_" data-uid="KSP.Modules.Module_Engine.AverageEngineForce*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_AverageEngineForce" data-uid="KSP.Modules.Module_Engine.AverageEngineForce">
+  AverageEngineForce
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Data_Engine.EngineForce AverageEngineForce { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Modules.Data_Engine.html">Data_Engine</a>.<a class="xref" href="KSP.Modules.Data_Engine.EngineForce.html">EngineForce</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_CurrentEngineMode_" data-uid="KSP.Modules.Module_Engine.CurrentEngineMode*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_CurrentEngineMode" data-uid="KSP.Modules.Module_Engine.CurrentEngineMode">
+  CurrentEngineMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CurrentEngineMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_CurrentPropellantState_" data-uid="KSP.Modules.Module_Engine.CurrentPropellantState*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_CurrentPropellantState" data-uid="KSP.Modules.Module_Engine.CurrentPropellantState">
+  CurrentPropellantState
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PropellantState CurrentPropellantState { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Modules.PropellantState.html">PropellantState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_EngineIgnited_" data-uid="KSP.Modules.Module_Engine.EngineIgnited*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_EngineIgnited" data-uid="KSP.Modules.Module_Engine.EngineIgnited">
+  EngineIgnited
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EngineIgnited { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_IsPropellantStarved_" data-uid="KSP.Modules.Module_Engine.IsPropellantStarved*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_IsPropellantStarved" data-uid="KSP.Modules.Module_Engine.IsPropellantStarved">
+  IsPropellantStarved
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPropellantStarved { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_PartComponentModuleType_" data-uid="KSP.Modules.Module_Engine.PartComponentModuleType*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_PartComponentModuleType" data-uid="KSP.Modules.Module_Engine.PartComponentModuleType">
+  PartComponentModuleType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type PartComponentModuleType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_RequestedThrottle_" data-uid="KSP.Modules.Module_Engine.RequestedThrottle*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_RequestedThrottle" data-uid="KSP.Modules.Module_Engine.RequestedThrottle">
+  RequestedThrottle
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RequestedThrottle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ThrustCollisionInfo_" data-uid="KSP.Modules.Module_Engine.ThrustCollisionInfo*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ThrustCollisionInfo" data-uid="KSP.Modules.Module_Engine.ThrustCollisionInfo">
+  ThrustCollisionInfo
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Data_Engine.ThrustCollisionInfo&gt; ThrustCollisionInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.Modules.Data_Engine.html">Data_Engine</a>.<a class="xref" href="KSP.Modules.Data_Engine.ThrustCollisionInfo.html">ThrustCollisionInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ThrustPercentage_" data-uid="KSP.Modules.Module_Engine.ThrustPercentage*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ThrustPercentage" data-uid="KSP.Modules.Module_Engine.ThrustPercentage">
+  ThrustPercentage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ThrustPercentage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_currentEngineModeData_" data-uid="KSP.Modules.Module_Engine.currentEngineModeData*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_currentEngineModeData" data-uid="KSP.Modules.Module_Engine.currentEngineModeData">
+  currentEngineModeData
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Data_Engine.EngineMode currentEngineModeData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Modules.Data_Engine.html">Data_Engine</a>.<a class="xref" href="KSP.Modules.Data_Engine.EngineMode.html">EngineMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_engineDisplayName_" data-uid="KSP.Modules.Module_Engine.engineDisplayName*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_engineDisplayName" data-uid="KSP.Modules.Module_Engine.engineDisplayName">
+  engineDisplayName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string engineDisplayName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_engineName_" data-uid="KSP.Modules.Module_Engine.engineName*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_engineName" data-uid="KSP.Modules.Module_Engine.engineName">
+  engineName
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string engineName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_isOperational_" data-uid="KSP.Modules.Module_Engine.isOperational*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_isOperational" data-uid="KSP.Modules.Module_Engine.isOperational">
+  isOperational
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isOperational { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_normalizedOutput_" data-uid="KSP.Modules.Module_Engine.normalizedOutput*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_normalizedOutput" data-uid="KSP.Modules.Module_Engine.normalizedOutput">
+  normalizedOutput
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float normalizedOutput { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_throttleSetting_" data-uid="KSP.Modules.Module_Engine.throttleSetting*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_throttleSetting" data-uid="KSP.Modules.Module_Engine.throttleSetting">
+  throttleSetting
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float throttleSetting { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Modules_Module_Engine_ActivateDeactivateEngine_" data-uid="KSP.Modules.Module_Engine.ActivateDeactivateEngine*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ActivateDeactivateEngine" data-uid="KSP.Modules.Module_Engine.ActivateDeactivateEngine">
+  ActivateDeactivateEngine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ActivateDeactivateEngine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ActivateEngine_" data-uid="KSP.Modules.Module_Engine.ActivateEngine*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ActivateEngine" data-uid="KSP.Modules.Module_Engine.ActivateEngine">
+  ActivateEngine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ActivateEngine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ActivateEngine_" data-uid="KSP.Modules.Module_Engine.ActivateEngine*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ActivateEngine_System_Boolean_" data-uid="KSP.Modules.Module_Engine.ActivateEngine(System.Boolean)">
+  ActivateEngine(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ActivateEngine(bool mpRemoteActivate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>mpRemoteActivate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_AddDataModules_" data-uid="KSP.Modules.Module_Engine.AddDataModules*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_AddDataModules" data-uid="KSP.Modules.Module_Engine.AddDataModules">
+  AddDataModules()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddDataModules()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ChangeEngineMode_" data-uid="KSP.Modules.Module_Engine.ChangeEngineMode*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ChangeEngineMode" data-uid="KSP.Modules.Module_Engine.ChangeEngineMode">
+  ChangeEngineMode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChangeEngineMode()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ChangeEngineMode_" data-uid="KSP.Modules.Module_Engine.ChangeEngineMode*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ChangeEngineMode_System_Int32_" data-uid="KSP.Modules.Module_Engine.ChangeEngineMode(System.Int32)">
+  ChangeEngineMode(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ChangeEngineMode(int modeIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modeIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_CheckTransformsUnderwater_" data-uid="KSP.Modules.Module_Engine.CheckTransformsUnderwater*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_CheckTransformsUnderwater" data-uid="KSP.Modules.Module_Engine.CheckTransformsUnderwater">
+  CheckTransformsUnderwater()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool CheckTransformsUnderwater()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_DeactivateEngine_" data-uid="KSP.Modules.Module_Engine.DeactivateEngine*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_DeactivateEngine" data-uid="KSP.Modules.Module_Engine.DeactivateEngine">
+  DeactivateEngine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeactivateEngine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_DeactivateEngine_" data-uid="KSP.Modules.Module_Engine.DeactivateEngine*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_DeactivateEngine_System_Boolean_" data-uid="KSP.Modules.Module_Engine.DeactivateEngine(System.Boolean)">
+  DeactivateEngine(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeactivateEngine(bool mpRemoteDeactivate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>mpRemoteDeactivate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_EngineExhaustDamage_" data-uid="KSP.Modules.Module_Engine.EngineExhaustDamage*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_EngineExhaustDamage" data-uid="KSP.Modules.Module_Engine.EngineExhaustDamage">
+  EngineExhaustDamage()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void EngineExhaustDamage()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_EngineShockWave_" data-uid="KSP.Modules.Module_Engine.EngineShockWave*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_EngineShockWave" data-uid="KSP.Modules.Module_Engine.EngineShockWave">
+  EngineShockWave()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void EngineShockWave()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_GetModuleDisplayName_" data-uid="KSP.Modules.Module_Engine.GetModuleDisplayName*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_GetModuleDisplayName" data-uid="KSP.Modules.Module_Engine.GetModuleDisplayName">
+  GetModuleDisplayName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetModuleDisplayName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_IndependentThrottleChanged_" data-uid="KSP.Modules.Module_Engine.IndependentThrottleChanged*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_IndependentThrottleChanged_System_Boolean_" data-uid="KSP.Modules.Module_Engine.IndependentThrottleChanged(System.Boolean)">
+  IndependentThrottleChanged(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IndependentThrottleChanged(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_InitAnimator_" data-uid="KSP.Modules.Module_Engine.InitAnimator*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_InitAnimator" data-uid="KSP.Modules.Module_Engine.InitAnimator">
+  InitAnimator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitAnimator()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnAnimStateEnter_" data-uid="KSP.Modules.Module_Engine.OnAnimStateEnter*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnAnimStateEnter_UnityEngine_Animator_System_Int32_" data-uid="KSP.Modules.Module_Engine.OnAnimStateEnter(UnityEngine.Animator,System.Int32)">
+  OnAnimStateEnter(Animator, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAnimStateEnter(Animator animator, int stateMachineHash)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animator</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Animator.html">Animator</a></dt>
+    <dd></dd>
+    <dt><code>stateMachineHash</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnCenterOfThrustQuery_" data-uid="KSP.Modules.Module_Engine.OnCenterOfThrustQuery*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnCenterOfThrustQuery_KSP_OAB_CenterOfThrustQuery_" data-uid="KSP.Modules.Module_Engine.OnCenterOfThrustQuery(KSP.OAB.CenterOfThrustQuery)">
+  OnCenterOfThrustQuery(CenterOfThrustQuery)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCenterOfThrustQuery(CenterOfThrustQuery qry)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>qry</code> <a class="xref" href="KSP.OAB.CenterOfThrustQuery.html">CenterOfThrustQuery</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnEnable_" data-uid="KSP.Modules.Module_Engine.OnEnable*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnEnable" data-uid="KSP.Modules.Module_Engine.OnEnable">
+  OnEnable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnEnable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnInitialize_" data-uid="KSP.Modules.Module_Engine.OnInitialize*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnInitialize" data-uid="KSP.Modules.Module_Engine.OnInitialize">
+  OnInitialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnInitialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnModuleFixedUpdate_" data-uid="KSP.Modules.Module_Engine.OnModuleFixedUpdate*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnModuleFixedUpdate_System_Single_" data-uid="KSP.Modules.Module_Engine.OnModuleFixedUpdate(System.Single)">
+  OnModuleFixedUpdate(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnModuleFixedUpdate(float fixedDeltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fixedDeltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnModuleOABFixedUpdate_" data-uid="KSP.Modules.Module_Engine.OnModuleOABFixedUpdate*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnModuleOABFixedUpdate_System_Single_" data-uid="KSP.Modules.Module_Engine.OnModuleOABFixedUpdate(System.Single)">
+  OnModuleOABFixedUpdate(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnModuleOABFixedUpdate(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnRevertToLaunchEventMessage_" data-uid="KSP.Modules.Module_Engine.OnRevertToLaunchEventMessage*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnRevertToLaunchEventMessage_KSP_Messages_MessageCenterMessage_" data-uid="KSP.Modules.Module_Engine.OnRevertToLaunchEventMessage(KSP.Messages.MessageCenterMessage)">
+  OnRevertToLaunchEventMessage(MessageCenterMessage)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnRevertToLaunchEventMessage(MessageCenterMessage revertMessage)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>revertMessage</code> <a class="xref" href="KSP.Messages.MessageCenterMessage.html">MessageCenterMessage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnShutdown_" data-uid="KSP.Modules.Module_Engine.OnShutdown*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnShutdown" data-uid="KSP.Modules.Module_Engine.OnShutdown">
+  OnShutdown()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnShutdown()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_OnUpdate_" data-uid="KSP.Modules.Module_Engine.OnUpdate*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_OnUpdate_System_Single_" data-uid="KSP.Modules.Module_Engine.OnUpdate(System.Single)">
+  OnUpdate(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnUpdate(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_PlayFlameoutFX_" data-uid="KSP.Modules.Module_Engine.PlayFlameoutFX*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_PlayFlameoutFX_System_Boolean_" data-uid="KSP.Modules.Module_Engine.PlayFlameoutFX(System.Boolean)">
+  PlayFlameoutFX(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void PlayFlameoutFX(bool flamingOut)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>flamingOut</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_SpoolFXUpdate_" data-uid="KSP.Modules.Module_Engine.SpoolFXUpdate*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_SpoolFXUpdate" data-uid="KSP.Modules.Module_Engine.SpoolFXUpdate">
+  SpoolFXUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SpoolFXUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_StageEngine_" data-uid="KSP.Modules.Module_Engine.StageEngine*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_StageEngine" data-uid="KSP.Modules.Module_Engine.StageEngine">
+  StageEngine()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StageEngine()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ThermalUpdate_" data-uid="KSP.Modules.Module_Engine.ThermalUpdate*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ThermalUpdate_System_Double_" data-uid="KSP.Modules.Module_Engine.ThermalUpdate(System.Double)">
+  ThermalUpdate(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ThermalUpdate(double deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ThrustUpdate_" data-uid="KSP.Modules.Module_Engine.ThrustUpdate*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ThrustUpdate" data-uid="KSP.Modules.Module_Engine.ThrustUpdate">
+  ThrustUpdate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ThrustUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_ToggleStaging_" data-uid="KSP.Modules.Module_Engine.ToggleStaging*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_ToggleStaging_System_Boolean_" data-uid="KSP.Modules.Module_Engine.ToggleStaging(System.Boolean)">
+  ToggleStaging(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleStaging(bool bValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>bValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_UpdateAnimatorToModeChange_" data-uid="KSP.Modules.Module_Engine.UpdateAnimatorToModeChange*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_UpdateAnimatorToModeChange_System_Int32_" data-uid="KSP.Modules.Module_Engine.UpdateAnimatorToModeChange(System.Int32)">
+  UpdateAnimatorToModeChange(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAnimatorToModeChange(int modeIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modeIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_UpdateThrottle_" data-uid="KSP.Modules.Module_Engine.UpdateThrottle*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_UpdateThrottle" data-uid="KSP.Modules.Module_Engine.UpdateThrottle">
+  UpdateThrottle()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateThrottle()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Modules_Module_Engine_UpdateThrustRelativeControlPoint_" data-uid="KSP.Modules.Module_Engine.UpdateThrustRelativeControlPoint*"></a>
+
+  <h3 id="KSP_Modules_Module_Engine_UpdateThrustRelativeControlPoint" data-uid="KSP.Modules.Module_Engine.UpdateThrustRelativeControlPoint">
+  UpdateThrustRelativeControlPoint()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateThrustRelativeControlPoint()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

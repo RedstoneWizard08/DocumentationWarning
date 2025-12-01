@@ -103,6 +103,7 @@ Class GhostCrafter
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoInclude(5100, typeof(Fabricator))]
 [ProtoInclude(5200, typeof(Workbench))]
+[ProtoInclude(5300, typeof(PrecursorPartFabricator))]
 [ProtoContract]
 public class GhostCrafter : Crafter, ITreeActionReceiver, IHandTarget, IConstructable, IObstacle</code></pre>
   </div>
@@ -138,6 +139,7 @@ public class GhostCrafter : Crafter, ITreeActionReceiver, IHandTarget, IConstruc
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="DefaultNamespace.Fabricator.html">Fabricator</a></div>
+      <div><a class="xref" href="DefaultNamespace.PrecursorPartFabricator.html">PrecursorPartFabricator</a></div>
       <div><a class="xref" href="DefaultNamespace.Workbench.html">Workbench</a></div>
     </dd>
   </dl>
@@ -147,9 +149,6 @@ public class GhostCrafter : Crafter, ITreeActionReceiver, IHandTarget, IConstruc
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.Crafter.html#DefaultNamespace_Crafter_craftingTimeAutoCloseThreshold">Crafter.craftingTimeAutoCloseThreshold</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Crafter.html#DefaultNamespace_Crafter_noRecipesHandText">Crafter.noRecipesHandText</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Crafter.html#DefaultNamespace_Crafter_crafterLogic">Crafter.crafterLogic</a>
@@ -397,6 +396,36 @@ public class GhostCrafter : Crafter, ITreeActionReceiver, IHandTarget, IConstruc
 
 
 
+  <h3 id="DefaultNamespace_GhostCrafter_baseComp" data-uid="DefaultNamespace.GhostCrafter.baseComp">
+  baseComp
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Base baseComp</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Base.html">Base</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_GhostCrafter_closeDistance" data-uid="DefaultNamespace.GhostCrafter.closeDistance">
   closeDistance
   
@@ -588,7 +617,8 @@ public const string craftingEndFormat = &quot;CraftingEnd&quot;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string handOverText</code></pre>
+    <pre><code class="lang-csharp hljs">[AssertLocalization]
+public string handOverText</code></pre>
   </div>
 
 
@@ -619,6 +649,36 @@ public const string craftingEndFormat = &quot;CraftingEnd&quot;</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool isDeconstructionObstacle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_GhostCrafter_needsPower" data-uid="DefaultNamespace.GhostCrafter.needsPower">
+  needsPower
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool needsPower</code></pre>
   </div>
 
 
@@ -1195,7 +1255,7 @@ public const string unpoweredSecondaryText = &quot;unpowered&quot;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnHandClick(GUIHand hand)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnHandClick(GUIHand hand)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1226,7 +1286,7 @@ public const string unpoweredSecondaryText = &quot;unpowered&quot;</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnHandHover(GUIHand hand)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void OnHandHover(GUIHand hand)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

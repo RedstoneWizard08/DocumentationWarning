@@ -102,7 +102,7 @@ Class CrabSquid
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviour, ICompileTimeCheckable, IMovementPlatform, IManagedFixedUpdateBehaviour, IManagedBehaviour</code></pre>
+public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviour, IManagedBehaviour, ICompileTimeCheckable, IMovementPlatform</code></pre>
   </div>
 
 
@@ -127,10 +127,9 @@ public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviou
     <dd>
       <div><a class="xref" href="DefaultNamespace.IProtoEventListener.html">IProtoEventListener</a></div>
       <div><a class="xref" href="DefaultNamespace.IScheduledUpdateBehaviour.html">IScheduledUpdateBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.IManagedBehaviour.html">IManagedBehaviour</a></div>
       <div><a class="xref" href="DefaultNamespace.ICompileTimeCheckable.html">ICompileTimeCheckable</a></div>
       <div><a class="xref" href="DefaultNamespace.IMovementPlatform.html">IMovementPlatform</a></div>
-      <div><a class="xref" href="DefaultNamespace.IManagedFixedUpdateBehaviour.html">IManagedFixedUpdateBehaviour</a></div>
-      <div><a class="xref" href="DefaultNamespace.IManagedBehaviour.html">IManagedBehaviour</a></div>
     </dd>
   </dl>
 
@@ -253,15 +252,6 @@ public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviou
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_animHappy">Creature.animHappy</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_kSafeShallows">Creature.kSafeShallows</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_prisonAquriumBounds">Creature.prisonAquriumBounds</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_kPrisonAquariumPrefix">Creature.kPrisonAquariumPrefix</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_indexLastActionChecked">Creature.indexLastActionChecked</a>
     </div>
     <div>
@@ -271,6 +261,9 @@ public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviou
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature__friendlyToPlayer">Creature._friendlyToPlayer</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetProfileTag">Creature.GetProfileTag()</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_Start">Creature.Start()</a>
     </div>
     <div>
@@ -278,9 +271,6 @@ public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviou
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_InitializeAgain">Creature.InitializeAgain()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_ProcessInfection">Creature.ProcessInfection()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_ChooseBestAction_System_Single_">Creature.ChooseBestAction(float)</a>
@@ -337,10 +327,19 @@ public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviou
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetDebugString">Creature.GetDebugString()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetLastAction">Creature.GetLastAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetLastActionDebugString">Creature.GetLastActionDebugString()</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnKill">Creature.OnKill()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnDrop">Creature.OnDrop()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetLeashPosition">Creature.GetLeashPosition()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_GetTechTypeHash">Creature.GetTechTypeHash()</a>
@@ -362,6 +361,9 @@ public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviou
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnDisable">Creature.OnDisable()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_OnDestroy">Creature.OnDestroy()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Creature.html#DefaultNamespace_Creature_AllowCreatureUpdates_System_Boolean_">Creature.AllowCreatureUpdates(bool)</a>
@@ -441,192 +443,6 @@ public class CrabSquid : Creature, IProtoEventListener, IScheduledUpdateBehaviou
 
 
 
-  <h3 id="DefaultNamespace_CrabSquid_dampTime" data-uid="DefaultNamespace.CrabSquid.dampTime">
-  dampTime
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const float dampTime = 0.5</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_groundDownforce" data-uid="DefaultNamespace.CrabSquid.groundDownforce">
-  groundDownforce
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-public float groundDownforce</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_jumpForce" data-uid="DefaultNamespace.CrabSquid.jumpForce">
-  jumpForce
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-public float jumpForce</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_locomotion" data-uid="DefaultNamespace.CrabSquid.locomotion">
-  locomotion
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-[SerializeField]
-public Locomotion locomotion</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.Locomotion.html">Locomotion</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_locomotionDampFactor" data-uid="DefaultNamespace.CrabSquid.locomotionDampFactor">
-  locomotionDampFactor
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const float locomotionDampFactor = 0.4</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_moveOnGroundAction" data-uid="DefaultNamespace.CrabSquid.moveOnGroundAction">
-  moveOnGroundAction
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-[SerializeField]
-public MoveOnGround moveOnGroundAction</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.MoveOnGround.html">MoveOnGround</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="DefaultNamespace_CrabSquid_onGroundTracker" data-uid="DefaultNamespace.CrabSquid.onGroundTracker">
   onGroundTracker
   
@@ -636,9 +452,7 @@ public MoveOnGround moveOnGroundAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-[SerializeField]
-public OnSurfaceTracker onGroundTracker</code></pre>
+    <pre><code class="lang-csharp hljs">public OnGroundTracker onGroundTracker</code></pre>
   </div>
 
 
@@ -646,169 +460,10 @@ public OnSurfaceTracker onGroundTracker</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.OnSurfaceTracker.html">OnSurfaceTracker</a></dt>
+    <dt><a class="xref" href="DefaultNamespace.OnGroundTracker.html">OnGroundTracker</a></dt>
     <dd></dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_rb" data-uid="DefaultNamespace.CrabSquid.rb">
-  rb
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-[SerializeField]
-public Rigidbody rb</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Rigidbody.html">Rigidbody</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_upRotationSpeedSwim" data-uid="DefaultNamespace.CrabSquid.upRotationSpeedSwim">
-  upRotationSpeedSwim
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-public float upRotationSpeedSwim</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_upRotationSpeedWalk" data-uid="DefaultNamespace.CrabSquid.upRotationSpeedWalk">
-  upRotationSpeedWalk
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SerializeField]
-public float upRotationSpeedWalk</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_CrabSquid_wasOnGround" data-uid="DefaultNamespace.CrabSquid.wasOnGround">
-  wasOnGround
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool wasOnGround</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="DefaultNamespace_CrabSquid_managedFixedUpdateIndex_" data-uid="DefaultNamespace.CrabSquid.managedFixedUpdateIndex*"></a>
-
-  <h3 id="DefaultNamespace_CrabSquid_managedFixedUpdateIndex" data-uid="DefaultNamespace.CrabSquid.managedFixedUpdateIndex">
-  managedFixedUpdateIndex
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int managedFixedUpdateIndex { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -819,146 +474,6 @@ public float upRotationSpeedWalk</code></pre>
 
   <h2 class="section" id="methods">Methods
 </h2>
-
-
-  <a id="DefaultNamespace_CrabSquid_GetProfileTag_" data-uid="DefaultNamespace.CrabSquid.GetProfileTag*"></a>
-
-  <h3 id="DefaultNamespace_CrabSquid_GetProfileTag" data-uid="DefaultNamespace.CrabSquid.GetProfileTag">
-  GetProfileTag()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GetProfileTag()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_CrabSquid_Jump_" data-uid="DefaultNamespace.CrabSquid.Jump*"></a>
-
-  <h3 id="DefaultNamespace_CrabSquid_Jump" data-uid="DefaultNamespace.CrabSquid.Jump">
-  Jump()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Jump()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_CrabSquid_ManagedFixedUpdate_" data-uid="DefaultNamespace.CrabSquid.ManagedFixedUpdate*"></a>
-
-  <h3 id="DefaultNamespace_CrabSquid_ManagedFixedUpdate" data-uid="DefaultNamespace.CrabSquid.ManagedFixedUpdate">
-  ManagedFixedUpdate()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ManagedFixedUpdate()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_CrabSquid_OnDestroy_" data-uid="DefaultNamespace.CrabSquid.OnDestroy*"></a>
-
-  <h3 id="DefaultNamespace_CrabSquid_OnDestroy" data-uid="DefaultNamespace.CrabSquid.OnDestroy">
-  OnDestroy()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnDestroy()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_CrabSquid_SetOnGround_" data-uid="DefaultNamespace.CrabSquid.SetOnGround*"></a>
-
-  <h3 id="DefaultNamespace_CrabSquid_SetOnGround_System_Boolean_" data-uid="DefaultNamespace.CrabSquid.SetOnGround(System.Boolean)">
-  SetOnGround(bool)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetOnGround(bool onGround)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>onGround</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
 
 
   <a id="DefaultNamespace_CrabSquid_Update_" data-uid="DefaultNamespace.CrabSquid.Update*"></a>

@@ -101,7 +101,7 @@ Class MinableDrawCallCollection
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MinableDrawCallCollection</code></pre>
+    <pre><code class="lang-csharp hljs">public class MinableDrawCallCollection : IThreadable</code></pre>
   </div>
 
 
@@ -115,6 +115,12 @@ Class MinableDrawCallCollection
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="TerrainSystem.IThreadable.html">IThreadable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -193,8 +199,8 @@ Class MinableDrawCallCollection
 
 
 
-  <h3 id="TerrainSystem_MinableDrawCallCollection_MinableDrawCalls" data-uid="TerrainSystem.MinableDrawCallCollection.MinableDrawCalls">
-  MinableDrawCalls
+  <h3 id="TerrainSystem_MinableDrawCallCollection_CENTER_INDEX" data-uid="TerrainSystem.MinableDrawCallCollection.CENTER_INDEX">
+  CENTER_INDEX
   
   </h3>
 
@@ -202,7 +208,7 @@ Class MinableDrawCallCollection
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly InstancedIndirectDrawCall[] MinableDrawCalls</code></pre>
+    <pre><code class="lang-csharp hljs">public const int CENTER_INDEX = 4</code></pre>
   </div>
 
 
@@ -210,7 +216,7 @@ Class MinableDrawCallCollection
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="InstancedIndirectDrawCall.html">InstancedIndirectDrawCall</a>[]</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -223,8 +229,8 @@ Class MinableDrawCallCollection
 
 
 
-  <h3 id="TerrainSystem_MinableDrawCallCollection_MinableVisualiserDrawCalls" data-uid="TerrainSystem.MinableDrawCallCollection.MinableVisualiserDrawCalls">
-  MinableVisualiserDrawCalls
+  <h3 id="TerrainSystem_MinableDrawCallCollection_DrawCallBlocks" data-uid="TerrainSystem.MinableDrawCallCollection.DrawCallBlocks">
+  DrawCallBlocks
   
   </h3>
 
@@ -232,7 +238,7 @@ Class MinableDrawCallCollection
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly InstancedIndirectDrawCall[] MinableVisualiserDrawCalls</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly MinableDrawCallBlock[] DrawCallBlocks</code></pre>
   </div>
 
 
@@ -240,10 +246,135 @@ Class MinableDrawCallCollection
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="InstancedIndirectDrawCall.html">InstancedIndirectDrawCall</a>[]</dt>
+    <dt><a class="xref" href="TerrainSystem.MinableDrawCallBlock.html">MinableDrawCallBlock</a>[]</dt>
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_IsWriting" data-uid="TerrainSystem.MinableDrawCallCollection.IsWriting">
+  IsWriting
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsWriting</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_VisualizerDrawCallBlock" data-uid="TerrainSystem.MinableDrawCallCollection.VisualizerDrawCallBlock">
+  VisualizerDrawCallBlock
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MinableVisualizerDrawCallBlock VisualizerDrawCallBlock</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="TerrainSystem.MinableVisualizerDrawCallBlock.html">MinableVisualizerDrawCallBlock</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_WORK_PARTITIONS" data-uid="TerrainSystem.MinableDrawCallCollection.WORK_PARTITIONS">
+  WORK_PARTITIONS
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WORK_PARTITIONS = 9</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="TerrainSystem_MinableDrawCallCollection_ThreadCost_" data-uid="TerrainSystem.MinableDrawCallCollection.ThreadCost*"></a>
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_ThreadCost" data-uid="TerrainSystem.MinableDrawCallCollection.ThreadCost">
+  ThreadCost
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ThreadCost { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -256,10 +387,10 @@ Class MinableDrawCallCollection
 </h2>
 
 
-  <a id="TerrainSystem_MinableDrawCallCollection_Clear_" data-uid="TerrainSystem.MinableDrawCallCollection.Clear*"></a>
+  <a id="TerrainSystem_MinableDrawCallCollection_CanThread_" data-uid="TerrainSystem.MinableDrawCallCollection.CanThread*"></a>
 
-  <h3 id="TerrainSystem_MinableDrawCallCollection_Clear" data-uid="TerrainSystem.MinableDrawCallCollection.Clear">
-  Clear()
+  <h3 id="TerrainSystem_MinableDrawCallCollection_CanThread" data-uid="TerrainSystem.MinableDrawCallCollection.CanThread">
+  CanThread()
   
   </h3>
 
@@ -267,7 +398,147 @@ Class MinableDrawCallCollection
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool CanThread()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="TerrainSystem_MinableDrawCallCollection_ClearAll_" data-uid="TerrainSystem.MinableDrawCallCollection.ClearAll*"></a>
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_ClearAll" data-uid="TerrainSystem.MinableDrawCallCollection.ClearAll">
+  ClearAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="TerrainSystem_MinableDrawCallCollection_DebugName_" data-uid="TerrainSystem.MinableDrawCallCollection.DebugName*"></a>
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_DebugName" data-uid="TerrainSystem.MinableDrawCallCollection.DebugName">
+  DebugName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DebugName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="TerrainSystem_MinableDrawCallCollection_RefreshAll_" data-uid="TerrainSystem.MinableDrawCallCollection.RefreshAll*"></a>
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_RefreshAll" data-uid="TerrainSystem.MinableDrawCallCollection.RefreshAll">
+  RefreshAll()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RefreshAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="TerrainSystem_MinableDrawCallCollection_RefreshMinableRenderDistance_" data-uid="TerrainSystem.MinableDrawCallCollection.RefreshMinableRenderDistance*"></a>
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_RefreshMinableRenderDistance" data-uid="TerrainSystem.MinableDrawCallCollection.RefreshMinableRenderDistance">
+  RefreshMinableRenderDistance()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RefreshMinableRenderDistance()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="TerrainSystem_MinableDrawCallCollection_RefreshVisualisers_" data-uid="TerrainSystem.MinableDrawCallCollection.RefreshVisualisers*"></a>
+
+  <h3 id="TerrainSystem_MinableDrawCallCollection_RefreshVisualisers" data-uid="TerrainSystem.MinableDrawCallCollection.RefreshVisualisers">
+  RefreshVisualisers()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RefreshVisualisers()</code></pre>
   </div>
 
 

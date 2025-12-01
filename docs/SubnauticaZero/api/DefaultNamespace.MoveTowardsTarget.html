@@ -102,7 +102,7 @@ Class MoveTowardsTarget
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(SwimBehaviour))]
-public class MoveTowardsTarget : CreatureAction</code></pre>
+public class MoveTowardsTarget : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -121,6 +121,12 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -128,6 +134,9 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -142,31 +151,25 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StartPerform_Creature_System_Single_">CreatureAction.StartPerform(Creature, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StartPerform_System_Single_">CreatureAction.StartPerform(float)</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_Creature_System_Single_">CreatureAction.StopPerform(Creature, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StopPerform_System_Single_">CreatureAction.StopPerform(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetMaxEvaluatePriority">CreatureAction.GetMaxEvaluatePriority()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -321,6 +324,36 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_MoveTowardsTarget_ignoreSameKind" data-uid="DefaultNamespace.MoveTowardsTarget.ignoreSameKind">
+  ignoreSameKind
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ignoreSameKind</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_MoveTowardsTarget_isTargetValidFilter" data-uid="DefaultNamespace.MoveTowardsTarget.isTargetValidFilter">
   isTargetValidFilter
   
@@ -399,6 +432,36 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_MoveTowardsTarget_myTechType" data-uid="DefaultNamespace.MoveTowardsTarget.myTechType">
+  myTechType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TechType myTechType</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
     <dd></dd>
   </dl>
 
@@ -596,8 +659,8 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_MoveTowardsTarget_Evaluate_" data-uid="DefaultNamespace.MoveTowardsTarget.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_MoveTowardsTarget_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.MoveTowardsTarget.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_MoveTowardsTarget_Evaluate_System_Single_" data-uid="DefaultNamespace.MoveTowardsTarget.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -605,13 +668,11 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -727,8 +788,8 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_MoveTowardsTarget_Perform_" data-uid="DefaultNamespace.MoveTowardsTarget.Perform*"></a>
 
-  <h3 id="DefaultNamespace_MoveTowardsTarget_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.MoveTowardsTarget.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_MoveTowardsTarget_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.MoveTowardsTarget.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -736,13 +797,11 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -771,7 +830,7 @@ public class MoveTowardsTarget : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
   </div>
 
 

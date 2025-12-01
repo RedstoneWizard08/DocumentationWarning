@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CameraDriverBase | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CameraDriverBase | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.ModularCamera.CameraDriverBase">
+
+
+
+  <h1 id="KSP_ModularCamera_CameraDriverBase" data-uid="KSP.ModularCamera.CameraDriverBase" class="text-break">
+Class CameraDriverBase  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.ModularCamera.html">ModularCamera</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CameraDriverBase : ICameraDriver, ICameraDriverReadOnly, ICameraDriverInternalState</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CameraDriverBase</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.ModularCamera.ICameraDriver.html">ICameraDriver</a></div>
+      <div><a class="xref" href="KSP.ModularCamera.ICameraDriverReadOnly.html">ICameraDriverReadOnly</a></div>
+      <div><a class="xref" href="KSP.ModularCamera.internals.ICameraDriverInternalState.html">ICameraDriverInternalState</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="KSP.CameraTemplate.CameraTemplateFPSDriver.html">CameraTemplateFPSDriver</a></div>
+      <div><a class="xref" href="KSP.CameraTemplate.CameraTemplateOrbitDriver.html">CameraTemplateOrbitDriver</a></div>
+      <div><a class="xref" href="KSP.ModularCamera.sample.SampleDragDriver.html">SampleDragDriver</a></div>
+      <div><a class="xref" href="KSP.ModularCamera.sample.SampleFPSDriver.html">SampleFPSDriver</a></div>
+      <div><a class="xref" href="KSP.ModularCamera.sample.SampleOrbitDriver.html">SampleOrbitDriver</a></div>
+      <div><a class="xref" href="KSP.OAB.OABCameraFPSDriver.html">OABCameraFPSDriver</a></div>
+      <div><a class="xref" href="KSP.OAB.OABCameraOrbitDriver.html">OABCameraOrbitDriver</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase__ctor_" data-uid="KSP.ModularCamera.CameraDriverBase.#ctor*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase__ctor_KSP_ModularCamera_ICameraDriver_" data-uid="KSP.ModularCamera.CameraDriverBase.#ctor(KSP.ModularCamera.ICameraDriver)">
+  CameraDriverBase(ICameraDriver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraDriverBase(ICameraDriver other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="KSP.ModularCamera.ICameraDriver.html">ICameraDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase__ctor_" data-uid="KSP.ModularCamera.CameraDriverBase.#ctor*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase__ctor_UnityEngine_Transform_UnityEngine_Transform_UnityEngine_Transform_" data-uid="KSP.ModularCamera.CameraDriverBase.#ctor(UnityEngine.Transform,UnityEngine.Transform,UnityEngine.Transform)">
+  CameraDriverBase(Transform, Transform, Transform)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraDriverBase(Transform pivot, Transform gimbal, Transform camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pivot</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+    <dt><code>gimbal</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+    <dt><code>camera</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CameraDistance_" data-uid="KSP.ModularCamera.CameraDriverBase.CameraDistance*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CameraDistance" data-uid="KSP.ModularCamera.CameraDriverBase.CameraDistance">
+  CameraDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CameraDistance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CameraOffset_" data-uid="KSP.ModularCamera.CameraDriverBase.CameraOffset*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CameraOffset" data-uid="KSP.ModularCamera.CameraDriverBase.CameraOffset">
+  CameraOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 CameraOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CameraPosition_" data-uid="KSP.ModularCamera.CameraDriverBase.CameraPosition*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CameraPosition" data-uid="KSP.ModularCamera.CameraDriverBase.CameraPosition">
+  CameraPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 CameraPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CameraTransform_" data-uid="KSP.ModularCamera.CameraDriverBase.CameraTransform*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CameraTransform" data-uid="KSP.ModularCamera.CameraDriverBase.CameraTransform">
+  CameraTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform CameraTransform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GimbalLocalRotation_" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalLocalRotation*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GimbalLocalRotation" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalLocalRotation">
+  GimbalLocalRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion GimbalLocalRotation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GimbalToWorld_" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalToWorld*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GimbalToWorld" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalToWorld">
+  GimbalToWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 GimbalToWorld { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GimbalTransform_" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalTransform*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GimbalTransform" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalTransform">
+  GimbalTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform GimbalTransform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GimbalWorldForward_" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldForward*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GimbalWorldForward" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldForward">
+  GimbalWorldForward
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GimbalWorldForward { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GimbalWorldRight_" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldRight*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GimbalWorldRight" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldRight">
+  GimbalWorldRight
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GimbalWorldRight { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GimbalWorldRotation_" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldRotation*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GimbalWorldRotation" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldRotation">
+  GimbalWorldRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion GimbalWorldRotation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GimbalWorldUp_" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldUp*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GimbalWorldUp" data-uid="KSP.ModularCamera.CameraDriverBase.GimbalWorldUp">
+  GimbalWorldUp
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GimbalWorldUp { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_InputInterpreters_" data-uid="KSP.ModularCamera.CameraDriverBase.InputInterpreters*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_InputInterpreters" data-uid="KSP.ModularCamera.CameraDriverBase.InputInterpreters">
+  InputInterpreters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;CameraInputBinding, CameraInputInterpreter&gt; InputInterpreters { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a>, <a class="xref" href="KSP.ModularCamera.CameraInputInterpreter.html">CameraInputInterpreter</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_InputModifiers_" data-uid="KSP.ModularCamera.CameraDriverBase.InputModifiers*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_InputModifiers" data-uid="KSP.ModularCamera.CameraDriverBase.InputModifiers">
+  InputModifiers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;CameraInputBinding, List&lt;CameraInputModifier&gt;&gt; InputModifiers { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KSP.ModularCamera.CameraInputModifier.html">CameraInputModifier</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Pitch_" data-uid="KSP.ModularCamera.CameraDriverBase.Pitch*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Pitch" data-uid="KSP.ModularCamera.CameraDriverBase.Pitch">
+  Pitch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Pitch { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_PivotLocalRotation_" data-uid="KSP.ModularCamera.CameraDriverBase.PivotLocalRotation*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_PivotLocalRotation" data-uid="KSP.ModularCamera.CameraDriverBase.PivotLocalRotation">
+  PivotLocalRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion PivotLocalRotation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_PivotPosition_" data-uid="KSP.ModularCamera.CameraDriverBase.PivotPosition*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_PivotPosition" data-uid="KSP.ModularCamera.CameraDriverBase.PivotPosition">
+  PivotPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 PivotPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_PivotToWorld_" data-uid="KSP.ModularCamera.CameraDriverBase.PivotToWorld*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_PivotToWorld" data-uid="KSP.ModularCamera.CameraDriverBase.PivotToWorld">
+  PivotToWorld
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 PivotToWorld { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_PivotToWorldRotation_" data-uid="KSP.ModularCamera.CameraDriverBase.PivotToWorldRotation*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_PivotToWorldRotation" data-uid="KSP.ModularCamera.CameraDriverBase.PivotToWorldRotation">
+  PivotToWorldRotation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion PivotToWorldRotation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_PivotTransform_" data-uid="KSP.ModularCamera.CameraDriverBase.PivotTransform*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_PivotTransform" data-uid="KSP.ModularCamera.CameraDriverBase.PivotTransform">
+  PivotTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform PivotTransform { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Roll_" data-uid="KSP.ModularCamera.CameraDriverBase.Roll*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Roll" data-uid="KSP.ModularCamera.CameraDriverBase.Roll">
+  Roll
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Roll { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_TargetDistance_" data-uid="KSP.ModularCamera.CameraDriverBase.TargetDistance*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_TargetDistance" data-uid="KSP.ModularCamera.CameraDriverBase.TargetDistance">
+  TargetDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TargetDistance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_TargetOffset_" data-uid="KSP.ModularCamera.CameraDriverBase.TargetOffset*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_TargetOffset" data-uid="KSP.ModularCamera.CameraDriverBase.TargetOffset">
+  TargetOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 TargetOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_TargetPosition_" data-uid="KSP.ModularCamera.CameraDriverBase.TargetPosition*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_TargetPosition" data-uid="KSP.ModularCamera.CameraDriverBase.TargetPosition">
+  TargetPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 TargetPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Validators_" data-uid="KSP.ModularCamera.CameraDriverBase.Validators*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Validators" data-uid="KSP.ModularCamera.CameraDriverBase.Validators">
+  Validators
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;ValidatorType, Validator&gt; Validators { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="KSP.ModularCamera.ValidatorType.html">ValidatorType</a>, <a class="xref" href="KSP.ModularCamera.Validator.html">Validator</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_WorldToGimbal_" data-uid="KSP.ModularCamera.CameraDriverBase.WorldToGimbal*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_WorldToGimbal" data-uid="KSP.ModularCamera.CameraDriverBase.WorldToGimbal">
+  WorldToGimbal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 WorldToGimbal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_WorldToPivot_" data-uid="KSP.ModularCamera.CameraDriverBase.WorldToPivot*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_WorldToPivot" data-uid="KSP.ModularCamera.CameraDriverBase.WorldToPivot">
+  WorldToPivot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 WorldToPivot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Yaw_" data-uid="KSP.ModularCamera.CameraDriverBase.Yaw*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Yaw" data-uid="KSP.ModularCamera.CameraDriverBase.Yaw">
+  Yaw
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Yaw { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Activate_" data-uid="KSP.ModularCamera.CameraDriverBase.Activate*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Activate_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.Activate(System.Boolean)">
+  Activate(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Activate(bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_AddInputModifier_" data-uid="KSP.ModularCamera.CameraDriverBase.AddInputModifier*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_AddInputModifier_KSP_ModularCamera_CameraInputBinding_KSP_ModularCamera_CameraInputModifier_" data-uid="KSP.ModularCamera.CameraDriverBase.AddInputModifier(KSP.ModularCamera.CameraInputBinding,KSP.ModularCamera.CameraInputModifier)">
+  AddInputModifier(CameraInputBinding, CameraInputModifier)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddInputModifier(CameraInputBinding binding, CameraInputModifier modifier)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+    <dt><code>modifier</code> <a class="xref" href="KSP.ModularCamera.CameraInputModifier.html">CameraInputModifier</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_AddOffset_" data-uid="KSP.ModularCamera.CameraDriverBase.AddOffset*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_AddOffset_UnityEngine_Vector3_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.AddOffset(UnityEngine.Vector3,System.Boolean)">
+  AddOffset(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AddOffset(Vector3 worldOffset, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldOffset</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_AddValidator_" data-uid="KSP.ModularCamera.CameraDriverBase.AddValidator*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_AddValidator_KSP_ModularCamera_ValidatorType_KSP_ModularCamera_Validator_" data-uid="KSP.ModularCamera.CameraDriverBase.AddValidator(KSP.ModularCamera.ValidatorType,KSP.ModularCamera.Validator)">
+  AddValidator(ValidatorType, Validator)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddValidator(ValidatorType type, Validator validator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="KSP.ModularCamera.ValidatorType.html">ValidatorType</a></dt>
+    <dd></dd>
+    <dt><code>validator</code> <a class="xref" href="KSP.ModularCamera.Validator.html">Validator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ApplyInput_" data-uid="KSP.ModularCamera.CameraDriverBase.ApplyInput*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ApplyInput_KSP_ModularCamera_CameraInputBinding_KSP_ModularCamera_CameraInputValueList_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.ApplyInput(KSP.ModularCamera.CameraInputBinding,KSP.ModularCamera.CameraInputValueList,System.Boolean)">
+  ApplyInput(CameraInputBinding, CameraInputValueList, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyInput(CameraInputBinding binding, CameraInputValueList inputValues, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+    <dt><code>inputValues</code> <a class="xref" href="KSP.ModularCamera.CameraInputValueList.html">CameraInputValueList</a></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_BindInputInterpreter_" data-uid="KSP.ModularCamera.CameraDriverBase.BindInputInterpreter*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_BindInputInterpreter_KSP_ModularCamera_CameraInputBinding_KSP_ModularCamera_CameraInputInterpreter_" data-uid="KSP.ModularCamera.CameraDriverBase.BindInputInterpreter(KSP.ModularCamera.CameraInputBinding,KSP.ModularCamera.CameraInputInterpreter)">
+  BindInputInterpreter(CameraInputBinding, CameraInputInterpreter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BindInputInterpreter(CameraInputBinding binding, CameraInputInterpreter handler)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+    <dt><code>handler</code> <a class="xref" href="KSP.ModularCamera.CameraInputInterpreter.html">CameraInputInterpreter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ClearInputInterpreterFor_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputInterpreterFor*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ClearInputInterpreterFor_KSP_ModularCamera_CameraInputBinding_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputInterpreterFor(KSP.ModularCamera.CameraInputBinding)">
+  ClearInputInterpreterFor(CameraInputBinding)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearInputInterpreterFor(CameraInputBinding binding)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ClearInputInterpreters_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputInterpreters*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ClearInputInterpreters" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputInterpreters">
+  ClearInputInterpreters()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearInputInterpreters()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ClearInputModifiers_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputModifiers*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ClearInputModifiers" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputModifiers">
+  ClearInputModifiers()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearInputModifiers()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ClearInputModifiers_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputModifiers*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ClearInputModifiers_KSP_ModularCamera_CameraInputBinding_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearInputModifiers(KSP.ModularCamera.CameraInputBinding)">
+  ClearInputModifiers(CameraInputBinding)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearInputModifiers(CameraInputBinding binding)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ClearValidators_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearValidators*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ClearValidators" data-uid="KSP.ModularCamera.CameraDriverBase.ClearValidators">
+  ClearValidators()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearValidators()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ClearValidators_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearValidators*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ClearValidators_KSP_ModularCamera_ValidatorType_" data-uid="KSP.ModularCamera.CameraDriverBase.ClearValidators(KSP.ModularCamera.ValidatorType)">
+  ClearValidators(ValidatorType)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearValidators(ValidatorType type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="KSP.ModularCamera.ValidatorType.html">ValidatorType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Clone_" data-uid="KSP.ModularCamera.CameraDriverBase.Clone*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Clone" data-uid="KSP.ModularCamera.CameraDriverBase.Clone">
+  Clone()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ICameraDriver Clone()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.ModularCamera.ICameraDriver.html">ICameraDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CopyInputInterpretersFrom_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyInputInterpretersFrom*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CopyInputInterpretersFrom_KSP_ModularCamera_ICameraDriver_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyInputInterpretersFrom(KSP.ModularCamera.ICameraDriver)">
+  CopyInputInterpretersFrom(ICameraDriver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyInputInterpretersFrom(ICameraDriver other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="KSP.ModularCamera.ICameraDriver.html">ICameraDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CopyInputModifiersFrom_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyInputModifiersFrom*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CopyInputModifiersFrom_KSP_ModularCamera_ICameraDriver_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyInputModifiersFrom(KSP.ModularCamera.ICameraDriver)">
+  CopyInputModifiersFrom(ICameraDriver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyInputModifiersFrom(ICameraDriver other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="KSP.ModularCamera.ICameraDriver.html">ICameraDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CopyTransformsFrom_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyTransformsFrom*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CopyTransformsFrom_KSP_ModularCamera_ICameraDriver_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyTransformsFrom(KSP.ModularCamera.ICameraDriver)">
+  CopyTransformsFrom(ICameraDriver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTransformsFrom(ICameraDriver other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="KSP.ModularCamera.ICameraDriver.html">ICameraDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_CopyValidatorsFrom_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyValidatorsFrom*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_CopyValidatorsFrom_KSP_ModularCamera_ICameraDriver_" data-uid="KSP.ModularCamera.CameraDriverBase.CopyValidatorsFrom(KSP.ModularCamera.ICameraDriver)">
+  CopyValidatorsFrom(ICameraDriver)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyValidatorsFrom(ICameraDriver other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="KSP.ModularCamera.ICameraDriver.html">ICameraDriver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Deactivate_" data-uid="KSP.ModularCamera.CameraDriverBase.Deactivate*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Deactivate_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.Deactivate(System.Boolean)">
+  Deactivate(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Deactivate(bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ForceCameraDistanceUnvalidated_" data-uid="KSP.ModularCamera.CameraDriverBase.ForceCameraDistanceUnvalidated*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ForceCameraDistanceUnvalidated_System_Single_" data-uid="KSP.ModularCamera.CameraDriverBase.ForceCameraDistanceUnvalidated(System.Single)">
+  ForceCameraDistanceUnvalidated(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ForceCameraDistanceUnvalidated(float floatDistance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>floatDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ForceCameraPositionUnvalidated_" data-uid="KSP.ModularCamera.CameraDriverBase.ForceCameraPositionUnvalidated*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ForceCameraPositionUnvalidated_UnityEngine_Vector3_" data-uid="KSP.ModularCamera.CameraDriverBase.ForceCameraPositionUnvalidated(UnityEngine.Vector3)">
+  ForceCameraPositionUnvalidated(Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ForceCameraPositionUnvalidated(Vector3 worldPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_GetModifiedInputs_" data-uid="KSP.ModularCamera.CameraDriverBase.GetModifiedInputs*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_GetModifiedInputs_KSP_ModularCamera_CameraInputBinding_KSP_ModularCamera_CameraInputValueList_" data-uid="KSP.ModularCamera.CameraDriverBase.GetModifiedInputs(KSP.ModularCamera.CameraInputBinding,KSP.ModularCamera.CameraInputValueList)">
+  GetModifiedInputs(CameraInputBinding, CameraInputValueList)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraInputValueList GetModifiedInputs(CameraInputBinding binding, CameraInputValueList rawInputs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+    <dt><code>rawInputs</code> <a class="xref" href="KSP.ModularCamera.CameraInputValueList.html">CameraInputValueList</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.ModularCamera.CameraInputValueList.html">CameraInputValueList</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_IsInputInterpreted_" data-uid="KSP.ModularCamera.CameraDriverBase.IsInputInterpreted*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_IsInputInterpreted_KSP_ModularCamera_CameraInputBinding_" data-uid="KSP.ModularCamera.CameraDriverBase.IsInputInterpreted(KSP.ModularCamera.CameraInputBinding)">
+  IsInputInterpreted(CameraInputBinding)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInputInterpreted(CameraInputBinding binding)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_IsInputModified_" data-uid="KSP.ModularCamera.CameraDriverBase.IsInputModified*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_IsInputModified_KSP_ModularCamera_CameraInputBinding_" data-uid="KSP.ModularCamera.CameraDriverBase.IsInputModified(KSP.ModularCamera.CameraInputBinding)">
+  IsInputModified(CameraInputBinding)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInputModified(CameraInputBinding binding)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>binding</code> <a class="xref" href="KSP.ModularCamera.CameraInputBinding.html">CameraInputBinding</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_Reset_" data-uid="KSP.ModularCamera.CameraDriverBase.Reset*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_Reset_UnityEngine_Transform_UnityEngine_Transform_UnityEngine_Transform_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.Reset(UnityEngine.Transform,UnityEngine.Transform,UnityEngine.Transform,System.Boolean)">
+  Reset(Transform, Transform, Transform, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset(Transform pivot, Transform gimbal, Transform camera, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pivot</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+    <dt><code>gimbal</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+    <dt><code>camera</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_RunValidator_" data-uid="KSP.ModularCamera.CameraDriverBase.RunValidator*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_RunValidator_KSP_ModularCamera_ValidatorType_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.RunValidator(KSP.ModularCamera.ValidatorType,System.Boolean)">
+  RunValidator(ValidatorType, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RunValidator(ValidatorType type, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="KSP.ModularCamera.ValidatorType.html">ValidatorType</a></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_SetPitch_" data-uid="KSP.ModularCamera.CameraDriverBase.SetPitch*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_SetPitch_System_Single_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.SetPitch(System.Single,System.Boolean)">
+  SetPitch(float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetPitch(float value, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_SetPivotPosition_" data-uid="KSP.ModularCamera.CameraDriverBase.SetPivotPosition*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_SetPivotPosition_UnityEngine_Vector3_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.SetPivotPosition(UnityEngine.Vector3,System.Boolean)">
+  SetPivotPosition(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetPivotPosition(Vector3 worldPosition, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_SetRoll_" data-uid="KSP.ModularCamera.CameraDriverBase.SetRoll*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_SetRoll_System_Single_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.SetRoll(System.Single,System.Boolean)">
+  SetRoll(float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetRoll(float value, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_SetTargetDistance_" data-uid="KSP.ModularCamera.CameraDriverBase.SetTargetDistance*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_SetTargetDistance_System_Single_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.SetTargetDistance(System.Single,System.Boolean)">
+  SetTargetDistance(float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetTargetDistance(float worldDistance, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_SetYaw_" data-uid="KSP.ModularCamera.CameraDriverBase.SetYaw*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_SetYaw_System_Single_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.SetYaw(System.Single,System.Boolean)">
+  SetYaw(float, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetYaw(float value, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_ModularCamera_CameraDriverBase_ShiftCameraToPosition_" data-uid="KSP.ModularCamera.CameraDriverBase.ShiftCameraToPosition*"></a>
+
+  <h3 id="KSP_ModularCamera_CameraDriverBase_ShiftCameraToPosition_UnityEngine_Vector3_System_Boolean_" data-uid="KSP.ModularCamera.CameraDriverBase.ShiftCameraToPosition(UnityEngine.Vector3,System.Boolean)">
+  ShiftCameraToPosition(Vector3, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ShiftCameraToPosition(Vector3 worldPosition, bool validate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>validate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

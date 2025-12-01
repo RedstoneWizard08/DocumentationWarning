@@ -101,7 +101,9 @@ Class MyResourceSinkComponent
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MyResourceSinkComponent : MyResourceSinkComponentBase, IMyEntityComponentBase, IMyComponentBase, IMyResourceSinkComponent</code></pre>
+    <pre><code class="lang-csharp hljs">[MyComponentType(typeof(MyResourceSinkComponent))]
+[MyComponentBuilder(typeof(MyObjectBuilder_ResourceSinkComponent), true)]
+public class MyResourceSinkComponent : MyResourceSinkComponentBase, IMyEntityComponentBase, IMyComponentBase, IMyResourceSinkComponent</code></pre>
   </div>
 
 
@@ -132,9 +134,6 @@ Class MyResourceSinkComponent
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAddedToContainer">MyEntityComponentBase.OnAddedToContainer()</a>
-    </div>
-    <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
     </div>
     <div>
@@ -153,9 +152,6 @@ Class MyResourceSinkComponent
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_GetAs__1">MyComponentBase.GetAs&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_OnAddedToScene">MyComponentBase.OnAddedToScene()</a>
-    </div>
-    <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_OnRemovedFromScene">MyComponentBase.OnRemovedFromScene()</a>
     </div>
     <div>
@@ -165,9 +161,6 @@ Class MyResourceSinkComponent
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_Deserialize_VRage_Game_ObjectBuilders_ComponentSystem_MyObjectBuilder_ComponentBase_">MyComponentBase.Deserialize(MyObjectBuilder_ComponentBase)</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_Init_VRage_Game_MyComponentDefinitionBase_">MyComponentBase.Init(MyComponentDefinitionBase)</a>
-    </div>
-    <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_IsSerialized">MyComponentBase.IsSerialized()</a>
     </div>
     <div>
@@ -175,6 +168,9 @@ Class MyResourceSinkComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -225,6 +221,32 @@ Class MyResourceSinkComponent
 
   <h2 class="section" id="constructors">Constructors
 </h2>
+
+
+  <a id="Sandbox_Game_EntityComponents_MyResourceSinkComponent__ctor_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.#ctor*"></a>
+
+  <h3 id="Sandbox_Game_EntityComponents_MyResourceSinkComponent__ctor" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.#ctor">
+  MyResourceSinkComponent()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyResourceSinkComponent()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
   <a id="Sandbox_Game_EntityComponents_MyResourceSinkComponent__ctor_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.#ctor*"></a>
@@ -803,6 +825,37 @@ public float SuppliedRatio { get; }</code></pre>
 
   <a id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_Init_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.Init*"></a>
 
+  <h3 id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_Init_VRage_Game_MyComponentDefinitionBase_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.Init(VRage.Game.MyComponentDefinitionBase)">
+  Init(MyComponentDefinitionBase)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(MyComponentDefinitionBase definition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>definition</code> <a class="xref" href="VRage.Game.MyComponentDefinitionBase.html">MyComponentDefinitionBase</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_Init_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.Init*"></a>
+
   <h3 id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_Init_VRage_Utils_MyStringHash_System_Collections_Generic_List_VRage_Game_Components_MyResourceSinkInfo__Sandbox_Game_Entities_MyCubeBlock_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.Init(VRage.Utils.MyStringHash,System.Collections.Generic.List{VRage.Game.Components.MyResourceSinkInfo},Sandbox.Game.Entities.MyCubeBlock)">
   Init(MyStringHash, List&lt;MyResourceSinkInfo&gt;, MyCubeBlock)
   
@@ -1040,6 +1093,58 @@ public float SuppliedRatio { get; }</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_OnAddedToContainer_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.OnAddedToContainer*"></a>
+
+  <h3 id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_OnAddedToContainer" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.OnAddedToContainer">
+  OnAddedToContainer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAddedToContainer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_OnAddedToScene_" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.OnAddedToScene*"></a>
+
+  <h3 id="Sandbox_Game_EntityComponents_MyResourceSinkComponent_OnAddedToScene" data-uid="Sandbox.Game.EntityComponents.MyResourceSinkComponent.OnAddedToScene">
+  OnAddedToScene()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAddedToScene()</code></pre>
+  </div>
+
+
 
 
 

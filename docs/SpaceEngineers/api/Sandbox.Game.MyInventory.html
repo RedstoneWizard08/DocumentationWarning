@@ -140,6 +140,9 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
       <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RemoveEntityOnEmpty">MyInventoryBase.RemoveEntityOnEmpty</a>
     </div>
     <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_IsInModifyInventory">MyInventoryBase.IsInModifyInventory</a>
+    </div>
+    <div>
       <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_CanPutItems">MyInventoryBase.CanPutItems</a>
     </div>
     <div>
@@ -153,6 +156,9 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseContentsChanged">MyInventoryBase.RaiseContentsChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseAfterModifyFinished">MyInventoryBase.RaiseAfterModifyFinished()</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_RaiseInventoryContentChanged_VRage_Game_Entity_MyPhysicalInventoryItem_VRage_MyFixedPoint_">MyInventoryBase.RaiseInventoryContentChanged(MyPhysicalInventoryItem, MyFixedPoint)</a>
@@ -180,6 +186,9 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_BeforeContentsChanged">MyInventoryBase.BeforeContentsChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_AfterModifyFinished">MyInventoryBase.AfterModifyFinished</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Entity.MyInventoryBase.html#VRage_Game_Entity_MyInventoryBase_ContentsAdded">MyInventoryBase.ContentsAdded</a>
@@ -225,6 +234,9 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -562,6 +574,36 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="VRage.Utils.MyStringHash.html">MyStringHash</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Sandbox_Game_MyInventory_IsWildlifeAgentInventory" data-uid="Sandbox.Game.MyInventory.IsWildlifeAgentInventory">
+  IsWildlifeAgentInventory
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sync&lt;bool, SyncDirection.FromServer&gt; IsWildlifeAgentInventory</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VRage.Sync.Sync-2.html">Sync</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>, <a class="xref" href="VRage.Sync.SyncDirection.html">SyncDirection</a>.<a class="xref" href="VRage.Sync.SyncDirection.FromServer.html">FromServer</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -2707,8 +2749,8 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
 
   <a id="Sandbox_Game_MyInventory_ModifyContent_" data-uid="Sandbox.Game.MyInventory.ModifyContent*"></a>
 
-  <h3 id="Sandbox_Game_MyInventory_ModifyContent_VRage_Game_Entity_MyPhysicalInventoryItem_System_Action_VRage_Game_MyObjectBuilder_PhysicalObject__" data-uid="Sandbox.Game.MyInventory.ModifyContent(VRage.Game.Entity.MyPhysicalInventoryItem,System.Action{VRage.Game.MyObjectBuilder_PhysicalObject})">
-  ModifyContent(MyPhysicalInventoryItem, Action&lt;MyObjectBuilder_PhysicalObject&gt;)
+  <h3 id="Sandbox_Game_MyInventory_ModifyContent_VRage_Game_Entity_MyPhysicalInventoryItem_System_Action_VRage_Game_MyObjectBuilder_PhysicalObject__System_Boolean_" data-uid="Sandbox.Game.MyInventory.ModifyContent(VRage.Game.Entity.MyPhysicalInventoryItem,System.Action{VRage.Game.MyObjectBuilder_PhysicalObject},System.Boolean)">
+  ModifyContent(MyPhysicalInventoryItem, Action&lt;MyObjectBuilder_PhysicalObject&gt;, bool)
   
   </h3>
 
@@ -2716,7 +2758,7 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ModifyContent(MyPhysicalInventoryItem item, Action&lt;MyObjectBuilder_PhysicalObject&gt; action)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ModifyContent(MyPhysicalInventoryItem item, Action&lt;MyObjectBuilder_PhysicalObject&gt; action, bool cloneIsForRestOfStack = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -2724,6 +2766,43 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
     <dt><code>item</code> <a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a></dt>
     <dd></dd>
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="VRage.Game.MyObjectBuilder_PhysicalObject.html">MyObjectBuilder_PhysicalObject</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cloneIsForRestOfStack</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_ModifyContentForRifle_" data-uid="Sandbox.Game.MyInventory.ModifyContentForRifle*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_ModifyContentForRifle_VRage_Game_Entity_MyPhysicalInventoryItem_System_Action_VRage_Game_MyObjectBuilder_PhysicalObject__System_Boolean_" data-uid="Sandbox.Game.MyInventory.ModifyContentForRifle(VRage.Game.Entity.MyPhysicalInventoryItem,System.Action{VRage.Game.MyObjectBuilder_PhysicalObject},System.Boolean)">
+  ModifyContentForRifle(MyPhysicalInventoryItem, Action&lt;MyObjectBuilder_PhysicalObject&gt;, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ModifyContentForRifle(MyPhysicalInventoryItem item, Action&lt;MyObjectBuilder_PhysicalObject&gt; action, bool cloneIsForRestOfStack = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <a class="xref" href="VRage.Game.Entity.MyPhysicalInventoryItem.html">MyPhysicalInventoryItem</a></dt>
+    <dd></dd>
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="VRage.Game.MyObjectBuilder_PhysicalObject.html">MyObjectBuilder_PhysicalObject</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cloneIsForRestOfStack</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -2749,7 +2828,7 @@ public class MyInventory : MyInventoryBase, IMyEntityComponentBase, IMyComponent
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Event(null, 2094)]
+    <pre><code class="lang-csharp hljs">[Event(null, 2127)]
 [Reliable]
 [Server]
 public void ModifyDatapad(int inventoryIndex, uint itemId, string name, string data)</code></pre>
@@ -2941,6 +3020,41 @@ public void ModifyDatapad(int inventoryIndex, uint itemId, string name, string d
     <dt><code>obj</code> <a class="xref" href="Sandbox.Game.Entities.MyFloatingObject.html">MyFloatingObject</a></dt>
     <dd></dd>
     <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_RecordConsumedFood_" data-uid="Sandbox.Game.MyInventory.RecordConsumedFood*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_RecordConsumedFood_VRage_MyFixedPoint_VRage_ObjectBuilders_SerializableDefinitionId_System_UInt64_" data-uid="Sandbox.Game.MyInventory.RecordConsumedFood(VRage.MyFixedPoint,VRage.ObjectBuilders.SerializableDefinitionId,System.UInt64)">
+  RecordConsumedFood(MyFixedPoint, SerializableDefinitionId, ulong)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RecordConsumedFood(MyFixedPoint amount, SerializableDefinitionId itemId, ulong userId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="VRage.MyFixedPoint.html">MyFixedPoint</a></dt>
+    <dd></dd>
+    <dt><code>itemId</code> <a class="xref" href="VRage.ObjectBuilders.SerializableDefinitionId.html">SerializableDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>userId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
     <dd></dd>
   </dl>
 
@@ -3320,7 +3434,7 @@ public void ModifyDatapad(int inventoryIndex, uint itemId, string name, string d
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Event(null, 2405)]
+    <pre><code class="lang-csharp hljs">[Event(null, 2438)]
 [Reliable]
 [Client]
 public static void ShowCantConsume()</code></pre>
@@ -3633,6 +3747,88 @@ public static void ShowCantConsume()</code></pre>
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TryConsumeItem_" data-uid="Sandbox.Game.MyInventory.TryConsumeItem*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TryConsumeItem_Sandbox_Game_Entities_Character_MyCharacter_Sandbox_Game_MyInventory_VRage_Game_MyDefinitionId_System_Boolean__System_Boolean_" data-uid="Sandbox.Game.MyInventory.TryConsumeItem(Sandbox.Game.Entities.Character.MyCharacter,Sandbox.Game.MyInventory,VRage.Game.MyDefinitionId,System.Boolean@,System.Boolean)">
+  TryConsumeItem(MyCharacter, MyInventory, MyDefinitionId, out bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryConsumeItem(MyCharacter character, MyInventory inventory, MyDefinitionId itemId, out bool available, bool showNotification = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>character</code> <a class="xref" href="Sandbox.Game.Entities.Character.MyCharacter.html">MyCharacter</a></dt>
+    <dd></dd>
+    <dt><code>inventory</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>itemId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>available</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>showNotification</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_MyInventory_TryTransferAll_" data-uid="Sandbox.Game.MyInventory.TryTransferAll*"></a>
+
+  <h3 id="Sandbox_Game_MyInventory_TryTransferAll_Sandbox_Game_MyInventory_Sandbox_Game_MyInventory_" data-uid="Sandbox.Game.MyInventory.TryTransferAll(Sandbox.Game.MyInventory,Sandbox.Game.MyInventory)">
+  TryTransferAll(MyInventory, MyInventory)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryTransferAll(MyInventory src, MyInventory dst)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>src</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+    <dt><code>dst</code> <a class="xref" href="Sandbox.Game.MyInventory.html">MyInventory</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

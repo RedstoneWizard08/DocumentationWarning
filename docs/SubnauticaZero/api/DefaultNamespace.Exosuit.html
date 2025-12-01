@@ -102,7 +102,7 @@ Class Exosuit
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventListenerAsync, IProtoTreeEventListener, IAnimParamReceiver, IQuickSlots, IGroundMoveable</code></pre>
+public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventListenerAsync, IProtoTreeEventListener, IAnimParamReceiver, IQuickSlots, IGroundMoveable, IScheduledUpdateBehaviour, IManagedBehaviour</code></pre>
   </div>
 
 
@@ -132,6 +132,8 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <div><a class="xref" href="DefaultNamespace.IAnimParamReceiver.html">IAnimParamReceiver</a></div>
       <div><a class="xref" href="DefaultNamespace.IQuickSlots.html">IQuickSlots</a></div>
       <div><a class="xref" href="DefaultNamespace.IGroundMoveable.html">IGroundMoveable</a></div>
+      <div><a class="xref" href="DefaultNamespace.IScheduledUpdateBehaviour.html">IScheduledUpdateBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.IManagedBehaviour.html">IManagedBehaviour</a></div>
     </dd>
   </dl>
 
@@ -141,6 +143,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_torpedoTypes">Vehicle.torpedoTypes</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_dockable">Vehicle.dockable</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_currentVersion">Vehicle.currentVersion</a>
@@ -164,7 +169,7 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_serializedModuleSlots">Vehicle.serializedModuleSlots</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_precursorOutOfWater">Vehicle.precursorOutOfWater</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_forceWalkMotorMode">Vehicle.forceWalkMotorMode</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_pilotId">Vehicle.pilotId</a>
@@ -179,15 +184,6 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_surfaceNormal">Vehicle.surfaceNormal</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_constructionFallOverride">Vehicle.constructionFallOverride</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ignoreInput">Vehicle.ignoreInput</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_teleporting">Vehicle.teleporting</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_prevVelocity">Vehicle.prevVelocity</a>
     </div>
     <div>
@@ -197,7 +193,7 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_destructionEffect">Vehicle.destructionEffect</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_subName">Vehicle.subName</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_colorNameControl">Vehicle.colorNameControl</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_handLabel">Vehicle.handLabel</a>
@@ -224,6 +220,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_moveOnLand">Vehicle.moveOnLand</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_movementEnabled">Vehicle.movementEnabled</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_customGoalOnEnter">Vehicle.customGoalOnEnter</a>
     </div>
     <div>
@@ -234,6 +233,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_enterSound">Vehicle.enterSound</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitSound">Vehicle.exitSound</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_leftHandPlug">Vehicle.leftHandPlug</a>
@@ -269,9 +271,6 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_playerPosition">Vehicle.playerPosition</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_chargingSound">Vehicle.chargingSound</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_splashSound">Vehicle.splashSound</a>
     </div>
     <div>
@@ -284,10 +283,7 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_crushDamage">Vehicle.crushDamage</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_worldSettledTracker">Vehicle.worldSettledTracker</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_vfxConstructing">Vehicle.vfxConstructing</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ecoTarget">Vehicle.ecoTarget</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_powerDownSound">Vehicle.powerDownSound</a>
@@ -305,7 +301,19 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_depthAlarms">Vehicle.depthAlarms</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_maxRechargeFraction">Vehicle.maxRechargeFraction</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ejectDelay">Vehicle.ejectDelay</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_movePlayerComp">Vehicle.movePlayerComp</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitPosWater">Vehicle.exitPosWater</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitPosLand">Vehicle.exitPosLand</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_altExitPositions">Vehicle.altExitPositions</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_timeLastCollision">Vehicle.timeLastCollision</a>
@@ -345,6 +353,27 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_isInitialized">Vehicle.isInitialized</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_cachedBaseTemperature">Vehicle.cachedBaseTemperature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_cachedBaseTemperaturePosition">Vehicle.cachedBaseTemperaturePosition</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ignoreInput">Vehicle.ignoreInput</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_teleporting">Vehicle.teleporting</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_torpedoNoAmmoMessage">Vehicle.torpedoNoAmmoMessage</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_exitFailedMessage">Vehicle.exitFailedMessage</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_upgradesStorageLabel">Vehicle.upgradesStorageLabel</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_turnedOnEvent">Vehicle.turnedOnEvent</a>
@@ -389,6 +418,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetTemperature">Vehicle.GetTemperature()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetUpwardsVelocity_UnityEngine_Transform_UnityEngine_Rigidbody_">Vehicle.GetUpwardsVelocity(Transform, Rigidbody)</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetDepth_System_Int32__System_Int32__">Vehicle.GetDepth(out int, out int)</a>
     </div>
     <div>
@@ -398,13 +430,10 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_UpdateCollidersForDocking_System_Boolean_">Vehicle.UpdateCollidersForDocking(bool)</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_Undock_Player_System_Single_">Vehicle.Undock(Player, float)</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_LazyInitialize">Vehicle.LazyInitialize()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ReAttach_UnityEngine_Vector3_">Vehicle.ReAttach(Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_AttachToBay">Vehicle.AttachToBay()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_UnlockDefaultModuleSlots">Vehicle.UnlockDefaultModuleSlots()</a>
@@ -425,12 +454,6 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnUnequip_System_String_InventoryItem_">Vehicle.OnUnequip(string, InventoryItem)</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_UpdateEnergyRecharge">Vehicle.UpdateEnergyRecharge()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetName">Vehicle.GetName()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_IAnimParamReceiver_ForwardAnimationParameterBool_System_String_System_Boolean_">Vehicle.IAnimParamReceiver.ForwardAnimationParameterBool(string, bool)</a>
     </div>
     <div>
@@ -449,6 +472,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetEnabled">Vehicle.GetEnabled()</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_EjectPlayer_System_Boolean_">Vehicle.EjectPlayer(bool)</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnKill">Vehicle.OnKill()</a>
     </div>
     <div>
@@ -464,25 +490,13 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ApplyPhysicsMove">Vehicle.ApplyPhysicsMove()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_CalculateAutopilotLocalWishDir">Vehicle.CalculateAutopilotLocalWishDir()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_TeleportVehicle_UnityEngine_Vector3_UnityEngine_Quaternion_System_Boolean_">Vehicle.TeleportVehicle(Vector3, Quaternion, bool)</a>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_TeleportVehicle_UnityEngine_Vector3_UnityEngine_Quaternion_">Vehicle.TeleportVehicle(Vector3, Quaternion)</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnTeleportationStart">Vehicle.OnTeleportationStart()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnTeleportationComplete">Vehicle.OnTeleportationComplete()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_SetAutopilotDestination_UnityEngine_Vector3_">Vehicle.SetAutopilotDestination(Vector3)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_EnableAutopilot">Vehicle.EnableAutopilot()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_DisableAutopilot">Vehicle.DisableAutopilot()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnPoweredChanged_System_Boolean_">Vehicle.OnPoweredChanged(bool)</a>
@@ -495,6 +509,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_HandleOnGround_UnityEngine_Collision_">Vehicle.HandleOnGround(Collision)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnCollisionEnter_UnityEngine_Collision_">Vehicle.OnCollisionEnter(Collision)</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_OnCollisionStay_UnityEngine_Collision_">Vehicle.OnCollisionStay(Collision)</a>
@@ -530,12 +547,6 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetQuickSlotCooldown_System_Int32_">Vehicle.GetQuickSlotCooldown(int)</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_ShouldSetKinematic">Vehicle.ShouldSetKinematic()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_SubConstructionComplete">Vehicle.SubConstructionComplete()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_IsPowered">Vehicle.IsPowered()</a>
     </div>
     <div>
@@ -567,6 +578,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetSlotCharge_System_Int32_">Vehicle.GetSlotCharge(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_EjectSequence_System_Single_">Vehicle.EjectSequence(float)</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_GetActiveSlotID">Vehicle.GetActiveSlotID()</a>
@@ -617,6 +631,9 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_TorpedoShot_ItemsContainer_TorpedoType_UnityEngine_Transform_">Vehicle.TorpedoShot(ItemsContainer, TorpedoType, Transform)</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_vehicleDefaultName">Vehicle.vehicleDefaultName</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_modules">Vehicle.modules</a>
     </div>
     <div>
@@ -624,12 +641,6 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_docked">Vehicle.docked</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_AutopilotDestination">Vehicle.AutopilotDestination</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_IsAutopilotEnabled">Vehicle.IsAutopilotEnabled</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.Vehicle.html#DefaultNamespace_Vehicle_onBind">Vehicle.onBind</a>
@@ -1222,6 +1233,100 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
+  <h3 id="DefaultNamespace_Exosuit_boostButtonFormat" data-uid="DefaultNamespace.Exosuit.boostButtonFormat">
+  boostButtonFormat
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertLocalization(1)]
+public const string boostButtonFormat = &quot;ExosuitBoost&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_boostJumpExitTextFormat" data-uid="DefaultNamespace.Exosuit.boostJumpExitTextFormat">
+  boostJumpExitTextFormat
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertLocalization(3)]
+public const string boostJumpExitTextFormat = &quot;ExosuitBoostJumpExitFormat&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_boostSound" data-uid="DefaultNamespace.Exosuit.boostSound">
+  boostSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Sound played while the Sprint button is held and boost jets are active.&quot;)]
+[AssertNotNull]
+public StudioEventEmitter boostSound</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">StudioEventEmitter</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Exosuit_bottomTransform" data-uid="DefaultNamespace.Exosuit.bottomTransform">
   bottomTransform
   
@@ -1252,6 +1357,36 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
+  <h3 id="DefaultNamespace_Exosuit_cachedLastScheduledUpdateTime" data-uid="DefaultNamespace.Exosuit.cachedLastScheduledUpdateTime">
+  cachedLastScheduledUpdateTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float cachedLastScheduledUpdateTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Exosuit_colorParams" data-uid="DefaultNamespace.Exosuit.colorParams">
   colorParams
   
@@ -1270,6 +1405,36 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_constructionFallOverride" data-uid="DefaultNamespace.Exosuit.constructionFallOverride">
+  constructionFallOverride
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool constructionFallOverride</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -1501,7 +1666,7 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const float flyingAccelScale = 0.22</code></pre>
+    <pre><code class="lang-csharp hljs">public const float flyingAccelScale = 1.2</code></pre>
   </div>
 
 
@@ -1510,6 +1675,126 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_fmodIndexBoostThrust" data-uid="DefaultNamespace.Exosuit.fmodIndexBoostThrust">
+  fmodIndexBoostThrust
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PARAMETER_ID fmodIndexBoostThrust</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PARAMETER_ID</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_fmodIndexDepth" data-uid="DefaultNamespace.Exosuit.fmodIndexDepth">
+  fmodIndexDepth
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PARAMETER_ID fmodIndexDepth</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PARAMETER_ID</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_fmodIndexJetsInWater" data-uid="DefaultNamespace.Exosuit.fmodIndexJetsInWater">
+  fmodIndexJetsInWater
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PARAMETER_ID fmodIndexJetsInWater</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PARAMETER_ID</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_fmodIndexJetsThrust" data-uid="DefaultNamespace.Exosuit.fmodIndexJetsThrust">
+  fmodIndexJetsThrust
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PARAMETER_ID fmodIndexJetsThrust</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PARAMETER_ID</span></dt>
     <dd></dd>
   </dl>
 
@@ -1552,8 +1837,8 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
-  <h3 id="DefaultNamespace_Exosuit_fmodIndexSpeed" data-uid="DefaultNamespace.Exosuit.fmodIndexSpeed">
-  fmodIndexSpeed
+  <h3 id="DefaultNamespace_Exosuit_fmodIndexVelocity" data-uid="DefaultNamespace.Exosuit.fmodIndexVelocity">
+  fmodIndexVelocity
   
   </h3>
 
@@ -1561,7 +1846,7 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PARAMETER_ID fmodIndexSpeed</code></pre>
+    <pre><code class="lang-csharp hljs">public PARAMETER_ID fmodIndexVelocity</code></pre>
   </div>
 
 
@@ -1570,6 +1855,37 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><span class="xref">PARAMETER_ID</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_footStepSounds" data-uid="DefaultNamespace.Exosuit.footStepSounds">
+  footStepSounds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public FootstepSounds footStepSounds</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FootstepSounds.html">FootstepSounds</a></dt>
     <dd></dd>
   </dl>
 
@@ -1672,6 +1988,66 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
+  <h3 id="DefaultNamespace_Exosuit_horizontalJetConsumption" data-uid="DefaultNamespace.Exosuit.horizontalJetConsumption">
+  horizontalJetConsumption
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float horizontalJetConsumption</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_horizontalJetsActive" data-uid="DefaultNamespace.Exosuit.horizontalJetsActive">
+  horizontalJetsActive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool horizontalJetsActive</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Exosuit_interior" data-uid="DefaultNamespace.Exosuit.interior">
   interior
   
@@ -1732,6 +2108,36 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
+  <h3 id="DefaultNamespace_Exosuit_jetDirectionalAccel" data-uid="DefaultNamespace.Exosuit.jetDirectionalAccel">
+  jetDirectionalAccel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float jetDirectionalAccel = 7.5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Exosuit_jetDownLastFrame" data-uid="DefaultNamespace.Exosuit.jetDownLastFrame">
   jetDownLastFrame
   
@@ -1750,6 +2156,37 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_jumpButtonFormat" data-uid="DefaultNamespace.Exosuit.jumpButtonFormat">
+  jumpButtonFormat
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertLocalization(1)]
+public const string jumpButtonFormat = &quot;ExosuitJump&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -1840,6 +2277,38 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_jumpJetsSound" data-uid="DefaultNamespace.Exosuit.jumpJetsSound">
+  jumpJetsSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Sound played while the Jump button is held and jump jets are active.&quot;)]
+[AssertNotNull]
+public StudioEventEmitter jumpJetsSound</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">StudioEventEmitter</span></dt>
     <dd></dd>
   </dl>
 
@@ -2002,6 +2471,96 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
+  <h3 id="DefaultNamespace_Exosuit_lastMoveDirection" data-uid="DefaultNamespace.Exosuit.lastMoveDirection">
+  lastMoveDirection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 lastMoveDirection</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_lastRotationParameter" data-uid="DefaultNamespace.Exosuit.lastRotationParameter">
+  lastRotationParameter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float lastRotationParameter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_lastRotationParameterVel" data-uid="DefaultNamespace.Exosuit.lastRotationParameterVel">
+  lastRotationParameterVel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float lastRotationParameterVel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Exosuit_leftArm" data-uid="DefaultNamespace.Exosuit.leftArm">
   leftArm
   
@@ -2152,8 +2711,8 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
 
 
 
-  <h3 id="DefaultNamespace_Exosuit_loopingJetSound" data-uid="DefaultNamespace.Exosuit.loopingJetSound">
-  loopingJetSound
+  <h3 id="DefaultNamespace_Exosuit_loopingSlideSound" data-uid="DefaultNamespace.Exosuit.loopingSlideSound">
+  loopingSlideSound
   
   </h3>
 
@@ -2161,7 +2720,8 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FMOD_CustomLoopingEmitter loopingJetSound</code></pre>
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public FMOD_CustomLoopingEmitter loopingSlideSound</code></pre>
   </div>
 
 
@@ -2200,6 +2760,66 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/GameObject.html">GameObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_maxDirectionalJetAngleSin" data-uid="DefaultNamespace.Exosuit.maxDirectionalJetAngleSin">
+  maxDirectionalJetAngleSin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float maxDirectionalJetAngleSin = 0.75</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_minDirectionalJetAngleSin" data-uid="DefaultNamespace.Exosuit.minDirectionalJetAngleSin">
+  minDirectionalJetAngleSin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float minDirectionalJetAngleSin = -0.75</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -2350,6 +2970,66 @@ public class Exosuit : Vehicle, IHandTarget, IProtoEventListener, IProtoEventLis
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_powerslideAccel" data-uid="DefaultNamespace.Exosuit.powerslideAccel">
+  powerslideAccel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float powerslideAccel = 75</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_powersliding" data-uid="DefaultNamespace.Exosuit.powersliding">
+  powersliding
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool powersliding</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -2562,6 +3242,36 @@ public const string propulsionCannonToReleaseButtonFormat = &quot;PropulsionCann
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_rotationParameterDecayTime" data-uid="DefaultNamespace.Exosuit.rotationParameterDecayTime">
+  rotationParameterDecayTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float rotationParameterDecayTime = 0.25</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -3116,6 +3826,36 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
+  <h3 id="DefaultNamespace_Exosuit_timeLastSlideEffect" data-uid="DefaultNamespace.Exosuit.timeLastSlideEffect">
+  timeLastSlideEffect
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float timeLastSlideEffect</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Exosuit_uiStringPrimary" data-uid="DefaultNamespace.Exosuit.uiStringPrimary">
   uiStringPrimary
   
@@ -3155,7 +3895,7 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const float underWaterDrag = 0.2</code></pre>
+    <pre><code class="lang-csharp hljs">public const float underWaterDrag = 1</code></pre>
   </div>
 
 
@@ -3185,7 +3925,7 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const float upgradedFlyingAccelScale = 0.3</code></pre>
+    <pre><code class="lang-csharp hljs">public const float upgradedFlyingAccelScale = 1.6</code></pre>
   </div>
 
 
@@ -3236,6 +3976,36 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
+  <h3 id="DefaultNamespace_Exosuit_upgradedJetDirectionalAccel" data-uid="DefaultNamespace.Exosuit.upgradedJetDirectionalAccel">
+  upgradedJetDirectionalAccel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float upgradedJetDirectionalAccel = 10.5</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_Exosuit_upgradedJumpForce" data-uid="DefaultNamespace.Exosuit.upgradedJumpForce">
   upgradedJumpForce
   
@@ -3254,6 +4024,157 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_verticalBoostFlyingAccelModifier" data-uid="DefaultNamespace.Exosuit.verticalBoostFlyingAccelModifier">
+  verticalBoostFlyingAccelModifier
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float verticalBoostFlyingAccelModifier = 0.3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_verticalJetConsumption" data-uid="DefaultNamespace.Exosuit.verticalJetConsumption">
+  verticalJetConsumption
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float verticalJetConsumption</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_verticalJetsActive" data-uid="DefaultNamespace.Exosuit.verticalJetsActive">
+  verticalJetsActive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool verticalJetsActive</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_vfxConstructing" data-uid="DefaultNamespace.Exosuit.vfxConstructing">
+  vfxConstructing
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VFXConstructing vfxConstructing</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.VFXConstructing.html">VFXConstructing</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_Exosuit_worldSettledTracker" data-uid="DefaultNamespace.Exosuit.worldSettledTracker">
+  worldSettledTracker
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AssertNotNull]
+public WorldSettledTracker worldSettledTracker</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.WorldSettledTracker.html">WorldSettledTracker</a></dt>
     <dd></dd>
   </dl>
 
@@ -3403,7 +4324,7 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool playerFullyEntered { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool playerFullyEntered { get; set; }</code></pre>
   </div>
 
 
@@ -3444,6 +4365,37 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DefaultNamespace.TechType.html">TechType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Exosuit_scheduledUpdateIndex_" data-uid="DefaultNamespace.Exosuit.scheduledUpdateIndex*"></a>
+
+  <h3 id="DefaultNamespace_Exosuit_scheduledUpdateIndex" data-uid="DefaultNamespace.Exosuit.scheduledUpdateIndex">
+  scheduledUpdateIndex
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int scheduledUpdateIndex { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -3506,37 +4458,6 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><span class="xref">Vector3</span>[]</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Exosuit_vehicleDefaultName_" data-uid="DefaultNamespace.Exosuit.vehicleDefaultName*"></a>
-
-  <h3 id="DefaultNamespace_Exosuit_vehicleDefaultName" data-uid="DefaultNamespace.Exosuit.vehicleDefaultName">
-  vehicleDefaultName
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string vehicleDefaultName { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -3783,42 +4704,6 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
-  <a id="DefaultNamespace_Exosuit_GetArm_" data-uid="DefaultNamespace.Exosuit.GetArm*"></a>
-
-  <h3 id="DefaultNamespace_Exosuit_GetArm_System_Int32_" data-uid="DefaultNamespace.Exosuit.GetArm(System.Int32)">
-  GetArm(int)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IExosuitArm GetArm(int armIndex)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>armIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.IExosuitArm.html">IExosuitArm</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_Exosuit_GetArmPrefab_" data-uid="DefaultNamespace.Exosuit.GetArmPrefab*"></a>
 
   <h3 id="DefaultNamespace_Exosuit_GetArmPrefab_TechType_" data-uid="DefaultNamespace.Exosuit.GetArmPrefab(TechType)">
@@ -3944,6 +4829,37 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Exosuit_GetProfileTag_" data-uid="DefaultNamespace.Exosuit.GetProfileTag*"></a>
+
+  <h3 id="DefaultNamespace_Exosuit_GetProfileTag" data-uid="DefaultNamespace.Exosuit.GetProfileTag">
+  GetProfileTag()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetProfileTag()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -4236,6 +5152,37 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
+  <a id="DefaultNamespace_Exosuit_IsHorizontalBoostActive_" data-uid="DefaultNamespace.Exosuit.IsHorizontalBoostActive*"></a>
+
+  <h3 id="DefaultNamespace_Exosuit_IsHorizontalBoostActive" data-uid="DefaultNamespace.Exosuit.IsHorizontalBoostActive">
+  IsHorizontalBoostActive()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHorizontalBoostActive()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_Exosuit_IsToggled_" data-uid="DefaultNamespace.Exosuit.IsToggled*"></a>
 
   <h3 id="DefaultNamespace_Exosuit_IsToggled_System_Int32_" data-uid="DefaultNamespace.Exosuit.IsToggled(System.Int32)">
@@ -4303,6 +5250,37 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
+  <a id="DefaultNamespace_Exosuit_IsVerticalBoostActive_" data-uid="DefaultNamespace.Exosuit.IsVerticalBoostActive*"></a>
+
+  <h3 id="DefaultNamespace_Exosuit_IsVerticalBoostActive" data-uid="DefaultNamespace.Exosuit.IsVerticalBoostActive">
+  IsVerticalBoostActive()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsVerticalBoostActive()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_Exosuit_MarkArmsDirty_" data-uid="DefaultNamespace.Exosuit.MarkArmsDirty*"></a>
 
   <h3 id="DefaultNamespace_Exosuit_MarkArmsDirty" data-uid="DefaultNamespace.Exosuit.MarkArmsDirty">
@@ -4343,37 +5321,6 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
     <pre><code class="lang-csharp hljs">public void OnBindingsChanged()</code></pre>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Exosuit_OnCollisionEnter_" data-uid="DefaultNamespace.Exosuit.OnCollisionEnter*"></a>
-
-  <h3 id="DefaultNamespace_Exosuit_OnCollisionEnter_UnityEngine_Collision_" data-uid="DefaultNamespace.Exosuit.OnCollisionEnter(UnityEngine.Collision)">
-  OnCollisionEnter(Collision)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnCollisionEnter(Collision collision)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>collision</code> <a class="xref" href="https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Collision.html">Collision</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -4549,6 +5496,32 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
+  <a id="DefaultNamespace_Exosuit_OnOpenPDA_" data-uid="DefaultNamespace.Exosuit.OnOpenPDA*"></a>
+
+  <h3 id="DefaultNamespace_Exosuit_OnOpenPDA" data-uid="DefaultNamespace.Exosuit.OnOpenPDA">
+  OnOpenPDA()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnOpenPDA()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_Exosuit_OnPilotModeBegin_" data-uid="DefaultNamespace.Exosuit.OnPilotModeBegin*"></a>
 
   <h3 id="DefaultNamespace_Exosuit_OnPilotModeBegin" data-uid="DefaultNamespace.Exosuit.OnPilotModeBegin">
@@ -4693,10 +5666,10 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
-  <a id="DefaultNamespace_Exosuit_RegenerateRenderInfo_" data-uid="DefaultNamespace.Exosuit.RegenerateRenderInfo*"></a>
+  <a id="DefaultNamespace_Exosuit_ScheduledUpdate_" data-uid="DefaultNamespace.Exosuit.ScheduledUpdate*"></a>
 
-  <h3 id="DefaultNamespace_Exosuit_RegenerateRenderInfo" data-uid="DefaultNamespace.Exosuit.RegenerateRenderInfo">
-  RegenerateRenderInfo()
+  <h3 id="DefaultNamespace_Exosuit_ScheduledUpdate" data-uid="DefaultNamespace.Exosuit.ScheduledUpdate">
+  ScheduledUpdate()
   
   </h3>
 
@@ -4704,7 +5677,7 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RegenerateRenderInfo()</code></pre>
+    <pre><code class="lang-csharp hljs">public void ScheduledUpdate()</code></pre>
   </div>
 
 
@@ -4770,6 +5743,37 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_Exosuit_ShouldSetKinematic_" data-uid="DefaultNamespace.Exosuit.ShouldSetKinematic*"></a>
+
+  <h3 id="DefaultNamespace_Exosuit_ShouldSetKinematic" data-uid="DefaultNamespace.Exosuit.ShouldSetKinematic">
+  ShouldSetKinematic()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSetKinematic()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -5146,10 +6150,10 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
 
 
-  <a id="DefaultNamespace_Exosuit_Undock_" data-uid="DefaultNamespace.Exosuit.Undock*"></a>
+  <a id="DefaultNamespace_Exosuit_SubConstructionComplete_" data-uid="DefaultNamespace.Exosuit.SubConstructionComplete*"></a>
 
-  <h3 id="DefaultNamespace_Exosuit_Undock_Player_System_Single_" data-uid="DefaultNamespace.Exosuit.Undock(Player,System.Single)">
-  Undock(Player, float)
+  <h3 id="DefaultNamespace_Exosuit_SubConstructionComplete" data-uid="DefaultNamespace.Exosuit.SubConstructionComplete">
+  SubConstructionComplete()
   
   </h3>
 
@@ -5157,22 +6161,10 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IEnumerator Undock(Player player, float yUndockedPosition)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SubConstructionComplete()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>player</code> <a class="xref" href="DefaultNamespace.Player.html">Player</a></dt>
-    <dd></dd>
-    <dt><code>yUndockedPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -5352,32 +6344,6 @@ public const string storageShrinkError = &quot;ExosuitStorageShrinkError&quot;</
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void UpdateStorageSize()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_Exosuit_UpdateThermalReactorCharge_" data-uid="DefaultNamespace.Exosuit.UpdateThermalReactorCharge*"></a>
-
-  <h3 id="DefaultNamespace_Exosuit_UpdateThermalReactorCharge" data-uid="DefaultNamespace.Exosuit.UpdateThermalReactorCharge">
-  UpdateThermalReactorCharge()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateThermalReactorCharge()</code></pre>
   </div>
 
 

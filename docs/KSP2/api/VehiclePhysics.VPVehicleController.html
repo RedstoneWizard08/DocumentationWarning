@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class VPVehicleController | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class VPVehicleController | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="VehiclePhysics.VPVehicleController">
+
+
+
+  <h1 id="VehiclePhysics_VPVehicleController" data-uid="VehiclePhysics.VPVehicleController" class="text-break">
+Class VPVehicleController  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="VehiclePhysics.html">VehiclePhysics</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AddComponentMenu(&quot;Vehicle Physics/Vehicle Controller&quot;, -21)]
+public class VPVehicleController : VehicleBase, ISerializationCallbackReceiver</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="VehiclePhysics.VehicleBase.html">VehicleBase</a></div>
+      <div><span class="xref">VPVehicleController</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">ISerializationCallbackReceiver</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_integrationSteps">VehicleBase.integrationSteps</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_integrationUseRK4">VehicleBase.integrationUseRK4</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_centerOfMass">VehicleBase.centerOfMass</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_tireSideDeflection">VehicleBase.tireSideDeflection</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_tireSideDeflectionRate">VehicleBase.tireSideDeflectionRate</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_tireAdherentImpulseRatio">VehicleBase.tireAdherentImpulseRatio</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_wheelSleepVelocity">VehicleBase.wheelSleepVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_advancedSuspensionDamper">VehicleBase.advancedSuspensionDamper</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_suspensionDamperLimitFactor">VehicleBase.suspensionDamperLimitFactor</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_contactAngleAffectsTireForce">VehicleBase.contactAngleAffectsTireForce</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_dontAdjustSuspensionForcePoint">VehicleBase.dontAdjustSuspensionForcePoint</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_disableSteerAngleFix">VehicleBase.disableSteerAngleFix</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_disableWheelReferenceFrameFix">VehicleBase.disableWheelReferenceFrameFix</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_scaleFactor">VehicleBase.scaleFactor</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_vehicleSleepCriteria">VehicleBase.vehicleSleepCriteria</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_inhibitWheelSleep">VehicleBase.inhibitWheelSleep</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_invertVisualWheelSpinDirection">VehicleBase.invertVisualWheelSpinDirection</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_onPreDynamicsStep">VehicleBase.onPreDynamicsStep</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_onBeforeUpdateBlocks">VehicleBase.onBeforeUpdateBlocks</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_onBeforeIntegrationStep">VehicleBase.onBeforeIntegrationStep</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_onDynamicsStepCompleted">VehicleBase.onDynamicsStepCompleted</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_onPreVisualUpdate">VehicleBase.onPreVisualUpdate</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_minimumdownForce">VehicleBase.minimumdownForce</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_gravity">VehicleBase.gravity</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_tireForceSmoothing">VehicleBase.tireForceSmoothing</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_suspensionForceSmoothing">VehicleBase.suspensionForceSmoothing</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_tireForceSharpness">VehicleBase.tireForceSharpness</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_suspensionForceSharpness">VehicleBase.suspensionForceSharpness</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_data">VehicleBase.data</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_telemetry">VehicleBase.telemetry</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_showContactGizmos">VehicleBase.showContactGizmos</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_disableContactProcessing">VehicleBase.disableContactProcessing</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_onImpact">VehicleBase.onImpact</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_onRawCollision">VehicleBase.onRawCollision</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_vehicle">VehicleBase.vehicle</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_currentCollision">VehicleBase.currentCollision</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_isCollisionEnter">VehicleBase.isCollisionEnter</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_impactThreeshold">VehicleBase.impactThreeshold</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_impactInterval">VehicleBase.impactInterval</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_impactIntervalRandom">VehicleBase.impactIntervalRandom</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_impactMinSpeed">VehicleBase.impactMinSpeed</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelLocalPosition_VehiclePhysics_VPWheelCollider_">VehicleBase.GetWheelLocalPosition(VPWheelCollider)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_NotifyCollidersChanged">VehicleBase.NotifyCollidersChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_SingleStep">VehicleBase.SingleStep()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_Reposition_UnityEngine_Vector3_UnityEngine_Quaternion_">VehicleBase.Reposition(Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_Reposition_UnityEngine_Vector3_">VehicleBase.Reposition(Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_HardReposition_UnityEngine_Vector3_UnityEngine_Quaternion_System_Boolean_">VehicleBase.HardReposition(Vector3, Quaternion, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_NotifyPositionChanged_UnityEngine_Vector3_">VehicleBase.NotifyPositionChanged(Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_SetWheelRadius_System_Int32_System_Single_">VehicleBase.SetWheelRadius(int, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelRadius_System_Int32_">VehicleBase.GetWheelRadius(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_SetWheelTireFriction_System_Int32_VehiclePhysics_TireFriction_">VehicleBase.SetWheelTireFriction(int, TireFriction)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_SetWheelTireFrictionMultiplier_System_Int32_System_Single_">VehicleBase.SetWheelTireFrictionMultiplier(int, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelTireFriction_System_Int32_">VehicleBase.GetWheelTireFriction(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelAngularVelocityForSlip_System_Int32_System_Single_">VehicleBase.GetWheelAngularVelocityForSlip(int, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelPeakSlip_System_Int32_">VehicleBase.GetWheelPeakSlip(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelAdherentSlip_System_Int32_">VehicleBase.GetWheelAdherentSlip(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_AddWheelBrakeTorque_System_Int32_System_Single_">VehicleBase.AddWheelBrakeTorque(int, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetVehicleStateVars">VehicleBase.GetVehicleStateVars()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_SetVehicleStateVars_VehiclePhysics_VehicleBase_VehicleStateVars_">VehicleBase.SetVehicleStateVars(VehicleBase.VehicleStateVars)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelStateVars">VehicleBase.GetWheelStateVars()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_SetWheelStateVars_VehiclePhysics_VehicleBase_WheelStateVars___">VehicleBase.SetWheelStateVars(VehicleBase.WheelStateVars[])</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetSolverState">VehicleBase.GetSolverState()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetSolverBlockTypes">VehicleBase.GetSolverBlockTypes()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_SetNumberOfWheels_System_Int32_">VehicleBase.SetNumberOfWheels(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_OnFinalize">VehicleBase.OnFinalize()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_OnUpdate">VehicleBase.OnUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelIndex_System_Int32_VehiclePhysics_VehicleBase_WheelPos_">VehicleBase.GetWheelIndex(int, VehicleBase.WheelPos)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetAxleCount">VehicleBase.GetAxleCount()</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_GetWheelsInAxle_System_Int32_">VehicleBase.GetWheelsInAxle(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_PreApplyForce_UnityEngine_Vector3__">VehicleBase.PreApplyForce(ref Vector3)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_RegisterVehicleBehaviour_VehiclePhysics_VehicleBehaviour_">VehicleBase.RegisterVehicleBehaviour(VehicleBehaviour)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_UnregisterVehicleBehaviour_VehiclePhysics_VehicleBehaviour_">VehicleBase.UnregisterVehicleBehaviour(VehicleBehaviour)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_DebugLogWarning_System_String_">VehicleBase.DebugLogWarning(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_DebugLogError_System_String_">VehicleBase.DebugLogError(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_OnCollision_UnityEngine_Collision_System_Boolean_">VehicleBase.OnCollision(Collision, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_cachedTransform">VehicleBase.cachedTransform</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_cachedRigidbody">VehicleBase.cachedRigidbody</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_positionCorrection">VehicleBase.positionCorrection</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_initialized">VehicleBase.initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_groundMaterialManager">VehicleBase.groundMaterialManager</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_wheelCount">VehicleBase.wheelCount</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_wheelState">VehicleBase.wheelState</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_speed">VehicleBase.speed</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_speedAngle">VehicleBase.speedAngle</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_localAcceleration">VehicleBase.localAcceleration</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_time">VehicleBase.time</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_paused">VehicleBase.paused</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_wheels">VehicleBase.wheels</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_localImpactPosition">VehicleBase.localImpactPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_localImpactVelocity">VehicleBase.localImpactVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_isHardImpact">VehicleBase.isHardImpact</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_localDragPosition">VehicleBase.localDragPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_localDragVelocity">VehicleBase.localDragVelocity</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_isHardDrag">VehicleBase.isHardDrag</a>
+    </div>
+    <div>
+      <a class="xref" href="VehiclePhysics.VehicleBase.html#VehiclePhysics_VehicleBase_lastContactedCollider">VehicleBase.lastContactedCollider</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentCached__1_UnityEngine_Component___0__">GameObjectExtension.GetComponentCached&lt;T&gt;(Component, ref T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GameObjectExtension.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.ComponentExtensions.html#KSP_ComponentExtensions_CopyFrom__1_UnityEngine_Component___0_">ComponentExtensions.CopyFrom&lt;T&gt;(Component, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.OAB.DataContextMonoBehaviorExtensionDooblyDo.html#KSP_OAB_DataContextMonoBehaviorExtensionDooblyDo_FindDataContextProviderInHierarchy_UnityEngine_MonoBehaviour_">DataContextMonoBehaviorExtensionDooblyDo.FindDataContextProviderInHierarchy(MonoBehaviour)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_SetDebugName_UnityEngine_Object_System_String_">GameObjectExtension.SetDebugName(Object, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_antiLock" data-uid="VehiclePhysics.VPVehicleController.antiLock">
+  antiLock
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Brakes.AbsSettings antiLock</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Brakes.html">Brakes</a>.<a class="xref" href="VehiclePhysics.Brakes.AbsSettings.html">AbsSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_antiSpin" data-uid="VehiclePhysics.VPVehicleController.antiSpin">
+  antiSpin
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[FormerlySerializedAs(&quot;antiSlip&quot;)]
+public AntiSpin.Settings antiSpin</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.AntiSpin.html">AntiSpin</a>.<a class="xref" href="VehiclePhysics.AntiSpin.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_axles" data-uid="VehiclePhysics.VPVehicleController.axles">
+  axles
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VPAxle[] axles</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.VPAxle.html">VPAxle</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_brakes" data-uid="VehiclePhysics.VPVehicleController.brakes">
+  brakes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Brakes.Settings brakes</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Brakes.html">Brakes</a>.<a class="xref" href="VehiclePhysics.Brakes.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_centerDifferential" data-uid="VehiclePhysics.VPVehicleController.centerDifferential">
+  centerDifferential
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Differential.Settings centerDifferential</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Differential.html">Differential</a>.<a class="xref" href="VehiclePhysics.Differential.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_clutch" data-uid="VehiclePhysics.VPVehicleController.clutch">
+  clutch
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Engine.ClutchSettings clutch</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Engine.html">Engine</a>.<a class="xref" href="VehiclePhysics.Engine.ClutchSettings.html">ClutchSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_differential" data-uid="VehiclePhysics.VPVehicleController.differential">
+  differential
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Differential.Settings differential</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Differential.html">Differential</a>.<a class="xref" href="VehiclePhysics.Differential.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_driveline" data-uid="VehiclePhysics.VPVehicleController.driveline">
+  driveline
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[FormerlySerializedAs(&quot;transmission&quot;)]
+public Driveline.Settings driveline</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Driveline.html">Driveline</a>.<a class="xref" href="VehiclePhysics.Driveline.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_engine" data-uid="VehiclePhysics.VPVehicleController.engine">
+  engine
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Engine.Settings engine</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Engine.html">Engine</a>.<a class="xref" href="VehiclePhysics.Engine.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_engineReactionFactor" data-uid="VehiclePhysics.VPVehicleController.engineReactionFactor">
+  engineReactionFactor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+public float engineReactionFactor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_gearbox" data-uid="VehiclePhysics.VPVehicleController.gearbox">
+  gearbox
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Gearbox.Settings gearbox</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Gearbox.html">Gearbox</a>.<a class="xref" href="VehiclePhysics.Gearbox.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_inertia" data-uid="VehiclePhysics.VPVehicleController.inertia">
+  inertia
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Inertia.Settings inertia</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Inertia.html">Inertia</a>.<a class="xref" href="VehiclePhysics.Inertia.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_interAxleDifferential" data-uid="VehiclePhysics.VPVehicleController.interAxleDifferential">
+  interAxleDifferential
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Differential.Settings interAxleDifferential</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Differential.html">Differential</a>.<a class="xref" href="VehiclePhysics.Differential.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_maxSubsystemsEnergy" data-uid="VehiclePhysics.VPVehicleController.maxSubsystemsEnergy">
+  maxSubsystemsEnergy
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float maxSubsystemsEnergy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_parkModeReactionFactor" data-uid="VehiclePhysics.VPVehicleController.parkModeReactionFactor">
+  parkModeReactionFactor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+public float parkModeReactionFactor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_retarder" data-uid="VehiclePhysics.VPVehicleController.retarder">
+  retarder
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Retarder.Settings retarder</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Retarder.html">Retarder</a>.<a class="xref" href="VehiclePhysics.Retarder.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_speedControl" data-uid="VehiclePhysics.VPVehicleController.speedControl">
+  speedControl
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpeedControl.Settings speedControl</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.SpeedControl.html">SpeedControl</a>.<a class="xref" href="VehiclePhysics.SpeedControl.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_stabilityControl" data-uid="VehiclePhysics.VPVehicleController.stabilityControl">
+  stabilityControl
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StabilityControl.Settings stabilityControl</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.StabilityControl.html">StabilityControl</a>.<a class="xref" href="VehiclePhysics.StabilityControl.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_steering" data-uid="VehiclePhysics.VPVehicleController.steering">
+  steering
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Steering.Settings steering</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.Steering.html">Steering</a>.<a class="xref" href="VehiclePhysics.Steering.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_steeringAids" data-uid="VehiclePhysics.VPVehicleController.steeringAids">
+  steeringAids
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SteeringAids.Settings steeringAids</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.SteeringAids.html">SteeringAids</a>.<a class="xref" href="VehiclePhysics.SteeringAids.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_tireFriction" data-uid="VehiclePhysics.VPVehicleController.tireFriction">
+  tireFriction
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TireFriction tireFriction</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.TireFriction.html">TireFriction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_torqueSplitter" data-uid="VehiclePhysics.VPVehicleController.torqueSplitter">
+  torqueSplitter
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TorqueSplitter.Settings torqueSplitter</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.TorqueSplitter.html">TorqueSplitter</a>.<a class="xref" href="VehiclePhysics.TorqueSplitter.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="VehiclePhysics_VPVehicleController_tractionControl" data-uid="VehiclePhysics.VPVehicleController.tractionControl">
+  tractionControl
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TractionControl.Settings tractionControl</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="VehiclePhysics.TractionControl.html">TractionControl</a>.<a class="xref" href="VehiclePhysics.TractionControl.Settings.html">Settings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="VehiclePhysics_VPVehicleController_DoUpdateBlocks_" data-uid="VehiclePhysics.VPVehicleController.DoUpdateBlocks*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_DoUpdateBlocks" data-uid="VehiclePhysics.VPVehicleController.DoUpdateBlocks">
+  DoUpdateBlocks()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DoUpdateBlocks()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_VPVehicleController_DoUpdateData_" data-uid="VehiclePhysics.VPVehicleController.DoUpdateData*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_DoUpdateData" data-uid="VehiclePhysics.VPVehicleController.DoUpdateData">
+  DoUpdateData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DoUpdateData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_VPVehicleController_GetInternalObject_" data-uid="VehiclePhysics.VPVehicleController.GetInternalObject*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_GetInternalObject_System_Type_" data-uid="VehiclePhysics.VPVehicleController.GetInternalObject(System.Type)">
+  GetInternalObject(Type)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object GetInternalObject(Type type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_VPVehicleController_GetOptimalGearShiftRatio_" data-uid="VehiclePhysics.VPVehicleController.GetOptimalGearShiftRatio*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_GetOptimalGearShiftRatio" data-uid="VehiclePhysics.VPVehicleController.GetOptimalGearShiftRatio">
+  GetOptimalGearShiftRatio()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetOptimalGearShiftRatio()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_VPVehicleController_GetWheelFinalRatio_" data-uid="VehiclePhysics.VPVehicleController.GetWheelFinalRatio*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_GetWheelFinalRatio_System_Int32_System_Int32_" data-uid="VehiclePhysics.VPVehicleController.GetWheelFinalRatio(System.Int32,System.Int32)">
+  GetWheelFinalRatio(int, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetWheelFinalRatio(int wheelIndex, int gear = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wheelIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>gear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_VPVehicleController_OnAfterDeserialize_" data-uid="VehiclePhysics.VPVehicleController.OnAfterDeserialize*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_OnAfterDeserialize" data-uid="VehiclePhysics.VPVehicleController.OnAfterDeserialize">
+  OnAfterDeserialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnAfterDeserialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_VPVehicleController_OnBeforeSerialize_" data-uid="VehiclePhysics.VPVehicleController.OnBeforeSerialize*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_OnBeforeSerialize" data-uid="VehiclePhysics.VPVehicleController.OnBeforeSerialize">
+  OnBeforeSerialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnBeforeSerialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="VehiclePhysics_VPVehicleController_OnInitialize_" data-uid="VehiclePhysics.VPVehicleController.OnInitialize*"></a>
+
+  <h3 id="VehiclePhysics_VPVehicleController_OnInitialize" data-uid="VehiclePhysics.VPVehicleController.OnInitialize">
+  OnInitialize()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnInitialize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

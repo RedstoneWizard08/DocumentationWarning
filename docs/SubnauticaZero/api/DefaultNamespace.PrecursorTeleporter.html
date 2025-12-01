@@ -102,7 +102,7 @@ Class PrecursorTeleporter
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ProtoContract]
-public class PrecursorTeleporter : MonoBehaviour</code></pre>
+public class PrecursorTeleporter : MonoBehaviour, IAsyncOperation</code></pre>
   </div>
 
 
@@ -120,6 +120,12 @@ public class PrecursorTeleporter : MonoBehaviour</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.IAsyncOperation.html">IAsyncOperation</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -249,37 +255,6 @@ public FMOD_CustomLoopingEmitter activeLoopSound</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_PrecursorTeleporter_cinematicEndControllerPrefabReference" data-uid="DefaultNamespace.PrecursorTeleporter.cinematicEndControllerPrefabReference">
-  cinematicEndControllerPrefabReference
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public AssetReferenceGameObject cinematicEndControllerPrefabReference</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">AssetReferenceGameObject</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="DefaultNamespace_PrecursorTeleporter_cinematicTriggerIn" data-uid="DefaultNamespace.PrecursorTeleporter.cinematicTriggerIn">
   cinematicTriggerIn
   
@@ -360,6 +335,37 @@ public bool isOpen</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_PrecursorTeleporter_loadSceneOnTeleport" data-uid="DefaultNamespace.PrecursorTeleporter.loadSceneOnTeleport">
+  loadSceneOnTeleport
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Scene to load when teleportation begins. This object will ensure that the players waits for the scene to finish loading before ending teleportation.&quot;)]
+public string loadSceneOnTeleport</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -525,6 +531,66 @@ public FMODAsset powerUpSound</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_PrecursorTeleporter_sceneLoadInProgress" data-uid="DefaultNamespace.PrecursorTeleporter.sceneLoadInProgress">
+  sceneLoadInProgress
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool sceneLoadInProgress</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_PrecursorTeleporter_sceneLoadOperation" data-uid="DefaultNamespace.PrecursorTeleporter.sceneLoadOperation">
+  sceneLoadOperation
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AsyncOperationHandle&lt;SceneInstance&gt; sceneLoadOperation</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">AsyncOperationHandle</span>&lt;<span class="xref">SceneInstance</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_PrecursorTeleporter_teleporterIdentifier" data-uid="DefaultNamespace.PrecursorTeleporter.teleporterIdentifier">
   teleporterIdentifier
   
@@ -615,6 +681,37 @@ public FMODAsset powerUpSound</code></pre>
 
 
 
+  <h3 id="DefaultNamespace_PrecursorTeleporter_warpToInScene" data-uid="DefaultNamespace.PrecursorTeleporter.warpToInScene">
+  warpToInScene
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If loadSceneOnTeleport is not empty, we will look for an object with this name in the loaded scene to use as the warpToPos and warpToAngle.&quot;)]
+public string warpToInScene</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DefaultNamespace_PrecursorTeleporter_warpToPos" data-uid="DefaultNamespace.PrecursorTeleporter.warpToPos">
   warpToPos
   
@@ -644,6 +741,41 @@ public FMODAsset powerUpSound</code></pre>
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DefaultNamespace_PrecursorTeleporter_isDone_" data-uid="DefaultNamespace.PrecursorTeleporter.isDone*"></a>
+
+  <h3 id="DefaultNamespace_PrecursorTeleporter_isDone" data-uid="DefaultNamespace.PrecursorTeleporter.isDone">
+  isDone
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isDone { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -659,7 +791,7 @@ public FMODAsset powerUpSound</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator BeginTeleportPlayer(GameObject teleportObject)</code></pre>
+    <pre><code class="lang-csharp hljs">public void BeginTeleportPlayer(GameObject teleportObject)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -668,11 +800,6 @@ public FMODAsset powerUpSound</code></pre>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -881,6 +1008,73 @@ public FMODAsset powerUpSound</code></pre>
 
 
 
+  <a id="DefaultNamespace_PrecursorTeleporter_StartTeleportEvent_" data-uid="DefaultNamespace.PrecursorTeleporter.StartTeleportEvent*"></a>
+
+  <h3 id="DefaultNamespace_PrecursorTeleporter_StartTeleportEvent_System_String_" data-uid="DefaultNamespace.PrecursorTeleporter.StartTeleportEvent(System.String)">
+  StartTeleportEvent(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void StartTeleportEvent(string teleporterId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>teleporterId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_PrecursorTeleporter_TeleportCoroutine_" data-uid="DefaultNamespace.PrecursorTeleporter.TeleportCoroutine*"></a>
+
+  <h3 id="DefaultNamespace_PrecursorTeleporter_TeleportCoroutine_System_Boolean_" data-uid="DefaultNamespace.PrecursorTeleporter.TeleportCoroutine(System.Boolean)">
+  TeleportCoroutine(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator TeleportCoroutine(bool isPlayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isPlayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_PrecursorTeleporter_TeleportationComplete_" data-uid="DefaultNamespace.PrecursorTeleporter.TeleportationComplete*"></a>
 
   <h3 id="DefaultNamespace_PrecursorTeleporter_TeleportationComplete" data-uid="DefaultNamespace.PrecursorTeleporter.TeleportationComplete">
@@ -952,7 +1146,7 @@ public FMODAsset powerUpSound</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static event PrecursorTeleporter.TeleportAction TeleportEventEnd</code></pre>
+    <pre><code class="lang-csharp hljs">public static event PrecursorTeleporter.TeleportEndEvent TeleportEventEnd</code></pre>
   </div>
 
 
@@ -962,7 +1156,7 @@ public FMODAsset powerUpSound</code></pre>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="PrecursorTeleporter.html">PrecursorTeleporter</a>.<a class="xref" href="PrecursorTeleporter.TeleportAction.html">TeleportAction</a></dt>
+    <dt><a class="xref" href="PrecursorTeleporter.html">PrecursorTeleporter</a>.<a class="xref" href="PrecursorTeleporter.TeleportEndEvent.html">TeleportEndEvent</a></dt>
     <dd></dd>
   </dl>
 
@@ -982,7 +1176,7 @@ public FMODAsset powerUpSound</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static event PrecursorTeleporter.TeleportAction TeleportEventStart</code></pre>
+    <pre><code class="lang-csharp hljs">public static event PrecursorTeleporter.TeleportStartEvent TeleportEventStart</code></pre>
   </div>
 
 
@@ -992,7 +1186,7 @@ public FMODAsset powerUpSound</code></pre>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="PrecursorTeleporter.html">PrecursorTeleporter</a>.<a class="xref" href="PrecursorTeleporter.TeleportAction.html">TeleportAction</a></dt>
+    <dt><a class="xref" href="PrecursorTeleporter.html">PrecursorTeleporter</a>.<a class="xref" href="PrecursorTeleporter.TeleportStartEvent.html">TeleportStartEvent</a></dt>
     <dd></dd>
   </dl>
 

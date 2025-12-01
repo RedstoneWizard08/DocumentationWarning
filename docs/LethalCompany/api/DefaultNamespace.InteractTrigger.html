@@ -126,6 +126,9 @@ Class InteractTrigger
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -144,13 +147,31 @@ Class InteractTrigger
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -159,10 +180,16 @@ Class InteractTrigger
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -174,10 +201,13 @@ Class InteractTrigger
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
-      <span class="xref">NetworkBehaviour.OnDestroy()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -187,6 +217,9 @@ Class InteractTrigger
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -978,8 +1011,8 @@ public bool interactable</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_InteractTrigger_isHoldingThisFrame" data-uid="DefaultNamespace.InteractTrigger.isHoldingThisFrame">
-  isHoldingThisFrame
+  <h3 id="DefaultNamespace_InteractTrigger_isGettingDestroyed" data-uid="DefaultNamespace.InteractTrigger.isGettingDestroyed">
+  isGettingDestroyed
   
   </h3>
 
@@ -987,7 +1020,7 @@ public bool interactable</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool isHoldingThisFrame</code></pre>
+    <pre><code class="lang-csharp hljs">public bool isGettingDestroyed</code></pre>
   </div>
 
 
@@ -1763,36 +1796,6 @@ public bool specialCharacterAnimation</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_InteractTrigger_timeHeld" data-uid="DefaultNamespace.InteractTrigger.timeHeld">
-  timeHeld
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float timeHeld</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="DefaultNamespace_InteractTrigger_timeToHold" data-uid="DefaultNamespace.InteractTrigger.timeToHold">
   timeToHold
   
@@ -2205,33 +2208,6 @@ public bool touchTrigger</code></pre>
 
 
 
-  <a id="DefaultNamespace_InteractTrigger_InitializeRPCS_InteractTrigger_" data-uid="DefaultNamespace.InteractTrigger.InitializeRPCS_InteractTrigger*"></a>
-
-  <h3 id="DefaultNamespace_InteractTrigger_InitializeRPCS_InteractTrigger" data-uid="DefaultNamespace.InteractTrigger.InitializeRPCS_InteractTrigger">
-  InitializeRPCS_InteractTrigger()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[RuntimeInitializeOnLoadMethod]
-public static void InitializeRPCS_InteractTrigger()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_InteractTrigger_Interact_" data-uid="DefaultNamespace.InteractTrigger.Interact*"></a>
 
   <h3 id="DefaultNamespace_InteractTrigger_Interact_UnityEngine_Transform_" data-uid="DefaultNamespace.InteractTrigger.Interact(UnityEngine.Transform)">
@@ -2311,6 +2287,32 @@ public static void InitializeRPCS_InteractTrigger()</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void LateUpdate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_InteractTrigger_OnDestroy_" data-uid="DefaultNamespace.InteractTrigger.OnDestroy*"></a>
+
+  <h3 id="DefaultNamespace_InteractTrigger_OnDestroy" data-uid="DefaultNamespace.InteractTrigger.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnDestroy()</code></pre>
   </div>
 
 
@@ -2791,6 +2793,32 @@ public void UpdateUsedByPlayerServerRpc(int playerNum)</code></pre>
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_InteractTrigger___initializeRpcs_" data-uid="DefaultNamespace.InteractTrigger.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_InteractTrigger___initializeRpcs" data-uid="DefaultNamespace.InteractTrigger.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
 
 
 

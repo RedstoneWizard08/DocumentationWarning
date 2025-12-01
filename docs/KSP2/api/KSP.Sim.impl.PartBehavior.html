@@ -1,0 +1,3560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PartBehavior | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PartBehavior | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.PartBehavior">
+
+
+
+  <h1 id="KSP_Sim_impl_PartBehavior" data-uid="KSP.Sim.impl.PartBehavior" class="text-break">
+Class PartBehavior  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PartBehavior : ViewObjectComponent&lt;PartComponent&gt;, IInteractivePart, IUpdate, IFixedUpdate, IPriorityOverride, WaterManager.IWaterDetectObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Game.KerbalMonoBehaviour.html">KerbalMonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent.html">ViewObjectComponent</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent-1.html">ViewObjectComponent</a>&lt;<a class="xref" href="KSP.Sim.impl.PartComponent.html">PartComponent</a>&gt;</div>
+      <div><span class="xref">PartBehavior</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Game.IInteractivePart.html">IInteractivePart</a></div>
+      <div><a class="xref" href="DefaultNamespace.IUpdate.html">IUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.IFixedUpdate.html">IFixedUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.IPriorityOverride.html">IPriorityOverride</a></div>
+      <div><a class="xref" href="KSP.Rendering.Planets.WaterManager.html">WaterManager</a>.<a class="xref" href="KSP.Rendering.Planets.WaterManager.IWaterDetectObject.html">IWaterDetectObject</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1__simObjectComponent">ViewObjectComponent&lt;PartComponent&gt;._simObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SyncTo_KSP_Sim_impl_ObjectComponent_">ViewObjectComponent&lt;PartComponent&gt;.SyncTo(ObjectComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_IsSimObjectDestroyed">ViewObjectComponent&lt;PartComponent&gt;.IsSimObjectDestroyed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SimObjectComponent">ViewObjectComponent&lt;PartComponent&gt;.SimObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent__viewObject">ViewObjectComponent._viewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent_ViewObject">ViewObjectComponent.ViewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Game">KerbalMonoBehaviour.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Assets">KerbalMonoBehaviour.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Messages">KerbalMonoBehaviour.Messages</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_CFXSystem">KerbalMonoBehaviour.CFXSystem</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_IsGameShuttingDown">KerbalMonoBehaviour.IsGameShuttingDown</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.PartGeometryUtil.html#DefaultNamespace_PartGeometryUtil_GetDragCubeBounds_KSP_Sim_impl_PartBehavior_">PartGeometryUtil.GetDragCubeBounds(PartBehavior)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentCached__1_UnityEngine_Component___0__">GameObjectExtension.GetComponentCached&lt;T&gt;(Component, ref T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GameObjectExtension.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.ComponentExtensions.html#KSP_ComponentExtensions_CopyFrom__1_UnityEngine_Component___0_">ComponentExtensions.CopyFrom&lt;T&gt;(Component, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.OAB.DataContextMonoBehaviorExtensionDooblyDo.html#KSP_OAB_DataContextMonoBehaviorExtensionDooblyDo_FindDataContextProviderInHierarchy_UnityEngine_MonoBehaviour_">DataContextMonoBehaviorExtensionDooblyDo.FindDataContextProviderInHierarchy(MonoBehaviour)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_SetDebugName_UnityEngine_Object_System_String_">GameObjectExtension.SetDebugName(Object, string)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_PartBehavior__ctor_" data-uid="KSP.Sim.impl.PartBehavior.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior__ctor" data-uid="KSP.Sim.impl.PartBehavior.#ctor">
+  PartBehavior()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartBehavior()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GroundContact" data-uid="KSP.Sim.impl.PartBehavior.GroundContact">
+  GroundContact
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GroundContact</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GroundContactNormal" data-uid="KSP.Sim.impl.PartBehavior.GroundContactNormal">
+  GroundContactNormal
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GroundContactNormal</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_PermanentGroundContact" data-uid="KSP.Sim.impl.PartBehavior.PermanentGroundContact">
+  PermanentGroundContact
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PermanentGroundContact</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_WaterContact" data-uid="KSP.Sim.impl.PartBehavior.WaterContact">
+  WaterContact
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool WaterContact</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_WaterDetectObjectId" data-uid="KSP.Sim.impl.PartBehavior.WaterDetectObjectId">
+  WaterDetectObjectId
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public uint WaterDetectObjectId</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior__boundsMesh" data-uid="KSP.Sim.impl.PartBehavior._boundsMesh">
+  _boundsMesh
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Mesh _boundsMesh</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Mesh.html">Mesh</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_currentCollisions" data-uid="KSP.Sim.impl.PartBehavior.currentCollisions">
+  currentCollisions
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Collider&gt; currentCollisions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_debugMode" data-uid="KSP.Sim.impl.PartBehavior.debugMode">
+  debugMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool debugMode</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_partBrake" data-uid="KSP.Sim.impl.PartBehavior.partBrake">
+  partBrake
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPartBrakes partBrake</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IPartBrakes.html">IPartBrakes</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Category_" data-uid="KSP.Sim.impl.PartBehavior.Category*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Category" data-uid="KSP.Sim.impl.PartBehavior.Category">
+  Category
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartCategories Category { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.PartCategories.html">PartCategories</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Colliders_" data-uid="KSP.Sim.impl.PartBehavior.Colliders*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Colliders" data-uid="KSP.Sim.impl.PartBehavior.Colliders">
+  Colliders
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collider[] Colliders { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Guid_" data-uid="KSP.Sim.impl.PartBehavior.Guid*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Guid" data-uid="KSP.Sim.impl.PartBehavior.Guid">
+  Guid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IGGuid Guid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.IGGuid.html">IGGuid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_IsInitialized_" data-uid="KSP.Sim.impl.PartBehavior.IsInitialized*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_IsInitialized" data-uid="KSP.Sim.impl.PartBehavior.IsInitialized">
+  IsInitialized
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInitialized { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_IsNoCrashDamageEnabled_" data-uid="KSP.Sim.impl.PartBehavior.IsNoCrashDamageEnabled*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_IsNoCrashDamageEnabled" data-uid="KSP.Sim.impl.PartBehavior.IsNoCrashDamageEnabled">
+  IsNoCrashDamageEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsNoCrashDamageEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Landed_" data-uid="KSP.Sim.impl.PartBehavior.Landed*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Landed" data-uid="KSP.Sim.impl.PartBehavior.Landed">
+  Landed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Landed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Model_" data-uid="KSP.Sim.impl.PartBehavior.Model*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Model" data-uid="KSP.Sim.impl.PartBehavior.Model">
+  Model
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartComponent Model { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PartComponent.html">PartComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ModelTransform_" data-uid="KSP.Sim.impl.PartBehavior.ModelTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ModelTransform" data-uid="KSP.Sim.impl.PartBehavior.ModelTransform">
+  ModelTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform ModelTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ModelType_" data-uid="KSP.Sim.impl.PartBehavior.ModelType*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ModelType" data-uid="KSP.Sim.impl.PartBehavior.ModelType">
+  ModelType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type ModelType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Modules_" data-uid="KSP.Sim.impl.PartBehavior.Modules*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Modules" data-uid="KSP.Sim.impl.PartBehavior.Modules">
+  Modules
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DictionaryValueList&lt;Type, IPartModule&gt; Modules { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DictionaryValueList-2.html">DictionaryValueList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="KSP.Sim.IPartModule.html">IPartModule</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Name_" data-uid="KSP.Sim.impl.PartBehavior.Name*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Name" data-uid="KSP.Sim.impl.PartBehavior.Name">
+  Name
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_PartAudioManager_" data-uid="KSP.Sim.impl.PartBehavior.PartAudioManager*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_PartAudioManager" data-uid="KSP.Sim.impl.PartBehavior.PartAudioManager">
+  PartAudioManager
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KSPPartAudioManager PartAudioManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.KSPPartAudioManager.html">KSPPartAudioManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_PartHeatIndicatorTracker_" data-uid="KSP.Sim.impl.PartBehavior.PartHeatIndicatorTracker*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_PartHeatIndicatorTracker" data-uid="KSP.Sim.impl.PartBehavior.PartHeatIndicatorTracker">
+  PartHeatIndicatorTracker
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartHeatIndicatorTracker PartHeatIndicatorTracker { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PartHeatIndicatorTracker.html">PartHeatIndicatorTracker</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Renderers_" data-uid="KSP.Sim.impl.PartBehavior.Renderers*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Renderers" data-uid="KSP.Sim.impl.PartBehavior.Renderers">
+  Renderers
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Renderer[] Renderers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Renderer.html">Renderer</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Rigidbody_" data-uid="KSP.Sim.impl.PartBehavior.Rigidbody*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Rigidbody" data-uid="KSP.Sim.impl.PartBehavior.Rigidbody">
+  Rigidbody
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RigidbodyBehavior Rigidbody { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.RigidbodyBehavior.html">RigidbodyBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ShieldedFromAirstream_" data-uid="KSP.Sim.impl.PartBehavior.ShieldedFromAirstream*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ShieldedFromAirstream" data-uid="KSP.Sim.impl.PartBehavior.ShieldedFromAirstream">
+  ShieldedFromAirstream
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShieldedFromAirstream { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_SpeedRelativeToSOIBodyFrameInPhysics_" data-uid="KSP.Sim.impl.PartBehavior.SpeedRelativeToSOIBodyFrameInPhysics*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_SpeedRelativeToSOIBodyFrameInPhysics" data-uid="KSP.Sim.impl.PartBehavior.SpeedRelativeToSOIBodyFrameInPhysics">
+  SpeedRelativeToSOIBodyFrameInPhysics
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SpeedRelativeToSOIBodyFrameInPhysics { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_Splashed_" data-uid="KSP.Sim.impl.PartBehavior.Splashed*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_Splashed" data-uid="KSP.Sim.impl.PartBehavior.Splashed">
+  Splashed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Splashed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_SubmergedPercent_" data-uid="KSP.Sim.impl.PartBehavior.SubmergedPercent*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_SubmergedPercent" data-uid="KSP.Sim.impl.PartBehavior.SubmergedPercent">
+  SubmergedPercent
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SubmergedPercent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_VelocityRelativeToSOIBodyFrame_" data-uid="KSP.Sim.impl.PartBehavior.VelocityRelativeToSOIBodyFrame*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_VelocityRelativeToSOIBodyFrame" data-uid="KSP.Sim.impl.PartBehavior.VelocityRelativeToSOIBodyFrame">
+  VelocityRelativeToSOIBodyFrame
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector VelocityRelativeToSOIBodyFrame { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Vector.html">Vector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_VelocityRelativeToSOIBodyFrameInPhysicsSpace_" data-uid="KSP.Sim.impl.PartBehavior.VelocityRelativeToSOIBodyFrameInPhysicsSpace*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_VelocityRelativeToSOIBodyFrameInPhysicsSpace" data-uid="KSP.Sim.impl.PartBehavior.VelocityRelativeToSOIBodyFrameInPhysicsSpace">
+  VelocityRelativeToSOIBodyFrameInPhysicsSpace
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 VelocityRelativeToSOIBodyFrameInPhysicsSpace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior__collider_" data-uid="KSP.Sim.impl.PartBehavior._collider*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior__collider" data-uid="KSP.Sim.impl.PartBehavior._collider">
+  _collider
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collider _collider { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_atmDensity_" data-uid="KSP.Sim.impl.PartBehavior.atmDensity*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_atmDensity" data-uid="KSP.Sim.impl.PartBehavior.atmDensity">
+  atmDensity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double atmDensity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_dynamicPressure_" data-uid="KSP.Sim.impl.PartBehavior.dynamicPressure*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_dynamicPressure" data-uid="KSP.Sim.impl.PartBehavior.dynamicPressure">
+  dynamicPressure
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float dynamicPressure { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_dynamicPressure_kPa_" data-uid="KSP.Sim.impl.PartBehavior.dynamicPressure_kPa*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_dynamicPressure_kPa" data-uid="KSP.Sim.impl.PartBehavior.dynamicPressure_kPa">
+  dynamicPressure_kPa
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float dynamicPressure_kPa { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_explosionPotential_" data-uid="KSP.Sim.impl.PartBehavior.explosionPotential*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_explosionPotential" data-uid="KSP.Sim.impl.PartBehavior.explosionPotential">
+  explosionPotential
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float explosionPotential { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_fxGroups_" data-uid="KSP.Sim.impl.PartBehavior.fxGroups*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_fxGroups" data-uid="KSP.Sim.impl.PartBehavior.fxGroups">
+  fxGroups
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;FXGroup&gt; fxGroups { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="FXGroup.html">FXGroup</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_machNumber_" data-uid="KSP.Sim.impl.PartBehavior.machNumber*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_machNumber" data-uid="KSP.Sim.impl.PartBehavior.machNumber">
+  machNumber
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double machNumber { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_partOwner_" data-uid="KSP.Sim.impl.PartBehavior.partOwner*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_partOwner" data-uid="KSP.Sim.impl.PartBehavior.partOwner">
+  partOwner
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartOwnerBehavior partOwner { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_seperationVFXController_" data-uid="KSP.Sim.impl.PartBehavior.seperationVFXController*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_seperationVFXController" data-uid="KSP.Sim.impl.PartBehavior.seperationVFXController">
+  seperationVFXController
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SeperationVFXController seperationVFXController { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.SeperationVFXController.html">SeperationVFXController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_soundSpeed_" data-uid="KSP.Sim.impl.PartBehavior.soundSpeed*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_soundSpeed" data-uid="KSP.Sim.impl.PartBehavior.soundSpeed">
+  soundSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double soundSpeed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_staticPressureAtm_" data-uid="KSP.Sim.impl.PartBehavior.staticPressureAtm*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_staticPressureAtm" data-uid="KSP.Sim.impl.PartBehavior.staticPressureAtm">
+  staticPressureAtm
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double staticPressureAtm { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_vessel_" data-uid="KSP.Sim.impl.PartBehavior.vessel*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_vessel" data-uid="KSP.Sim.impl.PartBehavior.vessel">
+  vessel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VesselBehavior vessel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.VesselBehavior.html">VesselBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ActivateAllModules_" data-uid="KSP.Sim.impl.PartBehavior.ActivateAllModules*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ActivateAllModules" data-uid="KSP.Sim.impl.PartBehavior.ActivateAllModules">
+  ActivateAllModules()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ActivateAllModules()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_AddForce_" data-uid="KSP.Sim.impl.PartBehavior.AddForce*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_AddForce_KSP_Sim_IForce_" data-uid="KSP.Sim.impl.PartBehavior.AddForce(KSP.Sim.IForce)">
+  AddForce(IForce)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddForce(IForce force)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="KSP.Sim.IForce.html">IForce</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_AddSingleFrameForce_" data-uid="KSP.Sim.impl.PartBehavior.AddSingleFrameForce*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_AddSingleFrameForce_KSP_Sim_IForce_" data-uid="KSP.Sim.impl.PartBehavior.AddSingleFrameForce(KSP.Sim.IForce)">
+  AddSingleFrameForce(IForce)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSingleFrameForce(IForce force)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="KSP.Sim.IForce.html">IForce</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_AddSkinThermalFlux_" data-uid="KSP.Sim.impl.PartBehavior.AddSkinThermalFlux*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_AddSkinThermalFlux_System_Double_" data-uid="KSP.Sim.impl.PartBehavior.AddSkinThermalFlux(System.Double)">
+  AddSkinThermalFlux(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSkinThermalFlux(double v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_AddThermalFlux_" data-uid="KSP.Sim.impl.PartBehavior.AddThermalFlux*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_AddThermalFlux_System_Double_" data-uid="KSP.Sim.impl.PartBehavior.AddThermalFlux(System.Double)">
+  AddThermalFlux(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddThermalFlux(double thermalFlux)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>thermalFlux</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_AddTorque_" data-uid="KSP.Sim.impl.PartBehavior.AddTorque*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_AddTorque_KSP_Sim_ITorque_" data-uid="KSP.Sim.impl.PartBehavior.AddTorque(KSP.Sim.ITorque)">
+  AddTorque(ITorque)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddTorque(ITorque torque)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>torque</code> <a class="xref" href="KSP.Sim.ITorque.html">ITorque</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ApplyImpulse_" data-uid="KSP.Sim.impl.PartBehavior.ApplyImpulse*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ApplyImpulse_KSP_Sim_ForceType_Vector3d_Vector3d_" data-uid="KSP.Sim.impl.PartBehavior.ApplyImpulse(KSP.Sim.ForceType,Vector3d,Vector3d)">
+  ApplyImpulse(ForceType, Vector3d, Vector3d)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyImpulse(ForceType forceType, Vector3d relativeImpulse, Vector3d relativePosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>forceType</code> <a class="xref" href="KSP.Sim.ForceType.html">ForceType</a></dt>
+    <dd></dd>
+    <dt><code>relativeImpulse</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+    <dt><code>relativePosition</code> <a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_CheckBodyLiftAttachment_" data-uid="KSP.Sim.impl.PartBehavior.CheckBodyLiftAttachment*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_CheckBodyLiftAttachment" data-uid="KSP.Sim.impl.PartBehavior.CheckBodyLiftAttachment">
+  CheckBodyLiftAttachment()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckBodyLiftAttachment()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_CleanSymmetryVesselReferences_" data-uid="KSP.Sim.impl.PartBehavior.CleanSymmetryVesselReferences*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_CleanSymmetryVesselReferences" data-uid="KSP.Sim.impl.PartBehavior.CleanSymmetryVesselReferences">
+  CleanSymmetryVesselReferences()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CleanSymmetryVesselReferences()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_CleanSymmetryVesselReferencesRecursively_" data-uid="KSP.Sim.impl.PartBehavior.CleanSymmetryVesselReferencesRecursively*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_CleanSymmetryVesselReferencesRecursively" data-uid="KSP.Sim.impl.PartBehavior.CleanSymmetryVesselReferencesRecursively">
+  CleanSymmetryVesselReferencesRecursively()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CleanSymmetryVesselReferencesRecursively()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_DestroyInteractivePart_" data-uid="KSP.Sim.impl.PartBehavior.DestroyInteractivePart*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_DestroyInteractivePart" data-uid="KSP.Sim.impl.PartBehavior.DestroyInteractivePart">
+  DestroyInteractivePart()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyInteractivePart()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_DestroyPart_" data-uid="KSP.Sim.impl.PartBehavior.DestroyPart*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_DestroyPart" data-uid="KSP.Sim.impl.PartBehavior.DestroyPart">
+  DestroyPart()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyPart()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ExecuteInteractivePartDestruction_" data-uid="KSP.Sim.impl.PartBehavior.ExecuteInteractivePartDestruction*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ExecuteInteractivePartDestruction" data-uid="KSP.Sim.impl.PartBehavior.ExecuteInteractivePartDestruction">
+  ExecuteInteractivePartDestruction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ExecuteInteractivePartDestruction()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_FindAttachNode_" data-uid="KSP.Sim.impl.PartBehavior.FindAttachNode*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_FindAttachNode_System_String_" data-uid="KSP.Sim.impl.PartBehavior.FindAttachNode(System.String)">
+  FindAttachNode(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AttachNodeData FindAttachNode(string nodeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.AttachNodeData.html">AttachNodeData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_FindFxGroup_" data-uid="KSP.Sim.impl.PartBehavior.FindFxGroup*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_FindFxGroup_System_String_" data-uid="KSP.Sim.impl.PartBehavior.FindFxGroup(System.String)">
+  FindFxGroup(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FXGroup FindFxGroup(string v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.FXGroup.html">FXGroup</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_FindModelTransform_" data-uid="KSP.Sim.impl.PartBehavior.FindModelTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_FindModelTransform_System_String_" data-uid="KSP.Sim.impl.PartBehavior.FindModelTransform(System.String)">
+  FindModelTransform(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform FindModelTransform(string transformName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transformName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_FindModelTransforms_" data-uid="KSP.Sim.impl.PartBehavior.FindModelTransforms*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_FindModelTransforms_System_String_" data-uid="KSP.Sim.impl.PartBehavior.FindModelTransforms(System.String)">
+  FindModelTransforms(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Transform&gt; FindModelTransforms(string transformName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transformName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetCategoryName_" data-uid="KSP.Sim.impl.PartBehavior.GetCategoryName*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetCategoryName" data-uid="KSP.Sim.impl.PartBehavior.GetCategoryName">
+  GetCategoryName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetCategoryName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetComponentUpwards_" data-uid="KSP.Sim.impl.PartBehavior.GetComponentUpwards*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetComponentUpwards__1_UnityEngine_GameObject_" data-uid="KSP.Sim.impl.PartBehavior.GetComponentUpwards``1(UnityEngine.GameObject)">
+  GetComponentUpwards&lt;T&gt;(GameObject)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T GetComponentUpwards&lt;T&gt;(GameObject obj) where T : Component</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetDisplayName_" data-uid="KSP.Sim.impl.PartBehavior.GetDisplayName*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetDisplayName" data-uid="KSP.Sim.impl.PartBehavior.GetDisplayName">
+  GetDisplayName()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetDisplayName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetModule_" data-uid="KSP.Sim.impl.PartBehavior.GetModule*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetModule_System_Type_" data-uid="KSP.Sim.impl.PartBehavior.GetModule(System.Type)">
+  GetModule(Type)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPartModule GetModule(Type moduleType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>moduleType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IPartModule.html">IPartModule</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetModule_" data-uid="KSP.Sim.impl.PartBehavior.GetModule*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetModule__1" data-uid="KSP.Sim.impl.PartBehavior.GetModule``1">
+  GetModule&lt;T&gt;()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetModule&lt;T&gt;() where T : class, IPartModule</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetPartBoundCoords_" data-uid="KSP.Sim.impl.PartBehavior.GetPartBoundCoords*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetPartBoundCoords" data-uid="KSP.Sim.impl.PartBehavior.GetPartBoundCoords">
+  GetPartBoundCoords()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d[] GetPartBoundCoords()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Vector3d.html">Vector3d</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetPartBoundCoordsNativeArray_" data-uid="KSP.Sim.impl.PartBehavior.GetPartBoundCoordsNativeArray*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetPartBoundCoordsNativeArray_Unity_Collections_NativeArray_Unity_Mathematics_double3___" data-uid="KSP.Sim.impl.PartBehavior.GetPartBoundCoordsNativeArray(Unity.Collections.NativeArray{Unity.Mathematics.double3}@)">
+  GetPartBoundCoordsNativeArray(ref NativeArray&lt;double3&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetPartBoundCoordsNativeArray(ref NativeArray&lt;double3&gt; boundCoordsArray)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>boundCoordsArray</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a>&lt;<span class="xref">double3</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetPartOwner_" data-uid="KSP.Sim.impl.PartBehavior.GetPartOwner*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetPartOwner" data-uid="KSP.Sim.impl.PartBehavior.GetPartOwner">
+  GetPartOwner()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartOwnerBehavior GetPartOwner()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_GetVesselBehavior_" data-uid="KSP.Sim.impl.PartBehavior.GetVesselBehavior*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_GetVesselBehavior" data-uid="KSP.Sim.impl.PartBehavior.GetVesselBehavior">
+  GetVesselBehavior()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VesselBehavior GetVesselBehavior()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.VesselBehavior.html">VesselBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_HandleCollisionEnter_" data-uid="KSP.Sim.impl.PartBehavior.HandleCollisionEnter*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_HandleCollisionEnter_KSP_Networking_MP_CollisionDetails_" data-uid="KSP.Sim.impl.PartBehavior.HandleCollisionEnter(KSP.Networking.MP.CollisionDetails)">
+  HandleCollisionEnter(CollisionDetails)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HandleCollisionEnter(CollisionDetails collisionData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>collisionData</code> <a class="xref" href="KSP.Networking.MP.CollisionDetails.html">CollisionDetails</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_HandleCollisionExit_" data-uid="KSP.Sim.impl.PartBehavior.HandleCollisionExit*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_HandleCollisionExit_KSP_Networking_MP_CollisionDetails_" data-uid="KSP.Sim.impl.PartBehavior.HandleCollisionExit(KSP.Networking.MP.CollisionDetails)">
+  HandleCollisionExit(CollisionDetails)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HandleCollisionExit(CollisionDetails collisionData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>collisionData</code> <a class="xref" href="KSP.Networking.MP.CollisionDetails.html">CollisionDetails</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_HandleCollisionStay_" data-uid="KSP.Sim.impl.PartBehavior.HandleCollisionStay*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_HandleCollisionStay_KSP_Networking_MP_CollisionDetails_" data-uid="KSP.Sim.impl.PartBehavior.HandleCollisionStay(KSP.Networking.MP.CollisionDetails)">
+  HandleCollisionStay(CollisionDetails)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HandleCollisionStay(CollisionDetails collisionData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>collisionData</code> <a class="xref" href="KSP.Networking.MP.CollisionDetails.html">CollisionDetails</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_HandlePartDetach_" data-uid="KSP.Sim.impl.PartBehavior.HandlePartDetach*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_HandlePartDetach_KSP_Sim_impl_PartOwnerBehavior_System_Boolean_" data-uid="KSP.Sim.impl.PartBehavior.HandlePartDetach(KSP.Sim.impl.PartOwnerBehavior,System.Boolean)">
+  HandlePartDetach(PartOwnerBehavior, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandlePartDetach(PartOwnerBehavior oldOwner, bool showFX)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>oldOwner</code> <a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a></dt>
+    <dd></dd>
+    <dt><code>showFX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_HandlePartDetachEffects_" data-uid="KSP.Sim.impl.PartBehavior.HandlePartDetachEffects*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_HandlePartDetachEffects_KSP_Sim_impl_PartOwnerBehavior_" data-uid="KSP.Sim.impl.PartBehavior.HandlePartDetachEffects(KSP.Sim.impl.PartOwnerBehavior)">
+  HandlePartDetachEffects(PartOwnerBehavior)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandlePartDetachEffects(PartOwnerBehavior oldOwner)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>oldOwner</code> <a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_HandlePartDetachPhysics_" data-uid="KSP.Sim.impl.PartBehavior.HandlePartDetachPhysics*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_HandlePartDetachPhysics_KSP_Sim_impl_PartOwnerBehavior_" data-uid="KSP.Sim.impl.PartBehavior.HandlePartDetachPhysics(KSP.Sim.impl.PartOwnerBehavior)">
+  HandlePartDetachPhysics(PartOwnerBehavior)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandlePartDetachPhysics(PartOwnerBehavior oldOwner)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>oldOwner</code> <a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_HandleWaterSplashEffects_" data-uid="KSP.Sim.impl.PartBehavior.HandleWaterSplashEffects*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_HandleWaterSplashEffects_UnityEngine_Vector3_System_Single_System_Single_" data-uid="KSP.Sim.impl.PartBehavior.HandleWaterSplashEffects(UnityEngine.Vector3,System.Single,System.Single)">
+  HandleWaterSplashEffects(Vector3, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandleWaterSplashEffects(Vector3 contactPoint, float deviationFromVertical, float contactVelocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contactPoint</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>deviationFromVertical</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>contactVelocity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_IsDefaultLayer_" data-uid="KSP.Sim.impl.PartBehavior.IsDefaultLayer*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_IsDefaultLayer_System_Int32_" data-uid="KSP.Sim.impl.PartBehavior.IsDefaultLayer(System.Int32)">
+  IsDefaultLayer(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsDefaultLayer(int gameObjectLayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObjectLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_IsLandableLayer_" data-uid="KSP.Sim.impl.PartBehavior.IsLandableLayer*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_IsLandableLayer_System_Int32_" data-uid="KSP.Sim.impl.PartBehavior.IsLandableLayer(System.Int32)">
+  IsLandableLayer(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLandableLayer(int gameObjectLayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObjectLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_IsSceneryLayer_" data-uid="KSP.Sim.impl.PartBehavior.IsSceneryLayer*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_IsSceneryLayer_System_Int32_" data-uid="KSP.Sim.impl.PartBehavior.IsSceneryLayer(System.Int32)">
+  IsSceneryLayer(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSceneryLayer(int gameObjectLayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObjectLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_IsTerrainLayer_" data-uid="KSP.Sim.impl.PartBehavior.IsTerrainLayer*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_IsTerrainLayer_System_Int32_" data-uid="KSP.Sim.impl.PartBehavior.IsTerrainLayer(System.Int32)">
+  IsTerrainLayer(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsTerrainLayer(int gameObjectLayer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameObjectLayer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_OnCollisionEnter_" data-uid="KSP.Sim.impl.PartBehavior.OnCollisionEnter*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnCollisionEnter_UnityEngine_Collision_" data-uid="KSP.Sim.impl.PartBehavior.OnCollisionEnter(UnityEngine.Collision)">
+  OnCollisionEnter(Collision)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCollisionEnter(Collision c)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>c</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collision.html">Collision</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_OnCollisionExit_" data-uid="KSP.Sim.impl.PartBehavior.OnCollisionExit*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnCollisionExit_UnityEngine_Collision_" data-uid="KSP.Sim.impl.PartBehavior.OnCollisionExit(UnityEngine.Collision)">
+  OnCollisionExit(Collision)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCollisionExit(Collision c)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>c</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collision.html">Collision</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_OnCollisionStay_" data-uid="KSP.Sim.impl.PartBehavior.OnCollisionStay*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnCollisionStay_UnityEngine_Collision_" data-uid="KSP.Sim.impl.PartBehavior.OnCollisionStay(UnityEngine.Collision)">
+  OnCollisionStay(Collision)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCollisionStay(Collision c)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>c</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collision.html">Collision</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_OnFixedUpdate_" data-uid="KSP.Sim.impl.PartBehavior.OnFixedUpdate*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnFixedUpdate_System_Single_" data-uid="KSP.Sim.impl.PartBehavior.OnFixedUpdate(System.Single)">
+  OnFixedUpdate(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnFixedUpdate(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_OnGUI_" data-uid="KSP.Sim.impl.PartBehavior.OnGUI*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnGUI" data-uid="KSP.Sim.impl.PartBehavior.OnGUI">
+  OnGUI()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnGUI()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_OnJointBreak_" data-uid="KSP.Sim.impl.PartBehavior.OnJointBreak*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnJointBreak_System_Single_" data-uid="KSP.Sim.impl.PartBehavior.OnJointBreak(System.Single)">
+  OnJointBreak(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnJointBreak(float breakForce)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>breakForce</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_OnTriggerEnter_" data-uid="KSP.Sim.impl.PartBehavior.OnTriggerEnter*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnTriggerEnter_UnityEngine_Collider_" data-uid="KSP.Sim.impl.PartBehavior.OnTriggerEnter(UnityEngine.Collider)">
+  OnTriggerEnter(Collider)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnTriggerEnter(Collider otherCollider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>otherCollider</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Collider.html">Collider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_PublishPartDetachMessage_" data-uid="KSP.Sim.impl.PartBehavior.PublishPartDetachMessage*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_PublishPartDetachMessage" data-uid="KSP.Sim.impl.PartBehavior.PublishPartDetachMessage">
+  PublishPartDetachMessage()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PublishPartDetachMessage()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_RedirectChildPhysX_" data-uid="KSP.Sim.impl.PartBehavior.RedirectChildPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_RedirectChildPhysX_UnityEngine_Rigidbody_" data-uid="KSP.Sim.impl.PartBehavior.RedirectChildPhysX(UnityEngine.Rigidbody)">
+  RedirectChildPhysX(Rigidbody)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RedirectChildPhysX(Rigidbody rb)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rb</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Rigidbody.html">Rigidbody</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_RemoveForce_" data-uid="KSP.Sim.impl.PartBehavior.RemoveForce*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_RemoveForce_KSP_Sim_IForce_" data-uid="KSP.Sim.impl.PartBehavior.RemoveForce(KSP.Sim.IForce)">
+  RemoveForce(IForce)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveForce(IForce force)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="KSP.Sim.IForce.html">IForce</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_RemoveTorque_" data-uid="KSP.Sim.impl.PartBehavior.RemoveTorque*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_RemoveTorque_KSP_Sim_ITorque_" data-uid="KSP.Sim.impl.PartBehavior.RemoveTorque(KSP.Sim.ITorque)">
+  RemoveTorque(ITorque)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveTorque(ITorque torque)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>torque</code> <a class="xref" href="KSP.Sim.ITorque.html">ITorque</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ResetPartColliders_" data-uid="KSP.Sim.impl.PartBehavior.ResetPartColliders*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ResetPartColliders" data-uid="KSP.Sim.impl.PartBehavior.ResetPartColliders">
+  ResetPartColliders()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetPartColliders()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_SetBuoyancyDebugBoundsDepths_" data-uid="KSP.Sim.impl.PartBehavior.SetBuoyancyDebugBoundsDepths*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_SetBuoyancyDebugBoundsDepths_System_Boolean_" data-uid="KSP.Sim.impl.PartBehavior.SetBuoyancyDebugBoundsDepths(System.Boolean)">
+  SetBuoyancyDebugBoundsDepths(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBuoyancyDebugBoundsDepths(bool newValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_SetBuoyancyDebugForcePos_" data-uid="KSP.Sim.impl.PartBehavior.SetBuoyancyDebugForcePos*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_SetBuoyancyDebugForcePos_System_Boolean_" data-uid="KSP.Sim.impl.PartBehavior.SetBuoyancyDebugForcePos(System.Boolean)">
+  SetBuoyancyDebugForcePos(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBuoyancyDebugForcePos(bool newValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_SetBuoyancyDisplacementDirty_" data-uid="KSP.Sim.impl.PartBehavior.SetBuoyancyDisplacementDirty*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_SetBuoyancyDisplacementDirty" data-uid="KSP.Sim.impl.PartBehavior.SetBuoyancyDisplacementDirty">
+  SetBuoyancyDisplacementDirty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBuoyancyDisplacementDirty()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ShowBuoyantForcePosition_" data-uid="KSP.Sim.impl.PartBehavior.ShowBuoyantForcePosition*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ShowBuoyantForcePosition" data-uid="KSP.Sim.impl.PartBehavior.ShowBuoyantForcePosition">
+  ShowBuoyantForcePosition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShowBuoyantForcePosition()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_ShowPartBounds_" data-uid="KSP.Sim.impl.PartBehavior.ShowPartBounds*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_ShowPartBounds" data-uid="KSP.Sim.impl.PartBehavior.ShowPartBounds">
+  ShowPartBounds()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShowPartBounds()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_StartPhysX_" data-uid="KSP.Sim.impl.PartBehavior.StartPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_StartPhysX" data-uid="KSP.Sim.impl.PartBehavior.StartPhysX">
+  StartPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartPhysX()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_StopPhysX_" data-uid="KSP.Sim.impl.PartBehavior.StopPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_StopPhysX" data-uid="KSP.Sim.impl.PartBehavior.StopPhysX">
+  StopPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopPhysX()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_SyncTo_" data-uid="KSP.Sim.impl.PartBehavior.SyncTo*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_SyncTo_KSP_Sim_impl_PartComponent_" data-uid="KSP.Sim.impl.PartBehavior.SyncTo(KSP.Sim.impl.PartComponent)">
+  SyncTo(PartComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SyncTo(PartComponent simObjectComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>simObjectComponent</code> <a class="xref" href="KSP.Sim.impl.PartComponent.html">PartComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_SyncToSimulationObject_" data-uid="KSP.Sim.impl.PartBehavior.SyncToSimulationObject*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_SyncToSimulationObject_System_Boolean_" data-uid="KSP.Sim.impl.PartBehavior.SyncToSimulationObject(System.Boolean)">
+  SyncToSimulationObject(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SyncToSimulationObject(bool useRigidbody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>useRigidbody</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_VerifyPackPhysX_" data-uid="KSP.Sim.impl.PartBehavior.VerifyPackPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_VerifyPackPhysX" data-uid="KSP.Sim.impl.PartBehavior.VerifyPackPhysX">
+  VerifyPackPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VerifyPackPhysX()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_VerifyStopPhysX_" data-uid="KSP.Sim.impl.PartBehavior.VerifyStopPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_VerifyStopPhysX" data-uid="KSP.Sim.impl.PartBehavior.VerifyStopPhysX">
+  VerifyStopPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VerifyStopPhysX()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartBehavior_VerifyUnpackPhysX_" data-uid="KSP.Sim.impl.PartBehavior.VerifyUnpackPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartBehavior_VerifyUnpackPhysX_System_Boolean_System_Boolean_" data-uid="KSP.Sim.impl.PartBehavior.VerifyUnpackPhysX(System.Boolean,System.Boolean)">
+  VerifyUnpackPhysX(bool, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VerifyUnpackPhysX(bool rigidbodyExpected, bool jointExpected)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rigidbodyExpected</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>jointExpected</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnPack" data-uid="KSP.Sim.impl.PartBehavior.OnPack">
+  OnPack
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;PartBehavior&gt; OnPack</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="KSP_Sim_impl_PartBehavior_OnUnpack" data-uid="KSP.Sim.impl.PartBehavior.OnUnpack">
+  OnUnpack
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;PartBehavior&gt; OnUnpack</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

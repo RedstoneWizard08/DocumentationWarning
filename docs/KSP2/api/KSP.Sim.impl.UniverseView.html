@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class UniverseView | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class UniverseView | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.UniverseView">
+
+
+
+  <h1 id="KSP_Sim_impl_UniverseView" data-uid="KSP.Sim.impl.UniverseView" class="text-break">
+Class UniverseView  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class UniverseView : KerbalMonoBehaviour, IUniverseView, IViewActionQueue, IInternalSpaceProvider, IFixedUpdate, IUpdate, IPriorityOverride</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Game.KerbalMonoBehaviour.html">KerbalMonoBehaviour</a></div>
+      <div><span class="xref">UniverseView</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KSP.Sim.IUniverseView.html">IUniverseView</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewActions.IViewActionQueue.html">IViewActionQueue</a></div>
+      <div><a class="xref" href="KSP.Sim.IInternalSpaceProvider.html">IInternalSpaceProvider</a></div>
+      <div><a class="xref" href="DefaultNamespace.IFixedUpdate.html">IFixedUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.IUpdate.html">IUpdate</a></div>
+      <div><a class="xref" href="DefaultNamespace.IPriorityOverride.html">IPriorityOverride</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Game">KerbalMonoBehaviour.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Assets">KerbalMonoBehaviour.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Messages">KerbalMonoBehaviour.Messages</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_CFXSystem">KerbalMonoBehaviour.CFXSystem</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_IsGameShuttingDown">KerbalMonoBehaviour.IsGameShuttingDown</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentCached__1_UnityEngine_Component___0__">GameObjectExtension.GetComponentCached&lt;T&gt;(Component, ref T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GameObjectExtension.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.ComponentExtensions.html#KSP_ComponentExtensions_CopyFrom__1_UnityEngine_Component___0_">ComponentExtensions.CopyFrom&lt;T&gt;(Component, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.OAB.DataContextMonoBehaviorExtensionDooblyDo.html#KSP_OAB_DataContextMonoBehaviorExtensionDooblyDo_FindDataContextProviderInHierarchy_UnityEngine_MonoBehaviour_">DataContextMonoBehaviorExtensionDooblyDo.FindDataContextProviderInHierarchy(MonoBehaviour)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_SetDebugName_UnityEngine_Object_System_String_">GameObjectExtension.SetDebugName(Object, string)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_UniverseView__ctor_" data-uid="KSP.Sim.impl.UniverseView.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView__ctor" data-uid="KSP.Sim.impl.UniverseView.#ctor">
+  UniverseView()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniverseView()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_UniverseView_AssetLoader_" data-uid="KSP.Sim.impl.UniverseView.AssetLoader*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_AssetLoader" data-uid="KSP.Sim.impl.UniverseView.AssetLoader">
+  AssetLoader
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialBodyAssetLoader AssetLoader { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Game.CelestialBodyAssetLoader.html">CelestialBodyAssetLoader</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_CelestialTransform_" data-uid="KSP.Sim.impl.UniverseView.CelestialTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_CelestialTransform" data-uid="KSP.Sim.impl.UniverseView.CelestialTransform">
+  CelestialTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform CelestialTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_CelestialUtilities_" data-uid="KSP.Sim.impl.UniverseView.CelestialUtilities*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_CelestialUtilities" data-uid="KSP.Sim.impl.UniverseView.CelestialUtilities">
+  CelestialUtilities
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CelestialUtilities CelestialUtilities { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Utilities.CelestialUtilities.html">CelestialUtilities</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_FlightObserver_" data-uid="KSP.Sim.impl.UniverseView.FlightObserver*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_FlightObserver" data-uid="KSP.Sim.impl.UniverseView.FlightObserver">
+  FlightObserver
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUniverseObserver FlightObserver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IUniverseObserver.html">IUniverseObserver</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_InternalSpace_" data-uid="KSP.Sim.impl.UniverseView.InternalSpace*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_InternalSpace" data-uid="KSP.Sim.impl.UniverseView.InternalSpace">
+  InternalSpace
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IInternalSpaceProvider InternalSpace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IInternalSpaceProvider.html">IInternalSpaceProvider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_InternalSpaceTransform_" data-uid="KSP.Sim.impl.UniverseView.InternalSpaceTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_InternalSpaceTransform" data-uid="KSP.Sim.impl.UniverseView.InternalSpaceTransform">
+  InternalSpaceTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform InternalSpaceTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_IsAutomaticCelestialBodyLoadEnabled_" data-uid="KSP.Sim.impl.UniverseView.IsAutomaticCelestialBodyLoadEnabled*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_IsAutomaticCelestialBodyLoadEnabled" data-uid="KSP.Sim.impl.UniverseView.IsAutomaticCelestialBodyLoadEnabled">
+  IsAutomaticCelestialBodyLoadEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAutomaticCelestialBodyLoadEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_IsDestroyInProgress_" data-uid="KSP.Sim.impl.UniverseView.IsDestroyInProgress*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_IsDestroyInProgress" data-uid="KSP.Sim.impl.UniverseView.IsDestroyInProgress">
+  IsDestroyInProgress
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDestroyInProgress { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_IsProximityLoadUnloadEnabled_" data-uid="KSP.Sim.impl.UniverseView.IsProximityLoadUnloadEnabled*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_IsProximityLoadUnloadEnabled" data-uid="KSP.Sim.impl.UniverseView.IsProximityLoadUnloadEnabled">
+  IsProximityLoadUnloadEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsProximityLoadUnloadEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_Model_" data-uid="KSP.Sim.impl.UniverseView.Model*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_Model" data-uid="KSP.Sim.impl.UniverseView.Model">
+  Model
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UniverseModel Model { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.UniverseModel.html">UniverseModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_PhysXCounterRotatingTransform_" data-uid="KSP.Sim.impl.UniverseView.PhysXCounterRotatingTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_PhysXCounterRotatingTransform" data-uid="KSP.Sim.impl.UniverseView.PhysXCounterRotatingTransform">
+  PhysXCounterRotatingTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform PhysXCounterRotatingTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_PhysXReferenceTransform_" data-uid="KSP.Sim.impl.UniverseView.PhysXReferenceTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_PhysXReferenceTransform" data-uid="KSP.Sim.impl.UniverseView.PhysXReferenceTransform">
+  PhysXReferenceTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform PhysXReferenceTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_PhysicsDeltaTime_" data-uid="KSP.Sim.impl.UniverseView.PhysicsDeltaTime*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_PhysicsDeltaTime" data-uid="KSP.Sim.impl.UniverseView.PhysicsDeltaTime">
+  PhysicsDeltaTime
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PhysicsDeltaTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_PhysicsSpace_" data-uid="KSP.Sim.impl.UniverseView.PhysicsSpace*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_PhysicsSpace" data-uid="KSP.Sim.impl.UniverseView.PhysicsSpace">
+  PhysicsSpace
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IPhysicsSpaceProvider PhysicsSpace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IPhysicsSpaceProvider.html">IPhysicsSpaceProvider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_PhysicsSpaceTransform_" data-uid="KSP.Sim.impl.UniverseView.PhysicsSpaceTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_PhysicsSpaceTransform" data-uid="KSP.Sim.impl.UniverseView.PhysicsSpaceTransform">
+  PhysicsSpaceTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform PhysicsSpaceTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_ProximityViewObjectRangeMeters_" data-uid="KSP.Sim.impl.UniverseView.ProximityViewObjectRangeMeters*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_ProximityViewObjectRangeMeters" data-uid="KSP.Sim.impl.UniverseView.ProximityViewObjectRangeMeters">
+  ProximityViewObjectRangeMeters
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ProximityViewObjectRangeMeters { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_QueryIntervalSeconds_" data-uid="KSP.Sim.impl.UniverseView.QueryIntervalSeconds*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_QueryIntervalSeconds" data-uid="KSP.Sim.impl.UniverseView.QueryIntervalSeconds">
+  QueryIntervalSeconds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float QueryIntervalSeconds { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_ScaledSpace_" data-uid="KSP.Sim.impl.UniverseView.ScaledSpace*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_ScaledSpace" data-uid="KSP.Sim.impl.UniverseView.ScaledSpace">
+  ScaledSpace
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IScaledSpaceProvider ScaledSpace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.IScaledSpaceProvider.html">IScaledSpaceProvider</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_ScaledSpaceTransform_" data-uid="KSP.Sim.impl.UniverseView.ScaledSpaceTransform*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_ScaledSpaceTransform" data-uid="KSP.Sim.impl.UniverseView.ScaledSpaceTransform">
+  ScaledSpaceTransform
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform ScaledSpaceTransform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_ScriptInjector_" data-uid="KSP.Sim.impl.UniverseView.ScriptInjector*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_ScriptInjector" data-uid="KSP.Sim.impl.UniverseView.ScriptInjector">
+  ScriptInjector
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILuaDebugInjector ScriptInjector { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Debugging.ILuaDebugInjector.html">ILuaDebugInjector</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_ViewActionQueue_" data-uid="KSP.Sim.impl.UniverseView.ViewActionQueue*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_ViewActionQueue" data-uid="KSP.Sim.impl.UniverseView.ViewActionQueue">
+  ViewActionQueue
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IViewActionQueue ViewActionQueue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.ViewActions.IViewActionQueue.html">IViewActionQueue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_UniverseView_ClearViewActionQueue_" data-uid="KSP.Sim.impl.UniverseView.ClearViewActionQueue*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_ClearViewActionQueue" data-uid="KSP.Sim.impl.UniverseView.ClearViewActionQueue">
+  ClearViewActionQueue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearViewActionQueue()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_Destroy_" data-uid="KSP.Sim.impl.UniverseView.Destroy*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_Destroy" data-uid="KSP.Sim.impl.UniverseView.Destroy">
+  Destroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Destroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_FlushViewActionQueue_" data-uid="KSP.Sim.impl.UniverseView.FlushViewActionQueue*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_FlushViewActionQueue_KSP_Sim_IModelViewMap_" data-uid="KSP.Sim.impl.UniverseView.FlushViewActionQueue(KSP.Sim.IModelViewMap)">
+  FlushViewActionQueue(IModelViewMap)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FlushViewActionQueue(IModelViewMap modelViewMap)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelViewMap</code> <a class="xref" href="KSP.Sim.IModelViewMap.html">IModelViewMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_IgnorePendingPackModeViewActionsWithGuid_" data-uid="KSP.Sim.impl.UniverseView.IgnorePendingPackModeViewActionsWithGuid*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_IgnorePendingPackModeViewActionsWithGuid_KSP_Sim_impl_IGGuid_" data-uid="KSP.Sim.impl.UniverseView.IgnorePendingPackModeViewActionsWithGuid(KSP.Sim.impl.IGGuid)">
+  IgnorePendingPackModeViewActionsWithGuid(IGGuid)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IgnorePendingPackModeViewActionsWithGuid(IGGuid guid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>guid</code> <a class="xref" href="KSP.Sim.impl.IGGuid.html">IGGuid</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_InstantiateViewObject_" data-uid="KSP.Sim.impl.UniverseView.InstantiateViewObject*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_InstantiateViewObject_KSP_Sim_impl_SimulationObjectModel_" data-uid="KSP.Sim.impl.UniverseView.InstantiateViewObject(KSP.Sim.impl.SimulationObjectModel)">
+  InstantiateViewObject(SimulationObjectModel)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SimulationObjectView InstantiateViewObject(SimulationObjectModel simObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>simObject</code> <a class="xref" href="KSP.Sim.impl.SimulationObjectModel.html">SimulationObjectModel</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.SimulationObjectView.html">SimulationObjectView</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_InstantiateViewObjectAsync_" data-uid="KSP.Sim.impl.UniverseView.InstantiateViewObjectAsync*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_InstantiateViewObjectAsync_KSP_Sim_impl_SimulationObjectModel_System_Action_KSP_Sim_impl_SimulationObjectView__" data-uid="KSP.Sim.impl.UniverseView.InstantiateViewObjectAsync(KSP.Sim.impl.SimulationObjectModel,System.Action{KSP.Sim.impl.SimulationObjectView})">
+  InstantiateViewObjectAsync(SimulationObjectModel, Action&lt;SimulationObjectView&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InstantiateViewObjectAsync(SimulationObjectModel simObject, Action&lt;SimulationObjectView&gt; finishedCallback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>simObject</code> <a class="xref" href="KSP.Sim.impl.SimulationObjectModel.html">SimulationObjectModel</a></dt>
+    <dd></dd>
+    <dt><code>finishedCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.impl.SimulationObjectView.html">SimulationObjectView</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_InstantiateViewObjectAsync_" data-uid="KSP.Sim.impl.UniverseView.InstantiateViewObjectAsync*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_InstantiateViewObjectAsync_KSP_Sim_impl_SimulationObjectModel_UnityEngine_Vector3_UnityEngine_Quaternion_System_Action_KSP_Sim_impl_SimulationObjectView__" data-uid="KSP.Sim.impl.UniverseView.InstantiateViewObjectAsync(KSP.Sim.impl.SimulationObjectModel,UnityEngine.Vector3,UnityEngine.Quaternion,System.Action{KSP.Sim.impl.SimulationObjectView})">
+  InstantiateViewObjectAsync(SimulationObjectModel, Vector3, Quaternion, Action&lt;SimulationObjectView&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InstantiateViewObjectAsync(SimulationObjectModel simObject, Vector3 worldSpacePosition, Quaternion worldSpaceRotation, Action&lt;SimulationObjectView&gt; finishedCallback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>simObject</code> <a class="xref" href="KSP.Sim.impl.SimulationObjectModel.html">SimulationObjectModel</a></dt>
+    <dd></dd>
+    <dt><code>worldSpacePosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>worldSpaceRotation</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+    <dt><code>finishedCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.impl.SimulationObjectView.html">SimulationObjectView</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_LoadUnloadProximityViewObjects_" data-uid="KSP.Sim.impl.UniverseView.LoadUnloadProximityViewObjects*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_LoadUnloadProximityViewObjects_KSP_Sim_Position_System_Action_System_Boolean__" data-uid="KSP.Sim.impl.UniverseView.LoadUnloadProximityViewObjects(KSP.Sim.Position,System.Action{System.Boolean})">
+  LoadUnloadProximityViewObjects(Position, Action&lt;bool&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadUnloadProximityViewObjects(Position position, Action&lt;bool&gt; loadFinishedCallback = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+    <dt><code>loadFinishedCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_LoadUnloadProximityViewObjects_" data-uid="KSP.Sim.impl.UniverseView.LoadUnloadProximityViewObjects*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_LoadUnloadProximityViewObjects_KSP_Sim_Position_System_Double_System_Action_System_Boolean__" data-uid="KSP.Sim.impl.UniverseView.LoadUnloadProximityViewObjects(KSP.Sim.Position,System.Double,System.Action{System.Boolean})">
+  LoadUnloadProximityViewObjects(Position, double, Action&lt;bool&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadUnloadProximityViewObjects(Position position, double rangeMeters, Action&lt;bool&gt; loadFinishedCallback = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+    <dt><code>rangeMeters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>loadFinishedCallback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_New_" data-uid="KSP.Sim.impl.UniverseView.New*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_New_KSP_Sim_impl_UniverseModel_KSP_Sim_IModelViewMap_KSP_Sim_Debugging_ILuaDebugInjector_" data-uid="KSP.Sim.impl.UniverseView.New(KSP.Sim.impl.UniverseModel,KSP.Sim.IModelViewMap,KSP.Sim.Debugging.ILuaDebugInjector)">
+  New(UniverseModel, IModelViewMap, ILuaDebugInjector)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UniverseView New(UniverseModel model, IModelViewMap modelViewMap, ILuaDebugInjector scriptDebugger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <a class="xref" href="KSP.Sim.impl.UniverseModel.html">UniverseModel</a></dt>
+    <dd></dd>
+    <dt><code>modelViewMap</code> <a class="xref" href="KSP.Sim.IModelViewMap.html">IModelViewMap</a></dt>
+    <dd></dd>
+    <dt><code>scriptDebugger</code> <a class="xref" href="KSP.Sim.Debugging.ILuaDebugInjector.html">ILuaDebugInjector</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.UniverseView.html">UniverseView</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_OnFixedUpdate_" data-uid="KSP.Sim.impl.UniverseView.OnFixedUpdate*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_OnFixedUpdate_System_Single_" data-uid="KSP.Sim.impl.UniverseView.OnFixedUpdate(System.Single)">
+  OnFixedUpdate(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnFixedUpdate(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_SubmitViewAction_" data-uid="KSP.Sim.impl.UniverseView.SubmitViewAction*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_SubmitViewAction_KSP_Sim_ViewActions_IViewAction_" data-uid="KSP.Sim.impl.UniverseView.SubmitViewAction(KSP.Sim.ViewActions.IViewAction)">
+  SubmitViewAction(IViewAction)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubmitViewAction(IViewAction action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="KSP.Sim.ViewActions.IViewAction.html">IViewAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_UniverseView_SubmitViewActions_" data-uid="KSP.Sim.impl.UniverseView.SubmitViewActions*"></a>
+
+  <h3 id="KSP_Sim_impl_UniverseView_SubmitViewActions_System_Collections_Generic_IEnumerable_KSP_Sim_ViewActions_IViewAction__" data-uid="KSP.Sim.impl.UniverseView.SubmitViewActions(System.Collections.Generic.IEnumerable{KSP.Sim.ViewActions.IViewAction})">
+  SubmitViewActions(IEnumerable&lt;IViewAction&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubmitViewActions(IEnumerable&lt;IViewAction&gt; actions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>actions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="KSP.Sim.ViewActions.IViewAction.html">IViewAction</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -199,8 +199,8 @@ Class Marching
 
 
 
-  <h3 id="TerrainSystem_Marching_VertexOffset" data-uid="TerrainSystem.Marching.VertexOffset">
-  VertexOffset
+  <h3 id="TerrainSystem_Marching_uvScale" data-uid="TerrainSystem.Marching.uvScale">
+  uvScale
   
   </h3>
 
@@ -208,7 +208,7 @@ Class Marching
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static readonly int[,] VertexOffset</code></pre>
+    <pre><code class="lang-csharp hljs">protected float uvScale</code></pre>
   </div>
 
 
@@ -216,7 +216,7 @@ Class Marching
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[,]</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -243,7 +243,7 @@ Class Marching
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float Surface { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public byte Surface { get; set; }</code></pre>
   </div>
 
 
@@ -252,7 +252,7 @@ Class Marching
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
     <dd></dd>
   </dl>
 
@@ -300,8 +300,8 @@ Class Marching
 
   <a id="TerrainSystem_Marching_Generate_" data-uid="TerrainSystem.Marching.Generate*"></a>
 
-  <h3 id="TerrainSystem_Marching_Generate_System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_System_Int32__System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="TerrainSystem.Marching.Generate(System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-  Generate(IList&lt;Vector3&gt;, IList&lt;Vector3&gt;, IList&lt;int&gt;, int, int, int, int, int)
+  <h3 id="TerrainSystem_Marching_Generate_System_Collections_Generic_List_UnityEngine_Vector3__System_Collections_Generic_List_UnityEngine_Vector3__System_Collections_Generic_List_UnityEngine_Vector3__System_Collections_Generic_List_System_Byte__System_Collections_Generic_List_UnityEngine_Vector2__System_Collections_Generic_List_System_Int32__System_Collections_Generic_List_TerrainSystem_Vein__System_Int32_System_Int32_System_Int32_System_Int32_System_SByte_" data-uid="TerrainSystem.Marching.Generate(System.Collections.Generic.List{UnityEngine.Vector3},System.Collections.Generic.List{UnityEngine.Vector3},System.Collections.Generic.List{UnityEngine.Vector3},System.Collections.Generic.List{System.Byte},System.Collections.Generic.List{UnityEngine.Vector2},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{TerrainSystem.Vein},System.Int32,System.Int32,System.Int32,System.Int32,System.SByte)">
+  Generate(List&lt;Vector3&gt;, List&lt;Vector3&gt;, List&lt;Vector3&gt;, List&lt;byte&gt;, List&lt;Vector2&gt;, List&lt;int&gt;, List&lt;Vein&gt;, int, int, int, int, sbyte)
   
   </h3>
 
@@ -309,16 +309,24 @@ Class Marching
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Generate(IList&lt;Vector3&gt; verts, IList&lt;Vector3&gt; normals, IList&lt;int&gt; indices, int offsetX, int offsetY, int offsetZ, int chunkSize, int desiredDepth)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Generate(List&lt;Vector3&gt; verts, List&lt;Vector3&gt; normals, List&lt;Vector3&gt; deformationNormals, List&lt;byte&gt; nodeTypes, List&lt;Vector2&gt; minableColor, List&lt;int&gt; indices, List&lt;Vein&gt; veins, int offsetX, int offsetY, int offsetZ, int chunkSize, sbyte desiredDepth)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>verts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<span class="xref">Vector3</span>&gt;</dt>
+    <dt><code>verts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Vector3</span>&gt;</dt>
     <dd></dd>
-    <dt><code>normals</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<span class="xref">Vector3</span>&gt;</dt>
+    <dt><code>normals</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Vector3</span>&gt;</dt>
     <dd></dd>
-    <dt><code>indices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dt><code>deformationNormals</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Vector3</span>&gt;</dt>
+    <dd></dd>
+    <dt><code>nodeTypes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>minableColor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Vector2.html">Vector2</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>indices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>veins</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="TerrainSystem.Vein.html">Vein</a>&gt;</dt>
     <dd></dd>
     <dt><code>offsetX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
@@ -328,94 +336,7 @@ Class Marching
     <dd></dd>
     <dt><code>chunkSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
-    <dt><code>desiredDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="TerrainSystem_Marching_GetOffset_" data-uid="TerrainSystem.Marching.GetOffset*"></a>
-
-  <h3 id="TerrainSystem_Marching_GetOffset_System_Single_System_Single_" data-uid="TerrainSystem.Marching.GetOffset(System.Single,System.Single)">
-  GetOffset(float, float)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected float GetOffset(float v1, float v2)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>v1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-    <dt><code>v2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="TerrainSystem_Marching_March_" data-uid="TerrainSystem.Marching.March*"></a>
-
-  <h3 id="TerrainSystem_Marching_March_System_Single_System_Single_System_Single_System_Single___System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_System_Int32__System_Single_UnityEngine_Vector3_System_Int32_" data-uid="TerrainSystem.Marching.March(System.Single,System.Single,System.Single,System.Single[],System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{System.Int32},System.Single,UnityEngine.Vector3,System.Int32)">
-  March(float, float, float, float[], IList&lt;Vector3&gt;, IList&lt;Vector3&gt;, IList&lt;int&gt;, float, Vector3, int)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract void March(float y, float z, float f, float[] cube, IList&lt;Vector3&gt; vertList, IList&lt;Vector3&gt; normalList, IList&lt;int&gt; indexList, float voxelSize, Vector3 chunkPosition, int desiredDepth)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-    <dt><code>z</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-    <dt><code>f</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-    <dt><code>cube</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
-    <dd></dd>
-    <dt><code>vertList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<span class="xref">Vector3</span>&gt;</dt>
-    <dd></dd>
-    <dt><code>normalList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<span class="xref">Vector3</span>&gt;</dt>
-    <dd></dd>
-    <dt><code>indexList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>voxelSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-    <dt><code>chunkPosition</code> <span class="xref">Vector3</span></dt>
-    <dd></dd>
-    <dt><code>desiredDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><code>desiredDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></dt>
     <dd></dd>
   </dl>
 

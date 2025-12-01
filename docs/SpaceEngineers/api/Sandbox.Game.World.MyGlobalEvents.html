@@ -138,9 +138,6 @@ public class MyGlobalEvents : MySessionComponentBase, IMyUserInputComponent</cod
       <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ComponentType">MySessionComponentBase.ComponentType</a>
     </div>
     <div>
-      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
-    </div>
-    <div>
       <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_UpdatedBeforeInit">MySessionComponentBase.UpdatedBeforeInit()</a>
     </div>
     <div>
@@ -187,6 +184,9 @@ public class MyGlobalEvents : MySessionComponentBase, IMyUserInputComponent</cod
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_ModContext">MySessionComponentBase.ModContext</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Session">MySessionComponentBase.Session</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MySessionComponentBase.html#VRage_Game_Components_MySessionComponentBase_Loaded">MySessionComponentBase.Loaded</a>
@@ -421,8 +421,8 @@ public class MyGlobalEvents : MySessionComponentBase, IMyUserInputComponent</cod
 
   <a id="Sandbox_Game_World_MyGlobalEvents_GetEventById_" data-uid="Sandbox.Game.World.MyGlobalEvents.GetEventById*"></a>
 
-  <h3 id="Sandbox_Game_World_MyGlobalEvents_GetEventById_VRage_Game_MyDefinitionId_" data-uid="Sandbox.Game.World.MyGlobalEvents.GetEventById(VRage.Game.MyDefinitionId)">
-  GetEventById(MyDefinitionId)
+  <h3 id="Sandbox_Game_World_MyGlobalEvents_GetEventById_VRage_Game_MyDefinitionId_System_Nullable_System_Int64__" data-uid="Sandbox.Game.World.MyGlobalEvents.GetEventById(VRage.Game.MyDefinitionId,System.Nullable{System.Int64})">
+  GetEventById(MyDefinitionId, long?)
   
   </h3>
 
@@ -430,12 +430,14 @@ public class MyGlobalEvents : MySessionComponentBase, IMyUserInputComponent</cod
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static MyGlobalEventBase GetEventById(MyDefinitionId defId)</code></pre>
+    <pre><code class="lang-csharp hljs">public static MyGlobalEventBase GetEventById(MyDefinitionId defId, long? targetIdentity = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>defId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>targetIdentity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -475,37 +477,6 @@ public class MyGlobalEvents : MySessionComponentBase, IMyUserInputComponent</cod
     <dt><a class="xref" href="VRage.Game.MyObjectBuilder_GlobalEvents.html">MyObjectBuilder_GlobalEvents</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Sandbox_Game_World_MyGlobalEvents_Init_" data-uid="Sandbox.Game.World.MyGlobalEvents.Init*"></a>
-
-  <h3 id="Sandbox_Game_World_MyGlobalEvents_Init_VRage_Game_MyObjectBuilder_GlobalEvents_" data-uid="Sandbox.Game.World.MyGlobalEvents.Init(VRage.Game.MyObjectBuilder_GlobalEvents)">
-  Init(MyObjectBuilder_GlobalEvents)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Init(MyObjectBuilder_GlobalEvents objectBuilder)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>objectBuilder</code> <a class="xref" href="VRage.Game.MyObjectBuilder_GlobalEvents.html">MyObjectBuilder_GlobalEvents</a></dt>
-    <dd></dd>
-  </dl>
-
 
 
 
@@ -574,10 +545,10 @@ public class MyGlobalEvents : MySessionComponentBase, IMyUserInputComponent</cod
 
 
 
-  <a id="Sandbox_Game_World_MyGlobalEvents_RemoveEventsById_" data-uid="Sandbox.Game.World.MyGlobalEvents.RemoveEventsById*"></a>
+  <a id="Sandbox_Game_World_MyGlobalEvents_RegisterPerPlayerEvent_" data-uid="Sandbox.Game.World.MyGlobalEvents.RegisterPerPlayerEvent*"></a>
 
-  <h3 id="Sandbox_Game_World_MyGlobalEvents_RemoveEventsById_VRage_Game_MyDefinitionId_" data-uid="Sandbox.Game.World.MyGlobalEvents.RemoveEventsById(VRage.Game.MyDefinitionId)">
-  RemoveEventsById(MyDefinitionId)
+  <h3 id="Sandbox_Game_World_MyGlobalEvents_RegisterPerPlayerEvent_VRage_Game_MyDefinitionId_System_Action_Sandbox_Game_World_MyGlobalEventBase__" data-uid="Sandbox.Game.World.MyGlobalEvents.RegisterPerPlayerEvent(VRage.Game.MyDefinitionId,System.Action{Sandbox.Game.World.MyGlobalEventBase})">
+  RegisterPerPlayerEvent(MyDefinitionId, Action&lt;MyGlobalEventBase&gt;)
   
   </h3>
 
@@ -585,12 +556,47 @@ public class MyGlobalEvents : MySessionComponentBase, IMyUserInputComponent</cod
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void RemoveEventsById(MyDefinitionId defIdToRemove)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void RegisterPerPlayerEvent(MyDefinitionId eventId, Action&lt;MyGlobalEventBase&gt; action)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventId</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Sandbox.Game.World.MyGlobalEventBase.html">MyGlobalEventBase</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_World_MyGlobalEvents_RemoveEventsById_" data-uid="Sandbox.Game.World.MyGlobalEvents.RemoveEventsById*"></a>
+
+  <h3 id="Sandbox_Game_World_MyGlobalEvents_RemoveEventsById_VRage_Game_MyDefinitionId_System_Nullable_System_Int64__" data-uid="Sandbox.Game.World.MyGlobalEvents.RemoveEventsById(VRage.Game.MyDefinitionId,System.Nullable{System.Int64})">
+  RemoveEventsById(MyDefinitionId, long?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveEventsById(MyDefinitionId defIdToRemove, long? targetIdentity = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>defIdToRemove</code> <a class="xref" href="VRage.Game.MyDefinitionId.html">MyDefinitionId</a></dt>
+    <dd></dd>
+    <dt><code>targetIdentity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
     <dd></dd>
   </dl>
 

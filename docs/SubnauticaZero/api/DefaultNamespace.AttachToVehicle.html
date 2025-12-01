@@ -102,7 +102,7 @@ Class AttachToVehicle
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(SwimBehaviour))]
-public class AttachToVehicle : CreatureAction, IProtoEventListener, IPropulsionCannonAmmo, IOnTakeDamage</code></pre>
+public class AttachToVehicle : CreatureAction, ICompileTimeSetupable, IProtoEventListener, IPropulsionCannonAmmo, IOnTakeDamage</code></pre>
   </div>
 
 
@@ -124,6 +124,7 @@ public class AttachToVehicle : CreatureAction, IProtoEventListener, IPropulsionC
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
       <div><a class="xref" href="DefaultNamespace.IProtoEventListener.html">IProtoEventListener</a></div>
       <div><a class="xref" href="DefaultNamespace.IPropulsionCannonAmmo.html">IPropulsionCannonAmmo</a></div>
       <div><a class="xref" href="DefaultNamespace.IOnTakeDamage.html">IOnTakeDamage</a></div>
@@ -138,6 +139,9 @@ public class AttachToVehicle : CreatureAction, IProtoEventListener, IPropulsionC
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
     </div>
     <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
+    </div>
+    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
     </div>
     <div>
@@ -150,13 +154,13 @@ public class AttachToVehicle : CreatureAction, IProtoEventListener, IPropulsionC
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -166,9 +170,6 @@ public class AttachToVehicle : CreatureAction, IProtoEventListener, IPropulsionC
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -930,8 +931,8 @@ public Rigidbody usedRigidboby</code></pre>
 
   <a id="DefaultNamespace_AttachToVehicle_Evaluate_" data-uid="DefaultNamespace.AttachToVehicle.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_AttachToVehicle_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_AttachToVehicle_Evaluate_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -939,13 +940,11 @@ public Rigidbody usedRigidboby</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -1101,7 +1100,7 @@ public Rigidbody usedRigidboby</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnEnable()</code></pre>
+    <pre><code class="lang-csharp hljs">public void OnEnable()</code></pre>
   </div>
 
 
@@ -1237,8 +1236,8 @@ public Rigidbody usedRigidboby</code></pre>
 
   <a id="DefaultNamespace_AttachToVehicle_Perform_" data-uid="DefaultNamespace.AttachToVehicle.Perform*"></a>
 
-  <h3 id="DefaultNamespace_AttachToVehicle_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_AttachToVehicle_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -1246,13 +1245,11 @@ public Rigidbody usedRigidboby</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -1364,7 +1361,7 @@ public Rigidbody usedRigidboby</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
   </div>
 
 
@@ -1381,8 +1378,8 @@ public Rigidbody usedRigidboby</code></pre>
 
   <a id="DefaultNamespace_AttachToVehicle_StartPerform_" data-uid="DefaultNamespace.AttachToVehicle.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_AttachToVehicle_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_AttachToVehicle_StartPerform_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -1390,13 +1387,11 @@ public Rigidbody usedRigidboby</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -1414,8 +1409,8 @@ public Rigidbody usedRigidboby</code></pre>
 
   <a id="DefaultNamespace_AttachToVehicle_StopPerform_" data-uid="DefaultNamespace.AttachToVehicle.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_AttachToVehicle_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_AttachToVehicle_StopPerform_System_Single_" data-uid="DefaultNamespace.AttachToVehicle.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -1423,13 +1418,11 @@ public Rigidbody usedRigidboby</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

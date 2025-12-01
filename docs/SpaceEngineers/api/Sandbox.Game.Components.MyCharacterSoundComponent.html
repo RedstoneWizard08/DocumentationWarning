@@ -102,7 +102,7 @@ Class MyCharacterSoundComponent
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[MyComponentBuilder(typeof(MyObjectBuilder_CharacterSoundComponent), true)]
-public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponentBase, IMyComponentBase</code></pre>
+public class MyCharacterSoundComponent : MyUpdatingEntityComponent, IMyEntityComponentBase, IMyComponentBase, IMyEventProxy, IMyEventOwner, IMyUpdatingEntityComponent, IMyCharacterComponent</code></pre>
   </div>
 
 
@@ -114,7 +114,8 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyComponentBase.html">MyComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html">MyEntityComponentBase</a></div>
-      <div><a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html">MyCharacterComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html">MyEventProxyEntityComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html">MyUpdatingEntityComponent</a></div>
       <div><span class="xref">MyCharacterSoundComponent</span></div>
     </dd>
   </dl>
@@ -124,6 +125,10 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
     <dd>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyEntityComponentBase.html">IMyEntityComponentBase</a></div>
       <div><a class="xref" href="VRage.Game.Components.Interfaces.IMyComponentBase.html">IMyComponentBase</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventProxy.html">IMyEventProxy</a></div>
+      <div><a class="xref" href="VRage.Network.IMyEventOwner.html">IMyEventOwner</a></div>
+      <div><a class="xref" href="VRage.Game.Entity.EntityComponents.Interfaces.IMyUpdatingEntityComponent.html">IMyUpdatingEntityComponent</a></div>
+      <div><a class="xref" href="Sandbox.Game.Entities.Character.Components.IMyCharacterComponent.html">IMyCharacterComponent</a></div>
     </dd>
   </dl>
 
@@ -132,55 +137,70 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateAfterSimulation10">MyCharacterComponent.UpdateAfterSimulation10()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateOnceBeforeFrame">MyUpdatingEntityComponent.UpdateOnceBeforeFrame()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateBeforeSimulation">MyCharacterComponent.UpdateBeforeSimulation()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulation">MyUpdatingEntityComponent.UpdateBeforeSimulation()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateBeforeSimulationParallel">MyCharacterComponent.UpdateBeforeSimulationParallel()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulation100">MyUpdatingEntityComponent.UpdateBeforeSimulation100()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_Simulate">MyCharacterComponent.Simulate()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateBeforeSimulationParallel">MyUpdatingEntityComponent.UpdateBeforeSimulationParallel()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_UpdateBeforeSimulation100">MyCharacterComponent.UpdateBeforeSimulation100()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateSimulate">MyUpdatingEntityComponent.UpdateSimulate()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_OnCharacterDead">MyCharacterComponent.OnCharacterDead()</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateAfterSimulation10">MyUpdatingEntityComponent.UpdateAfterSimulation10()</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulation">MyCharacterComponent.NeedsUpdateAfterSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_ParentEntity">MyUpdatingEntityComponent.ParentEntity</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulationParallel">MyCharacterComponent.NeedsUpdateAfterSimulationParallel</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdate">MyUpdatingEntityComponent.NeedsUpdate</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateSimulation">MyCharacterComponent.NeedsUpdateSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateAfterSimulation10">MyCharacterComponent.NeedsUpdateAfterSimulation10</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateBeforeSimulation100">MyUpdatingEntityComponent.NeedsUpdateBeforeSimulation100</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulation100">MyCharacterComponent.NeedsUpdateBeforeSimulation100</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateSimulation">MyUpdatingEntityComponent.NeedsUpdateSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulation">MyCharacterComponent.NeedsUpdateBeforeSimulation</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_NeedsUpdateBeforeSimulationParallel">MyCharacterComponent.NeedsUpdateBeforeSimulationParallel</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation10">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation10</a>
     </div>
     <div>
-      <a class="xref" href="Sandbox.Game.Entities.Character.Components.MyCharacterComponent.html#Sandbox_Game_Entities_Character_Components_MyCharacterComponent_Character">MyCharacterComponent.Character</a>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateAfterSimulation100">MyUpdatingEntityComponent.NeedsUpdateAfterSimulation100</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallel">MyUpdatingEntityComponent.UpdateParallel</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdatingType">MyUpdatingEntityComponent.UpdatingType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_NeedsUpdateChanged">MyUpdatingEntityComponent.NeedsUpdateChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyUpdatingEntityComponent.html#Sandbox_Game_EntityComponents_MyUpdatingEntityComponent_UpdateParallelChanged">MyUpdatingEntityComponent.UpdateParallelChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_SyncType">MyEventProxyEntityComponent.SyncType</a>
+    </div>
+    <div>
+      <a class="xref" href="Sandbox.Game.EntityComponents.MyEventProxyEntityComponent.html#Sandbox_Game_EntityComponents_MyEventProxyEntityComponent_AttachSyncToEntity">MyEventProxyEntityComponent.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Container">MyEntityComponentBase.Container</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_Entity">MyEntityComponentBase.Entity</a>
-    </div>
-    <div>
-      <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_AttachSyncToEntity">MyEntityComponentBase.AttachSyncToEntity</a>
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyEntityComponentBase.html#VRage_Game_Components_MyEntityComponentBase_OnAfterAddedToContainer">MyEntityComponentBase.OnAfterAddedToContainer</a>
@@ -217,6 +237,9 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
     </div>
     <div>
       <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_ContainerBase">MyComponentBase.ContainerBase</a>
+    </div>
+    <div>
+      <a class="xref" href="VRage.Game.Components.MyComponentBase.html#VRage_Game_Components_MyComponentBase_FailedOnSceneAdd">MyComponentBase.FailedOnSceneAdd</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -297,6 +320,37 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
 
   <h2 class="section" id="properties">Properties
 </h2>
+
+
+  <a id="Sandbox_Game_Components_MyCharacterSoundComponent_Character_" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.Character*"></a>
+
+  <h3 id="Sandbox_Game_Components_MyCharacterSoundComponent_Character" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.Character">
+  Character
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MyCharacter Character { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Sandbox.Game.Entities.Character.MyCharacter.html">MyCharacter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
   <a id="Sandbox_Game_Components_MyCharacterSoundComponent_ComponentTypeDebugString_" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.ComponentTypeDebugString*"></a>
@@ -396,32 +450,6 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
 </h2>
 
 
-  <a id="Sandbox_Game_Components_MyCharacterSoundComponent_CharacterDied_" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.CharacterDied*"></a>
-
-  <h3 id="Sandbox_Game_Components_MyCharacterSoundComponent_CharacterDied" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.CharacterDied">
-  CharacterDied()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void CharacterDied()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Sandbox_Game_Components_MyCharacterSoundComponent_OnAddedToContainer_" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.OnAddedToContainer*"></a>
 
   <h3 id="Sandbox_Game_Components_MyCharacterSoundComponent_OnAddedToContainer" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.OnAddedToContainer">
@@ -460,6 +488,32 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void OnBeforeRemovedFromContainer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Sandbox_Game_Components_MyCharacterSoundComponent_OnCharacterDead_" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.OnCharacterDead*"></a>
+
+  <h3 id="Sandbox_Game_Components_MyCharacterSoundComponent_OnCharacterDead" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.OnCharacterDead">
+  OnCharacterDead()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnCharacterDead()</code></pre>
   </div>
 
 
@@ -835,7 +889,7 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateAfterSimulation100()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulation100()</code></pre>
   </div>
 
 
@@ -862,32 +916,6 @@ public class MyCharacterSoundComponent : MyCharacterComponent, IMyEntityComponen
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void UpdateAfterSimulationParallel()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Sandbox_Game_Components_MyCharacterSoundComponent_UpdateWindSounds_" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.UpdateWindSounds*"></a>
-
-  <h3 id="Sandbox_Game_Components_MyCharacterSoundComponent_UpdateWindSounds" data-uid="Sandbox.Game.Components.MyCharacterSoundComponent.UpdateWindSounds">
-  UpdateWindSounds()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateWindSounds()</code></pre>
   </div>
 
 

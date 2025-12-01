@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PartOwnerBehavior | Kerbal Space Program 2 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PartOwnerBehavior | Kerbal Space Program 2 ">
+      
+      
+      <link rel="icon" href="../icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../banner.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KSP.Sim.impl.PartOwnerBehavior">
+
+
+
+  <h1 id="KSP_Sim_impl_PartOwnerBehavior" data-uid="KSP.Sim.impl.PartOwnerBehavior" class="text-break">
+Class PartOwnerBehavior  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KSP.html">KSP</a>.<a class="xref" href="KSP.Sim.html">Sim</a>.<a class="xref" href="KSP.Sim.impl.html">impl</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PartOwnerBehavior : ViewObjectComponent&lt;PartOwnerComponent&gt;, IEnumerable&lt;PartBehavior&gt;, IEnumerable, ILateUpdate</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Component.html">Component</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Behaviour.html">Behaviour</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Game.KerbalMonoBehaviour.html">KerbalMonoBehaviour</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent.html">ViewObjectComponent</a></div>
+      <div><a class="xref" href="KSP.Sim.ViewObjectComponent-1.html">ViewObjectComponent</a>&lt;<a class="xref" href="KSP.Sim.impl.PartOwnerComponent.html">PartOwnerComponent</a>&gt;</div>
+      <div><span class="xref">PartOwnerBehavior</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+      <div><a class="xref" href="DefaultNamespace.ILateUpdate.html">ILateUpdate</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1__simObjectComponent">ViewObjectComponent&lt;PartOwnerComponent&gt;._simObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SyncTo_KSP_Sim_impl_ObjectComponent_">ViewObjectComponent&lt;PartOwnerComponent&gt;.SyncTo(ObjectComponent)</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_IsSimObjectDestroyed">ViewObjectComponent&lt;PartOwnerComponent&gt;.IsSimObjectDestroyed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent-1.html#KSP_Sim_ViewObjectComponent_1_SimObjectComponent">ViewObjectComponent&lt;PartOwnerComponent&gt;.SimObjectComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent__viewObject">ViewObjectComponent._viewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Sim.ViewObjectComponent.html#KSP_Sim_ViewObjectComponent_ViewObject">ViewObjectComponent.ViewObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Game">KerbalMonoBehaviour.Game</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Assets">KerbalMonoBehaviour.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_Messages">KerbalMonoBehaviour.Messages</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_CFXSystem">KerbalMonoBehaviour.CFXSystem</a>
+    </div>
+    <div>
+      <a class="xref" href="KSP.Game.KerbalMonoBehaviour.html#KSP_Game_KerbalMonoBehaviour_IsGameShuttingDown">KerbalMonoBehaviour.IsGameShuttingDown</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Apply__1___0_System_Action___0__">ObjectExtensions.Apply&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Let__2___0_System_Func___0___1__">ObjectExtensions.Let&lt;T, R&gt;(T, Func&lt;T, R&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.ObjectExtensions.html#DefaultNamespace_ObjectExtensions_Use__1___0_System_Action___0__">ObjectExtensions.Use&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.Extensions.html#DefaultNamespace_Extensions_Count__1_System_Collections_Generic_IEnumerable___0__">Extensions.Count&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Aggregate__1_System_Collections_Generic_IEnumerable___0__System_Func___0___0___0__">Enumerable.Aggregate&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TSource, TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Aggregate__2_System_Collections_Generic_IEnumerable___0____1_System_Func___1___0___1__">Enumerable.Aggregate&lt;TSource, TAccumulate&gt;(IEnumerable&lt;TSource&gt;, TAccumulate, Func&lt;TAccumulate, TSource, TAccumulate&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Aggregate__3_System_Collections_Generic_IEnumerable___0____1_System_Func___1___0___1__System_Func___1___2__">Enumerable.Aggregate&lt;TSource, TAccumulate, TResult&gt;(IEnumerable&lt;TSource&gt;, TAccumulate, Func&lt;TAccumulate, TSource, TAccumulate&gt;, Func&lt;TAccumulate, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_All__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.All&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Any__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Any&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Any__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Any&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_AsEnumerable__1_System_Collections_Generic_IEnumerable___0__">Enumerable.AsEnumerable&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Average__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Average&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Concat__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Concat&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Contains__1_System_Collections_Generic_IEnumerable___0____0_">Enumerable.Contains&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, TSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Contains__1_System_Collections_Generic_IEnumerable___0____0_System_Collections_Generic_IEqualityComparer___0__">Enumerable.Contains&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, TSource, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Count__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Count&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Count__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Count&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_DefaultIfEmpty__1_System_Collections_Generic_IEnumerable___0__">Enumerable.DefaultIfEmpty&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_DefaultIfEmpty__1_System_Collections_Generic_IEnumerable___0____0_">Enumerable.DefaultIfEmpty&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, TSource)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Distinct__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Distinct&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Distinct__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Distinct&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ElementAtOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.ElementAtOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ElementAt__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.ElementAt&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Except__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Except&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Except__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Except&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_FirstOrDefault__1_System_Collections_Generic_IEnumerable___0__">Enumerable.FirstOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_FirstOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.FirstOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_First__1_System_Collections_Generic_IEnumerable___0__">Enumerable.First&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_First__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.First&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.GroupBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__">Enumerable.GroupBy&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___1_System_Collections_Generic_IEnumerable___0____2__">Enumerable.GroupBy&lt;TSource, TKey, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___1_System_Collections_Generic_IEnumerable___0____2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__4_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Func___1_System_Collections_Generic_IEnumerable___2____3__">Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupBy__4_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Func___1_System_Collections_Generic_IEnumerable___2____3__System_Collections_Generic_IEqualityComparer___1__">Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupJoin__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0_System_Collections_Generic_IEnumerable___1____3__">Enumerable.GroupJoin&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, IEnumerable&lt;TInner&gt;, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_GroupJoin__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0_System_Collections_Generic_IEnumerable___1____3__System_Collections_Generic_IEqualityComparer___2__">Enumerable.GroupJoin&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, IEnumerable&lt;TInner&gt;, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Intersect__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Intersect&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Intersect__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Intersect&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Join__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0___1___3__">Enumerable.Join&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, TInner, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Join__4_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___1__System_Func___0___2__System_Func___1___2__System_Func___0___1___3__System_Collections_Generic_IEqualityComparer___2__">Enumerable.Join&lt;TOuter, TInner, TKey, TResult&gt;(IEnumerable&lt;TOuter&gt;, IEnumerable&lt;TInner&gt;, Func&lt;TOuter, TKey&gt;, Func&lt;TInner, TKey&gt;, Func&lt;TOuter, TInner, TResult&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LastOrDefault__1_System_Collections_Generic_IEnumerable___0__">Enumerable.LastOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LastOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.LastOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Last__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Last&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Last__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Last&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LongCount__1_System_Collections_Generic_IEnumerable___0__">Enumerable.LongCount&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_LongCount__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.LongCount&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Max&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Max__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.Max&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Min&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Min__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.Min&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderByDescending__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.OrderByDescending&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderByDescending__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IComparer___1__">Enumerable.OrderByDescending&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.OrderBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OrderBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IComparer___1__">Enumerable.OrderBy&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Reverse__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Reverse&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___1___">Enumerable.SelectMany&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, IEnumerable&lt;TResult&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Collections_Generic_IEnumerable___1___">Enumerable.SelectMany&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, IEnumerable&lt;TResult&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__3_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Collections_Generic_IEnumerable___1___System_Func___0___1___2__">Enumerable.SelectMany&lt;TSource, TCollection, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, IEnumerable&lt;TCollection&gt;&gt;, Func&lt;TSource, TCollection, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SelectMany__3_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Collections_Generic_IEnumerable___1___System_Func___0___1___2__">Enumerable.SelectMany&lt;TSource, TCollection, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, IEnumerable&lt;TCollection&gt;&gt;, Func&lt;TSource, TCollection, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Select__2_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32___1__">Enumerable.Select&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Select__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.Select&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TResult&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SequenceEqual__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.SequenceEqual&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SequenceEqual__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.SequenceEqual&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SingleOrDefault__1_System_Collections_Generic_IEnumerable___0__">Enumerable.SingleOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SingleOrDefault__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.SingleOrDefault&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Single__1_System_Collections_Generic_IEnumerable___0__">Enumerable.Single&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Single__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Single&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SkipWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.SkipWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_SkipWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Boolean__">Enumerable.SkipWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Skip__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.Skip&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Decimal__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Double__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int64__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Decimal___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, decimal?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Double___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, double?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int32___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Int64___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, long?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Nullable_System_Single___">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float?&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Sum__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Single__">Enumerable.Sum&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, float&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_TakeWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.TakeWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_TakeWhile__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Boolean__">Enumerable.TakeWhile&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Take__1_System_Collections_Generic_IEnumerable___0__System_Int32_">Enumerable.Take&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToArray__1_System_Collections_Generic_IEnumerable___0__">Enumerable.ToArray&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.ToDictionary&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToDictionary&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__">Enumerable.ToDictionary&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToDictionary__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToDictionary&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToList__1_System_Collections_Generic_IEnumerable___0__">Enumerable.ToList&lt;TSource&gt;(IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">Enumerable.ToLookup&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToLookup&lt;TSource, TKey&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__">Enumerable.ToLookup&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_ToLookup__3_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Func___0___2__System_Collections_Generic_IEqualityComparer___1__">Enumerable.ToLookup&lt;TSource, TKey, TElement&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, IEqualityComparer&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Union__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">Enumerable.Union&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Union__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEqualityComparer___0__">Enumerable.Union&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, IEnumerable&lt;TSource&gt;, IEqualityComparer&lt;TSource&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Where__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">Enumerable.Where&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Where__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Int32_System_Boolean__">Enumerable.Where&lt;TSource&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, int, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_Cast__1_System_Collections_IEnumerable_">Enumerable.Cast&lt;TResult&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="UniLinq.Enumerable.html#UniLinq_Enumerable_OfType__1_System_Collections_IEnumerable_">Enumerable.OfType&lt;TResult&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromFields_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromFields(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.Sim.Converters.TypeConverters.html#KSP_Sim_Converters_TypeConverters_CopyPropertiesFromProperties_System_Object_System_Object_System_Boolean_">TypeConverters.CopyPropertiesFromProperties(object, object, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentCached__1_UnityEngine_Component___0__">GameObjectExtension.GetComponentCached&lt;T&gt;(Component, ref T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_GetComponentInParent__1_UnityEngine_Component_System_Boolean_">GameObjectExtension.GetComponentInParent&lt;T&gt;(Component, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.ComponentExtensions.html#KSP_ComponentExtensions_CopyFrom__1_UnityEngine_Component___0_">ComponentExtensions.CopyFrom&lt;T&gt;(Component, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="KSP.OAB.DataContextMonoBehaviorExtensionDooblyDo.html#KSP_OAB_DataContextMonoBehaviorExtensionDooblyDo_FindDataContextProviderInHierarchy_UnityEngine_MonoBehaviour_">DataContextMonoBehaviorExtensionDooblyDo.FindDataContextProviderInHierarchy(MonoBehaviour)</a>
+  </div>
+  <div>
+      <a class="xref" href="DefaultNamespace.GameObjectExtension.html#DefaultNamespace_GameObjectExtension_SetDebugName_UnityEngine_Object_System_String_">GameObjectExtension.SetDebugName(Object, string)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior__ctor_" data-uid="KSP.Sim.impl.PartOwnerBehavior.#ctor*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior__ctor" data-uid="KSP.Sim.impl.PartOwnerBehavior.#ctor">
+  PartOwnerBehavior()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartOwnerBehavior()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_CenterOfMass" data-uid="KSP.Sim.impl.PartOwnerBehavior.CenterOfMass">
+  CenterOfMass
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 CenterOfMass</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenExpectedPos_" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenExpectedPos*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenExpectedPos" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenExpectedPos">
+  HandOfKrakenExpectedPos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Position HandOfKrakenExpectedPos { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Position.html">Position</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenExpectedVel_" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenExpectedVel*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenExpectedVel" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenExpectedVel">
+  HandOfKrakenExpectedVel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Velocity HandOfKrakenExpectedVel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.Velocity.html">Velocity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenStartOfUpdatePos_" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenStartOfUpdatePos*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenStartOfUpdatePos" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenStartOfUpdatePos">
+  HandOfKrakenStartOfUpdatePos
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 HandOfKrakenStartOfUpdatePos { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenStartOfUpdateVel_" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenStartOfUpdateVel*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_HandOfKrakenStartOfUpdateVel" data-uid="KSP.Sim.impl.PartOwnerBehavior.HandOfKrakenStartOfUpdateVel">
+  HandOfKrakenStartOfUpdateVel
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 HandOfKrakenStartOfUpdateVel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_IsChildPhysXStarted_" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsChildPhysXStarted*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_IsChildPhysXStarted" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsChildPhysXStarted">
+  IsChildPhysXStarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsChildPhysXStarted { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_IsHandOfKrakenCorrectingOrbit_" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsHandOfKrakenCorrectingOrbit*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_IsHandOfKrakenCorrectingOrbit" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsHandOfKrakenCorrectingOrbit">
+  IsHandOfKrakenCorrectingOrbit
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHandOfKrakenCorrectingOrbit { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_IsHandOfKrakenEnabled_" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsHandOfKrakenEnabled*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_IsHandOfKrakenEnabled" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsHandOfKrakenEnabled">
+  IsHandOfKrakenEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHandOfKrakenEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_IsOwnerPhysXStarted_" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsOwnerPhysXStarted*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_IsOwnerPhysXStarted" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsOwnerPhysXStarted">
+  IsOwnerPhysXStarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOwnerPhysXStarted { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_JointConnections_" data-uid="KSP.Sim.impl.PartOwnerBehavior.JointConnections*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_JointConnections" data-uid="KSP.Sim.impl.PartOwnerBehavior.JointConnections">
+  JointConnections
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;PartOwnerBehavior.JointConnection&gt; JointConnections { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a>.<a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.JointConnection.html">JointConnection</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_JointsCount_" data-uid="KSP.Sim.impl.PartOwnerBehavior.JointsCount*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_JointsCount" data-uid="KSP.Sim.impl.PartOwnerBehavior.JointsCount">
+  JointsCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int JointsCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_Model_" data-uid="KSP.Sim.impl.PartOwnerBehavior.Model*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_Model" data-uid="KSP.Sim.impl.PartOwnerBehavior.Model">
+  Model
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartOwnerComponent Model { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PartOwnerComponent.html">PartOwnerComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_ModelType_" data-uid="KSP.Sim.impl.PartOwnerBehavior.ModelType*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_ModelType" data-uid="KSP.Sim.impl.PartOwnerBehavior.ModelType">
+  ModelType
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type ModelType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_Parts_" data-uid="KSP.Sim.impl.PartOwnerBehavior.Parts*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_Parts" data-uid="KSP.Sim.impl.PartOwnerBehavior.Parts">
+  Parts
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;PartBehavior&gt; Parts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_PartsCount_" data-uid="KSP.Sim.impl.PartOwnerBehavior.PartsCount*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_PartsCount" data-uid="KSP.Sim.impl.PartOwnerBehavior.PartsCount">
+  PartsCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PartsCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_VisualizeJoints_" data-uid="KSP.Sim.impl.PartOwnerBehavior.VisualizeJoints*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_VisualizeJoints" data-uid="KSP.Sim.impl.PartOwnerBehavior.VisualizeJoints">
+  VisualizeJoints
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VisualizeJoints { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_jointOptimization_" data-uid="KSP.Sim.impl.PartOwnerBehavior.jointOptimization*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_jointOptimization" data-uid="KSP.Sim.impl.PartOwnerBehavior.jointOptimization">
+  jointOptimization
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JointOptimization jointOptimization { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.JointOptimization.html">JointOptimization</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_BreakJointConnection_" data-uid="KSP.Sim.impl.PartOwnerBehavior.BreakJointConnection*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_BreakJointConnection_KSP_Sim_impl_PartOwnerBehavior_JointConnection_" data-uid="KSP.Sim.impl.PartOwnerBehavior.BreakJointConnection(KSP.Sim.impl.PartOwnerBehavior.JointConnection)">
+  BreakJointConnection(JointConnection)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BreakJointConnection(PartOwnerBehavior.JointConnection jointConnection)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>jointConnection</code> <a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a>.<a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.JointConnection.html">JointConnection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_CalculateMaximumJointTorque_" data-uid="KSP.Sim.impl.PartOwnerBehavior.CalculateMaximumJointTorque*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_CalculateMaximumJointTorque" data-uid="KSP.Sim.impl.PartOwnerBehavior.CalculateMaximumJointTorque">
+  CalculateMaximumJointTorque()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CalculateMaximumJointTorque()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_Destroy_" data-uid="KSP.Sim.impl.PartOwnerBehavior.Destroy*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_Destroy" data-uid="KSP.Sim.impl.PartOwnerBehavior.Destroy">
+  Destroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Destroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_DisableHandOfKraken_" data-uid="KSP.Sim.impl.PartOwnerBehavior.DisableHandOfKraken*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_DisableHandOfKraken" data-uid="KSP.Sim.impl.PartOwnerBehavior.DisableHandOfKraken">
+  DisableHandOfKraken()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ContextMenu(&quot;Disable Orbit Override when no Acceleration&quot;)]
+public void DisableHandOfKraken()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_EnableHandOfKraken_" data-uid="KSP.Sim.impl.PartOwnerBehavior.EnableHandOfKraken*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_EnableHandOfKraken" data-uid="KSP.Sim.impl.PartOwnerBehavior.EnableHandOfKraken">
+  EnableHandOfKraken()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ContextMenu(&quot;Enable Orbit Override when no Acceleration&quot;)]
+public void EnableHandOfKraken()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_GetEnumerator_" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetEnumerator*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_GetEnumerator" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetEnumerator">
+  GetEnumerator()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;PartBehavior&gt; GetEnumerator()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_GetGravityForceAtCurrentPosition_" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetGravityForceAtCurrentPosition*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_GetGravityForceAtCurrentPosition" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetGravityForceAtCurrentPosition">
+  GetGravityForceAtCurrentPosition()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d GetGravityForceAtCurrentPosition()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DefaultNamespace.Vector3d.html">Vector3d</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_GetMassAverages_" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetMassAverages*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_GetMassAverages_UnityEngine_Vector3__UnityEngine_Vector3__" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetMassAverages(UnityEngine.Vector3@,UnityEngine.Vector3@)">
+  GetMassAverages(out Vector3, out Vector3)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetMassAverages(out Vector3 centerOfMass, out Vector3 velocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>centerOfMass</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>velocity</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_GetPartViewComponent_" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetPartViewComponent*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_GetPartViewComponent_KSP_Sim_impl_PartComponent_" data-uid="KSP.Sim.impl.PartOwnerBehavior.GetPartViewComponent(KSP.Sim.impl.PartComponent)">
+  GetPartViewComponent(PartComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PartBehavior GetPartViewComponent(PartComponent partSimComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>partSimComponent</code> <a class="xref" href="KSP.Sim.impl.PartComponent.html">PartComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_IsAllPartsCreated_" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsAllPartsCreated*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_IsAllPartsCreated" data-uid="KSP.Sim.impl.PartOwnerBehavior.IsAllPartsCreated">
+  IsAllPartsCreated()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAllPartsCreated()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_PackPhysX_" data-uid="KSP.Sim.impl.PartOwnerBehavior.PackPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_PackPhysX" data-uid="KSP.Sim.impl.PartOwnerBehavior.PackPhysX">
+  PackPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PackPhysX()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_RemoveDisconnectedJointConnections_" data-uid="KSP.Sim.impl.PartOwnerBehavior.RemoveDisconnectedJointConnections*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_RemoveDisconnectedJointConnections_System_Boolean_" data-uid="KSP.Sim.impl.PartOwnerBehavior.RemoveDisconnectedJointConnections(System.Boolean)">
+  RemoveDisconnectedJointConnections(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveDisconnectedJointConnections(bool waitaFrame)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>waitaFrame</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_RemovePart_" data-uid="KSP.Sim.impl.PartOwnerBehavior.RemovePart*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_RemovePart_KSP_Sim_impl_PartBehavior_" data-uid="KSP.Sim.impl.PartOwnerBehavior.RemovePart(KSP.Sim.impl.PartBehavior)">
+  RemovePart(PartBehavior)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemovePart(PartBehavior part)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>part</code> <a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_SetJointsUnbreakable_" data-uid="KSP.Sim.impl.PartOwnerBehavior.SetJointsUnbreakable*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_SetJointsUnbreakable_System_Boolean_" data-uid="KSP.Sim.impl.PartOwnerBehavior.SetJointsUnbreakable(System.Boolean)">
+  SetJointsUnbreakable(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetJointsUnbreakable(bool isUnbreakable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isUnbreakable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_StartHandOfKrakenOrbitCorrectStandOff_" data-uid="KSP.Sim.impl.PartOwnerBehavior.StartHandOfKrakenOrbitCorrectStandOff*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_StartHandOfKrakenOrbitCorrectStandOff" data-uid="KSP.Sim.impl.PartOwnerBehavior.StartHandOfKrakenOrbitCorrectStandOff">
+  StartHandOfKrakenOrbitCorrectStandOff()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartHandOfKrakenOrbitCorrectStandOff()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_StopPhysX_" data-uid="KSP.Sim.impl.PartOwnerBehavior.StopPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_StopPhysX_UnityEngine_Transform_" data-uid="KSP.Sim.impl.PartOwnerBehavior.StopPhysX(UnityEngine.Transform)">
+  StopPhysX(Transform)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopPhysX(Transform parent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parent</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_SyncTo_" data-uid="KSP.Sim.impl.PartOwnerBehavior.SyncTo*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_SyncTo_KSP_Sim_impl_PartOwnerComponent_" data-uid="KSP.Sim.impl.PartOwnerBehavior.SyncTo(KSP.Sim.impl.PartOwnerComponent)">
+  SyncTo(PartOwnerComponent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SyncTo(PartOwnerComponent simObjectComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>simObjectComponent</code> <a class="xref" href="KSP.Sim.impl.PartOwnerComponent.html">PartOwnerComponent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_TryGetJointConnection_" data-uid="KSP.Sim.impl.PartOwnerBehavior.TryGetJointConnection*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_TryGetJointConnection_KSP_Sim_impl_PartBehavior_KSP_Sim_impl_PartBehavior_KSP_Sim_AttachNodeType_KSP_Sim_impl_PartOwnerBehavior_JointConnection__" data-uid="KSP.Sim.impl.PartOwnerBehavior.TryGetJointConnection(KSP.Sim.impl.PartBehavior,KSP.Sim.impl.PartBehavior,KSP.Sim.AttachNodeType,KSP.Sim.impl.PartOwnerBehavior.JointConnection@)">
+  TryGetJointConnection(PartBehavior, PartBehavior, AttachNodeType, out JointConnection)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetJointConnection(PartBehavior hostView, PartBehavior targetView, AttachNodeType attachNodeType, out PartOwnerBehavior.JointConnection result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hostView</code> <a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a></dt>
+    <dd></dd>
+    <dt><code>targetView</code> <a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a></dt>
+    <dd></dd>
+    <dt><code>attachNodeType</code> <a class="xref" href="KSP.Sim.AttachNodeType.html">AttachNodeType</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a>.<a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.JointConnection.html">JointConnection</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_TryGetJointConnection_" data-uid="KSP.Sim.impl.PartOwnerBehavior.TryGetJointConnection*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_TryGetJointConnection_UnityEngine_ConfigurableJoint_KSP_Sim_impl_PartOwnerBehavior_JointConnection__" data-uid="KSP.Sim.impl.PartOwnerBehavior.TryGetJointConnection(UnityEngine.ConfigurableJoint,KSP.Sim.impl.PartOwnerBehavior.JointConnection@)">
+  TryGetJointConnection(ConfigurableJoint, out JointConnection)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetJointConnection(ConfigurableJoint joint, out PartOwnerBehavior.JointConnection result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>joint</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/ConfigurableJoint.html">ConfigurableJoint</a></dt>
+    <dd></dd>
+    <dt><code>result</code> <a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.html">PartOwnerBehavior</a>.<a class="xref" href="KSP.Sim.impl.PartOwnerBehavior.JointConnection.html">JointConnection</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_TryGetPartViewComponent_" data-uid="KSP.Sim.impl.PartOwnerBehavior.TryGetPartViewComponent*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_TryGetPartViewComponent_KSP_Sim_impl_IGGuid_KSP_Sim_impl_PartBehavior__" data-uid="KSP.Sim.impl.PartOwnerBehavior.TryGetPartViewComponent(KSP.Sim.impl.IGGuid,KSP.Sim.impl.PartBehavior@)">
+  TryGetPartViewComponent(IGGuid, out PartBehavior)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetPartViewComponent(IGGuid guid, out PartBehavior partViewComponent)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>guid</code> <a class="xref" href="KSP.Sim.impl.IGGuid.html">IGGuid</a></dt>
+    <dd></dd>
+    <dt><code>partViewComponent</code> <a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_UnpackPhysX_" data-uid="KSP.Sim.impl.PartOwnerBehavior.UnpackPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_UnpackPhysX_System_Boolean_" data-uid="KSP.Sim.impl.PartOwnerBehavior.UnpackPhysX(System.Boolean)">
+  UnpackPhysX(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnpackPhysX(bool force = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>force</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_VerifyPackPhysX_" data-uid="KSP.Sim.impl.PartOwnerBehavior.VerifyPackPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_VerifyPackPhysX" data-uid="KSP.Sim.impl.PartOwnerBehavior.VerifyPackPhysX">
+  VerifyPackPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VerifyPackPhysX()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_VerifyStopPhysX_" data-uid="KSP.Sim.impl.PartOwnerBehavior.VerifyStopPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_VerifyStopPhysX" data-uid="KSP.Sim.impl.PartOwnerBehavior.VerifyStopPhysX">
+  VerifyStopPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VerifyStopPhysX()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KSP_Sim_impl_PartOwnerBehavior_VerifyUnpackPhysX_" data-uid="KSP.Sim.impl.PartOwnerBehavior.VerifyUnpackPhysX*"></a>
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_VerifyUnpackPhysX" data-uid="KSP.Sim.impl.PartOwnerBehavior.VerifyUnpackPhysX">
+  VerifyUnpackPhysX()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VerifyUnpackPhysX()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="KSP_Sim_impl_PartOwnerBehavior_PartRemoved" data-uid="KSP.Sim.impl.PartOwnerBehavior.PartRemoved">
+  PartRemoved
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;PartBehavior&gt; PartRemoved</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="KSP.Sim.impl.PartBehavior.html">PartBehavior</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

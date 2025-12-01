@@ -126,6 +126,9 @@ Class PlaceableObjectsSurface
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <span class="xref">NetworkBehaviour.__rpc_func_table</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__rpc_exec_stage</span>
     </div>
     <div>
@@ -144,13 +147,31 @@ Class PlaceableObjectsSurface
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendClientRpc(ref FastBufferWriter, uint, ClientRpcParams, RpcDelivery)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__beginSendRpc(uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__endSendRpc(ref FastBufferWriter, uint, RpcParams, RpcAttribute.RpcAttributeParams, SendTo, RpcDelivery)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.__createNativeList&lt;T&gt;()</span>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">NetworkBehaviour.GetNetworkBehaviour(ushort)</a>
     </div>
     <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPreSpawn(ref NetworkManager)</span>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnNetworkSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkPostSpawn()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnNetworkSessionSynchronized()</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.OnInSceneObjectsSpawned()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkDespawn()</span>
@@ -159,10 +180,16 @@ Class PlaceableObjectsSurface
       <span class="xref">NetworkBehaviour.OnGainedOwnership()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">NetworkBehaviour.OnOwnershipChanged(ulong, ulong)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnLostOwnership()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.OnNetworkObjectParentChanged(NetworkObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">NetworkBehaviour.__registerRpc(uint, NetworkBehaviour.RpcReceiveHandler, string)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">NetworkBehaviour.__nameNetworkVariable(NetworkVariableBase, string)</a>
@@ -174,10 +201,16 @@ Class PlaceableObjectsSurface
       <span class="xref">NetworkBehaviour.OnSynchronize&lt;T&gt;(ref BufferSerializer&lt;T&gt;)</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">NetworkBehaviour.OnReanticipate(double)</a>
+    </div>
+    <div>
       <span class="xref">NetworkBehaviour.OnDestroy()</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.NetworkManager</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.RpcTarget</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsLocalPlayer</span>
@@ -187,6 +220,9 @@ Class PlaceableObjectsSurface
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsServer</span>
+    </div>
+    <div>
+      <span class="xref">NetworkBehaviour.ServerIsHost</span>
     </div>
     <div>
       <span class="xref">NetworkBehaviour.IsClient</span>
@@ -404,6 +440,70 @@ Class PlaceableObjectsSurface
 </h2>
 
 
+  <a id="DefaultNamespace_PlaceableObjectsSurface_CheckIfFurnitureIsAvailableForPlacingServerRpc_" data-uid="DefaultNamespace.PlaceableObjectsSurface.CheckIfFurnitureIsAvailableForPlacingServerRpc*"></a>
+
+  <h3 id="DefaultNamespace_PlaceableObjectsSurface_CheckIfFurnitureIsAvailableForPlacingServerRpc_System_Int32_" data-uid="DefaultNamespace.PlaceableObjectsSurface.CheckIfFurnitureIsAvailableForPlacingServerRpc(System.Int32)">
+  CheckIfFurnitureIsAvailableForPlacingServerRpc(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ServerRpc(RequireOwnership = false)]
+public void CheckIfFurnitureIsAvailableForPlacingServerRpc(int playerWhoTriggered)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerWhoTriggered</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_PlaceableObjectsSurface_ConfirmPlaceOnFurnitureClientRpc_" data-uid="DefaultNamespace.PlaceableObjectsSurface.ConfirmPlaceOnFurnitureClientRpc*"></a>
+
+  <h3 id="DefaultNamespace_PlaceableObjectsSurface_ConfirmPlaceOnFurnitureClientRpc_System_Int32_" data-uid="DefaultNamespace.PlaceableObjectsSurface.ConfirmPlaceOnFurnitureClientRpc(System.Int32)">
+  ConfirmPlaceOnFurnitureClientRpc(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ClientRpc]
+public void ConfirmPlaceOnFurnitureClientRpc(int playerId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_PlaceableObjectsSurface_PlaceObject_" data-uid="DefaultNamespace.PlaceableObjectsSurface.PlaceObject*"></a>
 
   <h3 id="DefaultNamespace_PlaceableObjectsSurface_PlaceObject_GameNetcodeStuff_PlayerControllerB_" data-uid="DefaultNamespace.PlaceableObjectsSurface.PlaceObject(GameNetcodeStuff.PlayerControllerB)">
@@ -492,6 +592,32 @@ Class PlaceableObjectsSurface
 
 
 
+  <a id="DefaultNamespace_PlaceableObjectsSurface___initializeRpcs_" data-uid="DefaultNamespace.PlaceableObjectsSurface.__initializeRpcs*"></a>
+
+  <h3 id="DefaultNamespace_PlaceableObjectsSurface___initializeRpcs" data-uid="DefaultNamespace.PlaceableObjectsSurface.__initializeRpcs">
+  __initializeRpcs()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void __initializeRpcs()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_PlaceableObjectsSurface___initializeVariables_" data-uid="DefaultNamespace.PlaceableObjectsSurface.__initializeVariables*"></a>
 
   <h3 id="DefaultNamespace_PlaceableObjectsSurface___initializeVariables" data-uid="DefaultNamespace.PlaceableObjectsSurface.__initializeVariables">
@@ -506,6 +632,76 @@ Class PlaceableObjectsSurface
     <pre><code class="lang-csharp hljs">public override void __initializeVariables()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_PlaceableObjectsSurface___rpc_handler_2624827950_" data-uid="DefaultNamespace.PlaceableObjectsSurface.__rpc_handler_2624827950*"></a>
+
+  <h3 id="DefaultNamespace_PlaceableObjectsSurface___rpc_handler_2624827950_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.PlaceableObjectsSurface.__rpc_handler_2624827950(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_2624827950(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_2624827950(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DefaultNamespace_PlaceableObjectsSurface___rpc_handler_3757423328_" data-uid="DefaultNamespace.PlaceableObjectsSurface.__rpc_handler_3757423328*"></a>
+
+  <h3 id="DefaultNamespace_PlaceableObjectsSurface___rpc_handler_3757423328_Unity_Netcode_NetworkBehaviour_Unity_Netcode_FastBufferReader_Unity_Netcode___RpcParams_" data-uid="DefaultNamespace.PlaceableObjectsSurface.__rpc_handler_3757423328(Unity.Netcode.NetworkBehaviour,Unity.Netcode.FastBufferReader,Unity.Netcode.__RpcParams)">
+  __rpc_handler_3757423328(NetworkBehaviour, FastBufferReader, __RpcParams)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void __rpc_handler_3757423328(NetworkBehaviour target, FastBufferReader reader, __RpcParams rpcParams)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">NetworkBehaviour</span></dt>
+    <dd></dd>
+    <dt><code>reader</code> <span class="xref">FastBufferReader</span></dt>
+    <dd></dd>
+    <dt><code>rpcParams</code> <span class="xref">__RpcParams</span></dt>
+    <dd></dd>
+  </dl>
 
 
 

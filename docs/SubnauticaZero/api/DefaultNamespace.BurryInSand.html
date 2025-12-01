@@ -102,7 +102,7 @@ Class BurryInSand
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(SwimBehaviour))]
-public class BurryInSand : CreatureAction</code></pre>
+public class BurryInSand : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -121,6 +121,12 @@ public class BurryInSand : CreatureAction</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -128,6 +134,9 @@ public class BurryInSand : CreatureAction</code></pre>
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -142,13 +151,13 @@ public class BurryInSand : CreatureAction</code></pre>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -158,9 +167,6 @@ public class BurryInSand : CreatureAction</code></pre>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -857,8 +863,8 @@ public class BurryInSand : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_BurryInSand_Evaluate_" data-uid="DefaultNamespace.BurryInSand.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_BurryInSand_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.BurryInSand.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_BurryInSand_Evaluate_System_Single_" data-uid="DefaultNamespace.BurryInSand.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -866,13 +872,11 @@ public class BurryInSand : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -973,7 +977,7 @@ public class BurryInSand : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnEnable()</code></pre>
+    <pre><code class="lang-csharp hljs">public void OnEnable()</code></pre>
   </div>
 
 
@@ -990,8 +994,8 @@ public class BurryInSand : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_BurryInSand_Perform_" data-uid="DefaultNamespace.BurryInSand.Perform*"></a>
 
-  <h3 id="DefaultNamespace_BurryInSand_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.BurryInSand.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_BurryInSand_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.BurryInSand.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -999,13 +1003,11 @@ public class BurryInSand : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -1060,7 +1062,7 @@ public class BurryInSand : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Start()</code></pre>
   </div>
 
 
@@ -1077,8 +1079,8 @@ public class BurryInSand : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_BurryInSand_StartPerform_" data-uid="DefaultNamespace.BurryInSand.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_BurryInSand_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.BurryInSand.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_BurryInSand_StartPerform_System_Single_" data-uid="DefaultNamespace.BurryInSand.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -1086,13 +1088,11 @@ public class BurryInSand : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -1110,8 +1110,8 @@ public class BurryInSand : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_BurryInSand_StopPerform_" data-uid="DefaultNamespace.BurryInSand.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_BurryInSand_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.BurryInSand.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_BurryInSand_StopPerform_System_Single_" data-uid="DefaultNamespace.BurryInSand.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -1119,13 +1119,11 @@ public class BurryInSand : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

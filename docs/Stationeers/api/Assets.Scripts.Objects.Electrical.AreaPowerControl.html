@@ -101,7 +101,7 @@ Class AreaPowerControl
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AreaPowerControl : ElectricalInputOutput, IAudioParent, ISyncListable, ISmallGrid, ITooltip, IConnected, ISlotWriteable, ILogicable, IReferencable, IEvaluable, ISmartRotatable, ISubmergeable</code></pre>
+    <pre><code class="lang-csharp hljs">public class AreaPowerControl : ElectricalInputOutput, IAudioParent, ISyncListable, ICreativeSpawnable, ISmallGrid, ITooltip, IConnected, ISlotWriteable, ILogicable, IWreckage, ISmartRotatable, ISubmergeable, IPowered, IDensePoolable, IReferencable, IEvaluable</code></pre>
   </div>
 
 
@@ -129,15 +129,19 @@ Class AreaPowerControl
     <dd>
       <div><a class="xref" href="Audio.IAudioParent.html">IAudioParent</a></div>
       <div><a class="xref" href="Assets.Scripts.ISyncListable.html">ISyncListable</a></div>
+      <div><a class="xref" href="Assets.Scripts.ICreativeSpawnable.html">ICreativeSpawnable</a></div>
       <div><a class="xref" href="DefaultNamespace.ISmallGrid.html">ISmallGrid</a></div>
       <div><a class="xref" href="DefaultNamespace.ITooltip.html">ITooltip</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Pipes.IConnected.html">IConnected</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Pipes.ISlotWriteable.html">ISlotWriteable</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Pipes.ILogicable.html">ILogicable</a></div>
-      <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
-      <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
+      <div><a class="xref" href="DefaultNamespace.IWreckage.html">IWreckage</a></div>
       <div><a class="xref" href="Assets.Scripts.Util.ISmartRotatable.html">ISmartRotatable</a></div>
       <div><a class="xref" href="Objects.ISubmergeable.html">ISubmergeable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.Items.IPowered.html">IPowered</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
+      <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
+      <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
     </dd>
   </dl>
 
@@ -227,6 +231,9 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Electrical.ElectricalInputOutput.html#Assets_Scripts_Objects_Electrical_ElectricalInputOutput_IsValid">ElectricalInputOutput.IsValid</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_AllDevices">Device.AllDevices</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_RENDER_DISTANCE">Device.RENDER_DISTANCE</a>
     </div>
     <div>
@@ -234,9 +241,6 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_AllDevicePrefabs">Device.AllDevicePrefabs</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_AllDevices">Device.AllDevices</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_UsedPower">Device.UsedPower</a>
@@ -261,6 +265,9 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnDeviceConnectToNetworkEvent">Device.OnDeviceConnectToNetworkEvent</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_InitializeDeviceAction">Device.InitializeDeviceAction</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnDeviceActive">Device.OnDeviceActive()</a>
@@ -350,9 +357,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_AssessPower_Assets_Scripts_Networks_CableNetwork_System_Boolean_">Device.AssessPower(CableNetwork, bool)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_RefreshAnimState_System_Boolean_">Device.RefreshAnimState(bool)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnLinkWithBoard_Assets_Scripts_Objects_Items_Motherboard_">Device.OnLinkWithBoard(Motherboard)</a>
     </div>
     <div>
@@ -410,6 +414,12 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_WillJoinNetwork">Device.WillJoinNetwork()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnAddToPool_System_Object_System_Int32_">Device.OnAddToPool(object, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnRemoveFromPool_System_Object_">Device.OnRemoveFromPool(object)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_IsDeviceActive">Device.IsDeviceActive</a>
     </div>
     <div>
@@ -441,6 +451,15 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_PowerCables">Device.PowerCables</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_WreckagePrefabs">Device.WreckagePrefabs</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_WreckageSize">Device.WreckageSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_CustomColorIndex">Device.CustomColorIndex</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.SmallGrid.html#Assets_Scripts_Objects_SmallGrid_OpenEnds">SmallGrid.OpenEnds</a>
@@ -572,6 +591,9 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_AllStructurePrefabs">Structure.AllStructurePrefabs</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_LocalGrid">Structure.LocalGrid</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsCursorCreating">Structure.IsCursorCreating</a>
     </div>
     <div>
@@ -689,7 +711,7 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_MPBRenderers">Structure.MPBRenderers</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_WreckageSpawns">Structure.WreckageSpawns</a>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsUpdateOnServerTick">Structure.IsUpdateOnServerTick</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_ForceGridBounds">Structure.ForceGridBounds</a>
@@ -699,6 +721,9 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_GetShadowCastingMode">Structure.GetShadowCastingMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SnapTransform_UnityEngine_Vector3_UnityEngine_Quaternion_">Structure.SnapTransform(Vector3, Quaternion)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_WriteTransform_Assets_Scripts_Networking_RocketBinaryWriter_">Structure.WriteTransform(RocketBinaryWriter)</a>
@@ -714,6 +739,9 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_ClearAll">Structure.ClearAll()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SpawnWreckage">Structure.SpawnWreckage()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SetPrefab_Assets_Scripts_Objects_Thing_">Structure.SetPrefab(Thing)</a>
@@ -761,9 +789,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnStructureBroken">Structure.OnStructureBroken()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_SpawnWreckageOnLoad">Structure.SpawnWreckageOnLoad()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_UpdateStateVisualizer_System_Boolean_">Structure.UpdateStateVisualizer(bool)</a>
     </div>
     <div>
@@ -792,6 +817,9 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_StructureDestroyed_Assets_Scripts_Objects_ConstructionEventInstance_System_Boolean_">Structure.StructureDestroyed(ConstructionEventInstance, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnPrefabLoad">Structure.OnPrefabLoad()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnServerTick_System_Single_">Structure.OnServerTick(float)</a>
@@ -878,9 +906,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_TemperatureRadiationFactor">Structure.TemperatureRadiationFactor</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsChunkRendered">Structure.IsChunkRendered</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsDoor">Structure.IsDoor</a>
     </div>
     <div>
@@ -911,9 +936,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_NextBuildState">Structure.NextBuildState</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_IsUpdateOnServerTick">Structure.IsUpdateOnServerTick</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_AtmosphericsController">Structure.AtmosphericsController</a>
     </div>
     <div>
@@ -929,10 +951,13 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Structure.html#Assets_Scripts_Objects_Structure_OnDeconstruct">Structure.OnDeconstruct</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllPhysicalThings">Thing.AllPhysicalThings</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PhysicalPoolActive">Thing.PhysicalPoolActive</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllILights">Thing.AllILights</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllIWearableLights">Thing.AllIWearableLights</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SuppressSound">Thing.SuppressSound</a>
@@ -995,12 +1020,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_WillSave">Thing.WillSave</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChange">Thing.OnPositionChange</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChangeLava">Thing.OnPositionChangeLava</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_position">Thing.position</a>
     </div>
     <div>
@@ -1041,9 +1060,6 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__customMaterials">Thing._customMaterials</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PaintableMaterial">Thing.PaintableMaterial</a>
@@ -1128,9 +1144,6 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnimTask">Thing.ErrorAnimTask</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalGrid">Thing.LocalGrid</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_BoundingSphereCenter">Thing.BoundingSphereCenter</a>
@@ -1307,9 +1320,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAsync__1_System_Int64_System_Single_">Thing.FindAsync&lt;T1&gt;(long, float)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPrefabLoad">Thing.OnPrefabLoad()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetAudioEvent_System_Int32_">Thing.GetAudioEvent(int)</a>
     </div>
     <div>
@@ -1421,6 +1431,9 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
     </div>
     <div>
@@ -1466,7 +1479,7 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildBatteryCellChange_Assets_Scripts_Objects_Items_BatteryCell_">Thing.OnChildBatteryCellChange(BatteryCell)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindMiningBeltOnParent">Thing.FindMiningBeltOnParent()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAvailableDirtCanister">Thing.FindAvailableDirtCanister()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsState_Assets_Scripts_Objects_InteractableType_System_Int32_">Thing.IsState(InteractableType, int)</a>
@@ -1482,6 +1495,9 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableStateChanged_Assets_Scripts_Objects_Interactable_System_Int32_System_Int32_">Thing.OnInteractableStateChanged(Interactable, int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ValidateOnLoad_System_Int32_">Thing.ValidateOnLoad(int)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnFinishedInteractionSync_Assets_Scripts_Objects_Interactable_">Thing.OnFinishedInteractionSync(Interactable)</a>
@@ -1500,6 +1516,9 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RemoveAccess_System_Int32_">Thing.RemoveAccess(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshOnOffAnimState_System_Boolean_">Thing.RefreshOnOffAnimState(bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnim">Thing.ErrorAnim()</a>
@@ -1586,22 +1605,19 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HandleCollisionWith_Assets_Scripts_Objects_Thing_System_Boolean_">Thing.HandleCollisionWith(Thing, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsAudible">Thing.IsAudible()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InitializeDamageState">Thing.InitializeDamageState()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateEachFrame">Thing.UpdateEachFrame()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateAudio_System_Single_">Thing.UpdateAudio(float)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Update1000MS_System_Single_">Thing.Update1000MS(float)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateLodFlares">Thing.UpdateLodFlares()</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnAroundChunk">Thing.SpawnAroundChunk()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnThreadUpdate">Thing.OnThreadUpdate()</a>
@@ -1617,6 +1633,12 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetDamageColor">Thing.GetDamageColor()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
@@ -1641,12 +1663,6 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnReleaseReagents">Thing.OnReleaseReagents()</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnAnimationStart">Thing.OnAnimationStart()</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnAnimationStop">Thing.OnAnimationStop()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ExplodeThing_System_Int64_">Thing.ExplodeThing(long)</a>
@@ -1778,9 +1794,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DeserializeNew_Assets_Scripts_Networking_RocketBinaryReader_">Thing.DeserializeNew(RocketBinaryReader)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SnapTransform_UnityEngine_Vector3_UnityEngine_Quaternion_">Thing.SnapTransform(Vector3, Quaternion)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeDeltaState_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeDeltaState(RocketBinaryWriter)</a>
     </div>
     <div>
@@ -1823,7 +1836,7 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Remove_Sound_PooledAudioSource_">Thing.Remove(PooledAudioSource)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoint_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoint(RocketBinaryWriter)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Thing_">Thing.GetNextFreeSlot(Thing)</a>
@@ -1847,9 +1860,6 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReferenceId">Thing.ReferenceId</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllThings">Thing.AllThings</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
     </div>
     <div>
@@ -1866,9 +1876,6 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SqDistanceFromListener">Thing.SqDistanceFromListener</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SoundPosition">Thing.SoundPosition</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RootParentHuman">Thing.RootParentHuman</a>
@@ -1925,6 +1932,9 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventStateChange">Thing.PreventStateChange</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetLocalBounds">Thing.GetLocalBounds</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Position">Thing.Position</a>
     </div>
     <div>
@@ -1964,7 +1974,13 @@ Class AreaPowerControl
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CustomName">Thing.CustomName</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DisplayName">Thing.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnableName">Thing.SpawnableName</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ProfilerTag">Thing.ProfilerTag</a>
@@ -1989,6 +2005,9 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasAuthority">Thing.HasAuthority</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnId">Thing.SpawnId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
@@ -2145,9 +2164,6 @@ Class AreaPowerControl
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsInstantiated">Thing.IsInstantiated</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ForceUseColorSwatchMaterial">Thing.ForceUseColorSwatchMaterial</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsBeingDestroyed">Thing.IsBeingDestroyed</a>
@@ -2309,6 +2325,37 @@ public float BatteryChargeRate</code></pre>
 
   <h2 class="section" id="properties">Properties
 </h2>
+
+
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_AudioDistanceSquared_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.AudioDistanceSquared*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_AudioDistanceSquared" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.AudioDistanceSquared">
+  AudioDistanceSquared
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float AudioDistanceSquared { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
   <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_AvailablePower_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.AvailablePower*"></a>
@@ -2611,6 +2658,68 @@ public float BatteryChargeRate</code></pre>
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_SoundPosition_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.SoundPosition*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_SoundPosition" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.SoundPosition">
+  SoundPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Transform SoundPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Transform.html">Transform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_WreckageQuantity_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.WreckageQuantity*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_WreckageQuantity" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.WreckageQuantity">
+  WreckageQuantity
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int WreckageQuantity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -3162,6 +3271,58 @@ public float BatteryChargeRate</code></pre>
 
 
 
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_OnAnimationStart_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.OnAnimationStart*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_OnAnimationStart" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.OnAnimationStart">
+  OnAnimationStart()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAnimationStart()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_OnAnimationStop_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.OnAnimationStop*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_OnAnimationStop" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.OnAnimationStop">
+  OnAnimationStop()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnAnimationStop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_OnChildEnterInventory_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.OnChildEnterInventory*"></a>
 
   <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_OnChildEnterInventory_Assets_Scripts_Objects_DynamicThing_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.OnChildEnterInventory(Assets.Scripts.Objects.DynamicThing)">
@@ -3326,6 +3487,99 @@ public float BatteryChargeRate</code></pre>
     <dt><code>cableNetwork</code> <a class="xref" href="Assets.Scripts.Networks.CableNetwork.html">CableNetwork</a></dt>
     <dd></dd>
     <dt><code>powerAdded</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_RefreshAnimState_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.RefreshAnimState*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_RefreshAnimState_System_Boolean_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.RefreshAnimState(System.Boolean)">
+  RefreshAnimState(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void RefreshAnimState(bool skipAnimation = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>skipAnimation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_SetContentsVisibility_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.SetContentsVisibility*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_SetContentsVisibility_System_Boolean_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.SetContentsVisibility(System.Boolean)">
+  SetContentsVisibility(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetContentsVisibility(bool isVisible)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Electrical_AreaPowerControl_UpdateAudio_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.UpdateAudio*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Electrical_AreaPowerControl_UpdateAudio_System_Single_" data-uid="Assets.Scripts.Objects.Electrical.AreaPowerControl.UpdateAudio(System.Single)">
+  UpdateAudio(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateAudio(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 

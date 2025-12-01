@@ -101,7 +101,7 @@ Class DescendToGround
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DescendToGround : CreatureAction, IManagedUpdateBehaviour, IManagedBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class DescendToGround : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -123,8 +123,7 @@ Class DescendToGround
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="DefaultNamespace.IManagedUpdateBehaviour.html">IManagedUpdateBehaviour</a></div>
-      <div><a class="xref" href="DefaultNamespace.IManagedBehaviour.html">IManagedBehaviour</a></div>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
     </dd>
   </dl>
 
@@ -134,6 +133,9 @@ Class DescendToGround
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -148,19 +150,19 @@ Class DescendToGround
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Perform_Creature_System_Single_System_Single_">CreatureAction.Perform(Creature, float, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Start">CreatureAction.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Perform_System_Single_System_Single_">CreatureAction.Perform(float, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -170,9 +172,6 @@ Class DescendToGround
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -255,37 +254,6 @@ Class DescendToGround
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DefaultNamespace_DescendToGround_checkGroundLoaded" data-uid="DefaultNamespace.DescendToGround.checkGroundLoaded">
-  checkGroundLoaded
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AssertNotNull]
-public bool checkGroundLoaded</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -419,36 +387,6 @@ public ConstantForce descendForce</code></pre>
 
 
 
-  <h3 id="DefaultNamespace_DescendToGround_onGroundAction" data-uid="DefaultNamespace.DescendToGround.onGroundAction">
-  onGroundAction
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CreatureAction onGroundAction</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DefaultNamespace.CreatureAction.html">CreatureAction</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="DefaultNamespace_DescendToGround_onGroundTracker" data-uid="DefaultNamespace.DescendToGround.onGroundTracker">
   onGroundTracker
   
@@ -509,49 +447,14 @@ public OnSurfaceTracker onGroundTracker</code></pre>
 
 
 
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="DefaultNamespace_DescendToGround_managedUpdateIndex_" data-uid="DefaultNamespace.DescendToGround.managedUpdateIndex*"></a>
-
-  <h3 id="DefaultNamespace_DescendToGround_managedUpdateIndex" data-uid="DefaultNamespace.DescendToGround.managedUpdateIndex">
-  managedUpdateIndex
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int managedUpdateIndex { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
   <a id="DefaultNamespace_DescendToGround_Evaluate_" data-uid="DefaultNamespace.DescendToGround.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_DescendToGround_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.DescendToGround.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_DescendToGround_Evaluate_System_Single_" data-uid="DefaultNamespace.DescendToGround.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -559,13 +462,11 @@ public OnSurfaceTracker onGroundTracker</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -586,124 +487,10 @@ public OnSurfaceTracker onGroundTracker</code></pre>
 
 
 
-  <a id="DefaultNamespace_DescendToGround_GetProfileTag_" data-uid="DefaultNamespace.DescendToGround.GetProfileTag*"></a>
-
-  <h3 id="DefaultNamespace_DescendToGround_GetProfileTag" data-uid="DefaultNamespace.DescendToGround.GetProfileTag">
-  GetProfileTag()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GetProfileTag()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_DescendToGround_IsGroundLoaded_" data-uid="DefaultNamespace.DescendToGround.IsGroundLoaded*"></a>
-
-  <h3 id="DefaultNamespace_DescendToGround_IsGroundLoaded" data-uid="DefaultNamespace.DescendToGround.IsGroundLoaded">
-  IsGroundLoaded()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsGroundLoaded()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_DescendToGround_ManagedUpdate_" data-uid="DefaultNamespace.DescendToGround.ManagedUpdate*"></a>
-
-  <h3 id="DefaultNamespace_DescendToGround_ManagedUpdate" data-uid="DefaultNamespace.DescendToGround.ManagedUpdate">
-  ManagedUpdate()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ManagedUpdate()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_DescendToGround_OnDestroy_" data-uid="DefaultNamespace.DescendToGround.OnDestroy*"></a>
-
-  <h3 id="DefaultNamespace_DescendToGround_OnDestroy" data-uid="DefaultNamespace.DescendToGround.OnDestroy">
-  OnDestroy()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void OnDestroy()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="DefaultNamespace_DescendToGround_StartPerform_" data-uid="DefaultNamespace.DescendToGround.StartPerform*"></a>
 
-  <h3 id="DefaultNamespace_DescendToGround_StartPerform_Creature_System_Single_" data-uid="DefaultNamespace.DescendToGround.StartPerform(Creature,System.Single)">
-  StartPerform(Creature, float)
+  <h3 id="DefaultNamespace_DescendToGround_StartPerform_System_Single_" data-uid="DefaultNamespace.DescendToGround.StartPerform(System.Single)">
+  StartPerform(float)
   
   </h3>
 
@@ -711,13 +498,11 @@ public OnSurfaceTracker onGroundTracker</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StartPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -735,8 +520,8 @@ public OnSurfaceTracker onGroundTracker</code></pre>
 
   <a id="DefaultNamespace_DescendToGround_StopPerform_" data-uid="DefaultNamespace.DescendToGround.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_DescendToGround_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.DescendToGround.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_DescendToGround_StopPerform_System_Single_" data-uid="DefaultNamespace.DescendToGround.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -744,13 +529,11 @@ public OnSurfaceTracker onGroundTracker</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>

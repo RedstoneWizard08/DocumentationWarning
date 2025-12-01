@@ -101,7 +101,7 @@ Class Structure
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Structure : Thing, IAudioParent, ISyncListable, ITooltip, IReferencable, IEvaluable</code></pre>
+    <pre><code class="lang-csharp hljs">public class Structure : Thing, IAudioParent, ISyncListable, ITooltip, IReferencable, IEvaluable, IDensePoolable, ICreativeSpawnable</code></pre>
   </div>
 
 
@@ -128,6 +128,8 @@ Class Structure
       <div><a class="xref" href="DefaultNamespace.ITooltip.html">ITooltip</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
+      <div><a class="xref" href="Assets.Scripts.ICreativeSpawnable.html">ICreativeSpawnable</a></div>
     </dd>
   </dl>
 
@@ -139,7 +141,6 @@ Class Structure
       <div><a class="xref" href="Assets.Scripts.Objects.RoverFrame.html">RoverFrame</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.SmallGrid.html">SmallGrid</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Structures.Stairs.html">Stairs</a></div>
-      <div><a class="xref" href="DefaultNamespace.DestroyedStructure.html">DestroyedStructure</a></div>
     </dd>
   </dl>
 
@@ -147,10 +148,13 @@ Class Structure
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllPhysicalThings">Thing.AllPhysicalThings</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PhysicalPoolActive">Thing.PhysicalPoolActive</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllILights">Thing.AllILights</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllIWearableLights">Thing.AllIWearableLights</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SuppressSound">Thing.SuppressSound</a>
@@ -213,12 +217,6 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_WillSave">Thing.WillSave</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChange">Thing.OnPositionChange</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPositionChangeLava">Thing.OnPositionChangeLava</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_position">Thing.position</a>
     </div>
     <div>
@@ -259,9 +257,6 @@ Class Structure
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__customMaterials">Thing._customMaterials</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PaintableMaterial">Thing.PaintableMaterial</a>
@@ -346,9 +341,6 @@ Class Structure
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ErrorAnimTask">Thing.ErrorAnimTask</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalGrid">Thing.LocalGrid</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_BoundingSphereCenter">Thing.BoundingSphereCenter</a>
@@ -525,9 +517,6 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAsync__1_System_Int64_System_Single_">Thing.FindAsync&lt;T1&gt;(long, float)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnPrefabLoad">Thing.OnPrefabLoad()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetAudioEvent_System_Int32_">Thing.GetAudioEvent(int)</a>
     </div>
     <div>
@@ -639,6 +628,9 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
     </div>
     <div>
@@ -687,7 +679,7 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildBatteryCellChange_Assets_Scripts_Objects_Items_BatteryCell_">Thing.OnChildBatteryCellChange(BatteryCell)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindMiningBeltOnParent">Thing.FindMiningBeltOnParent()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_FindAvailableDirtCanister">Thing.FindAvailableDirtCanister()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsState_Assets_Scripts_Objects_InteractableType_System_Int32_">Thing.IsState(InteractableType, int)</a>
@@ -708,6 +700,9 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnInteractableUpdated_Assets_Scripts_Objects_Interactable_">Thing.OnInteractableUpdated(Interactable)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ValidateOnLoad_System_Int32_">Thing.ValidateOnLoad(int)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnFinishedInteractionSync_Assets_Scripts_Objects_Interactable_">Thing.OnFinishedInteractionSync(Interactable)</a>
     </div>
     <div>
@@ -724,6 +719,9 @@ Class Structure
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RemoveAccess_System_Int32_">Thing.RemoveAccess(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshOnOffAnimState_System_Boolean_">Thing.RefreshOnOffAnimState(bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_RefreshAnimState_System_Boolean_">Thing.RefreshAnimState(bool)</a>
@@ -825,6 +823,9 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HandleCollisionWith_Assets_Scripts_Objects_Thing_System_Boolean_">Thing.HandleCollisionWith(Thing, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsAudible">Thing.IsAudible()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InitializeDamageState">Thing.InitializeDamageState()</a>
     </div>
     <div>
@@ -843,9 +844,6 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_UpdateLodFlares">Thing.UpdateLodFlares()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnAroundChunk">Thing.SpawnAroundChunk()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnThreadUpdate">Thing.OnThreadUpdate()</a>
     </div>
     <div>
@@ -861,7 +859,13 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchFreeHands_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchFreeHands(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetDamageColor">Thing.GetDamageColor()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetExtendedText">Thing.GetExtendedText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
@@ -1035,9 +1039,6 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DeserializeNew_Assets_Scripts_Networking_RocketBinaryReader_">Thing.DeserializeNew(RocketBinaryReader)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SnapTransform_UnityEngine_Vector3_UnityEngine_Quaternion_">Thing.SnapTransform(Vector3, Quaternion)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeDeltaState_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeDeltaState(RocketBinaryWriter)</a>
     </div>
     <div>
@@ -1080,7 +1081,7 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Remove_Sound_PooledAudioSource_">Thing.Remove(PooledAudioSource)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoint_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoint(RocketBinaryWriter)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SerializeAllOnJoin_Assets_Scripts_Networking_RocketBinaryWriter_">Thing.SerializeAllOnJoin(RocketBinaryWriter)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Thing_">Thing.GetNextFreeSlot(Thing)</a>
@@ -1105,9 +1106,6 @@ Class Structure
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ReferenceId">Thing.ReferenceId</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllThings">Thing.AllThings</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
@@ -1185,6 +1183,9 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_PreventStateChange">Thing.PreventStateChange</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetLocalBounds">Thing.GetLocalBounds</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Position">Thing.Position</a>
     </div>
     <div>
@@ -1224,7 +1225,13 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CustomName">Thing.CustomName</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OwnerClientId">Thing.OwnerClientId</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DisplayName">Thing.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnableName">Thing.SpawnableName</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ProfilerTag">Thing.ProfilerTag</a>
@@ -1252,6 +1259,9 @@ Class Structure
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasAuthority">Thing.HasAuthority</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SpawnId">Thing.SpawnId</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
@@ -1413,7 +1423,7 @@ Class Structure
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsInstantiated">Thing.IsInstantiated</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ForceUseColorSwatchMaterial">Thing.ForceUseColorSwatchMaterial</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AudioDistanceSquared">Thing.AudioDistanceSquared</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_IsBeingDestroyed">Thing.IsBeingDestroyed</a>
@@ -2342,6 +2352,38 @@ public float GridSize</code></pre>
 
 
 
+  <h3 id="Assets_Scripts_Objects_Structure_IsUpdateOnServerTick" data-uid="Assets.Scripts.Objects.Structure.IsUpdateOnServerTick">
+  IsUpdateOnServerTick
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+[ReadOnly]
+public bool IsUpdateOnServerTick</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Assets_Scripts_Objects_Structure_LastCreatedStructure" data-uid="Assets.Scripts.Objects.Structure.LastCreatedStructure">
   LastCreatedStructure
   
@@ -2360,6 +2402,36 @@ public float GridSize</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="Assets.Scripts.Objects.Structure.html">Structure</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Assets_Scripts_Objects_Structure_LocalGrid" data-uid="Assets.Scripts.Objects.Structure.LocalGrid">
+  LocalGrid
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Grid3 LocalGrid</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Assets.Scripts.GridSystem.Grid3.html">Grid3</a></dt>
     <dd></dd>
   </dl>
 
@@ -2759,36 +2831,6 @@ public bool UseCellPosition</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Assets_Scripts_Objects_Structure_WreckageSpawns" data-uid="Assets.Scripts.Objects.Structure.WreckageSpawns">
-  WreckageSpawns
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;WreckageSpawnTask&gt; WreckageSpawns</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Assets.Scripts.Objects.WreckageSpawnTask.html">WreckageSpawnTask</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -3301,37 +3343,6 @@ public StructureRenderMode structureRenderMode</code></pre>
 
 
 
-  <a id="Assets_Scripts_Objects_Structure_IsChunkRendered_" data-uid="Assets.Scripts.Objects.Structure.IsChunkRendered*"></a>
-
-  <h3 id="Assets_Scripts_Objects_Structure_IsChunkRendered" data-uid="Assets.Scripts.Objects.Structure.IsChunkRendered">
-  IsChunkRendered
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool IsChunkRendered { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="Assets_Scripts_Objects_Structure_IsDoor_" data-uid="Assets.Scripts.Objects.Structure.IsDoor*"></a>
 
   <h3 id="Assets_Scripts_Objects_Structure_IsDoor" data-uid="Assets.Scripts.Objects.Structure.IsDoor">
@@ -3406,37 +3417,6 @@ public StructureRenderMode structureRenderMode</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsStructureCompleted { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Assets_Scripts_Objects_Structure_IsUpdateOnServerTick_" data-uid="Assets.Scripts.Objects.Structure.IsUpdateOnServerTick*"></a>
-
-  <h3 id="Assets_Scripts_Objects_Structure_IsUpdateOnServerTick" data-uid="Assets.Scripts.Objects.Structure.IsUpdateOnServerTick">
-  IsUpdateOnServerTick
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool IsUpdateOnServerTick { get; }</code></pre>
   </div>
 
 
@@ -4727,6 +4707,44 @@ public StructureRenderMode structureRenderMode</code></pre>
 
 
 
+  <a id="Assets_Scripts_Objects_Structure_OnAddToPool_" data-uid="Assets.Scripts.Objects.Structure.OnAddToPool*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Structure_OnAddToPool_System_Object_System_Int32_" data-uid="Assets.Scripts.Objects.Structure.OnAddToPool(System.Object,System.Int32)">
+  OnAddToPool(object, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool OnAddToPool(object densePool, int slot)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>slot</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Objects_Structure_OnAssignedReference_" data-uid="Assets.Scripts.Objects.Structure.OnAssignedReference*"></a>
 
   <h3 id="Assets_Scripts_Objects_Structure_OnAssignedReference" data-uid="Assets.Scripts.Objects.Structure.OnAssignedReference">
@@ -4978,6 +4996,32 @@ public StructureRenderMode structureRenderMode</code></pre>
 
 
 
+  <a id="Assets_Scripts_Objects_Structure_OnPrefabLoad_" data-uid="Assets.Scripts.Objects.Structure.OnPrefabLoad*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Structure_OnPrefabLoad" data-uid="Assets.Scripts.Objects.Structure.OnPrefabLoad">
+  OnPrefabLoad()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnPrefabLoad()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Assets_Scripts_Objects_Structure_OnRegistered_" data-uid="Assets.Scripts.Objects.Structure.OnRegistered*"></a>
 
   <h3 id="Assets_Scripts_Objects_Structure_OnRegistered_Assets_Scripts_GridSystem_Cell_" data-uid="Assets.Scripts.Objects.Structure.OnRegistered(Assets.Scripts.GridSystem.Cell)">
@@ -4995,6 +5039,37 @@ public StructureRenderMode structureRenderMode</code></pre>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cell</code> <a class="xref" href="Assets.Scripts.GridSystem.Cell.html">Cell</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Structure_OnRemoveFromPool_" data-uid="Assets.Scripts.Objects.Structure.OnRemoveFromPool*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Structure_OnRemoveFromPool_System_Object_" data-uid="Assets.Scripts.Objects.Structure.OnRemoveFromPool(System.Object)">
+  OnRemoveFromPool(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnRemoveFromPool(object densePool)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>densePool</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
     <dd></dd>
   </dl>
 
@@ -5449,10 +5524,10 @@ public StructureRenderMode structureRenderMode</code></pre>
 
 
 
-  <a id="Assets_Scripts_Objects_Structure_SpawnWreckageOnLoad_" data-uid="Assets.Scripts.Objects.Structure.SpawnWreckageOnLoad*"></a>
+  <a id="Assets_Scripts_Objects_Structure_SnapTransform_" data-uid="Assets.Scripts.Objects.Structure.SnapTransform*"></a>
 
-  <h3 id="Assets_Scripts_Objects_Structure_SpawnWreckageOnLoad" data-uid="Assets.Scripts.Objects.Structure.SpawnWreckageOnLoad">
-  SpawnWreckageOnLoad()
+  <h3 id="Assets_Scripts_Objects_Structure_SnapTransform_UnityEngine_Vector3_UnityEngine_Quaternion_" data-uid="Assets.Scripts.Objects.Structure.SnapTransform(UnityEngine.Vector3,UnityEngine.Quaternion)">
+  SnapTransform(Vector3, Quaternion)
   
   </h3>
 
@@ -5460,7 +5535,40 @@ public StructureRenderMode structureRenderMode</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void SpawnWreckageOnLoad()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void SnapTransform(Vector3 transformPosition, Quaternion transformRotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transformPosition</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>transformRotation</code> <a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Quaternion.html">Quaternion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Assets_Scripts_Objects_Structure_SpawnWreckage_" data-uid="Assets.Scripts.Objects.Structure.SpawnWreckage*"></a>
+
+  <h3 id="Assets_Scripts_Objects_Structure_SpawnWreckage" data-uid="Assets.Scripts.Objects.Structure.SpawnWreckage">
+  SpawnWreckage()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SpawnWreckage()</code></pre>
   </div>
 
 

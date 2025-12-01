@@ -102,7 +102,7 @@ Class AvoidObstacles
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(SwimBehaviour))]
-public class AvoidObstacles : CreatureAction</code></pre>
+public class AvoidObstacles : CreatureAction, ICompileTimeSetupable</code></pre>
   </div>
 
 
@@ -121,13 +121,29 @@ public class AvoidObstacles : CreatureAction</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.ICompileTimeSetupable.html">ICompileTimeSetupable</a></div>
+    </dd>
+  </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="DefaultNamespace.AvoidObstaclesOnSurface.html">AvoidObstaclesOnSurface</a></div>
+      <div><a class="xref" href="DefaultNamespace.CrabAvoidObstacles.html">CrabAvoidObstacles</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_creature">CreatureAction.creature</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_evaluatePriority">CreatureAction.evaluatePriority</a>
@@ -142,19 +158,19 @@ public class AvoidObstacles : CreatureAction</code></pre>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_timeLastChecked">CreatureAction.timeLastChecked</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_initialized">CreatureAction.initialized</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Awake">CreatureAction.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_OnEnable">CreatureAction.OnEnable()</a>
-    </div>
-    <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetEvaluatePriority">CreatureAction.GetEvaluatePriority()</a>
     </div>
     <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StartPerform_Creature_System_Single_">CreatureAction.StartPerform(Creature, float)</a>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_Start">CreatureAction.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_StartPerform_System_Single_">CreatureAction.StartPerform(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_TryStartAction">CreatureAction.TryStartAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_CompileTimeSetup">CreatureAction.CompileTimeSetup()</a>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_GetDebugString">CreatureAction.GetDebugString()</a>
@@ -164,9 +180,6 @@ public class AvoidObstacles : CreatureAction</code></pre>
     </div>
     <div>
       <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_NeedsToBeChecked_System_Single_">CreatureAction.NeedsToBeChecked(float)</a>
-    </div>
-    <div>
-      <a class="xref" href="DefaultNamespace.CreatureAction.html#DefaultNamespace_CreatureAction_swimBehaviour">CreatureAction.swimBehaviour</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -399,6 +412,36 @@ public class AvoidObstacles : CreatureAction</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DefaultNamespace.LastTarget.html">LastTarget</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DefaultNamespace_AvoidObstacles_positionOffset" data-uid="DefaultNamespace.AvoidObstacles.positionOffset">
+  positionOffset
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 positionOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
     <dd></dd>
   </dl>
 
@@ -686,8 +729,8 @@ public class AvoidObstacles : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_AvoidObstacles_Evaluate_" data-uid="DefaultNamespace.AvoidObstacles.Evaluate*"></a>
 
-  <h3 id="DefaultNamespace_AvoidObstacles_Evaluate_Creature_System_Single_" data-uid="DefaultNamespace.AvoidObstacles.Evaluate(Creature,System.Single)">
-  Evaluate(Creature, float)
+  <h3 id="DefaultNamespace_AvoidObstacles_Evaluate_System_Single_" data-uid="DefaultNamespace.AvoidObstacles.Evaluate(System.Single)">
+  Evaluate(float)
   
   </h3>
 
@@ -695,13 +738,11 @@ public class AvoidObstacles : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override float Evaluate(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override float Evaluate(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
@@ -779,6 +820,37 @@ public class AvoidObstacles : CreatureAction</code></pre>
 
 
 
+  <a id="DefaultNamespace_AvoidObstacles_GetRandomDirection_" data-uid="DefaultNamespace.AvoidObstacles.GetRandomDirection*"></a>
+
+  <h3 id="DefaultNamespace_AvoidObstacles_GetRandomDirection" data-uid="DefaultNamespace.AvoidObstacles.GetRandomDirection">
+  GetRandomDirection()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Vector3 GetRandomDirection()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DefaultNamespace_AvoidObstacles_IsObstacle_" data-uid="DefaultNamespace.AvoidObstacles.IsObstacle*"></a>
 
   <h3 id="DefaultNamespace_AvoidObstacles_IsObstacle_UnityEngine_Collider_" data-uid="DefaultNamespace.AvoidObstacles.IsObstacle(UnityEngine.Collider)">
@@ -843,8 +915,8 @@ public class AvoidObstacles : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_AvoidObstacles_Perform_" data-uid="DefaultNamespace.AvoidObstacles.Perform*"></a>
 
-  <h3 id="DefaultNamespace_AvoidObstacles_Perform_Creature_System_Single_System_Single_" data-uid="DefaultNamespace.AvoidObstacles.Perform(Creature,System.Single,System.Single)">
-  Perform(Creature, float, float)
+  <h3 id="DefaultNamespace_AvoidObstacles_Perform_System_Single_System_Single_" data-uid="DefaultNamespace.AvoidObstacles.Perform(System.Single,System.Single)">
+  Perform(float, float)
   
   </h3>
 
@@ -852,13 +924,11 @@ public class AvoidObstacles : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Perform(Creature creature, float time, float deltaTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Perform(float time, float deltaTime)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
     <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
@@ -878,8 +948,8 @@ public class AvoidObstacles : CreatureAction</code></pre>
 
   <a id="DefaultNamespace_AvoidObstacles_StopPerform_" data-uid="DefaultNamespace.AvoidObstacles.StopPerform*"></a>
 
-  <h3 id="DefaultNamespace_AvoidObstacles_StopPerform_Creature_System_Single_" data-uid="DefaultNamespace.AvoidObstacles.StopPerform(Creature,System.Single)">
-  StopPerform(Creature, float)
+  <h3 id="DefaultNamespace_AvoidObstacles_StopPerform_System_Single_" data-uid="DefaultNamespace.AvoidObstacles.StopPerform(System.Single)">
+  StopPerform(float)
   
   </h3>
 
@@ -887,13 +957,11 @@ public class AvoidObstacles : CreatureAction</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopPerform(Creature creature, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void StopPerform(float time)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>creature</code> <a class="xref" href="DefaultNamespace.Creature.html">Creature</a></dt>
-    <dd></dd>
     <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
