@@ -101,7 +101,7 @@ Class DroidSleeper
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DroidSleeper : Device, IAudioParent, ISyncListable, ICreativeSpawnable, ISmallGrid, ITooltip, IConnected, ISlotWriteable, ILogicable, IWreckage, IPowered, IReferencable, IEvaluable, IDensePoolable, IExitable, ISpawnPoint, ISmartRotatable</code></pre>
+    <pre><code class="lang-csharp hljs">public class DroidSleeper : Device, IAudioParent, ISyncListable, ICreativeSpawnable, ISmallGrid, ITooltip, IConnected, ISlotWriteable, ILogicable, IWreckage, IPowered, IReferencable, IEvaluable, IDensePoolable, IExitable, ISmartRotatable</code></pre>
   </div>
 
 
@@ -140,7 +140,6 @@ Class DroidSleeper
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
       <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
       <div><a class="xref" href="DefaultNamespace.IExitable.html">IExitable</a></div>
-      <div><a class="xref" href="Assets.Scripts.Objects.ISpawnPoint.html">ISpawnPoint</a></div>
       <div><a class="xref" href="Assets.Scripts.Util.ISmartRotatable.html">ISmartRotatable</a></div>
     </dd>
   </dl>
@@ -223,6 +222,9 @@ Class DroidSleeper
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_Awake">Device.Awake()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnDestroy">Device.OnDestroy()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_CheckConnections">Device.CheckConnections()</a>
@@ -342,10 +344,10 @@ Class DroidSleeper
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnNetworkedRefresh_Assets_Scripts_Objects_Pipes_Device_">Device.OnNetworkedRefresh(Device)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerEnter_Assets_Scripts_Objects_DynamicThing_">Device.OnInputTriggerEnter(DynamicThing)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerEnter_Assets_Scripts_Objects_DynamicThing_Assets_Scripts_Events_MachineInputTrigger_">Device.OnInputTriggerEnter(DynamicThing, MachineInputTrigger)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerExit_Assets_Scripts_Objects_DynamicThing_">Device.OnInputTriggerExit(DynamicThing)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerExit_Assets_Scripts_Objects_DynamicThing_Assets_Scripts_Events_MachineInputTrigger_">Device.OnInputTriggerExit(DynamicThing, MachineInputTrigger)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnDeviceDisconnectFromNetwork_Assets_Scripts_Objects_Pipes_Device_">Device.OnDeviceDisconnectFromNetwork(Device)</a>
@@ -1188,6 +1190,9 @@ Class DroidSleeper
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasImportState">Thing.HasImportState</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasImport2State">Thing.HasImport2State</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasExportState">Thing.HasExportState</a>
     </div>
     <div>
@@ -1419,7 +1424,7 @@ Class DroidSleeper
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip_System_Text_StringBuilder_">Thing.ToTooltip(StringBuilder)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
@@ -1644,6 +1649,9 @@ Class DroidSleeper
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddNamedDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddNamedDamageString(StringBuilder, bool)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
     </div>
     <div>
@@ -1674,9 +1682,6 @@ Class DroidSleeper
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnAnimationStop">Thing.OnAnimationStop()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ExplodeThing_System_Int64_">Thing.ExplodeThing(long)</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalSetChildrenLock_System_Boolean_">Thing.LocalSetChildrenLock(bool)</a>
     </div>
     <div>
@@ -1693,6 +1698,9 @@ Class DroidSleeper
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SetLightVisibility_System_Boolean_System_Boolean_">Thing.SetLightVisibility(bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnChildEnterInventory_Assets_Scripts_Objects_DynamicThing_">Thing.OnChildEnterInventory(DynamicThing)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SetSlotOccupantTransformData_Assets_Scripts_Objects_DynamicThing_">Thing.SetSlotOccupantTransformData(DynamicThing)</a>
@@ -1762,6 +1770,9 @@ Class DroidSleeper
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlots_Assets_Scripts_Objects_Slot_Class_">Thing.GetFreeSlots(Slot.Class)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlotCount">Thing.GetFreeSlotCount()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlot_Assets_Scripts_Objects_Slot_Class_System_Collections_Generic_List_Assets_Scripts_Objects_InteractableType__">Thing.GetFreeSlot(Slot.Class, List&lt;InteractableType&gt;)</a>
@@ -1860,6 +1871,9 @@ Class DroidSleeper
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Slot_Class_">Thing.GetNextFreeSlot(Slot.Class)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CachePositionOnSpawn">Thing.CachePositionOnSpawn()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DLCType">Thing.DLCType</a>
     </div>
     <div>
@@ -1870,6 +1884,9 @@ Class DroidSleeper
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AllLodFlareThings">Thing.AllLodFlareThings</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetThing">Thing.GetThing</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_SwitchOnOff">Thing.SwitchOnOff</a>
@@ -2082,6 +2099,9 @@ Class DroidSleeper
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Importing">Thing.Importing</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Importing2">Thing.Importing2</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Exporting">Thing.Exporting</a>
     </div>
     <div>
@@ -2155,6 +2175,9 @@ Class DroidSleeper
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractImport">Thing.InteractImport</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractImport2">Thing.InteractImport2</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractExport">Thing.InteractExport</a>
@@ -2406,103 +2429,6 @@ public SmartRotate.ConnectionType ConnectionType</code></pre>
 </h2>
 
 
-  <a id="Objects_Electrical_DroidSleeper_AssignSpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.AssignSpawnPoint*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_AssignSpawnPoint_System_UInt64_Assets_Scripts_Objects_ISpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.AssignSpawnPoint(System.UInt64,Assets.Scripts.Objects.ISpawnPoint)">
-  AssignSpawnPoint(ulong, ISpawnPoint)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AssignSpawnPoint(ulong steamId, ISpawnPoint spawnPoint)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>steamId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
-    <dd></dd>
-    <dt><code>spawnPoint</code> <a class="xref" href="Assets.Scripts.Objects.ISpawnPoint.html">ISpawnPoint</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Objects_Electrical_DroidSleeper_ClearPreviousSpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.ClearPreviousSpawnPoint*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_ClearPreviousSpawnPoint_System_UInt64_Assets_Scripts_Objects_ISpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.ClearPreviousSpawnPoint(System.UInt64,Assets.Scripts.Objects.ISpawnPoint)">
-  ClearPreviousSpawnPoint(ulong, ISpawnPoint)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ClearPreviousSpawnPoint(ulong steamId, ISpawnPoint spawnPoint)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>steamId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
-    <dd></dd>
-    <dt><code>spawnPoint</code> <a class="xref" href="Assets.Scripts.Objects.ISpawnPoint.html">ISpawnPoint</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Objects_Electrical_DroidSleeper_DeregisterSpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.DeregisterSpawnPoint*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_DeregisterSpawnPoint_Assets_Scripts_Objects_ISpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.DeregisterSpawnPoint(Assets.Scripts.Objects.ISpawnPoint)">
-  DeregisterSpawnPoint(ISpawnPoint)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DeregisterSpawnPoint(ISpawnPoint spawnPoint)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>spawnPoint</code> <a class="xref" href="Assets.Scripts.Objects.ISpawnPoint.html">ISpawnPoint</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Objects_Electrical_DroidSleeper_DeserializeSave_" data-uid="Objects.Electrical.DroidSleeper.DeserializeSave*"></a>
 
   <h3 id="Objects_Electrical_DroidSleeper_DeserializeSave_Assets_Scripts_Objects_ThingSaveData_" data-uid="Objects.Electrical.DroidSleeper.DeserializeSave(Assets.Scripts.Objects.ThingSaveData)">
@@ -2730,68 +2656,6 @@ public SmartRotate.ConnectionType ConnectionType</code></pre>
 
 
 
-  <a id="Objects_Electrical_DroidSleeper_GetSteamIds_" data-uid="Objects.Electrical.DroidSleeper.GetSteamIds*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_GetSteamIds" data-uid="Objects.Electrical.DroidSleeper.GetSteamIds">
-  GetSteamIds()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;ulong&gt; GetSteamIds()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Objects_Electrical_DroidSleeper_GetThing_" data-uid="Objects.Electrical.DroidSleeper.GetThing*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_GetThing" data-uid="Objects.Electrical.DroidSleeper.GetThing">
-  GetThing()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Thing GetThing()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="Objects_Electrical_DroidSleeper_GetUsedPower_" data-uid="Objects.Electrical.DroidSleeper.GetUsedPower*"></a>
 
   <h3 id="Objects_Electrical_DroidSleeper_GetUsedPower_Assets_Scripts_Networks_CableNetwork_" data-uid="Objects.Electrical.DroidSleeper.GetUsedPower(Assets.Scripts.Networks.CableNetwork)">
@@ -2899,37 +2763,6 @@ public SmartRotate.ConnectionType ConnectionType</code></pre>
 
 
 
-  <a id="Objects_Electrical_DroidSleeper_OnChildEnterInventory_" data-uid="Objects.Electrical.DroidSleeper.OnChildEnterInventory*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_OnChildEnterInventory_Assets_Scripts_Objects_DynamicThing_" data-uid="Objects.Electrical.DroidSleeper.OnChildEnterInventory(Assets.Scripts.Objects.DynamicThing)">
-  OnChildEnterInventory(DynamicThing)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnChildEnterInventory(DynamicThing newChild)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>newChild</code> <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Objects_Electrical_DroidSleeper_OnChildExitInventory_" data-uid="Objects.Electrical.DroidSleeper.OnChildExitInventory*"></a>
 
   <h3 id="Objects_Electrical_DroidSleeper_OnChildExitInventory_Assets_Scripts_Objects_DynamicThing_" data-uid="Objects.Electrical.DroidSleeper.OnChildExitInventory(Assets.Scripts.Objects.DynamicThing)">
@@ -2949,32 +2782,6 @@ public SmartRotate.ConnectionType ConnectionType</code></pre>
     <dt><code>previousChild</code> <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Objects_Electrical_DroidSleeper_OnDestroy_" data-uid="Objects.Electrical.DroidSleeper.OnDestroy*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_OnDestroy" data-uid="Objects.Electrical.DroidSleeper.OnDestroy">
-  OnDestroy()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnDestroy()</code></pre>
-  </div>
-
 
 
 
@@ -3066,73 +2873,6 @@ public SmartRotate.ConnectionType ConnectionType</code></pre>
     <dd></dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Objects_Electrical_DroidSleeper_RegisterSpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.RegisterSpawnPoint*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_RegisterSpawnPoint_Assets_Scripts_Objects_ISpawnPoint_" data-uid="Objects.Electrical.DroidSleeper.RegisterSpawnPoint(Assets.Scripts.Objects.ISpawnPoint)">
-  RegisterSpawnPoint(ISpawnPoint)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RegisterSpawnPoint(ISpawnPoint spawnPoint)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>spawnPoint</code> <a class="xref" href="Assets.Scripts.Objects.ISpawnPoint.html">ISpawnPoint</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Objects_Electrical_DroidSleeper_RemoveSteamId_" data-uid="Objects.Electrical.DroidSleeper.RemoveSteamId*"></a>
-
-  <h3 id="Objects_Electrical_DroidSleeper_RemoveSteamId_System_UInt64_" data-uid="Objects.Electrical.DroidSleeper.RemoveSteamId(System.UInt64)">
-  RemoveSteamId(ulong)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool RemoveSteamId(ulong id)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
 
 
 

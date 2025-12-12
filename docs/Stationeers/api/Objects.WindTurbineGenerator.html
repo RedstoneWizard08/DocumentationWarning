@@ -101,7 +101,7 @@ Class WindTurbineGenerator
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class WindTurbineGenerator : Device, IAudioParent, ISyncListable, ICreativeSpawnable, ISmallGrid, ITooltip, IConnected, ISlotWriteable, ILogicable, IWreckage, ISmartRotatable, IPowered, IDensePoolable, IReferencable, IEvaluable</code></pre>
+    <pre><code class="lang-csharp hljs">public class WindTurbineGenerator : Device, IAudioParent, ISyncListable, ICreativeSpawnable, ISmallGrid, ITooltip, IConnected, ISlotWriteable, ILogicable, IWreckage, ISmartRotatable, IPowered, IDensePoolable, IPowerGenerator, IReferencable, IEvaluable</code></pre>
   </div>
 
 
@@ -138,6 +138,7 @@ Class WindTurbineGenerator
       <div><a class="xref" href="Assets.Scripts.Util.ISmartRotatable.html">ISmartRotatable</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Items.IPowered.html">IPowered</a></div>
       <div><a class="xref" href="Assets.Scripts.Util.IDensePoolable.html">IDensePoolable</a></div>
+      <div><a class="xref" href="Objects.IPowerGenerator.html">IPowerGenerator</a></div>
       <div><a class="xref" href="DefaultNamespace.IReferencable.html">IReferencable</a></div>
       <div><a class="xref" href="Trading.IEvaluable.html">IEvaluable</a></div>
     </dd>
@@ -218,9 +219,6 @@ Class WindTurbineGenerator
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_GetNearestRobotInput_UnityEngine_Vector3_System_Single_">Device.GetNearestRobotInput(Vector3, float)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnDestroy">Device.OnDestroy()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_CheckConnections">Device.CheckConnections()</a>
@@ -337,10 +335,10 @@ Class WindTurbineGenerator
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnNetworkedRefresh_Assets_Scripts_Objects_Pipes_Device_">Device.OnNetworkedRefresh(Device)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerEnter_Assets_Scripts_Objects_DynamicThing_">Device.OnInputTriggerEnter(DynamicThing)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerEnter_Assets_Scripts_Objects_DynamicThing_Assets_Scripts_Events_MachineInputTrigger_">Device.OnInputTriggerEnter(DynamicThing, MachineInputTrigger)</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerExit_Assets_Scripts_Objects_DynamicThing_">Device.OnInputTriggerExit(DynamicThing)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnInputTriggerExit_Assets_Scripts_Objects_DynamicThing_Assets_Scripts_Events_MachineInputTrigger_">Device.OnInputTriggerExit(DynamicThing, MachineInputTrigger)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnDeviceDisconnectFromNetwork_Assets_Scripts_Objects_Pipes_Device_">Device.OnDeviceDisconnectFromNetwork(Device)</a>
@@ -350,6 +348,9 @@ Class WindTurbineGenerator
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnPowerTick">Device.OnPowerTick()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnAtmosphericTick">Device.OnAtmosphericTick()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Pipes.Device.html#Assets_Scripts_Objects_Pipes_Device_OnRegistered_Assets_Scripts_GridSystem_Cell_">Device.OnRegistered(Cell)</a>
@@ -1192,6 +1193,9 @@ Class WindTurbineGenerator
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasImportState">Thing.HasImportState</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasImport2State">Thing.HasImport2State</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasExportState">Thing.HasExportState</a>
     </div>
     <div>
@@ -1423,7 +1427,7 @@ Class WindTurbineGenerator
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip_System_Text_StringBuilder_">Thing.ToTooltip(StringBuilder)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
@@ -1639,6 +1643,9 @@ Class WindTurbineGenerator
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddNamedDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddNamedDamageString(StringBuilder, bool)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
     </div>
     <div>
@@ -1667,9 +1674,6 @@ Class WindTurbineGenerator
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnAnimationStop">Thing.OnAnimationStop()</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ExplodeThing_System_Int64_">Thing.ExplodeThing(long)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalSetChildrenLock_System_Boolean_">Thing.LocalSetChildrenLock(bool)</a>
@@ -1768,6 +1772,9 @@ Class WindTurbineGenerator
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlots_Assets_Scripts_Objects_Slot_Class_">Thing.GetFreeSlots(Slot.Class)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlotCount">Thing.GetFreeSlotCount()</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlot_Assets_Scripts_Objects_Slot_Class_System_Collections_Generic_List_Assets_Scripts_Objects_InteractableType__">Thing.GetFreeSlot(Slot.Class, List&lt;InteractableType&gt;)</a>
     </div>
     <div>
@@ -1862,6 +1869,9 @@ Class WindTurbineGenerator
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetNextFreeSlot_Assets_Scripts_Objects_Slot_Class_">Thing.GetNextFreeSlot(Slot.Class)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_CachePositionOnSpawn">Thing.CachePositionOnSpawn()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_DLCType">Thing.DLCType</a>
@@ -2089,6 +2099,9 @@ Class WindTurbineGenerator
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Importing">Thing.Importing</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Importing2">Thing.Importing2</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Exporting">Thing.Exporting</a>
     </div>
     <div>
@@ -2162,6 +2175,9 @@ Class WindTurbineGenerator
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractImport">Thing.InteractImport</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractImport2">Thing.InteractImport2</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractExport">Thing.InteractExport</a>
@@ -2411,8 +2427,7 @@ public SmartRotate.ConnectionType ConnectionType</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Noise Length&quot;)]
-public static float NoiseFrequency</code></pre>
+    <pre><code class="lang-csharp hljs">public const float NoiseFrequency = 0.01</code></pre>
   </div>
 
 
@@ -2492,6 +2507,36 @@ public static float NoiseFrequency</code></pre>
 
 
 
+
+  <h3 id="Objects_WindTurbineGenerator_WindDirectionFrequency" data-uid="Objects.WindTurbineGenerator.WindDirectionFrequency">
+  WindDirectionFrequency
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float WindDirectionFrequency = 0.005</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -2508,37 +2553,6 @@ public static float NoiseFrequency</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override float AudioDistanceSquared { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Objects_WindTurbineGenerator_GenerationRate_" data-uid="Objects.WindTurbineGenerator.GenerationRate*"></a>
-
-  <h3 id="Objects_WindTurbineGenerator_GenerationRate" data-uid="Objects.WindTurbineGenerator.GenerationRate">
-  GenerationRate
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GenerationRate { get; }</code></pre>
   </div>
 
 
@@ -2682,6 +2696,68 @@ public static float NoiseFrequency</code></pre>
 
 
 
+  <a id="Objects_WindTurbineGenerator_WindDirection_" data-uid="Objects.WindTurbineGenerator.WindDirection*"></a>
+
+  <h3 id="Objects_WindTurbineGenerator_WindDirection" data-uid="Objects.WindTurbineGenerator.WindDirection">
+  WindDirection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 WindDirection { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Objects_WindTurbineGenerator_WindStrength_" data-uid="Objects.WindTurbineGenerator.WindStrength*"></a>
+
+  <h3 id="Objects_WindTurbineGenerator_WindStrength" data-uid="Objects.WindTurbineGenerator.WindStrength">
+  WindStrength
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float WindStrength { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -2701,6 +2777,37 @@ public static float NoiseFrequency</code></pre>
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_WindTurbineGenerator_CalculateGenerationRate_" data-uid="Objects.WindTurbineGenerator.CalculateGenerationRate*"></a>
+
+  <h3 id="Objects_WindTurbineGenerator_CalculateGenerationRate" data-uid="Objects.WindTurbineGenerator.CalculateGenerationRate">
+  CalculateGenerationRate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CalculateGenerationRate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -2882,6 +2989,37 @@ public static float NoiseFrequency</code></pre>
 
 
 
+  <a id="Objects_WindTurbineGenerator_GetMaxPowerGenerated_" data-uid="Objects.WindTurbineGenerator.GetMaxPowerGenerated*"></a>
+
+  <h3 id="Objects_WindTurbineGenerator_GetMaxPowerGenerated" data-uid="Objects.WindTurbineGenerator.GetMaxPowerGenerated">
+  GetMaxPowerGenerated()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetMaxPowerGenerated()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Objects_WindTurbineGenerator_GetNoise_" data-uid="Objects.WindTurbineGenerator.GetNoise*"></a>
 
   <h3 id="Objects_WindTurbineGenerator_GetNoise_System_Single_" data-uid="Objects.WindTurbineGenerator.GetNoise(System.Single)">
@@ -2936,37 +3074,6 @@ public static float NoiseFrequency</code></pre>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Objects_WindTurbineGenerator_GetPowerRateNoise_" data-uid="Objects.WindTurbineGenerator.GetPowerRateNoise*"></a>
-
-  <h3 id="Objects_WindTurbineGenerator_GetPowerRateNoise" data-uid="Objects.WindTurbineGenerator.GetPowerRateNoise">
-  GetPowerRateNoise()
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetPowerRateNoise()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -3042,6 +3149,37 @@ public static float NoiseFrequency</code></pre>
 
 
 
+  <a id="Objects_WindTurbineGenerator_GetWindDirection_" data-uid="Objects.WindTurbineGenerator.GetWindDirection*"></a>
+
+  <h3 id="Objects_WindTurbineGenerator_GetWindDirection" data-uid="Objects.WindTurbineGenerator.GetWindDirection">
+  GetWindDirection()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 GetWindDirection()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Objects_WindTurbineGenerator_GetWorldAtmospherePressure_" data-uid="Objects.WindTurbineGenerator.GetWorldAtmospherePressure*"></a>
 
   <h3 id="Objects_WindTurbineGenerator_GetWorldAtmospherePressure" data-uid="Objects.WindTurbineGenerator.GetWorldAtmospherePressure">
@@ -3104,10 +3242,10 @@ public static float NoiseFrequency</code></pre>
 
 
 
-  <a id="Objects_WindTurbineGenerator_OnAtmosphericTick_" data-uid="Objects.WindTurbineGenerator.OnAtmosphericTick*"></a>
+  <a id="Objects_WindTurbineGenerator_OnDestroy_" data-uid="Objects.WindTurbineGenerator.OnDestroy*"></a>
 
-  <h3 id="Objects_WindTurbineGenerator_OnAtmosphericTick" data-uid="Objects.WindTurbineGenerator.OnAtmosphericTick">
-  OnAtmosphericTick()
+  <h3 id="Objects_WindTurbineGenerator_OnDestroy" data-uid="Objects.WindTurbineGenerator.OnDestroy">
+  OnDestroy()
   
   </h3>
 
@@ -3115,7 +3253,7 @@ public static float NoiseFrequency</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnAtmosphericTick()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnDestroy()</code></pre>
   </div>
 
 
@@ -3261,6 +3399,32 @@ public static float NoiseFrequency</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void UpdateEachFrame()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Objects_WindTurbineGenerator_UpdateWind_" data-uid="Objects.WindTurbineGenerator.UpdateWind*"></a>
+
+  <h3 id="Objects_WindTurbineGenerator_UpdateWind" data-uid="Objects.WindTurbineGenerator.UpdateWind">
+  UpdateWind()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void UpdateWind()</code></pre>
   </div>
 
 

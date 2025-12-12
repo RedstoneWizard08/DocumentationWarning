@@ -101,7 +101,7 @@ Class JetpackElectric
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class JetpackElectric : Jetpack, IAudioParent, ISyncListable, ITooltip, ICreativeSpawnable, IComparable&lt;DynamicThing&gt;, IWeatherDamagable, ILodRequester, IThreadable, IPerishable, ITradable, IWearable, ISpatial, IPhysical, IProfile, ILogicable, IBatteryPowered, IPowered, IDensePoolable, IReferencable, IEvaluable</code></pre>
+    <pre><code class="lang-csharp hljs">public class JetpackElectric : Jetpack, IAudioParent, ISyncListable, ITooltip, ICreativeSpawnable, IComparable&lt;DynamicThing&gt;, IWeatherDamagable, ILodRequester, IThreadable, IPerishable, ITradable, IRepairable, IWearable, ISpatial, IPhysical, IProfile, ILogicable, IBatteryPowered, IPowered, IDensePoolable, IReferencable, IEvaluable</code></pre>
   </div>
 
 
@@ -118,6 +118,7 @@ Class JetpackElectric
       <div><a class="xref" href="Assets.Scripts.Objects.Thing.html">Thing</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.DynamicThing.html">DynamicThing</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Item.html">Item</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.Items.ItemRenamable.html">ItemRenamable</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.WearableItem.html">WearableItem</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Items.Backpack.html">Backpack</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Items.Jetpack.html">Jetpack</a></div>
@@ -138,6 +139,7 @@ Class JetpackElectric
       <div><a class="xref" href="TerrainSystem.IThreadable.html">IThreadable</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.IPerishable.html">IPerishable</a></div>
       <div><a class="xref" href="Trading.ITradable.html">ITradable</a></div>
+      <div><a class="xref" href="Assets.Scripts.Objects.Items.IRepairable.html">IRepairable</a></div>
       <div><a class="xref" href="Assets.Scripts.Objects.Clothing.IWearable.html">IWearable</a></div>
       <div><a class="xref" href="Objects.Electrical.ISpatial.html">ISpatial</a></div>
       <div><a class="xref" href="Objects.Electrical.IPhysical.html">IPhysical</a></div>
@@ -232,6 +234,9 @@ Class JetpackElectric
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Items.Jetpack.html#Assets_Scripts_Objects_Items_Jetpack_UpdateEmissionAudio_Assets_Scripts_Objects_Items_Jetpack_Emission_System_Boolean_">Jetpack.UpdateEmissionAudio(Jetpack.Emission, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Items.Jetpack.html#Assets_Scripts_Objects_Items_Jetpack_GetSlotTooltip">Jetpack.GetSlotTooltip()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Items.Jetpack.html#Assets_Scripts_Objects_Items_Jetpack_SerializeSave">Jetpack.SerializeSave()</a>
@@ -336,6 +341,18 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.WearableItem.html#Assets_Scripts_Objects_WearableItem_ParentHuman">WearableItem.ParentHuman</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Items.ItemRenamable.html#Assets_Scripts_Objects_Items_ItemRenamable_RepairSpeedScale">ItemRenamable.RepairSpeedScale</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Items.ItemRenamable.html#Assets_Scripts_Objects_Items_ItemRenamable_AttackWith_Assets_Scripts_Objects_Attack_System_Boolean_">ItemRenamable.AttackWith(Attack, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Items.ItemRenamable.html#Assets_Scripts_Objects_Items_ItemRenamable_RepairRatio">ItemRenamable.RepairRatio</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Items.ItemRenamable.html#Assets_Scripts_Objects_Items_ItemRenamable_AttackWithAllowIncomplete">ItemRenamable.AttackWithAllowIncomplete</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_ChildOffsetFacing">Item.ChildOffsetFacing</a>
     </div>
     <div>
@@ -420,6 +437,9 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_DecayedFoodPrefab">Item.DecayedFoodPrefab</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_SmartSortItems">Item.SmartSortItems</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_GetTotalReagentMixture">Item.GetTotalReagentMixture()</a>
     </div>
     <div>
@@ -453,10 +473,10 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_GetDecay">Item.GetDecay()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_InitializeDamageState">Item.InitializeDamageState()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_GetDecayScale">Item.GetDecayScale()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_GetDecayNutritionRatio">Item.GetDecayNutritionRatio()</a>
+      <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_InitializeDamageState">Item.InitializeDamageState()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Item.html#Assets_Scripts_Objects_Item_SetDecayedAsync">Item.SetDecayedAsync()</a>
@@ -702,9 +722,6 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing__isBuoyant">DynamicThing._isBuoyant</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsKinematic">DynamicThing.IsKinematic</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_ChildSlotOffset">DynamicThing.ChildSlotOffset</a>
     </div>
     <div>
@@ -810,13 +827,7 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_GetDeconstructText">DynamicThing.GetDeconstructText()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_GetSlotTooltip">DynamicThing.GetSlotTooltip()</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_GetPassiveTooltip_UnityEngine_Collider_">DynamicThing.GetPassiveTooltip(Collider)</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_AttackWith_Assets_Scripts_Objects_Attack_System_Boolean_">DynamicThing.AttackWith(Attack, bool)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_TryInteractWithSlotOccupant_Assets_Scripts_Objects_Interactable_Assets_Scripts_Objects_Thing_DelayedActionInstance__System_Boolean_">DynamicThing.TryInteractWithSlotOccupant(Interactable, out Thing.DelayedActionInstance, bool)</a>
@@ -969,6 +980,9 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_MoveToWorld_System_Single_">DynamicThing.MoveToWorld(float)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_PhysicsOnRender_System_Boolean_">DynamicThing.PhysicsOnRender(bool)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_OnStartRender">DynamicThing.OnStartRender()</a>
     </div>
     <div>
@@ -1024,6 +1038,9 @@ Class JetpackElectric
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_DebugName">DynamicThing.DebugName()</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CachePositionOnSpawn">DynamicThing.CachePositionOnSpawn()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_CanTogglePower">DynamicThing.CanTogglePower</a>
@@ -1126,6 +1143,9 @@ Class JetpackElectric
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsBurnable">DynamicThing.IsBurnable</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_IsKinematic">DynamicThing.IsKinematic</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.DynamicThing.html#Assets_Scripts_Objects_DynamicThing_RegisteredCollector">DynamicThing.RegisteredCollector</a>
@@ -1404,6 +1424,9 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasImportState">Thing.HasImportState</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasImport2State">Thing.HasImport2State</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_HasExportState">Thing.HasExportState</a>
     </div>
     <div>
@@ -1647,7 +1670,7 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip">Thing.ToTooltip()</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToToolTip_System_Text_StringBuilder_">Thing.ToToolTip(StringBuilder)</a>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToTooltip_System_Text_StringBuilder_">Thing.ToTooltip(StringBuilder)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ToStationpediaLink">Thing.ToStationpediaLink()</a>
@@ -1851,6 +1874,9 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddDamageString(StringBuilder, bool)</a>
     </div>
     <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AddNamedDamageString_System_Text_StringBuilder_System_Boolean_">Thing.AddNamedDamageString(StringBuilder, bool)</a>
+    </div>
+    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing__HandleSwitchMoveToSlot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Slot_Assets_Scripts_Objects_Thing_DelayedActionInstance_System_Boolean_">Thing._HandleSwitchMoveToSlot(Slot, Slot, Thing.DelayedActionInstance, bool)</a>
     </div>
     <div>
@@ -1873,9 +1899,6 @@ Class JetpackElectric
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_OnReleaseReagents">Thing.OnReleaseReagents()</a>
-    </div>
-    <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_ExplodeThing_System_Int64_">Thing.ExplodeThing(long)</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_LocalSetChildrenLock_System_Boolean_">Thing.LocalSetChildrenLock(bool)</a>
@@ -1951,6 +1974,9 @@ Class JetpackElectric
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlots_Assets_Scripts_Objects_Slot_Class_">Thing.GetFreeSlots(Slot.Class)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlotCount">Thing.GetFreeSlotCount()</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GetFreeSlot_Assets_Scripts_Objects_Slot_Class_System_Collections_Generic_List_Assets_Scripts_Objects_InteractableType__">Thing.GetFreeSlot(Slot.Class, List&lt;InteractableType&gt;)</a>
@@ -2199,9 +2225,6 @@ Class JetpackElectric
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_GameObject">Thing.GameObject</a>
     </div>
     <div>
-      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AttackWithAllowIncomplete">Thing.AttackWithAllowIncomplete</a>
-    </div>
-    <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_AsEntity">Thing.AsEntity</a>
     </div>
     <div>
@@ -2251,6 +2274,9 @@ Class JetpackElectric
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Importing">Thing.Importing</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Importing2">Thing.Importing2</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_Exporting">Thing.Exporting</a>
@@ -2326,6 +2352,9 @@ Class JetpackElectric
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractImport">Thing.InteractImport</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractImport2">Thing.InteractImport2</a>
     </div>
     <div>
       <a class="xref" href="Assets.Scripts.Objects.Thing.html#Assets_Scripts_Objects_Thing_InteractExport">Thing.InteractExport</a>

@@ -101,7 +101,7 @@ Class StatusIcon
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StatusIcon : UserInterfaceBase, IPointerEnterHandler, IPointerExitHandler, IEventSystemHandler, IScreenSpaceTooltip</code></pre>
+    <pre><code class="lang-csharp hljs">public class StatusIcon : ToolTipBase, IPointerEnterHandler, IPointerExitHandler, IEventSystemHandler</code></pre>
   </div>
 
 
@@ -117,6 +117,7 @@ Class StatusIcon
       <div><a class="xref" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
       <div><a class="xref" href="DefaultNamespace.GameBase.html">GameBase</a></div>
       <div><a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html">UserInterfaceBase</a></div>
+      <div><a class="xref" href="Assets.Scripts.UI.ToolTipBase.html">ToolTipBase</a></div>
       <div><span class="xref">StatusIcon</span></div>
     </dd>
   </dl>
@@ -127,7 +128,6 @@ Class StatusIcon
       <div><span class="xref">IPointerEnterHandler</span></div>
       <div><span class="xref">IPointerExitHandler</span></div>
       <div><span class="xref">IEventSystemHandler</span></div>
-      <div><a class="xref" href="Assets.Scripts.UI.IScreenSpaceTooltip.html">IScreenSpaceTooltip</a></div>
     </dd>
   </dl>
 
@@ -142,6 +142,12 @@ Class StatusIcon
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.ToolTipBase.html#Assets_Scripts_UI_ToolTipBase_OnPointerEnter_UnityEngine_EventSystems_PointerEventData_">ToolTipBase.OnPointerEnter(PointerEventData)</a>
+    </div>
+    <div>
+      <a class="xref" href="Assets.Scripts.UI.ToolTipBase.html#Assets_Scripts_UI_ToolTipBase_OnPointerExit_UnityEngine_EventSystems_PointerEventData_">ToolTipBase.OnPointerExit(PointerEventData)</a>
+    </div>
     <div>
       <a class="xref" href="Assets.Scripts.UI.UserInterfaceBase.html#Assets_Scripts_UI_UserInterfaceBase_RectTransform">UserInterfaceBase.RectTransform</a>
     </div>
@@ -322,45 +328,14 @@ Class StatusIcon
 
 
 
-
-  <h3 id="DefaultNamespace_StatusIcon_Type" data-uid="DefaultNamespace.StatusIcon.Type">
-  Type
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HideInInspector]
-public StatusUpdateType Type</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Assets.Scripts.UI.StatusUpdateType.html">StatusUpdateType</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="DefaultNamespace_StatusIcon_TooltipIsVisible_" data-uid="DefaultNamespace.StatusIcon.TooltipIsVisible*"></a>
+  <a id="DefaultNamespace_StatusIcon_ToTooltip_" data-uid="DefaultNamespace.StatusIcon.ToTooltip*"></a>
 
-  <h3 id="DefaultNamespace_StatusIcon_TooltipIsVisible" data-uid="DefaultNamespace.StatusIcon.TooltipIsVisible">
-  TooltipIsVisible
+  <h3 id="DefaultNamespace_StatusIcon_ToTooltip" data-uid="DefaultNamespace.StatusIcon.ToTooltip">
+  ToTooltip
   
   </h3>
 
@@ -368,7 +343,7 @@ public StatusUpdateType Type</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool TooltipIsVisible { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Func&lt;string&gt; ToTooltip { get; set; }</code></pre>
   </div>
 
 
@@ -377,7 +352,7 @@ public StatusUpdateType Type</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -392,10 +367,10 @@ public StatusUpdateType Type</code></pre>
 </h2>
 
 
-  <a id="DefaultNamespace_StatusIcon_DoUpdate_" data-uid="DefaultNamespace.StatusIcon.DoUpdate*"></a>
+  <a id="DefaultNamespace_StatusIcon_GetString_" data-uid="DefaultNamespace.StatusIcon.GetString*"></a>
 
-  <h3 id="DefaultNamespace_StatusIcon_DoUpdate" data-uid="DefaultNamespace.StatusIcon.DoUpdate">
-  DoUpdate()
+  <h3 id="DefaultNamespace_StatusIcon_GetString" data-uid="DefaultNamespace.StatusIcon.GetString">
+  GetString()
   
   </h3>
 
@@ -403,72 +378,15 @@ public StatusUpdateType Type</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DoUpdate()</code></pre>
+    <pre><code class="lang-csharp hljs">public override string GetString()</code></pre>
   </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_StatusIcon_OnPointerEnter_" data-uid="DefaultNamespace.StatusIcon.OnPointerEnter*"></a>
-
-  <h3 id="DefaultNamespace_StatusIcon_OnPointerEnter_UnityEngine_EventSystems_PointerEventData_" data-uid="DefaultNamespace.StatusIcon.OnPointerEnter(UnityEngine.EventSystems.PointerEventData)">
-  OnPointerEnter(PointerEventData)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnPointerEnter(PointerEventData eventData)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
+  <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DefaultNamespace_StatusIcon_OnPointerExit_" data-uid="DefaultNamespace.StatusIcon.OnPointerExit*"></a>
-
-  <h3 id="DefaultNamespace_StatusIcon_OnPointerExit_UnityEngine_EventSystems_PointerEventData_" data-uid="DefaultNamespace.StatusIcon.OnPointerExit(UnityEngine.EventSystems.PointerEventData)">
-  OnPointerExit(PointerEventData)
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnPointerExit(PointerEventData eventData)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>eventData</code> <span class="xref">PointerEventData</span></dt>
-    <dd></dd>
-  </dl>
-
 
 
 
