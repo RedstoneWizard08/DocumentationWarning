@@ -38,7 +38,7 @@ public sealed class CopyDocs : Step {
             }
         );
 
-        await File.WriteAllTextAsync(Manifest, data.ToJsonString());
+        await File.WriteAllTextAsync(Manifest, JsonConvert.SerializeObject(data));
     }
 
 
